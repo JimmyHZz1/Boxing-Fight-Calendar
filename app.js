@@ -62,49 +62,110 @@ function makeBoutRow(b) {
   row.append(left,vs,right,meta);
   return row;
 }
-function dateCard(key,bouts) {
-  const d=parseDate(boutDateTime(bouts[0]));
-  const card=document.createElement("article"); card.className="event-card date-card";
-  const date=document.createElement("div"); date.className="event-date";
-  const strong=document.createElement("strong"); strong.textContent=d ? new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",day:"2-digit"}).format(d) : "—";
-  const month=document.createElement("span"); month.textContent=d ? new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",month:"short"}).format(d).toUpperCase() : "DATE";
-  date.append(strong,month);
-  const info=document.createElement("div"); info.className="event-info";
-  const title=document.createElement("h3"); title.textContent=ukDate(d||key);
-  const desc=document.createElement("p"); const countries=[...new Set(bouts.map(b=>b.eventCountry).filter(Boolean))]; desc.textContent=`${bouts.length} scheduled ${bouts.length===1?"bout":"bouts"}`+(countries.length ? " · "+countries.join(", ") : "");
-  info.append(title,desc);
-  const tag=document.createElement("div"); tag.className="event-tag"; tag.textContent=bouts[0]?.start_time_utc ? "FIRST BOUT "+ukTime(boutDateTime(bouts[0])) : (bouts[0]?.eventStartTime ? "CARD START "+(formatTime(bouts[0].eventStartTime,bouts[0].eventDate)||"TBC") : "TIME TBC");
-  card.append(date,info,tag);
-  return card;
+function eventDateKey(event) {
+  const raw = event.date || event.bouts?.[0]?.date;
+  if (!raw) return "";
+  return /^\d{4}-\d{2}-\d{2}$/.test(String(raw)) ? String(raw) : ukKey(raw);
 }
-function groupBoutsByUkDate(bouts) {
-  const map=new Map();
-  bouts.forEach(b=>{const key=ukKey(boutDateTime(b));if(!key)return;if(!map.has(key))map.set(key,[]);map.get(key).push(b);});
-  return map;
+function eventBouts(event) {
+  const bouts=(event.bouts||event.fights||[]).map(b=>({
+    ...b,
+    eventUrl:event.event_url||event.url,
+    eventBroadcasters:event.broadcasters||[],
+    eventPromoter:event.promoter,
+    eventStartTime:event.start_time_utc,
+    eventDate:event.date,
+    eventCountry:event.country,
+    eventCity:event.city,
+    eventLocation:event.location
+  }));
+  return bouts.sort((x,y)=>{
+    const xt=x.title_text?1:0, yt=y.title_text?1:0;
+    if(xt!==yt)return yt-xt;
+    return (Number(y.rounds)||0)-(Number(x.rounds)||0);
+  });
+}
+function countryName(value) {
+  if (!value) return null;
+  const map={GB:"United Kingdom",UK:"United Kingdom",US:"United States",JP:"Japan",VE:"Venezuela",TR:"Türkiye",MX:"Mexico",SA:"Saudi Arabia",CA:"Canada",ES:"Spain",FR:"France",AU:"Australia",DE:"Germany"};
+  return map[String(value).toUpperCase()]||value;
+}
+function eventTitle(event,bouts) {
+  if (event.name && !/^(boxing event|mr event)$/i.test(event.name)) return event.name;
+  const headline=bouts.find(b=>b.title_text)||bouts[0];
+  if (headline) return fighterNames(headline).join(" vs ");
+  return event.city ? event.city+" boxing event" : "Boxing event";
+}
+function renderEventCard(event, expanded=false) {
+  const bouts=eventBouts(event);
+  const details=document.createElement("details");
+  details.className="fight-card-accordion";
+  details.open=expanded;
+  const summary=document.createElement("summary");
+  summary.className="event-card fight-card-summary";
+  const dateValue=event.date||bouts[0]?.date;
+  const date=parseDate(dateValue);
+  const dateBox=document.createElement("div");dateBox.className="event-date";
+  const day=document.createElement("strong");day.textContent=date?new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",day:"2-digit"}).format(date):"—";
+  const month=document.createElement("span");month.textContent=date?new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",month:"short"}).format(date).toUpperCase():"DATE";
+  dateBox.append(day,month);
+  const info=document.createElement("div");info.className="event-info";
+  const title=document.createElement("h3");title.textContent=eventTitle(event,bouts);
+  const country=countryName(event.country||event.country_code);
+  const desc=document.createElement("p");
+  const countLabel=event.source_note?"Additional bouts · card not confirmed":bouts.length+" bouts on this card";
+  desc.textContent=[countLabel,event.city,country].filter(Boolean).join(" · ");
+  info.append(title,desc);
+  const tag=document.createElement("div");tag.className="event-tag";
+  const cardStart=formatTime(event.start_time_utc,event.date);
+  const firstTime=bouts.find(x=>x.start_time_utc);
+  tag.textContent=cardStart?"CARD "+cardStart:(firstTime?"FIRST BOUT "+formatTime(firstTime.start_time_utc,firstTime.date):"TIME TBC");
+  summary.append(dateBox,info,tag);
+  details.append(summary);
+  const panel=document.createElement("div");panel.className="fight-card-details";
+  const meta=document.createElement("div");meta.className="fight-card-meta";
+  const metaBits=[];
+  if(country)metaBits.push("COUNTRY: "+country);
+  if(event.promoter)metaBits.push("PROMOTER: "+event.promoter);
+  if(cardStart)metaBits.push("CARD START: "+cardStart);
+  const channels=(event.broadcasters||[]).map(x=>typeof x==="string"?x:(x.name||x.broadcaster||x.platform||x.service||"")).filter(Boolean);
+  if(channels.length)metaBits.push("WATCH: "+channels.join(", "));
+  meta.textContent=metaBits.join(" · ")||"Full card details below";
+  panel.append(meta);
+  const list=document.createElement("div");list.className="bout-list";
+  if(bouts.length)bouts.forEach(b=>list.append(makeBoutRow(b)));
+  else {const empty=document.createElement("p");empty.className="muted-note";empty.textContent="No individual bouts have been confirmed for this event yet.";list.append(empty);}
+  panel.append(list);
+  const sourceUrl=event.event_url||event.url;
+  if(sourceUrl&&/^https?:\/\//i.test(sourceUrl)){const link=document.createElement("a");link.href=sourceUrl;link.target="_blank";link.rel="noopener noreferrer";link.className="event-source-link";link.textContent="View original event details ↗";panel.append(link);}
+  details.append(panel);
+  return details;
+}
+function eventsForDate(key) {
+  return state.events.filter(e=>eventDateKey(e)===key && (e.bouts||e.fights||[]).length);
 }
 function renderTonight() {
   const key=todayKey();
   const date=new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",weekday:"long",day:"numeric",month:"long"}).format(new Date());
   $("today-date-label").textContent=date;
-  const matches=allBouts().filter(b=>ukKey(boutDateTime(b))===key);
-  const root=$("tonight-bouts"); root.replaceChildren();
-  if(!matches.length) root.innerHTML='<div class="muted-note">No fights are listed for today in the current schedule.</div>';
-  else matches.forEach(b=>root.append(makeBoutRow(b)));
+  const root=$("tonight-bouts");root.replaceChildren();
+  const events=eventsForDate(key);
+  if(!events.length)root.innerHTML='<div class="muted-note">No fight cards are listed for today in the current schedule.</div>';
+  else events.forEach(e=>root.append(renderEventCard(e,false)));
   const button=$("today-date-button");
   button.setAttribute("aria-expanded",String(!root.hidden));
-  button.onclick=()=>{root.hidden=!root.hidden;button.setAttribute("aria-expanded",String(!root.hidden));button.querySelector("strong").textContent=root.hidden?"VIEW FIGHTS ↓":"HIDE FIGHTS ↑";};
+  button.onclick=()=>{root.hidden=!root.hidden;button.setAttribute("aria-expanded",String(!root.hidden));button.querySelector("strong").textContent=root.hidden?"VIEW FIGHT CARDS ↓":"HIDE FIGHT CARDS ↑";};
 }
 function renderHome() {
   const nowKey=todayKey();
-  const grouped=groupBoutsByUkDate(allBouts());
-  const upcoming=[...grouped.entries()].filter(([key])=>key>=nowKey);
-  $("event-count").textContent=`${upcoming.length} DATES`;
+  const upcoming=state.events.filter(e=>eventDateKey(e)>=nowKey&&(e.bouts||e.fights||[]).length).sort((a,b)=>eventDateKey(a).localeCompare(eventDateKey(b)));
+  $("event-count").textContent=upcoming.length+" CARDS";
   const list=$("next-events");list.replaceChildren();
-  if(!upcoming.length) list.innerHTML='<div class="empty-state"><span class="empty-icon">🥊</span><h3>No upcoming bouts listed</h3><p>The schedule will update automatically as new bouts are published.</p></div>';
-  else upcoming.slice(0,8).forEach(([key,bouts])=>{const card=dateCard(key,bouts);card.addEventListener("click",()=>{state.selected=parseDate(boutDateTime(bouts[0]))||new Date(key+"T12:00:00");state.month=new Date(state.selected.getFullYear(),state.selected.getMonth(),1);showScreen("calendar-screen");renderCalendar();});list.append(card);});
+  if(!upcoming.length)list.innerHTML='<div class="empty-state"><span class="empty-icon">🥊</span><h3>No upcoming cards listed</h3><p>The schedule will update automatically as new fights are published.</p></div>';
+  else upcoming.slice(0,8).forEach(event=>{const card=renderEventCard(event,false);list.append(card);});
   const headlines=$("headline-bouts");headlines.replaceChildren();
-  const upcomingBouts=allBouts().filter(b=>ukKey(boutDateTime(b))>=nowKey).slice(0,5);
-  if(!upcomingBouts.length) headlines.innerHTML='<div class="muted-note">Headline bouts will appear here when scheduled fights are available.</div>';
+  const upcomingBouts=allBouts().filter(b=>ukKey(boutDateTime(b))>=nowKey&&b.title_text).slice(0,5);
+  if(!upcomingBouts.length)headlines.innerHTML='<div class="muted-note">Headline bouts will appear here when confirmed title-fight details are available.</div>';
   else upcomingBouts.forEach(b=>headlines.append(makeBoutRow(b)));
   renderTonight();
 }
@@ -126,29 +187,25 @@ function renderCalendar() {
 function renderSelectedDate() {
   const key=dateKey(state.selected);
   $("selected-date-label").textContent=state.selected.toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long"});
-  const matches=allBouts().filter(b=>ukKey(boutDateTime(b))===key);
   const root=$("selected-date-events");root.replaceChildren();
-  if(!matches.length)root.innerHTML='<div class="muted-note">No fights listed for this date.</div>';
-  else matches.forEach(b=>root.append(makeBoutRow(b)));
+  const events=eventsForDate(key);
+  if(!events.length)root.innerHTML='<div class="muted-note">No fight cards listed for this date.</div>';
+  else events.forEach(e=>root.append(renderEventCard(e,false)));
 }
 function renderCards() {
   const root=$("full-cards");root.replaceChildren();
-  const events=[...state.events].sort((a,b)=>(parseDate(a.date)?.getTime()||0)-(parseDate(b.date)?.getTime()||0));
-  if(!events.length){root.innerHTML='<div class="empty-state"><span class="empty-icon">📋</span><h3>No fights loaded</h3><p>Scheduled bouts will appear here as the data provider publishes them.</p></div>';return;}
-  for(const event of events){
-    const bouts=(event.bouts||event.fights||[]).map(b=>({...b,eventUrl:event.event_url,eventBroadcasters:event.broadcasters||[],eventPromoter:event.promoter,eventStartTime:event.start_time_utc,eventDate:event.date,eventCountry:event.country,eventCity:event.city,eventLocation:event.location}));
-    if(!bouts.length) continue;
+  const events=[...state.events].filter(e=>(e.bouts||e.fights||[]).length).sort((a,b)=>eventDateKey(a).localeCompare(eventDateKey(b)));
+  if(!events.length){root.innerHTML='<div class="empty-state"><span class="empty-icon">📋</span><h3>No fight cards loaded</h3><p>Scheduled event cards will appear here as providers publish confirmed details.</p></div>';return;}
+  const byDate=new Map();
+  events.forEach(event=>{const key=eventDateKey(event);if(!byDate.has(key))byDate.set(key,[]);byDate.get(key).push(event);});
+  for(const [key,dayEvents] of byDate){
     const section=document.createElement("section");section.className="fight-date-section";
     const heading=document.createElement("div");heading.className="section-heading compact";
-    const title=document.createElement("h2");title.textContent=(event.name||"Boxing event")+" · "+ukDate(event.date||boutDateTime(bouts[0]));
+    const title=document.createElement("h2");title.textContent=ukDate(key+"T12:00:00Z")+" · "+dayEvents.length+" "+(dayEvents.length===1?"CARD":"CARDS");
     heading.append(title);section.append(heading);
-    const countryLabel=event.country || event.country_code || null;
-    if(countryLabel || event.start_time_utc){const detail=document.createElement("p");detail.className="muted-note";const start=formatTime(event.start_time_utc,event.date);detail.textContent=[countryLabel ? "COUNTRY: "+countryLabel : null,start ? "Card starts "+start : null].filter(Boolean).join(" · ");section.append(detail);}
-    if(event.promoter){const promoter=document.createElement("p");promoter.className="muted-note";promoter.textContent="Promoter: "+event.promoter;section.append(promoter);}
-    const list=document.createElement("div");list.className="bout-list";bouts.forEach(b=>list.append(makeBoutRow(b)));
-    section.append(list);
-    if(event.event_url && /^https?:\/\//i.test(event.event_url)){const link=document.createElement("a");link.href=event.event_url;link.target="_blank";link.rel="noopener noreferrer";link.className="event-source-link";link.textContent="View event on Boxerbook ↗";section.append(link);}
-    root.append(section);
+    const list=document.createElement("div");list.className="event-list";
+    dayEvents.forEach(event=>list.append(renderEventCard(event,false)));
+    section.append(list);root.append(section);
   }
 }
 async function loadData() {
