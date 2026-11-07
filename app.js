@@ -515,6 +515,7 @@ async function requestFreshSync(){
   $("refresh-help").textContent="Requesting a fresh update for F1, darts, boxing and UFC…";
   let previousTimestamp=null;
   let failureMessage=null;
+  let successMessage=null;
   try{
     const before=await fetch(DATA_URL+"?t="+Date.now(),{cache:"no-store"});
     if(before.ok){const snapshot=await before.json();previousTimestamp=snapshot.last_updated||null;}
@@ -537,7 +538,7 @@ async function requestFreshSync(){
         const after=await fetch(DATA_URL+"?t="+Date.now(),{cache:"no-store"});
         const latest=after.ok?await after.json():{};
         if(!previousTimestamp||latest.last_updated!==previousTimestamp){
-          $("refresh-help").textContent="All sports updated successfully. Last sync time is now current.";
+          successMessage="All sports updated successfully. Last sync time is now current.";
           finished=true;break;
         }
         throw new Error("The sync completed, but the published schedule timestamp has not changed yet. Please try again shortly.");
@@ -553,7 +554,7 @@ async function requestFreshSync(){
     button.disabled=false;
     await loadData();
     if(window.SportsData?.load)await window.SportsData.load();
-    if(failureMessage)$("refresh-help").textContent=failureMessage;
+    if(failureMessage||successMessage)$("refresh-help").textContent=failureMessage||successMessage;
     syncAgeLabel();
   }
 }
