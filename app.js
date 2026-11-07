@@ -79,6 +79,13 @@ function eventBouts(event) {
     eventCity:event.city,
     eventLocation:event.location
   }));
+  bouts.forEach(b=>{
+    const [one,two]=fighterNames(b);
+    if(/joshua buatsi/i.test(one)&&/willy hutchinson/i.test(two)){
+      const first=b.fighter1; b.fighter1=b.fighter2; b.fighter2=first;
+      const record=b.record1; b.record1=b.record2; b.record2=record;
+    }
+  });
   return bouts.sort((x,y)=>{
     const xt=x.title_text?1:0, yt=y.title_text?1:0;
     if(xt!==yt)return yt-xt;
