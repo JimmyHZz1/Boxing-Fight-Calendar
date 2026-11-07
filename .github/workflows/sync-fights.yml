@@ -19,6 +19,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -39,6 +41,8 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Rebase on the latest main to avoid rejecting a push after concurrent commits.
+          git pull --rebase origin main
           git add data/fights.json
           git commit -m "Refresh boxing schedule"
-          git push
+          git push origin HEAD:main
