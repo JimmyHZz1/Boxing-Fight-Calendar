@@ -1,5 +1,4 @@
 const DATA_URL = "./data/fights.json";
-const ACTIONS_URL = "https://github.com/JimmyHZz1/Boxing-Fight-Calendar/actions/workflows/sync-fights.yml";
 const state = { events: [], fighterImages: {}, month: new Date(new Date().getFullYear(), new Date().getMonth(), 1), selected: new Date() };
 const $ = id => document.getElementById(id);
 const pad = n => String(n).padStart(2, "0");
@@ -472,24 +471,22 @@ async function loadData() {
     try { const photos=await fetch("./data/fighter-images.json?t="+Date.now(),{cache:"no-store"}); if(photos.ok){const photoData=await photos.json();state.fighterImages=photoData.images||{};} } catch(_) { state.fighterImages={}; }
     if(data.last_updated)$("home-updated").textContent="DATA UPDATED "+new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",dateStyle:"medium",timeStyle:"short"}).format(new Date(data.last_updated));
     else $("home-updated").textContent="AWAITING DATA SYNC";
-    $("refresh-help").textContent="Schedule snapshot loaded. Use Update fight data to run a fresh API sync.";
+    $("refresh-help").textContent="Latest published schedule checked.";
   } catch(e) {
     $("home-updated").textContent="DATA FEED NOT CONNECTED";
-    $("refresh-help").textContent="Could not load the latest published schedule.";
+    $("refresh-help").textContent="Could not load the latest schedule. Check your connection and try again.";
   }
   renderHome();renderCalendar();renderCards();
 }
 $("manual-refresh").addEventListener("click",async()=>{
   const button=$("manual-refresh");
-  if(button.dataset.stage==="reload"){
-    button.disabled=true;button.textContent="↻ Loading schedule…";
-    await loadData();button.dataset.stage="";button.disabled=false;button.textContent="↻ Update fight data";return;
-  }
-  window.open(ACTIONS_URL,"_blank","noopener");
-  button.dataset.stage="reload";button.textContent="↻ Reload latest schedule";
-  $("refresh-help").textContent="In GitHub Actions, open “Refresh boxing schedule” and tap “Run workflow”. Return here and tap Reload latest schedule.";
+  button.disabled=true;
+  button.textContent="↻ Checking…";
+  $("refresh-help").textContent="Checking for the latest published fight schedule…";
+  await loadData();
+  button.disabled=false;
+  button.textContent="↻ Update";
 });
-document.addEventListener("visibilitychange",()=>{if(!document.hidden && $("manual-refresh").dataset.stage==="reload")$("refresh-help").textContent="When the GitHub Actions run finishes, tap Reload latest schedule.";});
 $("prev-month").addEventListener("click",()=>{state.month.setMonth(state.month.getMonth()-1);renderCalendar();});
 $("next-month").addEventListener("click",()=>{state.month.setMonth(state.month.getMonth()+1);renderCalendar();});
 loadData();setInterval(loadData,5*60*1000);
