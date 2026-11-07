@@ -1,4 +1,5 @@
 const DATA_URL = "./data/fights.json";
+const SYNC_API_URL = "https://sports-calendar-sync-jimmyhzz1.onrender.com";
 const state = { events: [], fighterImages: {}, lastUpdated: null, month: new Date(new Date().getFullYear(), new Date().getMonth(), 1), selected: new Date() };
 const $ = id => document.getElementById(id);
 function syncAgeLabel() {
@@ -506,16 +507,55 @@ async function loadData() {
   renderHome();renderCalendar();renderCards();
   if(window.SportsData?.renderAll)window.SportsData.renderAll();
 }
-$("manual-refresh").addEventListener("click",async()=>{
+async function requestFreshSync(){
   const button=$("manual-refresh");
+  if(button.disabled)return;
   button.disabled=true;
-  button.textContent="SYNC: checking…";
-  $("refresh-help").textContent="Checking for the latest published fight schedule…";
-  await loadData();
-  if(window.SportsData?.load)await window.SportsData.load();
-  button.disabled=false;
-  syncAgeLabel();
-});
+  button.textContent="SYNC: starting…";
+  $("refresh-help").textContent="Requesting a fresh update for F1, darts, boxing and UFC…";
+  let previousTimestamp=null;
+  try{
+    const before=await fetch(DATA_URL+"?t="+Date.now(),{cache:"no-store"});
+    if(before.ok){const snapshot=await before.json();previousTimestamp=snapshot.last_updated||null;}
+    const response=await fetch(SYNC_API_URL+"/sync",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({source:"sports-calendar-app"})});
+    const result=await response.json().catch(()=>({}));
+    if(response.status===429||response.status===409)throw new Error(result.message||"A sports update is already running. Please wait a moment.");
+    if(!response.ok)throw new Error(result.message||"Could not start the update. Please try again.");
+    $("refresh-help").textContent="Update started. Fetching the latest sports data…";
+    button.textContent="SYNC: updating…";
+    const started=Date.now();
+    let finished=false;
+    while(Date.now()-started<6*60*1000){
+      await new Promise(resolve=>setTimeout(resolve,7000));
+      const statusResponse=await fetch(SYNC_API_URL+"/status?since="+encodeURIComponent(result.requested_at||new Date(started).toISOString()),{cache:"no-store"});
+      const status=statusResponse.ok?await statusResponse.json():{};
+      if(status.status==="completed"){
+        if(status.conclusion!=="success")throw new Error("The data update failed in GitHub Actions. Your previous schedule is still available.");
+        await loadData();
+        if(window.SportsData?.load)await window.SportsData.load();
+        const after=await fetch(DATA_URL+"?t="+Date.now(),{cache:"no-store"});
+        const latest=after.ok?await after.json():{};
+        if(!previousTimestamp||latest.last_updated!==previousTimestamp){
+          $("refresh-help").textContent="All sports updated successfully. Last sync time is now current.";
+          finished=true;break;
+        }
+        throw new Error("The sync completed, but the published schedule timestamp has not changed yet. Please try again shortly.");
+      }
+      if(status.status==="queued"||status.status==="in_progress"){
+        button.textContent=status.status==="queued"?"SYNC: queued…":"SYNC: updating…";
+      }
+    }
+    if(!finished)throw new Error("The update is taking longer than expected. Check again in a minute; the automatic refresh will continue in the background.");
+  }catch(error){
+    $("refresh-help").textContent=error.message||"Could not complete the update. Your last published schedule remains available.";
+  }finally{
+    button.disabled=false;
+    await loadData();
+    if(window.SportsData?.load)await window.SportsData.load();
+    syncAgeLabel();
+  }
+}
+$("manual-refresh").addEventListener("click",requestFreshSync);
 $("prev-month").addEventListener("click",()=>{state.month.setMonth(state.month.getMonth()-1);renderCalendar();});
 $("next-month").addEventListener("click",()=>{state.month.setMonth(state.month.getMonth()+1);renderCalendar();});
 loadData();setInterval(()=>{loadData();if(window.SportsData?.load)window.SportsData.load();},5*60*1000);
