@@ -89,11 +89,11 @@
 .portrait-credit{position:absolute;z-index:2;right:2px;bottom:2px;width:19px;height:19px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.8);border-radius:50%;background:rgba(16,17,20,.9);color:#fff;font:700 11px "DM Sans",sans-serif;text-decoration:none;box-shadow:0 1px 4px #000}.portrait-credit:focus,.portrait-credit:hover{background:var(--accent);color:#17130d}
 
 /* Compact UK broadcaster wordmarks on Main UK Fight cards */
-.uk-headliner-card{position:relative;padding-top:42px}
+.uk-headliner-card{position:relative}.uk-headliner-card.has-broadcaster-logos{padding-top:42px}
 .uk-broadcaster-logos{position:absolute;top:9px;right:10px;display:flex;align-items:center;gap:6px;z-index:2}
 .uk-broadcaster-logo{height:25px;min-width:43px;display:inline-flex;align-items:center;justify-content:center;border-radius:4px;box-shadow:0 2px 7px rgba(0,0,0,.35);font-weight:900;line-height:1;white-space:nowrap}
 .dazn-logo{background:#080808;color:#fff;border:1px solid #fff;padding:0 6px;font-family:Arial Black,Arial,sans-serif;font-size:12px;letter-spacing:-.5px;transform:skew(-5deg)}
 .sky-sports-logo{overflow:hidden;padding:0 5px;background:linear-gradient(135deg,#fff 0 43%,#e9f4ff 43% 100%);border:1px solid #d8e6f3;font-family:Arial,sans-serif;font-size:11px;letter-spacing:-.7px}
 .sky-word{color:#0784c7;font-weight:900}
 .sports-word{color:#e32636;font-weight:900;margin-left:2px}
-@media(max-width:360px){.uk-broadcaster-logo{height:22px;min-width:39px;font-size:10px}.uk-headliner-card{padding-top:39px}}
+@media(max-width:360px){.uk-broadcaster-logo{height:22px;min-width:39px;font-size:10px}.uk-headliner-card.has-broadcaster-logos{padding-top:39px}}
