@@ -4,7 +4,8 @@
     f1: {name:"FORMULA 1",icon:"🏎️",title:"F1 calendar coming next",copy:"The Formula 1 calendar, practice sessions, qualifying, sprint weekends and race results will be connected in the next stage.",kicker:"MOTORSPORT"},
     darts: {name:"PDC DARTS",icon:"🎯",title:"PDC darts calendar coming next",copy:"The PDC tournament calendar will include the European Tour, Players Championship, majors and other PDC events. Live scores are not required.",kicker:"PDC TOUR"},
     boxing: {name:"BOXING",icon:"🥊",title:"Boxing fight calendar",copy:"Your existing boxing schedule, full fight cards, UK broadcasters and UK-fighter features remain in place.",kicker:"THE FIGHT GAME"},
-    ufc: {name:"UFC",icon:"🥋",title:"UFC calendar",copy:"Upcoming UFC events, complete fight cards, prelims, main cards and results.",kicker:"MIXED MARTIAL ARTS"},\n    bkfc: {name:"BKFC",icon:"🥊",title:"BKFC bare-knuckle calendar",copy:"BKFC events, fight cards, results and UK viewing information.",kicker:"BARE-KNUCKLE BOXING"}
+    ufc: {name:"UFC",icon:"🥋",title:"UFC calendar",copy:"Upcoming UFC events, complete fight cards, prelims, main cards and results.",kicker:"MIXED MARTIAL ARTS"},
+    bkfc: {name:"BKFC",icon:"🥊",title:"BKFC bare-knuckle calendar",copy:"BKFC events, fight cards, results and UK viewing information.",kicker:"BARE-KNUCKLE BOXING"}
   };
   const rail=document.getElementById("sports-carousel");
   if(!rail)return;
