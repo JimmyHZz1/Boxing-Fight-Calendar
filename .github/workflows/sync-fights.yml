@@ -44,14 +44,14 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          if git diff --quiet -- data/fights.json data/fighter-images.json data/f1.json data/darts.json data/ufc.json; then
+          if git diff --quiet -- data/fights.json data/fighter-images.json data/f1.json data/darts.json data/ufc.json data/sports-hub.json; then
             echo "No schedule changes."
             exit 0
           fi
 
           # Commit the generated file BEFORE rebasing. Pulling first fails
           # because the sync script has already modified data/fights.json.
-          git add data/fights.json data/fighter-images.json data/f1.json data/darts.json data/ufc.json
+          git add data/fights.json data/fighter-images.json data/f1.json data/darts.json data/ufc.json data/sports-hub.json
           git commit -m "Refresh multi-sport schedules and boxer portraits"
 
           # Rebase our generated snapshot onto any changes made to main
