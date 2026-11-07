@@ -81,3 +81,5 @@
 /* Main UK fights now represent UK-nationality boxers, not UK-hosted events */
 .uk-headliner-summary{display:block}
 .uk-headliner-summary .uk-headliner-card{min-height:100%}
+
+.nationality-flag{display:inline-block;font-family:"Apple Color Emoji","Segoe UI Emoji",sans-serif;font-size:18px;line-height:1;vertical-align:-2px;margin-right:7px;filter:saturate(1.08)}.fighter-name{display:inline;overflow-wrap:anywhere}
