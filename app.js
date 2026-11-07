@@ -514,6 +514,7 @@ async function requestFreshSync(){
   button.textContent="SYNC: starting…";
   $("refresh-help").textContent="Requesting a fresh update for F1, darts, boxing and UFC…";
   let previousTimestamp=null;
+  let failureMessage=null;
   try{
     const before=await fetch(DATA_URL+"?t="+Date.now(),{cache:"no-store"});
     if(before.ok){const snapshot=await before.json();previousTimestamp=snapshot.last_updated||null;}
@@ -547,11 +548,12 @@ async function requestFreshSync(){
     }
     if(!finished)throw new Error("The update is taking longer than expected. Check again in a minute; the automatic refresh will continue in the background.");
   }catch(error){
-    $("refresh-help").textContent=error.message||"Could not complete the update. Your last published schedule remains available.";
+    failureMessage=error.message||"Could not complete the update. Your last published schedule remains available.";
   }finally{
     button.disabled=false;
     await loadData();
     if(window.SportsData?.load)await window.SportsData.load();
+    if(failureMessage)$("refresh-help").textContent=failureMessage;
     syncAgeLabel();
   }
 }
