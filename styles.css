@@ -38,3 +38,22 @@
 .fight-card-details .bout-list{gap:8px}
 .event-source-link{display:inline-block;margin-top:12px;color:var(--accent);font-size:11px;text-decoration:none}
 @media(min-width:700px){.fight-card-summary{grid-template-columns:72px minmax(0,1fr) auto}.fight-card-summary:after{grid-column:3;text-align:right}.fight-card-details{padding:18px}}
+
+/* UK headline fight strip */
+.uk-headliners{margin:22px 0 28px}
+.uk-headliners .section-heading{margin:0 0 13px}
+.uk-headliners-list{display:grid;gap:12px}
+.uk-headliner-card{min-width:0;background:linear-gradient(130deg,rgba(226,180,91,.10),rgba(25,27,32,.96) 60%),var(--panel);border:1px solid #51432d;border-left:3px solid var(--accent);padding:15px}
+.uk-headliner-matchup{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:8px;align-items:center}
+.uk-headliner-fighter{display:flex;flex-direction:column;align-items:center;gap:8px;min-width:0;text-align:center}
+.uk-headliner-fighter strong{font-size:12px;line-height:1.35;overflow-wrap:anywhere}
+.fighter-portrait{width:76px;height:76px;border-radius:50%;overflow:hidden;position:relative;display:grid;place-items:center;background:linear-gradient(145deg,#393b42,#17191e);border:2px solid var(--accent);flex:none}
+.fighter-portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.portrait-fallback{font:700 23px 'Barlow Condensed',sans-serif;color:var(--accent);letter-spacing:1px}
+.uk-headliner-vs{font:700 19px 'Barlow Condensed',sans-serif;color:var(--accent)}
+.uk-headliner-details{display:flex;flex-direction:column;gap:5px;text-align:center;margin-top:12px}
+.uk-headliner-details>strong{font:700 17px 'Barlow Condensed',sans-serif;text-transform:uppercase}
+.uk-headliner-details>span{font-size:10px;color:var(--muted);line-height:1.5}
+.uk-headliner-details .uk-title-badge{color:var(--accent);font-weight:700}
+@media(min-width:700px){.uk-headliners-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:360px){.fighter-portrait{width:64px;height:64px}.uk-headliner-card{padding:11px}}
