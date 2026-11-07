@@ -1,0 +1,6 @@
+{
+  "sport": "ufc",
+  "provider": "UFCalendar",
+  "events": [],
+  "sync_warning": "Add UFCALENDAR_API_KEY to repository secrets to load UFC events and cards."
+}
