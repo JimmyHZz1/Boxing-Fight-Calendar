@@ -164,26 +164,9 @@ def boxing_data_fallback() -> list[dict]:
 def main():
     primary = boxerbook_schedule()
     fallback = boxing_data_fallback()
-    # Merge the secondary feed across all dates, not just dates with no Boxerbook card.
-    # This fills gaps while avoiding duplicate bouts already present in a confirmed card.
-    known = set()
-    for event in primary["events"]:
-        for bout in event.get("bouts", []):
-            pair = sorted([str(bout.get("fighter1") or "").casefold(), str(bout.get("fighter2") or "").casefold()])
-            known.add((str(bout.get("date") or str(event.get("date", ""))[:10]), *pair))
-    merged_fallback = []
-    for event in fallback:
-        unique = []
-        for bout in event.get("bouts", []):
-            pair = sorted([str(bout.get("fighter1") or "").casefold(), str(bout.get("fighter2") or "").casefold()])
-            key = (str(bout.get("date") or ""), *pair)
-            if key not in known:
-                known.add(key)
-                unique.append(bout)
-        if unique:
-            event["bouts"] = unique
-            merged_fallback.append(event)
-    events = primary["events"] + merged_fallback
+    # Publish confirmed event cards only. Unassigned individual bouts are not
+    # presented as a made-up "additional scheduled bouts" card.
+    events = primary["events"]
     events.sort(key=lambda e: (str(e.get("date", "")), str(e.get("name", ""))))
     count = sum(len(e.get("bouts", [])) for e in events)
     snapshot = {
@@ -193,14 +176,14 @@ def main():
         "attribution": "Data from Boxerbook (boxerbook.com)",
         "count_events": len(events), "count_bouts": count,
         "events": events,
-        "notice": "Confirmed event cards and bout details are supplied by Boxerbook where available. Additional individual bouts may be grouped by date from Boxing Data API. Missing times and broadcasters are not guessed."
+        "notice": "Confirmed event cards and bout details are supplied by Boxerbook. Unassigned individual bouts are omitted rather than shown as unconfirmed cards. Missing times and broadcasters are not guessed."
     }
     path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "fights.json")
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
         json.dump(snapshot, f, ensure_ascii=False, indent=2)
         f.write("\n")
-    print(f"Published {count} bouts across {len(events)} events ({len(primary['events'])} Boxerbook cards, {len(merged_fallback)} supplemental date groups).")
+    print(f"Published {count} bouts across {len(events)} confirmed Boxerbook event cards.")
 
 if __name__ == "__main__":
     try: main()
