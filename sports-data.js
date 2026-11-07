@@ -65,13 +65,53 @@
     return list.filter(e=>includePast||eventDate({...e,sport})>=today())
       .sort((a,b)=>(eventDate({...a,sport})||"").localeCompare(eventDate({...b,sport})||""));
   }
+  function sportLogo(sport) {
+    const logos={
+      f1:{src:"https://commons.wikimedia.org/wiki/Special:FilePath/Formula%201%20logo.svg",alt:"Formula 1"},
+      darts:{src:"https://commons.wikimedia.org/wiki/Special:FilePath/Professional%20Darts%20Corporation%20logo.png",alt:"PDC"},
+      ufc:{src:"https://commons.wikimedia.org/wiki/Special:FilePath/UFC%20Logo.svg",alt:"UFC"}
+    };
+    return logos[sport]||null;
+  }
+  function watchInfo(sport,event) {
+    if(sport==="f1") return [
+      {name:"Sky Sports F1",href:"https://www.skysports.com/f1",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/Sky_Sports_2026.svg"},
+      {name:"NOW",href:"https://www.nowtv.com/watch-sky-sports",logo:null},
+      ...(/british grand prix/i.test(event.name||"")?[{name:"Channel 4 · live British GP & highlights",href:"https://www.channel4.com/",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/Channel_4_2022.svg"}]:[])
+    ];
+    if(sport==="ufc") return [
+      {name:"TNT Sports",href:"https://www.tntsports.co.uk/",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/TNT_Sports_(2023).svg"},
+      {name:"UFC Fight Pass",href:"https://ufcfightpass.com/",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/UFC_Fight_Pass_Logo.svg"}
+    ];
+    if(sport==="darts") return [
+      {name:"Sky Sports Darts · selected events",href:"https://www.skysports.com/darts",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/Sky_Sports_Darts_-_Logo_2025.svg"},
+      {name:"ITV4 · selected events",href:"https://www.itv.com/watch",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/ITV_logo.svg"},
+      {name:"PDCTV · where UK rights allow",href:"https://video.pdc.tv/",logo:null}
+    ];
+    return [];
+  }
+  function renderWatch(root,sport,event) {
+    const providers=watchInfo(sport,event);
+    if(!providers.length)return;
+    const section=make("div","sport-watch-panel");
+    section.append(make("small","sport-watch-label","WHERE TO WATCH · UK"));
+    const row=make("div","sport-watch-providers");
+    providers.forEach(provider=>{
+      const link=make("a","sport-watch-provider");link.href=provider.href;link.target="_blank";link.rel="noopener noreferrer";link.title=provider.name;
+      if(provider.logo){const img=make("img");img.src=provider.logo;img.alt=provider.name+" logo";img.loading="lazy";img.onerror=()=>{img.remove();link.append(make("span",null,provider.name));};link.append(img);}
+      else link.append(make("span",null,provider.name));
+      row.append(link);
+    });
+    section.append(row);root.append(section);
+  }
   function eventCard(sport,event) {
-    const sportIcons={f1:"🏎️",darts:"🎯",ufc:"🥋"};
     const sportNames={f1:"FORMULA 1",darts:"PDC DARTS",ufc:"UFC"};
     const card=make("details","sport-event-card sport-event-"+sport);
     const summary=make("summary");
-    const visual=make("span","sport-event-visual",sportIcons[sport]||"🏆");
-    visual.setAttribute("aria-hidden","true");
+    const visual=make("span","sport-event-visual");
+    const logo=sportLogo(sport);
+    if(logo){const img=make("img");img.src=logo.src;img.alt=logo.alt+" logo";img.loading="lazy";visual.append(img);}
+    else visual.append(make("strong","sport-logo-wordmark",sport==="boxing"?"BOXING":"SPORT"));
     const date=make("span","sport-event-date");
     const d=eventDate({...event,sport});
     const parsed=d?new Date(d+"T12:00:00Z"):null;
@@ -90,6 +130,7 @@
     if (sport==="f1") renderF1Details(body,event);
     else if (sport==="darts") renderDartsDetails(body,event);
     else renderUfcDetails(body,event);
+    renderWatch(body,sport,event);
     card.append(body);
     return card;
   }

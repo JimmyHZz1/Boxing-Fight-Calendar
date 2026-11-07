@@ -12,7 +12,7 @@
   const dots=document.getElementById("sports-carousel-dots");
   const content=document.getElementById("boxing-home-content");
   const coming=document.getElementById("sport-coming-soon");
-  let active=0,timer=null,manualUntil=0;
+  let active=0;
   const dotButtons=order.map((sport,index)=>{
     const b=document.createElement("button");b.type="button";b.className="carousel-dot";b.setAttribute("aria-label","Show "+details[sport].name);b.addEventListener("click",()=>go(index,true));dots.append(b);return b;
   });
@@ -29,20 +29,17 @@
     const isBoxing=sport==="boxing";
     content.hidden=!isBoxing;coming.hidden=true;
     if(window.SportsData?.renderActive)window.SportsData.renderActive(sport);
-    if(manual)manualUntil=Date.now()+18000;
-    if(manual)resetTimer();
+    document.dispatchEvent(new CustomEvent("sports:select",{detail:{sport}}));
   }
   function go(index,manual=true){
     const next=(index+order.length)%order.length;
     const target=rail.scrollLeft+slides[next].getBoundingClientRect().left-rail.getBoundingClientRect().left;rail.scrollTo({left:target,behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
     select(next,manual);
   }
-  function resetTimer(){clearInterval(timer);timer=setInterval(()=>{if(document.visibilityState==="visible"&&Date.now()>manualUntil)go(active+1,false);},7500);}
   slides.forEach((s,i)=>s.addEventListener("click",()=>go(i,true)));
   document.getElementById("sport-previous").addEventListener("click",()=>go(active-1,true));
   document.getElementById("sport-next").addEventListener("click",()=>go(active+1,true));
   let scrollTimer;
   rail.addEventListener("scroll",()=>{clearTimeout(scrollTimer);scrollTimer=setTimeout(()=>{let nearest=0,dist=Infinity;slides.forEach((s,i)=>{const d=Math.abs(s.getBoundingClientRect().left-rail.getBoundingClientRect().left);if(d<dist){dist=d;nearest=i;}});if(nearest!==active)select(nearest,true);},100);},{passive:true});
-  document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible")resetTimer();});
-  select(0,false);resetTimer();
+  select(0,false);
 })();

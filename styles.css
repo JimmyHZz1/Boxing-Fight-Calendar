@@ -233,3 +233,47 @@
 @media(prefers-reduced-motion:reduce){
   .sport-event-card{transition:none}
 }
+
+/* Manual sports selection, official sport marks and watch-provider badges */
+.sport-slide-logo{display:block;width:min(190px,62%);height:54px;object-fit:contain;margin:14px auto 10px;filter:drop-shadow(0 5px 14px rgba(0,0,0,.24));}
+.sport-logo-darts{height:70px;width:auto;max-width:90px;border-radius:8px;}
+.sport-logo-ufc{width:min(175px,60%);}
+.sport-logo-boxing{display:flex;align-items:center;justify-content:center;width:190px;max-width:62%;height:54px;margin:14px auto 10px;font-size:30px;font-weight:1000;letter-spacing:-2px;font-style:italic;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.35);}
+.sport-event-visual{display:flex;align-items:center;justify-content:center;min-width:64px;width:64px;height:54px;overflow:hidden;}
+.sport-event-visual img{display:block;max-width:58px;max-height:40px;width:auto;height:auto;object-fit:contain;}
+.sport-logo-wordmark{font-size:12px;font-weight:1000;letter-spacing:-.5px;font-style:italic;color:#fff;}
+.sport-watch-panel{display:flex;flex-direction:column;gap:8px;margin-top:16px;padding-top:12px;border-top:1px solid rgba(255,255,255,.1);}
+.sport-watch-label{font-size:10px;letter-spacing:1.3px;font-weight:800;color:var(--muted,#9da1aa);}
+.sport-watch-providers{display:flex;align-items:center;flex-wrap:wrap;gap:9px;}
+.sport-watch-provider{display:inline-flex;align-items:center;justify-content:center;min-height:32px;padding:6px 10px;border-radius:8px;background:rgba(255,255,255,.07);color:inherit;text-decoration:none;font-size:11px;font-weight:750;}
+.sport-watch-provider img{display:block;max-width:78px;max-height:22px;width:auto;height:auto;object-fit:contain;}
+.sport-watch-provider span{white-space:normal;}
+.uk-broadcaster-logos{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:10px 0 14px;}
+.uk-broadcaster-logo{display:inline-flex;align-items:center;justify-content:center;min-width:48px;min-height:28px;padding:5px 8px;border-radius:7px;background:#fff;}
+.uk-broadcaster-logo img{display:block;max-width:76px;max-height:22px;object-fit:contain;}
+@media(max-width:520px){.sport-slide-logo{height:46px;margin:10px auto 8px}.sport-logo-darts{height:58px}.sport-logo-boxing{font-size:25px;height:46px}.sport-event-visual{min-width:54px;width:54px}.sport-event-visual img{max-width:48px;max-height:34px}}
+
+
+/* Homepage sports hub: standings, rankings and title-holder dropdowns */
+.sports-hub-banner{margin:22px 0 30px;padding:17px;background:linear-gradient(135deg,rgba(226,180,91,.09),rgba(25,27,32,.98) 55%);border:1px solid #4a3d29;border-radius:4px}
+.sports-hub-heading,.hub-sport-title{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.sports-hub-heading>span:last-child,.hub-sport-title>span{font-size:8px;letter-spacing:1px;color:var(--muted)}
+.hub-sport-title{padding:13px 0 10px}
+.hub-sport-title strong{font:800 25px 'Barlow Condensed',sans-serif;letter-spacing:.5px}
+.hub-dropdown{margin:8px 0;border:1px solid var(--line);background:rgba(12,13,16,.48);border-radius:3px;overflow:hidden}
+.hub-dropdown summary{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:45px;padding:12px;cursor:pointer;list-style:none;font-size:12px;font-weight:700}
+.hub-dropdown summary::-webkit-details-marker{display:none}
+.hub-dropdown summary:after{content:'＋';color:var(--accent);font-size:16px}
+.hub-dropdown[open] summary:after{content:'−'}
+.hub-dropdown summary span{margin-left:auto;color:var(--muted);font-size:8px;letter-spacing:1px;white-space:nowrap}
+.hub-dropdown-list{padding:0 11px 10px;max-height:360px;overflow:auto}
+.hub-person{display:grid;grid-template-columns:34px 26px minmax(0,1fr);align-items:center;gap:9px;padding:8px 0;border-top:1px solid rgba(255,255,255,.07);min-height:50px}
+.hub-person>img,.hub-avatar-fallback{width:32px;height:32px;border-radius:50%;object-fit:cover;background:#30333b}
+.hub-avatar-fallback{display:grid;place-items:center;font-size:10px;font-weight:800;color:var(--accent)}
+.hub-rank{font:800 15px 'Barlow Condensed',sans-serif;color:var(--accent)}
+.hub-person-name{min-width:0}
+.hub-person-name strong,.hub-person-name small{display:block;overflow-wrap:anywhere}
+.hub-person-name strong{font-size:11px}
+.hub-person-name small{margin-top:3px;font-size:9px;color:var(--muted)}
+.hub-source-note,.hub-empty,.sport-hub-loading{font-size:10px;line-height:1.6;color:var(--muted);padding:8px 0}
+@media(max-width:420px){.sports-hub-banner{padding:13px}.hub-sport-title strong{font-size:23px}.hub-dropdown summary{font-size:11px;padding:11px}.hub-person{grid-template-columns:30px 23px minmax(0,1fr);gap:7px}.hub-person>img,.hub-avatar-fallback{width:29px;height:29px}}
