@@ -34,7 +34,7 @@ function fighterNames(b) {
 function isUkRegion(region) {
   const value=String(region||"").trim().toLowerCase().replace(/[_-]/g," ");
   return /^(uk|gb|great britain|united kingdom|worldwide|world|global|all markets)$/.test(value)
-    || /\\b(united kingdom|great britain|uk)\\b/.test(value);
+    || /(?:^|[^a-z])(united kingdom|great britain|uk)(?:$|[^a-z])/i.test(value);
 }
 function ukBroadcasters(items) {
   const seen=new Set();
