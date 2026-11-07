@@ -42,6 +42,36 @@ function ukBroadcasters(items) {
     .map(item=>item.name||item.broadcaster||item.platform||item.service||"")
     .filter(name=>name&&!seen.has(name)&&(seen.add(name),true));
 }
+
+function ukBroadcasterLogos(items) {
+  const names=ukBroadcasters(items);
+  const seen=new Set();
+  const logos=[];
+  names.forEach(name=>{
+    const value=String(name).toLowerCase();
+    let brand=null;
+    if(/\\bdazn\\b/.test(value)) brand="dazn";
+    else if(/\\bsky\\b/.test(value)) brand="sky";
+    if(!brand||seen.has(brand))return;
+    seen.add(brand);
+    const logo=document.createElement("span");
+    logo.className="uk-broadcaster-logo "+(brand==="sky"?"sky-sports-logo":"dazn-logo");
+    logo.setAttribute("role","img");
+    logo.setAttribute("aria-label",brand==="sky"?"Sky Sports":"DAZN");
+    logo.title="UK broadcaster: "+name;
+    if(brand==="sky"){
+      const sky=document.createElement("span");sky.className="sky-word";sky.textContent="sky";
+      const sports=document.createElement("span");sports.className="sports-word";sports.textContent="sports";
+      logo.append(sky,sports);
+    } else logo.textContent="DAZN";
+    logos.push(logo);
+  });
+  if(!logos.length)return null;
+  const group=document.createElement("div");group.className="uk-broadcaster-logos";group.setAttribute("aria-label","UK broadcasters");
+  logos.forEach(logo=>group.append(logo));
+  return group;
+}
+
 function normaliseFighterKey(value) {
   return String(value||"").normalize("NFKD").replace(/\p{Diacritic}/gu,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
 }
@@ -152,6 +182,7 @@ function renderUkHeadliners() {
     const accordion=document.createElement("details");accordion.className="uk-headliner-accordion";
     const summary=document.createElement("summary");summary.className="uk-headliner-summary";
     const card=document.createElement("div");card.className="uk-headliner-card";
+    const broadcasterLogos=ukBroadcasterLogos(event.broadcasters);if(broadcasterLogos)card.append(broadcasterLogos);
     const matchup=document.createElement("div");matchup.className="uk-headliner-matchup";
     const f1=document.createElement("div");f1.className="uk-headliner-fighter";f1.append(fighterPortrait(one,bout.fighter1_image||bout.image1||bout.fighter1_photo),document.createElement("strong"));
     f1.querySelector("strong").textContent=one;
