@@ -45,14 +45,16 @@ function makeBoutRow(b) {
   const broadcast=document.createElement("div"); broadcast.className="broadcast-line";
   const label=document.createElement("span"); label.textContent="WATCH: ";
   broadcast.append(label);
-  const channel=b.broadcaster||b.broadcast||b.tv_channel||null;
+  const channels=(b.eventBroadcasters||[]).map(x=>typeof x==="string"?x:(x.name||x.broadcaster||x.platform)).filter(Boolean);
+  const channel=b.broadcaster||b.broadcast||b.tv_channel||channels.join(", ")||null;
   const url=b.broadcast_url||b.broadcaster_url||b.watch_url||null;
-  if(channel && url && /^https?:\/\//i.test(url)) {
+  if(channel && url && /^https?:\\/\\//i.test(url)) {
     const link=document.createElement("a"); link.href=url; link.target="_blank"; link.rel="noopener noreferrer"; link.textContent=channel; broadcast.append(link);
   } else {
-    const text=document.createElement("span"); text.textContent=channel || "Broadcast information not supplied"; broadcast.append(text);
-    if(url && /^https?:\/\//i.test(url)) { const link=document.createElement("a"); link.href=url; link.target="_blank"; link.rel="noopener noreferrer"; link.textContent="Event page"; broadcast.append(" · ",link); }
+    const text=document.createElement("span"); text.textContent=channel || "Broadcast information not announced"; broadcast.append(text);
+    if(url && /^https?:\\/\\//i.test(url)) { const link=document.createElement("a"); link.href=url; link.target="_blank"; link.rel="noopener noreferrer"; link.textContent="Watch details"; broadcast.append(" · ",link); }
   }
+  if(b.eventUrl && /^https?:\\/\\//i.test(b.eventUrl)) { const link=document.createElement("a"); link.href=b.eventUrl; link.target="_blank"; link.rel="noopener noreferrer"; link.textContent="Event details"; broadcast.append(" · ",link); }
   meta.append(document.createElement("br"),broadcast);
   row.append(left,vs,right,meta);
   return row;
