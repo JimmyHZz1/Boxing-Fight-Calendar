@@ -1,0 +1,29 @@
+name: Validate sports calendar
+
+on:
+  pull_request:
+  push:
+    branches:
+      - stage-1-four-sport-foundation
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check Python sync scripts
+        run: python -m py_compile scripts/sync_fights.py scripts/sync_sports.py
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check JavaScript syntax
+        run: node --check app.js && node --check sports.js && node --check sports-data.js
