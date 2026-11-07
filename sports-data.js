@@ -85,7 +85,7 @@
       {name:"UFC Fight Pass",href:"https://ufcfightpass.com/",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/UFC_Fight_Pass_Logo.svg"}
     ];
     if(sport==="bkfc") return [
-      {name:"BKFC+ · most live events",href:"https://www.bkfc.com/",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/Bkfc-logo.png"},
+      {name:"BKFC+ · most live events; check event access",href:"https://bkfc.live/",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/Bkfc-logo.png"},
       {name:"DAZN · selected exclusive events",href:"https://www.dazn.com/",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/DAZN_logo.svg"}
     ];
     if(sport==="darts") return [
