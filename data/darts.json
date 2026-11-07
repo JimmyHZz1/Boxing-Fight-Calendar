@@ -1,0 +1,6 @@
+{
+  "sport": "darts",
+  "provider": "Darts API",
+  "events": [],
+  "sync_warning": "Add DARTS_API_KEY to repository secrets to load the PDC calendar."
+}
