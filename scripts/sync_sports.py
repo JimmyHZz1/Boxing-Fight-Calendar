@@ -248,6 +248,14 @@ def sync_bkfc():
             except Exception:
                 continue
 
+    # BKFC's current Webflow event list also renders a plain-text card feed.
+    # Use its published dates and names as a safe fallback; do not guess time zones.
+    if not records:
+        visible = html.unescape(re.sub(r"<[^>]+>", " ", page))
+        visible = re.sub(r"\\s+", " ", visible)
+        pattern = r"((?:January|February|March|April|May|June|July|August|September|October|November|December) \\d{1,2}, \\d{4}) \\1 \\d{1,2}:\\d{2} \\s*[AP]M \\s*#? \\s*(BKFC[^#]{3,100}?) \\s*Buy tickets"
+        for match in re.finditer(pattern, visible, re.I):
+            records.append({"@type":"Event","name":match.group(2).strip(),"startDate":match.group(1),"url":url,"eventStatus":"EventScheduled"})
     events, seen = [], set()
     for row in records:
         name = html.unescape(str(row.get("name") or row.get("headline") or "")).strip()
@@ -438,6 +446,10 @@ def main():
     except Exception as exc:
         preserve_or_status("ufc.json", "ufc", "UFCalendar", str(exc))
         print(f"UFC_SYNC_WARNING: {exc}")
+    try:
+        sync_bkfc()
+    except Exception as exc:
+        print(f"BKFC_SYNC_WARNING: {exc}")
 
 if __name__ == "__main__":
     main()
