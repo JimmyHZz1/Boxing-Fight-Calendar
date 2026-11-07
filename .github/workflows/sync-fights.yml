@@ -1,4 +1,4 @@
-name: Refresh boxing schedule
+name: Refresh sports schedules
 
 on:
   schedule:
@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: boxing-data-refresh
+  group: sports-data-refresh
   cancel-in-progress: false
 
 jobs:
@@ -33,19 +33,25 @@ jobs:
           BOXING_API_KEY: ${{ secrets.BOXING_API_KEY }}
         run: python scripts/sync_fights.py
 
-      - name: Commit and publish updated schedule and boxer portraits
+      - name: Fetch Formula 1, PDC darts and UFC schedules
+        env:
+          DARTS_API_KEY: ${{ secrets.DARTS_API_KEY }}
+          UFCALENDAR_API_KEY: ${{ secrets.UFCALENDAR_API_KEY }}
+        run: python scripts/sync_sports.py
+
+      - name: Commit and publish updated schedules and boxer portraits
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          if git diff --quiet -- data/fights.json data/fighter-images.json; then
+          if git diff --quiet -- data/fights.json data/fighter-images.json data/f1.json data/darts.json data/ufc.json; then
             echo "No schedule changes."
             exit 0
           fi
 
           # Commit the generated file BEFORE rebasing. Pulling first fails
           # because the sync script has already modified data/fights.json.
-          git add data/fights.json data/fighter-images.json
+          git add data/fights.json data/fighter-images.json data/f1.json data/darts.json data/ufc.json
           git commit -m "Refresh boxing schedule and boxer portraits"
 
           # Rebase our generated snapshot onto any changes made to main
