@@ -27,6 +27,29 @@ def get_json(url: str, key: str, provider: str) -> dict:
         raise RuntimeError(f"{provider} returned an unexpected response.")
     return data
 
+def first_value(obj: dict, *keys):
+    for key in keys:
+        value = obj.get(key)
+        if value not in (None, "", [], {}):
+            return value
+    return None
+
+def normalise_broadcasters(raw: dict) -> list[dict]:
+    value = first_value(raw, "broadcasters", "broadcasts", "where_to_watch", "watch", "platforms", "tv")
+    if isinstance(value, dict):
+        value = value.get("broadcasters") or value.get("platforms") or value.get("services") or [value]
+    if isinstance(value, str):
+        value = [value]
+    result = []
+    for entry in value or []:
+        if isinstance(entry, str):
+            result.append({"name": entry})
+        elif isinstance(entry, dict):
+            name = first_value(entry, "name", "broadcaster", "platform", "service", "channel")
+            if name:
+                result.append({"name": name, "region": first_value(entry, "region", "country", "market"), "url": first_value(entry, "url", "watch_url")})
+    return result
+
 def boxerbook_schedule() -> dict:
     key = os.environ.get("BOXERBOOK_API_KEY", "").strip()
     data = get_json(BOXERBOOK_URL, key, "Boxerbook")
@@ -40,6 +63,7 @@ def boxerbook_schedule() -> dict:
         if not date:
             continue
         bouts = []
+        event_start = first_value(raw, "start_time_utc", "card_start_time_utc", "event_start_time_utc", "start_time")
         for item in raw.get("bouts") or []:
             if not isinstance(item, dict):
                 continue
@@ -47,8 +71,8 @@ def boxerbook_schedule() -> dict:
             if not isinstance(a, dict): a = {}
             if not isinstance(b, dict): b = {}
             bout_date = str(item.get("date") or date)
-            time_utc = item.get("start_time_utc") or item.get("time_utc")
-            start = f"{bout_date}T{time_utc}:00Z" if time_utc else f"{bout_date}T12:00:00Z"
+            time_utc = first_value(item, "start_time_utc", "time_utc")
+            start = f"{bout_date}T{time_utc}:00Z" if time_utc else None
             division = item.get("division") or item.get("weight_class")
             bouts.append({
                 "id": item.get("id"),
@@ -58,24 +82,29 @@ def boxerbook_schedule() -> dict:
                 "date": bout_date, "start_time_utc": time_utc,
                 "start_datetime_utc": start,
                 "weight_class": division if division and division != "other" else None,
-                "rounds": item.get("scheduled_rounds"),
+                "rounds": item.get("scheduled_rounds") or item.get("rounds"),
                 "title_text": item.get("title_text"),
                 "status": item.get("status") or "scheduled",
                 "url": item.get("url"),
-                "broadcaster": None,
+                "broadcaster": first_value(item, "broadcaster", "broadcast", "tv_channel"),
                 "data_source": "Boxerbook"
             })
-        raw_broadcasters = raw.get("broadcasters") or []
-        broadcasts = []
-        for entry in raw_broadcasters:
-            if isinstance(entry, str):
-                broadcasts.append({"name": entry})
-            elif isinstance(entry, dict):
-                name = entry.get("name") or entry.get("broadcaster") or entry.get("platform")
-                if name:
-                    broadcasts.append({"name": name, "region": entry.get("region"), "url": entry.get("url")})
+        broadcasts = normalise_broadcasters(raw)
+        location = first_value(raw, "location", "venue", "place", "site")
+        if isinstance(location, dict):
+            location_text = first_value(location, "name", "venue", "address", "label")
+            city = first_value(location, "city", "town")
+            country = first_value(location, "country", "country_name", "country_code")
+            country_code = first_value(location, "country_code", "iso_country")
+        else:
+            location_text = location
+            city = first_value(raw, "city", "town")
+            country = first_value(raw, "country", "country_name", "country_code")
+            country_code = first_value(raw, "country_code", "iso_country")
+        city = city or first_value(raw, "city_name", "town")
+        country = country or first_value(raw, "country_name", "country_code", "country")
         promoter = raw.get("promoter")
-        name = raw.get("name") or raw.get("title") or (f"{promoter} event" if promoter else "Boxing event")
+        name = first_value(raw, "name", "title", "event_name") or (f"{promoter} event" if promoter else (f"{city} boxing event" if city else "Boxing event"))
         events.append({
             "id": f"boxerbook-{raw.get('id')}",
             "source_id": raw.get("id"),
@@ -83,13 +112,18 @@ def boxerbook_schedule() -> dict:
             "date": f"{date}T12:00:00Z",
             "event_url": raw.get("url"),
             "promoter": promoter,
+            "location": location_text,
+            "city": city,
+            "country": country,
+            "country_code": country_code,
+            "start_time_utc": event_start,
             "broadcasters": broadcasts,
             "bouts": bouts,
             "data_source": "Boxerbook"
         })
     return {"events": events, "as_of": data.get("as_of"), "attribution": data.get("attribution")}
 
-def boxing_data_fallback(excluded_dates: set[str]) -> list[dict]:
+def boxing_data_fallback() -> list[dict]:
     key = os.environ.get("BOXING_API_KEY", "").strip()
     if not key:
         print("BOXING_API_KEY not configured; skipping secondary fallback.")
@@ -105,11 +139,9 @@ def boxing_data_fallback(excluded_dates: set[str]) -> list[dict]:
         if not isinstance(item, dict) or not item.get("date"):
             continue
         date = str(item["date"])
-        if date in excluded_dates:
-            continue
         a, b = item.get("a") or {}, item.get("b") or {}
         time_utc = item.get("start_time_utc")
-        start = f"{date}T{time_utc}:00Z" if time_utc else f"{date}T12:00:00Z"
+        start = f"{date}T{time_utc}:00Z" if time_utc else None
         grouped[date].append({
             "id": item.get("id"), "fighter1": a.get("name") or "TBC",
             "fighter2": b.get("name") or "TBC", "date": date,
@@ -131,9 +163,27 @@ def boxing_data_fallback(excluded_dates: set[str]) -> list[dict]:
 
 def main():
     primary = boxerbook_schedule()
-    covered_dates = {str(e["date"])[:10] for e in primary["events"]}
-    fallback = boxing_data_fallback(covered_dates)
-    events = primary["events"] + fallback
+    fallback = boxing_data_fallback()
+    # Merge the secondary feed across all dates, not just dates with no Boxerbook card.
+    # This fills gaps while avoiding duplicate bouts already present in a confirmed card.
+    known = set()
+    for event in primary["events"]:
+        for bout in event.get("bouts", []):
+            pair = sorted([str(bout.get("fighter1") or "").casefold(), str(bout.get("fighter2") or "").casefold()])
+            known.add((str(bout.get("date") or str(event.get("date", ""))[:10]), *pair))
+    merged_fallback = []
+    for event in fallback:
+        unique = []
+        for bout in event.get("bouts", []):
+            pair = sorted([str(bout.get("fighter1") or "").casefold(), str(bout.get("fighter2") or "").casefold()])
+            key = (str(bout.get("date") or ""), *pair)
+            if key not in known:
+                known.add(key)
+                unique.append(bout)
+        if unique:
+            event["bouts"] = unique
+            merged_fallback.append(event)
+    events = primary["events"] + merged_fallback
     events.sort(key=lambda e: (str(e.get("date", "")), str(e.get("name", ""))))
     count = sum(len(e.get("bouts", [])) for e in events)
     snapshot = {
@@ -150,7 +200,7 @@ def main():
     with open(path, "w", encoding="utf-8") as f:
         json.dump(snapshot, f, ensure_ascii=False, indent=2)
         f.write("\n")
-    print(f"Published {count} bouts across {len(events)} events ({len(primary['events'])} Boxerbook cards, {len(fallback)} fallback date groups).")
+    print(f"Published {count} bouts across {len(events)} events ({len(primary['events'])} Boxerbook cards, {len(merged_fallback)} supplemental date groups).")
 
 if __name__ == "__main__":
     try: main()
