@@ -176,6 +176,107 @@ def boxing_data_fallback() -> list[dict]:
         })
     return result
 
+
+def normalise_person_name(value: str) -> str:
+    import re, unicodedata
+    text = unicodedata.normalize("NFKD", str(value or "")).encode("ascii", "ignore").decode().lower()
+    return re.sub(r"[^a-z0-9]+", " ", text).strip()
+
+def commons_metadata_value(metadata: dict, key: str) -> str:
+    import re, html
+    value = metadata.get(key, {})
+    raw = value.get("value", "") if isinstance(value, dict) else str(value or "")
+    return html.unescape(re.sub(r"<[^>]+>", "", str(raw))).strip()
+
+def find_commons_portrait(name: str) -> dict | None:
+    params = {
+        "action": "query", "format": "json", "generator": "search",
+        "gsrsearch": f'"{name}"', "gsrnamespace": 6, "gsrlimit": 8,
+        "prop": "imageinfo", "iiprop": "url|extmetadata|mime",
+        "iiurlwidth": 320,
+        "iiextmetadatafilter": "Artist|Credit|LicenseShortName|LicenseUrl|UsageTerms"
+    }
+    url = "https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode(params)
+    req = urllib.request.Request(url, headers={"Accept": "application/json", "User-Agent": "Boxing-Fight-Calendar/1.0 (GitHub Actions schedule sync)"})
+    try:
+        with urllib.request.urlopen(req, timeout=25) as response:
+            payload = json.loads(response.read().decode("utf-8"))
+    except Exception as exc:
+        print(f"COMMONS_LOOKUP_WARNING: {name}: {exc}")
+        return None
+    wanted = [p for p in normalise_person_name(name).split() if p not in {"jr", "sr", "ii", "iii", "iv"}]
+    candidates = []
+    for page in (payload.get("query", {}).get("pages") or {}).values():
+        title = page.get("title", "")
+        words = normalise_person_name(title.replace("File:", "")).split()
+        if not wanted or not all(token in words for token in wanted):
+            continue
+        info = (page.get("imageinfo") or [{}])[0]
+        if not str(info.get("mime", "")).startswith("image/"):
+            continue
+        image_url, page_url = info.get("thumburl") or info.get("url"), info.get("descriptionurl")
+        if not image_url or not page_url:
+            continue
+        meta = info.get("extmetadata") or {}
+        licence = commons_metadata_value(meta, "LicenseShortName")
+        licence_url = commons_metadata_value(meta, "LicenseUrl")
+        if not licence or not licence_url:
+            continue
+        candidates.append({
+            "url": image_url, "page_url": page_url,
+            "artist": commons_metadata_value(meta, "Artist") or commons_metadata_value(meta, "Credit") or "See source file",
+            "license": licence, "license_url": licence_url,
+            "title": title, "source": "Wikimedia Commons"
+        })
+    if not candidates:
+        return None
+    candidates.sort(key=lambda x: (0 if any(k in x["title"].lower() for k in ("portrait", "weigh", "press", "headshot")) else 1, len(x["title"])))
+    return candidates[0]
+
+def update_fighter_images(events: list[dict]) -> dict:
+    path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "fighter-images.json")
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            cache = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        cache = {"images": {}, "attempted": {}}
+    images, attempted = cache.setdefault("images", {}), cache.setdefault("attempted", {})
+    names = {str(b.get(side) or "").strip() for e in events for b in e.get("bouts", []) for side in ("fighter1", "fighter2")}
+    names = {n for n in names if n and n.upper() != "TBC"}
+    priority = {"anthony joshua","tyson fury","oleksandr usyk","canelo alvarez","terence crawford","naoya inoue","gervonta davis","dmitry bivol","artur beterbiev","shakur stevenson","devin haney","ryan garcia","jake paul","manny pacquiao","floyd mayweather","derek chisora","daniel dubois","fabio wardley","moses itauma","katie taylor","claressa shields","conor benn","hamzah sheeraz"}
+    today = datetime.now(timezone.utc).date()
+    pending = []
+    for name in names:
+        key = normalise_person_name(name)
+        if not key or key in images:
+            continue
+        last = attempted.get(key)
+        if last:
+            try:
+                if (today - datetime.fromisoformat(last).date()).days < 45:
+                    continue
+            except ValueError:
+                pass
+        pending.append((0 if key in priority else 1, key, name))
+    pending.sort()
+    import time
+    for _, key, name in pending[:35]:
+        result = find_commons_portrait(name)
+        attempted[key] = datetime.now(timezone.utc).date().isoformat()
+        if result:
+            images[key] = result
+            print(f"COMMONS_PORTRAIT_FOUND: {name} -> {result['title']}")
+        else:
+            print(f"COMMONS_PORTRAIT_NOT_FOUND: {name}")
+        time.sleep(0.25)
+    cache["updated_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(cache, f, ensure_ascii=False, indent=2)
+        f.write("\\n")
+    print(f"Commons portraits cached: {len(images)}; lookup attempts this run: {min(len(pending), 35)}.")
+    return images
+
 def main():
     primary = boxerbook_schedule()
     fallback = boxing_data_fallback()
@@ -184,12 +285,14 @@ def main():
     events = primary["events"]
     events.sort(key=lambda e: (str(e.get("date", "")), str(e.get("name", ""))))
     count = sum(len(e.get("bouts", [])) for e in events)
+    fighter_images = update_fighter_images(events)
     snapshot = {
         "provider": "Boxerbook + Boxing Data API",
         "last_updated": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
         "provider_as_of": primary.get("as_of"),
         "attribution": "Data from Boxerbook (boxerbook.com)",
         "count_events": len(events), "count_bouts": count,
+        "count_fighter_photos": len(fighter_images),
         "events": events,
         "notice": "Confirmed event cards and bout details are supplied by Boxerbook. Unassigned individual bouts are omitted rather than shown as unconfirmed cards. Missing times and broadcasters are not guessed."
     }
