@@ -16,7 +16,7 @@
         <span class="brand-mark">B</span>
         <span><strong>BOXING</strong><small>FIGHT CALENDAR</small></span>
       </a>
-      <span class="live-status"><i></i> SCHEDULE</span>
+      <div class="topbar-actions"><span class="live-status"><i></i> SCHEDULE</span><button id="manual-refresh" class="primary-button topbar-refresh" type="button" aria-label="Check for the latest fight schedule">↻ Update</button></div>
     </header>
 
     <main>
@@ -26,10 +26,7 @@
           <h1 id="home-title">Never miss<br><em>fight night.</em></h1>
           <p>Upcoming professional boxing, from the headline bout to the opening bell.</p>
           <div class="hero-meta"><span>🇬🇧 UK LOCAL TIME</span><span id="home-updated">WAITING FOR FIRST SYNC</span></div>
-          <div class="home-actions">
-            <button id="manual-refresh" class="primary-button" type="button">↻ Update fight data</button>
-            <span id="refresh-help" class="refresh-help">Manual refresh runs through GitHub Actions.</span>
-          </div>
+          <p id="refresh-help" class="refresh-help" role="status" aria-live="polite">Schedule updates automatically. Tap Update to check for the latest published schedule.</p>
         </div>
         <section class="high-profile-section" aria-labelledby="high-profile-title">
           <div class="section-heading compact"><div><span class="eyebrow">BIG NAMES · BIG FIGHTS</span><h2 id="high-profile-title">High Profile Fights</h2></div><span class="count-badge">FEATURED BOUTS</span></div>
@@ -81,6 +78,6 @@
     </nav>
     <footer class="footer">BOXING FIGHT CALENDAR <span>•</span> TIMES DISPLAYED IN UK LOCAL TIME <span>•</span> <a href="https://boxerbook.com" target="_blank" rel="noopener noreferrer">DATA FROM BOXERBOOK</a></footer>
   </div>
-  <script src="./app.js?v=20261107-21"></script>
+  <script src="./app.js?v=20261107-22"></script>
 </body>
 </html>
