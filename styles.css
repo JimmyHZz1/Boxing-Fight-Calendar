@@ -64,3 +64,16 @@
 .live-badge{display:inline-flex;align-items:center;gap:5px;padding:5px 8px;background:#174d32;border:1px solid #2f9b61;color:#8ff0b0;border-radius:3px;font-size:9px;font-weight:800;letter-spacing:1px;white-space:nowrap}
 .uk-headliner-details .live-badge{align-self:center}
 @media(max-width:700px){.event-tag{align-items:flex-start}}
+
+
+/* Expandable UK headline cards and ended status */
+.uk-headliner-accordion{min-width:0;border:1px solid #51432d;background:var(--panel)}
+.uk-headliner-summary{list-style:none;cursor:pointer;position:relative}
+.uk-headliner-summary::-webkit-details-marker{display:none}
+.uk-headliner-summary:after{content:"VIEW FULL CARD ↓";display:block;text-align:center;padding:10px 12px;border-top:1px solid var(--line);color:var(--accent);font-size:9px;font-weight:800;letter-spacing:1px}
+.uk-headliner-accordion[open]>.uk-headliner-summary:after{content:"HIDE FULL CARD ↑"}
+.uk-headliner-summary .uk-headliner-card{border:0}
+.uk-headliner-expanded{padding:14px;border-top:1px solid var(--line)}
+.uk-headliner-expanded .bout-list{gap:8px}
+.ended-badge{display:inline-flex;align-items:center;padding:5px 8px;background:#353238;border:1px solid #77717a;color:#d5cbd3;border-radius:3px;font-size:9px;font-weight:800;letter-spacing:1px;white-space:nowrap}
+.uk-headliner-details .ended-badge{align-self:center}
