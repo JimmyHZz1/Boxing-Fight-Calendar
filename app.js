@@ -48,9 +48,9 @@ function ukBroadcasterLogos(items) {
   const seen=new Set();
   const registry=[
     {id:"dazn",match:/\bdazn\b/i,file:"DAZN_LOGO_SVG.svg",page:"https://commons.wikimedia.org/wiki/File:DAZN_LOGO_SVG.svg"},
-    {id:"sky-sports",match:/\bsky\s*sports\b/i,file:"Sky_Sports_2026.svg",page:"https://commons.wikimedia.org/wiki/File:Sky_Sports_2026.svg"},
+    {id:"sky-sports",match:/\bsky\b/i,file:"Sky_Sports_2026.svg",page:"https://commons.wikimedia.org/wiki/File:Sky_Sports_2026.svg"},
     {id:"tnt-sports",match:/\btnt\s*sports\b/i,file:"TNT_Sports_(2023).svg",page:"https://commons.wikimedia.org/wiki/File:TNT_Sports_(2023).svg"},
-    {id:"espn",match:/\bespn(?:\+)?\b/i,file:"ESPN_wordmark.svg",page:"https://commons.wikimedia.org/wiki/File:ESPN_wordmark.svg"},
+    {id:"espn",match:/\bespn(?:\+|\b)/i,file:"ESPN_wordmark.svg",page:"https://commons.wikimedia.org/wiki/File:ESPN_wordmark.svg"},
     {id:"paramount",match:/\bparamount\s*\+/i,file:"Paramount%2B_logo.svg",page:"https://commons.wikimedia.org/wiki/File:Paramount%2B_logo.svg"},
     {id:"bbc",match:/\bbbc(?:\s*(?:one|two|three|four|iplayer))?\b/i,file:"BBC_Logo_2021.svg",page:"https://commons.wikimedia.org/wiki/File:BBC_Logo_2021.svg"},
     {id:"itv",match:/\bitv\b/i,file:"ITV_logo.svg",page:"https://commons.wikimedia.org/wiki/File:ITV_logo.svg"},
