@@ -25,6 +25,11 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Inspect Boxerbook schedule response
+        env:
+          BOXERBOOK_API_KEY: ${{ secrets.BOXERBOOK_API_KEY }}
+        run: python scripts/inspect_boxerbook.py
+
       - name: Fetch upcoming bouts
         env:
           BOXING_API_KEY: ${{ secrets.BOXING_API_KEY }}
