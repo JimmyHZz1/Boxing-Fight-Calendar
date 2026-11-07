@@ -55,7 +55,7 @@ function fighterPortrait(name, imageUrl) {
 }
 function countryCode(value) {
   const raw=String(value||"").trim().toLowerCase();
-  const map={"united kingdom":"GB","great britain":"GB","britain":"GB","british":"GB","england":"GB","scotland":"GB","wales":"GB","northern ireland":"GB","gb":"GB","uk":"GB"};
+  const map={"united kingdom":"GB","great britain":"GB","britain":"GB","british":"GB","england":"GB","scotland":"GB","wales":"GB","northern ireland":"GB","gb":"GB","gbr":"GB","uk":"GB","united kingdom of great britain and northern ireland":"GB"};
   return map[raw]||String(value||"").trim().toUpperCase();
 }
 function isUkFighter(bout,side) {
@@ -74,9 +74,12 @@ function renderUkHeadliners() {
   const featured=[];
   state.events.forEach(event=>{
     const bouts=eventBouts(event);
-    bouts.filter(isUkBout).forEach(bout=>featured.push({event,bout}));
+    const ukBouts=bouts.filter(isUkBout);
+    if(!ukBouts.length)return;
+    const headline=ukBouts.find(b=>b.title_text)||ukBouts.slice().sort((a,b)=>(Number(b.rounds)||0)-(Number(a.rounds)||0))[0];
+    featured.push({event,bout:headline});
   });
-  featured.sort((a,b)=>compareEvents(a.event,b.event)||((b.bout.title_text?1:0)-(a.bout.title_text?1:0)));
+  featured.sort((a,b)=>compareEvents(a.event,b.event));
   const upcoming=featured.filter(({event})=>eventDateKey(event)>=todayKey()).slice(0,6);
   if(!upcoming.length){
     root.innerHTML='<div class="muted-note">No upcoming fights featuring a confirmed UK boxer nationality are currently listed. This section will populate as nationality data is supplied by the boxing data providers.</div>';
