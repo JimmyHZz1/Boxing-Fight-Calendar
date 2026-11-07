@@ -46,30 +46,45 @@ function ukBroadcasters(items) {
 function ukBroadcasterLogos(items) {
   const names=ukBroadcasters(items);
   const seen=new Set();
-  const logos=[];
+  const registry=[
+    {id:"dazn",match:/\bdazn\b/i,file:"DAZN_LOGO_SVG.svg",page:"https://commons.wikimedia.org/wiki/File:DAZN_LOGO_SVG.svg"},
+    {id:"sky-sports",match:/\bsky\s*sports\b/i,file:"Sky_Sports_2026.svg",page:"https://commons.wikimedia.org/wiki/File:Sky_Sports_2026.svg"},
+    {id:"tnt-sports",match:/\btnt\s*sports\b/i,file:"TNT_Sports_(2023).svg",page:"https://commons.wikimedia.org/wiki/File:TNT_Sports_(2023).svg"},
+    {id:"espn",match:/\bespn(?:\+)?\b/i,file:"ESPN_wordmark.svg",page:"https://commons.wikimedia.org/wiki/File:ESPN_wordmark.svg"},
+    {id:"paramount",match:/\bparamount\s*\+/i,file:"Paramount%2B_logo.svg",page:"https://commons.wikimedia.org/wiki/File:Paramount%2B_logo.svg"},
+    {id:"bbc",match:/\bbbc(?:\s*(?:one|two|three|four|iplayer))?\b/i,file:"BBC_Logo_2021.svg",page:"https://commons.wikimedia.org/wiki/File:BBC_Logo_2021.svg"},
+    {id:"itv",match:/\bitv\b/i,file:"ITV_logo.svg",page:"https://commons.wikimedia.org/wiki/File:ITV_logo.svg"},
+    {id:"youtube",match:/\byoutube\b/i,file:"YouTube_full-color_icon_(2017).svg",page:"https://commons.wikimedia.org/wiki/File:YouTube_full-color_icon_(2017).svg"},
+    {id:"channel-4",match:/\bchannel\s*4\b/i,file:"Channel_4_2022.svg",page:"https://commons.wikimedia.org/wiki/File:Channel_4_2022.svg"}
+  ];
+  const group=document.createElement("div");
+  group.className="uk-broadcaster-logos";
+  group.setAttribute("aria-label","Confirmed UK broadcasters");
   names.forEach(name=>{
-    const value=String(name).toLowerCase();
-    let brand=null;
-    if(/\bdazn\b/.test(value)) brand="dazn";
-    else if(/\bsky\b/.test(value)) brand="sky";
-    if(!brand||seen.has(brand))return;
-    seen.add(brand);
-    const logo=document.createElement("span");
-    logo.className="uk-broadcaster-logo "+(brand==="sky"?"sky-sports-logo":"dazn-logo");
-    logo.setAttribute("role","img");
-    logo.setAttribute("aria-label",brand==="sky"?"Sky Sports":"DAZN");
-    logo.title="UK broadcaster: "+name;
-    if(brand==="sky"){
-      const sky=document.createElement("span");sky.className="sky-word";sky.textContent="sky";
-      const sports=document.createElement("span");sports.className="sports-word";sports.textContent="sports";
-      logo.append(sky,sports);
-    } else logo.textContent="DAZN";
-    logos.push(logo);
+    const value=String(name).trim();
+    const entry=registry.find(item=>item.match.test(value));
+    const key=entry?entry.id:value.toLowerCase();
+    if(seen.has(key))return;
+    seen.add(key);
+    if(entry){
+      const link=document.createElement("a");
+      link.className="uk-broadcaster-logo";
+      link.href=entry.page;link.target="_blank";link.rel="noopener noreferrer";
+      link.title=value+" — logo source and details";
+      link.setAttribute("aria-label",value);
+      const img=document.createElement("img");
+      img.src="https://commons.wikimedia.org/wiki/Special:FilePath/"+entry.file;
+      img.alt=value+" logo";img.loading="lazy";img.decoding="async";
+      img.onerror=()=>{link.replaceWith(document.createTextNode(value));};
+      link.append(img);group.append(link);
+    } else {
+      const label=document.createElement("span");
+      label.className="uk-broadcaster-text";
+      label.textContent=value;label.title=value;
+      group.append(label);
+    }
   });
-  if(!logos.length)return null;
-  const group=document.createElement("div");group.className="uk-broadcaster-logos";group.setAttribute("aria-label","UK broadcasters");
-  logos.forEach(logo=>group.append(logo));
-  return group;
+  return group.childNodes.length?group:null;
 }
 
 function normaliseFighterKey(value) {
