@@ -206,6 +206,94 @@ def sync_ufc():
     print(f"UFC: saved {len(events)} events, including up to two upcoming cards and the latest completed card.")
 
 
+
+def sync_bkfc():
+    """Read BKFC's public event listings and publish structured event metadata."""
+    import html
+    import re
+
+    url = "https://www.bkfc.com/events"
+    request = urllib.request.Request(url, headers={
+        "User-Agent": "Mozilla/5.0 (compatible; SportsCalendar/1.0)",
+        "Accept": "text/html,application/xhtml+xml"
+    })
+    try:
+        with urllib.request.urlopen(request, timeout=45) as response:
+            page = response.read().decode("utf-8", errors="replace")
+    except Exception as exc:
+        preserve_or_status("bkfc.json", "bkfc", "BKFC official events", f"BKFC schedule could not be fetched: {exc}")
+        raise
+
+    records = []
+    def walk(value):
+        if isinstance(value, dict):
+            typ = value.get("@type")
+            types = typ if isinstance(typ, list) else [typ]
+            if any(str(t).lower() == "event" for t in types) and (value.get("name") or value.get("url")):
+                records.append(value)
+            for child in value.values():
+                walk(child)
+        elif isinstance(value, list):
+            for child in value:
+                walk(child)
+
+    patterns = [
+        r"<script[^>]+type=['\"]application/ld\+json['\"][^>]*>(.*?)</script>",
+        r"<script[^>]+id=['\"]__NEXT_DATA__['\"][^>]*>(.*?)</script>"
+    ]
+    for pattern in patterns:
+        for match in re.findall(pattern, page, re.I | re.S):
+            try:
+                walk(json.loads(html.unescape(match)))
+            except Exception:
+                continue
+
+    events, seen = [], set()
+    for row in records:
+        name = html.unescape(str(row.get("name") or row.get("headline") or "")).strip()
+        start = row.get("startDate") or row.get("start_date") or row.get("date")
+        if not name or not start:
+            continue
+        event_url = row.get("url") or url
+        if isinstance(event_url, dict):
+            event_url = event_url.get("url") or url
+        if str(event_url).startswith("/"):
+            event_url = "https://www.bkfc.com" + str(event_url)
+        if "bkfc" not in (name + " " + str(event_url)).lower():
+            continue
+        identity = str(event_url) + str(start)
+        if identity in seen:
+            continue
+        seen.add(identity)
+        location = row.get("location") or {}
+        if isinstance(location, dict):
+            address = location.get("address") or {}
+            place = ", ".join(str(v) for v in [address.get("addressLocality"), address.get("addressRegion"), address.get("addressCountry")] if v) if isinstance(address, dict) else str(address)
+        else:
+            place = str(location)
+        events.append({
+            "id": "bkfc-" + str(len(events) + 1),
+            "name": name,
+            "date": str(start)[:10],
+            "start_at": start if "T" in str(start) else None,
+            "status": "completed" if "completed" in str(row.get("eventStatus", "")).lower() else "scheduled",
+            "location": place or None,
+            "source_url": str(event_url),
+            "fights": [],
+            "source": "BKFC official events"
+        })
+
+    if not events:
+        preserve_or_status("bkfc.json", "bkfc", "BKFC official events", "The official BKFC page returned no machine-readable event records. Existing published schedule was preserved; parser needs review.")
+        raise RuntimeError("No structured BKFC event records found on the official events page.")
+    events.sort(key=lambda e: (e.get("date") or "", e.get("name") or ""))
+    save("bkfc.json", {
+        "sport": "bkfc", "provider": "BKFC official events", "events": events,
+        "notice": "Schedule sourced from BKFC's official events page. Start times and full fight cards are shown only when published by BKFC. UK viewing is event-dependent: BKFC+ carries many live events; selected cards are exclusive to DAZN."
+    })
+    print(f"BKFC: saved {len(events)} official event listings.")
+
+
 def commons_photo(name):
     """Find one reusable Commons thumbnail; return attribution with the image URL."""
     if not name:
