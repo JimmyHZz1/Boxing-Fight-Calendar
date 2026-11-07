@@ -58,6 +58,28 @@ function countryCode(value) {
   const map={"united kingdom":"GB","great britain":"GB","britain":"GB","british":"GB","england":"GB","scotland":"GB","wales":"GB","northern ireland":"GB","gb":"GB","gbr":"GB","uk":"GB","united kingdom of great britain and northern ireland":"GB"};
   return map[raw]||String(value||"").trim().toUpperCase();
 }
+
+function nationalityFlag(value) {
+  const raw=String(value||"").trim();
+  if(!raw)return null;
+  const key=raw.toLowerCase().replace(/[._-]/g," ").replace(/\s+/g," ").trim();
+  const names={
+    "united kingdom":"GB","great britain":"GB","britain":"GB","british":"GB","england":"GB","scotland":"GB","wales":"GB","northern ireland":"GB","uk":"GB","gbr":"GB",
+    "united states":"US","united states of america":"US","usa":"US","america":"US","u s a":"US",
+    "mexico":"MX","japan":"JP","venezuela":"VE","turkey":"TR","türkiye":"TR","canada":"CA","spain":"ES","france":"FR","australia":"AU","germany":"DE","ireland":"IE","italy":"IT","ukraine":"UA","russia":"RU","poland":"PL","kazakhstan":"KZ","uzbekistan":"UZ","philippines":"PH","thailand":"TH","south korea":"KR","korea":"KR","china":"CN","cuba":"CU","puerto rico":"PR","dominican republic":"DO","argentina":"AR","brazil":"BR","colombia":"CO","nicaragua":"NI","panama":"PA","south africa":"ZA","nigeria":"NG","ghana":"GH","cameroon":"CM","morocco":"MA","sweden":"SE","denmark":"DK","netherlands":"NL","belgium":"BE","switzerland":"CH","new zealand":"NZ","portugal":"PT","romania":"RO","serbia":"RS","croatia":"HR","czech republic":"CZ","czechia":"CZ","hungary":"HU","greece":"GR","israel":"IL","armenia":"AM","georgia":"GE","azerbaijan":"AZ","mongolia":"MN","indonesia":"ID","india":"IN","peru":"PE","chile":"CL","ecuador":"EC","haiti":"HT","jamaica":"JM"
+  };
+  const alpha3={GBR:"GB",USA:"US",MEX:"MX",JPN:"JP",VEN:"VE",TUR:"TR",CAN:"CA",ESP:"ES",FRA:"FR",AUS:"AU",DEU:"DE",IRL:"IE",ITA:"IT",UKR:"UA",RUS:"RU",POL:"PL",KAZ:"KZ",UZB:"UZ",PHL:"PH",THA:"TH",KOR:"KR",CHN:"CN",CUB:"CU",PRI:"PR",DOM:"DO",ARG:"AR",BRA:"BR",COL:"CO",NIC:"NI",PAN:"PA",ZAF:"ZA",NGA:"NG",GHA:"GH",CMR:"CM",MAR:"MA",SWE:"SE",DNK:"DK",NLD:"NL",BEL:"BE",CHE:"CH",NZL:"NZ",PRT:"PT",ROU:"RO",SRB:"RS",HRV:"HR",CZE:"CZ",HUN:"HU",GRC:"GR",ISR:"IL",ARM:"AM",GEO:"GE",AZE:"AZ",MNG:"MN",IDN:"ID",IND:"IN",PER:"PE",CHL:"CL",ECU:"EC",HTI:"HT",JAM:"JM"};
+  const code=names[key]||alpha3[raw.toUpperCase()]||( /^[A-Za-z]{2}$/.test(raw) ? raw.toUpperCase() : null);
+  if(!code||!/^[A-Z]{2}$/.test(code))return null;
+  return {code,emoji:String.fromCodePoint(...[...code].map(ch=>127397+ch.charCodeAt(0)))};
+}
+function appendFighterName(container,name,nationality) {
+  container.replaceChildren();
+  const flag=nationalityFlag(nationality);
+  if(flag){const icon=document.createElement("span");icon.className="nationality-flag";icon.textContent=flag.emoji;icon.title=countryName(flag.code)||flag.code;icon.setAttribute("aria-label",icon.title+" flag");container.append(icon);}
+  const label=document.createElement("span");label.className="fighter-name";label.textContent=name;container.append(label);
+}
+
 function isUkFighter(bout,side) {
   const value=bout[side+"_nationality"]||bout[side+"_country"]||bout[side+"_country_code"];
   return countryCode(value)==="GB";
@@ -126,9 +148,9 @@ function makeBoutRow(b) {
   const row=document.createElement("article");
   row.className="bout-row";
   const [a,c]=fighterNames(b);
-  const left=document.createElement("div"); left.className="fighter"; left.textContent=a;
+  const left=document.createElement("div"); left.className="fighter"; appendFighterName(left,a,b.fighter1_nationality||b.fighter1_country||b.fighter1_country_code);
   const vs=document.createElement("div"); vs.className="vs"; vs.textContent="VS";
-  const right=document.createElement("div"); right.className="fighter"; right.textContent=c;
+  const right=document.createElement("div"); right.className="fighter"; appendFighterName(right,c,b.fighter2_nationality||b.fighter2_country||b.fighter2_country_code);
   const meta=document.createElement("div"); meta.className="bout-meta";
   const timeLabel = b.start_time_utc ? "FIGHT TIME " + (formatTime(b.start_time_utc,b.date)||"TBC") : (b.eventStartTime ? "CARD START " + (formatTime(b.eventStartTime,b.eventDate)||"TBC") : null);
   const details=[b.weight_class||b.division,b.rounds ? b.rounds+" rounds" : null,b.title_text,b.eventCountry ? "COUNTRY "+b.eventCountry : null,timeLabel].filter(Boolean);
