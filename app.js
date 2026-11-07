@@ -511,12 +511,13 @@ $("manual-refresh").addEventListener("click",async()=>{
   button.textContent="SYNC: checking…";
   $("refresh-help").textContent="Checking for the latest published fight schedule…";
   await loadData();
+  if(window.SportsData?.load)await window.SportsData.load();
   button.disabled=false;
   syncAgeLabel();
 });
 $("prev-month").addEventListener("click",()=>{state.month.setMonth(state.month.getMonth()-1);renderCalendar();});
 $("next-month").addEventListener("click",()=>{state.month.setMonth(state.month.getMonth()+1);renderCalendar();});
-loadData();setInterval(loadData,5*60*1000);
+loadData();setInterval(()=>{loadData();if(window.SportsData?.load)window.SportsData.load();},5*60*1000);
 if("serviceWorker" in navigator && location.protocol.startsWith("http"))navigator.serviceWorker.register("./sw.js").catch(()=>{});
 
 setInterval(()=>{syncAgeLabel();if(document.visibilityState==="visible")renderHome();},60000);
