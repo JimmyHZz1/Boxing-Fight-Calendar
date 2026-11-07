@@ -112,7 +112,7 @@
     const hero=el("section","sport-detail-hero sport-detail-"+sport);
     const top=el("div","sport-detail-hero-top");
     top.append(el("span","sport-detail-icon",info.icon),el("span","eyebrow",info.eyebrow));
-    const title=el("h1",null,info.name);const desc=el("p",null,info.intro);
+    const title=el("h1",null,info.name);title.id="sport-detail-title";const desc=el("p",null,info.intro);
     const meta=el("div","sport-detail-meta");meta.append(el("span",null,"UK LOCAL TIME"),el("span",null,upcoming.length+" UPCOMING"),el("span",null,events.length+" EVENTS IN FEED"));
     hero.append(top,title,desc,meta);target.append(hero);
     const stats=el("div","sport-detail-stats");
@@ -147,6 +147,7 @@
     document.dispatchEvent(new CustomEvent("sports:page-opened",{detail:{sport}}));
   }
   async function loadHub(){try{const r=await fetch("./data/sports-hub.json?t="+Date.now(),{cache:"no-store"});if(r.ok){const data=await r.json();hub=data.sports||data;if(current)render(current);}}catch(_){}}
+  document.getElementById("sport-detail-back")?.addEventListener("click",()=>window.showScreen?.("home-screen"));
   window.SportPages={open,render,getCurrent:()=>current,refresh:()=>current&&render(current)};
   document.addEventListener("sports:feeds-updated",()=>{if(current)render(current);});
   document.addEventListener("sports:boxing-data-updated",()=>{if(current==="boxing")render("boxing");});
