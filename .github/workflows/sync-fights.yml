@@ -33,7 +33,7 @@ jobs:
           BOXING_API_KEY: ${{ secrets.BOXING_API_KEY }}
         run: python scripts/sync_fights.py
 
-      - name: Fetch Formula 1, PDC darts and UFC schedules
+      - name: Fetch Formula 1, PDC darts, UFC and BKFC schedules
         env:
           DARTS_API_KEY: ${{ secrets.DARTS_API_KEY }}
           UFCALENDAR_API_KEY: ${{ secrets.UFCALENDAR_API_KEY }}
@@ -44,7 +44,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          if git diff --quiet -- data/fights.json data/fighter-images.json data/f1.json data/darts.json data/ufc.json data/sports-hub.json; then
+          if git diff --quiet -- data/fights.json data/fighter-images.json data/f1.json data/darts.json data/ufc.json data/bkfc.json data/sports-hub.json; then
             echo "No schedule changes."
             exit 0
           fi
