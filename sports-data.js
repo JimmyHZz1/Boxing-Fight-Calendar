@@ -198,7 +198,7 @@
         const b=f.fighter_b||f.fighter2||f.blue||f.corner_b||f.name_b||"TBC";
         const row=make("div","sport-fight-row");
         row.append(make("strong",null,fighterName(a)+" vs "+fighterName(b)));
-        row.append(make("small",null,[f.weight_class,f.result?.method,f.result?.round?"R"+f.result.round:null].filter(Boolean).join(" · ")||safe(f.card_section,"Fight card")));
+        row.append(make("small",null,[f.card_section,f.weight_class,f.result?.method,f.result?.round?"R"+f.result.round:null].filter(Boolean).join(" · ")||"Fight card"));
         list.append(row);
       });
       root.append(list);
