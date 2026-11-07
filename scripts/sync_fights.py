@@ -273,7 +273,7 @@ def update_fighter_images(events: list[dict]) -> dict:
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
         json.dump(cache, f, ensure_ascii=False, indent=2)
-        f.write("\\n")
+        f.write("\n")
     print(f"Commons portraits cached: {len(images)}; lookup attempts this run: {min(len(pending), 35)}.")
     return images
 
