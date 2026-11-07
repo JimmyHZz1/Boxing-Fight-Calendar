@@ -295,6 +295,6 @@
     renderEventCards();
   }
   document.querySelectorAll("[data-calendar-sport]").forEach(button=>button.addEventListener("click",()=>setCalendarFilter(button.dataset.calendarSport)));
-  window.SportsData={load:async()=>{await Promise.all(SPORTS.map(fetchFeed));renderAll();if(window.renderCalendar)window.renderCalendar();document.dispatchEvent(new CustomEvent("sports:feeds-updated"));},renderActive,renderAll,renderEventCards,renderSelectedDate,markCalendarDays,getCalendarFilter,getNextEvent};
+  window.SportsData={load:async()=>{await Promise.all(SPORTS.map(fetchFeed));renderAll();if(window.renderCalendar)window.renderCalendar();document.dispatchEvent(new CustomEvent("sports:feeds-updated"));},renderActive,renderAll,renderEventCards,renderSelectedDate,markCalendarDays,getCalendarFilter,getNextEvent,getEvents:(sport,includePast=true)=>includePast?data[sport].map(e=>({...e,sport})):sortedEvents(sport).map(e=>({...e,sport})),getMeta:sport=>meta[sport]||{},renderEventCard:(sport,event)=>eventCard(sport,event)};
   window.SportsData.load();
 })();
