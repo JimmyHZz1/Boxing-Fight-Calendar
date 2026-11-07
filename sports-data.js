@@ -221,8 +221,6 @@
   function renderAll() {
     renderActive(active);
     renderEventCards();
-    const selected=$("selected-date-label");
-    if (selected) renderSelectedDate(dateKey(new Date(selected.textContent),true)||dateKey(new Date(),true));
   }
   document.querySelectorAll("[data-calendar-sport]").forEach(button=>button.addEventListener("click",()=>setCalendarFilter(button.dataset.calendarSport)));
   window.SportsData={load:async()=>{await Promise.all(SPORTS.map(fetchFeed));renderAll();if(window.renderCalendar)window.renderCalendar();},renderActive,renderAll,renderEventCards,renderSelectedDate,markCalendarDays,getCalendarFilter};
