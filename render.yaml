@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: sports-calendar-sync-jimmyhzz1
+    runtime: python
+    plan: free
+    buildCommand: pip install -r api/requirements.txt
+    startCommand: gunicorn api.server:app
+    healthCheckPath: /health
+    envVars:
+      - key: GITHUB_TOKEN
+        sync: false
