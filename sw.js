@@ -1,10 +1,10 @@
-const CACHE="sports-calendar-v35";
+const CACHE="sports-calendar-v36";
 const APP_FILES=[
   "./",
   "./index.html",
-  "./styles.css?v=20261107-33",
+  "./styles.css?v=20261107-34",
   "./app.js?v=20261107-27",
-  "./sports-data.js?v=20261107-03",
+  "./sports-data.js?v=20261107-04",
   "./sports.js?v=20261107-06",
   "./sports-hub.js?v=20261107-01",
   "./manifest.json"
