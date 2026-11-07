@@ -91,6 +91,34 @@ function ukFighterNames(bout) {
   if(isUkFighter(bout,"fighter2"))names.push(two);
   return names;
 }
+
+const HIGH_PROFILE_BOXERS = ["anthony joshua","tyson fury","oleksandr usyk","canelo alvarez","saul alvarez","terence crawford","naoya inoue","gervonta davis","dmitry bivol","artur beterbiev","shakur stevenson","devin haney","ryan garcia","teofimo lopez","jaron ennis","jake paul","manny pacquiao","floyd mayweather","derek chisora","daniel dubois","fabio wardley","moses itauma","hamzah she raz","conor benn","katie taylor","claressa shields","david benavidez","gilberto ramirez","zhanibek alimkhanuly"];
+function isHighProfileBout(bout) {
+ const [one,two]=fighterNames(bout);
+ const names=[one,two].map(n=>String(n||"").toLowerCase().replace(/\s+/g," ").trim());
+ return names.some(n=>HIGH_PROFILE_BOXERS.includes(n));
+}
+function renderHighProfileFights() {
+ const root=$("high-profile-list");if(!root)return;root.replaceChildren();
+ const featured=[];
+ state.events.forEach(event=>eventBouts(event).filter(isHighProfileBout).forEach(bout=>featured.push({event,bout})));
+ const upcoming=featured.filter(x=>eventDateKey(x.event)>=todayKey()).sort((a,b)=>compareEvents(a.event,b.event)).slice(0,8);
+ if(!upcoming.length){root.innerHTML='<div class="muted-note">No upcoming high-profile matchups are currently confirmed in the schedule. This section will update as major fights are announced.</div>';return;}
+ upcoming.forEach(({event,bout})=>{
+  const [one,two]=fighterNames(bout),card=document.createElement("article");card.className="high-profile-card";
+  const matchup=document.createElement("div");matchup.className="high-profile-matchup";
+  const f1=document.createElement("div");f1.className="high-profile-fighter";f1.append(fighterPortrait(one,bout.fighter1_image||bout.image1||bout.fighter1_photo));const n1=document.createElement("strong");n1.textContent=one;f1.append(n1);
+  const vs=document.createElement("span");vs.className="high-profile-vs";vs.textContent="VS";
+  const f2=document.createElement("div");f2.className="high-profile-fighter";f2.append(fighterPortrait(two,bout.fighter2_image||bout.image2||bout.fighter2_photo));const n2=document.createElement("strong");n2.textContent=two;f2.append(n2);
+  matchup.append(f1,vs,f2);
+  const info=document.createElement("div");info.className="high-profile-info";const title=document.createElement("strong");title.textContent=eventTitle(event,eventBouts(event));info.append(title);
+  const meta=document.createElement("span");meta.textContent=[ukDate(event.date),bout.weight_class||bout.division,bout.rounds?bout.rounds+" rounds":null,cardStartLabel(event)?"CARD START "+cardStartLabel(event):null].filter(Boolean).join(" · ");info.append(meta);
+  const details=document.createElement("details");details.className="high-profile-card-details";const summary=document.createElement("summary");summary.textContent="VIEW EVENT CARD";
+  const panel=document.createElement("div");panel.className="bout-list";eventBouts(event).forEach(b=>panel.append(makeBoutRow(b)));details.append(summary,panel);
+  card.append(matchup,info,details);root.append(card);
+ });
+}
+
 function renderUkHeadliners() {
   const root=$("uk-headliners-list");root.replaceChildren();
   const featured=[];
@@ -324,6 +352,7 @@ function renderHome() {
   const upcomingBouts=allBouts().filter(b=>ukKey(boutDateTime(b))>=nowKey&&b.title_text).slice(0,5);
   if(!upcomingBouts.length)headlines.innerHTML='<div class="muted-note">Headline bouts will appear here when confirmed title-fight details are available.</div>';
   else upcomingBouts.forEach(b=>headlines.append(makeBoutRow(b)));
+  renderHighProfileFights();
   renderUkHeadliners();
   renderTonight();
 }
