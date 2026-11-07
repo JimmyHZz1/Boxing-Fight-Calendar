@@ -31,6 +31,17 @@ document.querySelectorAll(".nav-item").forEach(b => b.addEventListener("click",(
 function fighterNames(b) {
   return [b.fighter1||b.fighter_a||b.red_corner||b.boxer1||"TBC", b.fighter2||b.fighter_b||b.blue_corner||b.boxer2||"TBC"];
 }
+function isUkRegion(region) {
+  const value=String(region||"").trim().toLowerCase().replace(/[_-]/g," ");
+  return /^(uk|gb|great britain|united kingdom|worldwide|world|global|all markets)$/.test(value)
+    || /\\b(united kingdom|great britain|uk)\\b/.test(value);
+}
+function ukBroadcasters(items) {
+  const seen=new Set();
+  return (items||[]).filter(item=>item&&typeof item==="object"&&isUkRegion(item.region||item.country||item.market))
+    .map(item=>item.name||item.broadcaster||item.platform||item.service||"")
+    .filter(name=>name&&!seen.has(name)&&(seen.add(name),true));
+}
 function makeBoutRow(b) {
   const row=document.createElement("article");
   row.className="bout-row";
@@ -45,17 +56,19 @@ function makeBoutRow(b) {
   detailLine.textContent=details.length ? details.join(" · ") : "Weight division not supplied";
   meta.append(detailLine);
   const broadcast=document.createElement("div"); broadcast.className="broadcast-line";
-  const label=document.createElement("span"); label.textContent="WATCH: ";
+  const label=document.createElement("span"); label.textContent="UK WATCH: ";
   broadcast.append(label);
-  const channels=(b.eventBroadcasters||[]).map(x=>typeof x==="string"?x:([x.name||x.broadcaster||x.platform,x.region].filter(Boolean).join(" (")+(x.region?")":""))).filter(Boolean);
+  const channels=ukBroadcasters(b.eventBroadcasters);
   const boutChannel=b.broadcaster||b.broadcast||b.tv_channel||null;
-  const channel=(boutChannel && typeof boutChannel==="object") ? (boutChannel.name||boutChannel.broadcaster||boutChannel.platform||null) : (boutChannel||channels.join(", ")||null);
-  const url=b.broadcast_url||b.broadcaster_url||b.watch_url||null;
+  const boutRegion=b.broadcaster_region||b.broadcast_region||(boutChannel&&typeof boutChannel==="object"?(boutChannel.region||boutChannel.country||boutChannel.market):null);
+  const boutName=boutChannel&&typeof boutChannel==="object"?(boutChannel.name||boutChannel.broadcaster||boutChannel.platform||null):null;
+  const channel=(boutName&&isUkRegion(boutRegion)?boutName:null)||channels.join(", ")||null;
+  const url=channel?(b.broadcast_url||b.broadcaster_url||b.watch_url||null):null;
   if(channel && url && /^https?:\/\//i.test(url)) {
     const link=document.createElement("a"); link.href=url; link.target="_blank"; link.rel="noopener noreferrer"; link.textContent=channel; broadcast.append(link);
   } else {
-    const text=document.createElement("span"); text.textContent=channel || "Broadcast information not announced"; broadcast.append(text);
-    if(url && /^https?:\/\//i.test(url)) { const link=document.createElement("a"); link.href=url; link.target="_blank"; link.rel="noopener noreferrer"; link.textContent="Watch details"; broadcast.append(" · ",link); }
+    const text=document.createElement("span"); text.textContent=channel || "UK broadcaster not announced"; broadcast.append(text);
+    if(channel && url && /^https?:\/\//i.test(url)) { const link=document.createElement("a"); link.href=url; link.target="_blank"; link.rel="noopener noreferrer"; link.textContent="Watch details"; broadcast.append(" · ",link); }
   }
   if(b.eventUrl && /^https?:\/\//i.test(b.eventUrl)) { const link=document.createElement("a"); link.href=b.eventUrl; link.target="_blank"; link.rel="noopener noreferrer"; link.textContent="Event details"; broadcast.append(" · ",link); }
   meta.append(document.createElement("br"),broadcast);
@@ -135,8 +148,8 @@ function renderEventCard(event, expanded=false) {
   if(country)metaBits.push("COUNTRY: "+country);
   if(event.promoter)metaBits.push("PROMOTER: "+event.promoter);
   if(cardStart)metaBits.push("CARD START: "+cardStart);
-  const channels=(event.broadcasters||[]).map(x=>typeof x==="string"?x:(x.name||x.broadcaster||x.platform||x.service||"")).filter(Boolean);
-  if(channels.length)metaBits.push("WATCH: "+channels.join(", "));
+  const channels=ukBroadcasters(event.broadcasters);
+  metaBits.push(channels.length?"UK WATCH: "+channels.join(", "):"UK BROADCAST: NOT ANNOUNCED");
   meta.textContent=metaBits.join(" · ")||"Full card details below";
   panel.append(meta);
   const list=document.createElement("div");list.className="bout-list";
