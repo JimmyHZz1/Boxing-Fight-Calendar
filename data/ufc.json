@@ -1,6 +1,1686 @@
 {
   "sport": "ufc",
   "provider": "UFCalendar",
-  "events": [],
-  "sync_warning": "Add UFCALENDAR_API_KEY to repository secrets to load UFC events and cards."
+  "events": [
+    {
+      "id": 2805,
+      "slug": "ufc-fight-night-2026-10-31",
+      "name": "UFC Fight Night: Moicano vs Nolan",
+      "date": "2026-10-31",
+      "start_at": "2026-10-31T21:00:00.000Z",
+      "status": "completed",
+      "number": null,
+      "is_ppv": false,
+      "is_title_card": false,
+      "main_card_at": "2026-11-01T00:00:00.000Z",
+      "prelims_at": "2026-10-31T21:00:00.000Z",
+      "early_prelims_at": null,
+      "fights": [
+        {
+          "id": 93077,
+          "ordering": 1,
+          "card_section": "main",
+          "sport": "mma",
+          "weight_class": "Lightweight",
+          "division_slug": "lightweight",
+          "is_title": false,
+          "is_main": true,
+          "scheduled_rounds": 5,
+          "status": "completed",
+          "fighter_a": {
+            "id": 589,
+            "slug": "renato-moicano",
+            "name": "Renato Moicano",
+            "nickname": null,
+            "nationality": "Brazil",
+            "country_code": "BR"
+          },
+          "fighter_b": {
+            "id": 92,
+            "slug": "tom-nolan",
+            "name": "Tom Nolan",
+            "nickname": "Big Train",
+            "nationality": "Australia",
+            "country_code": "AU"
+          },
+          "result": {
+            "winner_fighter_id": 92,
+            "method": "KO/TKO",
+            "method_normalized": "ko_tko",
+            "finish_detail": null,
+            "round": 3,
+            "time": "1:28",
+            "time_seconds": 88,
+            "details": null
+          },
+          "referee": "Dan Miragliotta",
+          "bonus": "Performance of the Night"
+        },
+        {
+          "id": 93260,
+          "ordering": 2,
+          "card_section": "main",
+          "sport": "mma",
+          "weight_class": "Welterweight",
+          "division_slug": "welterweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "cancelled",
+          "fighter_a": {
+            "id": 432,
+            "slug": "randy-brown",
+            "name": "Randy Brown",
+            "nickname": "Rudeboy",
+            "nationality": "Jamaica",
+            "country_code": "JM"
+          },
+          "fighter_b": {
+            "id": 484,
+            "slug": "carlos-leal",
+            "name": "Carlos Leal",
+            "nickname": "The Lion",
+            "nationality": "Brazil",
+            "country_code": "BR"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 93557,
+          "ordering": 2,
+          "card_section": "main",
+          "sport": "mma",
+          "weight_class": "Welterweight",
+          "division_slug": "welterweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "completed",
+          "fighter_a": {
+            "id": 432,
+            "slug": "randy-brown",
+            "name": "Randy Brown",
+            "nickname": "Rudeboy",
+            "nationality": "Jamaica",
+            "country_code": "JM"
+          },
+          "fighter_b": {
+            "id": 489,
+            "slug": "jacobe-smith",
+            "name": "Jacobe Smith",
+            "nickname": "Cobe",
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "result": {
+            "winner_fighter_id": 489,
+            "method": "Decision - Unanimous",
+            "method_normalized": "decision_unanimous",
+            "finish_detail": "Unanimous",
+            "round": 3,
+            "time": "5:00",
+            "time_seconds": 300,
+            "details": "26 - 30. 26 - 30. 26 - 30."
+          },
+          "referee": "Herb Dean",
+          "bonus": null
+        },
+        {
+          "id": 93558,
+          "ordering": 3,
+          "card_section": "main",
+          "sport": "mma",
+          "weight_class": "Flyweight",
+          "division_slug": "flyweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "completed",
+          "fighter_a": {
+            "id": 483,
+            "slug": "ode-osbourne",
+            "name": "Ode Osbourne",
+            "nickname": "The Jamaican Sensation",
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "fighter_b": {
+            "id": 415,
+            "slug": "cody-durden",
+            "name": "Cody Durden",
+            "nickname": "Custom Made",
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "result": {
+            "winner_fighter_id": 415,
+            "method": "Decision - Unanimous",
+            "method_normalized": "decision_unanimous",
+            "finish_detail": "Unanimous",
+            "round": 3,
+            "time": "5:00",
+            "time_seconds": 300,
+            "details": "28 - 29. 28 - 29. 28 - 29."
+          },
+          "referee": "Kerry Hatley",
+          "bonus": null
+        },
+        {
+          "id": 93261,
+          "ordering": 4,
+          "card_section": "main",
+          "sport": "mma",
+          "weight_class": "Women's Bantamweight",
+          "division_slug": "womens-bantamweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "completed",
+          "fighter_a": {
+            "id": 186,
+            "slug": "yana-santos",
+            "name": "Yana Santos",
+            "nickname": "Foxy",
+            "nationality": "Russia",
+            "country_code": "RU"
+          },
+          "fighter_b": {
+            "id": 336,
+            "slug": "luana-santos",
+            "name": "Luana Santos",
+            "nickname": null,
+            "nationality": "Brazil",
+            "country_code": "BR"
+          },
+          "result": {
+            "winner_fighter_id": 336,
+            "method": "Decision - Unanimous",
+            "method_normalized": "decision_unanimous",
+            "finish_detail": "Unanimous",
+            "round": 3,
+            "time": "5:00",
+            "time_seconds": 300,
+            "details": "28 - 29. 28 - 29. 28 - 29."
+          },
+          "referee": "Chris Tognoni",
+          "bonus": null
+        },
+        {
+          "id": 93264,
+          "ordering": 5,
+          "card_section": "main",
+          "sport": "mma",
+          "weight_class": "Welterweight",
+          "division_slug": "welterweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "completed",
+          "fighter_a": {
+            "id": 479,
+            "slug": "jean-paul-lebosnoyani",
+            "name": "Jean-Paul Lebosnoyani",
+            "nickname": "JPL",
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "fighter_b": {
+            "id": 2974,
+            "slug": "farman-hasanov",
+            "name": "Farman Hasanov",
+            "nickname": "The Lion",
+            "nationality": "Azerbaijan",
+            "country_code": "AZ"
+          },
+          "result": {
+            "winner_fighter_id": 479,
+            "method": "TKO - Doctor's Stoppage",
+            "method_normalized": "ko_tko",
+            "finish_detail": "Doctor's Stoppage",
+            "round": 3,
+            "time": "2:11",
+            "time_seconds": 131,
+            "details": null
+          },
+          "referee": "Dan Miragliotta",
+          "bonus": null
+        },
+        {
+          "id": 93267,
+          "ordering": 5,
+          "card_section": "prelims",
+          "sport": "mma",
+          "weight_class": "Featherweight",
+          "division_slug": "featherweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "cancelled",
+          "fighter_a": {
+            "id": 466,
+            "slug": "francis-marshall",
+            "name": "Francis Marshall",
+            "nickname": "Fire",
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "fighter_b": {
+            "id": 2826,
+            "slug": "gaston-bolanos",
+            "name": "Gaston Bolanos",
+            "nickname": "DreamKiller",
+            "nationality": "Peru",
+            "country_code": "PE"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 93265,
+          "ordering": 6,
+          "card_section": "prelims",
+          "sport": "mma",
+          "weight_class": "Middleweight",
+          "division_slug": "middleweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "cancelled",
+          "fighter_a": {
+            "id": 138,
+            "slug": "azamat-bekoev",
+            "name": "Azamat Bekoev",
+            "nickname": "Iron",
+            "nationality": "Russia",
+            "country_code": "RU"
+          },
+          "fighter_b": {
+            "id": 44,
+            "slug": "andre-petroski",
+            "name": "Andre Petroski",
+            "nickname": null,
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 93560,
+          "ordering": 6,
+          "card_section": "prelims",
+          "sport": "mma",
+          "weight_class": "Featherweight",
+          "division_slug": "featherweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "completed",
+          "fighter_a": {
+            "id": 466,
+            "slug": "francis-marshall",
+            "name": "Francis Marshall",
+            "nickname": "Fire",
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "fighter_b": {
+            "id": 541,
+            "slug": "dakota-hope",
+            "name": "Dakota Hope",
+            "nickname": "Huracán",
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "result": {
+            "winner_fighter_id": 541,
+            "method": "Decision - Split",
+            "method_normalized": "decision_split",
+            "finish_detail": "Split",
+            "round": 3,
+            "time": "5:00",
+            "time_seconds": 300,
+            "details": "29 - 28. 28 - 29. 28 - 29."
+          },
+          "referee": "Herb Dean",
+          "bonus": null
+        },
+        {
+          "id": 93263,
+          "ordering": 7,
+          "card_section": "prelims",
+          "sport": "mma",
+          "weight_class": "Welterweight",
+          "division_slug": "welterweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "completed",
+          "fighter_a": {
+            "id": 142,
+            "slug": "rodrigo-sezinando",
+            "name": "Rodrigo Sezinando",
+            "nickname": null,
+            "nationality": "Brazil",
+            "country_code": "BR"
+          },
+          "fighter_b": {
+            "id": 12302,
+            "slug": "theodor-berggren",
+            "name": "Theodor Berggren",
+            "nickname": "Simba",
+            "nationality": "Sweden",
+            "country_code": "SE"
+          },
+          "result": {
+            "winner_fighter_id": 142,
+            "method": "TKO - Doctor's Stoppage",
+            "method_normalized": "ko_tko",
+            "finish_detail": "Doctor's Stoppage",
+            "round": 2,
+            "time": "5:00",
+            "time_seconds": 300,
+            "details": null
+          },
+          "referee": "Kerry Hatley",
+          "bonus": null
+        },
+        {
+          "id": 93266,
+          "ordering": 8,
+          "card_section": "prelims",
+          "sport": "mma",
+          "weight_class": "Featherweight",
+          "division_slug": "featherweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "completed",
+          "fighter_a": {
+            "id": 522,
+            "slug": "julian-erosa",
+            "name": "Julian Erosa",
+            "nickname": "Juicy J",
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "fighter_b": {
+            "id": 2785,
+            "slug": "jeongyeong-lee",
+            "name": "JeongYeong Lee",
+            "nickname": "Korean Tiger",
+            "nationality": "South Korea",
+            "country_code": "KR"
+          },
+          "result": {
+            "winner_fighter_id": 522,
+            "method": "KO/TKO",
+            "method_normalized": "ko_tko",
+            "finish_detail": null,
+            "round": 1,
+            "time": "1:31",
+            "time_seconds": 91,
+            "details": null
+          },
+          "referee": "Chris Tognoni",
+          "bonus": "Performance of the Night"
+        },
+        {
+          "id": 93561,
+          "ordering": 8,
+          "card_section": "main",
+          "sport": "mma",
+          "weight_class": "Middleweight",
+          "division_slug": "middleweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "cancelled",
+          "fighter_a": {
+            "id": 527,
+            "slug": "mantas-kondratavicius",
+            "name": "Mantas Kondratavicius",
+            "nickname": null,
+            "nationality": "Lithuania",
+            "country_code": "LT"
+          },
+          "fighter_b": {
+            "id": 44,
+            "slug": "andre-petroski",
+            "name": "Andre Petroski",
+            "nickname": null,
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 93559,
+          "ordering": 9,
+          "card_section": "prelims",
+          "sport": "mma",
+          "weight_class": "Middleweight",
+          "division_slug": "middleweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "completed",
+          "fighter_a": {
+            "id": 233,
+            "slug": "zach-reese",
+            "name": "Zach Reese",
+            "nickname": "Savage",
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "fighter_b": {
+            "id": 1039,
+            "slug": "mickey-gall",
+            "name": "Mickey Gall",
+            "nickname": null,
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "result": {
+            "winner_fighter_id": 233,
+            "method": "Decision - Unanimous",
+            "method_normalized": "decision_unanimous",
+            "finish_detail": "Unanimous",
+            "round": 3,
+            "time": "5:00",
+            "time_seconds": 300,
+            "details": "27 - 29. 27 - 29. 27 - 29."
+          },
+          "referee": "Herb Dean",
+          "bonus": null
+        },
+        {
+          "id": 85985,
+          "ordering": 10,
+          "card_section": "prelims",
+          "sport": "mma",
+          "weight_class": "Middleweight",
+          "division_slug": "middleweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "completed",
+          "fighter_a": {
+            "id": 2863,
+            "slug": "nick-klein",
+            "name": "Nick Klein",
+            "nickname": "Blue Collar",
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "fighter_b": {
+            "id": 29328,
+            "slug": "joseph-kropschot",
+            "name": "Joseph Kropschot",
+            "nickname": "The Land Animal",
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "result": {
+            "winner_fighter_id": 29328,
+            "method": "Submission",
+            "method_normalized": "submission",
+            "finish_detail": null,
+            "round": 2,
+            "time": "1:25",
+            "time_seconds": 85,
+            "details": null
+          },
+          "referee": "Dan Miragliotta",
+          "bonus": "Performance of the Night"
+        },
+        {
+          "id": 93262,
+          "ordering": 11,
+          "card_section": "prelims",
+          "sport": "mma",
+          "weight_class": "Women's Strawweight",
+          "division_slug": "womens-strawweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "completed",
+          "fighter_a": {
+            "id": 302,
+            "slug": "talita-alencar",
+            "name": "Talita Alencar",
+            "nickname": "Problem Child",
+            "nationality": "Brazil",
+            "country_code": "BR"
+          },
+          "fighter_b": {
+            "id": 507,
+            "slug": "piera-rodriguez",
+            "name": "Piera Rodriguez",
+            "nickname": "La Fiera",
+            "nationality": "Venezuela",
+            "country_code": "VE"
+          },
+          "result": {
+            "winner_fighter_id": 507,
+            "method": "Decision - Unanimous",
+            "method_normalized": "decision_unanimous",
+            "finish_detail": "Unanimous",
+            "round": 3,
+            "time": "5:00",
+            "time_seconds": 300,
+            "details": "27 - 30. 27 - 30. 27 - 30."
+          },
+          "referee": "Kerry Hatley",
+          "bonus": null
+        },
+        {
+          "id": 86003,
+          "ordering": 12,
+          "card_section": "prelims",
+          "sport": "mma",
+          "weight_class": "Women's Flyweight",
+          "division_slug": "womens-flyweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "completed",
+          "fighter_a": {
+            "id": 3029,
+            "slug": "lucia-szabova",
+            "name": "Lucia Szabová",
+            "nickname": "Silent Killer",
+            "nationality": "Slovakia",
+            "country_code": "SK"
+          },
+          "fighter_b": {
+            "id": 136,
+            "slug": "tainara-lisboa",
+            "name": "Tainara Lisboa",
+            "nickname": "Thai Panther",
+            "nationality": "Brazil",
+            "country_code": "BR"
+          },
+          "result": {
+            "winner_fighter_id": 3029,
+            "method": "KO/TKO",
+            "method_normalized": "ko_tko",
+            "finish_detail": null,
+            "round": 3,
+            "time": "3:20",
+            "time_seconds": 200,
+            "details": null
+          },
+          "referee": "Chris Tognoni",
+          "bonus": "Performance of the Night"
+        }
+      ],
+      "source": "UFCalendar"
+    },
+    {
+      "id": 2549,
+      "slug": "ufc-fight-night-2026-11-07",
+      "name": "UFC Fight Night: Cortes Acosta vs Walker",
+      "date": "2026-11-07",
+      "start_at": "2026-11-07T22:00:00.000Z",
+      "status": "announced",
+      "number": null,
+      "is_ppv": false,
+      "is_title_card": false,
+      "main_card_at": "2026-11-08T01:00:00.000Z",
+      "prelims_at": "2026-11-07T22:00:00.000Z",
+      "early_prelims_at": null,
+      "fights": [
+        {
+          "id": 83822,
+          "ordering": 1,
+          "card_section": "main",
+          "sport": "mma",
+          "weight_class": "Welterweight",
+          "division_slug": "welterweight",
+          "is_title": false,
+          "is_main": true,
+          "scheduled_rounds": 5,
+          "status": "cancelled",
+          "fighter_a": {
+            "id": 78,
+            "slug": "gabriel-bonfim",
+            "name": "Gabriel Bonfim",
+            "nickname": "Marretinha",
+            "nationality": "Brazil",
+            "country_code": "BR"
+          },
+          "fighter_b": {
+            "id": 7,
+            "slug": "sean-brady",
+            "name": "Sean Brady",
+            "nickname": null,
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 93635,
+          "ordering": 1,
+          "card_section": "main",
+          "sport": "mma",
+          "weight_class": "Heavyweight",
+          "division_slug": "heavyweight",
+          "is_title": false,
+          "is_main": true,
+          "scheduled_rounds": 5,
+          "status": "announced",
+          "fighter_a": {
+            "id": 273,
+            "slug": "waldo-cortes-acosta-2",
+            "name": "Waldo Cortes Acosta",
+            "nickname": "Salsa Boy",
+            "nationality": "Dominican Republic",
+            "country_code": "DO"
+          },
+          "fighter_b": {
+            "id": 7170,
+            "slug": "johnny-walker",
+            "name": "Johnny Walker",
+            "nickname": null,
+            "nationality": "Brazil",
+            "country_code": "BR"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 93274,
+          "ordering": 2,
+          "card_section": "main",
+          "sport": "mma",
+          "weight_class": "Women's Strawweight",
+          "division_slug": "womens-strawweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "announced",
+          "fighter_a": {
+            "id": 231,
+            "slug": "tatiana-suarez",
+            "name": "Tatiana Suarez",
+            "nickname": "TSP",
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "fighter_b": {
+            "id": 447,
+            "slug": "virna-jandiroba",
+            "name": "Virna Jandiroba",
+            "nickname": "Carcara",
+            "nationality": "Brazil",
+            "country_code": "BR"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 93283,
+          "ordering": 3,
+          "card_section": "main",
+          "sport": "mma",
+          "weight_class": "Bantamweight",
+          "division_slug": "bantamweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "announced",
+          "fighter_a": {
+            "id": 150,
+            "slug": "davey-grant",
+            "name": "Davey Grant",
+            "nickname": "Dangerous",
+            "nationality": "United Kingdom",
+            "country_code": "GB"
+          },
+          "fighter_b": {
+            "id": 511,
+            "slug": "elijah-smith",
+            "name": "Elijah Smith",
+            "nickname": "Swift",
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 93276,
+          "ordering": 4,
+          "card_section": "main",
+          "sport": "mma",
+          "weight_class": "Light Heavyweight",
+          "division_slug": "light-heavyweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "announced",
+          "fighter_a": {
+            "id": 84,
+            "slug": "billy-elekana",
+            "name": "Billy Elekana",
+            "nickname": "Son of Susie",
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "fighter_b": {
+            "id": 32124,
+            "slug": "lucas-fernando",
+            "name": "Lucas Fernando",
+            "nickname": null,
+            "nationality": "Brazil",
+            "country_code": "BR"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 93279,
+          "ordering": 5,
+          "card_section": "main",
+          "sport": "mma",
+          "weight_class": "Women's Bantamweight",
+          "division_slug": "womens-bantamweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "announced",
+          "fighter_a": {
+            "id": 95,
+            "slug": "priscila-cachoeira",
+            "name": "Priscila Cachoeira",
+            "nickname": "Zombie Girl",
+            "nationality": "Brazil",
+            "country_code": "BR"
+          },
+          "fighter_b": {
+            "id": 33223,
+            "slug": "nina-milosevic",
+            "name": "Nina Milošević",
+            "nickname": "Queen Beast",
+            "nationality": "Serbia",
+            "country_code": "RS"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 93275,
+          "ordering": 6,
+          "card_section": "main",
+          "sport": "mma",
+          "weight_class": "Middleweight",
+          "division_slug": "middleweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "cancelled",
+          "fighter_a": {
+            "id": 527,
+            "slug": "mantas-kondratavicius",
+            "name": "Mantas Kondratavicius",
+            "nickname": null,
+            "nationality": "Lithuania",
+            "country_code": "LT"
+          },
+          "fighter_b": {
+            "id": 455,
+            "slug": "wes-schultz",
+            "name": "Wes Schultz",
+            "nickname": "Party Time",
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 93615,
+          "ordering": 6,
+          "card_section": "main",
+          "sport": "mma",
+          "weight_class": "Flyweight",
+          "division_slug": "flyweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "announced",
+          "fighter_a": {
+            "id": 124,
+            "slug": "mitch-raposo",
+            "name": "Mitch Raposo",
+            "nickname": null,
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "fighter_b": {
+            "id": 11999,
+            "slug": "marcos-degli",
+            "name": "Marcos Degli",
+            "nickname": "Tailandês",
+            "nationality": "Brazil",
+            "country_code": "BR"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 93280,
+          "ordering": 7,
+          "card_section": "prelims",
+          "sport": "mma",
+          "weight_class": "Featherweight",
+          "division_slug": "featherweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "announced",
+          "fighter_a": {
+            "id": 326,
+            "slug": "keiichiro-nakamura",
+            "name": "Keiichiro Nakamura",
+            "nickname": null,
+            "nationality": "Japan",
+            "country_code": "JP"
+          },
+          "fighter_b": {
+            "id": 555,
+            "slug": "ollie-schmid",
+            "name": "Ollie Schmid",
+            "nickname": "The Hungarian Stallion",
+            "nationality": "New Zealand",
+            "country_code": "NZ"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 93285,
+          "ordering": 7,
+          "card_section": "prelims",
+          "sport": "mma",
+          "weight_class": "Heavyweight",
+          "division_slug": "heavyweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "cancelled",
+          "fighter_a": {
+            "id": 123271,
+            "slug": "gabriel-lorenco",
+            "name": "Gabriel Lorenço",
+            "nickname": "The Black Mamba",
+            "nationality": "Brazil",
+            "country_code": "BR"
+          },
+          "fighter_b": {
+            "id": 2856,
+            "slug": "alvin-hines",
+            "name": "Alvin Hines",
+            "nickname": "Goozie",
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 93636,
+          "ordering": 8,
+          "card_section": "prelims",
+          "sport": "mma",
+          "weight_class": "Heavyweight",
+          "division_slug": "heavyweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "announced",
+          "fighter_a": {
+            "id": 123271,
+            "slug": "gabriel-lorenco",
+            "name": "Gabriel Lorenço",
+            "nickname": "The Black Mamba",
+            "nationality": "Brazil",
+            "country_code": "BR"
+          },
+          "fighter_b": {
+            "id": 167,
+            "slug": "thomas-petersen",
+            "name": "Thomas Petersen",
+            "nickname": "The Train",
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 93278,
+          "ordering": 9,
+          "card_section": "prelims",
+          "sport": "mma",
+          "weight_class": "Women's Flyweight",
+          "division_slug": "womens-flyweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "announced",
+          "fighter_a": {
+            "id": 355,
+            "slug": "karine-silva",
+            "name": "Karine Silva",
+            "nickname": "Killer",
+            "nationality": "Brazil",
+            "country_code": "BR"
+          },
+          "fighter_b": {
+            "id": 515,
+            "slug": "gabriella-fernandes",
+            "name": "Gabriella Fernandes",
+            "nickname": "Gabi",
+            "nationality": "Brazil",
+            "country_code": "BR"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 93284,
+          "ordering": 10,
+          "card_section": "prelims",
+          "sport": "mma",
+          "weight_class": "Featherweight",
+          "division_slug": "featherweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "announced",
+          "fighter_a": {
+            "id": 588,
+            "slug": "jose-delano",
+            "name": "Jose Delano",
+            "nickname": null,
+            "nationality": "Brazil",
+            "country_code": "BR"
+          },
+          "fighter_b": {
+            "id": 2987,
+            "slug": "murtazali-magomedov",
+            "name": "Murtazali Magomedov",
+            "nickname": "The Highlight",
+            "nationality": "Kyrgyzstan",
+            "country_code": "KG"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 93277,
+          "ordering": 11,
+          "card_section": "prelims",
+          "sport": "mma",
+          "weight_class": "Featherweight",
+          "division_slug": "featherweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "cancelled",
+          "fighter_a": {
+            "id": 2865,
+            "slug": "austin-bashi",
+            "name": "Austin Bashi",
+            "nickname": null,
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "fighter_b": {
+            "id": 546,
+            "slug": "lucas-brennan",
+            "name": "Lucas Brennan",
+            "nickname": "Skywalker",
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 93715,
+          "ordering": 11,
+          "card_section": "prelims",
+          "sport": "mma",
+          "weight_class": "Featherweight",
+          "division_slug": "featherweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "announced",
+          "fighter_a": {
+            "id": 2865,
+            "slug": "austin-bashi",
+            "name": "Austin Bashi",
+            "nickname": null,
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "fighter_b": {
+            "id": 161555,
+            "slug": "carlos-calderon-3",
+            "name": "Carlos Calderon",
+            "nickname": "Chief",
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 93562,
+          "ordering": 12,
+          "card_section": "prelims",
+          "sport": "mma",
+          "weight_class": "Middleweight",
+          "division_slug": "middleweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "announced",
+          "fighter_a": {
+            "id": 527,
+            "slug": "mantas-kondratavicius",
+            "name": "Mantas Kondratavicius",
+            "nickname": null,
+            "nationality": "Lithuania",
+            "country_code": "LT"
+          },
+          "fighter_b": {
+            "id": 44,
+            "slug": "andre-petroski",
+            "name": "Andre Petroski",
+            "nickname": null,
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 93281,
+          "ordering": 13,
+          "card_section": "prelims",
+          "sport": "mma",
+          "weight_class": "Welterweight",
+          "division_slug": "welterweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "announced",
+          "fighter_a": {
+            "id": 405,
+            "slug": "seokhyeon-ko",
+            "name": "Seokhyeon Ko",
+            "nickname": "The Korean Tyson",
+            "nationality": "South Korea",
+            "country_code": "KR"
+          },
+          "fighter_b": {
+            "id": 767,
+            "slug": "wellington-turman",
+            "name": "Wellington Turman",
+            "nickname": "The Prodigy",
+            "nationality": "Brazil",
+            "country_code": "BR"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 93282,
+          "ordering": 14,
+          "card_section": "prelims",
+          "sport": "mma",
+          "weight_class": "Welterweight",
+          "division_slug": "welterweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "announced",
+          "fighter_a": {
+            "id": 2818,
+            "slug": "jonny-parsons",
+            "name": "Jonny Parsons",
+            "nickname": "The Sluggernaut",
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "fighter_b": {
+            "id": 286,
+            "slug": "jose-henrique",
+            "name": "Jose Henrique",
+            "nickname": "Canela",
+            "nationality": "Brazil",
+            "country_code": "BR"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        }
+      ],
+      "source": "UFCalendar"
+    },
+    {
+      "id": 2563,
+      "slug": "ufc-2026-11-15",
+      "name": "Polymarket UFC 334: Gane vs Hokit",
+      "date": "2026-11-14",
+      "start_at": "2026-11-14T22:00:00.000Z",
+      "status": "announced",
+      "number": null,
+      "is_ppv": true,
+      "is_title_card": true,
+      "main_card_at": "2026-11-15T02:00:00.000Z",
+      "prelims_at": "2026-11-15T00:00:00.000Z",
+      "early_prelims_at": "2026-11-14T22:00:00.000Z",
+      "fights": [
+        {
+          "id": 93102,
+          "ordering": 1,
+          "card_section": "main",
+          "sport": "mma",
+          "weight_class": "Heavyweight",
+          "division_slug": "heavyweight",
+          "is_title": true,
+          "is_main": true,
+          "scheduled_rounds": 5,
+          "status": "announced",
+          "fighter_a": {
+            "id": 102,
+            "slug": "ciryl-gane",
+            "name": "Ciryl Gane",
+            "nickname": "Bon Gamin",
+            "nationality": "France",
+            "country_code": "FR"
+          },
+          "fighter_b": {
+            "id": 105,
+            "slug": "josh-hokit",
+            "name": "Josh Hokit",
+            "nickname": null,
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 93103,
+          "ordering": 2,
+          "card_section": "main",
+          "sport": "mma",
+          "weight_class": "Women's Bantamweight",
+          "division_slug": "womens-bantamweight",
+          "is_title": true,
+          "is_main": false,
+          "scheduled_rounds": 5,
+          "status": "announced",
+          "fighter_a": {
+            "id": 2845,
+            "slug": "kayla-harrison",
+            "name": "Kayla Harrison",
+            "nickname": null,
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "fighter_b": {
+            "id": 1133,
+            "slug": "amanda-nunes",
+            "name": "Amanda Nunes",
+            "nickname": "The Lioness",
+            "nationality": "Brazil",
+            "country_code": "BR"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 93104,
+          "ordering": 3,
+          "card_section": "main",
+          "sport": "mma",
+          "weight_class": "Middleweight",
+          "division_slug": "middleweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "announced",
+          "fighter_a": {
+            "id": 253,
+            "slug": "caio-borralho",
+            "name": "Caio Borralho",
+            "nickname": "The Natural",
+            "nationality": "Brazil",
+            "country_code": "BR"
+          },
+          "fighter_b": {
+            "id": 137,
+            "slug": "yousri-belgaroui",
+            "name": "Yousri Belgaroui",
+            "nickname": "The Boogeyman",
+            "nationality": "Tunisia",
+            "country_code": "TN"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 93105,
+          "ordering": 4,
+          "card_section": "main",
+          "sport": "mma",
+          "weight_class": "Welterweight",
+          "division_slug": "welterweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "announced",
+          "fighter_a": {
+            "id": 434,
+            "slug": "uros-medic",
+            "name": "Uros Medic",
+            "nickname": "The Doctor",
+            "nationality": "Serbia",
+            "country_code": "RS"
+          },
+          "fighter_b": {
+            "id": 162,
+            "slug": "kevin-holland",
+            "name": "Kevin Holland",
+            "nickname": "Trailblazer",
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 93106,
+          "ordering": 5,
+          "card_section": "main",
+          "sport": "mma",
+          "weight_class": "Flyweight",
+          "division_slug": "flyweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "announced",
+          "fighter_a": {
+            "id": 52597,
+            "slug": "bilal-hasan",
+            "name": "Bilal Hasan",
+            "nickname": "The IndoNinja",
+            "nationality": "Indonesia",
+            "country_code": "ID"
+          },
+          "fighter_b": {
+            "id": 48,
+            "slug": "luis-gurule",
+            "name": "Luis Gurule",
+            "nickname": "Grim",
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 93107,
+          "ordering": 6,
+          "card_section": "prelims",
+          "sport": "mma",
+          "weight_class": "Welterweight",
+          "division_slug": "welterweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "announced",
+          "fighter_a": {
+            "id": 1146,
+            "slug": "stephen-thompson",
+            "name": "Stephen Thompson",
+            "nickname": "Wonderboy",
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "fighter_b": {
+            "id": 413,
+            "slug": "charles-radtke",
+            "name": "Charles Radtke",
+            "nickname": "Chuck Buffalo",
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 93108,
+          "ordering": 7,
+          "card_section": "prelims",
+          "sport": "mma",
+          "weight_class": "Lightweight",
+          "division_slug": "lightweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "announced",
+          "fighter_a": {
+            "id": 148,
+            "slug": "drew-dober",
+            "name": "Drew Dober",
+            "nickname": null,
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "fighter_b": {
+            "id": 368,
+            "slug": "chris-duncan",
+            "name": "Chris Duncan",
+            "nickname": "The Problem",
+            "nationality": "Scotland",
+            "country_code": null
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 93109,
+          "ordering": 8,
+          "card_section": "prelims",
+          "sport": "mma",
+          "weight_class": "Lightweight",
+          "division_slug": "lightweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "announced",
+          "fighter_a": {
+            "id": 17,
+            "slug": "jim-miller",
+            "name": "Jim Miller",
+            "nickname": "A-10",
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "fighter_b": {
+            "id": 367,
+            "slug": "terrance-mckinney",
+            "name": "Terrance McKinney",
+            "nickname": "T. Wrecks",
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 93110,
+          "ordering": 9,
+          "card_section": "prelims",
+          "sport": "mma",
+          "weight_class": "Middleweight",
+          "division_slug": "middleweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "cancelled",
+          "fighter_a": {
+            "id": 418,
+            "slug": "donte-johnson",
+            "name": "Donte Johnson",
+            "nickname": "Lock Jaw",
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "fighter_b": {
+            "id": 23,
+            "slug": "baisangur-susurkaev",
+            "name": "Baisangur Susurkaev",
+            "nickname": "The Real Hunter",
+            "nationality": "Russia",
+            "country_code": "RU"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 93616,
+          "ordering": 9,
+          "card_section": "prelims",
+          "sport": "mma",
+          "weight_class": "Middleweight",
+          "division_slug": "middleweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "announced",
+          "fighter_a": {
+            "id": 418,
+            "slug": "donte-johnson",
+            "name": "Donte Johnson",
+            "nickname": "Lock Jaw",
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "fighter_b": {
+            "id": 348,
+            "slug": "cesar-almeida",
+            "name": "Cesar Almeida",
+            "nickname": "Cesinha",
+            "nationality": "Brazil",
+            "country_code": "BR"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 93620,
+          "ordering": 10,
+          "card_section": "early_prelims",
+          "sport": "mma",
+          "weight_class": "Lightweight",
+          "division_slug": "lightweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "announced",
+          "fighter_a": {
+            "id": 18,
+            "slug": "jared-gordon",
+            "name": "Jared Gordon",
+            "nickname": "Flash",
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "fighter_b": {
+            "id": 28,
+            "slug": "melquizael-costa",
+            "name": "Melquizael Costa",
+            "nickname": "The Dalmatian",
+            "nationality": "Brazil",
+            "country_code": "BR"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 93111,
+          "ordering": 11,
+          "card_section": "early_prelims",
+          "sport": "mma",
+          "weight_class": "Women's Bantamweight",
+          "division_slug": "womens-bantamweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "announced",
+          "fighter_a": {
+            "id": 190,
+            "slug": "macy-chiasson",
+            "name": "Macy Chiasson",
+            "nickname": null,
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "fighter_b": {
+            "id": 174,
+            "slug": "bia-mesquita",
+            "name": "Bia Mesquita",
+            "nickname": "The Lady GOAT",
+            "nationality": "Brazil",
+            "country_code": "BR"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 93112,
+          "ordering": 12,
+          "card_section": "early_prelims",
+          "sport": "mma",
+          "weight_class": "Bantamweight",
+          "division_slug": "bantamweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "announced",
+          "fighter_a": {
+            "id": 513,
+            "slug": "adrian-yanez",
+            "name": "Adrian Yanez",
+            "nickname": null,
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "fighter_b": {
+            "id": 32,
+            "slug": "juan-diaz",
+            "name": "Juan Díaz",
+            "nickname": "Pegajoso",
+            "nationality": "Peru",
+            "country_code": "PE"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 93113,
+          "ordering": 12,
+          "card_section": "early_prelims",
+          "sport": "mma",
+          "weight_class": "Lightweight",
+          "division_slug": "lightweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "cancelled",
+          "fighter_a": {
+            "id": 354,
+            "slug": "nazim-sadykhov",
+            "name": "Nazim Sadykhov",
+            "nickname": "Black Wolf",
+            "nationality": "Azerbaijan",
+            "country_code": "AZ"
+          },
+          "fighter_b": {
+            "id": 55221,
+            "slug": "jefferson-nascimento",
+            "name": "Jefferson Nascimento",
+            "nickname": "Toddynho",
+            "nationality": "Brazil",
+            "country_code": "BR"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 93621,
+          "ordering": 13,
+          "card_section": "early_prelims",
+          "sport": "mma",
+          "weight_class": "Lightweight",
+          "division_slug": "lightweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "announced",
+          "fighter_a": {
+            "id": 982,
+            "slug": "evan-elder",
+            "name": "Evan Elder",
+            "nickname": "The Phenom",
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "fighter_b": {
+            "id": 33315,
+            "slug": "samuel-sanches",
+            "name": "Samuel Sanches",
+            "nickname": "The Prodigy",
+            "nationality": "Brazil",
+            "country_code": "BR"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        }
+      ],
+      "source": "UFCalendar"
+    }
+  ],
+  "notice": "UFC event schedule and selected full fight cards. Free API allowance: 1,000 requests per month.",
+  "last_updated": "2026-11-07T21:47:36Z"
 }
