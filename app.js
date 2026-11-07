@@ -45,7 +45,7 @@ function makeBoutRow(b) {
   const broadcast=document.createElement("div"); broadcast.className="broadcast-line";
   const label=document.createElement("span"); label.textContent="WATCH: ";
   broadcast.append(label);
-  const channels=(b.eventBroadcasters||[]).map(x=>typeof x==="string"?x:(x.name||x.broadcaster||x.platform)).filter(Boolean);
+  const channels=(b.eventBroadcasters||[]).map(x=>typeof x==="string"?x:([x.name||x.broadcaster||x.platform,x.region].filter(Boolean).join(" (")+(x.region?")":""))).filter(Boolean);
   const channel=b.broadcaster||b.broadcast||b.tv_channel||channels.join(", ")||null;
   const url=b.broadcast_url||b.broadcaster_url||b.watch_url||null;
   if(channel && url && /^https?:\\/\\//i.test(url)) {
