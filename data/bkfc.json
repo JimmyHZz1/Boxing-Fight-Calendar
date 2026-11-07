@@ -1,8 +1,8 @@
 {
   "sport": "bkfc",
   "provider": "BKFC official events page",
-  "last_updated": "2026-11-07T18:00:00Z",
-  "notice": "Upcoming events listed from BKFC's official events page. Where an event time is not published in a verified time zone, the app shows Time TBC rather than guessing. BKFC+ carries many live events; selected cards are exclusive to DAZN.",
+  "last_updated": "2026-11-07T23:16:48.355Z",
+  "notice": "BKFC schedule from the official events listing, converted to UK local date/time where the event venue timezone is known. Full BKFC 96 main and undercard bouts are included. BKFC+ carries many live events; selected cards are exclusive to DAZN.",
   "events": [
     {
       "id": "bkfc-96",
@@ -12,48 +12,174 @@
       "status": "scheduled",
       "location": "OVO Hydro, Glasgow, Scotland",
       "source_url": "https://www.bkfc.com/events/bkfc-glasgow",
-      "fights": [],
+      "fights": [
+        {
+          "id": "bkfc96-1",
+          "fighter_a": {
+            "name": "Sean Weir"
+          },
+          "fighter_b": {
+            "name": "Leigh Cohoon"
+          },
+          "weight_class": "Light Heavyweight",
+          "card_section": "Main card"
+        },
+        {
+          "id": "bkfc96-2",
+          "fighter_a": {
+            "name": "Stevie Ray"
+          },
+          "fighter_b": {
+            "name": "Danny Christie"
+          },
+          "weight_class": "Middleweight",
+          "card_section": "Main card"
+        },
+        {
+          "id": "bkfc96-3",
+          "fighter_a": {
+            "name": "Gzim Selmani"
+          },
+          "fighter_b": {
+            "name": "Reece Heer"
+          },
+          "weight_class": "Heavyweight",
+          "card_section": "Main card"
+        },
+        {
+          "id": "bkfc96-4",
+          "fighter_a": {
+            "name": "Scott Malone"
+          },
+          "fighter_b": {
+            "name": "Kieron Sewell"
+          },
+          "weight_class": "Bantamweight",
+          "card_section": "Main card"
+        },
+        {
+          "id": "bkfc96-5",
+          "fighter_a": {
+            "name": "Barry Boyle"
+          },
+          "fighter_b": {
+            "name": "Kaseem Saleem"
+          },
+          "weight_class": "Heavyweight",
+          "card_section": "Main card"
+        },
+        {
+          "id": "bkfc96-6",
+          "fighter_a": {
+            "name": "Doalty Torrance"
+          },
+          "fighter_b": {
+            "name": "KJ Metcalfe"
+          },
+          "weight_class": "Welterweight",
+          "card_section": "Main card"
+        },
+        {
+          "id": "bkfc96-7",
+          "fighter_a": {
+            "name": "Cory Chapman"
+          },
+          "fighter_b": {
+            "name": "Lewis Dixon"
+          },
+          "weight_class": "Bantamweight",
+          "card_section": "Main card"
+        },
+        {
+          "id": "bkfc96-8",
+          "fighter_a": {
+            "name": "Dan Morel"
+          },
+          "fighter_b": {
+            "name": "Owen Webster"
+          },
+          "weight_class": "Featherweight",
+          "card_section": "Main card"
+        },
+        {
+          "id": "bkfc96-9",
+          "fighter_a": {
+            "name": "Lewis Knox"
+          },
+          "fighter_b": {
+            "name": "Tommy Carus"
+          },
+          "weight_class": "Featherweight",
+          "card_section": "Undercard"
+        },
+        {
+          "id": "bkfc96-10",
+          "fighter_a": {
+            "name": "Rhys Pagan"
+          },
+          "fighter_b": {
+            "name": "Danny Moir"
+          },
+          "weight_class": "Light Heavyweight",
+          "card_section": "Undercard"
+        },
+        {
+          "id": "bkfc96-11",
+          "fighter_a": {
+            "name": "Ian Mulroy"
+          },
+          "fighter_b": {
+            "name": "Charlie Thomson"
+          },
+          "weight_class": "Middleweight",
+          "card_section": "Undercard"
+        }
+      ],
       "source": "BKFC official"
     },
     {
       "id": "bkfc-myrtle-beach",
       "name": "BKFC Fight Night Myrtle Beach: Richardson vs Oxendine",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "status": "scheduled",
       "location": "Myrtle Beach Sports Center, Myrtle Beach, USA",
       "source_url": "https://www.bkfc.com/events",
       "fights": [],
-      "source": "BKFC official"
+      "source": "BKFC official",
+      "start_at": "2026-11-21T02:00:00Z"
     },
     {
       "id": "bkfc-hershey",
       "name": "BKFC Fight Night Hershey: Pague vs Richman",
-      "date": "2026-12-04",
+      "date": "2026-12-05",
       "status": "scheduled",
       "location": "Giant Center, Hershey, USA",
       "source_url": "https://www.bkfc.com/events",
       "fights": [],
-      "source": "BKFC official"
+      "source": "BKFC official",
+      "start_at": "2026-12-05T01:00:00Z"
     },
     {
       "id": "bkfc-97",
       "name": "BKFC 97 Hollywood: Henry vs Collard",
-      "date": "2026-12-11",
+      "date": "2026-12-12",
       "status": "scheduled",
       "location": "Hard Rock Live, Hollywood, Florida",
       "source_url": "https://www.bkfc.com/events",
       "fights": [],
-      "source": "BKFC official"
+      "source": "BKFC official",
+      "start_at": "2026-12-12T00:00:00Z"
     },
     {
       "id": "bkfc-cruise",
       "name": "BKFSEA Bruise Cruise: Stewart vs Duran",
-      "date": "2027-01-23",
+      "date": "2027-01-24",
       "status": "scheduled",
       "location": "Norwegian Jewel, Bahamas",
       "source_url": "https://www.bkfc.com/events",
       "fights": [],
-      "source": "BKFC official"
+      "source": "BKFC official",
+      "start_at": "2027-01-24T02:00:00Z"
     },
     {
       "id": "bkfc-99",
@@ -63,7 +189,8 @@
       "location": "Utilita Arena, Sheffield, UK",
       "source_url": "https://www.bkfc.com/events",
       "fights": [],
-      "source": "BKFC official"
+      "source": "BKFC official",
+      "start_at": "2027-02-13T14:00:00Z"
     }
   ]
 }
