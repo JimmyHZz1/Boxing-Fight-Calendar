@@ -34,6 +34,17 @@ def first_value(obj: dict, *keys):
             return value
     return None
 
+def fighter_nationality(fighter: dict, item: dict, side: str):
+    value = first_value(fighter, "nationality", "country", "nationality_code", "country_code")
+    if isinstance(value, dict):
+        value = first_value(value, "name", "code", "country", "iso_code")
+    if value:
+        return value
+    value = first_value(item, f"{side}_nationality", f"{side}_country", f"{side}_country_code")
+    if isinstance(value, dict):
+        value = first_value(value, "name", "code", "country", "iso_code")
+    return value
+
 def normalise_broadcasters(raw: dict) -> list[dict]:
     value = first_value(raw, "broadcasters", "broadcasts", "broadcast", "where_to_watch", "watch", "platforms", "tv")
     if isinstance(value, dict):
@@ -80,8 +91,8 @@ def boxerbook_schedule() -> dict:
                 "fighter2": b.get("name") or item.get("fighter2") or "TBC",
                 "fighter1_image": first_value(a, "image_url", "photo_url", "portrait_url", "image", "photo") or first_value(item, "fighter1_image", "fighter1_photo", "image1", "photo1"),
                 "fighter2_image": first_value(b, "image_url", "photo_url", "portrait_url", "image", "photo") or first_value(item, "fighter2_image", "fighter2_photo", "image2", "photo2"),
-                "fighter1_nationality": first_value(a, "nationality", "country", "nationality_code", "country_code") or first_value(item, "fighter1_nationality", "fighter1_country", "fighter1_country_code"),
-                "fighter2_nationality": first_value(b, "nationality", "country", "nationality_code", "country_code") or first_value(item, "fighter2_nationality", "fighter2_country", "fighter2_country_code"),
+                "fighter1_nationality": fighter_nationality(a, item, "fighter1"),
+                "fighter2_nationality": fighter_nationality(b, item, "fighter2"),
                 "record1": a.get("record"), "record2": b.get("record"),
                 "date": bout_date, "start_time_utc": time_utc,
                 "start_datetime_utc": start,
