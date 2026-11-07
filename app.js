@@ -53,17 +53,36 @@ function fighterPortrait(name, imageUrl) {
   }
   return wrap;
 }
+function countryCode(value) {
+  const raw=String(value||"").trim().toLowerCase();
+  const map={"united kingdom":"GB","great britain":"GB","britain":"GB","british":"GB","england":"GB","scotland":"GB","wales":"GB","northern ireland":"GB","gb":"GB","uk":"GB"};
+  return map[raw]||String(value||"").trim().toUpperCase();
+}
+function isUkFighter(bout,side) {
+  const value=bout[side+"_nationality"]||bout[side+"_country"]||bout[side+"_country_code"];
+  return countryCode(value)==="GB";
+}
+function ukFighterNames(bout) {
+  const names=[];
+  const [one,two]=fighterNames(bout);
+  if(isUkFighter(bout,"fighter1"))names.push(one);
+  if(isUkFighter(bout,"fighter2"))names.push(two);
+  return names;
+}
 function renderUkHeadliners() {
   const root=$("uk-headliners-list");root.replaceChildren();
-  const ukEvents=state.events.filter(e=>/^(GB|UK)$/i.test(String(e.country||e.country_code||"").trim()) && (e.bouts||e.fights||[]).length);
-  const sorted=ukEvents.filter(e=>eventDateKey(e)>=todayKey()).sort(compareEvents);
-  const featured=sorted.map(event=>{
+  const featured=[];
+  state.events.forEach(event=>{
     const bouts=eventBouts(event);
-    const headline=bouts.find(b=>b.title_text)||bouts.slice().sort((a,b)=>(Number(b.rounds)||0)-(Number(a.rounds)||0))[0];
-    return headline?{event,bout:headline}:null;
-  }).filter(Boolean).slice(0,6);
-  if(!featured.length){root.innerHTML='<div class="muted-note">No upcoming UK headline fights are currently listed.</div>';return;}
-  featured.forEach(({event,bout})=>{
+    bouts.filter(isUkBout).forEach(bout=>featured.push({event,bout}));
+  });
+  featured.sort((a,b)=>compareEvents(a.event,b.event)||((b.bout.title_text?1:0)-(a.bout.title_text?1:0)));
+  const upcoming=featured.filter(({event})=>eventDateKey(event)>=todayKey()).slice(0,6);
+  if(!upcoming.length){
+    root.innerHTML='<div class="muted-note">No upcoming fights featuring a confirmed UK boxer nationality are currently listed. This section will populate as nationality data is supplied by the boxing data providers.</div>';
+    return;
+  }
+  upcoming.forEach(({event,bout})=>{
     const [one,two]=fighterNames(bout);
     const accordion=document.createElement("details");accordion.className="uk-headliner-accordion";
     const summary=document.createElement("summary");summary.className="uk-headliner-summary";
@@ -76,8 +95,9 @@ function renderUkHeadliners() {
     f2.querySelector("strong").textContent=two;
     matchup.append(f1,vs,f2);
     const details=document.createElement("div");details.className="uk-headliner-details";
-    const eventName=document.createElement("strong");eventName.textContent=eventTitle(event,eventBouts(event));
-    const meta=document.createElement("span");meta.textContent=[ukDate(event.date),bout.weight_class||bout.division,bout.rounds?bout.rounds+" rounds":null,cardStartLabel(event)?"CARD START "+cardStartLabel(event):null].filter(Boolean).join(" · ");
+    const eventName=document.createElement("strong");eventName.textContent=eventTitle(event,bouts);
+    const ukNames=ukFighterNames(bout);
+    const meta=document.createElement("span");meta.textContent=[ukDate(event.date),bout.weight_class||bout.division,bout.rounds?bout.rounds+" rounds":null,cardStartLabel(event)?"CARD START "+cardStartLabel(event):null,"UK boxer: "+ukNames.join(", ")].filter(Boolean).join(" · ");
     details.append(eventName,meta);
     const status=cardLiveState(event);
     if(status!=="upcoming"){const badge=document.createElement("span");badge.className=status==="live"?"live-badge":"ended-badge";badge.textContent=status==="live"?"● IN PROGRESS":status==="ended"?"EVENT ENDED":status==="cancelled"?"CANCELLED":"POSTPONED";details.append(badge);}
@@ -85,17 +105,19 @@ function renderUkHeadliners() {
     card.append(matchup,details);summary.append(card);
     const panel=document.createElement("div");panel.className="uk-headliner-expanded";
     const panelMeta=document.createElement("div");panelMeta.className="fight-card-meta";
-    const country=countryName(event.country||event.country_code);
     const channels=ukBroadcasters(event.broadcasters);
-    panelMeta.textContent=[country?"COUNTRY: "+country:null,event.promoter?"PROMOTER: "+event.promoter:null,cardStartLabel(event)?"CARD START: "+cardStartLabel(event):null,channels.length?"UK WATCH: "+channels.join(", "):"UK BROADCAST: NOT ANNOUNCED"].filter(Boolean).join(" · ");
+    panelMeta.textContent=[event.promoter?"PROMOTER: "+event.promoter:null,cardStartLabel(event)?"CARD START: "+cardStartLabel(event):null,channels.length?"UK WATCH: "+channels.join(", "):"UK BROADCAST: NOT ANNOUNCED"].filter(Boolean).join(" · ");
     panel.append(panelMeta);
     const list=document.createElement("div");list.className="bout-list";
-    eventBouts(event).forEach(b=>list.append(makeBoutRow({...b,eventCountry:event.country,eventBroadcasters:event.broadcasters||[],eventUrl:event.event_url||event.url,eventStartTime:event.start_time_utc,eventDate:event.date})));
+    bouts.forEach(b=>list.append(makeBoutRow({...b,eventCountry:event.country,eventBroadcasters:event.broadcasters||[],eventUrl:event.event_url||event.url,eventStartTime:event.start_time_utc,eventDate:event.date})));
     panel.append(list);
     const sourceUrl=event.event_url||event.url;
     if(sourceUrl&&/^https?:\/\//i.test(sourceUrl)){const link=document.createElement("a");link.href=sourceUrl;link.target="_blank";link.rel="noopener noreferrer";link.className="event-source-link";link.textContent="View original event details ↗";panel.append(link);}
     accordion.append(summary,panel);root.append(accordion);
   });
+}
+function isUkBout(bout) {
+  return isUkFighter(bout,"fighter1")||isUkFighter(bout,"fighter2");
 }
 function makeBoutRow(b) {
   const row=document.createElement("article");
@@ -145,7 +167,9 @@ function eventBouts(event) {
     eventDate:event.date,
     eventCountry:event.country,
     eventCity:event.city,
-    eventLocation:event.location
+    eventLocation:event.location,
+    fighter1_nationality:b.fighter1_nationality||b.fighter1_country||b.fighter1_country_code,
+    fighter2_nationality:b.fighter2_nationality||b.fighter2_country||b.fighter2_country_code
   }));
   bouts.forEach(b=>{
     const [one,two]=fighterNames(b);
@@ -277,6 +301,17 @@ function renderHome() {
   else upcomingBouts.forEach(b=>headlines.append(makeBoutRow(b)));
   renderUkHeadliners();
   renderTonight();
+}
+function groupBoutsByUkDate(bouts) {
+  const groups=new Map();
+  for(const bout of bouts||[]){
+    const raw=String(bout.date||"");
+    const key=/^\d{4}-\d{2}-\d{2}$/.test(raw)?raw:(ukKey(boutDateTime(bout))||"");
+    if(!key)continue;
+    if(!groups.has(key))groups.set(key,[]);
+    groups.get(key).push(bout);
+  }
+  return groups;
 }
 function renderCalendar() {
   const y=state.month.getFullYear(),m=state.month.getMonth();
