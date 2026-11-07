@@ -43,7 +43,7 @@ function ukBroadcasters(items) {
     .filter(name=>name&&!seen.has(name)&&(seen.add(name),true));
 }
 function normaliseFighterKey(value) {
-  return String(value||"").normalize("NFKD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
+  return String(value||"").normalize("NFKD").replace(/\p{Diacritic}/gu,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
 }
 function fighterPortrait(name, imageUrl) {
   const wrap=document.createElement("div");wrap.className="fighter-portrait";
