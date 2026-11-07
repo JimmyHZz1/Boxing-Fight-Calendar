@@ -1,5 +1,35 @@
-const CACHE="sports-calendar-v30";
-const APP_FILES=["./","./index.html","./styles.css","./app.js","./sports.js","./sports-data.js","./manifest.json"];
-self.addEventListener("install",event=>event.waitUntil(caches.open(CACHE).then(c=>c.addAll(APP_FILES))));
-self.addEventListener("activate",event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k))))));
-self.addEventListener("fetch",event=>{const url=new URL(event.request.url);if((url.pathname.endsWith("/data/fights.json")||url.pathname.endsWith("/data/fighter-images.json")||url.pathname.endsWith("/data/f1.json")||url.pathname.endsWith("/data/darts.json")||url.pathname.endsWith("/data/ufc.json"))){event.respondWith(fetch(event.request,{cache:"no-store"}).catch(()=>caches.match(event.request)));return;}if(event.request.method==="GET"&&url.origin===location.origin){event.respondWith(caches.match(event.request).then(cached=>cached||fetch(event.request).then(response=>{const copy=response.clone();caches.open(CACHE).then(c=>c.put(event.request,copy));return response;})));}});
+const CACHE="sports-calendar-v31";
+const APP_FILES=[
+  "./",
+  "./index.html",
+  "./styles.css?v=20261107-31",
+  "./app.js?v=20261107-25",
+  "./sports-data.js?v=20261107-02",
+  "./sports.js?v=20261107-04",
+  "./manifest.json"
+];
+const DATA_PATHS=["/data/fights.json","/data/fighter-images.json","/data/f1.json","/data/darts.json","/data/ufc.json"];
+self.addEventListener("install",event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(APP_FILES)).then(()=>self.skipWaiting())));
+self.addEventListener("activate",event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
+self.addEventListener("fetch",event=>{
+  const request=event.request;
+  const url=new URL(request.url);
+  if(request.method!=="GET"||url.origin!==self.location.origin)return;
+  if(DATA_PATHS.some(path=>url.pathname.endsWith(path))){
+    event.respondWith(fetch(request,{cache:"no-store"}).catch(()=>caches.match(request)));
+    return;
+  }
+  const isAppAsset=url.pathname.endsWith("/")||/\.(html|css|js|json)$/.test(url.pathname);
+  if(!isAppAsset)return;
+  event.respondWith((async()=>{
+    const cached=await caches.match(request);
+    try{
+      const response=await fetch(request,{cache:"no-store"});
+      if(response&&response.ok){const copy=response.clone();caches.open(CACHE).then(cache=>cache.put(request,copy));}
+      return response;
+    }catch(error){
+      if(cached)return cached;
+      throw error;
+    }
+  })());
+});
