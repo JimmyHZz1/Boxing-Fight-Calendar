@@ -447,7 +447,8 @@ function renderCalendar() {
   $("month-label").textContent=state.month.toLocaleDateString("en-GB",{month:"long",year:"numeric"});
   const first=new Date(y,m,1),offset=(first.getDay()+6)%7,start=new Date(y,m,1-offset);
   const grid=$("calendar-grid");grid.replaceChildren();
-  const today=todayKey(),fightDates=new Set(groupBoutsByUkDate(allBouts()).keys());
+  const filter=window.SportsData?.getCalendarFilter?.()||"all";
+  const today=todayKey(),fightDates=new Set(filter==="all"||filter==="boxing"?groupBoutsByUkDate(allBouts()).keys():[]);
   for(let i=0;i<42;i++){
     const d=new Date(start);d.setDate(start.getDate()+i);const key=dateKey(d);
     const btn=document.createElement("button");btn.className="day";btn.textContent=d.getDate();
@@ -455,15 +456,18 @@ function renderCalendar() {
     if(fightDates.has(key))btn.classList.add("has-event");if(key===ukKey(state.selected))btn.classList.add("selected");
     btn.addEventListener("click",()=>{state.selected=d;renderCalendar();renderSelectedDate();});grid.append(btn);
   }
+  if(window.SportsData?.markCalendarDays)window.SportsData.markCalendarDays(grid,start);
   renderSelectedDate();
 }
 function renderSelectedDate() {
   const key=dateKey(state.selected);
   $("selected-date-label").textContent=state.selected.toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long"});
   const root=$("selected-date-events");root.replaceChildren();
-  const events=eventsForDate(key);
-  if(!events.length)root.innerHTML='<div class="muted-note">No fight cards listed for this date.</div>';
+  const filter=window.SportsData?.getCalendarFilter?.()||"all";
+  const events=(filter==="all"||filter==="boxing")?eventsForDate(key):[];
+  if(!events.length)root.innerHTML=(filter==="all"||filter==="boxing")?'<div class="muted-note">No boxing cards listed for this date.</div>':"";
   else events.forEach(e=>root.append(renderEventCard(e,false)));
+  if(window.SportsData?.renderSelectedDate)window.SportsData.renderSelectedDate(key);
 }
 function renderCards() {
   const root=$("full-cards");root.replaceChildren();
@@ -480,6 +484,7 @@ function renderCards() {
     dayEvents.forEach(event=>list.append(renderEventCard(event,false)));
     section.append(list);root.append(section);
   }
+  if(window.SportsData?.renderEventCards)window.SportsData.renderEventCards();
 }
 async function loadData() {
   try {
@@ -498,6 +503,7 @@ async function loadData() {
     $("refresh-help").textContent="Could not load the latest schedule. Check your connection and try again.";
   }
   renderHome();renderCalendar();renderCards();
+  if(window.SportsData?.renderAll)window.SportsData.renderAll();
 }
 $("manual-refresh").addEventListener("click",async()=>{
   const button=$("manual-refresh");
