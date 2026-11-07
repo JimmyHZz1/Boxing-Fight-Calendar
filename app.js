@@ -40,7 +40,7 @@ function makeBoutRow(b) {
   const right=document.createElement("div"); right.className="fighter"; right.textContent=c;
   const meta=document.createElement("div"); meta.className="bout-meta";
   const timeLabel = b.start_time_utc ? "FIGHT TIME " + (formatTime(b.start_time_utc,b.date)||"TBC") : (b.eventStartTime ? "CARD START " + (formatTime(b.eventStartTime,b.eventDate)||"TBC") : null);
-  const details=[b.weight_class||b.division,b.rounds ? b.rounds+" rounds" : null,b.title_text,timeLabel].filter(Boolean);
+  const details=[b.weight_class||b.division,b.rounds ? b.rounds+" rounds" : null,b.title_text,b.eventCountry ? "COUNTRY "+b.eventCountry : null,timeLabel].filter(Boolean);
   const detailLine=document.createElement("span");
   detailLine.textContent=details.length ? details.join(" · ") : "Weight division not supplied";
   meta.append(detailLine);
@@ -71,7 +71,7 @@ function dateCard(key,bouts) {
   date.append(strong,month);
   const info=document.createElement("div"); info.className="event-info";
   const title=document.createElement("h3"); title.textContent=ukDate(d||key);
-  const desc=document.createElement("p"); desc.textContent=`${bouts.length} scheduled ${bouts.length===1?"bout":"bouts"}`;
+  const desc=document.createElement("p"); const countries=[...new Set(bouts.map(b=>b.eventCountry).filter(Boolean))]; desc.textContent=`${bouts.length} scheduled ${bouts.length===1?"bout":"bouts"}`+(countries.length ? " · "+countries.join(", ") : "");
   info.append(title,desc);
   const tag=document.createElement("div"); tag.className="event-tag"; tag.textContent=bouts[0]?.start_time_utc ? "FIRST BOUT "+ukTime(boutDateTime(bouts[0])) : (bouts[0]?.eventStartTime ? "CARD START "+(formatTime(bouts[0].eventStartTime,bouts[0].eventDate)||"TBC") : "TIME TBC");
   card.append(date,info,tag);
