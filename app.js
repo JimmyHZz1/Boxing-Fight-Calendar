@@ -94,7 +94,7 @@ function eventBouts(event) {
   }));
   bouts.forEach(b=>{
     const [one,two]=fighterNames(b);
-    if(/joshua buatsi/i.test(one)&&/willy hutchinson/i.test(two)){
+    if(/willy hutchinson/i.test(one)&&/joshua buatsi/i.test(two)){
       const first=b.fighter1; b.fighter1=b.fighter2; b.fighter2=first;
       const record=b.record1; b.record1=b.record2; b.record2=record;
     }
@@ -178,7 +178,14 @@ function renderTonight() {
 }
 function renderHome() {
   const nowKey=todayKey();
-  const upcoming=state.events.filter(e=>eventDateKey(e)>=nowKey&&(e.bouts||e.fights||[]).length).sort((a,b)=>eventDateKey(a).localeCompare(eventDateKey(b)));
+  const upcoming=state.events.filter(e=>eventDateKey(e)>=nowKey&&(e.bouts||e.fights||[]).length).sort((a,b)=>{
+    const dateOrder=eventDateKey(a).localeCompare(eventDateKey(b));
+    if(dateOrder)return dateOrder;
+    const aUk=/^(GB|UK)$/i.test(a.country||a.country_code||"")?0:1;
+    const bUk=/^(GB|UK)$/i.test(b.country||b.country_code||"")?0:1;
+    if(aUk!==bUk)return aUk-bUk;
+    return String(a.name||"").localeCompare(String(b.name||""));
+  });
   $("event-count").textContent=upcoming.length+" CARDS";
   const list=$("next-events");list.replaceChildren();
   if(!upcoming.length)list.innerHTML='<div class="empty-state"><span class="empty-icon">🥊</span><h3>No upcoming cards listed</h3><p>The schedule will update automatically as new fights are published.</p></div>';
