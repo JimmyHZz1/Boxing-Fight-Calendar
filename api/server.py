@@ -78,7 +78,11 @@ def status():
         response = requests.get(url, headers=headers, params={"per_page":10}, timeout=20)
         response.raise_for_status()
         runs = response.json().get("workflow_runs", [])
-        matches = [r for r in runs if r.get("event")=="workflow_dispatch" and r.get("created_at","") >= since]
+        try:
+            requested = datetime.fromisoformat(since.replace("Z","+00:00"))
+        except ValueError:
+            requested = datetime.now(timezone.utc) - timedelta(minutes=10)
+        matches = [r for r in runs if r.get("event")=="workflow_dispatch" and r.get("created_at") and datetime.fromisoformat(r["created_at"].replace("Z","+00:00")) >= requested-timedelta(seconds=5)]
         if not matches:
             return jsonify({"status":"queued"})
         run = matches[0]
