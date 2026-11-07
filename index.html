@@ -26,8 +26,19 @@
           <h1 id="home-title">Never miss<br><em>fight night.</em></h1>
           <p>Upcoming professional boxing, from the headline bout to the opening bell.</p>
           <div class="hero-meta"><span>🇬🇧 UK LOCAL TIME</span><span id="home-updated">WAITING FOR FIRST SYNC</span></div>
+          <div class="home-actions">
+            <button id="manual-refresh" class="primary-button" type="button">↻ Update fight data</button>
+            <span id="refresh-help" class="refresh-help">Manual refresh runs through GitHub Actions.</span>
+          </div>
         </div>
-        <div class="section-heading"><div><span class="eyebrow">WHAT'S NEXT</span><h2>Next fight nights</h2></div><span class="count-badge" id="event-count">0 EVENTS</span></div>
+        <section class="tonight-panel" aria-labelledby="tonight-heading">
+          <div class="tonight-heading">
+            <div><span class="eyebrow">TODAY'S SCHEDULE</span><h2 id="tonight-heading">Tonight's fights</h2></div>
+            <button id="today-date-button" class="date-select-button" type="button" aria-expanded="false"><span id="today-date-label">Today</span><strong>VIEW FIGHTS ↓</strong></button>
+          </div>
+          <div id="tonight-bouts" class="bout-list tonight-bouts" hidden></div>
+        </section>
+        <div class="section-heading"><div><span class="eyebrow">WHAT'S NEXT</span><h2>Upcoming fight dates</h2></div><span class="count-badge" id="event-count">0 DATES</span></div>
         <div id="next-events" class="event-list">
           <div class="empty-state"><span class="empty-icon">🥊</span><h3>Fight schedule loading</h3><p>Once the data feed is connected, newly announced events will appear here automatically.</p></div>
         </div>
@@ -50,7 +61,7 @@
       </section>
 
       <section id="cards-screen" class="screen" aria-labelledby="cards-title">
-        <div class="page-intro"><span class="eyebrow">EVERY BOUT, EVERY ROUND</span><h1 id="cards-title">Full fight <em>cards.</em></h1><p>Confirmed undercards, main events, weight divisions and broadcasters.</p></div>
+        <div class="page-intro"><span class="eyebrow">EVERY BOUT, EVERY ROUND</span><h1 id="cards-title">Full fight <em>cards.</em></h1><p>Scheduled bouts, weight divisions and broadcast information when supplied.</p></div>
         <div id="full-cards" class="event-list"><div class="empty-state"><span class="empty-icon">📋</span><h3>Full cards will appear here</h3><p>Event cards will populate as reliable bout information becomes available.</p></div></div>
       </section>
     </main>
