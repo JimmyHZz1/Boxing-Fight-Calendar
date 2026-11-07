@@ -83,7 +83,11 @@
       {name:"TNT Sports",href:"https://www.tntsports.co.uk/",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/TNT_Sports_(2023).svg"},
       {name:"UFC Fight Pass",href:"https://ufcfightpass.com/",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/UFC_Fight_Pass_Logo.svg"}
     ];
-    if(sport==="darts") return [{name:"Check UK broadcast for this tournament",href:"https://www.pdc.tv/",logo:null}];
+    if(sport==="darts") return [
+      {name:"Sky Sports Darts · selected events",href:"https://www.skysports.com/darts",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/Sky_Sports_Darts_-_Logo_2025.svg"},
+      {name:"ITV4 · selected events",href:"https://www.itv.com/watch",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/ITV_logo.svg"},
+      {name:"PDCTV · where UK rights allow",href:"https://video.pdc.tv/",logo:null}
+    ];
     return [];
   }
   function renderWatch(root,sport,event) {
