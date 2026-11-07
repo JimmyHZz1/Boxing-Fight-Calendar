@@ -29,6 +29,7 @@
     const isBoxing=sport==="boxing";
     content.hidden=!isBoxing;coming.hidden=true;
     if(window.SportsData?.renderActive)window.SportsData.renderActive(sport);
+    document.dispatchEvent(new CustomEvent("sports:select",{detail:{sport}}));
   }
   function go(index,manual=true){
     const next=(index+order.length)%order.length;
