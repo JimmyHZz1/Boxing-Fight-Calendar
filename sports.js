@@ -37,8 +37,8 @@
     const target=rail.scrollLeft+slides[next].getBoundingClientRect().left-rail.getBoundingClientRect().left;rail.scrollTo({left:target,behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
     select(next,manual);
   }
-  slides.forEach((s,i)=>s.addEventListener("click",()=>go(i,true)));
-  window.SportsSelector={goToSport:(sport)=>{const index=order.indexOf(sport);if(index<0)return;go(index,true);document.getElementById("sports-carousel-section")?.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});},getActive:()=>order[active]};
+  slides.forEach((s,i)=>s.addEventListener("click",()=>{const sport=s.dataset.sport;if(window.SportPages?.open)window.SportPages.open(sport);else go(i,true);}));
+  window.SportsSelector={goToSport:(sport)=>{const index=order.indexOf(sport);if(index<0)return;go(index,true);document.getElementById("sports-carousel-section")?.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});},setActive:(sport)=>{const index=order.indexOf(sport);if(index>=0)select(index,false);},getActive:()=>order[active]};
   document.getElementById("sport-previous").addEventListener("click",()=>go(active-1,true));
   document.getElementById("sport-next").addEventListener("click",()=>go(active+1,true));
   let scrollTimer;
