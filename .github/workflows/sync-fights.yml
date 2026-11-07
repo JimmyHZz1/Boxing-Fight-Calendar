@@ -33,20 +33,20 @@ jobs:
           BOXING_API_KEY: ${{ secrets.BOXING_API_KEY }}
         run: python scripts/sync_fights.py
 
-      - name: Commit and publish updated schedule
+      - name: Commit and publish updated schedule and boxer portraits
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          if git diff --quiet -- data/fights.json; then
+          if git diff --quiet -- data/fights.json data/fighter-images.json; then
             echo "No schedule changes."
             exit 0
           fi
 
           # Commit the generated file BEFORE rebasing. Pulling first fails
           # because the sync script has already modified data/fights.json.
-          git add data/fights.json
-          git commit -m "Refresh boxing schedule"
+          git add data/fights.json data/fighter-images.json
+          git commit -m "Refresh boxing schedule and boxer portraits"
 
           # Rebase our generated snapshot onto any changes made to main
           # since checkout, then publish it.
