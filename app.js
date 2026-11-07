@@ -1,6 +1,24 @@
 const DATA_URL = "./data/fights.json";
-const state = { events: [], fighterImages: {}, month: new Date(new Date().getFullYear(), new Date().getMonth(), 1), selected: new Date() };
+const state = { events: [], fighterImages: {}, lastUpdated: null, month: new Date(new Date().getFullYear(), new Date().getMonth(), 1), selected: new Date() };
 const $ = id => document.getElementById(id);
+function syncAgeLabel() {
+  const button=$("manual-refresh");
+  if(!button)return;
+  if(!state.lastUpdated){button.textContent="SYNC: unavailable";button.setAttribute("aria-label","Sync time unavailable");return;}
+  const elapsed=Math.max(0,Date.now()-state.lastUpdated.getTime());
+  const minutes=Math.floor(elapsed/60000);
+  let age;
+  if(minutes<1)age="just now";
+  else if(minutes<60)age=minutes+"m ago";
+  else {
+    const hours=Math.floor(minutes/60),remaining=minutes%60;
+    if(hours<24)age=hours+"h"+(remaining?" "+remaining+"m":"")+" ago";
+    else {const days=Math.floor(hours/24),left=hours%24;age=days+"d"+(left?" "+left+"h":"")+" ago";}
+  }
+  button.textContent="SYNC: "+age;
+  button.setAttribute("aria-label","Last schedule sync "+age+". Tap to check for newer data.");
+}
+
 const pad = n => String(n).padStart(2, "0");
 const dateKey = d => `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
 const parseDate = value => { const d = new Date(value); return Number.isNaN(d.getTime()) ? null : d; };
@@ -468,12 +486,15 @@ async function loadData() {
     const res=await fetch(DATA_URL+"?t="+Date.now(),{cache:"no-store"});
     if(!res.ok)throw new Error("Data feed unavailable");
     const data=await res.json();state.events=Array.isArray(data.events)?data.events:[];
+    state.lastUpdated=data.last_updated?parseDate(data.last_updated):null;
+    syncAgeLabel();
     try { const photos=await fetch("./data/fighter-images.json?t="+Date.now(),{cache:"no-store"}); if(photos.ok){const photoData=await photos.json();state.fighterImages=photoData.images||{};} } catch(_) { state.fighterImages={}; }
     if(data.last_updated)$("home-updated").textContent="DATA UPDATED "+new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",dateStyle:"medium",timeStyle:"short"}).format(new Date(data.last_updated));
     else $("home-updated").textContent="AWAITING DATA SYNC";
     $("refresh-help").textContent="Latest published schedule checked.";
   } catch(e) {
     $("home-updated").textContent="DATA FEED NOT CONNECTED";
+    state.lastUpdated=null;syncAgeLabel();
     $("refresh-help").textContent="Could not load the latest schedule. Check your connection and try again.";
   }
   renderHome();renderCalendar();renderCards();
@@ -481,15 +502,15 @@ async function loadData() {
 $("manual-refresh").addEventListener("click",async()=>{
   const button=$("manual-refresh");
   button.disabled=true;
-  button.textContent="↻ Checking…";
+  button.textContent="SYNC: checking…";
   $("refresh-help").textContent="Checking for the latest published fight schedule…";
   await loadData();
   button.disabled=false;
-  button.textContent="↻ Update";
+  syncAgeLabel();
 });
 $("prev-month").addEventListener("click",()=>{state.month.setMonth(state.month.getMonth()-1);renderCalendar();});
 $("next-month").addEventListener("click",()=>{state.month.setMonth(state.month.getMonth()+1);renderCalendar();});
 loadData();setInterval(loadData,5*60*1000);
 if("serviceWorker" in navigator && location.protocol.startsWith("http"))navigator.serviceWorker.register("./sw.js").catch(()=>{});
 
-setInterval(()=>{if(document.visibilityState==="visible")renderHome();},60000);
+setInterval(()=>{syncAgeLabel();if(document.visibilityState==="visible")renderHome();},60000);
