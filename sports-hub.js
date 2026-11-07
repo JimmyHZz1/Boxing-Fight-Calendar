@@ -10,7 +10,7 @@
   function person(item, index, label) {
     const img = item.image_url ? '<img src="'+esc(item.image_url)+'" alt="" loading="lazy" onerror="this.remove()">' : '<span class="hub-avatar-fallback">'+esc(initials(item.name))+'</span>';
     const rank = item.rank != null ? (item.rank===0 ? "C" : "#"+item.rank) : (index+1);
-    const extra = [item.team,item.points!=null?item.points+" pts":null,item.prize_money,item.org].filter(Boolean).join(" · ");
+    const extra = [item.team,item.prize_money?"£"+item.prize_money:(item.points!=null?item.points+" pts":null),item.org,item.image_credit].filter(Boolean).join(" · ");
     return '<div class="hub-person">'+img+'<span class="hub-rank">'+esc(rank)+'</span><span class="hub-person-name"><strong>'+esc(item.name||"TBC")+'</strong><small>'+esc(extra||label||"")+'</small></span></div>';
   }
   function dropdown(title, items, label, max=30) {
