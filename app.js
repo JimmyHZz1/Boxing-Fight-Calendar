@@ -49,8 +49,9 @@ function allBouts() {
 function showScreen(id) {
   document.querySelectorAll(".screen").forEach(s => s.classList.toggle("active",s.id===id));
   document.querySelectorAll(".nav-item").forEach(b => b.classList.toggle("active",b.dataset.screen===id));
-  window.scrollTo({top:0,behavior:"smooth"});
+  window.scrollTo({top:0,behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
 }
+window.showScreen=showScreen;
 document.querySelectorAll(".nav-item").forEach(b => b.addEventListener("click",()=>showScreen(b.dataset.screen)));
 function fighterNames(b) {
   return [b.fighter1||b.fighter_a||b.red_corner||b.boxer1||"TBC", b.fighter2||b.fighter_b||b.blue_corner||b.boxer2||"TBC"];
@@ -438,6 +439,7 @@ function renderHome() {
   renderHighProfileFights();
   renderUkHeadliners();
   renderTonight();
+  document.dispatchEvent(new CustomEvent("sports:boxing-data-updated"));
 }
 function groupBoutsByUkDate(bouts) {
   const groups=new Map();
@@ -529,6 +531,7 @@ $("manual-refresh").addEventListener("click",async()=>{
 });
 $("prev-month").addEventListener("click",()=>{state.month.setMonth(state.month.getMonth()-1);renderCalendar();});
 $("next-month").addEventListener("click",()=>{state.month.setMonth(state.month.getMonth()+1);renderCalendar();});
+window.BoxingSchedule={getNextEvent:()=>state.events.filter(e=>eventDateKey(e)>=todayKey()).sort(compareEvents)[0]||null};
 loadData();setInterval(async()=>{await loadData();if(window.SportsData?.load)await window.SportsData.load();state.lastChecked=new Date();refreshHelpMessage();syncAgeLabel();},5*60*1000);
 if("serviceWorker" in navigator && location.protocol.startsWith("http"))navigator.serviceWorker.register("./sw.js").catch(()=>{});
 
