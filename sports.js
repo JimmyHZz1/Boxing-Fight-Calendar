@@ -27,7 +27,8 @@
     document.getElementById("sport-coming-title").textContent=d.title;
     document.getElementById("sport-coming-copy").textContent=d.copy;
     const isBoxing=sport==="boxing";
-    content.hidden=!isBoxing;coming.hidden=isBoxing;
+    content.hidden=!isBoxing;coming.hidden=true;
+    if(window.SportsData?.renderActive)window.SportsData.renderActive(sport);
     if(manual)manualUntil=Date.now()+18000;
     if(manual)resetTimer();
   }
