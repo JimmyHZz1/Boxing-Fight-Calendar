@@ -279,7 +279,7 @@ def sync_sports_hub():
         for i, row in enumerate(rows):
             player = row.get("player") if isinstance(row.get("player"), dict) else {}
             name = row.get("name") or row.get("player_name") or player.get("name") or "Unknown player"
-            rankings.append({"rank": row.get("position") or row.get("rank") or i + 1, "name": name, "points": row.get("prize_money") or row.get("ranking_prize_money") or row.get("points"), "image_url": row.get("image_url") or player.get("image_url") or player.get("photo_url")})
+            rankings.append({"rank": row.get("position") or row.get("rank") or i + 1, "name": name, "prize_money": row.get("prize_money") or row.get("ranking_prize_money"), "points": row.get("points"), "image_url": row.get("image_url") or player.get("image_url") or player.get("photo_url")})
         hub["sports"]["darts"] = {"rankings": add_photos(rankings, limit=12), "notice": "PDC Order of Merit. The free Darts API feed may be up to seven days behind."}
     except Exception as exc:
         hub["sports"]["darts"] = {"rankings": [], "sync_warning": str(exc)}
