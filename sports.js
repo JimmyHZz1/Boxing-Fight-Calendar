@@ -37,6 +37,7 @@
     select(next,manual);
   }
   slides.forEach((s,i)=>s.addEventListener("click",()=>go(i,true)));
+  document.querySelectorAll("[data-sport-shortcut]").forEach(button=>button.addEventListener("click",()=>{const index=order.indexOf(button.dataset.sportShortcut);if(index<0)return;go(index,true);document.getElementById("sports-carousel-section")?.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});}));
   document.getElementById("sport-previous").addEventListener("click",()=>go(active-1,true));
   document.getElementById("sport-next").addEventListener("click",()=>go(active+1,true));
   let scrollTimer;
