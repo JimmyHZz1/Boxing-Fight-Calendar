@@ -67,7 +67,7 @@
   }
   function sportLogo(sport) {
     const logos={
-      f1:{src:"https://commons.wikimedia.org/wiki/Special:FilePath/Formula%201%20logo.svg",alt:"Formula 1"},
+      f1:{src:"https://www.formula1.com/assets/home/_next/static/media/f1-logo.43a01c6b.svg",alt:"Formula 1"},
       darts:{src:"https://commons.wikimedia.org/wiki/Special:FilePath/Professional%20Darts%20Corporation%20logo.png",alt:"PDC"},
       ufc:{src:"https://commons.wikimedia.org/wiki/Special:FilePath/UFC%20Logo.svg",alt:"UFC"}
     };
@@ -110,7 +110,7 @@
     const summary=make("summary");
     const visual=make("span","sport-event-visual");
     const logo=sportLogo(sport);
-    if(logo){const img=make("img");img.src=logo.src;img.alt=logo.alt+" logo";img.loading="lazy";visual.append(img);}
+    if(logo){const img=make("img");img.src=logo.src;img.alt=logo.alt+" logo";img.loading="lazy";img.onerror=()=>{img.remove();visual.append(make("strong","sport-logo-wordmark",sport==="darts"?"PDC":sport==="f1"?"F1":sport.toUpperCase()));};visual.append(img);}
     else visual.append(make("strong","sport-logo-wordmark",sport==="boxing"?"BOXING":"SPORT"));
     const date=make("span","sport-event-date");
     const d=eventDate({...event,sport});
