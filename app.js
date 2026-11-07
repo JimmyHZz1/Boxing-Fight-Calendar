@@ -1,22 +1,29 @@
 const DATA_URL = "./data/fights.json";
-const state = { events: [], fighterImages: {}, lastUpdated: null, month: new Date(new Date().getFullYear(), new Date().getMonth(), 1), selected: new Date() };
+const state = { events: [], fighterImages: {}, lastUpdated: null, lastChecked: null, month: new Date(new Date().getFullYear(), new Date().getMonth(), 1), selected: new Date() };
 const $ = id => document.getElementById(id);
+function formatAge(date) {
+  if(!date)return "unavailable";
+  const elapsed=Math.max(0,Date.now()-date.getTime());
+  const minutes=Math.floor(elapsed/60000);
+  if(minutes<1)return "just now";
+  if(minutes<60)return minutes+"m ago";
+  const hours=Math.floor(minutes/60),remaining=minutes%60;
+  if(hours<24)return hours+"h"+(remaining?" "+remaining+"m":"")+" ago";
+  const days=Math.floor(hours/24),left=hours%24;
+  return days+"d"+(left?" "+left+"h":"")+" ago";
+}
 function syncAgeLabel() {
   const button=$("manual-refresh");
   if(!button)return;
-  if(!state.lastUpdated){button.textContent="SYNC: unavailable";button.setAttribute("aria-label","Sync time unavailable");return;}
-  const elapsed=Math.max(0,Date.now()-state.lastUpdated.getTime());
-  const minutes=Math.floor(elapsed/60000);
-  let age;
-  if(minutes<1)age="just now";
-  else if(minutes<60)age=minutes+"m ago";
-  else {
-    const hours=Math.floor(minutes/60),remaining=minutes%60;
-    if(hours<24)age=hours+"h"+(remaining?" "+remaining+"m":"")+" ago";
-    else {const days=Math.floor(hours/24),left=hours%24;age=days+"d"+(left?" "+left+"h":"")+" ago";}
-  }
-  button.textContent="SYNC: "+age;
-  button.setAttribute("aria-label","Last schedule sync "+age+". Tap to check for newer data.");
+  const age=formatAge(state.lastChecked);
+  button.textContent="CHECKED: "+age;
+  const lastSync=state.lastUpdated?new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",dateStyle:"medium",timeStyle:"short"}).format(state.lastUpdated):"not available";
+  button.setAttribute("aria-label","Last checked "+age+". Last successful data sync: "+lastSync+". Tap to check for newly published data.");
+}
+function refreshHelpMessage() {
+  const checked=state.lastChecked?new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",hour:"2-digit",minute:"2-digit"}).format(state.lastChecked):"—";
+  const synced=state.lastUpdated?new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",dateStyle:"medium",timeStyle:"short"}).format(state.lastUpdated):"not available";
+  $("refresh-help").textContent="Checked "+checked+" UK time · Last data sync: "+synced+". New data is published automatically every 4 hours.";
 }
 
 const pad = n => String(n).padStart(2, "0");
@@ -495,13 +502,15 @@ async function loadData() {
     state.lastUpdated=data.last_updated?parseDate(data.last_updated):null;
     syncAgeLabel();
     try { const photos=await fetch("./data/fighter-images.json?t="+Date.now(),{cache:"no-store"}); if(photos.ok){const photoData=await photos.json();state.fighterImages=photoData.images||{};} } catch(_) { state.fighterImages={}; }
-    if(data.last_updated)$("home-updated").textContent="DATA UPDATED "+new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",dateStyle:"medium",timeStyle:"short"}).format(new Date(data.last_updated));
+    if(data.last_updated)$("home-updated").textContent="LAST DATA SYNC "+new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",dateStyle:"medium",timeStyle:"short"}).format(new Date(data.last_updated));
     else $("home-updated").textContent="AWAITING DATA SYNC";
-    $("refresh-help").textContent="Latest published schedule checked.";
+    state.lastChecked=new Date();
+    refreshHelpMessage();
   } catch(e) {
     $("home-updated").textContent="DATA FEED NOT CONNECTED";
     state.lastUpdated=null;syncAgeLabel();
-    $("refresh-help").textContent="Could not load the latest schedule. Check your connection and try again.";
+    state.lastChecked=new Date();
+    $("refresh-help").textContent="Check failed. Could not load the latest published schedule; check your connection and try again.";
   }
   renderHome();renderCalendar();renderCards();
   if(window.SportsData?.renderAll)window.SportsData.renderAll();
@@ -510,15 +519,17 @@ $("manual-refresh").addEventListener("click",async()=>{
   const button=$("manual-refresh");
   button.disabled=true;
   button.textContent="SYNC: checking…";
-  $("refresh-help").textContent="Checking for the latest published fight schedule…";
+  $("refresh-help").textContent="Checking the latest published schedules…";
   await loadData();
   if(window.SportsData?.load)await window.SportsData.load();
+  state.lastChecked=new Date();
+  refreshHelpMessage();
   button.disabled=false;
   syncAgeLabel();
 });
 $("prev-month").addEventListener("click",()=>{state.month.setMonth(state.month.getMonth()-1);renderCalendar();});
 $("next-month").addEventListener("click",()=>{state.month.setMonth(state.month.getMonth()+1);renderCalendar();});
-loadData();setInterval(()=>{loadData();if(window.SportsData?.load)window.SportsData.load();},5*60*1000);
+loadData();setInterval(async()=>{await loadData();if(window.SportsData?.load)await window.SportsData.load();state.lastChecked=new Date();refreshHelpMessage();syncAgeLabel();},5*60*1000);
 if("serviceWorker" in navigator && location.protocol.startsWith("http"))navigator.serviceWorker.register("./sw.js").catch(()=>{});
 
 setInterval(()=>{syncAgeLabel();if(document.visibilityState==="visible")renderHome();},60000);
