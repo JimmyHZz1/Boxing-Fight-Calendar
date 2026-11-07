@@ -14,7 +14,7 @@
   const coming=document.getElementById("sport-coming-soon");
   let active=0,timer=null,manualUntil=0;
   const dotButtons=order.map((sport,index)=>{
-    const b=document.createElement("button");b.type="button";b.className="carousel-dot";b.setAttribute("aria-label","Show "+details[sport].name);b.addEventListener("click",()=>select(index,true));dots.append(b);return b;
+    const b=document.createElement("button");b.type="button";b.className="carousel-dot";b.setAttribute("aria-label","Show "+details[sport].name);b.addEventListener("click",()=>go(index,true));dots.append(b);return b;
   });
   function select(index,manual=false){
     active=(index+order.length)%order.length;
