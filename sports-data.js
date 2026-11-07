@@ -57,7 +57,7 @@
     return SPORTS.flatMap(sport=>data[sport].map(event=>({...event,sport})));
   }
   function eventDate(event) {
-    if (event.sport==="darts"||event.sport==="bkfc") return dateKey(event.start_at||event.date,!!(event.date&&/^\\d{4}-\\d{2}-\\d{2}$/.test(event.date)&&!event.start_at));
+    if (event.sport==="darts"||event.sport==="bkfc") return dateKey(event.start_at||event.date,!!(event.date&&/^\d{4}-\d{2}-\d{2}$/.test(event.date)&&!event.start_at));
     return dateKey(event.start_at||event.date,!!(event.date&&/^\d{4}-\d{2}-\d{2}$/.test(event.date)&&!event.start_at));
   }
   function sortedEvents(sport, includePast=false) {
@@ -69,7 +69,8 @@
     const logos={
       f1:{src:"https://www.formula1.com/assets/home/_next/static/media/f1-logo.43a01c6b.svg",alt:"Formula 1"},
       darts:{src:"https://commons.wikimedia.org/wiki/Special:FilePath/Professional%20Darts%20Corporation%20logo.png",alt:"PDC"},
-      ufc:{src:"https://commons.wikimedia.org/wiki/Special:FilePath/UFC%20Logo.svg",alt:"UFC"},\n      bkfc:{src:"https://commons.wikimedia.org/wiki/Special:FilePath/Bkfc-logo.png",alt:"BKFC"}
+      ufc:{src:"https://commons.wikimedia.org/wiki/Special:FilePath/UFC%20Logo.svg",alt:"UFC"},
+      bkfc:{src:"https://commons.wikimedia.org/wiki/Special:FilePath/Bkfc-logo.png",alt:"BKFC"}
     };
     return logos[sport]||null;
   }
@@ -83,7 +84,11 @@
       {name:"TNT Sports",href:"https://www.tntsports.co.uk/",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/TNT_Sports_(2023).svg"},
       {name:"UFC Fight Pass",href:"https://ufcfightpass.com/",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/UFC_Fight_Pass_Logo.svg"}
     ];
-    if(sport==="bkfc") return [\n      {name:"BKFC+ · most live events",href:"https://www.bkfc.com/",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/Bkfc-logo.png"},\n      {name:"DAZN · selected exclusive events",href:"https://www.dazn.com/",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/DAZN_logo.svg"}\n    ];\n    if(sport==="darts") return [
+    if(sport==="bkfc") return [
+      {name:"BKFC+ · most live events",href:"https://www.bkfc.com/",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/Bkfc-logo.png"},
+      {name:"DAZN · selected exclusive events",href:"https://www.dazn.com/",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/DAZN_logo.svg"}
+    ];
+    if(sport==="darts") return [
       {name:"Sky Sports Darts · selected events",href:"https://www.skysports.com/darts",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/Sky_Sports_Darts_-_Logo_2025.svg"},
       {name:"ITV4 · selected events",href:"https://www.itv.com/watch",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/ITV_logo.svg"},
       {name:"PDCTV · where UK rights allow",href:"https://video.pdc.tv/",logo:null}
@@ -122,14 +127,16 @@
     const sub=[];
     if (sport==="f1") sub.push("ROUND "+safe(event.round,"?"),event.circuit,event.country);
     if (sport==="darts") sub.push(event.tier?String(event.tier).replaceAll("_"," ").toUpperCase():null,event.matches?event.matches+" matches":null);
-    if (sport==="ufc") sub.push(event.number?"EVENT "+event.number:null,event.start_at?timeLabel(event.start_at):null);\n    if (sport==="bkfc") sub.push(event.location||event.venue||null,event.start_at?timeLabel(event.start_at):null);
+    if (sport==="ufc") sub.push(event.number?"EVENT "+event.number:null,event.start_at?timeLabel(event.start_at):null);
+    if (sport==="bkfc") sub.push(event.location||event.venue||null,event.start_at?timeLabel(event.start_at):null);
     main.append(make("small",null,sub.filter(Boolean).join(" · ")||dateLabel(event.date||event.start_at)));
     summary.append(visual,date,main,make("span","sport-event-badge",statusLabel(event)));
     card.append(summary);
     const body=make("div","sport-event-body");
     if (sport==="f1") renderF1Details(body,event);
     else if (sport==="darts") renderDartsDetails(body,event);
-    else if (sport==="ufc") renderUfcDetails(body,event);\n    else renderBkfcDetails(body,event);
+    else if (sport==="ufc") renderUfcDetails(body,event);
+    else renderBkfcDetails(body,event);
     renderWatch(body,sport,event);
     card.append(body);
     return card;
