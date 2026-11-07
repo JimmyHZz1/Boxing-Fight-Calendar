@@ -1,5 +1,948 @@
 {
   "provider": "Boxing Data API",
-  "last_updated": null,
-  "events": []
+  "last_updated": "2026-11-07T19:38:10Z",
+  "provider_generated_at": "2026-11-07T19:38:09Z",
+  "range_days": 30,
+  "count_bouts": 73,
+  "events": [
+    {
+      "id": "date-2026-11-07",
+      "name": "Fight schedule — Sat 7 Nov",
+      "date": "2026-11-07T08:15:00Z",
+      "venue": null,
+      "bouts": [
+        {
+          "id": "fx_mt6qbvwz",
+          "fighter1": "Jae Woo Lee",
+          "fighter2": "Kenichi Ogawa",
+          "start_time_utc": "08:15",
+          "date": "2026-11-07",
+          "start_datetime_utc": "2026-11-07T08:15:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_vehtxznz",
+          "fighter1": "Ryo Sagawa",
+          "fighter2": "Yamato Hata",
+          "start_time_utc": "09:00",
+          "date": "2026-11-07",
+          "start_datetime_utc": "2026-11-07T09:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_ctd2t0a9",
+          "fighter1": "Andrei Dascalu",
+          "fighter2": "Bernardin Jakaj",
+          "start_time_utc": "17:00",
+          "date": "2026-11-07",
+          "start_datetime_utc": "2026-11-07T17:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_wa1faz56",
+          "fighter1": "Cheikh Diop",
+          "fighter2": "John Joe Carrigan",
+          "start_time_utc": "19:00",
+          "date": "2026-11-07",
+          "start_datetime_utc": "2026-11-07T19:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_cjedj6xy",
+          "fighter1": "Mourad Aliev",
+          "fighter2": "Umut Camkiran",
+          "start_time_utc": "19:00",
+          "date": "2026-11-07",
+          "start_datetime_utc": "2026-11-07T19:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_8r359ytr",
+          "fighter1": "Grant Dennis",
+          "fighter2": "Ryan Macmillan",
+          "start_time_utc": "19:00",
+          "date": "2026-11-07",
+          "start_datetime_utc": "2026-11-07T19:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_fe2v778f",
+          "fighter1": "Angelo Dragone",
+          "fighter2": "Tumi Phillips",
+          "start_time_utc": "19:00",
+          "date": "2026-11-07",
+          "start_datetime_utc": "2026-11-07T19:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_rqwpqj9w",
+          "fighter1": "Alex Arthur Jr",
+          "fighter2": "Jose Aguirre",
+          "start_time_utc": "19:00",
+          "date": "2026-11-07",
+          "start_datetime_utc": "2026-11-07T19:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_64rx7x3v",
+          "fighter1": "Billy Deniz",
+          "fighter2": "Joe O'Sullivan",
+          "start_time_utc": "19:00",
+          "date": "2026-11-07",
+          "start_datetime_utc": "2026-11-07T19:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_mxv1pj7w",
+          "fighter1": "Atacayte Santana",
+          "fighter2": "Javokhir Ummataliev",
+          "start_time_utc": "19:00",
+          "date": "2026-11-07",
+          "start_datetime_utc": "2026-11-07T19:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_5kbeybv0",
+          "fighter1": "Harley Collison",
+          "fighter2": "Stephen Clarke",
+          "start_time_utc": "19:00",
+          "date": "2026-11-07",
+          "start_datetime_utc": "2026-11-07T19:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_r3ebcst4",
+          "fighter1": "Connal McDonald",
+          "fighter2": "Lucas Roehrig",
+          "start_time_utc": "19:05",
+          "date": "2026-11-07",
+          "start_datetime_utc": "2026-11-07T19:05:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_9zwfdx36",
+          "fighter1": "Julia Igel",
+          "fighter2": "Kayla Allen",
+          "start_time_utc": "19:40",
+          "date": "2026-11-07",
+          "start_datetime_utc": "2026-11-07T19:40:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_freyfmas",
+          "fighter1": "Adan Palma",
+          "fighter2": "Masood Abdulah",
+          "start_time_utc": "20:00",
+          "date": "2026-11-07",
+          "start_datetime_utc": "2026-11-07T20:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_r1sbkgv8",
+          "fighter1": "Bradley Rea",
+          "fighter2": "Ezra Taylor",
+          "start_time_utc": "20:00",
+          "date": "2026-11-07",
+          "start_datetime_utc": "2026-11-07T20:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_mqzyt4bp",
+          "fighter1": "Gully Powar",
+          "fighter2": "Zak Miller",
+          "start_time_utc": "20:00",
+          "date": "2026-11-07",
+          "start_datetime_utc": "2026-11-07T20:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_v3akbdet",
+          "fighter1": "Amaury Massenaux",
+          "fighter2": "Sam Hickey",
+          "start_time_utc": "20:05",
+          "date": "2026-11-07",
+          "start_datetime_utc": "2026-11-07T20:05:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_awqgm3kt",
+          "fighter1": "Sam Hickey",
+          "fighter2": "Troy Coleman",
+          "start_time_utc": "20:05",
+          "date": "2026-11-07",
+          "start_datetime_utc": "2026-11-07T20:05:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_31xw9a9y",
+          "fighter1": "Da'mazion Vanhouter",
+          "fighter2": "Ivan Balaz",
+          "start_time_utc": "20:45",
+          "date": "2026-11-07",
+          "start_datetime_utc": "2026-11-07T20:45:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_fpv0badk",
+          "fighter1": "Hovhannes Martirosyan",
+          "fighter2": "Jack Rafferty",
+          "start_time_utc": "21:00",
+          "date": "2026-11-07",
+          "start_datetime_utc": "2026-11-07T21:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_s3680fjq",
+          "fighter1": "Umar Dzambekov",
+          "fighter2": "Zach Parker",
+          "start_time_utc": "22:00",
+          "date": "2026-11-07",
+          "start_datetime_utc": "2026-11-07T22:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_jyf90k22",
+          "fighter1": "Cheavon Clarke",
+          "fighter2": "Chris Billam Smith",
+          "start_time_utc": "22:15",
+          "date": "2026-11-07",
+          "start_datetime_utc": "2026-11-07T22:15:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_jqqa0vjh",
+          "fighter1": "Denzel Bentley",
+          "fighter2": "Shane Mosley Jr",
+          "start_time_utc": "23:00",
+          "date": "2026-11-07",
+          "start_datetime_utc": "2026-11-07T23:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_whb0tq6p",
+          "fighter1": "Joshua Buatsi",
+          "fighter2": "Willy Hutchinson",
+          "start_time_utc": "23:00",
+          "date": "2026-11-07",
+          "start_datetime_utc": "2026-11-07T23:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        }
+      ],
+      "source_note": "Bouts grouped by UTC date; this is not a confirmed promoter event card."
+    },
+    {
+      "id": "date-2026-11-08",
+      "name": "Fight schedule — Sun 8 Nov",
+      "date": "2026-11-08T00:50:00Z",
+      "venue": null,
+      "bouts": [
+        {
+          "id": "fx_d8j5crm0",
+          "fighter1": "Brittany Sims",
+          "fighter2": "Shera Mae Patricio",
+          "start_time_utc": "00:50",
+          "date": "2026-11-08",
+          "start_datetime_utc": "2026-11-08T00:50:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_1xn10x7n",
+          "fighter1": "Pryce Taylor",
+          "fighter2": "Tsotne Rogava",
+          "start_time_utc": "01:00",
+          "date": "2026-11-08",
+          "start_datetime_utc": "2026-11-08T01:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_nefcyxcg",
+          "fighter1": "Irma Garcia",
+          "fighter2": "Nataly Delgado",
+          "start_time_utc": "01:35",
+          "date": "2026-11-08",
+          "start_datetime_utc": "2026-11-08T01:35:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_4xcsyz0n",
+          "fighter1": "Atif Oberlton",
+          "fighter2": "Deon Nicholson",
+          "start_time_utc": "02:00",
+          "date": "2026-11-08",
+          "start_datetime_utc": "2026-11-08T02:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_cmpade1v",
+          "fighter1": "Miyo Yoshida",
+          "fighter2": "Skye Nicolson",
+          "start_time_utc": "02:05",
+          "date": "2026-11-08",
+          "start_datetime_utc": "2026-11-08T02:05:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_r79xw312",
+          "fighter1": "Brandon Moreno",
+          "fighter2": "Pedro Taduran",
+          "start_time_utc": "03:00",
+          "date": "2026-11-08",
+          "start_datetime_utc": "2026-11-08T03:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_hj14vz22",
+          "fighter1": "Mikiah Kreps",
+          "fighter2": "Ramla Ali",
+          "start_time_utc": "03:20",
+          "date": "2026-11-08",
+          "start_datetime_utc": "2026-11-08T03:20:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_qkj1g743",
+          "fighter1": "Abraham R Perez",
+          "fighter2": "Yankiel Rivera Figueroa",
+          "start_time_utc": "04:00",
+          "date": "2026-11-08",
+          "start_datetime_utc": "2026-11-08T04:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_6w9fbgam",
+          "fighter1": "Alycia Baumgardner",
+          "fighter2": "Elif Nur Turhan",
+          "start_time_utc": "04:05",
+          "date": "2026-11-08",
+          "start_datetime_utc": "2026-11-08T04:05:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        }
+      ],
+      "source_note": "Bouts grouped by UTC date; this is not a confirmed promoter event card."
+    },
+    {
+      "id": "date-2026-11-09",
+      "name": "Fight schedule — Mon 9 Nov",
+      "date": "2026-11-09T01:35:00Z",
+      "venue": null,
+      "bouts": [
+        {
+          "id": "fx_tgzrvnqa",
+          "fighter1": "Albina Moldazhanova",
+          "fighter2": "Kirstie Bavington",
+          "start_time_utc": "01:35",
+          "date": "2026-11-09",
+          "start_datetime_utc": "2026-11-09T01:35:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        }
+      ],
+      "source_note": "Bouts grouped by UTC date; this is not a confirmed promoter event card."
+    },
+    {
+      "id": "date-2026-11-13",
+      "name": "Fight schedule — Fri 13 Nov",
+      "date": "2026-11-13T01:40:00Z",
+      "venue": null,
+      "bouts": [
+        {
+          "id": "fx_ag7sm5y4",
+          "fighter1": "Erik Bazinyan",
+          "fighter2": "Steven Butler",
+          "start_time_utc": "01:40",
+          "date": "2026-11-13",
+          "start_datetime_utc": "2026-11-13T01:40:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_j6n7vys9",
+          "fighter1": "Hendri Cedeno",
+          "fighter2": "Jhon Orobio",
+          "start_time_utc": "03:00",
+          "date": "2026-11-13",
+          "start_datetime_utc": "2026-11-13T03:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        }
+      ],
+      "source_note": "Bouts grouped by UTC date; this is not a confirmed promoter event card."
+    },
+    {
+      "id": "date-2026-11-14",
+      "name": "Fight schedule — Sat 14 Nov",
+      "date": "2026-11-14T19:30:00Z",
+      "venue": null,
+      "bouts": [
+        {
+          "id": "fx_jqp6kbsp",
+          "fighter1": "Bruno Surace",
+          "fighter2": "Kamil Bednarek",
+          "start_time_utc": "19:30",
+          "date": "2026-11-14",
+          "start_datetime_utc": "2026-11-14T19:30:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_m00ksqp2",
+          "fighter1": "Andres Teran",
+          "fighter2": "Jason Moloney",
+          "start_time_utc": "20:30",
+          "date": "2026-11-14",
+          "start_datetime_utc": "2026-11-14T20:30:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_exxgpdaq",
+          "fighter1": "Gavin Gwynne",
+          "fighter2": "Zelfa Barrett",
+          "start_time_utc": "21:00",
+          "date": "2026-11-14",
+          "start_datetime_utc": "2026-11-14T21:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_2rga8112",
+          "fighter1": "Carlos Adames",
+          "fighter2": "Gerome Warburton",
+          "start_time_utc": "21:30",
+          "date": "2026-11-14",
+          "start_datetime_utc": "2026-11-14T21:30:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_hw4aqh4z",
+          "fighter1": "Seydi Coupe",
+          "fighter2": "Viddal Riley",
+          "start_time_utc": "22:00",
+          "date": "2026-11-14",
+          "start_datetime_utc": "2026-11-14T22:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_wvcqjpqn",
+          "fighter1": "Angel Geovanny Meza Morales",
+          "fighter2": "Kyosuke Takami",
+          "start_time_utc": "23:00",
+          "date": "2026-11-14",
+          "start_datetime_utc": "2026-11-14T23:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_hbv1j6b4",
+          "fighter1": "Nishant Dev",
+          "fighter2": "Sona Akale",
+          "start_time_utc": "23:40",
+          "date": "2026-11-14",
+          "start_datetime_utc": "2026-11-14T23:40:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        }
+      ],
+      "source_note": "Bouts grouped by UTC date; this is not a confirmed promoter event card."
+    },
+    {
+      "id": "date-2026-11-15",
+      "name": "Fight schedule — Sun 15 Nov",
+      "date": "2026-11-15T00:20:00Z",
+      "venue": null,
+      "bouts": [
+        {
+          "id": "fx_1cf1tkst",
+          "fighter1": "Manuel Valentine Lerma",
+          "fighter2": "Zaquin Moses",
+          "start_time_utc": "00:20",
+          "date": "2026-11-15",
+          "start_datetime_utc": "2026-11-15T00:20:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_hjhw69pw",
+          "fighter1": "Alexander Flores",
+          "fighter2": "David Adeleye",
+          "start_time_utc": "02:00",
+          "date": "2026-11-15",
+          "start_datetime_utc": "2026-11-15T02:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_jyw1d01x",
+          "fighter1": "Anthony Olascuaga",
+          "fighter2": "Yuberjen Martinez",
+          "start_time_utc": "03:00",
+          "date": "2026-11-15",
+          "start_datetime_utc": "2026-11-15T03:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_fbrcegzg",
+          "fighter1": "Charlie Sheehy",
+          "fighter2": "Gabriel Flores Jr",
+          "start_time_utc": "03:00",
+          "date": "2026-11-15",
+          "start_datetime_utc": "2026-11-15T03:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_88w87135",
+          "fighter1": "Darius Fulghum",
+          "fighter2": "Diego Pacheco",
+          "start_time_utc": "04:00",
+          "date": "2026-11-15",
+          "start_datetime_utc": "2026-11-15T04:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        }
+      ],
+      "source_note": "Bouts grouped by UTC date; this is not a confirmed promoter event card."
+    },
+    {
+      "id": "date-2026-11-18",
+      "name": "Fight schedule — Wed 18 Nov",
+      "date": "2026-11-18T13:00:00Z",
+      "venue": null,
+      "bouts": [
+        {
+          "id": "fx_gq2y3d4n",
+          "fighter1": "Hemi Ahio",
+          "fighter2": "Teremoana Teremoana",
+          "start_time_utc": "13:00",
+          "date": "2026-11-18",
+          "start_datetime_utc": "2026-11-18T13:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        }
+      ],
+      "source_note": "Bouts grouped by UTC date; this is not a confirmed promoter event card."
+    },
+    {
+      "id": "date-2026-11-20",
+      "name": "Fight schedule — Fri 20 Nov",
+      "date": "2026-11-20T19:00:00Z",
+      "venue": null,
+      "bouts": [
+        {
+          "id": "fx_qscjhmj6",
+          "fighter1": "Alberto Ignacio Palmetta",
+          "fighter2": "Willy Gilheaney",
+          "start_time_utc": "19:00",
+          "date": "2026-11-20",
+          "start_datetime_utc": "2026-11-20T19:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_kpyvmcbw",
+          "fighter1": "Kyran Jones",
+          "fighter2": "Sean Arkwright",
+          "start_time_utc": "20:00",
+          "date": "2026-11-20",
+          "start_datetime_utc": "2026-11-20T20:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_e2a94x66",
+          "fighter1": "Lee McGregor",
+          "fighter2": "Rhys Edwards",
+          "start_time_utc": "21:00",
+          "date": "2026-11-20",
+          "start_datetime_utc": "2026-11-20T21:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_2fz07879",
+          "fighter1": "Lauren Price",
+          "fighter2": "Michaela Kotaskova",
+          "start_time_utc": "22:00",
+          "date": "2026-11-20",
+          "start_datetime_utc": "2026-11-20T22:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        }
+      ],
+      "source_note": "Bouts grouped by UTC date; this is not a confirmed promoter event card."
+    },
+    {
+      "id": "date-2026-11-21",
+      "name": "Fight schedule — Sat 21 Nov",
+      "date": "2026-11-21T02:50:00Z",
+      "venue": null,
+      "bouts": [
+        {
+          "id": "fx_7fwzxgs1",
+          "fighter1": "Gabriela Fundora",
+          "fighter2": "Jasmina Zapotoczna",
+          "start_time_utc": "02:50",
+          "date": "2026-11-21",
+          "start_datetime_utc": "2026-11-21T02:50:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_vdsgdj5r",
+          "fighter1": "Amari Jones",
+          "fighter2": "Deaundre Pettus",
+          "start_time_utc": "03:40",
+          "date": "2026-11-21",
+          "start_datetime_utc": "2026-11-21T03:40:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        }
+      ],
+      "source_note": "Bouts grouped by UTC date; this is not a confirmed promoter event card."
+    },
+    {
+      "id": "date-2026-11-26",
+      "name": "Fight schedule — Thu 26 Nov",
+      "date": "2026-11-26T09:00:00Z",
+      "venue": null,
+      "bouts": [
+        {
+          "id": "fx_vkse7yaq",
+          "fighter1": "Kenshin Oshima",
+          "fighter2": "Yoshiki Takei",
+          "start_time_utc": "09:00",
+          "date": "2026-11-26",
+          "start_datetime_utc": "2026-11-26T09:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_nk17e828",
+          "fighter1": "Takeshi Ishii",
+          "fighter2": "Zyvyr John Medecilo",
+          "start_time_utc": "11:00",
+          "date": "2026-11-26",
+          "start_datetime_utc": "2026-11-26T11:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_qrxwjbw9",
+          "fighter1": "Masamichi Yabuki",
+          "fighter2": "Miel Fajardo",
+          "start_time_utc": "12:00",
+          "date": "2026-11-26",
+          "start_datetime_utc": "2026-11-26T12:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        }
+      ],
+      "source_note": "Bouts grouped by UTC date; this is not a confirmed promoter event card."
+    },
+    {
+      "id": "date-2026-11-28",
+      "name": "Fight schedule — Sat 28 Nov",
+      "date": "2026-11-28T22:00:00Z",
+      "venue": null,
+      "bouts": [
+        {
+          "id": "fx_3b0f6r0d",
+          "fighter1": "Agit Kabayel",
+          "fighter2": "Nelson Hysa",
+          "start_time_utc": "22:00",
+          "date": "2026-11-28",
+          "start_datetime_utc": "2026-11-28T22:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        }
+      ],
+      "source_note": "Bouts grouped by UTC date; this is not a confirmed promoter event card."
+    },
+    {
+      "id": "date-2026-11-29",
+      "name": "Fight schedule — Sun 29 Nov",
+      "date": "2026-11-29T11:00:00Z",
+      "venue": null,
+      "bouts": [
+        {
+          "id": "fx_6kcqy6dd",
+          "fighter1": "David Jimenez",
+          "fighter2": "Seigo Yuri Akui",
+          "start_time_utc": "11:00",
+          "date": "2026-11-29",
+          "start_datetime_utc": "2026-11-29T11:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_17j9b63g",
+          "fighter1": "Jassiel Ramon Amador Gamez",
+          "fighter2": "Kenshiro Teraji",
+          "start_time_utc": "12:00",
+          "date": "2026-11-29",
+          "start_datetime_utc": "2026-11-29T12:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_pp8hj8pt",
+          "fighter1": "Riku Masuda",
+          "fighter2": "Seiya Tsutsumi",
+          "start_time_utc": "13:00",
+          "date": "2026-11-29",
+          "start_datetime_utc": "2026-11-29T13:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        }
+      ],
+      "source_note": "Bouts grouped by UTC date; this is not a confirmed promoter event card."
+    },
+    {
+      "id": "date-2026-12-04",
+      "name": "Fight schedule — Fri 4 Dec",
+      "date": "2026-12-04T12:00:00Z",
+      "venue": null,
+      "bouts": [
+        {
+          "id": "fx_fsyra05w",
+          "fighter1": "Francis Waitai",
+          "fighter2": "Max McIntyre",
+          "start_time_utc": "12:00",
+          "date": "2026-12-04",
+          "start_datetime_utc": "2026-12-04T12:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_5b8pxjtb",
+          "fighter1": "Francesca Hennessy",
+          "fighter2": "Johanna Wonyou",
+          "start_time_utc": "21:10",
+          "date": "2026-12-04",
+          "start_datetime_utc": "2026-12-04T21:10:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_8qst2tk8",
+          "fighter1": "Adam Azim",
+          "fighter2": "Gabriel Gollaz Valenzuela",
+          "start_time_utc": "21:15",
+          "date": "2026-12-04",
+          "start_datetime_utc": "2026-12-04T21:15:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        }
+      ],
+      "source_note": "Bouts grouped by UTC date; this is not a confirmed promoter event card."
+    },
+    {
+      "id": "date-2026-12-05",
+      "name": "Fight schedule — Sat 5 Dec",
+      "date": "2026-12-05T20:05:00Z",
+      "venue": null,
+      "bouts": [
+        {
+          "id": "fx_9864nhsa",
+          "fighter1": "Billy Stanbury",
+          "fighter2": "William Crolla",
+          "start_time_utc": "20:05",
+          "date": "2026-12-05",
+          "start_datetime_utc": "2026-12-05T20:05:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_ey2nkgpz",
+          "fighter1": "Tiah Mai Ayton",
+          "fighter2": "Tori-Ellis Willetts",
+          "start_time_utc": "21:00",
+          "date": "2026-12-05",
+          "start_datetime_utc": "2026-12-05T21:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_fwrsvzmr",
+          "fighter1": "Alexis Rocha",
+          "fighter2": "Conah Walker",
+          "start_time_utc": "22:00",
+          "date": "2026-12-05",
+          "start_datetime_utc": "2026-12-05T22:00:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        }
+      ],
+      "source_note": "Bouts grouped by UTC date; this is not a confirmed promoter event card."
+    },
+    {
+      "id": "date-2026-12-06",
+      "name": "Fight schedule — Sun 6 Dec",
+      "date": "2026-12-06T01:05:00Z",
+      "venue": null,
+      "bouts": [
+        {
+          "id": "fx_f31r4026",
+          "fighter1": "Nikita Tszyu",
+          "fighter2": "Roberto Valenzuela Jr",
+          "start_time_utc": "01:05",
+          "date": "2026-12-06",
+          "start_datetime_utc": "2026-12-06T01:05:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_p1v41905",
+          "fighter1": "Emiliano Vargas",
+          "fighter2": "Omar Juarez",
+          "start_time_utc": "02:25",
+          "date": "2026-12-06",
+          "start_datetime_utc": "2026-12-06T02:25:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_pw6cjm2f",
+          "fighter1": "Keith Thurman",
+          "fighter2": "Vergil Ortiz Jr",
+          "start_time_utc": "03:15",
+          "date": "2026-12-06",
+          "start_datetime_utc": "2026-12-06T03:15:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_7xfa0g5v",
+          "fighter1": "Litzy Adilene Vazquez Ochoa",
+          "fighter2": "Stephanie Pineiro Aquino",
+          "start_time_utc": "03:40",
+          "date": "2026-12-06",
+          "start_datetime_utc": "2026-12-06T03:40:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_3ch3dy9z",
+          "fighter1": "David Benavidez",
+          "fighter2": "Michal Cieslak",
+          "start_time_utc": "04:15",
+          "date": "2026-12-06",
+          "start_datetime_utc": "2026-12-06T04:15:00Z",
+          "weight_class": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        }
+      ],
+      "source_note": "Bouts grouped by UTC date; this is not a confirmed promoter event card."
+    }
+  ],
+  "notice": "Free API data lists scheduled individual bouts. It may not include full undercards, official event names, venues, weight divisions or broadcasters."
 }
