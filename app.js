@@ -42,6 +42,46 @@ function ukBroadcasters(items) {
     .map(item=>item.name||item.broadcaster||item.platform||item.service||"")
     .filter(name=>name&&!seen.has(name)&&(seen.add(name),true));
 }
+function fighterPortrait(name, imageUrl) {
+  const wrap=document.createElement("div");wrap.className="fighter-portrait";
+  const initials=String(name||"?").trim().split(/\\s+/).slice(0,2).map(part=>part[0]||"").join("").toUpperCase();
+  const fallback=document.createElement("span");fallback.className="portrait-fallback";fallback.textContent=initials||"?";
+  wrap.append(fallback);
+  if(imageUrl && /^https:\\/\\//i.test(imageUrl)){
+    const img=document.createElement("img");img.src=imageUrl;img.alt=name+" portrait";img.loading="lazy";
+    img.onerror=()=>{img.remove();};wrap.append(img);
+  }
+  return wrap;
+}
+function renderUkHeadliners() {
+  const root=$("uk-headliners-list");root.replaceChildren();
+  const ukEvents=state.events.filter(e=>/^(GB|UK)$/i.test(String(e.country||e.country_code||"").trim()) && (e.bouts||e.fights||[]).length);
+  const now=todayKey();
+  const sorted=ukEvents.filter(e=>eventDateKey(e)>=now).sort((a,b)=>eventDateKey(a).localeCompare(eventDateKey(b)));
+  const featured=sorted.map(event=>{
+    const bouts=eventBouts(event);
+    const headline=bouts.find(b=>b.title_text)||bouts.slice().sort((a,b)=>(Number(b.rounds)||0)-(Number(a.rounds)||0))[0];
+    return headline?{event,bout:headline}:null;
+  }).filter(Boolean).slice(0,6);
+  if(!featured.length){root.innerHTML='<div class="muted-note">No upcoming UK headline fights are currently listed.</div>';return;}
+  featured.forEach(({event,bout})=>{
+    const [one,two]=fighterNames(bout);
+    const card=document.createElement("article");card.className="uk-headliner-card";
+    const matchup=document.createElement("div");matchup.className="uk-headliner-matchup";
+    const f1=document.createElement("div");f1.className="uk-headliner-fighter";f1.append(fighterPortrait(one,bout.fighter1_image||bout.image1||bout.fighter1_photo),document.createElement("strong"));
+    f1.querySelector("strong").textContent=one;
+    const vs=document.createElement("span");vs.className="uk-headliner-vs";vs.textContent="VS";
+    const f2=document.createElement("div");f2.className="uk-headliner-fighter";f2.append(fighterPortrait(two,bout.fighter2_image||bout.image2||bout.fighter2_photo),document.createElement("strong"));
+    f2.querySelector("strong").textContent=two;
+    matchup.append(f1,vs,f2);
+    const details=document.createElement("div");details.className="uk-headliner-details";
+    const eventName=document.createElement("strong");eventName.textContent=eventTitle(event,eventBouts(event));
+    const meta=document.createElement("span");meta.textContent=[ukDate(event.date),bout.weight_class||bout.division,bout.rounds?bout.rounds+" rounds":null].filter(Boolean).join(" · ");
+    details.append(eventName,meta);
+    if(bout.title_text){const title=document.createElement("span");title.className="uk-title-badge";title.textContent=bout.title_text;details.append(title);}
+    card.append(matchup,details);root.append(card);
+  });
+}
 function makeBoutRow(b) {
   const row=document.createElement("article");
   row.className="bout-row";
@@ -194,6 +234,7 @@ function renderHome() {
   const upcomingBouts=allBouts().filter(b=>ukKey(boutDateTime(b))>=nowKey&&b.title_text).slice(0,5);
   if(!upcomingBouts.length)headlines.innerHTML='<div class="muted-note">Headline bouts will appear here when confirmed title-fight details are available.</div>';
   else upcomingBouts.forEach(b=>headlines.append(makeBoutRow(b)));
+  renderUkHeadliners();
   renderTonight();
 }
 function renderCalendar() {
