@@ -52,7 +52,7 @@ jobs:
           # Commit the generated file BEFORE rebasing. Pulling first fails
           # because the sync script has already modified data/fights.json.
           git add data/fights.json data/fighter-images.json data/f1.json data/darts.json data/ufc.json
-          git commit -m "Refresh boxing schedule and boxer portraits"
+          git commit -m "Refresh multi-sport schedules and boxer portraits"
 
           # Rebase our generated snapshot onto any changes made to main
           # since checkout, then publish it.
