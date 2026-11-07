@@ -50,8 +50,8 @@ function ukBroadcasterLogos(items) {
   names.forEach(name=>{
     const value=String(name).toLowerCase();
     let brand=null;
-    if(/\\bdazn\\b/.test(value)) brand="dazn";
-    else if(/\\bsky\\b/.test(value)) brand="sky";
+    if(/\bdazn\b/.test(value)) brand="dazn";
+    else if(/\bsky\b/.test(value)) brand="sky";
     if(!brand||seen.has(brand))return;
     seen.add(brand);
     const logo=document.createElement("span");
@@ -182,7 +182,7 @@ function renderUkHeadliners() {
     const accordion=document.createElement("details");accordion.className="uk-headliner-accordion";
     const summary=document.createElement("summary");summary.className="uk-headliner-summary";
     const card=document.createElement("div");card.className="uk-headliner-card";
-    const broadcasterLogos=ukBroadcasterLogos(event.broadcasters);if(broadcasterLogos)card.append(broadcasterLogos);
+    const broadcasterLogos=ukBroadcasterLogos(event.broadcasters);if(broadcasterLogos){card.classList.add("has-broadcaster-logos");card.append(broadcasterLogos);}
     const matchup=document.createElement("div");matchup.className="uk-headliner-matchup";
     const f1=document.createElement("div");f1.className="uk-headliner-fighter";f1.append(fighterPortrait(one,bout.fighter1_image||bout.image1||bout.fighter1_photo),document.createElement("strong"));
     f1.querySelector("strong").textContent=one;
