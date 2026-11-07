@@ -2,8 +2,8 @@ name: Refresh boxing schedule
 
 on:
   schedule:
-    # Every two hours; Boxerbook's free key allows 100 requests per day.
-    - cron: "17 */2 * * *"
+    # Every four hours; Boxerbook free key allows 100 requests per day.
+    - cron: "17 */4 * * *"
   workflow_dispatch:
 
 permissions:
