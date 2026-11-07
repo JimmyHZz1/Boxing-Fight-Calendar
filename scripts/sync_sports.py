@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fetch F1, PDC darts and UFC schedules into independent static JSON feeds."""
+"""Fetch F1, PDC darts, UFC and BKFC schedules into static JSON feeds."""
 from __future__ import annotations
 import json, os, sys, urllib.error, urllib.parse, urllib.request
 from datetime import datetime, timedelta, timezone
