@@ -48,7 +48,8 @@ function makeBoutRow(b) {
   const label=document.createElement("span"); label.textContent="WATCH: ";
   broadcast.append(label);
   const channels=(b.eventBroadcasters||[]).map(x=>typeof x==="string"?x:([x.name||x.broadcaster||x.platform,x.region].filter(Boolean).join(" (")+(x.region?")":""))).filter(Boolean);
-  const channel=b.broadcaster||b.broadcast||b.tv_channel||channels.join(", ")||null;
+  const boutChannel=b.broadcaster||b.broadcast||b.tv_channel||null;
+  const channel=(boutChannel && typeof boutChannel==="object") ? (boutChannel.name||boutChannel.broadcaster||boutChannel.platform||null) : (boutChannel||channels.join(", ")||null);
   const url=b.broadcast_url||b.broadcaster_url||b.watch_url||null;
   if(channel && url && /^https?:\/\//i.test(url)) {
     const link=document.createElement("a"); link.href=url; link.target="_blank"; link.rel="noopener noreferrer"; link.textContent=channel; broadcast.append(link);
@@ -141,8 +142,8 @@ function renderCards() {
     const heading=document.createElement("div");heading.className="section-heading compact";
     const title=document.createElement("h2");title.textContent=(event.name||"Boxing event")+" · "+ukDate(event.date||boutDateTime(bouts[0]));
     heading.append(title);section.append(heading);
-    const eventDetails=[event.location,event.city,event.country].filter((v,i,a)=>v && a.indexOf(v)===i);
-    if(eventDetails.length || event.start_time_utc){const detail=document.createElement("p");detail.className="muted-note";const start=formatTime(event.start_time_utc,event.date);detail.textContent=[eventDetails.join(", "),start ? "Card starts "+start : null].filter(Boolean).join(" · ");section.append(detail);}
+    const countryLabel=event.country || event.country_code || null;
+    if(countryLabel || event.start_time_utc){const detail=document.createElement("p");detail.className="muted-note";const start=formatTime(event.start_time_utc,event.date);detail.textContent=[countryLabel ? "COUNTRY: "+countryLabel : null,start ? "Card starts "+start : null].filter(Boolean).join(" · ");section.append(detail);}
     if(event.promoter){const promoter=document.createElement("p");promoter.className="muted-note";promoter.textContent="Promoter: "+event.promoter;section.append(promoter);}
     const list=document.createElement("div");list.className="bout-list";bouts.forEach(b=>list.append(makeBoutRow(b)));
     section.append(list);
