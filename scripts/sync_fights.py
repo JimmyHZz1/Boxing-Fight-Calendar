@@ -5,7 +5,8 @@ import json, os, sys, urllib.error, urllib.parse, urllib.request
 from collections import defaultdict
 from datetime import datetime, timezone
 
-BOXERBOOK_URL = "https://boxerbook.com/v1/schedule?when=weekend"
+BOXERBOOK_URL = "https://boxerbook.com/v1/schedule?when=30d"
+BOXERBOOK_WEEKEND_URL = "https://boxerbook.com/v1/schedule?when=weekend"
 BOXING_URL = "https://api.boxingapi.net/v1/fights/upcoming"
 
 def get_json(url: str, key: str, provider: str) -> dict:
@@ -63,9 +64,15 @@ def normalise_broadcasters(raw: dict) -> list[dict]:
 
 def boxerbook_schedule() -> dict:
     key = os.environ.get("BOXERBOOK_API_KEY", "").strip()
-    data = get_json(BOXERBOOK_URL, key, "Boxerbook")
-    if not isinstance(data.get("events"), list):
-        raise RuntimeError("Boxerbook response did not contain an events list.")
+    try:
+        data = get_json(BOXERBOOK_URL, key, "Boxerbook")
+        if not isinstance(data.get("events"), list):
+            raise RuntimeError("Boxerbook 30-day response did not contain an events list.")
+    except Exception as exc:
+        print(f"BOXERBOOK_30_DAY_WARNING: {exc}; falling back to weekend schedule.")
+        data = get_json(BOXERBOOK_WEEKEND_URL, key, "Boxerbook")
+        if not isinstance(data.get("events"), list):
+            raise RuntimeError("Boxerbook weekend response did not contain an events list.")
     events = []
     for raw in data["events"]:
         if not isinstance(raw, dict):
