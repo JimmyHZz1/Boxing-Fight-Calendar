@@ -1,15 +1,15 @@
-const CACHE="sports-calendar-v37";
+const CACHE="sports-calendar-v38";
 const APP_FILES=[
   "./",
   "./index.html",
-  "./styles.css?v=20261107-34",
+  "./styles.css?v=20261107-35",
   "./app.js?v=20261107-27",
-  "./sports-data.js?v=20261107-04",
-  "./sports.js?v=20261107-06",
+  "./sports-data.js?v=20261107-05",
+  "./sports.js?v=20261107-07",
   "./sports-hub.js?v=20261107-01",
   "./manifest.json"
 ];
-const DATA_PATHS=["/data/fights.json","/data/fighter-images.json","/data/f1.json","/data/darts.json","/data/ufc.json","/data/sports-hub.json"];
+const DATA_PATHS=["/data/fights.json","/data/fighter-images.json","/data/f1.json","/data/darts.json","/data/ufc.json","/data/bkfc.json","/data/sports-hub.json"];
 self.addEventListener("install",event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(APP_FILES)).then(()=>self.skipWaiting())));
 self.addEventListener("activate",event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
 self.addEventListener("fetch",event=>{
