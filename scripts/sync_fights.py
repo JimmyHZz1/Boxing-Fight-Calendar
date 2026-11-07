@@ -60,6 +60,8 @@ def normalize(payload: dict) -> dict:
             "date": date,
             "start_datetime_utc": start,
             "weight_class": item.get("weight_class") or item.get("division"),
+            "broadcaster": item.get("broadcaster") or item.get("broadcast") or item.get("tv_channel"),
+            "broadcast_url": item.get("broadcast_url") or item.get("broadcaster_url") or item.get("watch_url"),
             "status": "scheduled",
             "data_source": "Boxing Data API",
         })
@@ -77,7 +79,6 @@ def normalize(payload: dict) -> dict:
             "id": f"date-{date}",
             "name": f"Fight schedule — {dt.strftime('%a %-d %b')}",
             "date": event_datetime,
-            "venue": None,
             "bouts": bouts,
             "source_note": "Bouts grouped by UTC date; this is not a confirmed promoter event card.",
         })
@@ -90,7 +91,7 @@ def normalize(payload: dict) -> dict:
         "range_days": 30,
         "count_bouts": sum(len(event["bouts"]) for event in events),
         "events": events,
-        "notice": "Free API data lists scheduled individual bouts. It may not include full undercards, official event names, venues, weight divisions or broadcasters.",
+        "notice": "Free API data lists scheduled individual bouts. It may not include full undercards, official event names, weight divisions or broadcaster information. Bouts are grouped by UK local date for display, not by confirmed promoter event.",
     }
 
 
