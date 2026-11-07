@@ -66,8 +66,12 @@
       .sort((a,b)=>(eventDate({...a,sport})||"").localeCompare(eventDate({...b,sport})||""));
   }
   function eventCard(sport,event) {
-    const card=make("details","sport-event-card");
+    const sportIcons={f1:"🏎️",darts:"🎯",ufc:"🥋"};
+    const sportNames={f1:"FORMULA 1",darts:"PDC DARTS",ufc:"UFC"};
+    const card=make("details","sport-event-card sport-event-"+sport);
     const summary=make("summary");
+    const visual=make("span","sport-event-visual",sportIcons[sport]||"🏆");
+    visual.setAttribute("aria-hidden","true");
     const date=make("span","sport-event-date");
     const d=eventDate({...event,sport});
     const parsed=d?new Date(d+"T12:00:00Z"):null;
@@ -80,7 +84,7 @@
     if (sport==="darts") sub.push(event.tier?String(event.tier).replaceAll("_"," ").toUpperCase():null,event.matches?event.matches+" matches":null);
     if (sport==="ufc") sub.push(event.number?"EVENT "+event.number:null,event.start_at?timeLabel(event.start_at):null);
     main.append(make("small",null,sub.filter(Boolean).join(" · ")||dateLabel(event.date||event.start_at)));
-    summary.append(date,main,make("span","sport-event-badge",statusLabel(event)));
+    summary.append(visual,date,main,make("span","sport-event-badge",statusLabel(event)));
     card.append(summary);
     const body=make("div","sport-event-body");
     if (sport==="f1") renderF1Details(body,event);
