@@ -23,3 +23,18 @@
 .event-card.date-card{cursor:pointer}
 .event-card.date-card:hover{border-color:var(--accent)}
 @media(max-width:420px){.tonight-panel{padding:14px}.tonight-heading h2{font-size:27px}.date-select-button{align-items:flex-start}.home-actions{align-items:flex-start;flex-direction:column}}
+
+/* Expandable event cards */
+.fight-card-accordion{min-width:0;border:1px solid var(--line);background:var(--panel)}
+.fight-card-summary{list-style:none;cursor:pointer}
+.fight-card-summary::-webkit-details-marker{display:none}
+.fight-card-summary:after{content:"SELECT CARD ↓";grid-column:2/-1;color:var(--accent);font-size:9px;letter-spacing:1px}
+.fight-card-accordion[open]>.fight-card-summary:after{content:"HIDE CARD ↑"}
+.fight-card-accordion>.fight-card-summary{border:0;border-left:3px solid var(--accent)}
+.fight-card-accordion[open]>.fight-card-summary{border-bottom:1px solid var(--line)}
+.fight-card-summary:hover{border-color:var(--accent)}
+.fight-card-details{padding:14px}
+.fight-card-meta{color:var(--muted);font-size:10px;line-height:1.7;letter-spacing:.35px;margin-bottom:12px}
+.fight-card-details .bout-list{gap:8px}
+.event-source-link{display:inline-block;margin-top:12px;color:var(--accent);font-size:11px;text-decoration:none}
+@media(min-width:700px){.fight-card-summary{grid-template-columns:72px minmax(0,1fr) auto}.fight-card-summary:after{grid-column:3;text-align:right}.fight-card-details{padding:18px}}
