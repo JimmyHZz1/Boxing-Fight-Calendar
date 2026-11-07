@@ -294,6 +294,23 @@ def sync_bkfc():
     if not events:
         preserve_or_status("bkfc.json", "bkfc", "BKFC official events", "The official BKFC page returned no machine-readable event records. Existing published schedule was preserved; parser needs review.")
         raise RuntimeError("No structured BKFC event records found on the official events page.")
+    # Preserve previously verified UK-local times, venue details and fight cards
+    # when the public listing only exposes a date-level summary.
+    try:
+        with open(os.path.join(DATA, "bkfc.json"), encoding="utf-8") as existing_file:
+            previous = json.load(existing_file)
+        old_by_name = {str(item.get("name", "")).lower(): item for item in previous.get("events", [])}
+        for event in events:
+            old = old_by_name.get(str(event.get("name", "")).lower())
+            if old:
+                for field in ("start_at", "location", "fights", "source_url"):
+                    if not event.get(field) and old.get(field):
+                        event[field] = old[field]
+                if old.get("start_at"):
+                    event["date"] = old.get("date") or event["date"]
+    except (FileNotFoundError, json.JSONDecodeError):
+        pass
+
     events.sort(key=lambda e: (e.get("date") or "", e.get("name") or ""))
     save("bkfc.json", {
         "sport": "bkfc", "provider": "BKFC official events", "events": events,
