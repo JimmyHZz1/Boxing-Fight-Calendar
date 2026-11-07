@@ -96,3 +96,9 @@
 .uk-broadcaster-text{display:inline-flex;align-items:center;min-height:22px;padding:0 2px;color:var(--muted);font-size:10px;font-weight:700;line-height:1.1;text-align:right}
 .uk-broadcaster-logo:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
 @media(max-width:360px){.uk-broadcaster-logos{gap:5px;max-width:58%}.uk-broadcaster-logo{height:23px}.uk-broadcaster-logo img{max-width:64px;height:22px;max-height:22px}.uk-broadcaster-text{font-size:9px}}
+
+/* Header refresh control */
+.topbar-actions{display:flex;align-items:center;gap:14px}
+.topbar-refresh{padding:10px 13px;min-height:38px}
+#refresh-help{margin:12px 0 0}
+@media(max-width:420px){.topbar{gap:8px}.topbar-actions{gap:9px}.live-status{font-size:8px;letter-spacing:1px}.topbar-refresh{padding:9px 10px;font-size:10px}.brand{gap:8px}.brand-mark{width:34px;height:34px}}
