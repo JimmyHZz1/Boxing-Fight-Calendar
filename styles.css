@@ -57,3 +57,10 @@
 .uk-headliner-details .uk-title-badge{color:var(--accent);font-weight:700}
 @media(min-width:700px){.uk-headliners-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:360px){.fighter-portrait{width:64px;height:64px}.uk-headliner-card{padding:11px}}
+
+/* Live fight-card indicator */
+.event-tag{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.card-start-time{display:block}
+.live-badge{display:inline-flex;align-items:center;gap:5px;padding:5px 8px;background:#174d32;border:1px solid #2f9b61;color:#8ff0b0;border-radius:3px;font-size:9px;font-weight:800;letter-spacing:1px;white-space:nowrap}
+.uk-headliner-details .live-badge{align-self:center}
+@media(max-width:700px){.event-tag{align-items:flex-start}}
