@@ -277,3 +277,6 @@
 .hub-person-name small{margin-top:3px;font-size:9px;color:var(--muted)}
 .hub-source-note,.hub-empty,.sport-hub-loading{font-size:10px;line-height:1.6;color:var(--muted);padding:8px 0}
 @media(max-width:420px){.sports-hub-banner{padding:13px}.hub-sport-title strong{font-size:23px}.hub-dropdown summary{font-size:11px;padding:11px}.hub-person{grid-template-columns:30px 23px minmax(0,1fr);gap:7px}.hub-person>img,.hub-avatar-fallback{width:29px;height:29px}}
+
+.sport-logo-darts-fallback{display:grid;place-items:center;width:70px;height:58px;margin:10px auto 8px;border:2px solid #f1f1f1;border-radius:50%;background:#16181d;color:#fff;font:900 25px 'Barlow Condensed',sans-serif;letter-spacing:-1px;}
+.sport-event-visual .sport-logo-wordmark{font:900 17px 'Barlow Condensed',sans-serif;letter-spacing:.2px;}
