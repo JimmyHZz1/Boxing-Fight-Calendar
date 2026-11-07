@@ -137,3 +137,40 @@
 .sport-coming-status{display:inline-block;margin-top:18px;padding:7px 10px;border:1px solid var(--line);font-size:9px;letter-spacing:1.1px;color:var(--accent)}
 @media(min-width:600px){.sport-slide{flex-basis:calc(50% - 5px)}}
 @media(prefers-reduced-motion:reduce){.sports-carousel{scroll-behavior:auto}}
+
+
+/* Multi-sport schedules and calendar */
+.sport-data-panel{margin:24px 0 30px}
+.sport-data-heading{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:14px}
+.sport-data-heading h2{font:800 30px 'Barlow Condensed',sans-serif;text-transform:uppercase;margin:4px 0 0}
+.sport-data-heading small{color:var(--muted);font-size:9px;letter-spacing:1px}
+.sport-event-list{display:grid;gap:10px}
+.sport-event-card{border:1px solid var(--line);background:var(--panel);border-radius:4px;overflow:hidden}
+.sport-event-card summary{display:flex;align-items:center;gap:13px;padding:14px;cursor:pointer;list-style:none}
+.sport-event-card summary::-webkit-details-marker{display:none}
+.sport-event-date{display:flex;flex:0 0 48px;flex-direction:column;align-items:center;justify-content:center;padding:8px 3px;background:var(--panel2);border:1px solid var(--line);font-size:9px;letter-spacing:1px;color:var(--muted)}
+.sport-event-date strong{font:800 24px 'Barlow Condensed',sans-serif;color:var(--text)}
+.sport-event-main{min-width:0;flex:1}
+.sport-event-main strong{display:block;font:700 18px 'Barlow Condensed',sans-serif;text-transform:uppercase}
+.sport-event-main small{display:block;margin-top:4px;color:var(--muted);font-size:10px;line-height:1.5}
+.sport-event-badge{font-size:8px;letter-spacing:1px;padding:5px 7px;border:1px solid var(--line);color:var(--accent);white-space:nowrap}
+.sport-event-body{padding:0 14px 14px;border-top:1px solid var(--line)}
+.sport-session-list{display:grid;gap:8px;margin-top:12px}
+.sport-session-row{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);font-size:11px}
+.sport-session-row span:last-child{color:var(--muted);text-align:right}
+.sport-results-table{width:100%;border-collapse:collapse;margin-top:12px;font-size:10px}
+.sport-results-table th,.sport-results-table td{text-align:left;padding:7px 5px;border-bottom:1px solid var(--line)}
+.sport-results-table th{color:var(--muted);font-size:8px;letter-spacing:1px}
+.sport-results-table td:first-child{color:var(--accent);font-weight:800}
+.sport-fight-row{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:11px}
+.sport-fight-row strong{font-size:11px}
+.sport-fight-row small{color:var(--muted);text-align:right}
+.sport-sync-note{margin:10px 0 14px;color:var(--muted);font-size:10px;line-height:1.6}
+.sport-empty{padding:18px;border:1px dashed var(--line);color:var(--muted);font-size:12px;line-height:1.6}
+.calendar-sport-filters{display:flex;gap:7px;overflow-x:auto;padding:12px 0 4px;scrollbar-width:none}
+.calendar-sport-filters button{flex:0 0 auto;padding:8px 12px;border:1px solid var(--line);background:var(--panel);color:var(--muted);font-size:9px;letter-spacing:1px;border-radius:3px}
+.calendar-sport-filters button[aria-pressed="true"]{border-color:var(--accent);color:var(--accent);background:rgba(226,180,91,.08)}
+.day.has-sport-event{position:relative}
+.day.has-sport-event:after{content:"";position:absolute;bottom:4px;left:50%;width:5px;height:5px;border-radius:50%;background:#c3a1e5;transform:translateX(-50%)}
+.day.has-event.has-sport-event:after{box-shadow:8px 0 0 var(--accent),-8px 0 0 #c3a1e5}
+@media(max-width:420px){.sport-event-card summary{gap:9px;padding:11px}.sport-event-badge{font-size:7px;padding:4px 5px}}
