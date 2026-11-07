@@ -2,7 +2,7 @@ name: Refresh boxing schedule
 
 on:
   schedule:
-    # Every two hours. This stays comfortably within the free API's 50 calls/day.
+    # Every two hours; Boxerbook's free key allows 100 requests per day.
     - cron: "17 */2 * * *"
   workflow_dispatch:
 
@@ -25,13 +25,9 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Inspect Boxerbook schedule response
+      - name: Fetch event cards and upcoming bouts
         env:
           BOXERBOOK_API_KEY: ${{ secrets.BOXERBOOK_API_KEY }}
-        run: python scripts/inspect_boxerbook.py
-
-      - name: Fetch upcoming bouts
-        env:
           BOXING_API_KEY: ${{ secrets.BOXING_API_KEY }}
         run: python scripts/sync_fights.py
 
