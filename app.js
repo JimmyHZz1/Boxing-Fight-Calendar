@@ -17,7 +17,7 @@ const ukDate = value => { const d=parseDate(value); return d ? new Intl.DateTime
 const ukTime = value => { const d=parseDate(value); return d ? new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",hour:"2-digit",minute:"2-digit",hour12:false}).format(d) + " UK" : "Time TBC"; };
 const boutDateTime = b => b.start_datetime_utc || (b.date ? `${b.date}T${b.start_time_utc || "00:00"}:00Z` : null);
 function allBouts() {
-  return state.events.flatMap(e => (e.bouts || e.fights || []).map(b => ({...b, scheduleName:e.name})))
+  return state.events.flatMap(e => (e.bouts || e.fights || []).map(b => ({...b, scheduleName:e.name, eventUrl:e.event_url, eventBroadcasters:e.broadcasters || [], eventPromoter:e.promoter, eventDate:e.date, eventSource:e.data_source})))
     .filter(b => b.fighter1 || b.fighter2 || b.fighter_a || b.fighter_b)
     .sort((a,b) => (parseDate(boutDateTime(a))?.getTime() || 0) - (parseDate(boutDateTime(b))?.getTime() || 0));
 }
@@ -38,7 +38,7 @@ function makeBoutRow(b) {
   const vs=document.createElement("div"); vs.className="vs"; vs.textContent="VS";
   const right=document.createElement("div"); right.className="fighter"; right.textContent=c;
   const meta=document.createElement("div"); meta.className="bout-meta";
-  const details=[b.weight_class||b.division,b.rounds ? b.rounds+" rounds" : null].filter(Boolean);
+  const details=[b.weight_class||b.division,b.rounds ? b.rounds+" rounds" : null,b.title_text].filter(Boolean);
   const detailLine=document.createElement("span");
   detailLine.textContent=details.length ? details.join(" · ") : "Weight division not supplied";
   meta.append(detailLine);
@@ -68,7 +68,7 @@ function dateCard(key,bouts) {
   const title=document.createElement("h3"); title.textContent=ukDate(d||key);
   const desc=document.createElement("p"); desc.textContent=`${bouts.length} scheduled ${bouts.length===1?"bout":"bouts"}`;
   info.append(title,desc);
-  const tag=document.createElement("div"); tag.className="event-tag"; tag.textContent=d ? "FIRST BOUT "+ukTime(d) : "";
+  const tag=document.createElement("div"); tag.className="event-tag"; tag.textContent=bouts[0]?.start_time_utc ? "FIRST BOUT "+ukTime(boutDateTime(bouts[0])) : "TIME TBC";
   card.append(date,info,tag);
   return card;
 }
@@ -128,15 +128,20 @@ function renderSelectedDate() {
 }
 function renderCards() {
   const root=$("full-cards");root.replaceChildren();
-  const groups=groupBoutsByUkDate(allBouts());
-  if(!groups.size){root.innerHTML='<div class="empty-state"><span class="empty-icon">📋</span><h3>No fights loaded</h3><p>Scheduled bouts will appear here as the data provider publishes them.</p></div>';return;}
-  for(const [key,bouts] of groups){
+  const events=[...state.events].sort((a,b)=>(parseDate(a.date)?.getTime()||0)-(parseDate(b.date)?.getTime()||0));
+  if(!events.length){root.innerHTML='<div class="empty-state"><span class="empty-icon">📋</span><h3>No fights loaded</h3><p>Scheduled bouts will appear here as the data provider publishes them.</p></div>';return;}
+  for(const event of events){
+    const bouts=(event.bouts||event.fights||[]).map(b=>({...b,eventUrl:event.event_url,eventBroadcasters:event.broadcasters||[],eventPromoter:event.promoter}));
+    if(!bouts.length) continue;
     const section=document.createElement("section");section.className="fight-date-section";
     const heading=document.createElement("div");heading.className="section-heading compact";
-    const title=document.createElement("h2");title.textContent=ukDate(boutDateTime(bouts[0]))+" · "+bouts.length+" "+(bouts.length===1?"bout":"bouts");
+    const title=document.createElement("h2");title.textContent=(event.name||"Boxing event")+" · "+ukDate(event.date||boutDateTime(bouts[0]));
     heading.append(title);section.append(heading);
+    if(event.promoter){const promoter=document.createElement("p");promoter.className="muted-note";promoter.textContent="Promoter: "+event.promoter;section.append(promoter);}
     const list=document.createElement("div");list.className="bout-list";bouts.forEach(b=>list.append(makeBoutRow(b)));
-    section.append(list);root.append(section);
+    section.append(list);
+    if(event.event_url && /^https?:\\/\\//i.test(event.event_url)){const link=document.createElement("a");link.href=event.event_url;link.target="_blank";link.rel="noopener noreferrer";link.className="event-source-link";link.textContent="View event on Boxerbook ↗";section.append(link);}
+    root.append(section);
   }
 }
 async function loadData() {
