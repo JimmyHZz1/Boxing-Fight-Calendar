@@ -44,10 +44,10 @@ function ukBroadcasters(items) {
 }
 function fighterPortrait(name, imageUrl) {
   const wrap=document.createElement("div");wrap.className="fighter-portrait";
-  const initials=String(name||"?").trim().split(/\\s+/).slice(0,2).map(part=>part[0]||"").join("").toUpperCase();
+  const initials=String(name||"?").trim().split(/\s+/).slice(0,2).map(part=>part[0]||"").join("").toUpperCase();
   const fallback=document.createElement("span");fallback.className="portrait-fallback";fallback.textContent=initials||"?";
   wrap.append(fallback);
-  if(imageUrl && /^https:\\/\\//i.test(imageUrl)){
+  if(imageUrl && /^https:\/\//i.test(imageUrl)){
     const img=document.createElement("img");img.src=imageUrl;img.alt=name+" portrait";img.loading="lazy";
     img.onerror=()=>{img.remove();};wrap.append(img);
   }
