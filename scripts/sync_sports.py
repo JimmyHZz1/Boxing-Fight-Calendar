@@ -255,8 +255,8 @@ def sync_sports_hub():
     # Formula 1 driver and constructor championship tables.
     try:
         base = f"https://api.jolpi.ca/ergast/f1/{year}"
-        drivers_raw = standings_list(request_json(f"{base}/driverStandings/1.json?limit=100", provider="Jolpica F1"), "DriverStandings")
-        constructors_raw = standings_list(request_json(f"{base}/constructorStandings/1.json?limit=100", provider="Jolpica F1"), "ConstructorStandings")
+        drivers_raw = standings_list(request_json(f"{base}/driverStandings.json?limit=100", provider="Jolpica F1"), "DriverStandings")
+        constructors_raw = standings_list(request_json(f"{base}/constructorStandings.json?limit=100", provider="Jolpica F1"), "ConstructorStandings")
         drivers = [{
             "rank": int(x.get("position", 0)), "name": " ".join(y for y in [x.get("Driver", {}).get("givenName"), x.get("Driver", {}).get("familyName")] if y),
             "team": ", ".join(c.get("name", "") for c in x.get("Constructors", [])), "points": x.get("points")
