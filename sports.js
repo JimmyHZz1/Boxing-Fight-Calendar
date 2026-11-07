@@ -1,10 +1,11 @@
 (() => {
-  const order = ["f1", "darts", "boxing", "ufc"];
+  const order = ["f1", "darts", "boxing", "ufc", "bkfc"];
   const details = {
     f1: {name:"FORMULA 1",icon:"🏎️",title:"F1 calendar coming next",copy:"The Formula 1 calendar, practice sessions, qualifying, sprint weekends and race results will be connected in the next stage.",kicker:"MOTORSPORT"},
     darts: {name:"PDC DARTS",icon:"🎯",title:"PDC darts calendar coming next",copy:"The PDC tournament calendar will include the European Tour, Players Championship, majors and other PDC events. Live scores are not required.",kicker:"PDC TOUR"},
     boxing: {name:"BOXING",icon:"🥊",title:"Boxing fight calendar",copy:"Your existing boxing schedule, full fight cards, UK broadcasters and UK-fighter features remain in place.",kicker:"THE FIGHT GAME"},
-    ufc: {name:"UFC",icon:"🥋",title:"UFC calendar coming next",copy:"Upcoming UFC events, complete fight cards, prelims, main cards and results will be connected in the next stage.",kicker:"MIXED MARTIAL ARTS"}
+    ufc: {name:"UFC",icon:"🥋",title:"UFC calendar",copy:"Upcoming UFC events, complete fight cards, prelims, main cards and results.",kicker:"MIXED MARTIAL ARTS"},
+    bkfc: {name:"BKFC",icon:"🥊",title:"BKFC bare-knuckle calendar",copy:"BKFC events, fight cards, results and UK viewing information.",kicker:"BARE-KNUCKLE BOXING"}
   };
   const rail=document.getElementById("sports-carousel");
   if(!rail)return;
@@ -21,7 +22,7 @@
     const sport=order[active],d=details[sport];
     slides.forEach((s,i)=>s.setAttribute("aria-pressed",String(i===active)));
     dotButtons.forEach((b,i)=>b.setAttribute("aria-current",String(i===active)));
-    document.getElementById("sports-carousel-position").textContent=String(active+1).padStart(2,"0")+" / 04";
+    document.getElementById("sports-carousel-position").textContent=String(active+1).padStart(2,"0")+" / 05";
     document.getElementById("sport-coming-icon").textContent=d.icon;
     document.getElementById("sport-coming-kicker").textContent=d.kicker;
     document.getElementById("sport-coming-title").textContent=d.title;
@@ -37,6 +38,7 @@
     select(next,manual);
   }
   slides.forEach((s,i)=>s.addEventListener("click",()=>go(i,true)));
+  document.querySelectorAll("[data-sport-shortcut]").forEach(button=>button.addEventListener("click",()=>{const index=order.indexOf(button.dataset.sportShortcut);if(index<0)return;go(index,true);document.getElementById("sports-carousel-section")?.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});}));
   document.getElementById("sport-previous").addEventListener("click",()=>go(active-1,true));
   document.getElementById("sport-next").addEventListener("click",()=>go(active+1,true));
   let scrollTimer;

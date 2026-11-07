@@ -1,6 +1,6 @@
 (() => {
-  const SPORTS = ["f1", "darts", "ufc"];
-  const data = {f1:[], darts:[], ufc:[]};
+  const SPORTS = ["f1", "darts", "ufc", "bkfc"];
+  const data = {f1:[], darts:[], ufc:[], bkfc:[]};
   const meta = {};
   let active = "f1";
   let calendarFilter = "all";
@@ -57,7 +57,7 @@
     return SPORTS.flatMap(sport=>data[sport].map(event=>({...event,sport})));
   }
   function eventDate(event) {
-    if (event.sport==="darts") return dateKey(event.date,true);
+    if (event.sport==="darts"||event.sport==="bkfc") return dateKey(event.start_at||event.date,!!(event.date&&/^\d{4}-\d{2}-\d{2}$/.test(event.date)&&!event.start_at));
     return dateKey(event.start_at||event.date,!!(event.date&&/^\d{4}-\d{2}-\d{2}$/.test(event.date)&&!event.start_at));
   }
   function sortedEvents(sport, includePast=false) {
@@ -67,9 +67,10 @@
   }
   function sportLogo(sport) {
     const logos={
-      f1:{src:"https://commons.wikimedia.org/wiki/Special:FilePath/Formula%201%20logo.svg",alt:"Formula 1"},
+      f1:{src:"https://www.formula1.com/assets/home/_next/static/media/f1-logo.43a01c6b.svg",alt:"Formula 1"},
       darts:{src:"https://commons.wikimedia.org/wiki/Special:FilePath/Professional%20Darts%20Corporation%20logo.png",alt:"PDC"},
-      ufc:{src:"https://commons.wikimedia.org/wiki/Special:FilePath/UFC%20Logo.svg",alt:"UFC"}
+      ufc:{src:"https://commons.wikimedia.org/wiki/Special:FilePath/UFC%20Logo.svg",alt:"UFC"},
+      bkfc:{src:"https://commons.wikimedia.org/wiki/Special:FilePath/Bkfc-logo.png",alt:"BKFC"}
     };
     return logos[sport]||null;
   }
@@ -82,6 +83,10 @@
     if(sport==="ufc") return [
       {name:"TNT Sports",href:"https://www.tntsports.co.uk/",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/TNT_Sports_(2023).svg"},
       {name:"UFC Fight Pass",href:"https://ufcfightpass.com/",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/UFC_Fight_Pass_Logo.svg"}
+    ];
+    if(sport==="bkfc") return [
+      {name:"BKFC+ · most live events; check event access",href:"https://bkfc.live/",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/Bkfc-logo.png"},
+      {name:"DAZN · selected exclusive events",href:"https://www.dazn.com/",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/DAZN_logo.svg"}
     ];
     if(sport==="darts") return [
       {name:"Sky Sports Darts · selected events",href:"https://www.skysports.com/darts",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/Sky_Sports_Darts_-_Logo_2025.svg"},
@@ -105,12 +110,12 @@
     section.append(row);root.append(section);
   }
   function eventCard(sport,event) {
-    const sportNames={f1:"FORMULA 1",darts:"PDC DARTS",ufc:"UFC"};
+    const sportNames={f1:"FORMULA 1",darts:"PDC DARTS",ufc:"UFC",bkfc:"BKFC"};
     const card=make("details","sport-event-card sport-event-"+sport);
     const summary=make("summary");
     const visual=make("span","sport-event-visual");
     const logo=sportLogo(sport);
-    if(logo){const img=make("img");img.src=logo.src;img.alt=logo.alt+" logo";img.loading="lazy";visual.append(img);}
+    if(logo){const img=make("img");img.src=logo.src;img.alt=logo.alt+" logo";img.loading="lazy";img.onerror=()=>{img.remove();visual.append(make("strong","sport-logo-wordmark",sport==="darts"?"PDC":sport==="f1"?"F1":sport.toUpperCase()));};visual.append(img);}
     else visual.append(make("strong","sport-logo-wordmark",sport==="boxing"?"BOXING":"SPORT"));
     const date=make("span","sport-event-date");
     const d=eventDate({...event,sport});
@@ -123,13 +128,15 @@
     if (sport==="f1") sub.push("ROUND "+safe(event.round,"?"),event.circuit,event.country);
     if (sport==="darts") sub.push(event.tier?String(event.tier).replaceAll("_"," ").toUpperCase():null,event.matches?event.matches+" matches":null);
     if (sport==="ufc") sub.push(event.number?"EVENT "+event.number:null,event.start_at?timeLabel(event.start_at):null);
+    if (sport==="bkfc") sub.push(event.location||event.venue||null,event.start_at?timeLabel(event.start_at):null);
     main.append(make("small",null,sub.filter(Boolean).join(" · ")||dateLabel(event.date||event.start_at)));
     summary.append(visual,date,main,make("span","sport-event-badge",statusLabel(event)));
     card.append(summary);
     const body=make("div","sport-event-body");
     if (sport==="f1") renderF1Details(body,event);
     else if (sport==="darts") renderDartsDetails(body,event);
-    else renderUfcDetails(body,event);
+    else if (sport==="ufc") renderUfcDetails(body,event);
+    else renderBkfcDetails(body,event);
     renderWatch(body,sport,event);
     card.append(body);
     return card;
@@ -180,6 +187,25 @@
     if (typeof value==="string") return value;
     return value.name||[value.given_name,value.family_name].filter(Boolean).join(" ")||"TBC";
   }
+  function renderBkfcDetails(root,event) {
+    const meta=[event.location||event.venue,event.country,event.start_at?timeLabel(event.start_at):null].filter(Boolean);
+    if(meta.length)root.append(make("p","sport-sync-note",meta.join(" · ")));
+    const fights=event.fights||event.card||event.bouts||[];
+    if(fights.length){
+      const list=make("div","sport-session-list");
+      fights.forEach(f=>{
+        const a=f.fighter_a||f.fighter1||f.red||f.corner_a||f.name_a||"TBC";
+        const b=f.fighter_b||f.fighter2||f.blue||f.corner_b||f.name_b||"TBC";
+        const row=make("div","sport-fight-row");
+        row.append(make("strong",null,fighterName(a)+" vs "+fighterName(b)));
+        row.append(make("small",null,[f.weight_class,f.result?.method,f.result?.round?"R"+f.result.round:null].filter(Boolean).join(" · ")||safe(f.card_section,"Fight card")));
+        list.append(row);
+      });
+      root.append(list);
+    } else root.append(make("p","sport-sync-note","Fight card details will appear here when confirmed by BKFC."));
+    const source=event.source_url||event.url||"https://www.bkfc.com/events";
+    const a=make("a","event-source-link","Official BKFC event details ↗");a.href=source;a.target="_blank";a.rel="noopener noreferrer";root.append(a);
+  }
   function renderUfcDetails(root,event) {
     const fights=event.fights||event.card||event.bouts||[];
     if (event.main_card_at) root.append(make("p","sport-sync-note","MAIN CARD "+timeLabel(event.main_card_at)+(event.prelims_at?" · PRELIMS "+timeLabel(event.prelims_at):"")+(event.early_prelims_at?" · EARLY PRELIMS "+timeLabel(event.early_prelims_at):"")));
@@ -208,7 +234,7 @@
     panel.hidden=sport==="boxing";
     if (sport==="boxing") return;
     panel.replaceChildren();
-    const title={f1:"Formula 1",darts:"PDC darts",ufc:"UFC"}[sport];
+    const title={f1:"Formula 1",darts:"PDC darts",ufc:"UFC",bkfc:"BKFC bare-knuckle boxing"}[sport];
     const heading=make("div","sport-data-heading");
     const left=make("div");
     left.append(make("span","eyebrow","UPCOMING EVENTS"));
@@ -219,7 +245,7 @@
     if (meta[sport]?.notice) panel.append(make("p","sport-sync-note",meta[sport].notice));
     const list=make("div","sport-event-list");
     const events=sortedEvents(sport).slice(0,8);
-    if (!events.length) list.append(make("div","sport-empty",sport==="darts"?"PDC calendar data will appear here once the Darts API key is connected and its first sync completes.":"Schedule data will appear here once the API connection is configured and its first sync completes."));
+    if (!events.length) list.append(make("div","sport-empty",sport==="darts"?"PDC calendar data will appear here once the Darts API key is connected and its first sync completes.":sport==="bkfc"?"BKFC event data will appear here after the next successful official schedule sync.":"Schedule data will appear here once the API connection is configured and its first sync completes."));
     else events.forEach(event=>list.append(eventCard(sport,event)));
     panel.append(list);
   }
@@ -259,7 +285,7 @@
     const events=allEvents().sort((a,b)=>(eventDate(a)||"").localeCompare(eventDate(b)||""));
     if (!events.length) return;
     const heading=make("div","section-heading compact");
-    heading.append(make("h2",null,"Formula 1 · Darts · UFC"));
+    heading.append(make("h2",null,"Formula 1 · Darts · Boxing · UFC · BKFC"));
     root.append(heading);
     events.forEach(event=>root.append(eventCard(event.sport,event)));
   }

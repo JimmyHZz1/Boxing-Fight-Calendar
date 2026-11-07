@@ -1,0 +1,69 @@
+{
+  "sport": "bkfc",
+  "provider": "BKFC official events page",
+  "last_updated": "2026-11-07T18:00:00Z",
+  "notice": "Upcoming events listed from BKFC's official events page. Where an event time is not published in a verified time zone, the app shows Time TBC rather than guessing. BKFC+ carries many live events; selected cards are exclusive to DAZN.",
+  "events": [
+    {
+      "id": "bkfc-96",
+      "name": "BKFC 96 Glasgow: Weir vs Cohoon",
+      "date": "2026-11-07",
+      "start_at": "2026-11-07T19:00:00Z",
+      "status": "scheduled",
+      "location": "OVO Hydro, Glasgow, Scotland",
+      "source_url": "https://www.bkfc.com/events/bkfc-glasgow",
+      "fights": [],
+      "source": "BKFC official"
+    },
+    {
+      "id": "bkfc-myrtle-beach",
+      "name": "BKFC Fight Night Myrtle Beach: Richardson vs Oxendine",
+      "date": "2026-11-20",
+      "status": "scheduled",
+      "location": "Myrtle Beach Sports Center, Myrtle Beach, USA",
+      "source_url": "https://www.bkfc.com/events",
+      "fights": [],
+      "source": "BKFC official"
+    },
+    {
+      "id": "bkfc-hershey",
+      "name": "BKFC Fight Night Hershey: Pague vs Richman",
+      "date": "2026-12-04",
+      "status": "scheduled",
+      "location": "Giant Center, Hershey, USA",
+      "source_url": "https://www.bkfc.com/events",
+      "fights": [],
+      "source": "BKFC official"
+    },
+    {
+      "id": "bkfc-97",
+      "name": "BKFC 97 Hollywood: Henry vs Collard",
+      "date": "2026-12-11",
+      "status": "scheduled",
+      "location": "Hard Rock Live, Hollywood, Florida",
+      "source_url": "https://www.bkfc.com/events",
+      "fights": [],
+      "source": "BKFC official"
+    },
+    {
+      "id": "bkfc-cruise",
+      "name": "BKFSEA Bruise Cruise: Stewart vs Duran",
+      "date": "2027-01-23",
+      "status": "scheduled",
+      "location": "Norwegian Jewel, Bahamas",
+      "source_url": "https://www.bkfc.com/events",
+      "fights": [],
+      "source": "BKFC official"
+    },
+    {
+      "id": "bkfc-99",
+      "name": "BKFC 99 Sheffield: Bonner vs Franco",
+      "date": "2027-02-13",
+      "status": "scheduled",
+      "location": "Utilita Arena, Sheffield, UK",
+      "source_url": "https://www.bkfc.com/events",
+      "fights": [],
+      "source": "BKFC official"
+    }
+  ]
+}
