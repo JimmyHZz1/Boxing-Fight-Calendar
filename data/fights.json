@@ -1,7 +1,7 @@
 {
   "provider": "Boxing Data API",
-  "last_updated": "2026-11-07T19:38:10Z",
-  "provider_generated_at": "2026-11-07T19:38:09Z",
+  "last_updated": "2026-11-07T20:00:11Z",
+  "provider_generated_at": "2026-11-07T20:00:11Z",
   "range_days": 30,
   "count_bouts": 73,
   "events": [
@@ -18,10 +18,10 @@
           "date": "2026-11-07",
           "start_datetime_utc": "2026-11-07T08:15:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_vehtxznz",
@@ -31,10 +31,10 @@
           "date": "2026-11-07",
           "start_datetime_utc": "2026-11-07T09:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_ctd2t0a9",
@@ -44,10 +44,10 @@
           "date": "2026-11-07",
           "start_datetime_utc": "2026-11-07T17:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_wa1faz56",
@@ -57,10 +57,10 @@
           "date": "2026-11-07",
           "start_datetime_utc": "2026-11-07T19:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_cjedj6xy",
@@ -70,10 +70,10 @@
           "date": "2026-11-07",
           "start_datetime_utc": "2026-11-07T19:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_8r359ytr",
@@ -83,10 +83,10 @@
           "date": "2026-11-07",
           "start_datetime_utc": "2026-11-07T19:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_fe2v778f",
@@ -96,10 +96,10 @@
           "date": "2026-11-07",
           "start_datetime_utc": "2026-11-07T19:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_rqwpqj9w",
@@ -109,49 +109,36 @@
           "date": "2026-11-07",
           "start_datetime_utc": "2026-11-07T19:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_64rx7x3v",
-          "fighter1": "Billy Deniz",
-          "fighter2": "Joe O'Sullivan",
-          "start_time_utc": "19:00",
-          "date": "2026-11-07",
-          "start_datetime_utc": "2026-11-07T19:00:00Z",
-          "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
-          "broadcaster": null,
-          "broadcast_url": null
-        },
-        {
-          "id": "fx_mxv1pj7w",
           "fighter1": "Atacayte Santana",
           "fighter2": "Javokhir Ummataliev",
           "start_time_utc": "19:00",
           "date": "2026-11-07",
           "start_datetime_utc": "2026-11-07T19:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
-          "id": "fx_5kbeybv0",
+          "id": "fx_mxv1pj7w",
           "fighter1": "Harley Collison",
           "fighter2": "Stephen Clarke",
           "start_time_utc": "19:00",
           "date": "2026-11-07",
           "start_datetime_utc": "2026-11-07T19:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_r3ebcst4",
@@ -161,10 +148,10 @@
           "date": "2026-11-07",
           "start_datetime_utc": "2026-11-07T19:05:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_9zwfdx36",
@@ -174,10 +161,10 @@
           "date": "2026-11-07",
           "start_datetime_utc": "2026-11-07T19:40:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_freyfmas",
@@ -187,49 +174,49 @@
           "date": "2026-11-07",
           "start_datetime_utc": "2026-11-07T20:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_r1sbkgv8",
-          "fighter1": "Bradley Rea",
-          "fighter2": "Ezra Taylor",
-          "start_time_utc": "20:00",
-          "date": "2026-11-07",
-          "start_datetime_utc": "2026-11-07T20:00:00Z",
-          "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
-          "broadcaster": null,
-          "broadcast_url": null
-        },
-        {
-          "id": "fx_mqzyt4bp",
           "fighter1": "Gully Powar",
           "fighter2": "Zak Miller",
           "start_time_utc": "20:00",
           "date": "2026-11-07",
           "start_datetime_utc": "2026-11-07T20:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
-          "id": "fx_v3akbdet",
+          "id": "fx_5kbeybv0",
+          "fighter1": "Billy Deniz",
+          "fighter2": "Joe O'Sullivan",
+          "start_time_utc": "20:00",
+          "date": "2026-11-07",
+          "start_datetime_utc": "2026-11-07T20:00:00Z",
+          "weight_class": null,
+          "broadcaster": null,
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_mqzyt4bp",
           "fighter1": "Amaury Massenaux",
           "fighter2": "Sam Hickey",
           "start_time_utc": "20:05",
           "date": "2026-11-07",
           "start_datetime_utc": "2026-11-07T20:05:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_awqgm3kt",
@@ -239,10 +226,23 @@
           "date": "2026-11-07",
           "start_datetime_utc": "2026-11-07T20:05:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_v3akbdet",
+          "fighter1": "Bradley Rea",
+          "fighter2": "Ezra Taylor",
+          "start_time_utc": "20:40",
+          "date": "2026-11-07",
+          "start_datetime_utc": "2026-11-07T20:40:00Z",
+          "weight_class": null,
+          "broadcaster": null,
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_31xw9a9y",
@@ -252,10 +252,10 @@
           "date": "2026-11-07",
           "start_datetime_utc": "2026-11-07T20:45:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_fpv0badk",
@@ -265,10 +265,10 @@
           "date": "2026-11-07",
           "start_datetime_utc": "2026-11-07T21:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_s3680fjq",
@@ -278,10 +278,10 @@
           "date": "2026-11-07",
           "start_datetime_utc": "2026-11-07T22:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_jyf90k22",
@@ -291,10 +291,10 @@
           "date": "2026-11-07",
           "start_datetime_utc": "2026-11-07T22:15:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_jqqa0vjh",
@@ -304,10 +304,10 @@
           "date": "2026-11-07",
           "start_datetime_utc": "2026-11-07T23:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_whb0tq6p",
@@ -317,10 +317,10 @@
           "date": "2026-11-07",
           "start_datetime_utc": "2026-11-07T23:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         }
       ],
       "source_note": "Bouts grouped by UTC date; this is not a confirmed promoter event card."
@@ -338,10 +338,10 @@
           "date": "2026-11-08",
           "start_datetime_utc": "2026-11-08T00:50:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_1xn10x7n",
@@ -351,10 +351,10 @@
           "date": "2026-11-08",
           "start_datetime_utc": "2026-11-08T01:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_nefcyxcg",
@@ -364,10 +364,10 @@
           "date": "2026-11-08",
           "start_datetime_utc": "2026-11-08T01:35:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_4xcsyz0n",
@@ -377,10 +377,10 @@
           "date": "2026-11-08",
           "start_datetime_utc": "2026-11-08T02:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_cmpade1v",
@@ -390,10 +390,10 @@
           "date": "2026-11-08",
           "start_datetime_utc": "2026-11-08T02:05:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_r79xw312",
@@ -403,10 +403,10 @@
           "date": "2026-11-08",
           "start_datetime_utc": "2026-11-08T03:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_hj14vz22",
@@ -416,10 +416,10 @@
           "date": "2026-11-08",
           "start_datetime_utc": "2026-11-08T03:20:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_qkj1g743",
@@ -429,10 +429,10 @@
           "date": "2026-11-08",
           "start_datetime_utc": "2026-11-08T04:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_6w9fbgam",
@@ -442,10 +442,10 @@
           "date": "2026-11-08",
           "start_datetime_utc": "2026-11-08T04:05:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         }
       ],
       "source_note": "Bouts grouped by UTC date; this is not a confirmed promoter event card."
@@ -463,10 +463,10 @@
           "date": "2026-11-09",
           "start_datetime_utc": "2026-11-09T01:35:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         }
       ],
       "source_note": "Bouts grouped by UTC date; this is not a confirmed promoter event card."
@@ -484,10 +484,10 @@
           "date": "2026-11-13",
           "start_datetime_utc": "2026-11-13T01:40:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_j6n7vys9",
@@ -497,10 +497,10 @@
           "date": "2026-11-13",
           "start_datetime_utc": "2026-11-13T03:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         }
       ],
       "source_note": "Bouts grouped by UTC date; this is not a confirmed promoter event card."
@@ -518,10 +518,10 @@
           "date": "2026-11-14",
           "start_datetime_utc": "2026-11-14T19:30:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_m00ksqp2",
@@ -531,10 +531,10 @@
           "date": "2026-11-14",
           "start_datetime_utc": "2026-11-14T20:30:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_exxgpdaq",
@@ -544,10 +544,10 @@
           "date": "2026-11-14",
           "start_datetime_utc": "2026-11-14T21:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_2rga8112",
@@ -557,10 +557,10 @@
           "date": "2026-11-14",
           "start_datetime_utc": "2026-11-14T21:30:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_hw4aqh4z",
@@ -570,10 +570,10 @@
           "date": "2026-11-14",
           "start_datetime_utc": "2026-11-14T22:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_wvcqjpqn",
@@ -583,10 +583,10 @@
           "date": "2026-11-14",
           "start_datetime_utc": "2026-11-14T23:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_hbv1j6b4",
@@ -596,10 +596,10 @@
           "date": "2026-11-14",
           "start_datetime_utc": "2026-11-14T23:40:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         }
       ],
       "source_note": "Bouts grouped by UTC date; this is not a confirmed promoter event card."
@@ -617,10 +617,10 @@
           "date": "2026-11-15",
           "start_datetime_utc": "2026-11-15T00:20:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_hjhw69pw",
@@ -630,10 +630,10 @@
           "date": "2026-11-15",
           "start_datetime_utc": "2026-11-15T02:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_jyw1d01x",
@@ -643,10 +643,10 @@
           "date": "2026-11-15",
           "start_datetime_utc": "2026-11-15T03:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_fbrcegzg",
@@ -656,10 +656,10 @@
           "date": "2026-11-15",
           "start_datetime_utc": "2026-11-15T03:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_88w87135",
@@ -669,10 +669,10 @@
           "date": "2026-11-15",
           "start_datetime_utc": "2026-11-15T04:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         }
       ],
       "source_note": "Bouts grouped by UTC date; this is not a confirmed promoter event card."
@@ -690,10 +690,10 @@
           "date": "2026-11-18",
           "start_datetime_utc": "2026-11-18T13:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         }
       ],
       "source_note": "Bouts grouped by UTC date; this is not a confirmed promoter event card."
@@ -711,10 +711,10 @@
           "date": "2026-11-20",
           "start_datetime_utc": "2026-11-20T19:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_kpyvmcbw",
@@ -724,10 +724,10 @@
           "date": "2026-11-20",
           "start_datetime_utc": "2026-11-20T20:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_e2a94x66",
@@ -737,10 +737,10 @@
           "date": "2026-11-20",
           "start_datetime_utc": "2026-11-20T21:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_2fz07879",
@@ -750,10 +750,10 @@
           "date": "2026-11-20",
           "start_datetime_utc": "2026-11-20T22:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         }
       ],
       "source_note": "Bouts grouped by UTC date; this is not a confirmed promoter event card."
@@ -771,10 +771,10 @@
           "date": "2026-11-21",
           "start_datetime_utc": "2026-11-21T02:50:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_vdsgdj5r",
@@ -784,10 +784,10 @@
           "date": "2026-11-21",
           "start_datetime_utc": "2026-11-21T03:40:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         }
       ],
       "source_note": "Bouts grouped by UTC date; this is not a confirmed promoter event card."
@@ -805,10 +805,10 @@
           "date": "2026-11-26",
           "start_datetime_utc": "2026-11-26T09:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_nk17e828",
@@ -818,10 +818,10 @@
           "date": "2026-11-26",
           "start_datetime_utc": "2026-11-26T11:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_qrxwjbw9",
@@ -831,10 +831,10 @@
           "date": "2026-11-26",
           "start_datetime_utc": "2026-11-26T12:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         }
       ],
       "source_note": "Bouts grouped by UTC date; this is not a confirmed promoter event card."
@@ -852,10 +852,10 @@
           "date": "2026-11-28",
           "start_datetime_utc": "2026-11-28T22:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         }
       ],
       "source_note": "Bouts grouped by UTC date; this is not a confirmed promoter event card."
@@ -873,10 +873,10 @@
           "date": "2026-11-29",
           "start_datetime_utc": "2026-11-29T11:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_17j9b63g",
@@ -886,10 +886,10 @@
           "date": "2026-11-29",
           "start_datetime_utc": "2026-11-29T12:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_pp8hj8pt",
@@ -899,10 +899,10 @@
           "date": "2026-11-29",
           "start_datetime_utc": "2026-11-29T13:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         }
       ],
       "source_note": "Bouts grouped by UTC date; this is not a confirmed promoter event card."
@@ -920,10 +920,10 @@
           "date": "2026-12-04",
           "start_datetime_utc": "2026-12-04T12:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_5b8pxjtb",
@@ -933,10 +933,10 @@
           "date": "2026-12-04",
           "start_datetime_utc": "2026-12-04T21:10:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_8qst2tk8",
@@ -946,10 +946,10 @@
           "date": "2026-12-04",
           "start_datetime_utc": "2026-12-04T21:15:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         }
       ],
       "source_note": "Bouts grouped by UTC date; this is not a confirmed promoter event card."
@@ -967,10 +967,10 @@
           "date": "2026-12-05",
           "start_datetime_utc": "2026-12-05T20:05:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_ey2nkgpz",
@@ -980,10 +980,10 @@
           "date": "2026-12-05",
           "start_datetime_utc": "2026-12-05T21:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_fwrsvzmr",
@@ -993,10 +993,10 @@
           "date": "2026-12-05",
           "start_datetime_utc": "2026-12-05T22:00:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         }
       ],
       "source_note": "Bouts grouped by UTC date; this is not a confirmed promoter event card."
@@ -1014,10 +1014,10 @@
           "date": "2026-12-06",
           "start_datetime_utc": "2026-12-06T01:05:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_p1v41905",
@@ -1027,10 +1027,10 @@
           "date": "2026-12-06",
           "start_datetime_utc": "2026-12-06T02:25:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_pw6cjm2f",
@@ -1040,10 +1040,10 @@
           "date": "2026-12-06",
           "start_datetime_utc": "2026-12-06T03:15:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_7xfa0g5v",
@@ -1053,10 +1053,10 @@
           "date": "2026-12-06",
           "start_datetime_utc": "2026-12-06T03:40:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         },
         {
           "id": "fx_3ch3dy9z",
@@ -1066,10 +1066,10 @@
           "date": "2026-12-06",
           "start_datetime_utc": "2026-12-06T04:15:00Z",
           "weight_class": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API",
           "broadcaster": null,
-          "broadcast_url": null
+          "broadcast_url": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
         }
       ],
       "source_note": "Bouts grouped by UTC date; this is not a confirmed promoter event card."
