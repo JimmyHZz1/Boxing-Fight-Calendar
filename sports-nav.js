@@ -6,7 +6,7 @@
   const ukDate=value=>{if(!value)return "DATE TBC";const d=new Date(/^\d{4}-\d{2}-\d{2}$/.test(String(value))?String(value)+"T12:00:00Z":value);return Number.isNaN(d.getTime())?"DATE TBC":new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",day:"numeric",month:"short"}).format(d).toUpperCase();};
   const eventDate=e=>e?.start_at||e?.date||e?.start_time_utc||null;
   function nextFor(sport){return sport==="boxing"?window.BoxingSchedule?.getNextEvent?.():window.SportsData?.getNextEvent?.(sport);}
-  function openSport(sport){window.showScreen?.("home-screen");window.SportsSelector?.goToSport(sport);}
+  function openSport(sport){if(window.SportPages?.open){window.SportPages.open(sport);return;}window.showScreen?.("home-screen");window.SportsSelector?.goToSport(sport);}
   function render(){
     root.replaceChildren();
     order.forEach(sport=>{
