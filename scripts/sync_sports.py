@@ -299,9 +299,10 @@ def sync_bkfc():
     try:
         with open(os.path.join(DATA, "bkfc.json"), encoding="utf-8") as existing_file:
             previous = json.load(existing_file)
-        old_by_name = {str(item.get("name", "")).lower(): item for item in previous.get("events", [])}
+        old_by_name = {re.sub(r"[^a-z0-9]+", "", str(item.get("name", "")).lower()): item for item in previous.get("events", [])}
         for event in events:
-            old = old_by_name.get(str(event.get("name", "")).lower())
+            event_key = re.sub(r"[^a-z0-9]+", "", str(event.get("name", "")).lower())
+            old = old_by_name.get(event_key)
             if old:
                 for field in ("start_at", "location", "fights", "source_url"):
                     if not event.get(field) and old.get(field):
