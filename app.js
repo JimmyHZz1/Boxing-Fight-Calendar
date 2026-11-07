@@ -98,7 +98,7 @@ function countryName(value) {
   return map[String(value).toUpperCase()]||value;
 }
 function eventTitle(event,bouts) {
-  if (event.name && !/^(boxing event|mr event)$/i.test(event.name)) return event.name;
+  if (event.name && !/boxing event|^mr event$/i.test(event.name)) return event.name;
   const headline=bouts.find(b=>b.title_text)||bouts[0];
   if (headline) return fighterNames(headline).join(" vs ");
   return event.city ? event.city+" boxing event" : "Boxing event";
