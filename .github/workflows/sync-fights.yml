@@ -33,16 +33,23 @@ jobs:
           BOXING_API_KEY: ${{ secrets.BOXING_API_KEY }}
         run: python scripts/sync_fights.py
 
-      - name: Commit updated schedule
+      - name: Commit and publish updated schedule
         run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           if git diff --quiet -- data/fights.json; then
             echo "No schedule changes."
             exit 0
           fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # Rebase on the latest main to avoid rejecting a push after concurrent commits.
-          git pull --rebase origin main
+
+          # Commit the generated file BEFORE rebasing. Pulling first fails
+          # because the sync script has already modified data/fights.json.
           git add data/fights.json
           git commit -m "Refresh boxing schedule"
+
+          # Rebase our generated snapshot onto any changes made to main
+          # since checkout, then publish it.
+          git fetch origin main
+          git rebase origin/main
           git push origin HEAD:main
