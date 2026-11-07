@@ -205,7 +205,136 @@ def sync_ufc():
     save("ufc.json", {"sport": "ufc", "provider": "UFCalendar", "events": events, "notice": "UFC event schedule and selected full fight cards. Free API allowance: 1,000 requests per month."})
     print(f"UFC: saved {len(events)} events, including up to two upcoming cards and the latest completed card.")
 
+
+def commons_photo(name):
+    """Find one reusable Commons thumbnail; return attribution with the image URL."""
+    if not name:
+        return None
+    params = {
+        "action": "query", "format": "json", "generator": "search",
+        "gsrsearch": 'filetype:bitmap "' + str(name) + '"',
+        "gsrnamespace": 6, "gsrlimit": 1,
+        "prop": "imageinfo", "iiprop": "url|extmetadata", "iiurlwidth": 240
+    }
+    try:
+        payload = request_json("https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode(params), provider="Wikimedia Commons")
+        pages = (payload.get("query") or {}).get("pages") or {}
+        page = next(iter(pages.values()), {})
+        info = (page.get("imageinfo") or [{}])[0]
+        meta = info.get("extmetadata") or {}
+        artist = (meta.get("Artist") or {}).get("value", "")
+        license_name = (meta.get("LicenseShortName") or {}).get("value", "")
+        return {"image_url": info.get("thumburl") or info.get("url"), "image_credit": "Wikimedia Commons" + ((" · " + artist) if artist else "") + ((" · " + license_name) if license_name else "")}
+    except Exception:
+        return None
+
+def add_photos(rows, name_field="name", limit=8):
+    cache = {}
+    for row in rows[:limit]:
+        if row.get("image_url") or row.get("image") or row.get("photo_url"):
+            row["image_url"] = row.get("image_url") or row.get("image") or row.get("photo_url")
+            continue
+        name = row.get(name_field)
+        if name and name not in cache:
+            cache[name] = commons_photo(name)
+        if cache.get(name):
+            row.update(cache[name])
+    return rows
+
+def standings_list(payload, key):
+    mr = payload.get("MRData") or {}
+    table = mr.get("StandingsTable") or {}
+    lists = table.get("StandingsLists") or []
+    return (lists[0] or {}).get(key) or [] if lists else []
+
+def sync_sports_hub():
+    """Publish current championship tables and rankings as a single static JSON feed."""
+    hub = {"sports": {}, "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing"}
+    year = NOW.year
+
+    # Formula 1 driver and constructor championship tables.
+    try:
+        base = f"https://api.jolpi.ca/ergast/f1/{year}"
+        drivers_raw = standings_list(request_json(f"{base}/driverStandings/1.json?limit=100", provider="Jolpica F1"), "DriverStandings")
+        constructors_raw = standings_list(request_json(f"{base}/constructorStandings/1.json?limit=100", provider="Jolpica F1"), "ConstructorStandings")
+        drivers = [{
+            "rank": int(x.get("position", 0)), "name": " ".join(y for y in [x.get("Driver", {}).get("givenName"), x.get("Driver", {}).get("familyName")] if y),
+            "team": ", ".join(c.get("name", "") for c in x.get("Constructors", [])), "points": x.get("points")
+        } for x in drivers_raw]
+        constructors = [{"rank": int(x.get("position", 0)), "name": (x.get("Constructor") or {}).get("name"), "points": x.get("points")} for x in constructors_raw]
+        hub["sports"]["f1"] = {"drivers": add_photos(drivers), "constructors": add_photos(constructors), "season": year, "notice": "Official season standings sourced from the community-maintained Jolpica F1 API."}
+    except Exception as exc:
+        hub["sports"]["f1"] = {"drivers": [], "constructors": [], "sync_warning": str(exc)}
+
+    # PDC Order of Merit.
+    try:
+        key = os.environ.get("DARTS_API_KEY", "").strip()
+        if not key:
+            raise RuntimeError("DARTS_API_KEY is not configured.")
+        raw = request_json("https://api.dartsapi.com/v1/order-of-merit", key, "Darts API")
+        rows = raw.get("data") or []
+        if isinstance(rows, dict):
+            rows = rows.get("players") or rows.get("entries") or rows.get("rankings") or []
+        rankings = []
+        for i, row in enumerate(rows):
+            player = row.get("player") if isinstance(row.get("player"), dict) else {}
+            name = row.get("name") or row.get("player_name") or player.get("name") or "Unknown player"
+            rankings.append({"rank": row.get("position") or row.get("rank") or i + 1, "name": name, "points": row.get("prize_money") or row.get("ranking_prize_money") or row.get("points"), "image_url": row.get("image_url") or player.get("image_url") or player.get("photo_url")})
+        hub["sports"]["darts"] = {"rankings": add_photos(rankings, limit=12), "notice": "PDC Order of Merit. The free Darts API feed may be up to seven days behind."}
+    except Exception as exc:
+        hub["sports"]["darts"] = {"rankings": [], "sync_warning": str(exc)}
+
+    # UFC official divisional rankings and champion rows.
+    try:
+        key = os.environ.get("UFCALENDAR_API_KEY", "").strip()
+        if not key:
+            raise RuntimeError("UFCALENDAR_API_KEY is not configured.")
+        raw = request_json("https://api.ufcalendar.com/v1/rankings/ufc", key, "UFCalendar")
+        board = raw.get("data") or {}
+        divisions = []
+        for division in board.get("divisions") or []:
+            entries = []
+            for row in division.get("entries") or []:
+                entries.append({"rank": row.get("rank"), "name": row.get("name") or row.get("fighter_name"), "image_url": row.get("image_url") or row.get("photo_url") or row.get("image")})
+            divisions.append({"division": division.get("division"), "name": str(division.get("division") or "").replace("-", " ").title(), "entries": add_photos(entries, limit=4)})
+        hub["sports"]["ufc"] = {"divisions": divisions, "snapshot_date": board.get("snapshot_date"), "notice": "Official UFC divisional rankings from UFCalendar. Rank 0 denotes the champion; rankings are updated when the publisher releases a new snapshot."}
+    except Exception as exc:
+        hub["sports"]["ufc"] = {"divisions": [], "sync_warning": str(exc)}
+
+    # Current boxing title reigns, grouped by weight and sanctioning body.
+    try:
+        raw = request_json("https://openboxing.org/api/champions/all.json", provider="Open Boxing")
+        champions = raw if isinstance(raw, list) else raw.get("champions") or raw.get("data") or []
+        grouped = {}
+        for record in champions:
+            champion = record.get("champion") or record
+            name_obj = champion.get("name") or {}
+            name = name_obj.get("short") or " ".join(x for x in [name_obj.get("first"), name_obj.get("last")] if x)
+            for reign in record.get("reigns") or []:
+                period = reign.get("period") or {}
+                title = reign.get("title") or {}
+                if not period.get("current"):
+                    continue
+                weight = (title.get("weight") or {}).get("class") or "Other"
+                org = ((title.get("org") or {}).get("name") or {}).get("abbreviation") or "World title"
+                grouped.setdefault(weight, []).append({"name": name, "org": org, "rank": 0, "since": period.get("begins"), "image_url": champion.get("image_url")})
+        divisions = []
+        for weight, rows in sorted(grouped.items()):
+            divisions.append({"name": weight, "champions": add_photos(rows, limit=6)})
+        hub["sports"]["boxing"] = {"divisions": divisions, "notice": "Current reigns from Open Boxing, covering the major sanctioning bodies and The Ring where recorded. Boxing title status can change between updates; data coverage is subject to the source database."}
+    except Exception as exc:
+        hub["sports"]["boxing"] = {"divisions": [], "sync_warning": str(exc)}
+
+    for sport in hub["sports"].values():
+        sport["last_updated"] = iso_now()
+    save("sports-hub.json", hub)
+    print("Sports hub: standings, rankings and title-holder feed refreshed.")
+
 def main():
+    try:
+        sync_sports_hub()
+    except Exception as exc:
+        print(f"SPORTS_HUB_WARNING: {exc}")
     try:
         sync_f1()
     except Exception as exc:
