@@ -76,8 +76,9 @@ function renderUkHeadliners() {
     matchup.append(f1,vs,f2);
     const details=document.createElement("div");details.className="uk-headliner-details";
     const eventName=document.createElement("strong");eventName.textContent=eventTitle(event,eventBouts(event));
-    const meta=document.createElement("span");meta.textContent=[ukDate(event.date),bout.weight_class||bout.division,bout.rounds?bout.rounds+" rounds":null].filter(Boolean).join(" · ");
+    const meta=document.createElement("span");meta.textContent=[ukDate(event.date),bout.weight_class||bout.division,bout.rounds?bout.rounds+" rounds":null,cardStartLabel(event)?"CARD START "+cardStartLabel(event):null].filter(Boolean).join(" · ");
     details.append(eventName,meta);
+    if(cardLiveState(event)==="live"){const live=document.createElement("span");live.className="live-badge";live.textContent="● IN PROGRESS";details.append(live);}
     if(bout.title_text){const title=document.createElement("span");title.className="uk-title-badge";title.textContent=bout.title_text;details.append(title);}
     card.append(matchup,details);root.append(card);
   });
@@ -156,6 +157,22 @@ function eventTitle(event,bouts) {
   if (headline) return fighterNames(headline).join(" vs ");
   return event.city ? event.city+" boxing event" : "Boxing event";
 }
+function cardLiveState(event) {
+  const explicit=String(event.status||event.event_status||"").toLowerCase().replace(/[ -]/g,"_");
+  if(["live","in_progress","ongoing","started"].includes(explicit))return "live";
+  if(["complete","completed","finished","cancelled","canceled","postponed"].includes(explicit))return "past";
+  const start=parseDate(event.start_time_utc||event.card_start_time_utc||event.event_start_time_utc);
+  if(!start)return "upcoming";
+  const elapsed=Date.now()-start.getTime();
+  // Boxerbook currently supplies scheduled start times but not a reliable live
+  // event status. Treat the six-hour card window as an estimated live window.
+  if(elapsed>=0&&elapsed<=6*60*60*1000)return "live";
+  return elapsed>6*60*60*1000?"past":"upcoming";
+}
+function cardStartLabel(event) {
+  const start=event.start_time_utc||event.card_start_time_utc||event.event_start_time_utc;
+  return start?formatTime(start,event.date):null;
+}
 function renderEventCard(event, expanded=false) {
   const bouts=eventBouts(event);
   const details=document.createElement("details");
@@ -177,9 +194,11 @@ function renderEventCard(event, expanded=false) {
   desc.textContent=[countLabel,event.city,country].filter(Boolean).join(" · ");
   info.append(title,desc);
   const tag=document.createElement("div");tag.className="event-tag";
-  const cardStart=formatTime(event.start_time_utc,event.date);
-  const firstTime=bouts.find(x=>x.start_time_utc);
-  tag.textContent=cardStart?"CARD "+cardStart:(firstTime?"FIRST BOUT "+formatTime(firstTime.start_time_utc,firstTime.date):"TIME TBC");
+  const cardStart=cardStartLabel(event);
+  const liveState=cardLiveState(event);
+  const time=document.createElement("span");time.className="card-start-time";time.textContent=cardStart?"CARD START "+cardStart:(bouts.find(x=>x.start_time_utc)?"FIRST BOUT "+formatTime(bouts.find(x=>x.start_time_utc).start_time_utc,bouts.find(x=>x.start_time_utc).date):"START TIME TBC");
+  tag.append(time);
+  if(liveState==="live"){const badge=document.createElement("span");badge.className="live-badge";badge.textContent="● IN PROGRESS";tag.append(badge);}
   summary.append(dateBox,info,tag);
   details.append(summary);
   const panel=document.createElement("div");panel.className="fight-card-details";
@@ -305,3 +324,5 @@ $("prev-month").addEventListener("click",()=>{state.month.setMonth(state.month.g
 $("next-month").addEventListener("click",()=>{state.month.setMonth(state.month.getMonth()+1);renderCalendar();});
 loadData();setInterval(loadData,5*60*1000);
 if("serviceWorker" in navigator && location.protocol.startsWith("http"))navigator.serviceWorker.register("./sw.js").catch(()=>{});
+
+setInterval(()=>{if(document.visibilityState==="visible")renderHome();},60000);
