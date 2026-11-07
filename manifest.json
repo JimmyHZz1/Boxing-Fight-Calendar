@@ -1,7 +1,7 @@
 {
-  "name": "Boxing Fight Calendar",
-  "short_name": "Fight Calendar",
-  "description": "Professional boxing schedules and full fight cards in UK local time.",
+  "name": "Sports Calendar",
+  "short_name": "Sports Calendar",
+  "description": "Formula 1, PDC darts, boxing and UFC schedules in UK local time.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
