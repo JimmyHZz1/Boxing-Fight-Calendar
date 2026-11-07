@@ -35,7 +35,7 @@ def first_value(obj: dict, *keys):
     return None
 
 def normalise_broadcasters(raw: dict) -> list[dict]:
-    value = first_value(raw, "broadcasters", "broadcasts", "where_to_watch", "watch", "platforms", "tv")
+    value = first_value(raw, "broadcasters", "broadcasts", "broadcast", "where_to_watch", "watch", "platforms", "tv")
     if isinstance(value, dict):
         value = value.get("broadcasters") or value.get("platforms") or value.get("services") or [value]
     if isinstance(value, str):
@@ -63,7 +63,7 @@ def boxerbook_schedule() -> dict:
         if not date:
             continue
         bouts = []
-        event_start = first_value(raw, "start_time_utc", "card_start_time_utc", "event_start_time_utc", "start_time")
+        event_start = first_value(raw, "start_time_utc", "card_start_time_utc", "event_start_time_utc", "scheduled_start_utc", "start_utc", "card_start", "start_time")
         for item in raw.get("bouts") or []:
             if not isinstance(item, dict):
                 continue
@@ -94,8 +94,8 @@ def boxerbook_schedule() -> dict:
         if isinstance(location, dict):
             location_text = first_value(location, "name", "venue", "address", "label")
             city = first_value(location, "city", "town")
-            country = first_value(location, "country", "country_name", "country_code")
-            country_code = first_value(location, "country_code", "iso_country")
+            country = first_value(location, "country", "country_name", "country_code", "countryCode", "country_iso", "nation")
+            country_code = first_value(location, "country_code", "countryCode", "country_iso", "iso_country")
         else:
             location_text = location
             city = first_value(raw, "city", "town")
