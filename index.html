@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101114">
+  <meta name="description" content="Professional boxing fight calendar, full fight cards and event results, shown in UK local time.">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Boxing Fight Calendar</title>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Boxing Fight Calendar home">
+        <span class="brand-mark">B</span>
+        <span><strong>BOXING</strong><small>FIGHT CALENDAR</small></span>
+      </a>
+      <span class="live-status"><i></i> SCHEDULE</span>
+    </header>
+
+    <main>
+      <section id="home-screen" class="screen active" aria-labelledby="home-title">
+        <div class="hero">
+          <div class="eyebrow">THE FIGHT GAME, AT A GLANCE</div>
+          <h1 id="home-title">Never miss<br><em>fight night.</em></h1>
+          <p>Upcoming professional boxing, from the headline bout to the opening bell.</p>
+          <div class="hero-meta"><span>🇬🇧 UK LOCAL TIME</span><span id="home-updated">WAITING FOR FIRST SYNC</span></div>
+        </div>
+        <div class="section-heading"><div><span class="eyebrow">WHAT'S NEXT</span><h2>Next fight nights</h2></div><span class="count-badge" id="event-count">0 EVENTS</span></div>
+        <div id="next-events" class="event-list">
+          <div class="empty-state"><span class="empty-icon">🥊</span><h3>Fight schedule loading</h3><p>Once the data feed is connected, newly announced events will appear here automatically.</p></div>
+        </div>
+        <div class="section-heading compact"><div><span class="eyebrow">UP NEXT</span><h2>Headline bouts</h2></div></div>
+        <div id="headline-bouts" class="bout-list">
+          <div class="muted-note">Headline fights will appear here when confirmed data is available.</div>
+        </div>
+      </section>
+
+      <section id="calendar-screen" class="screen" aria-labelledby="calendar-title">
+        <div class="page-intro"><span class="eyebrow">PLAN YOUR FIGHT NIGHTS</span><h1 id="calendar-title">Fight <em>calendar.</em></h1><p>Browse event dates and see what's scheduled.</p></div>
+        <div class="calendar-panel">
+          <div class="calendar-toolbar"><button id="prev-month" class="icon-button" aria-label="Previous month">‹</button><h2 id="month-label">Month Year</h2><button id="next-month" class="icon-button" aria-label="Next month">›</button></div>
+          <div class="weekdays"><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span></div>
+          <div id="calendar-grid" class="calendar-grid"></div>
+          <div class="calendar-legend"><span><i></i> Event scheduled</span><span>Times shown in UK local time</span></div>
+        </div>
+        <div class="section-heading"><div><span class="eyebrow">SELECTED DATE</span><h2 id="selected-date-label">Choose a date</h2></div></div>
+        <div id="selected-date-events" class="event-list"><div class="muted-note">Select a date to see its fight events.</div></div>
+      </section>
+
+      <section id="cards-screen" class="screen" aria-labelledby="cards-title">
+        <div class="page-intro"><span class="eyebrow">EVERY BOUT, EVERY ROUND</span><h1 id="cards-title">Full fight <em>cards.</em></h1><p>Confirmed undercards, main events, weight divisions and broadcasters.</p></div>
+        <div id="full-cards" class="event-list"><div class="empty-state"><span class="empty-icon">📋</span><h3>Full cards will appear here</h3><p>Event cards will populate as reliable bout information becomes available.</p></div></div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <button class="nav-item active" data-screen="home-screen"><span>⌂</span><small>HOME</small></button>
+      <button class="nav-item" data-screen="calendar-screen"><span>▦</span><small>CALENDAR</small></button>
+      <button class="nav-item" data-screen="cards-screen"><span>▤</span><small>FIGHT CARDS</small></button>
+    </nav>
+    <footer class="footer">BOXING FIGHT CALENDAR <span>•</span> TIMES DISPLAYED IN UK LOCAL TIME</footer>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>
