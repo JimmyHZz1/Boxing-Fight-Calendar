@@ -314,3 +314,32 @@
 .next-event-loading{padding:8px 2px;color:var(--muted);font-size:10px}
 @media(max-width:420px){.top-sport-selector{gap:4px;padding:9px 0 8px}.top-sport-button{min-height:49px;padding:5px 1px;font-size:7px;letter-spacing:.25px}.top-sport-button img{max-width:47px;height:19px}.top-sport-wordmark{height:19px;font-size:17px}.next-event-strip{padding:10px 0}.next-event-strip-heading>span:last-child{font-size:7px}.next-event-link{flex-basis:min(205px,76vw);padding:9px}.next-event-name{font-size:15px}}
 @media(prefers-reduced-motion:reduce){.next-event-ticker{scroll-behavior:auto}}
+
+
+/* Hard-enforce a single horizontal row for the five sport tabs on mobile */
+.app-shell > nav.top-sport-selector{
+  display:flex!important;
+  flex-direction:row!important;
+  flex-wrap:nowrap!important;
+  align-items:stretch;
+  justify-content:space-between;
+  width:100%;
+  gap:5px;
+}
+.app-shell > nav.top-sport-selector > .top-sport-button{
+  display:flex!important;
+  flex:1 1 0!important;
+  flex-direction:column!important;
+  align-items:center;
+  justify-content:center;
+  width:auto!important;
+  min-width:0!important;
+  max-width:none!important;
+  padding:5px 1px;
+  white-space:nowrap;
+}
+.app-shell > nav.top-sport-selector > .top-sport-button img{max-width:90%;}
+@media(max-width:360px){
+  .app-shell > nav.top-sport-selector{gap:3px;}
+  .app-shell > nav.top-sport-selector > .top-sport-button{font-size:6px;letter-spacing:0;padding-left:0;padding-right:0;}
+}
