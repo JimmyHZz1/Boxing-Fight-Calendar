@@ -1,6 +1,6 @@
 const DATA_URL = "./data/fights.json";
 const ACTIONS_URL = "https://github.com/JimmyHZz1/Boxing-Fight-Calendar/actions/workflows/sync-fights.yml";
-const state = { events: [], month: new Date(new Date().getFullYear(), new Date().getMonth(), 1), selected: new Date() };
+const state = { events: [], fighterImages: {}, month: new Date(new Date().getFullYear(), new Date().getMonth(), 1), selected: new Date() };
 const $ = id => document.getElementById(id);
 const pad = n => String(n).padStart(2, "0");
 const dateKey = d => `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
@@ -42,14 +42,26 @@ function ukBroadcasters(items) {
     .map(item=>item.name||item.broadcaster||item.platform||item.service||"")
     .filter(name=>name&&!seen.has(name)&&(seen.add(name),true));
 }
+function normaliseFighterKey(value) {
+  return String(value||"").normalize("NFKD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
+}
 function fighterPortrait(name, imageUrl) {
   const wrap=document.createElement("div");wrap.className="fighter-portrait";
   const initials=String(name||"?").trim().split(/\s+/).slice(0,2).map(part=>part[0]||"").join("").toUpperCase();
   const fallback=document.createElement("span");fallback.className="portrait-fallback";fallback.textContent=initials||"?";
   wrap.append(fallback);
-  if(imageUrl && /^https:\/\//i.test(imageUrl)){
-    const img=document.createElement("img");img.src=imageUrl;img.alt=name+" portrait";img.loading="lazy";
-    img.onerror=()=>{img.remove();};wrap.append(img);
+  const photo=state.fighterImages[normaliseFighterKey(name)]||{};
+  const src=imageUrl||photo.url;
+  if(src && /^https:\/\//i.test(src)){
+    const img=document.createElement("img");img.src=src;img.alt=name+" portrait";img.loading="lazy";
+    img.onerror=()=>{img.remove();const credit=wrap.querySelector(".portrait-credit");if(credit)credit.remove();};
+    wrap.append(img);
+    if(photo.page_url){
+      const credit=document.createElement("a");credit.className="portrait-credit";credit.href=photo.page_url;credit.target="_blank";credit.rel="noopener noreferrer";
+      credit.textContent="©";credit.setAttribute("aria-label","Photo credit: "+(photo.artist||"See source file")+". Licence: "+(photo.license||"see source file"));
+      credit.title="Photo: "+(photo.artist||"See source file")+" · "+(photo.license||"Licence details")+" — open source and licence";
+      wrap.append(credit);
+    }
   }
   return wrap;
 }
@@ -411,6 +423,7 @@ async function loadData() {
     const res=await fetch(DATA_URL+"?t="+Date.now(),{cache:"no-store"});
     if(!res.ok)throw new Error("Data feed unavailable");
     const data=await res.json();state.events=Array.isArray(data.events)?data.events:[];
+    try { const photos=await fetch("./data/fighter-images.json?t="+Date.now(),{cache:"no-store"}); if(photos.ok){const photoData=await photos.json();state.fighterImages=photoData.images||{};} } catch(_) { state.fighterImages={}; }
     if(data.last_updated)$("home-updated").textContent="DATA UPDATED "+new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",dateStyle:"medium",timeStyle:"short"}).format(new Date(data.last_updated));
     else $("home-updated").textContent="AWAITING DATA SYNC";
     $("refresh-help").textContent="Schedule snapshot loaded. Use Update fight data to run a fresh API sync.";
