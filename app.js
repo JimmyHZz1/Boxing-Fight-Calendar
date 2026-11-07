@@ -318,7 +318,7 @@ function countryName(value) {
   return map[String(value).toUpperCase()]||value;
 }
 function eventTitle(event,bouts) {
-  if (event.name && !/boxing event|^mr event$/i.test(event.name)) return event.name;
+  if (event.name && !/boxing event/i.test(event.name) && !/^mr event$/i.test(event.name)) return event.name;
   const headline=bouts.find(b=>b.title_text)||bouts[0];
   if (headline) return fighterNames(headline).join(" vs ");
   return event.city ? event.city+" boxing event" : "Boxing event";
@@ -392,6 +392,7 @@ function renderEventCard(event, expanded=false) {
   metaBits.push(channels.length?"UK WATCH: "+channels.join(", "):"UK BROADCAST: NOT ANNOUNCED");
   meta.textContent=metaBits.join(" · ")||"Full card details below";
   panel.append(meta);
+  const broadcasterLogos=ukBroadcasterLogos(event.broadcasters);if(broadcasterLogos)panel.append(broadcasterLogos);
   const list=document.createElement("div");list.className="bout-list";
   if(bouts.length)bouts.forEach(b=>list.append(makeBoutRow(b)));
   else {const empty=document.createElement("p");empty.className="muted-note";empty.textContent="No individual bouts have been confirmed for this event yet.";list.append(empty);}
