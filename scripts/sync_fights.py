@@ -269,7 +269,8 @@ def update_fighter_images(events: list[dict]) -> dict:
         else:
             print(f"COMMONS_PORTRAIT_NOT_FOUND: {name}")
         time.sleep(0.25)
-    cache["updated_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
+    if pending:
+        cache["updated_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
         json.dump(cache, f, ensure_ascii=False, indent=2)
