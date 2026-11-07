@@ -48,13 +48,13 @@ function makeBoutRow(b) {
   const channels=(b.eventBroadcasters||[]).map(x=>typeof x==="string"?x:([x.name||x.broadcaster||x.platform,x.region].filter(Boolean).join(" (")+(x.region?")":""))).filter(Boolean);
   const channel=b.broadcaster||b.broadcast||b.tv_channel||channels.join(", ")||null;
   const url=b.broadcast_url||b.broadcaster_url||b.watch_url||null;
-  if(channel && url && /^https?:\\/\\//i.test(url)) {
+  if(channel && url && /^https?:\/\//i.test(url)) {
     const link=document.createElement("a"); link.href=url; link.target="_blank"; link.rel="noopener noreferrer"; link.textContent=channel; broadcast.append(link);
   } else {
     const text=document.createElement("span"); text.textContent=channel || "Broadcast information not announced"; broadcast.append(text);
-    if(url && /^https?:\\/\\//i.test(url)) { const link=document.createElement("a"); link.href=url; link.target="_blank"; link.rel="noopener noreferrer"; link.textContent="Watch details"; broadcast.append(" · ",link); }
+    if(url && /^https?:\/\//i.test(url)) { const link=document.createElement("a"); link.href=url; link.target="_blank"; link.rel="noopener noreferrer"; link.textContent="Watch details"; broadcast.append(" · ",link); }
   }
-  if(b.eventUrl && /^https?:\\/\\//i.test(b.eventUrl)) { const link=document.createElement("a"); link.href=b.eventUrl; link.target="_blank"; link.rel="noopener noreferrer"; link.textContent="Event details"; broadcast.append(" · ",link); }
+  if(b.eventUrl && /^https?:\/\//i.test(b.eventUrl)) { const link=document.createElement("a"); link.href=b.eventUrl; link.target="_blank"; link.rel="noopener noreferrer"; link.textContent="Event details"; broadcast.append(" · ",link); }
   meta.append(document.createElement("br"),broadcast);
   row.append(left,vs,right,meta);
   return row;
@@ -142,7 +142,7 @@ function renderCards() {
     if(event.promoter){const promoter=document.createElement("p");promoter.className="muted-note";promoter.textContent="Promoter: "+event.promoter;section.append(promoter);}
     const list=document.createElement("div");list.className="bout-list";bouts.forEach(b=>list.append(makeBoutRow(b)));
     section.append(list);
-    if(event.event_url && /^https?:\\/\\//i.test(event.event_url)){const link=document.createElement("a");link.href=event.event_url;link.target="_blank";link.rel="noopener noreferrer";link.className="event-source-link";link.textContent="View event on Boxerbook ↗";section.append(link);}
+    if(event.event_url && /^https?:\/\//i.test(event.event_url)){const link=document.createElement("a");link.href=event.event_url;link.target="_blank";link.rel="noopener noreferrer";link.className="event-source-link";link.textContent="View event on Boxerbook ↗";section.append(link);}
     root.append(section);
   }
 }
