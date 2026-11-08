@@ -17,7 +17,7 @@ def request_json(url, key=None, provider="API"):
     # Wikimedia Commons asks automated clients to keep request rates low.
     # Pace each request to avoid HTTP 429 and wasting an image-enrichment batch.
     if provider == "Wikimedia Commons":
-        time.sleep(1.2)
+        time.sleep(2.0)
     headers = {"Accept": "application/json", "User-Agent": "Sports-Calendar/1.0 (scheduled data sync)"}
     if key:
         headers["Authorization"] = "Bearer " + key
@@ -689,7 +689,7 @@ def commons_photo(name, image_kind="portrait"):
         params = {
             "action": "query", "format": "json", "list": "search",
             "srsearch": "intitle:\"" + name + "\"",
-            "srnamespace": 14, "srlimit": 5
+            "srnamespace": 14, "srlimit": 3
         }
         try:
             payload = request_json("https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode(params), provider="Wikimedia Commons")
@@ -711,6 +711,10 @@ def commons_photo(name, image_kind="portrait"):
                     category_payload = request_json("https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode(category_params), provider="Wikimedia Commons")
                     query_count += 1
                     inspect_pages((category_payload.get("query") or {}).get("pages", {}).values(), "category:" + category_title)
+                    # Stop as soon as a category yields a licensed identity match;
+                    # continuing through more categories wastes Commons quota.
+                    if candidates:
+                        break
                 except Exception as exc:
                     print(f"COMMONS_IMAGE_CATEGORY_WARNING: {name} [{category_title}]: {exc}")
                     if "HTTP 429" in str(exc):
