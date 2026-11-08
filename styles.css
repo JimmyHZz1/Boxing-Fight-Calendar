@@ -477,5 +477,113 @@
 .sport-watch-guide-item .sport-watch-guide-brand+.sport-watch-guide-item strong{margin-top:0}
 @media(max-width:420px){.hub-person>img.hub-constructor-logo{width:38px;height:30px}.hub-person:has(.hub-constructor-logo){grid-template-columns:40px 23px minmax(0,1fr)}.sport-ranking-row.is-constructor{grid-template-columns:26px 42px minmax(0,1fr)}.sport-ranking-row.is-constructor .sport-ranking-image{width:40px;height:32px}.sport-ranking-row.is-constructor small{grid-column:3;text-align:left}}
 
-/* Blend white logo canvases into the charcoal theme instead of showing white tiles */
-.sport-slide-logo,.sport-event-visual img,.sport-watch-provider img,.uk-broadcaster-logo img,.top-sport-button img,.hub-sport-shortcut img,.sport-detail-logo,.live-centre-logo img{mix-blend-mode:multiply}
+
+/* Desktop dashboard — dedicated wide-screen layout; mobile layout remains unchanged. */
+@media (min-width: 1100px) {
+  .app-shell {
+    width: min(100% - 48px, 1680px);
+    max-width: 1680px;
+    padding: 0 28px 56px 158px;
+  }
+  .topbar { height: 88px; }
+  .brand-mark { width: 44px; height: 44px; }
+  .top-sport-selector { gap: 12px; padding: 16px 0 14px; }
+  .top-sport-button { min-height: 58px; }
+  .next-event-strip { margin: 0 0 4px; }
+  .screen { padding: 28px 0 38px; }
+  .bottom-nav {
+    position: fixed;
+    left: max(18px, calc((100vw - 1680px) / 2 + 18px));
+    top: 142px;
+    bottom: auto;
+    width: 112px;
+    margin: 0;
+    padding: 9px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    border-radius: 8px;
+    box-shadow: 0 18px 50px rgba(0,0,0,.28);
+  }
+  .nav-item {
+    min-height: 58px;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 11px;
+    padding: 10px 12px;
+    border-radius: 5px;
+  }
+  .nav-item span { width: 22px; font-size: 21px; text-align: center; }
+  .nav-item small { font-size: 9px; }
+  .nav-item.active { background: rgba(226,180,91,.10); }
+  #home-screen.screen.active {
+    display: grid;
+    grid-template-columns: minmax(330px, .78fr) minmax(560px, 1.22fr);
+    align-items: stretch;
+    gap: 22px;
+  }
+  #home-screen > .hero { grid-column: 1; min-height: 100%; padding: 42px 38px; display: flex; flex-direction: column; justify-content: center; }
+  #home-screen > .hero h1 { font-size: clamp(64px, 5.2vw, 94px); }
+  #home-screen > .live-centre { grid-column: 2; margin: 0; min-width: 0; }
+  #home-screen > .sports-carousel-section,
+  #home-screen > #sport-coming-soon,
+  #home-screen > #sports-hub-banner,
+  #home-screen > #sport-data-panel,
+  #home-screen > #boxing-home-content { grid-column: 1 / -1; min-width: 0; }
+  .live-centre { padding: 24px; }
+  .live-centre-heading h2 { font-size: 36px; }
+  .live-centre-list { max-height: 390px; overflow: auto; }
+  .live-centre-event { grid-template-columns: 56px minmax(0,1fr) auto; padding: 12px 14px; }
+  .sports-carousel-heading { margin-top: 8px; }
+  .sports-carousel-controls { display: block; }
+  .sports-carousel-controls > .carousel-arrow { display: none; }
+  .sports-carousel {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0,1fr));
+    gap: 14px;
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+  .sport-slide { min-width: 0; width: auto; min-height: 245px; padding: 20px 17px; }
+  .sport-slide-logo { height: 70px; margin: 18px auto 14px; }
+  .sport-logo-darts { height: 76px; }
+  .sports-carousel-footer { display: none; }
+  #sports-hub-banner { padding: 24px; }
+  .sports-hub-heading { margin-bottom: 18px; }
+  #sports-hub-content { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; }
+  .hub-sport-title { grid-column: 1 / -1; }
+  .hub-dropdown { min-width: 0; }
+  #boxing-home-content {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 0 22px;
+  }
+  #boxing-home-content > .section-heading,
+  #boxing-home-content > #next-events,
+  #boxing-home-content > #headline-bouts { grid-column: 1 / -1; }
+  .event-list { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .sport-detail-hero { padding: 42px; }
+  .sport-detail-stats { grid-template-columns: repeat(4, minmax(0,1fr)); }
+  .sport-breakdown-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+  .sport-watch-guide-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+  .sport-ranking-group { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px 14px; }
+  .sport-ranking-group > h3 { grid-column: 1 / -1; }
+  .calendar-panel { max-width: none; }
+  .day { min-height: 88px; font-size: 16px; }
+  .weekend-content { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .footer { padding-bottom: 20px; }
+}
+@media (min-width: 1500px) {
+  #home-screen.screen.active { grid-template-columns: minmax(390px, .72fr) minmax(700px, 1.28fr); gap: 26px; }
+  .live-centre { padding: 28px; }
+  .live-centre-panels { display: grid; grid-template-columns: .8fr 1.2fr; gap: 18px; }
+  .sport-slide { min-height: 270px; }
+  #sports-hub-content { grid-template-columns: repeat(3, minmax(0,1fr)); }
+}
+@media (min-width: 1100px) and (max-width: 1250px) {
+  .app-shell { width: calc(100% - 20px); padding-left: 142px; padding-right: 20px; }
+  .bottom-nav { left: 12px; width: 108px; }
+  #home-screen.screen.active { grid-template-columns: minmax(290px,.75fr) minmax(480px,1.25fr); gap: 15px; }
+  .sport-slide { padding: 16px 11px; }
+}
