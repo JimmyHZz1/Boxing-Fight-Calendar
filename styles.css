@@ -781,3 +781,7 @@
 
 /* Keep official F1 headshots framed consistently in the dedicated championship table. */
 .sport-ranking-image.f1-driver-portrait{object-position:50% 18%;}
+
+/* V1.5 data-backed performance snapshots */
+.favourite-performance-grid{margin-top:10px;}
+.favourite-performance-grid .favourite-stat strong{overflow-wrap:anywhere;}
