@@ -626,3 +626,10 @@
   .app-shell{padding-left:178px!important;padding-right:20px!important;}
   .bottom-nav{left:12px!important;width:142px!important;}
 }
+
+/* Clear, high-contrast constructor marks: the full team name remains beside each mark. */
+.hub-person:has(.hub-constructor-fallback){grid-template-columns:112px 26px minmax(0,1fr)!important;min-height:66px;gap:10px}
+.hub-constructor-fallback{width:106px;height:48px;padding:0 5px;border:1px solid color-mix(in srgb,var(--team-color,#e2b45b) 75%,#fff 5%);border-bottom:3px solid var(--team-color,#e2b45b);border-radius:5px;background:linear-gradient(135deg,color-mix(in srgb,var(--team-color,#e2b45b) 23%,#17191e),#17191e 78%);color:var(--team-color,#f4f2ed);font:900 21px/1 'Barlow Condensed',sans-serif;letter-spacing:.6px;text-shadow:0 1px 2px #000}
+.sport-ranking-row.is-constructor{grid-template-columns:30px 58px minmax(0,1fr) auto}
+.sport-ranking-row.is-constructor .sport-ranking-image-fallback.constructor-mark{width:54px;height:42px;border:1px solid color-mix(in srgb,var(--team-color,#e2b45b) 75%,#fff 5%);border-bottom:3px solid var(--team-color,#e2b45b);border-radius:5px;background:linear-gradient(135deg,color-mix(in srgb,var(--team-color,#e2b45b) 22%,#17191e),#17191e 78%);color:var(--team-color,#f4f2ed);font:900 17px/1 'Barlow Condensed',sans-serif;text-shadow:0 1px 2px #000}
+@media(max-width:520px){.hub-person:has(.hub-constructor-fallback){grid-template-columns:96px 23px minmax(0,1fr)!important;gap:7px}.hub-constructor-fallback{width:90px;height:42px;font-size:18px}.sport-ranking-row.is-constructor{grid-template-columns:26px 50px minmax(0,1fr)}.sport-ranking-row.is-constructor .sport-ranking-image-fallback.constructor-mark{width:46px;height:38px;font-size:15px}}

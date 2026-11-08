@@ -7,7 +7,7 @@
   const sportNames = {f1:"FORMULA 1",darts:"PDC DARTS",boxing:"BOXING WORLD CHAMPIONS",ufc:"UFC"};
   const esc = value => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
   const initials = name => String(name || "?").split(/\s+/).slice(0,2).map(x=>x[0]||"").join("").toUpperCase();
-  const constructorWordmark = name => ({Mercedes:"MERCEDES",Ferrari:"FERRARI","Red Bull":"RED BULL",McLaren:"McLAREN","RB F1 Team":"RACING BULLS","Alpine F1 Team":"ALPINE","Haas F1 Team":"HAAS",Audi:"AUDI",Williams:"WILLIAMS","Aston Martin":"ASTON MARTIN","Cadillac F1 Team":"CADILLAC"}[name] || String(name||"F1").toUpperCase());
+  const constructorWordmark = name => ({Mercedes:"★",Ferrari:"SF","Red Bull":"RBR",McLaren:"MCL","RB F1 Team":"VCARB","Alpine F1 Team":"ALP","Haas F1 Team":"HAAS",Audi:"AUDI",Williams:"W","Aston Martin":"AM","Cadillac F1 Team":"CAD"}[name] || String(name||"F1").slice(0,4).toUpperCase());
   const constructorColour = name => ({Mercedes:"#00d2be",Ferrari:"#ef1a2d","Red Bull":"#4776d0",McLaren:"#ff8700","RB F1 Team":"#6c9bd2","Alpine F1 Team":"#168bd2","Haas F1 Team":"#c7cbd1",Audi:"#f02b32",Williams:"#39a9df","Aston Martin":"#00a58b","Cadillac F1 Team":"#e5e5e5"}[name] || "#e2b45b");
   let imageFailures = 0;
   let imageLoads = 0;
