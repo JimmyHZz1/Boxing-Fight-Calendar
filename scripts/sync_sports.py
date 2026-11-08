@@ -501,7 +501,7 @@ def save_image_manifest(manifest):
     manifest["updated_at"] = iso_now()
     with open(IMAGE_MANIFEST_PATH, "w", encoding="utf-8") as handle:
         json.dump(manifest, handle, ensure_ascii=False, indent=2)
-        handle.write("\\n")
+        handle.write("\n")
 
 def cache_image_locally(name, result, sport):
     """Download a licensed Commons thumbnail into the repository image library."""
@@ -883,6 +883,40 @@ def enrich_cached_images():
     IMAGE_DIAGNOSTICS = {"attempted": 0, "found": 0, "missing": 0, "rejected": 0, "by_sport": {}}
     IMAGE_LOOKUP_RATE_LIMITED = False
     load_image_library()
+    # Prioritise fighters on upcoming confirmed boxing cards, then move through the
+    # standings queues. The same five-image budget applies across the whole run.
+    fights_path = os.path.join(DATA, "fights.json")
+    fighter_cache_path = os.path.join(DATA, "fighter-images.json")
+    try:
+        with open(fights_path, encoding="utf-8") as handle:
+            fights_feed = json.load(handle)
+        with open(fighter_cache_path, encoding="utf-8") as handle:
+            fighter_cache = json.load(handle)
+    except (FileNotFoundError, json.JSONDecodeError):
+        fights_feed, fighter_cache = {"events": []}, {"images": {}, "attempted": {}}
+    boxer_names = sorted({
+        str(bout.get(side) or "").strip()
+        for event in fights_feed.get("events", [])
+        for bout in event.get("bouts", [])
+        for side in ("fighter1", "fighter2")
+        if str(bout.get(side) or "").strip() and str(bout.get(side) or "").strip().upper() != "TBC"
+    })
+    boxer_rows = [{"name": name} for name in boxer_names]
+    add_photos(boxer_rows, limit=len(boxer_rows), sport="boxing fighters")
+    cached_boxers = fighter_cache.setdefault("images", {})
+    for row in boxer_rows:
+        if not row.get("image_url"):
+            continue
+        key = image_key(row["name"])
+        cached_boxers[key] = {
+            "url": row["image_url"], "page_url": row.get("image_page_url"),
+            "artist": row.get("image_credit"), "license": row.get("image_license"),
+            "license_url": row.get("image_license_url"), "source": row.get("image_source")
+        }
+    fighter_cache["updated_at"] = iso_now()
+    with open(fighter_cache_path, "w", encoding="utf-8") as handle:
+        json.dump(fighter_cache, handle, ensure_ascii=False, indent=2)
+        handle.write("\n")
     hub_path = os.path.join(DATA, "sports-hub.json")
     with open(hub_path, encoding="utf-8") as handle:
         hub = json.load(handle)
