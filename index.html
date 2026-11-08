@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#101114">
   <meta name="description" content="Boxing, Formula 1, UFC and PDC darts schedules in one sports calendar, shown in UK local time.">
   <link rel="manifest" href="./manifest.json">
-  <link rel="stylesheet" href="./styles.css?v=20261108-42">
+  <link rel="stylesheet" href="./styles.css?v=20261108-43">
   <title>Sports Calendar</title>
 </head>
 <body>
@@ -39,6 +39,11 @@
           <div class="hero-meta"><span>🇬🇧 UK LOCAL TIME</span><span id="home-updated">WAITING FOR FIRST SYNC</span></div>
           <p id="refresh-help" class="refresh-help" role="status" aria-live="polite">Data syncs automatically every 4 hours. Tap to check for the latest published schedules.</p>
         </div>
+        <section id="live-sports-centre" class="live-centre" aria-labelledby="live-centre-title">
+          <div class="live-centre-heading"><div><span class="eyebrow">ACROSS ALL FIVE SPORTS</span><h2 id="live-centre-title">Live Sports Centre</h2></div><span class="live-centre-clock">UK LOCAL TIME</span></div>
+          <section class="live-now-panel" aria-labelledby="live-now-title"><div class="live-centre-subheading"><h3 id="live-now-title">LIVE NOW</h3><span id="live-now-count">CHECKING FEEDS</span></div><div id="live-now-events" class="live-centre-list"><p class="live-centre-empty">Checking current event feeds…</p></div></section>
+          <section class="live-upcoming-panel" aria-labelledby="live-upcoming-title"><div class="live-centre-subheading"><h3 id="live-upcoming-title">COMING UP · NEXT 7 DAYS</h3><button type="button" class="text-link" id="live-centre-calendar">FULL CALENDAR ↗</button></div><div id="live-upcoming-events" class="live-centre-list"><p class="live-centre-empty">Upcoming events will appear here when feeds load.</p></div></section>
+        </section>
         <section id="sports-carousel-section" class="sports-carousel-section" aria-label="Choose a sport">
           <div class="sports-carousel-heading"><span class="eyebrow">CHOOSE YOUR SPORT</span><span class="carousel-hint">SWIPE TO EXPLORE</span></div>
           <div class="sports-carousel-controls">
@@ -122,6 +127,14 @@
         <div id="full-cards" class="event-list"><div class="empty-state"><span class="empty-icon">📋</span><h3>Full cards will appear here</h3><p>Event cards will populate as reliable bout information becomes available.</p></div></div>
         <div id="sports-event-cards" class="event-list"></div>
       </section>
+      <section id="version-history-screen" class="screen" aria-labelledby="version-history-title">
+        <div class="page-intro"><span class="eyebrow">SPORTS CALENDAR · RELEASE NOTES</span><h1 id="version-history-title">Version <em>history.</em></h1><p>A record of the features, improvements and fixes added to each release.</p></div>
+        <div class="version-history-list">
+          <article class="version-entry version-current"><div class="version-entry-top"><span class="version-number">V1.1</span><span class="version-status">IN DEVELOPMENT</span></div><h2>Live Sports Centre</h2><ul><li>Live Now overview across Formula 1, PDC Darts, Boxing, UFC and BKFC, using confirmed live status from available feeds.</li><li>Combined upcoming-event list for the next seven days, ordered by UK local date and time.</li><li>Quick route into the full five-sport calendar.</li><li>Version history page and discreet footer access.</li><li>Preserves the existing dark charcoal and gold visual theme.</li></ul></article>
+          <article class="version-entry"><div class="version-entry-top"><span class="version-number">V1.0</span><span class="version-status">FOUNDATION</span></div><h2>Five-sport Sports Calendar</h2><ul><li>Formula 1, PDC Darts, Boxing, UFC and BKFC brought together in one installable PWA.</li><li>Dedicated sport pages, sport selector and individual event details.</li><li>Combined monthly calendar and event listings with sport filters.</li><li>Championship standings, rankings and title-holder sections where data is available.</li><li>UK-local event dates and times, plus event-specific viewing information where supplied.</li><li>Automatic scheduled data publishing, manual refresh checks and offline app-shell caching.</li></ul></article>
+        </div>
+        <div class="version-history-back"><button type="button" class="secondary-button" id="version-history-back">← BACK TO HOME</button></div>
+      </section>
     </main>
 
     <nav class="bottom-nav" aria-label="Main navigation">
@@ -129,7 +142,7 @@
       <button class="nav-item" data-screen="calendar-screen"><span>▦</span><small>CALENDAR</small></button>
       <button class="nav-item" data-screen="cards-screen"><span>▤</span><small>EVENTS</small></button>
     </nav>
-    <footer class="footer">SPORTS CALENDAR <span>•</span> UK LOCAL TIME <span>•</span> PDC logo: <a href="https://commons.wikimedia.org/wiki/File:Professional_Darts_Corporation_logo.png" target="_blank" rel="noopener noreferrer">Chris Ibbotson, CC BY-SA 4.0</a> <span>•</span> BKFC SCHEDULE: <a href="https://www.bkfc.com/events" target="_blank" rel="noopener noreferrer">BKFC</a> <span>•</span> BOXING DATA: <a href="https://boxerbook.com" target="_blank" rel="noopener noreferrer">BOXERBOOK</a></footer>
+    <footer class="footer"><a class="version-history-link" href="#version-history" id="open-version-history">VERSION HISTORY</a><span>•</span> SPORTS CALENDAR <span>•</span> UK LOCAL TIME <span>•</span> PDC logo: <a href="https://commons.wikimedia.org/wiki/File:Professional_Darts_Corporation_logo.png" target="_blank" rel="noopener noreferrer">Chris Ibbotson, CC BY-SA 4.0</a> <span>•</span> BKFC SCHEDULE: <a href="https://www.bkfc.com/events" target="_blank" rel="noopener noreferrer">BKFC</a> <span>•</span> BOXING DATA: <a href="https://boxerbook.com" target="_blank" rel="noopener noreferrer">BOXERBOOK</a></footer>
   </div>
   <script src="./app.js?v=20261108-31"></script>
   <script src="./sports-data.js?v=20261107-07"></script>
@@ -137,5 +150,6 @@
   <script src="./sports-hub.js?v=20261107-01"></script>
   <script src="./sports-nav.js?v=20261107-02"></script>
   <script src="./sport-pages.js?v=20261108-04"></script>
+  <script src="./sports-v11.js?v=20261108-01"></script>
 </body>
 </html>

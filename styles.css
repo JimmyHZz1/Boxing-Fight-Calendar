@@ -388,3 +388,37 @@
 
 /* Compact fighter portraits beside bout-card names. */
 .fighter{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px}.fighter .fighter-portrait{width:44px;height:44px;margin:0 auto;border-width:1px}.fighter .portrait-fallback{font-size:15px}
+
+
+/* v1.1 Live Sports Centre — preserve the established charcoal and gold theme */
+.live-centre{margin:24px 0 30px;padding:17px;border:1px solid #4a3d29;background:linear-gradient(135deg,rgba(226,180,91,.08),rgba(25,27,32,.96) 58%),var(--panel)}
+.live-centre-heading,.live-centre-subheading,.version-entry-top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.live-centre-heading h2{font:800 30px 'Barlow Condensed',sans-serif;text-transform:uppercase;margin:5px 0 0}
+.live-centre-clock,.live-centre-subheading>span{font-size:8px;letter-spacing:1px;color:var(--muted)}
+.live-now-panel,.live-upcoming-panel{margin-top:17px;padding-top:14px;border-top:1px solid var(--line)}
+.live-centre-subheading h3{margin:0;font:800 17px 'Barlow Condensed',sans-serif;letter-spacing:.8px}
+.live-centre-subheading h3:before{content:'';display:inline-block;width:7px;height:7px;margin:0 8px 1px 0;border-radius:50%;background:#777}
+.live-now-panel .live-centre-subheading h3:before{background:#e35d57;box-shadow:0 0 0 3px rgba(227,93,87,.13)}
+.live-centre-list{display:grid;gap:8px;margin-top:11px}
+.live-centre-event{display:grid;grid-template-columns:54px minmax(0,1fr) auto;align-items:center;gap:10px;min-width:0;padding:11px;background:rgba(10,11,14,.42);border:1px solid var(--line);border-left:3px solid var(--accent)}
+.live-centre-event[data-sport="f1"]{border-left-color:#e33b36}.live-centre-event[data-sport="darts"]{border-left-color:#a57dcf}.live-centre-event[data-sport="ufc"]{border-left-color:#bfc2c8}.live-centre-event[data-sport="bkfc"]{border-left-color:#d3bd54}
+.live-centre-logo{width:48px;height:28px;display:grid;place-items:center;font:900 12px 'Barlow Condensed',sans-serif;color:var(--accent)}
+.live-centre-logo img{max-width:100%;max-height:26px;object-fit:contain}
+.live-centre-info{min-width:0}.live-centre-info strong,.live-centre-info small{display:block;overflow:hidden;text-overflow:ellipsis}
+.live-centre-info strong{font:700 16px 'Barlow Condensed',sans-serif;text-transform:uppercase;white-space:normal}
+.live-centre-info small{margin-top:3px;color:var(--muted);font-size:9px;line-height:1.45}
+.live-centre-badge{font-size:8px;font-weight:800;letter-spacing:.7px;color:#8ff0b0;white-space:nowrap}
+.live-centre-empty{margin:0;padding:13px;border:1px dashed var(--line);color:var(--muted);font-size:11px;line-height:1.6}
+.text-link{padding:5px 0;border:0;background:none;color:var(--accent);font:700 9px 'DM Sans',sans-serif;letter-spacing:.7px;cursor:pointer}
+.version-history-link{color:#85878e;text-decoration:none;font-size:8px;letter-spacing:1.1px}
+.version-history-link:hover,.version-history-link:focus-visible{color:var(--accent)}
+.version-history-list{display:grid;gap:12px;margin:20px 0}
+.version-entry{padding:18px;background:var(--panel);border:1px solid var(--line);border-left:3px solid #555963}
+.version-entry.version-current{border-left-color:var(--accent)}
+.version-number{font:900 22px 'Barlow Condensed',sans-serif;color:var(--accent);letter-spacing:.5px}
+.version-status{font-size:8px;letter-spacing:1px;color:var(--muted)}
+.version-entry h2{margin:7px 0 12px;font:700 23px 'Barlow Condensed',sans-serif;text-transform:uppercase}
+.version-entry ul{margin:0;padding-left:18px;color:#b6b6bb;font-size:11px;line-height:1.8}
+.version-entry li+li{margin-top:3px}
+.version-history-back{display:flex;justify-content:flex-start;padding:8px 0 20px}
+@media(max-width:420px){.live-centre{padding:13px}.live-centre-heading h2{font-size:27px}.live-centre-event{grid-template-columns:42px minmax(0,1fr) auto;gap:7px;padding:9px}.live-centre-logo{width:38px}.live-centre-info strong{font-size:14px}.live-centre-badge{font-size:7px}.version-entry{padding:15px}}
