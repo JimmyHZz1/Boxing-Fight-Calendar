@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Fetch F1, PDC darts, UFC and BKFC schedules into static JSON feeds."""
 from __future__ import annotations
-import json, os, sys, urllib.error, urllib.parse, urllib.request
+import json, os, sys, re, urllib.error, urllib.parse, urllib.request
+from html.parser import HTMLParser
 from datetime import datetime, timedelta, timezone
 
 ROOT = os.path.dirname(os.path.dirname(__file__))
@@ -355,6 +356,37 @@ def add_photos(rows, name_field="name", limit=8):
             row.update(cache[name])
     return rows
 
+class RankingTableParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.rows, self.row, self.cell = [], None, None
+    def handle_starttag(self, tag, attrs):
+        if tag == 'tr': self.row = []
+        elif tag in ('td', 'th') and self.row is not None: self.cell = []
+    def handle_data(self, data):
+        value = data.strip()
+        if value and self.cell is not None: self.cell.append(value)
+    def handle_endtag(self, tag):
+        if tag in ('td', 'th') and self.cell is not None and self.row is not None:
+            self.row.append(' '.join(self.cell).strip()); self.cell = None
+        elif tag == 'tr' and self.row is not None:
+            if self.row: self.rows.append(self.row)
+            self.row = None
+
+def darts_rankings_from_web():
+    url = 'https://www.dartsrankings.com/?wpmobileexternal=true'
+    req = urllib.request.Request(url, headers={'User-Agent':'Mozilla/5.0 Sports-Calendar/1.0','Accept':'text/html'})
+    with urllib.request.urlopen(req, timeout=40) as response: source = response.read().decode('utf-8', errors='replace')
+    parser = RankingTableParser(); parser.feed(source)
+    rankings = []
+    for cells in parser.rows:
+        if len(cells) < 4 or not re.fullmatch(r'\\d+', cells[0].strip()): continue
+        amount = re.sub(r'[^0-9.]', '', cells[3])
+        if not cells[2].strip() or not amount: continue
+        rankings.append({'rank':int(cells[0]),'name':cells[2].strip(),'prize_money':f'{float(amount)*1000:,.0f}'})
+    if not rankings: raise RuntimeError('Darts rankings page returned no parseable player rows.')
+    return rankings
+
 def standings_list(payload, key):
     mr = payload.get("MRData") or {}
     table = mr.get("StandingsTable") or {}
@@ -388,7 +420,7 @@ def sync_sports_hub():
             "team": ", ".join(c.get("name", "") for c in x.get("Constructors", [])), "points": x.get("points")
         } for x in drivers_raw]
         constructors = [{"rank": int(x.get("position", 0)), "name": (x.get("Constructor") or {}).get("name"), "points": x.get("points")} for x in constructors_raw]
-        hub["sports"]["f1"] = {"drivers": add_photos(drivers), "constructors": add_photos(constructors), "season": year, "notice": "Official season standings sourced from the community-maintained Jolpica F1 API."}
+        hub["sports"]["f1"] = {"drivers": add_photos(drivers, limit=25), "constructors": add_photos(constructors, limit=20), "season": year, "notice": "Official season standings sourced from the community-maintained Jolpica F1 API."}
     except Exception as exc:
         hub["sports"]["f1"] = {**previous.get("f1", {"drivers": [], "constructors": []}), "sync_warning": str(exc)}
 
@@ -397,18 +429,19 @@ def sync_sports_hub():
         key = os.environ.get("DARTS_API_KEY", "").strip()
         if not key:
             raise RuntimeError("DARTS_API_KEY is not configured.")
-        raw = request_json("https://api.dartsapi.com/v1/order-of-merit", key, "Darts API")
-        rows = raw.get("data") or []
-        if isinstance(rows, dict):
-            rows = rows.get("players") or rows.get("entries") or rows.get("rankings") or []
         rankings = []
-        for i, row in enumerate(rows):
-            player = row.get("player") if isinstance(row.get("player"), dict) else {}
-            name = row.get("name") or row.get("player_name") or (row.get("player") if isinstance(row.get("player"), str) else None) or player.get("name") or "Unknown player"
-            rankings.append({"rank": row.get("position") or row.get("rank") or i + 1, "name": name, "prize_money": row.get("prize_money") or row.get("ranking_prize_money"), "points": row.get("points"), "image_url": row.get("image_url") or player.get("image_url") or player.get("photo_url")})
-        if not rankings:
-            raise RuntimeError("Darts API returned no Order of Merit rows; keeping the last published snapshot.")
-        hub["sports"]["darts"] = {"rankings": add_photos(rankings, limit=12), "notice": "PDC Order of Merit. The free Darts API feed may be up to seven days behind."}
+        try:
+            raw = request_json("https://api.dartsapi.com/v1/order-of-merit", key, "Darts API")
+            rows = raw.get("data") or []
+            if isinstance(rows, dict): rows = rows.get("players") or rows.get("entries") or rows.get("rankings") or []
+            for i, row in enumerate(rows):
+                player = row.get("player") if isinstance(row.get("player"), dict) else {}
+                name = row.get("name") or row.get("player_name") or (row.get("player") if isinstance(row.get("player"), str) else None) or player.get("name") or "Unknown player"
+                rankings.append({"rank": row.get("position") or row.get("rank") or i + 1, "name": name, "prize_money": row.get("prize_money") or row.get("ranking_prize_money"), "points": row.get("points"), "image_url": row.get("image_url") or player.get("image_url") or player.get("photo_url")})
+        except Exception:
+            rankings = []
+        if not rankings: rankings = darts_rankings_from_web()
+        hub["sports"]["darts"] = {"rankings": add_photos(rankings, limit=20), "source_url": "https://www.dartsrankings.com/", "notice": "PDC Order of Merit live table. Rankings are updated after PDC ranking events."}
     except Exception as exc:
         hub["sports"]["darts"] = {**previous.get("darts", {"rankings": []}), "sync_warning": str(exc)}
 
@@ -433,24 +466,23 @@ def sync_sports_hub():
 
     # Current boxing title reigns, grouped by weight and sanctioning body.
     try:
-        raw = request_json("https://openboxing.org/api/champions/all.json", provider="Open Boxing")
-        champions = raw if isinstance(raw, list) else raw.get("champions") or raw.get("data") or []
+        raw = request_json("https://openboxing.org/api/reigns/all.json", provider="Open Boxing")
+        reigns = raw if isinstance(raw, list) else raw.get("reigns") or raw.get("data") or []
         grouped = {}
-        for record in champions:
-            champion = record.get("champion") or record
+        for reign in reigns:
+            period = reign.get("period") or {}
+            if period.get("current") not in (True, "true", "True", 1, "1"): continue
+            champion = reign.get("champion") or {}
             name_obj = champion.get("name") or {}
             name = name_obj.get("short") or " ".join(x for x in [name_obj.get("first"), name_obj.get("last")] if x)
-            for reign in record.get("reigns") or []:
-                period = reign.get("period") or {}
-                title = reign.get("title") or {}
-                if not period.get("current"):
-                    continue
-                weight = (title.get("weight") or {}).get("class") or "Other"
-                org = ((title.get("org") or {}).get("name") or {}).get("abbreviation") or "World title"
-                grouped.setdefault(weight, []).append({"name": name, "org": org, "rank": 0, "since": period.get("begins"), "image_url": champion.get("image_url")})
+            title = reign.get("title") or {}
+            if not name: continue
+            weight = (title.get("weight") or {}).get("class") or "Other"
+            org = ((title.get("org") or {}).get("name") or {}).get("abbreviation") or "World title"
+            grouped.setdefault(weight, []).append({"name": name, "org": org, "rank": 0, "since": period.get("begins"), "image_url": champion.get("image_url")})
         divisions = []
         for weight, rows in sorted(grouped.items()):
-            divisions.append({"name": weight, "champions": add_photos(rows, limit=6)})
+            divisions.append({"name": weight, "champions": add_photos(rows, limit=3)})
         if not divisions:
             raise RuntimeError("Open Boxing returned no current title reigns; keeping the last published snapshot.")
         hub["sports"]["boxing"] = {"divisions": divisions, "notice": "Current reigns from Open Boxing, covering the major sanctioning bodies and The Ring where recorded. Boxing title status can change between updates; data coverage is subject to the source database."}
