@@ -385,32 +385,87 @@ def sync_bkfc():
     print(f"BKFC: saved {len(events)} official event listings.")
 
 
+IMAGE_LIBRARY_PATH = os.path.join(DATA, "sports-images.json")
+IMAGE_DIAGNOSTICS = {"attempted": 0, "found": 0, "missing": 0, "rejected": 0, "by_sport": {}}
+IMAGE_LIBRARY = {"version": 1, "images": {}}
+
+def image_key(name):
+    import unicodedata
+    value = unicodedata.normalize("NFKD", str(name or "")).encode("ascii", "ignore").decode().lower()
+    return re.sub(r"[^a-z0-9]+", " ", value).strip()
+
+def load_image_library():
+    global IMAGE_LIBRARY
+    try:
+        with open(IMAGE_LIBRARY_PATH, encoding="utf-8") as handle:
+            loaded = json.load(handle)
+        if isinstance(loaded, dict) and isinstance(loaded.get("images"), dict):
+            IMAGE_LIBRARY = loaded
+    except (FileNotFoundError, json.JSONDecodeError):
+        IMAGE_LIBRARY = {"version": 1, "images": {}}
+    return IMAGE_LIBRARY
+
+def save_image_library():
+    os.makedirs(DATA, exist_ok=True)
+    IMAGE_LIBRARY["updated_at"] = iso_now()
+    with open(IMAGE_LIBRARY_PATH, "w", encoding="utf-8") as handle:
+        json.dump(IMAGE_LIBRARY, handle, ensure_ascii=False, indent=2)
+        handle.write("\\n")
+
+def image_aliases(name):
+    key = image_key(name)
+    aliases = {
+        "max verstappen": ["Max Verstappen"],
+        "lewis hamilton": ["Lewis Hamilton"],
+        "lando norris": ["Lando Norris"],
+        "charles leclerc": ["Charles Leclerc"],
+        "fernando alonso": ["Fernando Alonso"],
+        "sergio perez": ["Sergio Perez"],
+        "red bull racing": ["Red Bull Racing", "Oracle Red Bull Racing"],
+        "mercedes": ["Mercedes AMG Petronas F1 Team", "Mercedes F1"],
+        "mclaren": ["McLaren Formula One Team", "McLaren F1"],
+        "aston martin": ["Aston Martin Aramco F1 Team"],
+        "williams": ["Williams Racing"],
+        "alpine": ["BWT Alpine F1 Team"],
+        "ferrari": ["Scuderia Ferrari"],
+        "racing bulls": ["Visa Cash App Racing Bulls"],
+        "kick sauber": ["Stake F1 Team", "Sauber F1 Team"],
+        "haas": ["MoneyGram Haas F1 Team"]
+    }
+    return aliases.get(key, [str(name).strip()])
+
 def commons_photo(name):
-    """Find a relevant, reusable Wikimedia Commons image and retain its attribution."""
+    """Find a high-confidence, reusable Commons image and retain its attribution."""
     if not name:
         return None
     import html, unicodedata
     def words(value):
         value = unicodedata.normalize("NFKD", str(value or "")).encode("ascii", "ignore").decode().lower()
         return set(re.findall(r"[a-z0-9]+", value))
-    wanted = words(name) - {"jr", "sr", "ii", "iii", "iv", "team", "f1"}
+    wanted = words(name) - {"jr", "sr", "ii", "iii", "iv", "team", "f1", "racing", "club"}
     if not wanted:
         return None
-    params = {
-        "action": "query", "format": "json", "generator": "search",
-        "gsrsearch": '"' + str(name) + '"',
-        "gsrnamespace": 6, "gsrlimit": 12,
-        "prop": "imageinfo", "iiprop": "url|extmetadata|mime", "iiurlwidth": 320,
-        "iiextmetadatafilter": "Artist|Credit|LicenseShortName|LicenseUrl|UsageTerms"
-    }
-    try:
-        payload = request_json("https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode(params), provider="Wikimedia Commons")
-        candidates = []
+    query_names = image_aliases(name)
+    candidates = []
+    seen_titles = set()
+    for query_name in query_names:
+        params = {
+            "action": "query", "format": "json", "generator": "search",
+            "gsrsearch": query_name + " portrait",
+            "gsrnamespace": 6, "gsrlimit": 20,
+            "prop": "imageinfo", "iiprop": "url|extmetadata|mime", "iiurlwidth": 480,
+            "iiextmetadatafilter": "Artist|Credit|LicenseShortName|LicenseUrl|UsageTerms"
+        }
+        try:
+            payload = request_json("https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode(params), provider="Wikimedia Commons")
+        except Exception as exc:
+            print(f"COMMONS_IMAGE_WARNING: {name}: {exc}")
+            continue
         for page in (payload.get("query") or {}).get("pages", {}).values():
             title = page.get("title", "").replace("File:", "")
-            title_words = words(title)
-            if not wanted.issubset(title_words):
+            if title in seen_titles:
                 continue
+            seen_titles.add(title)
             info = (page.get("imageinfo") or [{}])[0]
             if not str(info.get("mime", "")).startswith("image/"):
                 continue
@@ -424,30 +479,78 @@ def commons_photo(name):
             licence = meta_value("LicenseShortName")
             licence_url = meta_value("LicenseUrl")
             if not image_url or not page_url or not licence or not licence_url:
+                IMAGE_DIAGNOSTICS["rejected"] += 1
                 continue
-            candidates.append({
+            title_words = words(title)
+            metadata_words = words(meta_value("Artist") + " " + meta_value("Credit"))
+            # Prefer title matches. Metadata can strengthen a match but never
+            # substitute a missing surname for a multi-word person's name.
+            title_hits = wanted.intersection(title_words)
+            meta_hits = wanted.intersection(metadata_words)
+            surname = sorted(wanted, key=len)[-1]
+            if len(wanted) >= 2 and surname not in title_words and surname not in metadata_words:
+                IMAGE_DIAGNOSTICS["rejected"] += 1
+                continue
+            coverage = len(title_hits) / max(1, len(wanted))
+            metadata_coverage = len(meta_hits) / max(1, len(wanted))
+            score = max(coverage, coverage * 0.75 + metadata_coverage * 0.25)
+            if len(wanted) == 1:
+                score = 1.0 if next(iter(wanted)) in title_words else 0.0
+            if score < 0.62:
+                IMAGE_DIAGNOSTICS["rejected"] += 1
+                continue
+            candidates.append((score, {
                 "image_url": image_url,
                 "image_page_url": page_url,
                 "image_credit": "Wikimedia Commons · " + (meta_value("Artist") or meta_value("Credit") or "See source file") + " · " + licence,
                 "image_license": licence,
-                "image_license_url": licence_url
-            })
-        return candidates[0] if candidates else None
-    except Exception as exc:
-        print(f"COMMONS_IMAGE_WARNING: {name}: {exc}")
+                "image_license_url": licence_url,
+                "image_source": "Wikimedia Commons",
+                "image_match_score": round(score, 2),
+                "image_verified_at": iso_now()
+            }))
+    if not candidates:
         return None
+    candidates.sort(key=lambda item: item[0], reverse=True)
+    return candidates[0][1]
 
-def add_photos(rows, name_field="name", limit=8):
-    cache = {}
-    for row in rows[:limit]:
+def record_image(name, result, sport="other"):
+    if not result or not result.get("image_url"):
+        return
+    key = image_key(name)
+    if not key:
+        return
+    record = {"name": name, "sport": sport, **result}
+    IMAGE_LIBRARY.setdefault("images", {})[key] = record
+    bucket = IMAGE_DIAGNOSTICS["by_sport"].setdefault(sport, {"attempted": 0, "found": 0, "missing": 0, "rejected": 0})
+    bucket["found"] += 1
+    IMAGE_DIAGNOSTICS["found"] += 1
+
+def add_photos(rows, name_field="name", limit=8, sport="other"):
+    load_image_library()
+    for row in rows:
+        name = row.get(name_field)
+        key = image_key(name)
         if row.get("image_url") or row.get("image") or row.get("photo_url"):
             row["image_url"] = row.get("image_url") or row.get("image") or row.get("photo_url")
+            row.setdefault("image_source", "Upstream data")
             continue
-        name = row.get(name_field)
-        if name and name not in cache:
-            cache[name] = commons_photo(name)
-        if cache.get(name):
-            row.update(cache[name])
+        cached = IMAGE_LIBRARY.get("images", {}).get(key) if key else None
+        if cached and cached.get("image_url"):
+            row.update({k: v for k, v in cached.items() if k.startswith("image_")})
+            continue
+        if not name or rows.index(row) >= limit:
+            continue
+        IMAGE_DIAGNOSTICS["attempted"] += 1
+        bucket = IMAGE_DIAGNOSTICS["by_sport"].setdefault(sport, {"attempted": 0, "found": 0, "missing": 0, "rejected": 0})
+        bucket["attempted"] += 1
+        result = commons_photo(name)
+        if result:
+            row.update(result)
+            record_image(name, result, sport)
+        else:
+            IMAGE_DIAGNOSTICS["missing"] += 1
+            bucket["missing"] += 1
     return rows
 
 class RankingTableParser(HTMLParser):
@@ -514,7 +617,7 @@ def sync_sports_hub():
             "team": ", ".join(c.get("name", "") for c in x.get("Constructors", [])), "points": x.get("points")
         } for x in drivers_raw]
         constructors = [{"rank": int(x.get("position", 0)), "name": (x.get("Constructor") or {}).get("name"), "points": x.get("points")} for x in constructors_raw]
-        hub["sports"]["f1"] = {"drivers": add_photos(drivers, limit=25), "constructors": add_photos(constructors, limit=11), "season": year, "notice": "Official season standings sourced from the community-maintained Jolpica F1 API."}
+        hub["sports"]["f1"] = {"drivers": add_photos(drivers, limit=25, sport="f1 drivers"), "constructors": add_photos(constructors, limit=11, sport="f1 constructors"), "season": year, "notice": "Official season standings sourced from the community-maintained Jolpica F1 API."}
     except Exception as exc:
         hub["sports"]["f1"] = {**previous.get("f1", {"drivers": [], "constructors": []}), "sync_warning": str(exc)}
 
@@ -535,7 +638,7 @@ def sync_sports_hub():
         except Exception:
             rankings = []
         if not rankings: rankings = darts_rankings_from_web()
-        hub["sports"]["darts"] = {"rankings": add_photos(rankings, limit=40), "source_url": "https://www.dartsrankings.com/", "notice": "PDC Order of Merit live table. Rankings are updated after PDC ranking events."}
+        hub["sports"]["darts"] = {"rankings": add_photos(rankings, limit=40, sport="darts"), "source_url": "https://www.dartsrankings.com/", "notice": "PDC Order of Merit live table. Rankings are updated after PDC ranking events."}
     except Exception as exc:
         hub["sports"]["darts"] = {**previous.get("darts", {"rankings": []}), "sync_warning": str(exc)}
 
@@ -551,7 +654,7 @@ def sync_sports_hub():
             entries = []
             for row in division.get("entries") or []:
                 entries.append({"rank": row.get("rank"), "name": row.get("name") or row.get("fighter_name"), "image_url": row.get("image_url") or row.get("photo_url") or row.get("image")})
-            divisions.append({"division": division.get("division"), "name": str(division.get("division") or "").replace("-", " ").title(), "entries": add_photos(entries, limit=5)})
+            divisions.append({"division": division.get("division"), "name": str(division.get("division") or "").replace("-", " ").title(), "entries": add_photos(entries, limit=5, sport="ufc")})
         if not divisions or not any(x.get("entries") for x in divisions):
             raise RuntimeError("UFCalendar returned no UFC ranking entries; keeping the last published snapshot.")
         hub["sports"]["ufc"] = {"divisions": divisions, "snapshot_date": board.get("snapshot_date"), "notice": "Official UFC divisional rankings from UFCalendar. Rank 0 denotes the champion; rankings are updated when the publisher releases a new snapshot."}
@@ -576,7 +679,7 @@ def sync_sports_hub():
             grouped.setdefault(weight, []).append({"name": name, "org": org, "rank": 0, "since": period.get("begins"), "image_url": champion.get("image_url")})
         divisions = []
         for weight, rows in sorted(grouped.items()):
-            divisions.append({"name": weight, "champions": add_photos(rows, limit=3)})
+            divisions.append({"name": weight, "champions": add_photos(rows, limit=3, sport="boxing")})
         if not divisions:
             raise RuntimeError("Open Boxing returned no current title reigns; keeping the last published snapshot.")
         hub["sports"]["boxing"] = {"divisions": divisions, "notice": "Current reigns from Open Boxing, covering the major sanctioning bodies and The Ring where recorded. Boxing title status can change between updates; data coverage is subject to the source database."}
