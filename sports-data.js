@@ -131,7 +131,7 @@
     main.append(make("strong",null,event.name||event.title||"Event"));
     const sub=[];
     if (sport==="f1") sub.push("ROUND "+safe(event.round,"?"),event.circuit,event.country);
-    if (sport==="darts") sub.push(event.tier?String(event.tier).replaceAll("_"," ").toUpperCase():null,event.matches?event.matches+" matches":null);
+    if (sport==="darts") sub.push(event.tier?String(event.tier).replaceAll("_"," ").toUpperCase():null,event.venue||event.location||null,event.matches?event.matches+" matches":null);
     if (sport==="ufc") sub.push(event.number?"EVENT "+event.number:null,event.start_at?timeLabel(event.start_at):null);
     if (sport==="bkfc") sub.push(event.location||event.venue||null,event.start_at?timeLabel(event.start_at):null);
     main.append(make("small",null,sub.filter(Boolean).join(" · ")||dateLabel(event.date||event.start_at)));
@@ -183,9 +183,9 @@
     if (event.source_url) {const a=make("a","event-source-link","Race details ↗");a.href=event.source_url;a.target="_blank";a.rel="noopener noreferrer";root.append(a);}
   }
   function renderDartsDetails(root,event) {
-    const bits=[event.organiser?String(event.organiser).replaceAll("_"," ").toUpperCase():null,event.tier?String(event.tier).replaceAll("_"," ").toUpperCase():null,event.matches?event.matches+" matches scheduled":null].filter(Boolean);
+    const bits=[event.organiser?String(event.organiser).replaceAll("_"," ").toUpperCase():null,event.tier?String(event.tier).replaceAll("_"," ").toUpperCase():null,event.venue||event.location||null,event.end_date?"UNTIL "+dateLabel(event.end_date):null,event.matches?event.matches+" matches scheduled":null].filter(Boolean);
     root.append(make("p","sport-sync-note",bits.join(" · ")||"PDC tournament date"));
-    root.append(make("p","sport-sync-note","Tournament calendar entry. Match-by-match scores are not included."));
+    root.append(make("p","sport-sync-note","Official PDC tournament calendar entry. Match-by-match scores are not included."));
   }
   function fighterPortrait(name, url) {
     const source=String(url||"");

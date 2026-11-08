@@ -153,48 +153,119 @@ def is_main_televised_pdc_event(row):
     )
     return bool(name_match or tier in allowed_tiers)
 
+def pdc_official_fallback_events():
+    """Known upcoming televised PDC dates from the official PDC calendar.
+
+    Darts API free-key calendar coverage can omit the forward televised
+    schedule. Keep a small, verified safety-net rather than publishing an
+    empty darts feed or filling it with youth/qualifier/floor events.
+    """
+    schedule = [
+        {
+            "id": "pdc-2026-grand-slam",
+            "name": "2026 Grand Slam of Darts",
+            "date": "2026-11-14",
+            "end_date": "2026-11-22",
+            "venue": "Aldersley Leisure Village, Wolverhampton",
+            "tier": "majors",
+        },
+        {
+            "id": "pdc-2026-players-championship-finals",
+            "name": "2026 Players Championship Finals",
+            "date": "2026-11-27",
+            "end_date": "2026-11-29",
+            "venue": "Butlins, Minehead",
+            "tier": "majors",
+        },
+        {
+            "id": "pdc-2026-27-world-championship",
+            "name": "2026/27 World Championship",
+            "date": "2026-12-11",
+            "end_date": "2027-01-03",
+            "venue": "Alexandra Palace, London",
+            "tier": "majors",
+        },
+    ]
+    events = []
+    for item in schedule:
+        if item["date"] < TODAY.isoformat() and item["end_date"] < TODAY.isoformat():
+            continue
+        events.append({
+            **item,
+            "status": "scheduled",
+            "organiser": "pdc",
+            "source": "Official PDC calendar",
+            "source_url": "https://www.pdc.tv/calendar",
+        })
+    return events
+
+
 def sync_darts():
     key = os.environ.get("DARTS_API_KEY", "").strip()
-    if not key:
-        preserve_or_status("darts.json", "darts", "Darts API", "DARTS_API_KEY is not configured in GitHub repository secrets.")
-        print("Darts: skipped; DARTS_API_KEY secret is not configured.")
-        return
-    rows = paged_darts_calendar(key, "pdc")
-    seen, events = set(), []
-    for row in rows:
-        if not isinstance(row, dict):
-            continue
-        event_name = row.get("name") or row.get("competition_name") or "PDC event"
-        event_id = row.get("event_id") or row.get("id")
-        date = row.get("date") or row.get("starts_at") or row.get("start_date")
-        if not is_main_televised_pdc_event(row) or not date:
-            continue
-        stable_id = str(event_id or (str(date) + "-" + re.sub(r"[^a-z0-9]+", "-", event_name.lower()).strip("-")))
-        if stable_id in seen:
-            continue
-        seen.add(stable_id)
-        events.append({
-            "id": stable_id, "name": event_name, "date": date,
-            "start_at": row.get("starts_at"),
-            "status": row.get("status") or "scheduled",
-            "organiser": row.get("organiser") or "pdc", "tier": row.get("tier"),
-            "matches": row.get("matches"), "competition_id": row.get("competition_id"),
-            "source": "Darts API"
-        })
-    if rows and not events:
-        sample_names = [str((r or {}).get("name") or (r or {}).get("competition_name") or "unnamed") for r in rows[:8] if isinstance(r, dict)]
-        message = "Darts API returned " + str(len(rows)) + " calendar rows but none matched the televised PDC filter. Sample names: " + ", ".join(sample_names)
-        preserve_or_status("darts.json", "darts", "Darts API", message)
-        print("DARTS_FILTER_WARNING: " + message)
-        return
-    if not rows:
-        message = "Darts API returned no calendar rows; retaining the last published PDC schedule rather than publishing an empty feed."
-        preserve_or_status("darts.json", "darts", "Darts API", message)
+    api_rows = []
+    api_events = []
+    warning = None
+    if key:
+        try:
+            api_rows = paged_darts_calendar(key, "pdc")
+            seen = set()
+            for row in api_rows:
+                if not isinstance(row, dict):
+                    continue
+                event_name = row.get("name") or row.get("competition_name") or "PDC event"
+                event_id = row.get("event_id") or row.get("id")
+                date = row.get("date") or row.get("starts_at") or row.get("start_date")
+                if not is_main_televised_pdc_event(row) or not date:
+                    continue
+                stable_id = str(event_id or (str(date) + "-" + re.sub(r"[^a-z0-9]+", "-", event_name.lower()).strip("-")))
+                if stable_id in seen:
+                    continue
+                seen.add(stable_id)
+                api_events.append({
+                    "id": stable_id, "name": event_name, "date": date,
+                    "start_at": row.get("starts_at"),
+                    "status": row.get("status") or "scheduled",
+                    "organiser": row.get("organiser") or "pdc", "tier": row.get("tier"),
+                    "matches": row.get("matches"), "competition_id": row.get("competition_id"),
+                    "source": "Darts API",
+                    "source_url": "https://www.pdc.tv/calendar",
+                })
+        except Exception as exc:
+            warning = "Darts API calendar unavailable: " + str(exc)
+    else:
+        warning = "DARTS_API_KEY is not configured; using verified official PDC calendar dates."
+
+    # Keep the API's detailed/archive entries, but always fill upcoming televised
+    # headline dates from the official PDC calendar when the API omits them.
+    fallback = pdc_official_fallback_events()
+    merged = {str(event.get("id")): event for event in api_events}
+    api_names = {re.sub(r"[^a-z0-9]+", " ", str(e.get("name", "")).lower()).strip() for e in api_events}
+    for event in fallback:
+        key_name = re.sub(r"[^a-z0-9]+", " ", event["name"].lower()).strip()
+        if event["id"] not in merged and key_name not in api_names:
+            merged[event["id"]] = event
+    events = list(merged.values())
+    events.sort(key=lambda e: (e.get("date") or "", e.get("name") or ""))
+
+    if not events:
+        message = warning or "No televised PDC dates were returned; retaining the previous published schedule."
+        preserve_or_status("darts.json", "darts", "Darts API + official PDC calendar", message)
         print("DARTS_EMPTY_WARNING: " + message)
         return
-    events.sort(key=lambda e: (e.get("date") or "", e.get("name") or ""))
-    save("darts.json", {"sport": "darts", "provider": "Darts API", "organisers_included": ["pdc"], "events": events, "notice": "Main televised PDC tournaments only: televised majors, Premier League, European Tour and selected World Series. U23, youth, development, affiliate, qualifier and non-televised floor events are excluded. Viewing varies by UK broadcast rights."})
-    print(f"Darts: saved {len(events)} televised PDC events from {len(rows)} source rows.")
+
+    notice = (
+        "Main televised PDC tournaments only. The Darts API supplies available event records; "
+        "official PDC calendar dates fill gaps in upcoming headline events. U23, youth, development, "
+        "affiliate, qualifier and non-televised Players Championship events are excluded."
+    )
+    payload = {
+        "sport": "darts", "provider": "Darts API + official PDC calendar",
+        "organisers_included": ["pdc"], "events": events, "notice": notice,
+    }
+    if warning:
+        payload["sync_warning"] = warning
+    save("darts.json", payload)
+    print(f"Darts: saved {len(events)} televised PDC events ({len(api_events)} API, {len(fallback)} official fallback candidates from {len(api_rows)} API rows).")
 
 def api_data(payload):
     data = payload.get("data", payload)
