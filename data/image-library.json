@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-08T13:29:20Z",
+  "updated_at": "2026-11-08T13:30:56Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -299,6 +299,39 @@
       "creator": "Wikimedia Commons · emperornie · CC BY-SA 2.0",
       "attribution": "Wikimedia Commons · emperornie · CC BY-SA 2.0",
       "verified_at": "2026-11-08T13:29:20Z",
+      "sport": "f1 constructors"
+    },
+    "ferrari": {
+      "name": "Ferrari",
+      "path": "assets/images/f1-constructors/ferrari.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:011_-_Ferrari_F430_scuderia_-_Flickr_-_Price-Photography.jpg",
+      "licence": "CC BY 2.0",
+      "licence_url": "https://creativecommons.org/licenses/by/2.0",
+      "creator": "Wikimedia Commons · Michael Price from Houston, USA · CC BY 2.0",
+      "attribution": "Wikimedia Commons · Michael Price from Houston, USA · CC BY 2.0",
+      "verified_at": "2026-11-08T13:30:56Z",
+      "sport": "f1 constructors"
+    },
+    "mclaren": {
+      "name": "McLaren",
+      "path": "assets/images/f1-constructors/mclaren.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Emerson_Fittipaldi_McLaren_M23_1974_Britain.jpg",
+      "licence": "CC BY-SA 3.0",
+      "licence_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "creator": "Wikimedia Commons · Gerald Swan · CC BY-SA 3.0",
+      "attribution": "Wikimedia Commons · Gerald Swan · CC BY-SA 3.0",
+      "verified_at": "2026-11-08T13:30:56Z",
+      "sport": "f1 constructors"
+    },
+    "alpine f1 team": {
+      "name": "Alpine F1 Team",
+      "path": "assets/images/f1-constructors/alpine-f1-team.png",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Logo_of_alpine_f1_team_2022.png",
+      "licence": "CC0",
+      "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "creator": "Wikimedia Commons · KarlMarx1889 · CC0",
+      "attribution": "Wikimedia Commons · KarlMarx1889 · CC0",
+      "verified_at": "2026-11-08T13:30:56Z",
       "sport": "f1 constructors"
     }
   },
