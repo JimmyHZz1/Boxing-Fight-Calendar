@@ -80,6 +80,28 @@ applyFavouriteTeam(savedFavouriteTeam,false);
 $("open-settings")?.addEventListener("click",()=>showScreen("settings-screen"));
 $("settings-back")?.addEventListener("click",()=>showScreen("home-screen"));
 $("favourite-f1-team")?.addEventListener("change",event=>applyFavouriteTeam(event.target.value,true));
+// Interactive team theme preview: preview changes are temporary until Apply is pressed.
+let previewFavouriteTeam=savedFavouriteTeam;
+function setThemePreview(team){
+  previewFavouriteTeam=team||"";
+  applyFavouriteTeam(previewFavouriteTeam,false);
+  const name=previewFavouriteTeam||"Sports Calendar";
+  const title=$("theme-preview-name");if(title)title.textContent=name.toUpperCase();
+  const stage=$("theme-preview-stage");if(stage)stage.dataset.team=previewFavouriteTeam||"default";
+  const select=$("theme-preview-team");if(select&&select.value!==previewFavouriteTeam)select.value=previewFavouriteTeam;
+}
+$("open-settings")?.addEventListener("click",()=>setThemePreview(savedFavouriteTeam));
+$("theme-preview-team")?.addEventListener("change",event=>setThemePreview(event.target.value));
+$("apply-preview-theme")?.addEventListener("click",()=>{
+  savedFavouriteTeam=previewFavouriteTeam;
+  applyFavouriteTeam(savedFavouriteTeam,true);
+  const mainSelect=$("favourite-f1-team");if(mainSelect)mainSelect.value=savedFavouriteTeam;
+  showScreen("home-screen");
+});
+$("cancel-preview-theme")?.addEventListener("click",()=>{
+  setThemePreview(savedFavouriteTeam);
+});
+
 function fighterNames(b) {
   return [b.fighter1||b.fighter_a||b.red_corner||b.boxer1||"TBC", b.fighter2||b.fighter_b||b.blue_corner||b.boxer2||"TBC"];
 }
