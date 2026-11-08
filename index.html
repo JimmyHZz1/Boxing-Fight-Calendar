@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#101114">
   <meta name="description" content="Boxing, Formula 1, UFC and PDC darts schedules in one sports calendar, shown in UK local time.">
   <link rel="manifest" href="./manifest.json">
-  <link rel="stylesheet" href="./styles.css?v=20261108-45">
+  <link rel="stylesheet" href="./styles.css?v=20261108-46">
   <title>Sports Calendar</title>
 </head>
 <body>
@@ -122,6 +122,13 @@
         <div id="sports-selected-date-events" class="event-list"></div>
       </section>
 
+      <section id="weekend-screen" class="screen" aria-labelledby="weekend-title">
+        <div class="page-intro"><span class="eyebrow">YOUR NEXT SEVEN DAYS</span><h1 id="weekend-title">My Sports <em>Weekend.</em></h1><p>One simple timeline for the events you follow across all five sports, shown in UK local time.</p></div>
+        <div class="weekend-toolbar"><span id="weekend-range-label">LOADING YOUR FIXTURES…</span><button type="button" class="text-link" id="weekend-refresh">REFRESH LIST ↻</button></div>
+        <div id="weekend-content" class="weekend-content" aria-live="polite"><p class="live-centre-empty">Collecting the latest schedules…</p></div>
+        <p class="weekend-note">Only published event dates and confirmed start times are shown. Where a start time has not been announced, the event is marked TIME TBC.</p>
+      </section>
+
       <section id="cards-screen" class="screen" aria-labelledby="cards-title">
         <div class="page-intro"><span class="eyebrow">ALL FIVE SPORTS</span><h1 id="cards-title">Events &amp; <em>fight cards.</em></h1><p>F1 sessions and results, PDC tournament dates, UFC and BKFC cards, and boxing bouts.</p></div>
         <div id="full-cards" class="event-list"><div class="empty-state"><span class="empty-icon">📋</span><h3>Full cards will appear here</h3><p>Event cards will populate as reliable bout information becomes available.</p></div></div>
@@ -130,7 +137,12 @@
       <section id="version-history-screen" class="screen" aria-labelledby="version-history-title">
         <div class="page-intro"><span class="eyebrow">SPORTS CALENDAR · RELEASE NOTES</span><h1 id="version-history-title">Version <em>history.</em></h1><p>A record of the features, improvements and fixes added to each release.</p></div>
         <div class="version-history-list">
-          <article class="version-entry version-current"><div class="version-entry-top"><span class="version-number">V1.1</span><span class="version-status">IN DEVELOPMENT</span></div><h2>Live Sports Centre</h2><ul><li>Live Now overview across Formula 1, PDC Darts, Boxing, UFC and BKFC, using confirmed live status from available feeds.</li><li>Combined upcoming-event list for the next seven days, ordered by UK local date and time.</li><li>Quick route into the full five-sport calendar.</li><li>Version history page and discreet footer access.</li><li>Preserves the existing dark charcoal and gold visual theme.</li></ul></article>
+          <article class="version-entry version-current"><div class="version-entry-top"><span class="version-number">V1.2</span><span class="version-status">IN DEVELOPMENT</span></div><h2>My Sports Hub</h2><ul><li>Replace the redundant Events navigation with My Sports Weekend: a seven-day cross-sport schedule in UK local time.</li><li>Restore the main televised PDC calendar and populate the PDC Order of Merit.</li><li>Build a curated, locally hosted image library with verified reuse rights, attribution and automatic fallbacks.</li><li>Introduce favourites, competitor profiles, a personal watchlist and a personalised homepage.</li><li>Add a central Where to Watch guide with UK broadcaster links and event-specific rights clearly distinguished.</li></ul></article>
+          <article class="version-entry"><div class="version-entry-top"><span class="version-number">V1.3</span><span class="version-status">PLANNED</span></div><h2>Live Data &amp; Event Intelligence</h2><ul><li>Improve live standings, rankings and results across all five sports.</li><li>Add event countdowns, championship trackers, My Sports Weekend enhancements and a full results archive.</li><li>Add dedicated F1 race-weekend and darts tournament views, including brackets and match progress where reliable feeds permit.</li><li>Expand event details with confirmed start times, venues, sessions and broadcaster availability.</li></ul></article>
+          <article class="version-entry"><div class="version-entry-top"><span class="version-number">V1.4</span><span class="version-status">PLANNED</span></div><h2>Personal Alerts</h2><ul><li>Event reminders and countdown notifications.</li><li>Alerts for followed competitors, fight-card additions or withdrawals, results and championship changes.</li><li>Per-sport and per-competitor notification preferences.</li></ul></article>
+          <article class="version-entry"><div class="version-entry-top"><span class="version-number">V1.5</span><span class="version-status">PLANNED</span></div><h2>Stats &amp; Comparisons</h2><ul><li>Competitor profiles with career records, recent form, achievements and statistics.</li><li>Head-to-head comparisons, historical performance and team comparisons.</li><li>Fighter record analysis, darts form and tournament performance, and F1 driver/constructor comparisons.</li><li>Optional fight and tournament prediction tools, clearly labelled as estimates rather than results.</li></ul></article>
+
+          <article class="version-entry version-current"><div class="version-entry-top"><span class="version-number">V1.1</span><span class="version-status">LIVE</span></div><h2>Live Sports Centre</h2><ul><li>Live Now overview across Formula 1, PDC Darts, Boxing, UFC and BKFC, using confirmed live status from available feeds.</li><li>Combined upcoming-event list for the next seven days, ordered by UK local date and time.</li><li>Quick route into the full five-sport calendar.</li><li>Version history page and discreet footer access.</li><li>Preserves the existing dark charcoal and gold visual theme.</li></ul></article>
           <article class="version-entry"><div class="version-entry-top"><span class="version-number">V1.0</span><span class="version-status">FOUNDATION</span></div><h2>Five-sport Sports Calendar</h2><ul><li>Formula 1, PDC Darts, Boxing, UFC and BKFC brought together in one installable PWA.</li><li>Dedicated sport pages, sport selector and individual event details.</li><li>Combined monthly calendar and event listings with sport filters.</li><li>Championship standings, rankings and title-holder sections where data is available.</li><li>UK-local event dates and times, plus event-specific viewing information where supplied.</li><li>Automatic scheduled data publishing, manual refresh checks and offline app-shell caching.</li></ul></article>
         </div>
         <div class="version-history-back"><button type="button" class="secondary-button" id="version-history-back">← BACK TO HOME</button></div>
@@ -140,16 +152,17 @@
     <nav class="bottom-nav" aria-label="Main navigation">
       <button class="nav-item active" data-screen="home-screen"><span>⌂</span><small>HOME</small></button>
       <button class="nav-item" data-screen="calendar-screen"><span>▦</span><small>CALENDAR</small></button>
-      <button class="nav-item" data-screen="cards-screen"><span>▤</span><small>EVENTS</small></button>
+      <button class="nav-item" data-screen="weekend-screen"><span>◷</span><small>MY WEEKEND</small></button>
     </nav>
     <footer class="footer"><a class="version-history-link" href="#version-history" id="open-version-history">VERSION HISTORY</a><span>•</span> SPORTS CALENDAR <span>•</span> UK LOCAL TIME <span>•</span> PDC logo: <a href="https://commons.wikimedia.org/wiki/File:Professional_Darts_Corporation_logo.png" target="_blank" rel="noopener noreferrer">Chris Ibbotson, CC BY-SA 4.0</a> <span>•</span> BKFC SCHEDULE: <a href="https://www.bkfc.com/events" target="_blank" rel="noopener noreferrer">BKFC</a> <span>•</span> BOXING DATA: <a href="https://boxerbook.com" target="_blank" rel="noopener noreferrer">BOXERBOOK</a></footer>
   </div>
-  <script src="./app.js?v=20261108-31"></script>
-  <script src="./sports-data.js?v=20261108-02"></script>
+  <script src="./app.js?v=20261108-32"></script>
+  <script src="./sports-data.js?v=20261108-03"></script>
   <script src="./sports.js?v=20261107-09"></script>
-  <script src="./sports-hub.js?v=20261108-03"></script>
+  <script src="./sports-hub.js?v=20261108-04"></script>
   <script src="./sports-nav.js?v=20261107-02"></script>
   <script src="./sport-pages.js?v=20261108-04"></script>
   <script src="./sports-v11.js?v=20261108-01"></script>
+  <script src="./sports-weekend.js?v=20261108-02"></script>
 </body>
 </html>

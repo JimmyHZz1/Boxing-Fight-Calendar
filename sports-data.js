@@ -184,7 +184,7 @@
   }
   function fighterPortrait(name, url) {
     const source=String(url||"");
-    if (!(source.indexOf("https://")===0 || source.indexOf("http://")===0)) return null;
+    if (!(source.indexOf("https://")===0 || source.indexOf("http://")===0 || source.indexOf("./assets/images/")===0)) return null;
     const img=make("img","sport-fight-portrait");
     img.src=source;img.alt=name+" portrait";img.loading="lazy";
     img.referrerPolicy="no-referrer";img.onerror=()=>img.remove();

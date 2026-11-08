@@ -1,18 +1,19 @@
-const CACHE="sports-calendar-v49";
+const CACHE="sports-calendar-v52";
 const APP_FILES=[
   "./",
   "./index.html",
-  "./styles.css?v=20261108-44",
-  "./app.js?v=20261108-31",
-  "./sports-data.js?v=20261108-02",
+  "./styles.css?v=20261108-46",
+  "./app.js?v=20261108-32",
+  "./sports-data.js?v=20261108-03",
   "./sports.js?v=20261107-09",
-  "./sports-hub.js?v=20261108-03",
+  "./sports-hub.js?v=20261108-04",
   "./sports-nav.js?v=20261107-02",
   "./sport-pages.js?v=20261108-04",
   "./sports-v11.js?v=20261108-01",
+  "./sports-weekend.js?v=20261108-02",
   "./manifest.json"
 ];
-const DATA_PATHS=["/data/fights.json","/data/fighter-images.json","/data/event-fighter-images.json","/data/f1.json","/data/darts.json","/data/ufc.json","/data/bkfc.json","/data/sports-hub.json","/data/sports-images.json"];
+const DATA_PATHS=["/data/fights.json","/data/fighter-images.json","/data/event-fighter-images.json","/data/f1.json","/data/darts.json","/data/ufc.json","/data/bkfc.json","/data/sports-hub.json","/data/sports-images.json","/data/image-library.json"];
 self.addEventListener("install",event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(APP_FILES)).then(()=>self.skipWaiting())));
 self.addEventListener("activate",event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
 self.addEventListener("fetch",event=>{
@@ -23,7 +24,7 @@ self.addEventListener("fetch",event=>{
     event.respondWith(fetch(request,{cache:"no-store"}).catch(()=>caches.match(request)));
     return;
   }
-  const isAppAsset=url.pathname.endsWith("/")||/\.(html|css|js|json)$/.test(url.pathname);
+  const isAppAsset=url.pathname.endsWith("/")||/\.(html|css|js|json|png|jpe?g|webp|svg|gif)$/.test(url.pathname);
   if(!isAppAsset)return;
   event.respondWith((async()=>{
     const cached=await caches.match(request);

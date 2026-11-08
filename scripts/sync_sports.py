@@ -111,18 +111,43 @@ def sync_f1():
     print(f"F1: saved {len(events)} events for {year}.")
 
 def paged_darts_calendar(key, organiser):
+    """Read the documented Darts API calendar shape and retain paging metadata."""
     all_rows, cursor = [], None
-    for _ in range(4):
+    for _ in range(8):
         params = {"from": (TODAY - timedelta(days=7)).isoformat(), "to": (TODAY + timedelta(days=370)).isoformat(), "organiser": organiser, "limit": 200}
         if cursor:
             params["cursor"] = cursor
         url = "https://api.dartsapi.com/v1/calendar?" + urllib.parse.urlencode(params)
         payload = request_json(url, key, "Darts API")
-        all_rows.extend(payload.get("data") or [])
+        rows = payload.get("data") or []
+        if isinstance(rows, dict):
+            rows = rows.get("events") or rows.get("items") or rows.get("calendar") or []
+        if not isinstance(rows, list):
+            raise RuntimeError("Darts API calendar returned an unexpected data shape.")
+        all_rows.extend(rows)
         cursor = (payload.get("meta") or {}).get("next_cursor")
         if not cursor:
             break
     return all_rows
+
+def is_main_televised_pdc_event(row):
+    name = str(row.get("name") or row.get("competition_name") or "").strip()
+    organiser = str(row.get("organiser") or "").lower()
+    tier = str(row.get("tier") or "").lower()
+    if organiser and organiser != "pdc":
+        return False
+    excluded = re.search(r"\b(?:u\s?23|youth|junior|development|qualifier|qualifying|challenge tour|development tour|affiliate|players championship(?!s? finals)|women(?:'s)? series|pro tour|floor event)\b", name, re.I)
+    if excluded:
+        return False
+    allowed_tiers = {"majors", "european_tour", "world_series"}
+    name_match = re.search(
+        r"world(?: darts)? championship|world matchplay|premier league|uk open|world grand prix|grand slam|"
+        r"european championship|european tour|players championship finals|world cup of darts|"
+        r"world series of darts|world masters|\bmasters\b|"
+        r"\b(?:bahrain|nordic|us|new zealand|australian|poland|saudi arabia) darts masters\b",
+        name, re.I
+    )
+    return bool(name_match or tier in allowed_tiers)
 
 def sync_darts():
     key = os.environ.get("DARTS_API_KEY", "").strip()
@@ -133,25 +158,39 @@ def sync_darts():
     rows = paged_darts_calendar(key, "pdc")
     seen, events = set(), []
     for row in rows:
-        event_id = row.get("event_id")
-        if not event_id or event_id in seen:
+        if not isinstance(row, dict):
             continue
-        seen.add(event_id)
-        event_name = row.get("name") or "PDC event"
-        televised = re.search(r"world championship|world matchplay|premier league|uk open|world grand prix|grand slam|european championship|european tour|players championship finals|world cup of darts|world series of darts|world masters|\bmasters\b|\b(?:bahrain|nordic|us|new zealand|australian|poland|saudi arabia) darts masters\b", event_name, re.I)
-        excluded = re.search(r"\b(?:u\s?23|youth|development|qualifier|qualifying|players championships?\b(?!\s+finals)|challenge tour|development tour|affiliate|pro tour)\b", event_name, re.I)
-        if not televised or excluded:
+        event_name = row.get("name") or row.get("competition_name") or "PDC event"
+        event_id = row.get("event_id") or row.get("id")
+        date = row.get("date") or row.get("starts_at") or row.get("start_date")
+        if not is_main_televised_pdc_event(row) or not date:
             continue
+        stable_id = str(event_id or (str(date) + "-" + re.sub(r"[^a-z0-9]+", "-", event_name.lower()).strip("-")))
+        if stable_id in seen:
+            continue
+        seen.add(stable_id)
         events.append({
-            "id": str(event_id), "name": event_name,
-            "date": row.get("date"), "status": row.get("status") or "scheduled",
-            "organiser": row.get("organiser"), "tier": row.get("tier"),
+            "id": stable_id, "name": event_name, "date": date,
+            "start_at": row.get("starts_at"),
+            "status": row.get("status") or "scheduled",
+            "organiser": row.get("organiser") or "pdc", "tier": row.get("tier"),
             "matches": row.get("matches"), "competition_id": row.get("competition_id"),
             "source": "Darts API"
         })
+    if rows and not events:
+        sample_names = [str((r or {}).get("name") or (r or {}).get("competition_name") or "unnamed") for r in rows[:8] if isinstance(r, dict)]
+        message = "Darts API returned " + str(len(rows)) + " calendar rows but none matched the televised PDC filter. Sample names: " + ", ".join(sample_names)
+        preserve_or_status("darts.json", "darts", "Darts API", message)
+        print("DARTS_FILTER_WARNING: " + message)
+        return
+    if not rows:
+        message = "Darts API returned no calendar rows; retaining the last published PDC schedule rather than publishing an empty feed."
+        preserve_or_status("darts.json", "darts", "Darts API", message)
+        print("DARTS_EMPTY_WARNING: " + message)
+        return
     events.sort(key=lambda e: (e.get("date") or "", e.get("name") or ""))
-    save("darts.json", {"sport": "darts", "provider": "Darts API", "organisers_included": ["pdc"], "events": events, "notice": "Main televised PDC tournaments only. U23, youth, development, affiliate, qualifier and non-televised Players Championship events are excluded. Viewing varies by UK broadcast rights; PDCTV is listed where available."})
-    print(f"Darts: saved {len(events)} PDC-related calendar events.")
+    save("darts.json", {"sport": "darts", "provider": "Darts API", "organisers_included": ["pdc"], "events": events, "notice": "Main televised PDC tournaments only: televised majors, Premier League, European Tour and selected World Series. U23, youth, development, affiliate, qualifier and non-televised floor events are excluded. Viewing varies by UK broadcast rights."})
+    print(f"Darts: saved {len(events)} televised PDC events from {len(rows)} source rows.")
 
 def api_data(payload):
     data = payload.get("data", payload)
@@ -225,6 +264,7 @@ def enrich_event_fighter_images(events):
             attempted[key] = datetime.now(timezone.utc).date().isoformat()
             library_attempted[key] = iso_now()
         if result and result.get("image_url"):
+            result = cache_image_locally(name, result, "ufc/bkfc event fighters")
             images[key] = result
             record_image(name, result, "ufc/bkfc event fighters")
             print(f"EVENT_FIGHTER_IMAGE_FOUND: {name}")
@@ -441,6 +481,74 @@ def save_image_library():
         json.dump(IMAGE_LIBRARY, handle, ensure_ascii=False, indent=2)
         handle.write("\n")
 
+
+IMAGE_MANIFEST_PATH = os.path.join(DATA, "image-library.json")
+
+def load_image_manifest():
+    try:
+        with open(IMAGE_MANIFEST_PATH, encoding="utf-8") as handle:
+            manifest = json.load(handle)
+        if not isinstance(manifest, dict):
+            raise ValueError("Image manifest must be an object.")
+    except (FileNotFoundError, json.JSONDecodeError, ValueError):
+        manifest = {"version": 1, "images": {}, "collections": {}}
+    manifest.setdefault("images", {})
+    manifest.setdefault("collections", {})
+    return manifest
+
+def save_image_manifest(manifest):
+    os.makedirs(DATA, exist_ok=True)
+    manifest["updated_at"] = iso_now()
+    with open(IMAGE_MANIFEST_PATH, "w", encoding="utf-8") as handle:
+        json.dump(manifest, handle, ensure_ascii=False, indent=2)
+        handle.write("\n")
+
+def cache_image_locally(name, result, sport):
+    """Download a licensed Commons thumbnail into the repository image library."""
+    if not result or not str(result.get("image_url", "")).startswith("https://"):
+        return result
+    import mimetypes
+    url = result["image_url"]
+    req = urllib.request.Request(url, headers={"User-Agent": "Sports-Calendar/1.2 (licensed image cache)"})
+    try:
+        with urllib.request.urlopen(req, timeout=30) as response:
+            content_type = response.headers.get("Content-Type", "").split(";")[0].lower()
+            payload = response.read(4 * 1024 * 1024 + 1)
+        if not content_type.startswith("image/") or len(payload) > 4 * 1024 * 1024:
+            print(f"IMAGE_DOWNLOAD_REJECTED: {name}: unsupported content type or file too large")
+            return result
+    except Exception as exc:
+        print(f"IMAGE_DOWNLOAD_WARNING: {name}: {exc}")
+        return result
+    extension = {
+        "image/jpeg": ".jpg", "image/png": ".png", "image/webp": ".webp",
+        "image/gif": ".gif", "image/svg+xml": ".svg"
+    }.get(content_type) or mimetypes.guess_extension(content_type) or ".img"
+    category = re.sub(r"[^a-z0-9]+", "-", str(sport).lower()).strip("-") or "other"
+    slug = re.sub(r"[^a-z0-9]+", "-", image_key(name)).strip("-") or "image"
+    relative = f"assets/images/{category}/{slug}{extension}"
+    absolute = os.path.join(ROOT, relative)
+    os.makedirs(os.path.dirname(absolute), exist_ok=True)
+    if not os.path.exists(absolute):
+        with open(absolute, "wb") as handle:
+            handle.write(payload)
+    manifest = load_image_manifest()
+    manifest.setdefault("images", {})[image_key(name)] = {
+        "name": name, "path": relative,
+        "source_url": result.get("image_page_url"),
+        "licence": result.get("image_license"),
+        "licence_url": result.get("image_license_url"),
+        "creator": result.get("image_credit"),
+        "attribution": result.get("image_credit"),
+        "verified_at": result.get("image_verified_at") or iso_now(),
+        "sport": sport
+    }
+    save_image_manifest(manifest)
+    local_result = dict(result)
+    local_result["image_url"] = "./" + relative
+    local_result["image_local_path"] = relative
+    return local_result
+
 def image_aliases(name):
     key = image_key(name)
     aliases = {
@@ -596,6 +704,7 @@ def add_photos(rows, name_field="name", limit=8, sport="other", image_kind="port
         if not IMAGE_LOOKUP_RATE_LIMITED and key:
             attempted[key] = iso_now()
         if result:
+            result = cache_image_locally(name, result, sport)
             row.update(result)
             record_image(name, result, sport)
         else:
@@ -679,12 +788,21 @@ def sync_sports_hub():
         rankings = []
         try:
             raw = request_json("https://api.dartsapi.com/v1/order-of-merit", key, "Darts API")
-            rows = raw.get("data") or []
-            if isinstance(rows, dict): rows = rows.get("players") or rows.get("entries") or rows.get("rankings") or []
+            data = raw.get("data") or {}
+            rows = data.get("table") or data.get("rankings") or data.get("players") or data.get("entries") or []
+            if isinstance(rows, dict):
+                rows = rows.get("table") or rows.get("players") or rows.get("entries") or []
             for i, row in enumerate(rows):
+                if not isinstance(row, dict): continue
                 player = row.get("player") if isinstance(row.get("player"), dict) else {}
                 name = row.get("name") or row.get("player_name") or (row.get("player") if isinstance(row.get("player"), str) else None) or player.get("name") or "Unknown player"
-                rankings.append({"rank": row.get("position") or row.get("rank") or i + 1, "name": name, "prize_money": row.get("prize_money") or row.get("ranking_prize_money"), "points": row.get("points"), "image_url": row.get("image_url") or player.get("image_url") or player.get("photo_url")})
+                rankings.append({
+                    "rank": row.get("position") or row.get("rank") or row.get("place") or i + 1,
+                    "name": name,
+                    "prize_money": row.get("prize_money") or row.get("ranking_prize_money") or row.get("amount"),
+                    "points": row.get("points"),
+                    "image_url": row.get("image_url") or player.get("image_url") or player.get("photo_url")
+                })
         except Exception:
             rankings = []
         if not rankings: rankings = darts_rankings_from_web()
@@ -767,6 +885,40 @@ def enrich_cached_images():
     IMAGE_DIAGNOSTICS = {"attempted": 0, "found": 0, "missing": 0, "rejected": 0, "by_sport": {}}
     IMAGE_LOOKUP_RATE_LIMITED = False
     load_image_library()
+    # Prioritise fighters on upcoming confirmed boxing cards, then move through the
+    # standings queues. The same five-image budget applies across the whole run.
+    fights_path = os.path.join(DATA, "fights.json")
+    fighter_cache_path = os.path.join(DATA, "fighter-images.json")
+    try:
+        with open(fights_path, encoding="utf-8") as handle:
+            fights_feed = json.load(handle)
+        with open(fighter_cache_path, encoding="utf-8") as handle:
+            fighter_cache = json.load(handle)
+    except (FileNotFoundError, json.JSONDecodeError):
+        fights_feed, fighter_cache = {"events": []}, {"images": {}, "attempted": {}}
+    boxer_names = sorted({
+        str(bout.get(side) or "").strip()
+        for event in fights_feed.get("events", [])
+        for bout in event.get("bouts", [])
+        for side in ("fighter1", "fighter2")
+        if str(bout.get(side) or "").strip() and str(bout.get(side) or "").strip().upper() != "TBC"
+    })
+    boxer_rows = [{"name": name} for name in boxer_names]
+    add_photos(boxer_rows, limit=len(boxer_rows), sport="boxing fighters")
+    cached_boxers = fighter_cache.setdefault("images", {})
+    for row in boxer_rows:
+        if not row.get("image_url"):
+            continue
+        key = image_key(row["name"])
+        cached_boxers[key] = {
+            "url": row["image_url"], "page_url": row.get("image_page_url"),
+            "artist": row.get("image_credit"), "license": row.get("image_license"),
+            "license_url": row.get("image_license_url"), "source": row.get("image_source")
+        }
+    fighter_cache["updated_at"] = iso_now()
+    with open(fighter_cache_path, "w", encoding="utf-8") as handle:
+        json.dump(fighter_cache, handle, ensure_ascii=False, indent=2)
+        handle.write("\n")
     hub_path = os.path.join(DATA, "sports-hub.json")
     with open(hub_path, encoding="utf-8") as handle:
         hub = json.load(handle)
@@ -797,6 +949,7 @@ def enrich_cached_images():
         rows = rows or []
         return {"total": len(rows), "with_image": sum(1 for row in rows if row.get("image_url")), "missing": sum(1 for row in rows if not row.get("image_url"))}
     coverage = {
+        "boxing fight card fighters": count_rows(boxer_rows),
         "f1 drivers": count_rows(f1.get("drivers")), "f1 constructors": count_rows(f1.get("constructors")),
         "darts": count_rows(darts.get("rankings")),
         "ufc": count_rows([r for d in ufc.get("divisions", []) for r in d.get("entries", [])]),
