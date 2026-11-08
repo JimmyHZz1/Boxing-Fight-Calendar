@@ -213,10 +213,28 @@
       const driverRows=driverPayload?.MRData?.StandingsTable?.StandingsLists?.[0]?.DriverStandings||[];
       const constructorRows=constructorPayload?.MRData?.StandingsTable?.StandingsLists?.[0]?.ConstructorStandings||[];
       if(!driverRows.length||!constructorRows.length)throw new Error("No current F1 standings returned");
+      // Live standings contain positions and points, but not our licensed image
+      // metadata. Merge those fields with the published image records instead
+      // of replacing the records and silently dropping every portrait/logo.
+      const savedF1=hub.f1||{};
+      const normaliseName=value=>String(value||"").normalize("NFKD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
+      const imageFields=["image_url","image_page_url","image_credit","image_license","image_license_url","image_source","image_match_score","image_match_method","image_verified_at","image_local_path"];
+      const savedByName=rows=>new Map((Array.isArray(rows)?rows:[]).map(item=>[normaliseName(item.name||item.team||item.driver),item]));
+      const mergeSavedImages=(liveRows,savedRows)=>{
+        const saved=savedByName(savedRows);
+        return liveRows.map(item=>{
+          const key=normaliseName(item.name);
+          let previous=saved.get(key);
+          if(!previous&&/^(rb|visa cash app rb|racing bulls)$/.test(key))previous=saved.get("rb f1 team");
+          const merged={...previous,...item};
+          if(previous)for(const field of imageFields)if(previous[field]&&!merged[field])merged[field]=previous[field];
+          return merged;
+        });
+      };
       hub.f1={
-        drivers:driverRows.map(row=>({rank:Number(row.position),name:[row.Driver?.givenName,row.Driver?.familyName].filter(Boolean).join(" "),team:(row.Constructors||[]).map(team=>team.name).join(", "),points:row.points})),
-        constructors:constructorRows.map(row=>({rank:Number(row.position),name:row.Constructor?.name,points:row.points})),
-        season:driverPayload?.MRData?.StandingsTable?.season||new Date().getFullYear(),
+        drivers:mergeSavedImages(driverRows.map(row=>({rank:Number(row.position),name:[row.Driver?.givenName,row.Driver?.familyName].filter(Boolean).join(" "),team:(row.Constructors||[]).map(team=>team.name).join(", "),points:row.points})),savedF1.drivers),
+        constructors:mergeSavedImages(constructorRows.map(row=>({rank:Number(row.position),name:row.Constructor?.name,points:row.points})),savedF1.constructors),
+        season:driverPayload?.MRData?.StandingsTable?.StandingsLists?.[0]?.season||driverPayload?.MRData?.StandingsTable?.season||new Date().getFullYear(),
         last_updated:new Date().toISOString(),
         notice:"Live championship data from Jolpica F1."
       };
