@@ -256,7 +256,7 @@
     if (meta[sport]?.sync_warning) panel.append(make("p","sport-sync-note",meta[sport].sync_warning));
     if (meta[sport]?.notice) panel.append(make("p","sport-sync-note",meta[sport].notice));
     const list=make("div","sport-event-list");
-    const events=sortedEvents(sport).slice(0,8);
+    const events=sortedEvents(sport);
     if (!events.length) list.append(make("div","sport-empty",sport==="darts"?"PDC calendar data will appear here once the Darts API key is connected and its first sync completes.":sport==="bkfc"?"BKFC event data will appear here after the next successful official schedule sync.":"Schedule data will appear here once the API connection is configured and its first sync completes."));
     else events.forEach(event=>list.append(eventCard(sport,event)));
     panel.append(list);
