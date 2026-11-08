@@ -8,7 +8,12 @@
   const eventDate=e=>e?.start_at||e?.date||e?.start_time_utc||null;
   function nextFor(sport){return sport==="boxing"?window.BoxingSchedule?.getNextEvent?.():window.SportsData?.getNextEvent?.(sport);}
   function openSport(sport){if(window.SportPages?.open){window.SportPages.open(sport);return;}window.showScreen?.("home-screen");window.SportsSelector?.goToSport(sport);}
-  function setActiveSport(sport){topButtons.forEach(button=>button.setAttribute("aria-pressed",String(button.dataset.topSport===sport)));}
+  function setActiveSport(sport){topButtons.forEach(button=>{
+    const active=button.dataset.topSport===sport;
+    button.setAttribute("aria-pressed",String(active));
+    button.classList.toggle("user-selected",active);
+    if(active)button.setAttribute("aria-current","true");else button.removeAttribute("aria-current");
+  });}
   function installLogoFallback(button){
     const image=button.querySelector("img");if(!image)return;
     const showFallback=()=>{
