@@ -1161,7 +1161,7 @@ def enrich_cached_images():
     # portraits are supplied by official profiles, and constructors now use crisp
     # in-app team marks, so neither needs Commons lookups in this enrichment pass.
     darts = sports.get("darts") or {}
-    darts["rankings"] = add_photos(darts.get("rankings") or [], limit=40, sport="darts")
+    darts["rankings"] = add_photos(darts.get("rankings") or [], limit=50, sport="darts")
     fights_path = os.path.join(DATA, "fights.json")
     fighter_cache_path = os.path.join(DATA, "fighter-images.json")
     try:
