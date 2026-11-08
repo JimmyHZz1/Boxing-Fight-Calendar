@@ -138,7 +138,7 @@ def sync_darts():
             continue
         seen.add(event_id)
         event_name = row.get("name") or "PDC event"
-        televised = re.search(r"world championship|world matchplay|premier league|uk open|world grand prix|grand slam|european championship|players championship finals|world cup of darts|world series of darts finals|world masters|\bmasters\b|\b(?:bahrain|nordic|us|new zealand|australian|poland|saudi arabia) darts masters\b", event_name, re.I)
+        televised = re.search(r"world championship|world matchplay|premier league|uk open|world grand prix|grand slam|european championship|european tour|players championship finals|world cup of darts|world series of darts|world masters|\bmasters\b|\b(?:bahrain|nordic|us|new zealand|australian|poland|saudi arabia) darts masters\b", event_name, re.I)
         excluded = re.search(r"\b(?:u\s?23|youth|development|qualifier|qualifying|players championships?\b(?!\s+finals)|challenge tour|development tour|affiliate|pro tour)\b", event_name, re.I)
         if not televised or excluded:
             continue
@@ -338,8 +338,8 @@ def sync_bkfc():
     # Use its published dates and names as a safe fallback; do not guess time zones.
     if not records:
         visible = html.unescape(re.sub(r"<[^>]+>", " ", page))
-        visible = re.sub(r"\s+", " ", visible)
-        pattern = r"((?:January|February|March|April|May|June|July|August|September|October|November|December) \\d{1,2}, \\d{4}) \\1 \\d{1,2}:\\d{2} \s*[AP]M \s*#? \s*(BKFC[^#]{3,100}?) \s*Buy tickets"
+        visible = re.sub(r"\\s+", " ", visible)
+        pattern = r"((?:January|February|March|April|May|June|July|August|September|October|November|December) \\d{1,2}, \\d{4}) \\1 \\d{1,2}:\\d{2} \\s*[AP]M \\s*#? \\s*(BKFC[^#]{3,100}?) \\s*Buy tickets"
         for match in re.finditer(pattern, visible, re.I):
             records.append({"@type":"Event","name":match.group(2).strip(),"startDate":match.group(1),"url":url,"eventStatus":"EventScheduled"})
     events, seen = [], set()
