@@ -212,7 +212,7 @@
       ],
       "season": 2026,
       "notice": "Official season standings sourced from the community-maintained Jolpica F1 API.",
-      "last_updated": "2026-11-08T01:11:50Z"
+      "last_updated": "2026-11-08T06:09:09Z"
     },
     "darts": {
       "rankings": [
@@ -1344,7 +1344,7 @@
       ],
       "source_url": "https://www.dartsrankings.com/",
       "notice": "PDC Order of Merit live table. Rankings are updated after PDC ranking events.",
-      "last_updated": "2026-11-08T01:11:50Z"
+      "last_updated": "2026-11-08T06:09:09Z"
     },
     "ufc": {
       "divisions": [
@@ -1532,20 +1532,17 @@
             {
               "rank": 1,
               "name": "Alexandre Pantoja",
-              "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Alexandre_Pantoja.png/250px-Alexandre_Pantoja.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-              "image_credit": "Wikimedia Commons · Sexto Round · CC BY 3.0"
+              "image_url": null
             },
             {
               "rank": 2,
               "name": "Manel Kape",
-              "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/ManelKape2017.png/250px-ManelKape2017.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-              "image_credit": "Wikimedia Commons · Bruno Massami · CC BY 3.0"
+              "image_url": null
             },
             {
               "rank": 3,
               "name": "Brandon Royval",
-              "image_url": null,
-              "image_credit": "Wikimedia Commons"
+              "image_url": null
             },
             {
               "rank": 4,
@@ -1616,26 +1613,22 @@
             {
               "rank": 0,
               "name": "Ciryl Gane",
-              "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Ciryl_Gane_en_visite_au_centre_d%27entra%C3%AEnement_du_MHSC_%28cropped%29.jpg/250px-Ciryl_Gane_en_visite_au_centre_d%27entra%C3%AEnement_du_MHSC_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-              "image_credit": "Wikimedia Commons · MHSC TV - Montpellier Hérault Sport Club · CC BY 3.0"
+              "image_url": null
             },
             {
               "rank": 1,
               "name": "Tom Aspinall",
-              "image_url": null,
-              "image_credit": "Wikimedia Commons"
+              "image_url": null
             },
             {
               "rank": 2,
               "name": "Alexander Volkov",
-              "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Oleksandr_Anatoliyovych_Volkov.jpg/250px-Oleksandr_Anatoliyovych_Volkov.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-              "image_credit": "Wikimedia Commons · <a rel=\"nofollow\" class=\"external text\" href=\"https://www.youtube.com/user/UTRnewsEN?feature=watch\">News UTR</a> · CC BY 3.0"
+              "image_url": null
             },
             {
               "rank": 3,
               "name": "Sergei Pavlovich",
-              "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/SergeiPavlovich2018.png/250px-SergeiPavlovich2018.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-              "image_credit": "Wikimedia Commons · Страна FM · CC BY 3.0"
+              "image_url": null
             },
             {
               "rank": 4,
@@ -1706,20 +1699,17 @@
             {
               "rank": 0,
               "name": "Carlos Ulberg",
-              "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Motorcycle_stunts_on_the_South_Lawn_of_the_White_House_ahead_of_UFC_Freedom_250%2C_Saturday%2C_June_13%2C_2026_-_12.jpg/250px-Motorcycle_stunts_on_the_South_Lawn_of_the_White_House_ahead_of_UFC_Freedom_250%2C_Saturday%2C_June_13%2C_2026_-_12.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-              "image_credit": "Wikimedia Commons · The White House · Public domain"
+              "image_url": null
             },
             {
               "rank": 1,
               "name": "Magomed Ankalaev",
-              "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Magomed_Ankalaev_at_UFC_Fight_Night_136_in_Moscow%2C_Russia.jpg/250px-Magomed_Ankalaev_at_UFC_Fight_Night_136_in_Moscow%2C_Russia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-              "image_credit": "Wikimedia Commons · MMAnytt · CC BY 3.0"
+              "image_url": null
             },
             {
               "rank": 2,
               "name": "Jiří Procházka",
-              "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/JiriProchazka2022.png/250px-JiriProchazka2022.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-              "image_credit": "Wikimedia Commons · Show Jana Krause · CC BY 3.0"
+              "image_url": null
             },
             {
               "rank": 3,
@@ -2469,7 +2459,7 @@
       ],
       "snapshot_date": "2026-11-03",
       "notice": "Official UFC divisional rankings from UFCalendar. Rank 0 denotes the champion; rankings are updated when the publisher releases a new snapshot.",
-      "last_updated": "2026-11-08T01:11:50Z"
+      "last_updated": "2026-11-08T06:09:09Z"
     },
     "boxing": {
       "divisions": [
@@ -3132,9 +3122,9 @@
         }
       ],
       "notice": "Current reigns from Open Boxing, covering the major sanctioning bodies and The Ring where recorded. Boxing title status can change between updates; data coverage is subject to the source database.",
-      "last_updated": "2026-11-08T01:11:50Z"
+      "last_updated": "2026-11-08T06:09:09Z"
     }
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
-  "last_updated": "2026-11-08T01:11:50Z"
+  "last_updated": "2026-11-08T06:09:09Z"
 }

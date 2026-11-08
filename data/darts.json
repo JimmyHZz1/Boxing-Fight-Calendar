@@ -239,6 +239,50 @@
       "source": "Darts API"
     },
     {
+      "id": "ev_YZ6899",
+      "name": "ADC Global Championship, 6 Nov 2026",
+      "date": "2026-11-06",
+      "status": "no_results_held",
+      "organiser": "pdc_affiliate",
+      "tier": "regional",
+      "matches": 0,
+      "competition_id": "cp_HBSJ51",
+      "source": "Darts API"
+    },
+    {
+      "id": "ev_SJA72X",
+      "name": "ADC Global Championship 2026, 7 Nov 2026",
+      "date": "2026-11-07",
+      "status": "no_results_held",
+      "organiser": "pdc_affiliate",
+      "tier": "regional",
+      "matches": 0,
+      "competition_id": "cp_HBSJ51",
+      "source": "Darts API"
+    },
+    {
+      "id": "ev_Q8WA2C",
+      "name": "Newcastle Classic Youth 2026, 7 Nov 2026",
+      "date": "2026-11-07",
+      "status": "no_results_held",
+      "organiser": "pdc_development",
+      "tier": "tour_other",
+      "matches": 0,
+      "competition_id": "cp_492Z1G",
+      "source": "Darts API"
+    },
+    {
+      "id": "ev_T8DJ67",
+      "name": "Newcastle Classic Youth, 7 Nov 2026",
+      "date": "2026-11-07",
+      "status": "no_results_held",
+      "organiser": "pdc_development",
+      "tier": "tour_other",
+      "matches": 0,
+      "competition_id": "cp_492Z1G",
+      "source": "Darts API"
+    },
+    {
       "id": "ev_ZH86EK",
       "name": "ADC Global Championship",
       "date": "2026-11-08",
@@ -247,6 +291,50 @@
       "tier": "regional",
       "matches": 30,
       "competition_id": "cp_HBSJ51",
+      "source": "Darts API"
+    },
+    {
+      "id": "ev_8QYNBM",
+      "name": "Malta Masters U23 Youth 2026, 8 Nov 2026",
+      "date": "2026-11-08",
+      "status": "scheduled",
+      "organiser": "pdc_development",
+      "tier": "tour_other",
+      "matches": 0,
+      "competition_id": "cp_0BVM2M",
+      "source": "Darts API"
+    },
+    {
+      "id": "ev_P9NCB0",
+      "name": "Malta Masters U23 Youth, 8 Nov 2026",
+      "date": "2026-11-08",
+      "status": "scheduled",
+      "organiser": "pdc_development",
+      "tier": "tour_other",
+      "matches": 0,
+      "competition_id": "cp_0BVM2M",
+      "source": "Darts API"
+    },
+    {
+      "id": "ev_52DS7S",
+      "name": "Malta Masters Youth 2026, 8 Nov 2026",
+      "date": "2026-11-08",
+      "status": "scheduled",
+      "organiser": "pdc_development",
+      "tier": "tour_other",
+      "matches": 0,
+      "competition_id": "cp_YQW9HA",
+      "source": "Darts API"
+    },
+    {
+      "id": "ev_P03SF2",
+      "name": "Malta Masters Youth, 8 Nov 2026",
+      "date": "2026-11-08",
+      "status": "scheduled",
+      "organiser": "pdc_development",
+      "tier": "tour_other",
+      "matches": 0,
+      "competition_id": "cp_YQW9HA",
       "source": "Darts API"
     },
     {
@@ -262,5 +350,5 @@
     }
   ],
   "notice": "PDC, PDC Development Tour and PDC Affiliate events. MODUS and non-PDC events are excluded. Free API calendar data may lag the live feed by up to seven days.",
-  "last_updated": "2026-11-08T01:11:50Z"
+  "last_updated": "2026-11-08T06:09:09Z"
 }
