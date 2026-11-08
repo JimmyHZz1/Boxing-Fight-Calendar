@@ -363,7 +363,17 @@ def standings_list(payload, key):
 
 def sync_sports_hub():
     """Publish current championship tables and rankings as a single static JSON feed."""
-    hub = {"sports": {}, "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing"}
+    # Keep the last good rankings when an upstream provider is temporarily down.
+    # The previous implementation replaced the whole hub with empty arrays on
+    # any failed request, which made every sport page lose its standings.
+    hub_path = os.path.join(DATA, "sports-hub.json")
+    try:
+        with open(hub_path, encoding="utf-8") as existing_file:
+            existing_hub = json.load(existing_file)
+    except (FileNotFoundError, json.JSONDecodeError):
+        existing_hub = {}
+    previous = existing_hub.get("sports") or {}
+    hub = {"sports": dict(previous), "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing"}
     year = NOW.year
 
     # Formula 1 driver and constructor championship tables.
@@ -371,6 +381,8 @@ def sync_sports_hub():
         base = f"https://api.jolpi.ca/ergast/f1/{year}"
         drivers_raw = standings_list(request_json(f"{base}/driverStandings.json?limit=100", provider="Jolpica F1"), "DriverStandings")
         constructors_raw = standings_list(request_json(f"{base}/constructorStandings.json?limit=100", provider="Jolpica F1"), "ConstructorStandings")
+        if not drivers_raw or not constructors_raw:
+            raise RuntimeError("Jolpica returned an empty driver or constructor table; keeping the last published snapshot.")
         drivers = [{
             "rank": int(x.get("position", 0)), "name": " ".join(y for y in [x.get("Driver", {}).get("givenName"), x.get("Driver", {}).get("familyName")] if y),
             "team": ", ".join(c.get("name", "") for c in x.get("Constructors", [])), "points": x.get("points")
@@ -378,7 +390,7 @@ def sync_sports_hub():
         constructors = [{"rank": int(x.get("position", 0)), "name": (x.get("Constructor") or {}).get("name"), "points": x.get("points")} for x in constructors_raw]
         hub["sports"]["f1"] = {"drivers": add_photos(drivers), "constructors": add_photos(constructors), "season": year, "notice": "Official season standings sourced from the community-maintained Jolpica F1 API."}
     except Exception as exc:
-        hub["sports"]["f1"] = {"drivers": [], "constructors": [], "sync_warning": str(exc)}
+        hub["sports"]["f1"] = {**previous.get("f1", {"drivers": [], "constructors": []}), "sync_warning": str(exc)}
 
     # PDC Order of Merit.
     try:
@@ -394,9 +406,11 @@ def sync_sports_hub():
             player = row.get("player") if isinstance(row.get("player"), dict) else {}
             name = row.get("name") or row.get("player_name") or (row.get("player") if isinstance(row.get("player"), str) else None) or player.get("name") or "Unknown player"
             rankings.append({"rank": row.get("position") or row.get("rank") or i + 1, "name": name, "prize_money": row.get("prize_money") or row.get("ranking_prize_money"), "points": row.get("points"), "image_url": row.get("image_url") or player.get("image_url") or player.get("photo_url")})
+        if not rankings:
+            raise RuntimeError("Darts API returned no Order of Merit rows; keeping the last published snapshot.")
         hub["sports"]["darts"] = {"rankings": add_photos(rankings, limit=12), "notice": "PDC Order of Merit. The free Darts API feed may be up to seven days behind."}
     except Exception as exc:
-        hub["sports"]["darts"] = {"rankings": [], "sync_warning": str(exc)}
+        hub["sports"]["darts"] = {**previous.get("darts", {"rankings": []}), "sync_warning": str(exc)}
 
     # UFC official divisional rankings and champion rows.
     try:
@@ -411,9 +425,11 @@ def sync_sports_hub():
             for row in division.get("entries") or []:
                 entries.append({"rank": row.get("rank"), "name": row.get("name") or row.get("fighter_name"), "image_url": row.get("image_url") or row.get("photo_url") or row.get("image")})
             divisions.append({"division": division.get("division"), "name": str(division.get("division") or "").replace("-", " ").title(), "entries": add_photos(entries, limit=4)})
+        if not divisions or not any(x.get("entries") for x in divisions):
+            raise RuntimeError("UFCalendar returned no UFC ranking entries; keeping the last published snapshot.")
         hub["sports"]["ufc"] = {"divisions": divisions, "snapshot_date": board.get("snapshot_date"), "notice": "Official UFC divisional rankings from UFCalendar. Rank 0 denotes the champion; rankings are updated when the publisher releases a new snapshot."}
     except Exception as exc:
-        hub["sports"]["ufc"] = {"divisions": [], "sync_warning": str(exc)}
+        hub["sports"]["ufc"] = {**previous.get("ufc", {"divisions": []}), "sync_warning": str(exc)}
 
     # Current boxing title reigns, grouped by weight and sanctioning body.
     try:
@@ -435,9 +451,11 @@ def sync_sports_hub():
         divisions = []
         for weight, rows in sorted(grouped.items()):
             divisions.append({"name": weight, "champions": add_photos(rows, limit=6)})
+        if not divisions:
+            raise RuntimeError("Open Boxing returned no current title reigns; keeping the last published snapshot.")
         hub["sports"]["boxing"] = {"divisions": divisions, "notice": "Current reigns from Open Boxing, covering the major sanctioning bodies and The Ring where recorded. Boxing title status can change between updates; data coverage is subject to the source database."}
     except Exception as exc:
-        hub["sports"]["boxing"] = {"divisions": [], "sync_warning": str(exc)}
+        hub["sports"]["boxing"] = {**previous.get("boxing", {"divisions": []}), "sync_warning": str(exc)}
 
     for sport in hub["sports"].values():
         sport["last_updated"] = iso_now()
