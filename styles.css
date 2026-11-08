@@ -743,7 +743,7 @@
 @media(max-width:620px){.favourites-form{grid-template-columns:1fr}.favourites-form label,.favourite-name-field,.favourite-note-field{grid-column:1}.favourites-form .primary-button{width:100%}.favourites-grid{grid-template-columns:1fr}.favourites-toolbar{align-items:flex-start;flex-direction:column}.favourites-filters{justify-content:flex-start}.favourite-card{padding:13px}}
 
 /* Official Formula 1 profile images use a right-weighted composition; frame the face rather than the empty left side. */
-.hub-person>img.hub-driver-portrait-official-f1{object-position:74% 18%}
+.hub-person>img.hub-driver-portrait-official-f1{object-position:50% 18%}
 .favourite-card-portrait img.favourite-f1-driver-portrait{object-position:74% 18%}
 
 /* Keep broadcaster marks centred and remove the former overlapping fallback frame. */
