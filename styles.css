@@ -778,3 +778,6 @@
 .favourite-result-date{font-size:8px;color:var(--muted)}.favourite-profile-result strong{font-size:10px}.favourite-profile-result small{font-size:8px;color:var(--muted);text-align:right}.favourite-profile-result .favourite-result-win{color:var(--accent)}
 .favourite-profile-next{display:grid;gap:5px;padding:12px;border-left:2px solid var(--accent);background:rgba(8,9,12,.45)}.favourite-profile-next strong{font-size:12px}.favourite-profile-next span{font-size:9px;color:var(--muted)}
 @media(max-width:620px){.favourites-comparison-grid{grid-template-columns:1fr}.favourite-profile-panel{padding:16px}.favourite-profile-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.favourite-profile-result{grid-template-columns:65px minmax(0,1fr)}.favourite-profile-result small{grid-column:2;text-align:left}.favourite-profile-head{grid-template-columns:76px minmax(0,1fr) 30px}.favourite-profile-portrait{width:76px;height:88px}}
+
+/* Keep official F1 headshots framed consistently in the dedicated championship table. */
+.sport-ranking-image.f1-driver-portrait{object-position:50% 18%;}
