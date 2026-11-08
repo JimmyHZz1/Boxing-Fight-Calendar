@@ -42,6 +42,13 @@
   }
   function countdownText(value) {
     if (!value) return "";
+    const raw=String(value);
+    if (/^\\d{4}-\\d{2}-\\d{2}$/.test(raw)) {
+      const nowKey=today(), nowDate=new Date(nowKey+"T00:00:00Z"), eventDate=new Date(raw+"T00:00:00Z");
+      if (Number.isNaN(eventDate.getTime())) return "";
+      const days=Math.round((eventDate-nowDate)/86400000);
+      return days>0 ? "STARTS IN "+days+" DAY"+(days===1?"":"S")+" · TIME TBC" : days===0 ? "EVENT DAY · TIME TBC" : "EVENT DATE PASSED · TIME TBC";
+    }
     const target=new Date(value).getTime(), remaining=target-Date.now();
     if (!Number.isFinite(target)) return "";
     if (remaining<=0) return "STARTED";
@@ -50,11 +57,13 @@
   }
   function addCountdown(root,value) {
     if (!value) return;
-    const target=new Date(value);
-    if (Number.isNaN(target.getTime()) || target.getTime()<=Date.now()) return;
+    const raw=String(value), dateOnly=/^\\d{4}-\\d{2}-\\d{2}$/.test(raw);
+    const target=dateOnly?null:new Date(value);
+    if (!dateOnly&&(Number.isNaN(target.getTime()) || target.getTime()<=Date.now())) return;
+    if (dateOnly && countdownText(raw).startsWith("EVENT DATE PASSED")) return;
     const timer=make("span","event-countdown",countdownText(value));
-    timer.dataset.countdownTarget=target.toISOString();
-    timer.setAttribute("aria-label","Countdown to event start");
+    timer.dataset.countdownTarget=dateOnly?raw:target.toISOString();
+    timer.setAttribute("aria-label",dateOnly?"Event date countdown; start time to be confirmed":"Countdown to event start");
     root.append(timer);
   }
   function tickCountdowns() {
@@ -165,7 +174,7 @@
     if (sport==="ufc") sub.push(event.number?"EVENT "+event.number:null,event.start_at?timeLabel(event.start_at):null);
     if (sport==="bkfc") sub.push(event.location||event.venue||null,event.start_at?timeLabel(event.start_at):null);
     main.append(make("small",null,sub.filter(Boolean).join(" · ")||dateLabel(event.date||event.start_at)));
-    const countdownTarget=event.start_at||event.main_card_at||event.start_time_utc||null;
+    const countdownTarget=event.start_at||event.main_card_at||event.start_time_utc||event.date||event.event_date||null;
     addCountdown(main,countdownTarget);
     summary.append(visual,date,main,make("span","sport-event-badge",statusLabel({...event,_sport:sport})));
     card.append(summary);
