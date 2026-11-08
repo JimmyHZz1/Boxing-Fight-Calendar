@@ -79,6 +79,18 @@
     }
     return s;
   }
+  function rankingRow(item,rank){
+    const row=el("div","sport-ranking-row has-image");
+    row.append(el("span","sport-ranking-position",rank==="C"?"C":"#"+rank));
+    const name=item.name||item.driver||item.team||"TBC";
+    if(item.image_url){
+      const img=el("img","sport-ranking-image");img.src=item.image_url;img.alt=name+" photo";img.loading="lazy";
+      img.onerror=()=>{img.replaceWith(el("span","sport-ranking-image-fallback",name.split(/\s+/).map(x=>x[0]||"").slice(0,2).join("").toUpperCase()));};
+      row.append(img);
+    }else row.append(el("span","sport-ranking-image-fallback",name.split(/\s+/).map(x=>x[0]||"").slice(0,2).join("").toUpperCase()));
+    row.append(el("strong",null,name));
+    return row;
+  }
   let f1TableChoice="drivers";
   function standings(sport){
     const d=hub[sport]||{};
@@ -97,8 +109,7 @@
       const group=el("div","sport-ranking-group");
       group.append(el("h3",null,f1TableChoice==="drivers"?"Drivers’ championship":"Constructors’ championship"));
       items.forEach((item,index)=>{
-        const row=el("div","sport-ranking-row");
-        row.append(el("span","sport-ranking-position","#"+(item.rank||index+1)),el("strong",null,item.name||"TBC"));
+        const row=rankingRow(item,item.rank||index+1);
         const extra=[item.team,item.points!=null?item.points+" pts":null].filter(Boolean).join(" · ");
         if(extra)row.append(el("small",null,extra));group.append(row);
       });
@@ -114,9 +125,8 @@
     valid.forEach(([title,items,limit])=>{
       const group=el("div","sport-ranking-group");group.append(el("h3",null,title));
       items.slice(0,limit||8).forEach((item,index)=>{
-        const row=el("div","sport-ranking-row");
-        row.append(el("span","sport-ranking-position",item.rank!=null?(item.rank===0?"C":"#"+item.rank):"#"+(index+1)),el("strong",null,item.name||item.driver||item.team||"TBC"));
-        const extra=[item.team,item.points!=null?item.points+" pts":null,item.prize_money? "£"+item.prize_money:null].filter(Boolean).join(" · ");
+        const row=rankingRow(item,item.rank!=null?(item.rank===0?"C":item.rank):index+1);
+        const extra=[item.org,item.team,item.points!=null?item.points+" pts":null,item.prize_money? "£"+item.prize_money:null].filter(Boolean).join(" · ");
         if(extra)row.append(el("small",null,extra));group.append(row);
       });
       s.append(group);
