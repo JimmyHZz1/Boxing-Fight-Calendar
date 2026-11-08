@@ -1,11 +1,11 @@
 {
   "provider": "Boxerbook + Boxing Data API",
-  "last_updated": "2026-11-08T13:25:33Z",
-  "provider_as_of": "2026-11-08T13:25:32Z",
+  "last_updated": "2026-11-08T13:44:32Z",
+  "provider_as_of": "2026-11-08T13:44:32Z",
   "attribution": "Data from Boxerbook (boxerbook.com)",
   "count_events": 23,
   "count_bouts": 94,
-  "count_fighter_photos": 13,
+  "count_fighter_photos": 14,
   "events": [
     {
       "id": "boxerbook-11863",

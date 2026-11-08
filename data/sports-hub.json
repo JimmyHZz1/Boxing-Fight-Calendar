@@ -564,7 +564,7 @@
       ],
       "season": 2026,
       "notice": "Official season standings sourced from the community-maintained Jolpica F1 API.",
-      "last_updated": "2026-11-08T13:25:33Z"
+      "last_updated": "2026-11-08T13:44:32Z"
     },
     "darts": {
       "rankings": [
@@ -2146,7 +2146,7 @@
       ],
       "source_url": "https://www.dartsrankings.com/",
       "notice": "PDC Order of Merit live table. Rankings are updated after PDC ranking events.",
-      "last_updated": "2026-11-08T13:25:33Z"
+      "last_updated": "2026-11-08T13:44:32Z"
     },
     "ufc": {
       "divisions": [
@@ -3261,7 +3261,7 @@
       ],
       "snapshot_date": "2026-11-03",
       "notice": "Official UFC divisional rankings from UFCalendar. Rank 0 denotes the champion; rankings are updated when the publisher releases a new snapshot.",
-      "last_updated": "2026-11-08T13:25:33Z"
+      "last_updated": "2026-11-08T13:44:32Z"
     },
     "boxing": {
       "divisions": [
@@ -3924,84 +3924,18 @@
         }
       ],
       "notice": "Current reigns from Open Boxing, covering the major sanctioning bodies and The Ring where recorded. Boxing title status can change between updates; data coverage is subject to the source database.",
-      "last_updated": "2026-11-08T13:25:33Z"
+      "last_updated": "2026-11-08T13:44:32Z"
     }
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 5,
-    "found": 37,
-    "missing": 698,
+    "attempted": 0,
+    "found": 36,
+    "missing": 512,
     "rejected": 0,
-    "by_sport": {
-      "f1 constructors": {
-        "attempted": 2,
-        "found": 2,
-        "missing": 0,
-        "rejected": 0
-      },
-      "boxing fighters": {
-        "attempted": 3,
-        "found": 0,
-        "missing": 3,
-        "rejected": 0
-      }
-    },
-    "search_details": [
-      {
-        "name": "Red Bull",
-        "queries": 1,
-        "candidate_files": 2,
-        "accepted": 2,
-        "rejections": {}
-      },
-      {
-        "name": "Aston Martin",
-        "queries": 1,
-        "candidate_files": 1,
-        "accepted": 1,
-        "rejections": {}
-      },
-      {
-        "name": "Amari Jones",
-        "queries": 2,
-        "candidate_files": 20,
-        "accepted": 0,
-        "rejections": {
-          "not_an_image": 20
-        }
-      },
-      {
-        "name": "Andres Teran",
-        "queries": 2,
-        "candidate_files": 12,
-        "accepted": 0,
-        "rejections": {
-          "surname_not_matched": 5,
-          "not_an_image": 7
-        }
-      },
-      {
-        "name": "Anthony Olascuaga",
-        "queries": 2,
-        "candidate_files": 0,
-        "accepted": 0,
-        "rejections": {}
-      }
-    ],
-    "rejection_reasons": {
-      "not_an_image": 27,
-      "surname_not_matched": 5
-    },
-    "checked_at": "2026-11-08T13:36:08Z",
-    "library_entries": 37,
-    "newly_found": 2,
+    "by_sport": {},
+    "newly_found": 0,
     "coverage": {
-      "boxing fight card fighters": {
-        "total": 187,
-        "with_image": 2,
-        "missing": 185
-      },
       "f1 drivers": {
         "total": 25,
         "with_image": 25,
@@ -4009,8 +3943,8 @@
       },
       "f1 constructors": {
         "total": 11,
-        "with_image": 10,
-        "missing": 1
+        "with_image": 11,
+        "missing": 0
       },
       "darts": {
         "total": 225,
@@ -4027,7 +3961,9 @@
         "with_image": 0,
         "missing": 81
       }
-    }
+    },
+    "checked_at": "2026-11-08T13:44:32Z",
+    "library_entries": 38
   },
-  "last_updated": "2026-11-08T13:25:33Z"
+  "last_updated": "2026-11-08T13:44:32Z"
 }
