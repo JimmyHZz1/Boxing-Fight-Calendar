@@ -18,12 +18,11 @@
       const detail=document.createElement("small");detail.className="next-event-detail";detail.textContent=event?(event.location||event.venue||event.circuit||event.country||event.tier||"Tap to view event details"):"Tap to open sport schedule";
       button.append(meta,name,detail);root.append(button);
     });
-    document.querySelectorAll("[data-top-sport]").forEach(button=>button.setAttribute("aria-current",String(button.dataset.topSport===window.SportsSelector?.getActive?.())));
+    
   }
   document.addEventListener("sports:feeds-updated",render);
   document.addEventListener("sports:boxing-data-updated",render);
-  document.querySelectorAll("[data-top-sport]").forEach(button=>button.addEventListener("click",()=>{document.querySelectorAll("[data-top-sport]").forEach(item=>item.classList.remove("user-selected"));button.classList.add("user-selected");openSport(button.dataset.topSport);}));
-  document.addEventListener("sports:select",event=>{document.querySelectorAll("[data-top-sport]").forEach(button=>button.setAttribute("aria-current",String(button.dataset.topSport===event.detail?.sport)));});
+  document.querySelectorAll("[data-top-sport]").forEach(button=>button.addEventListener("click",()=>{document.querySelectorAll("[data-top-sport]").forEach(item=>{item.classList.remove("user-selected");item.removeAttribute("aria-current");});button.classList.add("user-selected");button.setAttribute("aria-current","true");openSport(button.dataset.topSport);}));
   render();
   setInterval(render,30000);
 })();

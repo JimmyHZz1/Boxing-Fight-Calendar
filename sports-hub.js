@@ -8,6 +8,7 @@
   const esc = value => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
   const initials = name => String(name || "?").split(/\s+/).slice(0,2).map(x=>x[0]||"").join("").toUpperCase();
   const constructorWordmark = name => ({Mercedes:"MERCEDES",Ferrari:"FERRARI","Red Bull":"RED BULL",McLaren:"McLAREN","RB F1 Team":"RACING BULLS","Alpine F1 Team":"ALPINE","Haas F1 Team":"HAAS",Audi:"AUDI",Williams:"WILLIAMS","Aston Martin":"ASTON MARTIN","Cadillac F1 Team":"CADILLAC"}[name] || String(name||"F1").toUpperCase());
+  const constructorColour = name => ({Mercedes:"#00d2be",Ferrari:"#ef1a2d","Red Bull":"#4776d0",McLaren:"#ff8700","RB F1 Team":"#6c9bd2","Alpine F1 Team":"#168bd2","Haas F1 Team":"#c7cbd1",Audi:"#f02b32",Williams:"#39a9df","Aston Martin":"#00a58b","Cadillac F1 Team":"#e5e5e5"}[name] || "#e2b45b");
   let imageFailures = 0;
   let imageLoads = 0;
   let localImages = {};
@@ -21,7 +22,7 @@
     const credit = local?.attribution || item.image_credit;
     const constructor = label==="Constructor";
     const fallback = constructor ? constructorWordmark(item.name) : initials(item.name);
-    const img = source ? '<img class="'+(constructor?"hub-constructor-logo":"hub-driver-portrait")+'" src="'+esc(source)+'" alt="'+esc(constructor ? item.name+" logo" : item.name+" portrait")+'" loading="lazy" data-image-kind="'+(constructor?"constructor":"driver")+'" data-official-f1="'+(officialF1?"1":"0")+'" data-image-entity="'+esc(item.name||"") + '" data-image-fallback="'+esc(fallback)+'">' : (constructor ? '<span class="hub-constructor-fallback">'+esc(fallback)+'</span>' : '<span class="hub-avatar-fallback hub-driver-fallback">'+esc(fallback)+'</span>');
+    const img = constructor ? '<span class="hub-constructor-fallback" role="img" aria-label="'+esc(item.name+" logo")+'" style="--team-color:'+constructorColour(item.name)+'">'+esc(fallback)+'</span>' : (source ? '<img class="hub-driver-portrait" src="'+esc(source)+'" alt="'+esc(item.name+" portrait")+'" loading="lazy" data-image-kind="driver" data-official-f1="'+(officialF1?"1":"0")+'" data-image-entity="'+esc(item.name||"") + '" data-image-fallback="'+esc(fallback)+'">': '<span class="hub-avatar-fallback hub-driver-fallback">'+esc(fallback)+'</span>');
     const rank = item.rank != null ? (item.rank===0 ? "C" : "#"+item.rank) : (index+1);
     const extra = [item.team,item.prize_money?"£"+item.prize_money:(item.points!=null?item.points+" pts":null),item.org,credit].filter(Boolean).join(" · ");
     return '<div class="hub-person">'+img+'<span class="hub-rank">'+esc(rank)+'</span><span class="hub-person-name"><strong>'+esc(item.name||"TBC")+'</strong><small>'+esc(extra||label||"")+'</small></span></div>';
