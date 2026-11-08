@@ -96,7 +96,7 @@
   $("compact-view-toggle")?.addEventListener("click",()=>requestAnimationFrame(render));
   const tickerRoot=$("next-event-ticker");
   if(tickerRoot){
-    tickerRoot.addEventListener("click",event=>{const card=event.target.closest(".next-event-item");if(card&&!card.dataset.tickerClone)window.SportPages?.open?.(card.dataset.sport);});
+    tickerRoot.addEventListener("click",event=>{const card=event.target.closest(".next-event-item");if(card)window.SportPages?.open?.(card.dataset.sport);});
     tickerRoot.addEventListener("pointerenter",()=>{tickerPaused=true;});
     tickerRoot.addEventListener("pointerleave",()=>{tickerPaused=false;});
     tickerRoot.addEventListener("focusin",()=>{tickerPaused=true;});
