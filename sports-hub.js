@@ -7,8 +7,9 @@
   const sportNames = {f1:"FORMULA 1",darts:"PDC DARTS",boxing:"BOXING WORLD CHAMPIONS",ufc:"UFC"};
   const esc = value => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
   const initials = name => String(name || "?").split(/\s+/).slice(0,2).map(x=>x[0]||"").join("").toUpperCase();
+  let imageFailures = 0;
   function person(item, index, label) {
-    const img = item.image_url ? '<img src="'+esc(item.image_url)+'" alt="" loading="lazy" onerror="this.remove()">' : '<span class="hub-avatar-fallback">'+esc(initials(item.name))+'</span>';
+    const img = item.image_url ? '<img src="'+esc(item.image_url)+'" alt="" loading="lazy" data-image-entity="'+esc(item.name||"")+'" onerror="imageFailures++;this.replaceWith(Object.assign(document.createElement("span"),{className:"hub-avatar-fallback",textContent:"'+esc(initials(item.name))+'"}));updateImageDiagnostics();">' : '<span class="hub-avatar-fallback">'+esc(initials(item.name))+'</span>';
     const rank = item.rank != null ? (item.rank===0 ? "C" : "#"+item.rank) : (index+1);
     const extra = [item.team,item.prize_money?"£"+item.prize_money:(item.points!=null?item.points+" pts":null),item.org,item.image_credit].filter(Boolean).join(" · ");
     return '<div class="hub-person">'+img+'<span class="hub-rank">'+esc(rank)+'</span><span class="hub-person-name"><strong>'+esc(item.name||"TBC")+'</strong><small>'+esc(extra||label||"")+'</small></span></div>';
@@ -36,9 +37,17 @@
     $("sports-hub-updated").textContent=updated.toUpperCase();
     return '<div class="hub-sport-title"><strong>'+sportNames[sport]+'</strong><span>UPDATED '+esc(updated)+'</span></div>'+out+(note?'<p class="hub-source-note">'+esc(note)+'</p>':"");
   }
+  function updateImageDiagnostics() {
+    const box=$("hub-image-diagnostics");
+    if(!box) return;
+    const d=payload.image_diagnostics||{};
+    const found=Number(d.found||0), missing=Number(d.missing||0);
+    box.innerHTML='<summary>IMAGE CHECK · '+found+' FOUND / '+missing+' NOT FOUND · '+imageFailures+' FAILED TO LOAD</summary><p>Library entries: '+Number(d.library_entries||0)+' · Last checked: '+esc(d.checked_at?new Date(d.checked_at).toLocaleString("en-GB",{timeZone:"Europe/London"}):"Not checked")+'</p><p>Only relevant Commons matches with image and licence metadata are published. Failed image loads are counted on this device.</p>';
+  }
   function render(sport=active) {
     active=sport;
     root.innerHTML=panel(sport);
+    updateImageDiagnostics();
   }
   fetch("./data/sports-hub.json?t="+Date.now(),{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("HTTP "+r.status);return r.json();}).then(data=>{
     payload=data.sports||data;
