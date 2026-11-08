@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-08T12:58:07Z",
+  "updated_at": "2026-11-08T13:21:01Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -57,6 +57,28 @@
       "creator": "Wikimedia Commons · Gilzetbase · CC BY-SA 4.0",
       "attribution": "Wikimedia Commons · Gilzetbase · CC BY-SA 4.0",
       "verified_at": "2026-11-08T12:58:07Z",
+      "sport": "f1 drivers"
+    },
+    "lando norris": {
+      "name": "Lando Norris",
+      "path": "assets/images/f1-drivers/lando-norris.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Daniel_Ricciardo,_British_GP_2022_(52381435327)_(cropped).jpg",
+      "licence": "CC BY 2.0",
+      "licence_url": "https://creativecommons.org/licenses/by/2.0",
+      "creator": "Wikimedia Commons · Jen Ross · CC BY 2.0",
+      "attribution": "Wikimedia Commons · Jen Ross · CC BY 2.0",
+      "verified_at": "2026-11-08T13:21:01Z",
+      "sport": "f1 drivers"
+    },
+    "oscar piastri": {
+      "name": "Oscar Piastri",
+      "path": "assets/images/f1-drivers/oscar-piastri.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Oscar_Piastri_Helmet_2024.jpg",
+      "licence": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "creator": "Wikimedia Commons · Liauzh · CC BY-SA 4.0",
+      "attribution": "Wikimedia Commons · Liauzh · CC BY-SA 4.0",
+      "verified_at": "2026-11-08T13:21:01Z",
       "sport": "f1 drivers"
     }
   },

@@ -65,9 +65,37 @@
       "image_match_score": 1.0,
       "image_verified_at": "2026-11-08T12:58:07Z",
       "image_local_path": "assets/images/f1-drivers/charles-leclerc.jpg"
+    },
+    "lando norris": {
+      "name": "Lando Norris",
+      "sport": "f1 drivers",
+      "image_url": "./assets/images/f1-drivers/lando-norris.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Daniel_Ricciardo,_British_GP_2022_(52381435327)_(cropped).jpg",
+      "image_credit": "Wikimedia Commons · Jen Ross · CC BY 2.0",
+      "image_license": "CC BY 2.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/2.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "search:Lando Norris",
+      "image_verified_at": "2026-11-08T13:21:01Z",
+      "image_local_path": "assets/images/f1-drivers/lando-norris.jpg"
+    },
+    "oscar piastri": {
+      "name": "Oscar Piastri",
+      "sport": "f1 drivers",
+      "image_url": "./assets/images/f1-drivers/oscar-piastri.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Oscar_Piastri_Helmet_2024.jpg",
+      "image_credit": "Wikimedia Commons · Liauzh · CC BY-SA 4.0",
+      "image_license": "CC BY-SA 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Oscar Piastri",
+      "image_verified_at": "2026-11-08T13:21:01Z",
+      "image_local_path": "assets/images/f1-drivers/oscar-piastri.jpg"
     }
   },
-  "updated_at": "2026-11-08T13:19:31Z",
+  "updated_at": "2026-11-08T13:21:01Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -78,6 +106,8 @@
     "max verstappen": "2026-11-08T12:58:07Z",
     "lewis hamilton": "2026-11-08T12:58:07Z",
     "george russell": "2026-11-08T12:58:07Z",
-    "charles leclerc": "2026-11-08T12:58:07Z"
+    "charles leclerc": "2026-11-08T12:58:07Z",
+    "lando norris": "2026-11-08T13:21:01Z",
+    "oscar piastri": "2026-11-08T13:21:01Z"
   }
 }
