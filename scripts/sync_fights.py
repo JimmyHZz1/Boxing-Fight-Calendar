@@ -241,48 +241,20 @@ def find_commons_portrait(name: str) -> dict | None:
     return candidates[0]
 
 def update_fighter_images(events: list[dict]) -> dict:
+    """Use the curated cache only; scheduled fight sync must not run image searches."""
     path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "fighter-images.json")
     try:
         with open(path, "r", encoding="utf-8") as f:
             cache = json.load(f)
     except (FileNotFoundError, json.JSONDecodeError):
         cache = {"images": {}, "attempted": {}}
-    images, attempted = cache.setdefault("images", {}), cache.setdefault("attempted", {})
-    names = {str(b.get(side) or "").strip() for e in events for b in e.get("bouts", []) for side in ("fighter1", "fighter2")}
-    names = {n for n in names if n and n.upper() != "TBC"}
-    priority = {"anthony joshua","tyson fury","oleksandr usyk","canelo alvarez","terence crawford","naoya inoue","gervonta davis","dmitry bivol","artur beterbiev","shakur stevenson","devin haney","ryan garcia","jake paul","manny pacquiao","floyd mayweather","derek chisora","daniel dubois","fabio wardley","moses itauma","katie taylor","claressa shields","conor benn","hamzah sheeraz"}
-    today = datetime.now(timezone.utc).date()
-    pending = []
-    for name in names:
-        key = normalise_person_name(name)
-        if not key or key in images:
-            continue
-        last = attempted.get(key)
-        if last:
-            try:
-                if (today - datetime.fromisoformat(last).date()).days < 45:
-                    continue
-            except ValueError:
-                pass
-        pending.append((0 if key in priority else 1, key, name))
-    pending.sort()
-    import time
-    for _, key, name in pending[:35]:
-        result = find_commons_portrait(name)
-        attempted[key] = datetime.now(timezone.utc).date().isoformat()
-        if result:
-            images[key] = result
-            print(f"COMMONS_PORTRAIT_FOUND: {name} -> {result['title']}")
-        else:
-            print(f"COMMONS_PORTRAIT_NOT_FOUND: {name}")
-        time.sleep(0.25)
-    if pending:
-        cache["updated_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
+    images = cache.setdefault("images", {})
+    cache["updated_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
         json.dump(cache, f, ensure_ascii=False, indent=2)
-        f.write("\n")
-    print(f"Commons portraits cached: {len(images)}; lookup attempts this run: {min(len(pending), 35)}.")
+        f.write("\\n")
+    print(f"Curated boxing portraits reused: {len(images)}; image discovery is handled by the separate low-rate image workflow.")
     return images
 
 def main():
