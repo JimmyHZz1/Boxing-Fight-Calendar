@@ -420,7 +420,7 @@ def save_image_library():
     IMAGE_LIBRARY["updated_at"] = iso_now()
     with open(IMAGE_LIBRARY_PATH, "w", encoding="utf-8") as handle:
         json.dump(IMAGE_LIBRARY, handle, ensure_ascii=False, indent=2)
-        handle.write("\\n")
+        handle.write("\n")
 
 def image_aliases(name):
     key = image_key(name)
