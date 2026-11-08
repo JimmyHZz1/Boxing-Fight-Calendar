@@ -394,7 +394,8 @@ def sync_bkfc():
 
 IMAGE_LIBRARY_PATH = os.path.join(DATA, "sports-images.json")
 IMAGE_DIAGNOSTICS = {"attempted": 0, "found": 0, "missing": 0, "rejected": 0, "by_sport": {}}
-IMAGE_LIBRARY = {"version": 1, "images": {}}\nIMAGE_LIBRARY_LOADED = False
+IMAGE_LIBRARY = {"version": 1, "images": {}}
+IMAGE_LIBRARY_LOADED = False
 
 def image_key(name):
     import unicodedata
