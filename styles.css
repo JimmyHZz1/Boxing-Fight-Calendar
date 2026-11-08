@@ -281,24 +281,17 @@
 .sport-logo-darts-fallback{display:grid;place-items:center;width:70px;height:58px;margin:10px auto 8px;border:2px solid #f1f1f1;border-radius:50%;background:#16181d;color:#fff;font:900 25px 'Barlow Condensed',sans-serif;letter-spacing:-1px;}
 .sport-event-visual .sport-logo-wordmark{font:900 17px 'Barlow Condensed',sans-serif;letter-spacing:.2px;}
 
-/* Sports Hub quick navigation */
-.hub-sport-shortcuts{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin:13px 0 17px;padding-bottom:14px;border-bottom:1px solid var(--line)}
-.hub-sport-shortcut{min-width:0;min-height:64px;display:flex;align-items:center;justify-content:center;gap:5px;flex-direction:column;padding:7px 4px;border:1px solid var(--line);border-radius:4px;background:rgba(16,17,20,.62);color:var(--text);font:800 9px "DM Sans",sans-serif;letter-spacing:.8px;cursor:pointer}
-.hub-sport-shortcut img{display:block;width:74px;max-width:90%;height:25px;object-fit:contain}
-.hub-sport-shortcut span:last-child{line-height:1.1}
-.hub-shortcut-boxing{height:25px;display:grid;place-items:center;color:#ef827b;font:900 18px "Barlow Condensed",sans-serif;letter-spacing:-.5px}
-.hub-sport-shortcut:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.hub-sport-shortcut:active{border-color:var(--accent);background:var(--panel2)}
-@media(max-width:420px){.hub-sport-shortcuts{grid-template-columns:repeat(5,minmax(0,1fr));gap:4px}.hub-sport-shortcut{min-height:56px;padding:6px 2px;font-size:7px;letter-spacing:.35px}.hub-sport-shortcut img{width:100%;max-width:48px;height:20px}.hub-shortcut-boxing{height:20px;font-size:15px}}
-\n.sport-logo-bkfc{width:min(190px,62%);height:54px;object-fit:contain}.sport-logo-bkfc-fallback{display:grid;place-items:center;width:190px;height:54px;margin:14px auto 10px;color:#e6c85b;font:1000 32px 'Barlow Condensed',sans-serif;letter-spacing:1px}.sport-bkfc{background:linear-gradient(145deg,rgba(168,145,45,.22),rgba(18,19,22,.98) 65%),var(--panel)}.sport-event-bkfc .sport-event-visual img{max-width:60px;max-height:35px}.hub-sport-shortcuts{grid-template-columns:repeat(5,minmax(0,1fr))}.hub-sport-shortcut img{max-width:92%}.sport-watch-provider{min-width:72px;min-height:38px}.sport-watch-provider img{max-width:88px;max-height:25px}.sport-watch-provider span{font-weight:800;letter-spacing:.15px}\n
+.sport-logo-bkfc{width:min(190px,62%);height:54px;object-fit:contain}.sport-logo-bkfc-fallback{display:grid;place-items:center;width:190px;height:54px;margin:14px auto 10px;color:#e6c85b;font:1000 32px 'Barlow Condensed',sans-serif;letter-spacing:1px}.sport-bkfc{background:linear-gradient(145deg,rgba(168,145,45,.22),rgba(18,19,22,.98) 65%),var(--panel)}.sport-event-bkfc .sport-event-visual img{max-width:60px;max-height:35px}.sport-watch-provider{min-width:72px;min-height:38px}.sport-watch-provider img{max-width:88px;max-height:25px}.sport-watch-provider span{font-weight:800;letter-spacing:.15px}\n
 
 /* Global sport switcher and swipeable upcoming-event ticker */
-.top-sport-selector{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;padding:12px 0 10px;border-bottom:1px solid var(--line)}
-.top-sport-button{min-width:0;min-height:54px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:6px 3px;border:1px solid var(--line);border-radius:4px;background:rgba(25,27,32,.82);color:var(--muted);font:800 9px 'DM Sans',sans-serif;letter-spacing:.65px;cursor:pointer}
-.top-sport-button img{display:block;width:100%;max-width:64px;height:22px;object-fit:contain}
-.top-sport-button[aria-current="true"]{border-color:var(--accent);color:var(--accent);background:rgba(226,180,91,.09)}
+.top-sport-selector{display:flex;flex-flow:row nowrap;align-items:stretch;justify-content:space-between;gap:6px;width:100%;max-width:100%;min-width:0;padding:12px 0 10px;border-bottom:1px solid var(--line)}
+.top-sport-button{flex:1 1 0;min-width:0;max-width:none;min-height:54px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:6px 2px;border:1px solid var(--line);border-radius:4px;background:rgba(25,27,32,.82);color:var(--muted);font:800 8px 'DM Sans',sans-serif;letter-spacing:.25px;white-space:nowrap;cursor:pointer;touch-action:manipulation}
+.top-sport-button img{display:block;width:100%;max-width:90%;height:22px;object-fit:contain;flex:0 1 auto}
+.top-sport-button>span:last-child{display:block;max-width:100%;overflow:hidden;text-overflow:clip;white-space:nowrap;line-height:1}
+.top-sport-button[aria-pressed="true"]{border-color:var(--accent);color:var(--accent);background:rgba(226,180,91,.09)}
 .top-sport-button:focus-visible,.next-event-link:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .top-sport-wordmark{height:22px;display:grid;place-items:center;font:italic 1000 19px 'Barlow Condensed',sans-serif;letter-spacing:-1px;color:#fff}
+.top-sport-fallback{width:100%;font-style:italic}
 .boxing-mark{color:#ef827b}
 .next-event-strip{padding:12px 0 13px;border-bottom:1px solid var(--line)}
 .next-event-strip-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
@@ -312,37 +305,9 @@
 .next-event-name{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:700 16px 'Barlow Condensed',sans-serif;text-transform:uppercase}
 .next-event-detail{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--muted);font-size:9px}
 .next-event-loading{padding:8px 2px;color:var(--muted);font-size:10px}
-@media(max-width:420px){.top-sport-selector{gap:4px;padding:9px 0 8px}.top-sport-button{min-height:49px;padding:5px 1px;font-size:7px;letter-spacing:.25px}.top-sport-button img{max-width:47px;height:19px}.top-sport-wordmark{height:19px;font-size:17px}.next-event-strip{padding:10px 0}.next-event-strip-heading>span:last-child{font-size:7px}.next-event-link{flex-basis:min(205px,76vw);padding:9px}.next-event-name{font-size:15px}}
+@media(max-width:420px){.top-sport-selector{gap:4px;padding:9px 0 8px}.top-sport-button{min-height:49px;padding:5px 1px;gap:4px;font-size:7.5px;letter-spacing:.1px}.top-sport-button img{max-width:90%;height:19px}.top-sport-wordmark{height:19px;font-size:17px}.next-event-strip{padding:10px 0}.next-event-strip-heading>span:last-child{font-size:7px}.next-event-link{flex-basis:min(205px,76vw);padding:9px}.next-event-name{font-size:15px}}
+@media(max-width:360px){.top-sport-selector{gap:3px}.top-sport-button{min-height:47px;font-size:7px;letter-spacing:0}}
 @media(prefers-reduced-motion:reduce){.next-event-ticker{scroll-behavior:auto}}
-
-
-/* Hard-enforce a single horizontal row for the five sport tabs on mobile */
-.app-shell > nav.top-sport-selector{
-  display:flex!important;
-  flex-direction:row!important;
-  flex-wrap:nowrap!important;
-  align-items:stretch;
-  justify-content:space-between;
-  width:100%;
-  gap:5px;
-}
-.app-shell > nav.top-sport-selector > .top-sport-button{
-  display:flex!important;
-  flex:1 1 0!important;
-  flex-direction:column!important;
-  align-items:center;
-  justify-content:center;
-  width:auto!important;
-  min-width:0!important;
-  max-width:none!important;
-  padding:5px 1px;
-  white-space:nowrap;
-}
-.app-shell > nav.top-sport-selector > .top-sport-button img{max-width:90%;}
-@media(max-width:360px){
-  .app-shell > nav.top-sport-selector{gap:3px;}
-  .app-shell > nav.top-sport-selector > .top-sport-button{font-size:6px;letter-spacing:0;padding-left:0;padding-right:0;}
-}
 
 
 /* Dedicated sport profile pages */
