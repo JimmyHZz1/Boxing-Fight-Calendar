@@ -12,7 +12,7 @@
   const imageKey = name => String(name||"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
   function person(item, index, label) {
     const local = localImages[imageKey(item.name)];
-    const source = local && local.path ? "./"+String(local.path).replace(/^\\//,"") : item.image_url;
+    const source = local && local.path ? "./"+String(local.path).replace(/^[/]+/,"") : item.image_url;
     const credit = local?.attribution || item.image_credit;
     const img = source ? '<img src="'+esc(source)+'" alt="" loading="lazy" data-image-entity="'+esc(item.name||"")+'" onerror="imageFailures++;this.replaceWith(Object.assign(document.createElement("span"),{className:"hub-avatar-fallback",textContent:"'+esc(initials(item.name))+'"}));updateImageDiagnostics();">' : '<span class="hub-avatar-fallback">'+esc(initials(item.name))+'</span>';
     const rank = item.rank != null ? (item.rank===0 ? "C" : "#"+item.rank) : (index+1);
