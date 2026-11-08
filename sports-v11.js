@@ -64,7 +64,7 @@
       const target=event.start_at||event.main_card_at||event.start_time_utc||event.date||event.event_date;
       const info=make("span","next-event-info");
       info.append(sportName,title);
-      if(!live&&target){const timer=make("small","next-event-countdown",window.SportsCountdown?.text?.(target)||"DATE TBC");timer.dataset.countdownTarget=/^\\d{4}-\\d{2}-\\d{2}$/.test(String(target))?String(target):new Date(target).toISOString();info.append(timer);}
+      if(!live&&target){const timer=make("small","next-event-countdown",window.SportsCountdown?.text?.(target)||"DATE TBC");timer.dataset.countdownTarget=/^\d{4}-\d{2}-\d{2}$/.test(String(target))?String(target):new Date(target).toISOString();info.append(timer);}
       button.append(info,badge);
       button.addEventListener("click",()=>window.SportPages?.open?.(sport));
       root.append(button);
