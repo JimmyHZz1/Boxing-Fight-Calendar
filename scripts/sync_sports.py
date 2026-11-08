@@ -322,25 +322,55 @@ def sync_bkfc():
 
 
 def commons_photo(name):
-    """Find one reusable Commons thumbnail; return attribution with the image URL."""
+    """Find a relevant, reusable Wikimedia Commons image and retain its attribution."""
     if not name:
+        return None
+    import html, unicodedata
+    def words(value):
+        value = unicodedata.normalize("NFKD", str(value or "")).encode("ascii", "ignore").decode().lower()
+        return set(re.findall(r"[a-z0-9]+", value))
+    wanted = words(name) - {"jr", "sr", "ii", "iii", "iv", "team", "f1"}
+    if not wanted:
         return None
     params = {
         "action": "query", "format": "json", "generator": "search",
         "gsrsearch": 'filetype:bitmap "' + str(name) + '"',
-        "gsrnamespace": 6, "gsrlimit": 1,
-        "prop": "imageinfo", "iiprop": "url|extmetadata", "iiurlwidth": 240
+        "gsrnamespace": 6, "gsrlimit": 12,
+        "prop": "imageinfo", "iiprop": "url|extmetadata|mime", "iiurlwidth": 320,
+        "iiextmetadatafilter": "Artist|Credit|LicenseShortName|LicenseUrl|UsageTerms"
     }
     try:
         payload = request_json("https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode(params), provider="Wikimedia Commons")
-        pages = (payload.get("query") or {}).get("pages") or {}
-        page = next(iter(pages.values()), {})
-        info = (page.get("imageinfo") or [{}])[0]
-        meta = info.get("extmetadata") or {}
-        artist = (meta.get("Artist") or {}).get("value", "")
-        license_name = (meta.get("LicenseShortName") or {}).get("value", "")
-        return {"image_url": info.get("thumburl") or info.get("url"), "image_credit": "Wikimedia Commons" + ((" · " + artist) if artist else "") + ((" · " + license_name) if license_name else "")}
-    except Exception:
+        candidates = []
+        for page in (payload.get("query") or {}).get("pages", {}).values():
+            title = page.get("title", "").replace("File:", "")
+            title_words = words(title)
+            if not wanted.issubset(title_words):
+                continue
+            info = (page.get("imageinfo") or [{}])[0]
+            if not str(info.get("mime", "")).startswith("image/"):
+                continue
+            meta = info.get("extmetadata") or {}
+            def meta_value(key):
+                value = meta.get(key) or {}
+                raw = value.get("value", "") if isinstance(value, dict) else str(value)
+                return html.unescape(re.sub(r"<[^>]+>", "", str(raw))).strip()
+            image_url = info.get("thumburl") or info.get("url")
+            page_url = info.get("descriptionurl")
+            licence = meta_value("LicenseShortName")
+            licence_url = meta_value("LicenseUrl")
+            if not image_url or not page_url or not licence or not licence_url:
+                continue
+            candidates.append({
+                "image_url": image_url,
+                "image_page_url": page_url,
+                "image_credit": "Wikimedia Commons · " + (meta_value("Artist") or meta_value("Credit") or "See source file") + " · " + licence,
+                "image_license": licence,
+                "image_license_url": licence_url
+            })
+        return candidates[0] if candidates else None
+    except Exception as exc:
+        print(f"COMMONS_IMAGE_WARNING: {name}: {exc}")
         return None
 
 def add_photos(rows, name_field="name", limit=8):
@@ -420,7 +450,7 @@ def sync_sports_hub():
             "team": ", ".join(c.get("name", "") for c in x.get("Constructors", [])), "points": x.get("points")
         } for x in drivers_raw]
         constructors = [{"rank": int(x.get("position", 0)), "name": (x.get("Constructor") or {}).get("name"), "points": x.get("points")} for x in constructors_raw]
-        hub["sports"]["f1"] = {"drivers": add_photos(drivers, limit=25), "constructors": add_photos(constructors, limit=20), "season": year, "notice": "Official season standings sourced from the community-maintained Jolpica F1 API."}
+        hub["sports"]["f1"] = {"drivers": add_photos(drivers, limit=25), "constructors": add_photos(constructors, limit=11), "season": year, "notice": "Official season standings sourced from the community-maintained Jolpica F1 API."}
     except Exception as exc:
         hub["sports"]["f1"] = {**previous.get("f1", {"drivers": [], "constructors": []}), "sync_warning": str(exc)}
 
@@ -441,7 +471,7 @@ def sync_sports_hub():
         except Exception:
             rankings = []
         if not rankings: rankings = darts_rankings_from_web()
-        hub["sports"]["darts"] = {"rankings": add_photos(rankings, limit=20), "source_url": "https://www.dartsrankings.com/", "notice": "PDC Order of Merit live table. Rankings are updated after PDC ranking events."}
+        hub["sports"]["darts"] = {"rankings": add_photos(rankings, limit=40), "source_url": "https://www.dartsrankings.com/", "notice": "PDC Order of Merit live table. Rankings are updated after PDC ranking events."}
     except Exception as exc:
         hub["sports"]["darts"] = {**previous.get("darts", {"rankings": []}), "sync_warning": str(exc)}
 
@@ -457,7 +487,7 @@ def sync_sports_hub():
             entries = []
             for row in division.get("entries") or []:
                 entries.append({"rank": row.get("rank"), "name": row.get("name") or row.get("fighter_name"), "image_url": row.get("image_url") or row.get("photo_url") or row.get("image")})
-            divisions.append({"division": division.get("division"), "name": str(division.get("division") or "").replace("-", " ").title(), "entries": add_photos(entries, limit=4)})
+            divisions.append({"division": division.get("division"), "name": str(division.get("division") or "").replace("-", " ").title(), "entries": add_photos(entries, limit=5)})
         if not divisions or not any(x.get("entries") for x in divisions):
             raise RuntimeError("UFCalendar returned no UFC ranking entries; keeping the last published snapshot.")
         hub["sports"]["ufc"] = {"divisions": divisions, "snapshot_date": board.get("snapshot_date"), "notice": "Official UFC divisional rankings from UFCalendar. Rank 0 denotes the champion; rankings are updated when the publisher releases a new snapshot."}
