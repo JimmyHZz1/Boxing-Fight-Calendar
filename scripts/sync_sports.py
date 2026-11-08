@@ -380,7 +380,7 @@ def darts_rankings_from_web():
     parser = RankingTableParser(); parser.feed(source)
     rankings = []
     for cells in parser.rows:
-        if len(cells) < 4 or not re.fullmatch(r'\\d+', cells[0].strip()): continue
+        if len(cells) < 4 or not re.fullmatch(r'\d+', cells[0].strip()): continue
         amount = re.sub(r'[^0-9.]', '', cells[3])
         if not cells[2].strip() or not amount: continue
         rankings.append({'rank':int(cells[0]),'name':cells[2].strip(),'prize_money':f'{float(amount)*1000:,.0f}'})
