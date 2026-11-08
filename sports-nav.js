@@ -7,6 +7,15 @@
   const eventDate=e=>e?.start_at||e?.date||e?.start_time_utc||null;
   function nextFor(sport){return sport==="boxing"?window.BoxingSchedule?.getNextEvent?.():window.SportsData?.getNextEvent?.(sport);}
   function openSport(sport){if(window.SportPages?.open){window.SportPages.open(sport);return;}window.showScreen?.("home-screen");window.SportsSelector?.goToSport(sport);}
+  function syncTopSport(sport){
+    document.querySelectorAll("[data-top-sport]").forEach(button=>{
+      const selected=button.dataset.topSport===sport;
+      button.classList.toggle("user-selected",selected);
+      if(selected)button.setAttribute("aria-current","true");else button.removeAttribute("aria-current");
+    });
+  }
+  document.addEventListener("sports:select",event=>syncTopSport(event.detail?.sport));
+  document.addEventListener("sports:page-opened",event=>syncTopSport(event.detail?.sport));
   function render(){
     root.replaceChildren();
     order.forEach(sport=>{
@@ -17,9 +26,10 @@
       const name=document.createElement("strong");name.className="next-event-name";name.textContent=event?.name||event?.title||(sport==="boxing"?"No upcoming fight card":"No event published");
       const detail=document.createElement("small");detail.className="next-event-detail";detail.textContent=event?(event.location||event.venue||event.circuit||event.country||event.tier||"Tap to view event details"):"Tap to open sport schedule";
       button.append(meta,name,detail);
-      const target=event&&(event.start_at||event.main_card_at||event.start_time_utc);
-      if(target&&new Date(target).getTime()>Date.now()){
-        const timer=document.createElement("span");timer.className="next-event-countdown";timer.dataset.countdownTarget=new Date(target).toISOString();timer.textContent=window.SportsCountdown?.text?.(target)||"COUNTDOWN";button.append(timer);
+      const target=event&&(event.start_at||event.main_card_at||event.start_time_utc||event.date||event.event_date);
+      const dateOnly=typeof target==="string"&&/^\d{4}-\d{2}-\d{2}$/.test(target);
+      if(target&&(dateOnly||new Date(target).getTime()>Date.now())){
+        const timer=document.createElement("span");timer.className="next-event-countdown";timer.dataset.countdownTarget=dateOnly?target:new Date(target).toISOString();timer.textContent=window.SportsCountdown?.text?.(target)||"COUNTDOWN";button.append(timer);
       }
       root.append(button);
     });
@@ -27,7 +37,7 @@
   }
   document.addEventListener("sports:feeds-updated",render);
   document.addEventListener("sports:boxing-data-updated",render);
-  document.querySelectorAll("[data-top-sport]").forEach(button=>button.addEventListener("click",()=>{document.querySelectorAll("[data-top-sport]").forEach(item=>{item.classList.remove("user-selected");item.removeAttribute("aria-current");});button.classList.add("user-selected");button.setAttribute("aria-current","true");openSport(button.dataset.topSport);}));
+  document.querySelectorAll("[data-top-sport]").forEach(button=>button.addEventListener("click",()=>{syncTopSport(button.dataset.topSport);openSport(button.dataset.topSport);}));
   render();
   setInterval(render,30000);
   setInterval(()=>{root.querySelectorAll("[data-countdown-target]").forEach(node=>{const label=window.SportsCountdown?.text?.(node.dataset.countdownTarget);if(label)node.textContent=label;});},1000);
