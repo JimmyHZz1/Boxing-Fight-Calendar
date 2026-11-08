@@ -89,6 +89,7 @@
       copies++;
     }
     track.style.setProperty("--ticker-distance",groupWidth+"px");
+    track.style.setProperty("--ticker-offset","-"+groupWidth+"px");
     track.style.setProperty("--ticker-duration",Math.max(24,groupWidth/22)+"s");
     root.classList.add("is-auto-scrolling");
   }
