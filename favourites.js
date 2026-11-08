@@ -113,6 +113,48 @@
     }
     return [];
   }
+  function headToHead(a,b){
+    if(a.sport!==b.sport)return {label:"Different sports",detail:"A head-to-head comparison is not applicable."};
+    if(a.sport==="f1"){
+      if(a.type!==b.type)return {label:"Different competitor types",detail:"Compare two drivers or two constructors."};
+      let meetings=0,aAhead=0,bAhead=0,ties=0,aPoints=0,bPoints=0;
+      allSportEvents("f1").forEach(event=>{
+        const rows=event.results||[];
+        if(a.type==="team"){
+          const hasA=rows.some(r=>norm(r.team)===norm(a.name)),hasB=rows.some(r=>norm(r.team)===norm(b.name));
+          if(!hasA||!hasB)return;
+          const pa=rows.filter(r=>norm(r.team)===norm(a.name)).reduce((n,r)=>n+(Number(r.points)||0),0);
+          const pb=rows.filter(r=>norm(r.team)===norm(b.name)).reduce((n,r)=>n+(Number(r.points)||0),0);
+          meetings++;aPoints+=pa;bPoints+=pb;if(pa>pb)aAhead++;else if(pb>pa)bAhead++;else ties++;
+        }else{
+          const ra=rows.find(r=>norm(r.driver)===norm(a.name)),rb=rows.find(r=>norm(r.driver)===norm(b.name));
+          if(!ra||!rb)return;
+          meetings++;aPoints+=Number(ra.points)||0;bPoints+=Number(rb.points)||0;
+          const pa=Number(ra.position),pb=Number(rb.position);
+          if(pa>0&&pb>0){if(pa<pb)aAhead++;else if(pb<pa)bAhead++;else ties++;}
+        }
+      });
+      return meetings?{label:meetings+" shared race"+(meetings===1?"":"s"),detail:aAhead+"–"+bAhead+" head-to-head finishes · points "+aPoints+"–"+bPoints+(ties?" · "+ties+" tied":"")}:{label:"No shared race results",detail:"The current F1 feed does not contain a race result for both competitors."};
+    }
+    if(["boxing","ufc","bkfc"].includes(a.sport)){
+      let meetings=0,aWins=0,bWins=0,draws=0,unresolved=0;
+      allSportEvents(a.sport).forEach(event=>(event.bouts||event.fights||[]).forEach(bout=>{
+        const fa=bout.fighter1||bout.fighter_a?.name||"",fb=bout.fighter2||bout.fighter_b?.name||"";
+        if(!((norm(fa)===norm(a.name)&&norm(fb)===norm(b.name))||(norm(fa)===norm(b.name)&&norm(fb)===norm(a.name))))return;
+        meetings++;
+        const result=bout.result||bout.outcome||{},winner=result.winner||result.winner_name||bout.winner||bout.winner_name||"";
+        const winnerId=result.winner_fighter_id;
+        const aId=norm(fa)===norm(a.name)?bout.fighter_a?.id:bout.fighter_b?.id;
+        const bId=norm(fa)===norm(b.name)?bout.fighter_a?.id:bout.fighter_b?.id;
+        if((winner&&norm(winner)===norm(a.name))||(winnerId!=null&&aId!=null&&String(winnerId)===String(aId)))aWins++;
+        else if((winner&&norm(winner)===norm(b.name))||(winnerId!=null&&bId!=null&&String(winnerId)===String(bId)))bWins++;
+        else if(/draw|tie/i.test(String(result.outcome||result.decision||bout.outcome||winner)))draws++;
+        else unresolved++;
+      }));
+      return meetings?{label:meetings+" meeting"+(meetings===1?"":"s"),detail:aWins+"–"+bWins+" wins · "+draws+" draws · "+unresolved+" unresolved"}:{label:"No published head-to-head",detail:"No bout between these two competitors appears in the loaded event history."};
+    }
+    return {label:"Match data unavailable",detail:"The current PDC feed provides rankings but not player-versus-player match results."};
+  }
   function profileAchievements(f,profile,results){
     const items=[];
     if(profile?.rank===0)items.push("Current champion"+(profile.org?" · "+profile.org:""));
@@ -179,7 +221,19 @@
     const clear=make("button","favourites-compare-clear","CLEAR");clear.type="button";clear.addEventListener("click",()=>{compareIds.clear();render();});head.append(clear);panel.append(head);
     const grid=make("div","favourites-comparison-grid");
     selected.forEach(f=>{const col=make("div","favourites-comparison-item");const p=lookup(f);col.append(make("strong","",f.name),make("small","",labels[f.sport]));const pairs=statPairs(f,p);if(f.sport==="f1"&&p?.rank!=null)pairs.unshift(["RANK","#"+p.rank]);performanceStats(f,profileResults(f),p).forEach(pair=>{if(!pairs.some(x=>x[0]===pair[0]))pairs.push(pair);});if(!pairs.length)col.append(make("p","favourite-profile-muted","No verified stats available."));else pairs.slice(0,8).forEach(([k,v])=>col.append(make("p","",""+k+": "+v)));grid.append(col);});
-    panel.append(grid);toolbar.after(panel);
+    panel.append(grid);
+    if(selected.length>1){
+      const comparisons=make("div","favourites-head-to-head");
+      comparisons.append(make("h4","","HEAD-TO-HEAD"));
+      for(let i=0;i<selected.length;i++)for(let j=i+1;j<selected.length;j++){
+        const result=headToHead(selected[i],selected[j]);
+        const row=make("div","favourites-head-to-head-row");
+        row.append(make("strong","",selected[i].name+" vs "+selected[j].name),make("span","",result.label),make("small","",result.detail));
+        comparisons.append(row);
+      }
+      panel.append(comparisons);
+    }
+    toolbar.after(panel);
   }
 
   function card(f){
