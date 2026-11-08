@@ -7,6 +7,15 @@
   const eventDate=e=>e?.start_at||e?.date||e?.start_time_utc||null;
   function nextFor(sport){return sport==="boxing"?window.BoxingSchedule?.getNextEvent?.():window.SportsData?.getNextEvent?.(sport);}
   function openSport(sport){if(window.SportPages?.open){window.SportPages.open(sport);return;}window.showScreen?.("home-screen");window.SportsSelector?.goToSport(sport);}
+  function syncTopSport(sport){
+    document.querySelectorAll("[data-top-sport]").forEach(button=>{
+      const selected=button.dataset.topSport===sport;
+      button.classList.toggle("user-selected",selected);
+      if(selected)button.setAttribute("aria-current","true");else button.removeAttribute("aria-current");
+    });
+  }
+  document.addEventListener("sports:select",event=>syncTopSport(event.detail?.sport));
+  document.addEventListener("sports:page-opened",event=>syncTopSport(event.detail?.sport));
   function render(){
     root.replaceChildren();
     order.forEach(sport=>{
@@ -28,7 +37,7 @@
   }
   document.addEventListener("sports:feeds-updated",render);
   document.addEventListener("sports:boxing-data-updated",render);
-  document.querySelectorAll("[data-top-sport]").forEach(button=>button.addEventListener("click",()=>{document.querySelectorAll("[data-top-sport]").forEach(item=>{item.classList.remove("user-selected");item.removeAttribute("aria-current");});button.classList.add("user-selected");button.setAttribute("aria-current","true");openSport(button.dataset.topSport);}));
+  document.querySelectorAll("[data-top-sport]").forEach(button=>button.addEventListener("click",()=>{syncTopSport(button.dataset.topSport);openSport(button.dataset.topSport);}));
   render();
   setInterval(render,30000);
   setInterval(()=>{root.querySelectorAll("[data-countdown-target]").forEach(node=>{const label=window.SportsCountdown?.text?.(node.dataset.countdownTarget);if(label)node.textContent=label;});},1000);
