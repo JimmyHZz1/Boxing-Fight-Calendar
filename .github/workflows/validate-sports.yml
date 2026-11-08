@@ -20,7 +20,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Check Python sync scripts
-        run: python -m py_compile scripts/sync_fights.py scripts/sync_sports.py
+        run: python -m py_compile scripts/sync_fights.py scripts/sync_sports.py && python -m unittest discover -s tests -v
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
