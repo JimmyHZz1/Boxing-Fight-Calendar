@@ -1089,10 +1089,10 @@ body.compact-view .next-event-item{flex:0 0 min(205px,76vw)!important}
 }
 
 
-/* Reliable left-to-right Up Next ticker and readable compact live centre. */
+/* Seamless right-to-left Up Next ticker and readable compact live centre. */
 .next-event-ticker{display:block!important;position:relative;overflow-x:auto!important;overflow-y:hidden!important;white-space:nowrap;touch-action:pan-x;scrollbar-width:none}
 .next-event-ticker::-webkit-scrollbar{display:none}
-.next-event-track{display:flex;width:max-content;min-width:max-content;gap:9px;will-change:transform;animation:nextTickerRight var(--ticker-duration,42s) linear infinite}
+.next-event-track{display:flex;width:max-content;min-width:max-content;gap:0;will-change:transform;animation:nextTickerRight var(--ticker-duration,42s) linear infinite}\n.next-event-group{display:flex;flex:0 0 auto;gap:9px;width:max-content;min-width:max-content}
 .next-event-ticker.is-auto-scrolling:hover .next-event-track,
 .next-event-ticker.is-auto-scrolling:focus-within .next-event-track,
 .next-event-ticker.is-paused .next-event-track{animation-play-state:paused}
