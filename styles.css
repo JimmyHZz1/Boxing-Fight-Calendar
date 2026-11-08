@@ -1383,3 +1383,18 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
     min-height:108px!important;
   }
 }
+
+
+/* PDC Order of Merit: fill the first 20 places down the left,
+   then places 21–40 down the right on wider screens. */
+@media (min-width: 760px) {
+  .hub-dropdown-list-ranking {
+    display: grid;
+    grid-template-rows: repeat(20, auto);
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 1fr);
+    column-gap: 22px;
+    align-items: start;
+  }
+  .hub-dropdown-list-ranking > .hub-person { min-width: 0; }
+}
