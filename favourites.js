@@ -72,7 +72,7 @@
     if(f.sport==="f1"){
       allSportEvents("f1").forEach(e=>(e.results||[]).forEach(r=>{
         const match=f.type==="team"?norm(r.team)===name:norm(r.driver)===name;
-        if(match)out.push({date:e.date,title:e.name||"Grand Prix",detail:"P"+(r.position||"—")+" · "+(r.points??"0")+" pts",win:String(r.position)==="1",source:e.url||e.source_url});
+        if(match){const position=Number(r.position)||null;const points=Number(r.points)||0;out.push({date:e.date,title:e.name||"Grand Prix",detail:"P"+(r.position||"—")+" · "+(r.points??"0")+" pts",win:position===1,position,points,outcome:position===1?"WIN":position&&position<=3?"PODIUM":"FINISH",source:e.url||e.source_url});}
       }));
     }else{
       allSportEvents(f.sport).forEach(e=>(e.bouts||e.fights||[]).forEach(b=>{
@@ -83,10 +83,102 @@
         const fighterId=(norm(a)===name?b.fighter_a?.id:b.fighter_b?.id);
         const won=(winner&&norm(winner)===name)||(winnerId!=null&&fighterId!=null&&String(winnerId)===String(fighterId));
         const status=String(b.status||"").toLowerCase();
-        if(result.method||winner||status==="completed")out.push({date:e.date||e.start_at,title:e.name||e.title||"Fight night",detail:(won?"WIN":winner?"LOSS":"RESULT")+" · "+(result.method||result.finish||status||"Result published"),win:won,source:e.source_url||e.url});
+        const verdict=norm(result.outcome||result.decision||b.outcome||"");
+        const draw=verdict.includes("draw")||verdict.includes("tie")||norm(winner)==="draw"||norm(winner)==="tie";
+        const loss=!!winner&&!won&&!draw;
+        const outcome=won?"WIN":draw?"DRAW":loss?"LOSS":"RESULT";
+        if(result.method||winner||status==="completed")out.push({date:e.date||e.start_at,title:e.name||e.title||"Fight night",detail:outcome+" · "+(result.method||result.finish||status||"Result published"),win:won,outcome,source:e.source_url||e.url});
       }));
     }
     return out.filter(x=>x.date).sort((a,b)=>String(b.date).localeCompare(String(a.date)));
+  }
+  function performanceStats(f,results,profile){
+    if(f.sport==="f1"){
+      const classified=results.filter(r=>Number.isFinite(r.position)&&r.position>0);
+      if(!classified.length)return [];
+      const wins=classified.filter(r=>r.position===1).length;
+      const podiums=classified.filter(r=>r.position<=3).length;
+      const points=classified.reduce((sum,r)=>sum+(Number(r.points)||0),0);
+      const average=classified.reduce((sum,r)=>sum+r.position,0)/classified.length;
+      const form=classified.slice(0,5).map(r=>"P"+r.position).join(" · ");
+      return [["RESULTS IN LOADED FEED",classified.length],["WINS",wins],["PODIUMS",podiums],["POINTS IN LOADED FEED",points],["AVERAGE FINISH",average.toFixed(1)],["LAST RESULTS",form]];
+    }
+    if(["boxing","ufc","bkfc"].includes(f.sport)){
+      const known=results.filter(r=>["WIN","LOSS","DRAW"].includes(r.outcome));
+      if(!known.length)return [];
+      const wins=known.filter(r=>r.outcome==="WIN").length;
+      const losses=known.filter(r=>r.outcome==="LOSS").length;
+      const draws=known.filter(r=>r.outcome==="DRAW").length;
+      return [["REPORTED RESULTS",known.length],["W-L-D IN LOADED FEED",wins+"-"+losses+"-"+draws],["LAST RESULTS",known.slice(0,5).map(r=>r.outcome).join(" · ")]];
+    }
+    return [];
+  }
+  function headToHead(a,b){
+    if(a.sport!==b.sport)return {label:"Different sports",detail:"A head-to-head comparison is not applicable."};
+    if(a.sport==="f1"){
+      if(a.type!==b.type)return {label:"Different competitor types",detail:"Compare two drivers or two constructors."};
+      let meetings=0,aAhead=0,bAhead=0,ties=0,aPoints=0,bPoints=0;
+      allSportEvents("f1").forEach(event=>{
+        const rows=event.results||[];
+        if(a.type==="team"){
+          const hasA=rows.some(r=>norm(r.team)===norm(a.name)),hasB=rows.some(r=>norm(r.team)===norm(b.name));
+          if(!hasA||!hasB)return;
+          const pa=rows.filter(r=>norm(r.team)===norm(a.name)).reduce((n,r)=>n+(Number(r.points)||0),0);
+          const pb=rows.filter(r=>norm(r.team)===norm(b.name)).reduce((n,r)=>n+(Number(r.points)||0),0);
+          meetings++;aPoints+=pa;bPoints+=pb;if(pa>pb)aAhead++;else if(pb>pa)bAhead++;else ties++;
+        }else{
+          const ra=rows.find(r=>norm(r.driver)===norm(a.name)),rb=rows.find(r=>norm(r.driver)===norm(b.name));
+          if(!ra||!rb)return;
+          meetings++;aPoints+=Number(ra.points)||0;bPoints+=Number(rb.points)||0;
+          const pa=Number(ra.position),pb=Number(rb.position);
+          if(pa>0&&pb>0){if(pa<pb)aAhead++;else if(pb<pa)bAhead++;else ties++;}
+        }
+      });
+      return meetings?{label:meetings+" shared race"+(meetings===1?"":"s"),detail:aAhead+"–"+bAhead+" head-to-head finishes · points "+aPoints+"–"+bPoints+(ties?" · "+ties+" tied":"")}:{label:"No shared race results",detail:"The current F1 feed does not contain a race result for both competitors."};
+    }
+    if(["boxing","ufc","bkfc"].includes(a.sport)){
+      let meetings=0,aWins=0,bWins=0,draws=0,unresolved=0;
+      allSportEvents(a.sport).forEach(event=>(event.bouts||event.fights||[]).forEach(bout=>{
+        const fa=bout.fighter1||bout.fighter_a?.name||"",fb=bout.fighter2||bout.fighter_b?.name||"";
+        if(!((norm(fa)===norm(a.name)&&norm(fb)===norm(b.name))||(norm(fa)===norm(b.name)&&norm(fb)===norm(a.name))))return;
+        meetings++;
+        const result=bout.result||bout.outcome||{},winner=result.winner||result.winner_name||bout.winner||bout.winner_name||"";
+        const winnerId=result.winner_fighter_id;
+        const aId=norm(fa)===norm(a.name)?bout.fighter_a?.id:bout.fighter_b?.id;
+        const bId=norm(fa)===norm(b.name)?bout.fighter_a?.id:bout.fighter_b?.id;
+        if((winner&&norm(winner)===norm(a.name))||(winnerId!=null&&aId!=null&&String(winnerId)===String(aId)))aWins++;
+        else if((winner&&norm(winner)===norm(b.name))||(winnerId!=null&&bId!=null&&String(winnerId)===String(bId)))bWins++;
+        else if(/draw|tie/i.test(String(result.outcome||result.decision||bout.outcome||winner)))draws++;
+        else unresolved++;
+      }));
+      return meetings?{label:meetings+" meeting"+(meetings===1?"":"s"),detail:aWins+"–"+bWins+" wins · "+draws+" draws · "+unresolved+" unresolved"}:{label:"No published head-to-head",detail:"No bout between these two competitors appears in the loaded event history."};
+    }
+    return {label:"Match data unavailable",detail:"The current PDC feed provides rankings but not player-versus-player match results."};
+  }
+  function formEdge(a,b){
+    if(a.sport!==b.sport)return "No cross-sport form comparison.";
+    if(a.sport==="darts"){
+      const pa=lookup(a),pb=lookup(b);
+      if(pa?.rank==null||pb?.rank==null)return "Order of Merit comparison unavailable.";
+      return pa.rank===pb.rank?"Order of Merit: level":pa.rank<pb.rank?a.name+" leads the current Order of Merit":b.name+" leads the current Order of Merit";
+    }
+    const ra=profileResults(a).slice(0,5),rb=profileResults(b).slice(0,5);
+    if(a.sport==="f1"){
+      const aa=ra.filter(x=>x.position>0),bb=rb.filter(x=>x.position>0);
+      if(!aa.length||!bb.length)return "Not enough published race results to compare form.";
+      const avgA=aa.reduce((n,x)=>n+x.position,0)/aa.length,avgB=bb.reduce((n,x)=>n+x.position,0)/bb.length;
+      if(Math.abs(avgA-avgB)<0.01)return "Recent finishing form is level.";
+      return (avgA<avgB?a.name:b.name)+" has the better average finish in the loaded results.";
+    }
+    if(["boxing","ufc","bkfc"].includes(a.sport)){
+      const knownA=ra.filter(x=>["WIN","LOSS","DRAW"].includes(x.outcome)),knownB=rb.filter(x=>["WIN","LOSS","DRAW"].includes(x.outcome));
+      if(!knownA.length||!knownB.length)return "Not enough published fight results to compare form.";
+      const score=list=>list.reduce((n,x)=>n+(x.outcome==="WIN"?1:x.outcome==="DRAW"?.5:0),0)/list.length;
+      const sa=score(knownA),sb=score(knownB);
+      if(Math.abs(sa-sb)<0.001)return "Recent reported fight form is level.";
+      return (sa>sb?a.name:b.name)+" has the stronger result ratio in the loaded feed.";
+    }
+    return "No comparable form data is available.";
   }
   function profileAchievements(f,profile,results){
     const items=[];
@@ -124,6 +216,16 @@
     if(results.length){results.slice(0,5).forEach(r=>{const row=make("div","favourite-profile-result");row.append(make("span","favourite-result-date",String(r.date).slice(0,10)),make("strong","",r.title),make("small",r.win?"favourite-result-win":"",r.detail));recent.append(row);});}
     else recent.append(make("p","favourite-profile-muted","No verified recent results are available in the current feed."));
     achievementSection.append(recent);panel.append(achievementSection);
+    const performance=performanceStats(f,results,profile);
+    const performanceSection=make("section","favourite-profile-section");
+    performanceSection.append(make("h3","favourite-profile-section-title","PERFORMANCE SNAPSHOT"));
+    if(performance.length){
+      const grid=make("div","favourite-profile-stats favourite-performance-grid");
+      performance.forEach(([k,v])=>{const cell=make("div","favourite-stat");cell.append(make("small","",k),make("strong","",String(v)));grid.append(cell);});
+      performanceSection.append(grid);
+      performanceSection.append(make("p","favourite-profile-muted","Calculated only from results present in the current published feed; this is not a complete career record."));
+    }else performanceSection.append(make("p","favourite-profile-muted","No reliable match-level or historical performance data is currently published for this competitor."));
+    panel.append(performanceSection);
     const next=make("section","favourite-profile-section");next.append(make("h3","favourite-profile-section-title","NEXT APPEARANCE"));
     if(upcoming){const row=make("div","favourite-profile-next");row.append(make("strong","",upcoming.name||upcoming.title||"Upcoming event"),make("span","",String(upcoming.date||upcoming.start_at||"Date TBC").slice(0,10)+" · "+(upcoming.venue||upcoming.location||upcoming.circuit||"Venue TBC")));next.append(row);}
     else next.append(make("p","favourite-profile-muted","No upcoming appearance is currently listed for this favourite."));
@@ -143,8 +245,20 @@
     const head=make("div","favourites-comparison-head");head.append(make("h3","","COMPARE FAVOURITES"));
     const clear=make("button","favourites-compare-clear","CLEAR");clear.type="button";clear.addEventListener("click",()=>{compareIds.clear();render();});head.append(clear);panel.append(head);
     const grid=make("div","favourites-comparison-grid");
-    selected.forEach(f=>{const col=make("div","favourites-comparison-item");const p=lookup(f);col.append(make("strong","",f.name),make("small","",labels[f.sport]));const pairs=statPairs(f,p);if(f.sport==="f1"&&p?.rank!=null)pairs.unshift(["RANK","#"+p.rank]);if(!pairs.length)col.append(make("p","favourite-profile-muted","No verified stats available."));else pairs.slice(0,5).forEach(([k,v])=>col.append(make("p","",""+k+": "+v)));grid.append(col);});
-    panel.append(grid);toolbar.after(panel);
+    selected.forEach(f=>{const col=make("div","favourites-comparison-item");const p=lookup(f);col.append(make("strong","",f.name),make("small","",labels[f.sport]));const pairs=statPairs(f,p);if(f.sport==="f1"&&p?.rank!=null)pairs.unshift(["RANK","#"+p.rank]);performanceStats(f,profileResults(f),p).forEach(pair=>{if(!pairs.some(x=>x[0]===pair[0]))pairs.push(pair);});if(!pairs.length)col.append(make("p","favourite-profile-muted","No verified stats available."));else pairs.slice(0,8).forEach(([k,v])=>col.append(make("p","",""+k+": "+v)));grid.append(col);});
+    panel.append(grid);
+    if(selected.length>1){
+      const comparisons=make("div","favourites-head-to-head");
+      comparisons.append(make("h4","","HEAD-TO-HEAD"));
+      for(let i=0;i<selected.length;i++)for(let j=i+1;j<selected.length;j++){
+        const result=headToHead(selected[i],selected[j]);
+        const row=make("div","favourites-head-to-head-row");
+        row.append(make("strong","",selected[i].name+" vs "+selected[j].name),make("span","",result.label),make("small","",result.detail),make("small","favourite-form-edge","FORM EDGE · "+formEdge(selected[i],selected[j])));
+        comparisons.append(row);
+      }
+      panel.append(comparisons);
+    }
+    toolbar.after(panel);
   }
 
   function card(f){
