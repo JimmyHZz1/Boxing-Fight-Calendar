@@ -907,3 +907,29 @@
 body.compact-view .event-list,body.compact-view .live-centre-list,body.compact-view .favourites-grid{gap:6px}body.compact-view .live-centre-event,body.compact-view .favourite-card{padding:9px}body.compact-view .featured-event-widget{padding:14px 18px}body.home-personalised [data-home-hide="true"]{display:none!important}
 @media(min-width:900px){.featured-event-widget{padding:25px 30px}.featured-event-content{grid-template-columns:104px minmax(0,1fr);gap:22px}.featured-event-mark{width:104px;height:104px}#live-sports-centre{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:22px}#live-sports-centre>.live-centre-heading{grid-column:1/-1}#live-sports-centre>.live-now-panel,#live-sports-centre>.live-upcoming-panel{min-width:0}.favourites-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:620px){.global-search-open{padding:7px 8px!important}.global-search-open span{display:none}.home-display-tools{justify-content:stretch}.home-display-tools button{flex:1}.global-search-dialog{padding:4vh 9px 12px}.global-search-panel{padding:14px}.global-search-result{grid-template-columns:48px minmax(0,1fr);gap:8px}.global-search-result-action{grid-column:2}.sport-watch-guide-item{grid-template-columns:40px minmax(0,1fr);column-gap:9px}.sport-watch-guide-item .sport-watch-guide-brand{width:36px;height:36px}}
+
+
+/* Make homepage display controls functional and search easy to tap on mobile. */
+#home-screen [data-home-hide="true"]{display:none!important}
+body.compact-view #home-screen .live-centre-event,
+body.compact-view #home-screen .event-card,
+body.compact-view #home-screen .high-profile-card,
+body.compact-view #home-screen .uk-headliner-card{padding:8px 10px!important}
+body.compact-view #home-screen .live-centre-list,
+body.compact-view #home-screen .event-list,
+body.compact-view #home-screen .high-profile-list,
+body.compact-view #home-screen .uk-headliners-list{gap:5px!important}
+body.compact-view #home-screen .featured-event-widget{min-height:0;padding:12px 15px!important}
+body.compact-view #home-screen .sports-carousel-section{margin:12px 0 18px}
+.global-search-open{min-width:94px;min-height:42px;padding:9px 13px!important;justify-content:center;border-radius:4px}
+.global-search-open>span{display:inline-block!important;font-size:10px!important;letter-spacing:1px}
+.global-search-open{font-size:19px;line-height:1}
+@media(max-width:620px){
+  .topbar-actions{gap:7px!important}
+  .global-search-open{min-width:76px;min-height:44px;padding:9px 10px!important;gap:6px}
+  .global-search-open>span{font-size:9px!important;letter-spacing:.7px}
+}
+@media(max-width:380px){
+  .global-search-open{min-width:44px;width:44px;padding:8px!important}
+  .global-search-open>span{display:none!important}
+}
