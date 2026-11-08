@@ -14,8 +14,9 @@
   const imageKey = name => String(name||"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
   function person(item, index, label) {
     const local = localImages[imageKey(item.name)];
-    const localPath = local && local.path ? "./"+String(local.path).replace(/^[/]+/,"") : (item.image_url && item.image_url.startsWith("./assets/") ? item.image_url : "");
-    const source = localPath ? "https://raw.githubusercontent.com/JimmyHZz1/Boxing-Fight-Calendar/main/"+String(local?.path || item.image_url).replace(/^\.\//,"").replace(/^\//,"") : item.image_url;
+    const officialF1 = item.image_source==="Formula1.com" || item.image_match_method==="official-driver-profile";
+    const localPath = !officialF1 && local && local.path ? "./"+String(local.path).replace(/^[/]+/,"") : (!officialF1 && item.image_url && item.image_url.startsWith("./assets/") ? item.image_url : "");
+    const source = officialF1 ? item.image_url : (localPath ? "https://raw.githubusercontent.com/JimmyHZz1/Boxing-Fight-Calendar/main/"+String(local?.path || item.image_url).replace(/^\.\//,"").replace(/^\//,"") : item.image_url);
     const credit = local?.attribution || item.image_credit;
     const constructor = label==="Constructor";
     const img = source ? '<img class="'+(constructor?"hub-constructor-logo":"hub-driver-portrait")+'" src="'+esc(source)+'" alt="" loading="lazy" data-image-entity="'+esc(item.name||"")+'" data-image-fallback="'+esc(initials(item.name))+'">' : '<span class="hub-avatar-fallback">'+esc(initials(item.name))+'</span>';
