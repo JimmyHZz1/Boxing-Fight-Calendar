@@ -677,3 +677,29 @@
 .theme-preview-hero{border-top-color:color-mix(in srgb,var(--preview-accent) 65%,var(--line))}
 .theme-preview-cta{background:var(--preview-accent);color:#15120d}
 .theme-preview-mini-grid>div{border-left-color:var(--preview-accent)}
+
+
+/* Full-page preview mirrors the live app's full-width race-stripe background. */
+.theme-preview-fullpage{--accent:var(--preview-accent);--team-glow:var(--preview-glow);overflow:hidden;padding:0;background:#101114;min-height:920px}
+.theme-preview-fullpage>.theme-preview-diagonals{z-index:0;inset:0;opacity:.13;mask-image:linear-gradient(to bottom,#000 0%,#000 88%,transparent 100%);background:repeating-linear-gradient(132deg,transparent 0 34px,var(--preview-accent) 34px 35px,transparent 35px 70px)}
+.theme-preview-fullpage>.theme-preview-caption,.theme-preview-fullpage>.preview-site-topbar,.theme-preview-fullpage>.preview-site-sports,.theme-preview-fullpage>.preview-site-ticker,.theme-preview-fullpage>.preview-site-hero,.theme-preview-fullpage>.preview-site-section,.theme-preview-fullpage>.preview-site-bottomnav{position:relative;z-index:1}
+.theme-preview-fullpage>.theme-preview-caption{padding:15px 17px;background:rgba(12,13,16,.86);border-bottom:1px solid var(--line)}
+.preview-site-topbar{display:flex;justify-content:space-between;align-items:center;padding:17px 18px 13px;border-bottom:1px solid rgba(255,255,255,.07)}
+.preview-site-brand{display:flex;align-items:center;gap:9px}.preview-site-brand>b{display:grid;place-items:center;width:30px;height:30px;background:var(--preview-accent);color:#101114;font:900 20px 'Barlow Condensed',sans-serif}
+.preview-site-brand>span{display:grid;line-height:1}.preview-site-brand strong{font-size:12px;letter-spacing:1.3px}.preview-site-brand small{font-size:8px;letter-spacing:2px;color:var(--muted);margin-top:4px}
+.preview-site-status{font-size:8px;letter-spacing:1px;color:var(--muted)}.preview-site-status i,.preview-site-live>i{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--preview-accent);margin-right:6px}
+.preview-site-sports{display:flex;justify-content:space-around;gap:5px;padding:13px 8px;border-bottom:1px solid rgba(255,255,255,.07);background:rgba(12,13,16,.66)}
+.preview-site-sports span{font-size:8px;font-weight:800;letter-spacing:.7px;color:#a9a9ae;padding:7px 8px}.preview-site-sports span.selected{color:var(--preview-accent);border-bottom:2px solid var(--preview-accent)}
+.preview-site-ticker{display:flex;align-items:center;gap:10px;padding:10px 15px;background:rgba(25,27,32,.88);font-size:8px;letter-spacing:.6px}.preview-site-ticker b{color:var(--preview-accent)}.preview-site-ticker span:nth-child(2){flex:1;color:#d4d4d7}
+.preview-site-hero{padding:32px 19px 24px;background:linear-gradient(110deg,color-mix(in srgb,var(--preview-accent) 13%,transparent),rgba(16,17,20,.78) 68%)}
+.preview-site-hero h3{font:800 clamp(39px,8vw,58px)/.88 'Barlow Condensed',sans-serif;text-transform:uppercase;margin:17px 0 13px}.preview-site-hero h3 em{font-style:normal;color:var(--preview-accent)}
+.preview-site-hero p{font-size:11px;line-height:1.6;color:#b6b6bb;max-width:330px;margin:0 0 13px}
+.preview-site-meta{display:flex;justify-content:space-between;gap:8px;margin-top:24px;padding-top:12px;border-top:1px solid rgba(255,255,255,.1);font-size:8px;letter-spacing:.7px;color:var(--muted)}
+.preview-site-section{padding:21px 16px 8px}.preview-site-heading{display:grid;gap:6px;margin-bottom:12px}.preview-site-heading b{font:700 23px 'Barlow Condensed',sans-serif}.preview-site-heading .eyebrow{font-size:8px}
+.preview-site-live{display:flex;align-items:center;gap:8px;padding:12px;margin-bottom:7px;border:1px solid rgba(255,255,255,.09);background:rgba(25,27,32,.86)}
+.preview-site-live>span{display:grid;gap:4px;flex:1}.preview-site-live small,.preview-site-sportcards small{font-size:7px;letter-spacing:1px;color:var(--muted)}.preview-site-live strong{font-size:10px}.preview-site-live>b{font-size:8px;color:var(--preview-accent)}
+.preview-site-sportcards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.preview-site-sportcards>div{display:grid;gap:8px;min-height:93px;padding:10px 8px;border:1px solid rgba(255,255,255,.1);border-top:2px solid var(--preview-accent);background:rgba(25,27,32,.88)}.preview-site-sportcards b{font:700 17px 'Barlow Condensed',sans-serif}.preview-site-sportcards span{font-size:6px;letter-spacing:.5px;color:var(--muted)}
+.preview-site-standing{display:flex;align-items:center;gap:10px;padding:12px;border-bottom:1px solid rgba(255,255,255,.08);background:rgba(25,27,32,.78);font-size:9px}.preview-site-standing>b{color:var(--preview-accent);font:700 19px 'Barlow Condensed',sans-serif}.preview-site-standing span{flex:1}.preview-site-standing strong{font-size:8px;color:var(--muted)}
+.preview-site-bottomnav{display:flex;justify-content:space-around;margin-top:25px;padding:13px 5px;background:rgba(10,11,14,.95);border-top:1px solid rgba(255,255,255,.1)}
+.preview-site-bottomnav span{display:grid;justify-items:center;gap:4px;font-size:15px;color:#a6a6ac}.preview-site-bottomnav span.active{color:var(--preview-accent)}.preview-site-bottomnav small{font-size:6px;letter-spacing:.8px}
+@media(max-width:420px){.theme-preview-fullpage{min-height:850px}.preview-site-hero{padding:25px 15px 20px}.preview-site-section{padding-left:12px;padding-right:12px}.preview-site-sportcards>div{padding:8px 6px}.preview-site-sportcards b{font-size:15px}.preview-site-sports span{padding:7px 5px;font-size:7px}}
