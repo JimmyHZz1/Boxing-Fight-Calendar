@@ -68,30 +68,30 @@
   function sportLogo(sport) {
     const logos={
       f1:{src:"https://www.formula1.com/assets/home/_next/static/media/f1-logo.43a01c6b.svg",alt:"Formula 1"},
-      darts:{src:"https://commons.wikimedia.org/wiki/Special:FilePath/Professional%20Darts%20Corporation%20logo.png",alt:"PDC"},
-      ufc:{src:"https://commons.wikimedia.org/wiki/Special:FilePath/UFC%20Logo.svg",alt:"UFC"},
-      bkfc:{src:"https://commons.wikimedia.org/wiki/Special:FilePath/Bkfc-logo.png",alt:"BKFC"}
+      darts:{src:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Professional%20Darts%20Corporation%20logo.png",alt:"PDC"},
+      ufc:{src:"https://commons.wikimedia.org/wiki/Special:Redirect/file/UFC%20Logo.svg",alt:"UFC"},
+      bkfc:{src:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Bkfc-logo.png",alt:"BKFC"}
     };
     return logos[sport]||null;
   }
   function watchInfo(sport,event) {
     if(sport==="f1") return [
-      {name:"Sky Sports F1",href:"https://www.skysports.com/f1",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/Sky_Sports_F1_-_Logo_2025.svg",source:"Wikimedia Commons"},
-      {name:"NOW",href:"https://www.nowtv.com/watch-sky-sports",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/Now_logo.svg",source:"Wikimedia Commons"},
-      ...(/british grand prix/i.test(event.name||"")?[{name:"Channel 4 · live British GP & highlights",href:"https://www.channel4.com/",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/Channel_4_2022.svg",source:"Wikimedia Commons"}]:[])
+      {name:"Sky Sports F1",href:"https://www.skysports.com/f1",logo:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Sky_Sports_F1_-_Logo_2025.svg",source:"Wikimedia Commons"},
+      {name:"NOW",href:"https://www.nowtv.com/watch-sky-sports",logo:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Now_logo.svg",source:"Wikimedia Commons"},
+      ...(/british grand prix/i.test(event.name||"")?[{name:"Channel 4 · live British GP & highlights",href:"https://www.channel4.com/",logo:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Channel_4_2022.svg",source:"Wikimedia Commons"}]:[])
     ];
     if(sport==="ufc") return [
-      {name:"TNT Sports",href:"https://www.tntsports.co.uk/",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/TNT_Sports_(2023).svg",source:"Wikimedia Commons"},
-      {name:"UFC Fight Pass",href:"https://ufcfightpass.com/",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/UFC_Fight_Pass_Logo.svg",source:"Wikimedia Commons"}
+      {name:"TNT Sports",href:"https://www.tntsports.co.uk/",logo:"https://commons.wikimedia.org/wiki/Special:Redirect/file/TNT_Sports_(2023).svg",source:"Wikimedia Commons"},
+      {name:"UFC Fight Pass",href:"https://ufcfightpass.com/",logo:"https://commons.wikimedia.org/wiki/Special:Redirect/file/UFC_Fight_Pass_Logo.svg",source:"Wikimedia Commons"}
     ];
     if(sport==="bkfc") return [
-      {name:"BKFC+ · most live events; check event access",href:"https://bkfc.live/",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/Bkfc-logo.png",source:"Wikimedia Commons"},
-      {name:"DAZN · selected exclusive events",href:"https://www.dazn.com/",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/DAZN_logo.svg",source:"Wikimedia Commons"}
+      {name:"BKFC+ · most live events; check event access",href:"https://bkfc.live/",logo:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Bkfc-logo.png",source:"Wikimedia Commons"},
+      {name:"DAZN · selected exclusive events",href:"https://www.dazn.com/",logo:"https://commons.wikimedia.org/wiki/Special:Redirect/file/DAZN_logo.svg",source:"Wikimedia Commons"}
     ];
     if(sport==="darts") return [
-      {name:"Sky Sports Darts · selected events",href:"https://www.skysports.com/darts",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/Sky_Sports_Darts_-_Logo_2025.svg",source:"Wikimedia Commons"},
-      {name:"ITV4 · selected events",href:"https://www.itv.com/watch",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/ITV_Final_Logo.svg",source:"Wikimedia Commons"},
-      {name:"PDC TV / PDCTV · selected live coverage where UK rights allow",href:"https://video.pdc.tv/",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/Professional_Darts_Corporation_logo.png",source:"Wikimedia Commons"}
+      {name:"Sky Sports Darts · selected events",href:"https://www.skysports.com/darts",logo:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Sky_Sports_Darts_-_Logo_2025.svg",source:"Wikimedia Commons"},
+      {name:"ITV4 · selected events",href:"https://www.itv.com/watch",logo:"https://commons.wikimedia.org/wiki/Special:Redirect/file/ITV_Final_Logo.svg",source:"Wikimedia Commons"},
+      {name:"PDC TV / PDCTV · selected live coverage where UK rights allow",href:"https://video.pdc.tv/",logo:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Professional_Darts_Corporation_logo.png",source:"Wikimedia Commons"}
     ];
     return [];
   }
