@@ -668,3 +668,12 @@
 .theme-preview-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
 @media(max-width:420px){.theme-preview-stage{padding:12px}.theme-preview-hero{padding:17px 13px}.theme-preview-actions>*{flex:1}}
 @media(prefers-reduced-motion:no-preference){.theme-preview-diagonals{animation:theme-stripe-drift 16s linear infinite}@keyframes theme-stripe-drift{from{background-position:0 0}to{background-position:98px 0}}}
+
+/* Preview is isolated: team accents affect only the sample card until Apply. */
+.theme-preview-stage{--preview-accent:var(--accent);--preview-glow:var(--team-glow)}
+.theme-preview-stage{border-color:color-mix(in srgb,var(--preview-accent) 48%,var(--line));background:linear-gradient(120deg,color-mix(in srgb,var(--preview-accent) 16%,transparent),rgba(16,17,20,.96) 63%),var(--panel)}
+.theme-preview-diagonals{background:repeating-linear-gradient(132deg,transparent 0 23px,var(--preview-accent) 23px 25px,transparent 25px 49px)}
+.theme-preview-caption strong,.theme-preview-hero h3 em,.theme-preview-mini-grid span{color:var(--preview-accent)}
+.theme-preview-hero{border-top-color:color-mix(in srgb,var(--preview-accent) 65%,var(--line))}
+.theme-preview-cta{background:var(--preview-accent);color:#15120d}
+.theme-preview-mini-grid>div{border-left-color:var(--preview-accent)}
