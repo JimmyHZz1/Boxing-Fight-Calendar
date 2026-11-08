@@ -4145,60 +4145,63 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 4,
-    "found": 53,
-    "missing": 682,
+    "attempted": 5,
+    "found": 88,
+    "missing": 647,
     "rejected": 0,
     "by_sport": {
-      "darts": {
-        "attempted": 4,
-        "found": 3,
-        "missing": 1,
+      "boxing fighters": {
+        "attempted": 5,
+        "found": 0,
+        "missing": 5,
         "rejected": 0
       }
     },
-    "rejection_reasons": {
-      "surname_not_matched": 19,
-      "not_an_image": 19
-    },
     "search_details": [
       {
-        "name": "Chris Dobey",
-        "queries": 3,
-        "candidate_files": 21,
-        "accepted": 3,
-        "rejections": {
-          "surname_not_matched": 18
-        }
-      },
-      {
-        "name": "Luke Woodhouse",
-        "queries": 3,
-        "candidate_files": 22,
-        "accepted": 2,
-        "rejections": {
-          "not_an_image": 19,
-          "surname_not_matched": 1
-        }
-      },
-      {
-        "name": "Jermaine Wattimena",
-        "queries": 3,
-        "candidate_files": 4,
-        "accepted": 4,
-        "rejections": {}
-      },
-      {
-        "name": "Krzysztof Ratajski",
-        "queries": 1,
+        "name": "Arjon Basi",
+        "queries": 2,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
+      },
+      {
+        "name": "Axel Yoka",
+        "queries": 2,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Bakary Samake",
+        "queries": 2,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Ben Marksby",
+        "queries": 2,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Bernard Angelo Torres",
+        "queries": 2,
+        "candidate_files": 20,
+        "accepted": 0,
+        "rejections": {
+          "not_an_image": 20
+        }
       }
     ],
-    "checked_at": "2026-11-08T18:25:06Z",
+    "rejection_reasons": {
+      "not_an_image": 20
+    },
+    "checked_at": "2026-11-08T18:52:54Z",
     "library_entries": 53,
-    "newly_found": 3,
+    "newly_found": 0,
     "coverage": {
       "boxing fight card fighters": {
         "total": 187,
@@ -4217,8 +4220,8 @@
       },
       "darts": {
         "total": 225,
-        "with_image": 15,
-        "missing": 210
+        "with_image": 50,
+        "missing": 175
       },
       "ufc": {
         "total": 206,
@@ -4231,7 +4234,7 @@
         "missing": 81
       }
     },
-    "rate_limited": true
+    "rate_limited": false
   },
   "last_updated": "2026-11-08T16:53:59Z"
 }
