@@ -949,6 +949,7 @@ def enrich_cached_images():
         rows = rows or []
         return {"total": len(rows), "with_image": sum(1 for row in rows if row.get("image_url")), "missing": sum(1 for row in rows if not row.get("image_url"))}
     coverage = {
+        "boxing fight card fighters": count_rows(boxer_rows),
         "f1 drivers": count_rows(f1.get("drivers")), "f1 constructors": count_rows(f1.get("constructors")),
         "darts": count_rows(darts.get("rankings")),
         "ufc": count_rows([r for d in ufc.get("divisions", []) for r in d.get("entries", [])]),
