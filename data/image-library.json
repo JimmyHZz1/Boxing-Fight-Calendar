@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-08T13:32:47Z",
+  "updated_at": "2026-11-08T13:35:19Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -377,6 +377,17 @@
       "attribution": "Wikimedia Commons · TedNauru · CC0",
       "verified_at": "2026-11-08T13:32:47Z",
       "sport": "f1 constructors"
+    },
+    "alexander flores": {
+      "name": "Alexander Flores",
+      "path": "assets/images/boxing-fighters/alexander-flores.png",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Doris_Alexander_Rihi_-_Pjs_Bupati_Flores_Timur_2022.png",
+      "licence": "Public domain",
+      "licence_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "creator": "Wikimedia Commons · Kabupaten Nagekeo · Public domain",
+      "attribution": "Wikimedia Commons · Kabupaten Nagekeo · Public domain",
+      "verified_at": "2026-11-08T13:35:19Z",
+      "sport": "boxing fighters"
     }
   },
   "collections": {

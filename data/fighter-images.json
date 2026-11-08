@@ -115,6 +115,14 @@
       "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
       "title": "File:Steven Butler.JPG",
       "source": "Wikimedia Commons"
+    },
+    "alexander flores": {
+      "url": "./assets/images/boxing-fighters/alexander-flores.png",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Doris_Alexander_Rihi_-_Pjs_Bupati_Flores_Timur_2022.png",
+      "artist": "Wikimedia Commons · Kabupaten Nagekeo · Public domain",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "source": "Wikimedia Commons"
     }
   },
   "attempted": {
@@ -329,5 +337,5 @@
     "yuberjen martinez": "2026-11-08",
     "yudai nakazato": "2026-11-08"
   },
-  "updated_at": "2026-11-08T13:33:50Z"
+  "updated_at": "2026-11-08T13:35:19Z"
 }

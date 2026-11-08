@@ -471,9 +471,23 @@
       "image_match_method": "search:Cadillac Formula 1 Team",
       "image_verified_at": "2026-11-08T13:32:47Z",
       "image_local_path": "assets/images/f1-constructors/cadillac-f1-team.png"
+    },
+    "alexander flores": {
+      "name": "Alexander Flores",
+      "sport": "boxing fighters",
+      "image_url": "./assets/images/boxing-fighters/alexander-flores.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Doris_Alexander_Rihi_-_Pjs_Bupati_Flores_Timur_2022.png",
+      "image_credit": "Wikimedia Commons · Kabupaten Nagekeo · Public domain",
+      "image_license": "Public domain",
+      "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "search:Alexander Flores",
+      "image_verified_at": "2026-11-08T13:35:19Z",
+      "image_local_path": "assets/images/boxing-fighters/alexander-flores.png"
     }
   },
-  "updated_at": "2026-11-08T13:33:50Z",
+  "updated_at": "2026-11-08T13:35:19Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -515,6 +529,11 @@
     "red bull": "2026-11-08T13:33:50Z",
     "rb f1 team": "2026-11-08T13:33:50Z",
     "aston martin": "2026-11-08T13:33:50Z",
-    "albina maldozhanova": "2026-11-08T13:33:50Z"
+    "albina maldozhanova": "2026-11-08T13:33:50Z",
+    "alexander castellano": "2026-11-08T13:35:19Z",
+    "alexander castro": "2026-11-08T13:35:19Z",
+    "alexander flores": "2026-11-08T13:35:19Z",
+    "alexis rocha": "2026-11-08T13:35:19Z",
+    "alycia baumgardner": "2026-11-08T13:35:19Z"
   }
 }
