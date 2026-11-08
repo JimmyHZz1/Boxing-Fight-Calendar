@@ -16,7 +16,14 @@
   const formatDate=e=>{const v=dateValue(e);if(!v)return "Date TBC";const d=new Date(/^\\d{4}-\\d{2}-\\d{2}$/.test(String(v))?v+"T12:00:00Z":v);return Number.isNaN(d.getTime())?"Date TBC":new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",weekday:"short",day:"numeric",month:"short"}).format(d);};
   const formatTime=e=>{const v=dateValue(e);if(!v||/^\\d{4}-\\d{2}-\\d{2}$/.test(String(v)))return "Time TBC";const d=new Date(v);return Number.isNaN(d.getTime())?"Time TBC":new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",hour:"2-digit",minute:"2-digit"}).format(d)+" UK";};
   const status=e=>String(e?.status||"").toLowerCase().replace(/[ -]/g,"_");
-  const isLive=e=>["live","in_progress","ongoing","inprogress"].includes(status(e))||e?.is_live===true||e?.live===true||(e?.sessions||[]).some(s=>["live","in_progress","ongoing"].includes(String(s.status||"").toLowerCase().replace(/[ -]/g,"_"))||s.is_live===true);
+  const isLive=e=>{
+    if(["live","in_progress","ongoing","inprogress"].includes(status(e))||e?.is_live===true||e?.live===true||(e?.sessions||[]).some(s=>["live","in_progress","ongoing"].includes(String(s.status||"").toLowerCase().replace(/[ -]/g,"_"))||s.is_live===true))return true;
+    if(/^f1-/.test(String(e?.id||"")) && !(e?.results||[]).length){
+      const start=new Date(e.start_at||e.date||"").getTime(),elapsed=Date.now()-start;
+      return Number.isFinite(start)&&elapsed>=0&&elapsed<4*60*60*1000;
+    }
+    return false;
+  };
   const make=(tag,cls,text)=>{const el=document.createElement(tag);if(cls)el.className=cls;if(text!=null)el.textContent=text;return el;};
   function eventsFor(sport){
     if(sport==="boxing")return window.BoxingSchedule?.getEvents?.()||[];
@@ -30,6 +37,10 @@
     info.append(make("strong",null,event.name||event.title||"Event"));
     const meta=[names[sport],formatDate(event),formatTime(event),event.location||event.venue||event.circuit].filter(Boolean);
     info.append(make("small",null,meta.join(" · ")));
+    const target=event.start_at||event.main_card_at||event.start_time_utc;
+    if(!live&&target&&new Date(target).getTime()>Date.now()){
+      const timer=make("small","live-centre-countdown",window.SportsCountdown?.text?.(target)||"COUNTDOWN");timer.dataset.countdownTarget=new Date(target).toISOString();info.append(timer);
+    }
     row.append(mark,info,make("span","live-centre-badge",live?"● LIVE":"UPCOMING"));
     return row;
   }
@@ -58,4 +69,5 @@
   document.addEventListener("DOMContentLoaded",render);
   window.SportsCentreV11={refresh:render};
   render();
+  setInterval(()=>{document.querySelectorAll(".live-centre-countdown[data-countdown-target]").forEach(node=>{const label=window.SportsCountdown?.text?.(node.dataset.countdownTarget);if(label)node.textContent=label;});},1000);
 })();
