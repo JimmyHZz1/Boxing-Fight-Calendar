@@ -471,9 +471,9 @@
 .sport-ranking-row.is-constructor .sport-ranking-image{width:48px;height:36px;object-fit:contain;border-radius:0;background:transparent;padding:0;box-sizing:border-box;}
 .sport-ranking-row.is-constructor{grid-template-columns:30px 50px minmax(0,1fr) auto}
 .sport-ranking-row.is-constructor .sport-ranking-image-fallback{width:48px;height:36px;border-radius:6px}
-.sport-watch-guide-brand{position:relative;display:flex;align-items:center;justify-content:flex-start;min-height:42px}
-.sport-watch-guide-brand-mark{display:inline-flex;align-items:center;justify-content:center;min-width:54px;height:34px;padding:0 8px;background:transparent;color:var(--accent);border:1px solid var(--line);border-radius:5px;font:900 15px 'Barlow Condensed',sans-serif;letter-spacing:-.4px}
-.sport-watch-guide-logo{position:absolute;left:0;top:0;width:auto;height:34px;max-width:92px;min-width:34px;object-fit:contain;background:transparent;border-radius:0;padding:0;box-sizing:border-box;}
+.sport-watch-guide-brand{position:relative;display:flex;align-items:center;justify-content:center;width:100%;min-height:46px;margin:0 auto}
+.sport-watch-guide-brand-mark{display:none;align-items:center;justify-content:center;min-width:54px;height:34px;padding:0 8px;background:transparent;color:var(--accent);border:0;border-radius:0;font:900 15px 'Barlow Condensed',sans-serif;letter-spacing:-.4px}
+.sport-watch-guide-logo{position:static;display:block;flex:0 1 auto;width:auto;height:auto;max-width:100px;max-height:36px;min-width:0;object-fit:contain;object-position:center;background:transparent;border:0;border-radius:0;padding:0;margin:0;box-shadow:none;box-sizing:border-box;}
 .sport-watch-guide-item .sport-watch-guide-brand+.sport-watch-guide-item strong{margin-top:0}
 @media(max-width:420px){.hub-person>img.hub-constructor-logo{width:38px;height:30px}.hub-person:has(.hub-constructor-logo){grid-template-columns:40px 23px minmax(0,1fr)}.sport-ranking-row.is-constructor{grid-template-columns:26px 42px minmax(0,1fr)}.sport-ranking-row.is-constructor .sport-ranking-image{width:40px;height:32px}.sport-ranking-row.is-constructor small{grid-column:3;text-align:left}}
 
@@ -745,3 +745,7 @@
 /* Official Formula 1 profile images use a right-weighted composition; frame the face rather than the empty left side. */
 .hub-person>img.hub-driver-portrait-official-f1{object-position:74% 18%}
 .favourite-card-portrait img.favourite-f1-driver-portrait{object-position:74% 18%}
+
+/* Keep broadcaster marks centred and remove the former overlapping fallback frame. */
+.sport-watch-guide-item .sport-watch-guide-brand{overflow:hidden}
+.sport-watch-guide-item .sport-watch-guide-logo{outline:0!important}
