@@ -26,4 +26,4 @@ jobs:
         with:
           node-version: "22"
       - name: Check JavaScript syntax
-        run: node --check app.js && node --check sports.js && node --check sports-data.js && node --check sports-hub.js && node --check sport-pages.js && node --check sports-v11.js && node --check sports-weekend.js && node --check favourites.js && node --check sw.js
+        run: node --check app.js && node --check sports.js && node --check sports-data.js && node --check sports-hub.js && node --check sport-pages.js && node --check sports-v11.js && node --check sports-weekend.js && node --check favourites.js && node --check notifications.js && node --check sw.js
