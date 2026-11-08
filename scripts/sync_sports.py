@@ -475,7 +475,7 @@ def commons_photo(name, image_kind="portrait"):
     wanted = words(name) - {"jr", "sr", "ii", "iii", "iv", "team", "f1", "racing", "club"}
     if not wanted:
         return None
-    query_names = image_aliases(name)
+    query_names = image_aliases(name)[:1]  # One Commons API request per queued image.
     candidates = []
     seen_titles = set()
     for query_name in query_names:
