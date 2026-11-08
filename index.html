@@ -122,6 +122,13 @@
         <div id="sports-selected-date-events" class="event-list"></div>
       </section>
 
+      <section id="weekend-screen" class="screen" aria-labelledby="weekend-title">
+        <div class="page-intro"><span class="eyebrow">YOUR NEXT SEVEN DAYS</span><h1 id="weekend-title">My Sports <em>Weekend.</em></h1><p>One simple timeline for the events you follow across all five sports, shown in UK local time.</p></div>
+        <div class="weekend-toolbar"><span id="weekend-range-label">LOADING YOUR FIXTURES…</span><button type="button" class="text-link" id="weekend-refresh">REFRESH LIST ↻</button></div>
+        <div id="weekend-content" class="weekend-content" aria-live="polite"><p class="live-centre-empty">Collecting the latest schedules…</p></div>
+        <p class="weekend-note">Only published event dates and confirmed start times are shown. Where a start time has not been announced, the event is marked TIME TBC.</p>
+      </section>
+
       <section id="cards-screen" class="screen" aria-labelledby="cards-title">
         <div class="page-intro"><span class="eyebrow">ALL FIVE SPORTS</span><h1 id="cards-title">Events &amp; <em>fight cards.</em></h1><p>F1 sessions and results, PDC tournament dates, UFC and BKFC cards, and boxing bouts.</p></div>
         <div id="full-cards" class="event-list"><div class="empty-state"><span class="empty-icon">📋</span><h3>Full cards will appear here</h3><p>Event cards will populate as reliable bout information becomes available.</p></div></div>
@@ -140,7 +147,7 @@
     <nav class="bottom-nav" aria-label="Main navigation">
       <button class="nav-item active" data-screen="home-screen"><span>⌂</span><small>HOME</small></button>
       <button class="nav-item" data-screen="calendar-screen"><span>▦</span><small>CALENDAR</small></button>
-      <button class="nav-item" data-screen="cards-screen"><span>▤</span><small>EVENTS</small></button>
+      <button class="nav-item" data-screen="weekend-screen"><span>◷</span><small>MY WEEKEND</small></button>
     </nav>
     <footer class="footer"><a class="version-history-link" href="#version-history" id="open-version-history">VERSION HISTORY</a><span>•</span> SPORTS CALENDAR <span>•</span> UK LOCAL TIME <span>•</span> PDC logo: <a href="https://commons.wikimedia.org/wiki/File:Professional_Darts_Corporation_logo.png" target="_blank" rel="noopener noreferrer">Chris Ibbotson, CC BY-SA 4.0</a> <span>•</span> BKFC SCHEDULE: <a href="https://www.bkfc.com/events" target="_blank" rel="noopener noreferrer">BKFC</a> <span>•</span> BOXING DATA: <a href="https://boxerbook.com" target="_blank" rel="noopener noreferrer">BOXERBOOK</a></footer>
   </div>
@@ -151,5 +158,6 @@
   <script src="./sports-nav.js?v=20261107-02"></script>
   <script src="./sport-pages.js?v=20261108-04"></script>
   <script src="./sports-v11.js?v=20261108-01"></script>
+  <script src="./sports-weekend.js?v=20261108-01"></script>
 </body>
 </html>
