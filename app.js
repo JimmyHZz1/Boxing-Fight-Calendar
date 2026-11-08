@@ -124,7 +124,7 @@ function fighterPortrait(name, imageUrl) {
   const src=imageUrl||photo.url;
   if(src && (/^https:\/\//i.test(src) || String(src).startsWith("./assets/images/"))){
     const img=document.createElement("img");
-    img.src=String(src).startsWith("./assets/images/")?new URL(src,document.baseURI).href:src;
+    img.src=String(src).startsWith("./assets/images/")?"https://raw.githubusercontent.com/JimmyHZz1/Boxing-Fight-Calendar/main/"+String(src).slice(2):src;
     img.alt=name+" portrait";img.loading="lazy";img.decoding="async";
     img.onerror=()=>{img.remove();const credit=wrap.querySelector(".portrait-credit");if(credit)credit.remove();};
     wrap.append(img);
