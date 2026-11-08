@@ -481,7 +481,7 @@
       "image_license": "Public domain",
       "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
       "image_source": "Wikimedia Commons",
-      "image_match_score": 1.0,
+      "image_match_score": 1,
       "image_match_method": "search:Alexander Flores",
       "image_verified_at": "2026-11-08T13:35:19Z",
       "image_local_path": "assets/images/boxing-fighters/alexander-flores.png"
@@ -526,9 +526,7 @@
     "audi": "2026-11-08T13:32:47Z",
     "williams": "2026-11-08T13:32:47Z",
     "cadillac f1 team": "2026-11-08T13:32:47Z",
-    "red bull": "2026-11-08T13:33:50Z",
     "rb f1 team": "2026-11-08T13:33:50Z",
-    "aston martin": "2026-11-08T13:33:50Z",
     "albina maldozhanova": "2026-11-08T13:33:50Z",
     "alexander castellano": "2026-11-08T13:35:19Z",
     "alexander castro": "2026-11-08T13:35:19Z",
