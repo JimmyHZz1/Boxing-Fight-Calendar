@@ -883,11 +883,3 @@
 .featured-event-button{flex:none;border:1px solid var(--accent);background:var(--accent);color:#17130d;padding:10px 13px;border-radius:3px;font:800 9px 'DM Sans',sans-serif;letter-spacing:.8px;cursor:pointer}
 @media(max-width:420px){.featured-event-widget{padding:15px}.featured-event-content{grid-template-columns:66px minmax(0,1fr);gap:12px}.featured-event-mark{width:66px;height:66px}.featured-event-footer{align-items:flex-start;flex-direction:column}.featured-event-button{width:100%}}
 
-/* Team identity inside the F1 theme preview */
-.preview-site-f1{display:inline-flex;align-items:center;gap:5px!important;border-bottom:2px solid var(--preview-accent);padding:7px 5px!important}
-.preview-site-f1>b{font-size:9px;color:#f4f4f5}
-.preview-site-f1>i{display:inline-grid;place-items:center;min-width:22px;height:20px;padding:0 3px;border:1px solid var(--preview-accent);background:color-mix(in srgb,var(--preview-accent) 18%,#15171b);color:var(--preview-accent);font-size:8px;font-style:normal;font-weight:900;letter-spacing:-.3px}
-.preview-site-f1>small{max-width:92px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--preview-accent);font-size:7px;font-weight:900;letter-spacing:.35px}
-.top-sport-wordmark.pdc-mark{display:grid;place-items:center;width:36px;height:24px;border:1px solid #c3a1e5;border-radius:3px;background:linear-gradient(135deg,#31223f,#17191e);color:#e3c8ff;font:900 14px 'Barlow Condensed',sans-serif;letter-spacing:-.4px;line-height:1}
-.sport-logo-darts.pdc-wordmark{display:grid;place-items:center;width:84px;height:54px;border:1px solid rgba(195,161,229,.55);border-radius:4px;background:linear-gradient(135deg,rgba(133,88,174,.34),rgba(22,23,29,.96));color:#e3c8ff;font:900 28px 'Barlow Condensed',sans-serif;letter-spacing:-1px;text-shadow:0 2px 8px rgba(0,0,0,.35)}
-@media(max-width:420px){.preview-site-f1>small{max-width:58px}.top-sport-wordmark.pdc-mark{width:31px;height:22px;font-size:13px}}
