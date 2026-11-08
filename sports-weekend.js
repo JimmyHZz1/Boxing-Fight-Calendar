@@ -53,7 +53,7 @@
     const now = new Date();
     const parts = new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/London",year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(now);
     const map = Object.fromEntries(parts.filter(p=>p.type!=="literal").map(p=>[p.type,p.value]));
-    const date = new Date(Date.UTC(Number(map.year),Number(map.month)-1,Number(map.day)+7));
+    const date = new Date(Date.UTC(Number(map.year),Number(map.month)-1,Number(map.day)+6));
     return date.toISOString().slice(0,10);
   };
   function eventCard(item) {
