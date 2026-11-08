@@ -32,6 +32,14 @@ class TelevisedPdcFilterTests(unittest.TestCase):
             with self.subTest(name=name):
                 self.assertFalse(sync_sports.is_main_televised_pdc_event({"name": name, "organiser": "pdc"}))
 
+    def test_official_calendar_fallback_has_upcoming_televised_events(self):
+        events = sync_sports.pdc_official_fallback_events()
+        names = {event["name"] for event in events}
+        self.assertIn("2026 Grand Slam of Darts", names)
+        self.assertIn("2026 Players Championship Finals", names)
+        self.assertIn("2026/27 World Championship", names)
+        self.assertTrue(all(event["source_url"] == "https://www.pdc.tv/calendar" for event in events))
+
     def test_non_pdc_organisers_are_excluded(self):
         self.assertFalse(sync_sports.is_main_televised_pdc_event({"name": "World Championship", "organiser": "pdc_development", "tier": "majors"}))
 
