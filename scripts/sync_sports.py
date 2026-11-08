@@ -898,7 +898,7 @@ def add_photos(rows, name_field="name", limit=8, sport="other", image_kind="port
         last_attempt = attempted.get(key) if key else None
         if last_attempt:
             try:
-                if (datetime.now(timezone.utc).date() - datetime.fromisoformat(last_attempt[:10]).date()).days < 30:
+                if (datetime.now(timezone.utc).date() - datetime.fromisoformat(last_attempt[:10]).date()).days < 14:
                     continue
             except ValueError:
                 pass
@@ -908,7 +908,10 @@ def add_photos(rows, name_field="name", limit=8, sport="other", image_kind="port
         bucket = IMAGE_DIAGNOSTICS["by_sport"].setdefault(sport, {"attempted": 0, "found": 0, "missing": 0, "rejected": 0})
         bucket["attempted"] += 1
         result = commons_photo(name, image_kind=image_kind)
-        if not IMAGE_LOOKUP_RATE_LIMITED and key:
+        if key:
+            # Record even a rate-limited attempt so the next scheduled run can
+            # move to the next athlete instead of retrying the same first name.
+            # The 14-day backoff exceeds a full pass through the current queue.
             attempted[key] = iso_now()
         if result:
             result = cache_image_locally(name, result, sport)
