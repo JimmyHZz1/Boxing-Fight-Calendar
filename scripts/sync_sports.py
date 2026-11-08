@@ -538,7 +538,7 @@ def record_image(name, result, sport="other"):
 
 def add_photos(rows, name_field="name", limit=8, sport="other"):
     load_image_library()
-    for row in rows:
+    for row_index, row in enumerate(rows):
         name = row.get(name_field)
         key = image_key(name)
         if row.get("image_url") or row.get("image") or row.get("photo_url"):
@@ -549,7 +549,7 @@ def add_photos(rows, name_field="name", limit=8, sport="other"):
         if cached and cached.get("image_url"):
             row.update({k: v for k, v in cached.items() if k.startswith("image_")})
             continue
-        if not name or rows.index(row) >= limit:
+        if not name or row_index >= limit:
             continue
         IMAGE_DIAGNOSTICS["attempted"] += 1
         bucket = IMAGE_DIAGNOSTICS["by_sport"].setdefault(sport, {"attempted": 0, "found": 0, "missing": 0, "rejected": 0})
@@ -696,10 +696,29 @@ def sync_sports_hub():
     except Exception as exc:
         hub["sports"]["boxing"] = {**previous.get("boxing", {"divisions": []}), "sync_warning": str(exc)}
 
-    for sport in hub["sports"].values():
-        sport["last_updated"] = iso_now()
+    for sport_data in hub["sports"].values():
+        sport_data["last_updated"] = iso_now()
+    coverage = {}
+    def count_rows(rows):
+        rows = rows or []
+        return {"total": len(rows), "with_image": sum(1 for row in rows if row.get("image_url")), "missing": sum(1 for row in rows if not row.get("image_url"))}
+    f1_data = hub["sports"].get("f1", {})
+    coverage["f1 drivers"] = count_rows(f1_data.get("drivers"))
+    coverage["f1 constructors"] = count_rows(f1_data.get("constructors"))
+    coverage["darts"] = count_rows(hub["sports"].get("darts", {}).get("rankings"))
+    coverage["ufc"] = count_rows([entry for division in hub["sports"].get("ufc", {}).get("divisions", []) for entry in division.get("entries", [])])
+    coverage["boxing"] = count_rows([champion for division in hub["sports"].get("boxing", {}).get("divisions", []) for champion in division.get("champions", [])])
+    IMAGE_DIAGNOSTICS["newly_found"] = IMAGE_DIAGNOSTICS.get("found", 0)
+    IMAGE_DIAGNOSTICS["coverage"] = coverage
+    IMAGE_DIAGNOSTICS["found"] = sum(item["with_image"] for item in coverage.values())
+    IMAGE_DIAGNOSTICS["missing"] = sum(item["missing"] for item in coverage.values())
+    IMAGE_DIAGNOSTICS["checked_at"] = iso_now()
+    IMAGE_DIAGNOSTICS["library_entries"] = len(IMAGE_LIBRARY.get("images", {}))
+    hub["image_diagnostics"] = IMAGE_DIAGNOSTICS
+    save_image_library()
     save("sports-hub.json", hub)
-    print("Sports hub: standings, rankings and title-holder feed refreshed.")
+    print("IMAGE_DIAGNOSTICS: " + json.dumps(IMAGE_DIAGNOSTICS, ensure_ascii=False))
+    print("Sports hub: standings, rankings, title-holders and image diagnostics refreshed.")
 
 def main():
     try:
