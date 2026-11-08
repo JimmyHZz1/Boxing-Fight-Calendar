@@ -533,7 +533,7 @@
       "image_license": "CC BY 3.0",
       "image_license_url": "https://creativecommons.org/licenses/by/3.0",
       "image_source": "Wikimedia Commons",
-      "image_match_score": 1.0,
+      "image_match_score": 1,
       "image_match_method": "category:Category:Gian van Veen",
       "image_verified_at": "2026-11-08T15:57:32Z",
       "image_local_path": "assets/images/darts/gian-van-veen.png"
@@ -547,7 +547,7 @@
       "image_license": "CC BY-SA 4.0",
       "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
       "image_source": "Wikimedia Commons",
-      "image_match_score": 1.0,
+      "image_match_score": 1,
       "image_match_method": "category:Category:Gerwyn Price in 2019",
       "image_verified_at": "2026-11-08T18:04:36Z",
       "image_local_path": "assets/images/darts/gerwyn-price.jpg"
@@ -561,7 +561,7 @@
       "image_license": "CC BY-SA 4.0",
       "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
       "image_source": "Wikimedia Commons",
-      "image_match_score": 1.0,
+      "image_match_score": 1,
       "image_match_method": "category:Category:Jonny Clayton in 2019",
       "image_verified_at": "2026-11-08T18:04:36Z",
       "image_local_path": "assets/images/darts/jonny-clayton.jpg"
@@ -569,30 +569,28 @@
     "ross smith": {
       "name": "Ross Smith",
       "sport": "darts",
-      "image_url": "./assets/images/darts/ross-smith.jpg",
-      "image_page_url": "https://commons.wikimedia.org/wiki/File:John_Ross_by_John_Rubens_Smith,_1841,_watercolor_and_ink_on_paper,_from_the_National_Portrait_Gallery_-_NPG-7200144A.jpg",
-      "image_credit": "Wikimedia Commons · John Rubens Smith · Public domain",
-      "image_license": "Public domain",
-      "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ross_Smith_2024.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Ross_Smith_2024.png",
+      "image_credit": "DARTS NOW · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
       "image_source": "Wikimedia Commons",
-      "image_match_score": 1.0,
-      "image_match_method": "search:Ross Smith",
-      "image_verified_at": "2026-11-08T18:04:36Z",
-      "image_local_path": "assets/images/darts/ross-smith.jpg"
+      "image_match_score": 1,
+      "image_match_method": "curated:verified Ross Smith at World Grand Prix 2024",
+      "image_verified_at": "2026-11-08T18:30:00Z"
     },
     "james wade": {
       "name": "James Wade",
       "sport": "darts",
-      "image_url": "./assets/images/darts/james-wade.png",
-      "image_page_url": "https://commons.wikimedia.org/wiki/File:James_W._Wade_(Men_of_affairs,_1914).png",
-      "image_credit": "Wikimedia Commons · Unknown authorUnknown author · Public domain",
-      "image_license": "Public domain",
-      "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/James_Wade_2025.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:James_Wade_2025.png",
+      "image_credit": "DARTS NOW · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
       "image_source": "Wikimedia Commons",
-      "image_match_score": 1.0,
-      "image_match_method": "search:James Wade",
-      "image_verified_at": "2026-11-08T18:04:36Z",
-      "image_local_path": "assets/images/darts/james-wade.png"
+      "image_match_score": 1,
+      "image_match_method": "curated:verified James Wade at World Matchplay 2025",
+      "image_verified_at": "2026-11-08T18:30:00Z"
     },
     "josh rock": {
       "name": "Josh Rock",
@@ -603,7 +601,7 @@
       "image_license": "CC BY-SA 4.0",
       "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
       "image_source": "Wikimedia Commons",
-      "image_match_score": 1.0,
+      "image_match_score": 1,
       "image_match_method": "search:Josh Rock",
       "image_verified_at": "2026-11-08T18:04:36Z",
       "image_local_path": "assets/images/darts/josh-rock.jpg"
@@ -617,7 +615,7 @@
       "image_license": "CC BY-SA 4.0",
       "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
       "image_source": "Wikimedia Commons",
-      "image_match_score": 1.0,
+      "image_match_score": 1,
       "image_match_method": "search:Danny Noppert",
       "image_verified_at": "2026-11-08T18:13:37Z",
       "image_local_path": "assets/images/darts/danny-noppert.jpg"
@@ -631,7 +629,7 @@
       "image_license": "CC BY-SA 4.0",
       "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
       "image_source": "Wikimedia Commons",
-      "image_match_score": 1.0,
+      "image_match_score": 1,
       "image_match_method": "category:Category:Michael van Gerwen in 2019",
       "image_verified_at": "2026-11-08T18:13:37Z",
       "image_local_path": "assets/images/darts/michael-van-gerwen.jpg"
@@ -645,7 +643,7 @@
       "image_license": "CC BY 3.0",
       "image_license_url": "https://creativecommons.org/licenses/by/3.0",
       "image_source": "Wikimedia Commons",
-      "image_match_score": 1.0,
+      "image_match_score": 1,
       "image_match_method": "category:Category:Nathan Aspinall",
       "image_verified_at": "2026-11-08T18:13:37Z",
       "image_local_path": "assets/images/darts/nathan-aspinall.png"
@@ -659,7 +657,7 @@
       "image_license": "CC BY 3.0",
       "image_license_url": "https://creativecommons.org/licenses/by/3.0",
       "image_source": "Wikimedia Commons",
-      "image_match_score": 1.0,
+      "image_match_score": 1,
       "image_match_method": "category:Category:Wessel Nijman",
       "image_verified_at": "2026-11-08T18:13:37Z",
       "image_local_path": "assets/images/darts/wessel-nijman.png"
@@ -673,7 +671,7 @@
       "image_license": "CC BY-SA 3.0",
       "image_license_url": "https://creativecommons.org/licenses/by-sa/3.0",
       "image_source": "Wikimedia Commons",
-      "image_match_score": 1.0,
+      "image_match_score": 1,
       "image_match_method": "search:Gary Anderson",
       "image_verified_at": "2026-11-08T18:14:10Z",
       "image_local_path": "assets/images/darts/gary-anderson.jpg"
@@ -687,7 +685,7 @@
       "image_license": "CC BY 3.0",
       "image_license_url": "https://creativecommons.org/licenses/by/3.0",
       "image_source": "Wikimedia Commons",
-      "image_match_score": 1.0,
+      "image_match_score": 1,
       "image_match_method": "category:Category:Ryan Searle",
       "image_verified_at": "2026-11-08T18:14:10Z",
       "image_local_path": "assets/images/darts/ryan-searle.png"

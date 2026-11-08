@@ -16,7 +16,7 @@
         <span class="brand-mark">S</span>
         <span><strong>SPORTS</strong><small>CALENDAR</small></span>
       </a>
-      <div class="topbar-actions"><button id="global-search-open" class="secondary-button global-search-open" type="button" aria-label="Search all sports">⌕ <span>SEARCH</span></button><button id="open-settings" class="secondary-button settings-open" type="button" aria-label="Personalise your F1 team theme"><img src="https://www.formula1.com/assets/home/_next/static/media/f1-logo.43a01c6b.svg" alt="" aria-hidden="true"><span>TEAM</span></button><span class="live-status"><i></i> SCHEDULE</span><button id="manual-refresh" class="primary-button topbar-refresh" type="button" aria-label="Check for newly published sports data">CHECKING…</button></div>
+      <div class="topbar-actions"><button id="global-search-open" class="secondary-button global-search-open" type="button" aria-label="Search all sports">⌕ <span>SEARCH</span></button><button id="open-settings" class="secondary-button settings-open" type="button" aria-label="Choose your favourite F1 team"><img src="https://www.formula1.com/assets/home/_next/static/media/f1-logo.43a01c6b.svg" alt="" aria-hidden="true"><span id="settings-team-label">TEAM</span></button><span class="live-status"><i></i> SCHEDULE</span><button id="manual-refresh" class="primary-button topbar-refresh" type="button" aria-label="Check for newly published sports data">CHECKING…</button></div>
     </header>
     <nav class="top-sport-selector" aria-label="Switch sport">
       <button type="button" class="top-sport-button" data-top-sport="f1" aria-label="Formula 1"><img src="https://www.formula1.com/assets/home/_next/static/media/f1-logo.43a01c6b.svg" alt=""><span>F1</span></button>
@@ -25,6 +25,7 @@
       <button type="button" class="top-sport-button" data-top-sport="ufc" aria-label="UFC"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/UFC%20Logo.svg" alt=""><span>UFC</span></button>
       <button type="button" class="top-sport-button" data-top-sport="bkfc" aria-label="BKFC"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bkfc-logo.png" alt=""><span>BKFC</span></button>
     </nav>
+    <div class="home-display-tools" aria-label="Home page display options"><button type="button" id="home-customise-toggle" aria-expanded="false">⚙ PERSONALISE HOME</button><button type="button" id="compact-view-toggle" aria-pressed="false">▤ COMPACT VIEW</button></div>
     <section class="next-event-strip" aria-label="Next upcoming event in each sport">
       <div class="next-event-strip-heading"><span class="eyebrow">UP NEXT</span><span>SELECT AN EVENT TO OPEN ITS SPORT</span></div>
       <div id="next-event-ticker" class="next-event-ticker" aria-live="polite"><span class="next-event-loading">Loading the next events…</span></div>
@@ -39,7 +40,6 @@
           <div class="hero-meta"><span>🇬🇧 UK LOCAL TIME</span><span id="home-updated">WAITING FOR FIRST SYNC</span></div>
           <p id="refresh-help" class="refresh-help" role="status" aria-live="polite">Data syncs automatically every 4 hours. Tap to check for the latest published schedules.</p>
         </div>
-        <div class="home-display-tools" aria-label="Home page display options"><button type="button" id="home-customise-toggle" aria-expanded="false">⚙ PERSONALISE HOME</button><button type="button" id="compact-view-toggle" aria-pressed="false">▤ COMPACT VIEW</button></div>
         <section id="featured-event-widget" class="featured-event-widget" aria-label="Featured upcoming sports event" hidden>
           <div class="featured-event-topline"><span class="eyebrow">THE NEXT BIG ONE</span><span id="featured-event-kicker" class="featured-event-kicker">FEATURED EVENT</span></div>
           <div class="featured-event-content">

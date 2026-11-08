@@ -48,9 +48,33 @@
   function allEvents(){
     return sports.flatMap(sport=>eventsFor(sport).map(event=>({sport,event}))).filter(x=>dateKey(dateValue(x.event)));
   }
+  function renderTicker(){
+    const root=$("next-event-ticker");if(!root)return;
+    root.replaceChildren();
+    sports.forEach(sport=>{
+      const rows=allEvents().filter(x=>x.sport===sport);
+      const live=rows.filter(x=>isLive(x.event)).sort((a,b)=>timestamp(a.event)-timestamp(b.event))[0];
+      const next=rows.filter(x=>!isLive(x.event)&&dateKey(dateValue(x.event))>=today()).sort((a,b)=>timestamp(a.event)-timestamp(b.event))[0];
+      const chosen=live||next;if(!chosen)return;
+      const event=chosen.event,button=make("button","next-event-item");
+      button.type="button";button.dataset.sport=sport;
+      const sportName=make("small","next-event-sport",names[sport]);
+      const title=make("strong","next-event-name",event.name||event.title||"Event");
+      const badge=make("span","next-event-state",live?"● LIVE":"UPCOMING");
+      const target=event.start_at||event.main_card_at||event.start_time_utc||event.date||event.event_date;
+      const info=make("span","next-event-info");
+      info.append(sportName,title);
+      if(!live&&target){const timer=make("small","next-event-countdown",window.SportsCountdown?.text?.(target)||"DATE TBC");timer.dataset.countdownTarget=/^\d{4}-\d{2}-\d{2}$/.test(String(target))?String(target):new Date(target).toISOString();info.append(timer);}
+      button.append(info,badge);
+      button.addEventListener("click",()=>window.SportPages?.open?.(sport));
+      root.append(button);
+    });
+    if(!root.childElementCount)root.append(make("span","next-event-loading","No live or upcoming events currently listed."));
+  }
   function render(){
     const liveRoot=$("live-now-events"),upcomingRoot=$("live-upcoming-events");
     if(!liveRoot||!upcomingRoot)return;
+    renderTicker();
     const all=allEvents(),live=all.filter(x=>isLive(x.event)).sort((a,b)=>timestamp(a.event)-timestamp(b.event));
     liveRoot.replaceChildren();
     $("live-now-count").textContent=live.length+" LIVE";
@@ -126,5 +150,5 @@
   window.SportsCentreV11={refresh:render};
   render();
   renderFeaturedEvent();
-  setInterval(()=>{document.querySelectorAll(".featured-event-countdown[data-countdown-target]").forEach(node=>{const label=window.SportsCountdown?.text?.(node.dataset.countdownTarget);if(label)node.textContent=label;});document.querySelectorAll(".live-centre-countdown[data-countdown-target]").forEach(node=>{const label=window.SportsCountdown?.text?.(node.dataset.countdownTarget);if(label)node.textContent=label;});},1000);
+  setInterval(()=>{document.querySelectorAll(".featured-event-countdown[data-countdown-target]").forEach(node=>{const label=window.SportsCountdown?.text?.(node.dataset.countdownTarget);if(label)node.textContent=label;});document.querySelectorAll(".live-centre-countdown[data-countdown-target],.next-event-countdown[data-countdown-target]").forEach(node=>{const label=window.SportsCountdown?.text?.(node.dataset.countdownTarget);if(label)node.textContent=label;});},1000);
 })();

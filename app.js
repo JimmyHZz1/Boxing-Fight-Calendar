@@ -78,6 +78,8 @@ function applyFavouriteTeam(team,save=true){
   document.documentElement.style.setProperty("--team-glow",theme.glow);
   const meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.content=theme.chrome;
   document.documentElement.dataset.favouriteF1Team=team||"none";
+  const teamLabel=$("settings-team-label");if(teamLabel)teamLabel.textContent=team?({"RB F1 Team":"RACING BULLS","Alpine F1 Team":"ALPINE","Haas F1 Team":"HAAS","Red Bull":"RED BULL","Aston Martin":"ASTON MARTIN","Cadillac F1 Team":"CADILLAC"}[team]||team.toUpperCase()):"TEAM";
+  const teamButton=$("open-settings");if(teamButton)teamButton.setAttribute("aria-label",team?"Favourite F1 team: "+team+". Change team theme":"Choose your favourite F1 team");
   if(save){try{localStorage.setItem("sports-calendar-favourite-f1-team",team||"");}catch(_){}}
 }
 let savedFavouriteTeam="";try{savedFavouriteTeam=localStorage.getItem("sports-calendar-favourite-f1-team")||"";}catch(_){}

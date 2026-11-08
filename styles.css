@@ -933,3 +933,87 @@ body.compact-view #home-screen .sports-carousel-section{margin:12px 0 18px}
   .global-search-open{min-width:44px;width:44px;padding:8px!important}
   .global-search-open>span{display:none!important}
 }
+
+
+/* Compact mode: a genuinely dense, scan-first layout across every screen. */
+.home-display-tools{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:10px 0 12px;padding:8px 0;border-bottom:1px solid var(--line)}
+.home-display-tools button{min-height:34px;padding:7px 11px;border:1px solid var(--line);background:var(--panel);color:var(--muted);font-size:9px;font-weight:800;letter-spacing:.8px;cursor:pointer}
+.home-display-tools button[aria-pressed="true"]{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,var(--panel));color:var(--accent)}
+.next-event-ticker{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:7px;margin-top:9px}
+.next-event-item{display:flex;min-width:0;align-items:center;justify-content:space-between;gap:8px;padding:9px 10px;text-align:left;background:var(--panel);border:1px solid var(--line);border-left:2px solid var(--accent);color:var(--text);cursor:pointer}
+.next-event-item:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.next-event-info{display:grid;gap:3px;min-width:0}
+.next-event-sport{font-size:8px;letter-spacing:1px;color:var(--accent);font-weight:800}
+.next-event-name{font:700 15px/1.1 'Barlow Condensed',sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.next-event-countdown{font-size:9px;color:var(--muted);font-weight:700}
+.next-event-state{flex:none;padding:4px 6px;border:1px solid #555;background:#24262c;color:#c9cbd0;font-size:8px;font-weight:900;letter-spacing:.7px}
+.next-event-state:where(:not(:empty)){white-space:nowrap}
+.next-event-item:has(.next-event-state:first-child){border-left-color:#65c58b}
+.next-event-item .next-event-state{background:#24262c}
+.next-event-item:has(.next-event-state) .next-event-state{color:#d6d8dc}
+.next-event-item:has(.next-event-state) .next-event-state{border-radius:2px}
+.next-event-item:has(.next-event-state) .next-event-state{letter-spacing:.5px}
+body.compact-view .screen{padding-top:12px;padding-bottom:12px}
+body.compact-view .hero{padding:13px 16px;margin-bottom:9px}
+body.compact-view .hero h1{font-size:clamp(30px,5vw,42px);line-height:.95;margin:5px 0}
+body.compact-view .hero p,body.compact-view .hero-meta,body.compact-view #refresh-help{display:none!important}
+body.compact-view .hero:after{font-size:110px;top:-25px}
+body.compact-view .section-heading{margin:14px 0 7px;align-items:center}
+body.compact-view .section-heading h2,body.compact-view .calendar-toolbar h2{font-size:22px}
+body.compact-view .page-intro{padding:5px 0}
+body.compact-view .page-intro h1{font-size:38px;margin:6px 0}
+body.compact-view .page-intro p{display:none}
+body.compact-view .featured-event-widget,body.compact-view .live-centre,body.compact-view .tonight-panel,body.compact-view .calendar-panel,body.compact-view .favourite-team-panel{padding:10px!important;margin-top:10px}
+body.compact-view .featured-event-content{gap:9px}
+body.compact-view .featured-event-mark{width:46px;height:46px}
+body.compact-view .featured-event-copy h2{font-size:21px}
+body.compact-view .featured-event-copy p,body.compact-view .featured-event-note{display:none}
+body.compact-view .live-centre-heading{margin-bottom:7px}
+body.compact-view .live-centre-heading h2{font-size:23px}
+body.compact-view .live-centre-subheading{margin:6px 0}
+body.compact-view .live-centre-subheading h3{font-size:12px}
+body.compact-view .live-centre-event{grid-template-columns:30px minmax(0,1fr) auto;gap:7px;padding:6px 8px}
+body.compact-view .live-centre-logo{width:27px;height:27px}
+body.compact-view .live-centre-info strong{font-size:12px}
+body.compact-view .live-centre-info small{font-size:8px;line-height:1.25}
+body.compact-view .live-centre-countdown{font-size:8px}
+body.compact-view .live-centre-badge{padding:4px 5px;font-size:7px}
+body.compact-view .sports-carousel-section{margin:10px 0}
+body.compact-view .sport-slide{min-height:92px;padding:10px 12px}
+body.compact-view .sport-slide strong{font-size:22px}
+body.compact-view .sport-slide-icon{font-size:34px;top:8px;right:12px}
+body.compact-view .event-list,body.compact-view .sport-event-list,body.compact-view .high-profile-list,body.compact-view .uk-headliners-list{gap:5px}
+body.compact-view .event-card{grid-template-columns:42px minmax(0,1fr) auto;gap:8px;padding:7px 8px}
+body.compact-view .event-date{padding:5px 2px}
+body.compact-view .event-date strong{font-size:20px}
+body.compact-view .event-date span{font-size:7px}
+body.compact-view .event-info h3{font-size:16px;margin:0}
+body.compact-view .event-info p{font-size:9px;line-height:1.25}
+body.compact-view .event-tag{grid-column:auto;text-align:right;font-size:8px}
+body.compact-view .high-profile-card,body.compact-view .uk-headliner-card{padding:7px!important;gap:6px}
+body.compact-view .high-profile-fighter .fighter-portrait,body.compact-view .fighter-portrait{width:34px;height:34px}
+body.compact-view .high-profile-info strong,body.compact-view .uk-headliner-details>strong{font-size:15px}
+body.compact-view .high-profile-info span,body.compact-view .uk-headliner-details>span{font-size:8px}
+body.compact-view .bout-row{padding:7px;gap:5px}
+body.compact-view .calendar-panel{max-width:none}
+body.compact-view .day{min-height:36px}
+body.compact-view .favourites-grid{gap:6px}
+body.compact-view .favourite-card{padding:8px}
+body.compact-view .favourites-form{gap:6px}
+body.compact-view .bottom-nav{margin:10px 0 8px;padding:3px}
+body.compact-view .screen>.section-heading{margin-top:10px}
+@media(max-width:620px){
+ body.compact-view .app-shell{padding-left:10px;padding-right:10px}
+ body.compact-view .topbar{height:58px}
+ body.compact-view .top-sport-selector{margin:5px 0}
+ body.compact-view .top-sport-button{min-height:42px}
+ body.compact-view .next-event-strip{margin:7px 0}
+ body.compact-view .next-event-ticker{grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}
+ body.compact-view .next-event-item{padding:6px}
+ body.compact-view .next-event-name{font-size:13px}
+ body.compact-view .next-event-state{font-size:7px;padding:3px 4px}
+ body.compact-view .event-card{grid-template-columns:36px minmax(0,1fr);gap:6px}
+ body.compact-view .event-tag{grid-column:2;text-align:left}
+ body.compact-view .high-profile-matchup{gap:4px}
+ body.compact-view .uk-headliner-matchup{gap:4px}
+}
