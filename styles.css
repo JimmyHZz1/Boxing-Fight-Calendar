@@ -843,3 +843,25 @@
   .topbar .topbar-actions { gap: 5px; }
   .topbar .topbar-actions button { padding: 7px 6px; font-size: 8px; }
 }
+
+
+/* Event countdowns: visible, compact timers across cards and the live centre. */
+.event-countdown,.next-event-countdown,.live-centre-countdown{
+  display:inline-flex;
+  align-items:center;
+  width:max-content;
+  max-width:100%;
+  margin-top:5px;
+  padding:5px 7px;
+  border:1px solid rgba(226,180,91,.32);
+  border-radius:3px;
+  background:rgba(226,180,91,.08);
+  color:var(--accent);
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:.55px;
+  font-variant-numeric:tabular-nums;
+}
+.next-event-countdown{font-size:9px;margin-top:2px}
+.live-centre-countdown{font-size:9px}
+.event-countdown.countdown-started{border-color:rgba(226,180,91,.5)}
