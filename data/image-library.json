@@ -1,9 +1,21 @@
 {
   "version": 1,
-  "updated_at": null,
+  "updated_at": "2026-11-08T12:34:52Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
-  "images": {},
+  "images": {
+    "adam azim": {
+      "name": "Adam Azim",
+      "path": "assets/images/boxing-fighters/adam-azim.png",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Adam_Azim_portrait_2024.png",
+      "licence": "CC BY 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by/4.0",
+      "creator": "Wikimedia Commons · The President's Office, Maldives · CC BY 4.0",
+      "attribution": "Wikimedia Commons · The President's Office, Maldives · CC BY 4.0",
+      "verified_at": "2026-11-08T12:34:52Z",
+      "sport": "boxing fighters"
+    }
+  },
   "collections": {
     "f1-drivers": {
       "sport": "f1",

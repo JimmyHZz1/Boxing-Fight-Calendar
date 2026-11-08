@@ -19,12 +19,11 @@
       "source": "Wikimedia Commons"
     },
     "adam azim": {
-      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Adam_Azim_portrait_2024.png/330px-Adam_Azim_portrait_2024.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "url": "./assets/images/boxing-fighters/adam-azim.png",
       "page_url": "https://commons.wikimedia.org/wiki/File:Adam_Azim_portrait_2024.png",
-      "artist": "The President's Office, Maldives",
+      "artist": "Wikimedia Commons · The President's Office, Maldives · CC BY 4.0",
       "license": "CC BY 4.0",
       "license_url": "https://creativecommons.org/licenses/by/4.0",
-      "title": "File:Adam Azim portrait 2024.png",
       "source": "Wikimedia Commons"
     },
     "agit kabayel": {
@@ -330,5 +329,5 @@
     "yuberjen martinez": "2026-11-08",
     "yudai nakazato": "2026-11-08"
   },
-  "updated_at": "2026-11-08T11:59:54Z"
+  "updated_at": "2026-11-08T12:34:52Z"
 }

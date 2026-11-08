@@ -1,6 +1,26 @@
 {
   "version": 1,
-  "images": {},
-  "updated_at": "2026-11-08T11:59:55Z",
-  "attempted": {}
+  "images": {
+    "adam azim": {
+      "name": "Adam Azim",
+      "sport": "boxing fighters",
+      "image_url": "./assets/images/boxing-fighters/adam-azim.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Adam_Azim_portrait_2024.png",
+      "image_credit": "Wikimedia Commons · The President's Office, Maldives · CC BY 4.0",
+      "image_license": "CC BY 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_verified_at": "2026-11-08T12:34:52Z",
+      "image_local_path": "assets/images/boxing-fighters/adam-azim.png"
+    }
+  },
+  "updated_at": "2026-11-08T12:34:52Z",
+  "attempted": {
+    "abisai torres diaz": "2026-11-08T12:34:52Z",
+    "adam azim": "2026-11-08T12:34:52Z",
+    "agit kabayel": "2026-11-08T12:34:52Z",
+    "aiden anderson": "2026-11-08T12:34:52Z",
+    "alberto palmetta": "2026-11-08T12:34:52Z"
+  }
 }

@@ -3127,13 +3127,27 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 0,
-    "found": 0,
-    "missing": 548,
-    "rejected": 0,
-    "by_sport": {},
-    "newly_found": 0,
+    "attempted": 5,
+    "found": 1,
+    "missing": 730,
+    "rejected": 3,
+    "by_sport": {
+      "boxing fighters": {
+        "attempted": 5,
+        "found": 1,
+        "missing": 4,
+        "rejected": 0
+      }
+    },
+    "checked_at": "2026-11-08T12:34:52Z",
+    "library_entries": 1,
+    "newly_found": 1,
     "coverage": {
+      "boxing fight card fighters": {
+        "total": 183,
+        "with_image": 1,
+        "missing": 182
+      },
       "f1 drivers": {
         "total": 25,
         "with_image": 0,
@@ -3159,9 +3173,7 @@
         "with_image": 0,
         "missing": 81
       }
-    },
-    "checked_at": "2026-11-08T11:59:55Z",
-    "library_entries": 0
+    }
   },
   "last_updated": "2026-11-08T11:59:55Z"
 }
