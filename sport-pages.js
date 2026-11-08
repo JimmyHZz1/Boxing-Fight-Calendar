@@ -176,6 +176,21 @@
     if(d.notice||d.sync_warning)s.append(el("p","sport-page-note",d.notice||d.sync_warning));
     return s;
   }
+  let countdownTimer=null;
+  function countdownLabel(event){
+    const raw=event?.start_at||event?.start_time_utc||event?.main_card_at||event?.race_start_at||event?.date||event?.event_date;
+    if(!raw)return "START TIME TO BE CONFIRMED";
+    if(/^\d{4}-\d{2}-\d{2}$/.test(String(raw))){
+      const days=Math.round((Date.parse(String(raw)+"T00:00:00Z")-Date.parse(today()+"T00:00:00Z"))/86400000);
+      return days<=0?"TODAY · EXACT TIME TBC":days===1?"1 DAY TO GO · TIME TBC":days+" DAYS TO GO · TIME TBC";
+    }
+    const target=new Date(raw).getTime();
+    if(!Number.isFinite(target))return "START TIME TO BE CONFIRMED";
+    const remaining=target-Date.now();
+    if(remaining<=0)return "STARTING NOW / IN PROGRESS";
+    const days=Math.floor(remaining/86400000),hours=Math.floor(remaining%86400000/3600000),minutes=Math.floor(remaining%3600000/60000);
+    return [days?days+"D":null,hours?hours+"H":null,(days||hours)?minutes+"M":minutes+" MIN"].filter(Boolean).join(" ");
+  }
   function render(sport){
     const target=root();if(!target)return;
     current=sport;
@@ -201,7 +216,15 @@
     const third=sport==="f1"?[String(sessionCount),"RACE SESSIONS"]:sport==="darts"?[String(matchCount),"MATCHES SCHEDULED"]:[String(totalFights),"FIGHTS / BOUTS LISTED"];
     [[String(upcoming.length),"UPCOMING EVENTS"],[String(past.length),"PAST EVENTS"],third].forEach(([n,l])=>{const c=el("div","sport-detail-stat");c.append(el("strong",null,n),el("small",null,l));stats.append(c);});
     target.append(stats);
+    if(countdownTimer){clearInterval(countdownTimer);countdownTimer=null;}
     if(next){
+      const countdown=section("Event countdown","COUNTING DOWN TO YOUR NEXT EVENT");
+      const countdownValue=el("strong","sport-next-countdown-value",countdownLabel(next));
+      countdownValue.id="sport-next-countdown";
+      const countdownName=el("p","sport-next-countdown-name",eventName(next));
+      countdown.append(countdownValue,countdownName);
+      target.append(countdown);
+      countdownTimer=setInterval(()=>{const value=document.getElementById("sport-next-countdown");if(value)value.textContent=countdownLabel(next);else{clearInterval(countdownTimer);countdownTimer=null;}},30000);
       const s=section("Next up","YOUR NEXT EVENT");
       const card=renderEvent(sport,next);if(card)s.append(card);else s.append(empty(eventName(next)));
       target.append(s);
@@ -216,6 +239,24 @@
       const recent=section(sport==="boxing"?"Recent fight cards":"Recent events & results","LATEST RESULTS");
       past.slice(0,6).forEach(event=>{const card=renderEvent(sport,event);if(card)recent.append(card);});
       target.append(recent);
+      const archive=section("Full results archive","ALL PAST EVENTS IN THE PUBLISHED FEED");
+      const details=el("details","sport-results-archive");
+      details.append(el("summary",null,"VIEW ALL "+past.length+" PAST EVENTS"));
+      const years=new Map();
+      past.forEach(event=>{
+        const key=dateKey(dateValue(event));
+        const year=key.slice(0,4)||"DATE TBC";
+        if(!years.has(year))years.set(year,[]);
+        years.get(year).push(event);
+      });
+      years.forEach((yearEvents,year)=>{
+        const group=el("section","sport-results-archive-year");
+        group.append(el("h3",null,year+" · "+yearEvents.length+" EVENTS"));
+        yearEvents.forEach(event=>{const card=renderEvent(sport,event);if(card)group.append(card);});
+        details.append(group);
+      });
+      archive.append(details);
+      target.append(archive);
     }
     target.append(breakdown(sport,events));
     const table=standings(sport);if(table)target.append(table);
