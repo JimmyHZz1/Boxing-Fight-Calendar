@@ -24,7 +24,7 @@ self.addEventListener("fetch",event=>{
     event.respondWith(fetch(request,{cache:"no-store"}).catch(()=>caches.match(request)));
     return;
   }
-  const isAppAsset=url.pathname.endsWith("/")||/\.(html|css|js|json)$/.test(url.pathname);
+  const isAppAsset=url.pathname.endsWith("/")||/\.(html|css|js|json|png|jpe?g|webp|svg|gif)$/.test(url.pathname);
   if(!isAppAsset)return;
   event.respondWith((async()=>{
     const cached=await caches.match(request);
