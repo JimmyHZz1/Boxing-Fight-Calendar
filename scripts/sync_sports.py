@@ -572,7 +572,7 @@ def image_aliases(name):
         "sergio perez": ["Sergio Perez", "Perez F1"],
         "andrea kimi antonelli": ["Kimi Antonelli", "Andrea Kimi Antonelli", "Antonelli Formula One"],
         "red bull racing": ["Red Bull Racing", "Oracle Red Bull Racing"],
-        "red bull": ["Oracle Red Bull Racing", "Red Bull Racing F1", "Red Bull F1 Team"],
+        "red bull": ["Red Bull Racing logo ita", "Oracle Red Bull Racing", "Red Bull Racing F1", "Red Bull F1 Team"],
         "rb f1 team": ["Visa Cash App Racing Bulls", "Racing Bulls F1 Team"],
         "alpine f1 team": ["BWT Alpine F1 Team", "Alpine Formula One Team"],
         "haas f1 team": ["MoneyGram Haas F1 Team", "Haas F1 Team"],
@@ -580,7 +580,7 @@ def image_aliases(name):
         "cadillac f1 team": ["Cadillac Formula 1 Team", "Cadillac F1"],
         "mercedes": ["Mercedes AMG Petronas F1 Team", "Mercedes F1"],
         "mclaren": ["McLaren Formula One Team", "McLaren F1"],
-        "aston martin": ["Aston Martin Aramco F1 Team"],
+        "aston martin": ["Aston Martin F1 Team logo 2024", "Aston Martin Aramco F1 Team"],
         "williams": ["Williams Racing"],
         "alpine": ["BWT Alpine F1 Team"],
         "ferrari": ["Scuderia Ferrari"],
@@ -687,8 +687,32 @@ def commons_photo(name, image_kind="portrait"):
                 "image_verified_at": iso_now()
             }))
 
+    # A few constructor marks have stable Commons file titles but weak
+    # search indexing. Resolve those exact file pages before broad searches.
+    if image_kind == "logo":
+        known_logo_files = {
+            "red bull": ["Red Bull Racing logo ita.png", "Red Bull Racing - 2005 Logo.png"],
+            "aston martin": ["Aston Martin F1 Team logo 2024.jpg"]
+        }
+        known_titles = known_logo_files.get(image_key(name), [])
+        if known_titles and not IMAGE_LOOKUP_RATE_LIMITED:
+            params = {
+                "action": "query", "format": "json",
+                "titles": "|".join("File:" + title for title in known_titles),
+                "prop": "imageinfo", "iiprop": "url|extmetadata|mime", "iiurlwidth": 480,
+                "iiextmetadatafilter": "Artist|Credit|LicenseShortName|LicenseUrl|UsageTerms"
+            }
+            try:
+                payload = request_json("https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode(params), provider="Wikimedia Commons")
+                query_count += 1
+                inspect_pages((payload.get("query") or {}).get("pages", {}).values(), "known-file-title")
+            except Exception as exc:
+                print(f"COMMONS_IMAGE_KNOWN_FILE_WARNING: {name}: {exc}")
+                if "HTTP 429" in str(exc):
+                    IMAGE_LOOKUP_RATE_LIMITED = True
+
     for query_name in query_names:
-        if IMAGE_LOOKUP_RATE_LIMITED:
+        if IMAGE_LOOKUP_RATE_LIMITED or candidates:
             break
         params = {
             "action": "query", "format": "json", "generator": "search",
