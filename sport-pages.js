@@ -132,6 +132,26 @@
     return row;
   }
   let f1TableChoice="drivers";
+  function addRankingSearch(sectionNode,groups){
+    const wrap=el("label","ranking-search-wrap");
+    const input=el("input","ranking-search");
+    input.type="search";input.placeholder="Search names, teams or divisions…";input.setAttribute("aria-label","Search rankings");
+    const count=el("span","ranking-search-count","ALL");
+    input.addEventListener("input",()=>{
+      const query=input.value.trim().toLocaleLowerCase();
+      let shown=0;
+      groups.forEach(group=>{
+        let groupShown=0;
+        group.querySelectorAll(".sport-ranking-row").forEach(row=>{
+          const match=!query||row.textContent.toLocaleLowerCase().includes(query);
+          row.hidden=!match;if(match){groupShown++;shown++;}
+        });
+        group.hidden=groupShown===0;
+      });
+      count.textContent=query?shown+" FOUND":"ALL";
+    });
+    wrap.append(input,count);sectionNode.append(wrap);
+  }
   function standings(sport){
     const d=hub[sport]||{};
     const s=section(sport==="darts"?"PDC Order of Merit":sport==="boxing"?"World champions":sport==="f1"?"Championship standings":"Championships & rankings",sport==="f1"?"LIVE CHAMPIONSHIP":"CURRENT STANDINGS");
@@ -153,27 +173,37 @@
         const extra=[item.team,item.points!=null?item.points+" pts":null].filter(Boolean).join(" · ");
         if(extra)row.append(el("small",null,extra));group.append(row);
       });
-      s.append(group);
+      addRankingSearch(s,[group]);s.append(group);
       const updated=d.last_updated?new Date(d.last_updated).toLocaleString("en-GB",{timeZone:"Europe/London",dateStyle:"medium",timeStyle:"short"}):null;
       if(updated)s.append(el("p","sport-page-note","Standings refreshed "+updated+" UK · "+(d.season||new Date().getFullYear())+" season."));
       s.append(el("p","sport-page-note","Live table from Jolpica F1; refreshes when this page is opened."));
       return s;
     }
-    const candidates=sport==="darts"?[["PDC Order of Merit",d.rankings,20]]:sport==="ufc"?(d.divisions||[]).map(x=>[x.name||x.division,x.entries]):sport==="boxing"?(d.divisions||[]).map(x=>[x.name,x.champions]):[];
+    if(sport==="bkfc"){
+      s.append(empty("Verified BKFC championship rankings are not currently available in the published data. We’ll add champions and divisional tables when a reliable source can be confirmed."));
+      if(d.last_updated){const updated=new Date(d.last_updated).toLocaleString("en-GB",{timeZone:"Europe/London",dateStyle:"medium",timeStyle:"short"});s.append(el("p","sport-page-note","BKFC data feed checked "+updated+" UK; no verified rankings supplied."));}
+      return s;
+    }
+    const candidates=sport==="darts"?[["PDC Order of Merit",d.rankings,50]]:sport==="ufc"?(d.divisions||[]).map(x=>[x.name||x.division,x.entries]):sport==="boxing"?(d.divisions||[]).map(x=>[x.name,x.champions]):[];
     const valid=candidates.filter(x=>Array.isArray(x[1])&&x[1].length);
     if(!valid.length){s.append(empty(d.sync_warning||"The latest standings have not been published yet. They will appear after the next successful data sync."));return s;}
+    const groups=[];
     valid.forEach(([title,items,limit])=>{
       const group=el("div","sport-ranking-group");group.append(el("h3",null,title));
       items.slice(0,limit||8).forEach((item,index)=>{
         const row=rankingRow(item,item.rank!=null?(item.rank===0?"C":item.rank):index+1);
-        const extra=[item.org,item.team,item.points!=null?item.points+" pts":null,item.prize_money? "£"+item.prize_money:null].filter(Boolean).join(" · ");
+        const extra=[item.org,item.team,item.points!=null?item.points+" pts":null,item.prize_money?"£"+item.prize_money:null].filter(Boolean).join(" · ");
         if(extra)row.append(el("small",null,extra));group.append(row);
       });
-      s.append(group);
+      groups.push(group);
     });
-    const updated=d.last_updated?new Date(d.last_updated).toLocaleString("en-GB",{timeZone:"Europe/London",dateStyle:"medium",timeStyle:"short"}):null;
-    if(updated)s.append(el("p","sport-page-note","Standings updated "+updated+" UK."));
+    addRankingSearch(s,groups);groups.forEach(group=>s.append(group));
+    if(sport==="darts")s.append(el("p","sport-page-note","Showing the top 50 players from the published PDC Order of Merit feed."));
+    const snapshot=sport==="ufc"&&d.snapshot_date?d.snapshot_date:null;
+    const updated=snapshot||d.last_updated;
+    if(updated){const label=snapshot?"Official rankings snapshot dated ":"Rankings feed refreshed ";s.append(el("p","sport-page-note",label+new Date(updated+(snapshot?"T12:00:00Z":"")).toLocaleString("en-GB",{timeZone:"Europe/London",dateStyle:"medium",...(snapshot?{}:{timeStyle:"short"})})+" UK."));}
     if(d.notice||d.sync_warning)s.append(el("p","sport-page-note",d.notice||d.sync_warning));
+    if(sport==="darts"&&safeUrl(d.source_url)){const a=el("a","sport-page-note","View source ranking ↗");a.href=d.source_url;a.target="_blank";a.rel="noopener noreferrer";s.append(a);}
     return s;
   }
   function render(sport){
