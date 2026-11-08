@@ -36,8 +36,8 @@
   }
   function empty(message){return el("div","sport-page-empty",message);}
   const BROADCASTER_BRANDS=[
-    [/sky/i,"skysports.com","SKY"],[/^now$/i,"nowtv.com","NOW"],[/channel\\s*4/i,"channel4.com","C4"],
-    [/itv/i,"itv.com","ITV"],[/pdc\\s*tv/i,"video.pdc.tv","PDC"],[/tnt/i,"tntsports.co.uk","TNT"],
+    [/sky/i,"skysports.com","SKY"],[/^now$/i,"nowtv.com","NOW"],[/channel\s*4/i,"channel4.com","C4"],
+    [/itv/i,"itv.com","ITV"],[/pdc\s*tv/i,"video.pdc.tv","PDC"],[/tnt/i,"tntsports.co.uk","TNT"],
     [/ufc/i,"ufcfightpass.com","UFC"],[/bkfc/i,"bkfc.com","BKFC"],[/dazn/i,"dazn.com","DAZN"]
   ];
   function watchBrand(item,name){
@@ -72,7 +72,7 @@
       if(!providers.size)s.append(empty("Boxing broadcast rights are event-specific. Confirmed UK broadcasters will be shown on each fight card when announced."));
       else{
         const grid=el("div","sport-watch-guide-grid");
-        providers.forEach((href,name)=>{const item=el("div","sport-watch-guide-item");item.append(el("strong",null,name),el("small",null,"Listed on one or more upcoming event feeds"));if(safeUrl(href)){const a=el("a",null,"Watch details ↗");a.href=href;a.target="_blank";a.rel="noopener noreferrer";item.append(a);}grid.append(item);});s.append(grid);
+        providers.forEach((href,name)=>{const item=el("div","sport-watch-guide-item");watchBrand(item,name);item.append(el("strong",null,name),el("small",null,"Listed on one or more upcoming event feeds"));if(safeUrl(href)){const a=el("a",null,"Watch details ↗");a.href=href;a.target="_blank";a.rel="noopener noreferrer";item.append(a);}grid.append(item);});s.append(grid);
       }
       return s;
     }
@@ -109,7 +109,7 @@
     if(item.image_url){
       const img=el("img","sport-ranking-image");
       const localSource=item.image_url.startsWith("./assets/")?"https://raw.githubusercontent.com/JimmyHZz1/Boxing-Fight-Calendar/main/"+item.image_url.slice(2):item.image_url;
-      img.src=localSource;img.alt=name+" photo";img.loading="lazy";img.decoding="async";
+      img.src=localSource;img.alt=name+(kind==="constructor"?" logo":" portrait");img.loading="lazy";img.decoding="async";
       img.onerror=()=>{
         if(item.image_url.startsWith("./assets/")&&!img.dataset.remoteRetry){
           img.dataset.remoteRetry="1";
