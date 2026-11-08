@@ -1086,9 +1086,11 @@ def enrich_cached_images():
     sports = hub.get("sports") or hub
     f1 = sports.get("f1") or {}
     f1["drivers"] = add_photos(f1.get("drivers") or [], limit=30, sport="f1 drivers")
-    f1["constructors"] = add_photos(f1.get("constructors") or [], limit=20, sport="f1 constructors", image_kind="logo")
-    # F1 gets first claim on the five-image budget: driver portraits, then team logos.
-    # Only after F1 coverage has been processed do we spend any remaining budget elsewhere.
+    # Give the PDC player portraits first claim on each five-image batch. F1 driver
+    # portraits are supplied by official profiles, and constructors now use crisp
+    # in-app team marks, so neither needs Commons lookups in this enrichment pass.
+    darts = sports.get("darts") or {}
+    darts["rankings"] = add_photos(darts.get("rankings") or [], limit=40, sport="darts")
     fights_path = os.path.join(DATA, "fights.json")
     fighter_cache_path = os.path.join(DATA, "fighter-images.json")
     try:
@@ -1120,8 +1122,6 @@ def enrich_cached_images():
     fighter_cache["updated_at"] = iso_now()
     with open(fighter_cache_path, "w", encoding="utf-8") as handle:
         json.dump(fighter_cache, handle, ensure_ascii=False, indent=2)
-    darts = sports.get("darts") or {}
-    darts["rankings"] = add_photos(darts.get("rankings") or [], limit=40, sport="darts")
     ufc = sports.get("ufc") or {}
     for division in ufc.get("divisions") or []:
         division["entries"] = add_photos(division.get("entries") or [], limit=15, sport="ufc")
