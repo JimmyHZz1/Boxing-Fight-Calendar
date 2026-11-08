@@ -666,14 +666,32 @@
           "name": "Gary Anderson",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "./assets/images/darts/gary-anderson.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Gary_D_Anderson_2006_Alchemy_Conference.jpg",
+          "image_credit": "Wikimedia Commons · Douglas A. Lockard · CC BY-SA 3.0",
+          "image_license": "CC BY-SA 3.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1.0,
+          "image_match_method": "search:Gary Anderson",
+          "image_verified_at": "2026-11-08T18:14:10Z",
+          "image_local_path": "assets/images/darts/gary-anderson.jpg"
         },
         {
           "rank": 15,
           "name": "Ryan Searle",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "./assets/images/darts/ryan-searle.png",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Ryan_Searle_2024.png",
+          "image_credit": "Wikimedia Commons · DARTS NOW · CC BY 3.0",
+          "image_license": "CC BY 3.0",
+          "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1.0,
+          "image_match_method": "category:Category:Ryan Searle",
+          "image_verified_at": "2026-11-08T18:14:10Z",
+          "image_local_path": "assets/images/darts/ryan-searle.png"
         },
         {
           "rank": 16,
@@ -3931,68 +3949,53 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 5,
-    "found": 48,
-    "missing": 687,
+    "attempted": 3,
+    "found": 50,
+    "missing": 685,
     "rejected": 0,
     "by_sport": {
       "darts": {
-        "attempted": 5,
-        "found": 4,
+        "attempted": 3,
+        "found": 2,
         "missing": 1,
         "rejected": 0
       }
     },
     "rejection_reasons": {
-      "not_an_image": 28,
-      "surname_not_matched": 58
+      "not_an_image": 38,
+      "surname_not_matched": 1
     },
     "search_details": [
       {
-        "name": "Stephen Bunting",
-        "queries": 3,
-        "candidate_files": 50,
-        "accepted": 0,
-        "rejections": {
-          "not_an_image": 18,
-          "surname_not_matched": 32
-        }
-      },
-      {
-        "name": "Danny Noppert",
+        "name": "Gary Anderson",
         "queries": 1,
-        "candidate_files": 2,
-        "accepted": 2,
-        "rejections": {}
-      },
-      {
-        "name": "Michael van Gerwen",
-        "queries": 3,
-        "candidate_files": 30,
-        "accepted": 30,
-        "rejections": {}
-      },
-      {
-        "name": "Nathan Aspinall",
-        "queries": 3,
-        "candidate_files": 39,
-        "accepted": 3,
+        "candidate_files": 20,
+        "accepted": 1,
         "rejections": {
-          "not_an_image": 10,
-          "surname_not_matched": 26
+          "not_an_image": 19
         }
       },
       {
-        "name": "Wessel Nijman",
+        "name": "Ryan Searle",
         "queries": 3,
-        "candidate_files": 3,
+        "candidate_files": 23,
         "accepted": 3,
+        "rejections": {
+          "not_an_image": 19,
+          "surname_not_matched": 1
+        }
+      },
+      {
+        "name": "Chris Dobey",
+        "queries": 2,
+        "candidate_files": 0,
+        "accepted": 0,
         "rejections": {}
       }
     ],
-    "checked_at": "2026-11-08T18:13:37Z",
-    "library_entries": 48,
-    "newly_found": 4,
+    "checked_at": "2026-11-08T18:14:10Z",
+    "library_entries": 50,
+    "newly_found": 2,
     "coverage": {
       "boxing fight card fighters": {
         "total": 187,
@@ -4011,8 +4014,8 @@
       },
       "darts": {
         "total": 225,
-        "with_image": 10,
-        "missing": 215
+        "with_image": 12,
+        "missing": 213
       },
       "ufc": {
         "total": 206,
@@ -4025,7 +4028,7 @@
         "missing": 81
       }
     },
-    "rate_limited": false
+    "rate_limited": true
   },
   "last_updated": "2026-11-08T16:53:59Z"
 }

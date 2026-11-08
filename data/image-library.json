@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-08T18:13:37Z",
+  "updated_at": "2026-11-08T18:14:10Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -486,6 +486,28 @@
       "creator": "Wikimedia Commons · DARTS NOW · CC BY 3.0",
       "attribution": "Wikimedia Commons · DARTS NOW · CC BY 3.0",
       "verified_at": "2026-11-08T18:13:37Z",
+      "sport": "darts"
+    },
+    "gary anderson": {
+      "name": "Gary Anderson",
+      "path": "assets/images/darts/gary-anderson.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Gary_D_Anderson_2006_Alchemy_Conference.jpg",
+      "licence": "CC BY-SA 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "creator": "Wikimedia Commons · Douglas A. Lockard · CC BY-SA 3.0",
+      "attribution": "Wikimedia Commons · Douglas A. Lockard · CC BY-SA 3.0",
+      "verified_at": "2026-11-08T18:14:10Z",
+      "sport": "darts"
+    },
+    "ryan searle": {
+      "name": "Ryan Searle",
+      "path": "assets/images/darts/ryan-searle.png",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ryan_Searle_2024.png",
+      "licence": "CC BY 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by/3.0",
+      "creator": "Wikimedia Commons · DARTS NOW · CC BY 3.0",
+      "attribution": "Wikimedia Commons · DARTS NOW · CC BY 3.0",
+      "verified_at": "2026-11-08T18:14:10Z",
       "sport": "darts"
     }
   },
