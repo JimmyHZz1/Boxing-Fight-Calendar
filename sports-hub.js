@@ -7,6 +7,7 @@
   const sportNames = {f1:"FORMULA 1",darts:"PDC DARTS",boxing:"BOXING WORLD CHAMPIONS",ufc:"UFC"};
   const esc = value => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
   const initials = name => String(name || "?").split(/\s+/).slice(0,2).map(x=>x[0]||"").join("").toUpperCase();
+  const constructorWordmark = name => ({Mercedes:"MERCEDES",Ferrari:"FERRARI","Red Bull":"RED BULL",McLaren:"McLAREN","RB F1 Team":"RACING BULLS","Alpine F1 Team":"ALPINE","Haas F1 Team":"HAAS",Audi:"AUDI",Williams:"WILLIAMS","Aston Martin":"ASTON MARTIN","Cadillac F1 Team":"CADILLAC"}[name] || String(name||"F1").toUpperCase());
   let imageFailures = 0;
   let imageLoads = 0;
   let localImages = {};
@@ -19,7 +20,8 @@
     const source = officialF1 ? item.image_url : (localPath ? "https://raw.githubusercontent.com/JimmyHZz1/Boxing-Fight-Calendar/main/"+String(local?.path || item.image_url).replace(/^\.\//,"").replace(/^\//,"") : item.image_url);
     const credit = local?.attribution || item.image_credit;
     const constructor = label==="Constructor";
-    const img = source ? '<img class="'+(constructor?"hub-constructor-logo":"hub-driver-portrait")+'" src="'+esc(source)+'" alt="" loading="lazy" data-image-entity="'+esc(item.name||"")+'" data-image-fallback="'+esc(initials(item.name))+'">' : '<span class="hub-avatar-fallback">'+esc(initials(item.name))+'</span>';
+    const fallback = constructor ? constructorWordmark(item.name) : initials(item.name);
+    const img = source ? '<img class="'+(constructor?"hub-constructor-logo":"hub-driver-portrait")+'" src="'+esc(source)+'" alt="'+esc(constructor ? item.name+" logo" : item.name+" portrait")+'" loading="lazy" data-image-kind="'+(constructor?"constructor":"driver")+'" data-official-f1="'+(officialF1?"1":"0")+'" data-image-entity="'+esc(item.name||"") + '" data-image-fallback="'+esc(fallback)+'">' : (constructor ? '<span class="hub-constructor-fallback">'+esc(fallback)+'</span>' : '<span class="hub-avatar-fallback hub-driver-fallback">'+esc(fallback)+'</span>');
     const rank = item.rank != null ? (item.rank===0 ? "C" : "#"+item.rank) : (index+1);
     const extra = [item.team,item.prize_money?"£"+item.prize_money:(item.points!=null?item.points+" pts":null),item.org,credit].filter(Boolean).join(" · ");
     return '<div class="hub-person">'+img+'<span class="hub-rank">'+esc(rank)+'</span><span class="hub-person-name"><strong>'+esc(item.name||"TBC")+'</strong><small>'+esc(extra||label||"")+'</small></span></div>';
@@ -68,7 +70,7 @@
         }
         imageFailures++;
         const fallback=document.createElement("span");
-        fallback.className="hub-avatar-fallback";
+        fallback.className=img.dataset.imageKind==="constructor" ? "hub-constructor-fallback" : (img.dataset.imageKind==="driver" ? "hub-avatar-fallback hub-driver-fallback" : "hub-avatar-fallback");
         fallback.textContent=img.dataset.imageFallback||"?";
         img.replaceWith(fallback);
         updateImageDiagnostics();
