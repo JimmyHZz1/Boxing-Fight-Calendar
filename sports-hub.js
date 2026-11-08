@@ -8,14 +8,16 @@
   const esc = value => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
   const initials = name => String(name || "?").split(/\s+/).slice(0,2).map(x=>x[0]||"").join("").toUpperCase();
   let imageFailures = 0;
+  let imageLoads = 0;
   let localImages = {};
   let imageDiagnostics = {};
   const imageKey = name => String(name||"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
   function person(item, index, label) {
     const local = localImages[imageKey(item.name)];
-    const source = local && local.path ? "https://raw.githubusercontent.com/JimmyHZz1/Boxing-Fight-Calendar/main/"+String(local.path).replace(/^[/]+/,"") : (item.image_url && item.image_url.startsWith("./assets/") ? "https://raw.githubusercontent.com/JimmyHZz1/Boxing-Fight-Calendar/main/"+item.image_url.slice(2) : item.image_url);
+    const localPath = local && local.path ? "./"+String(local.path).replace(/^[/]+/,"") : (item.image_url && item.image_url.startsWith("./assets/") ? item.image_url : "");
+    const source = localPath ? new URL(localPath, document.baseURI).href : item.image_url;
     const credit = local?.attribution || item.image_credit;
-    const img = source ? '<img src="'+esc(source)+'" alt="" loading="lazy" data-image-entity="'+esc(item.name||"")+'" onerror="imageFailures++;this.replaceWith(Object.assign(document.createElement("span"),{className:"hub-avatar-fallback",textContent:"'+esc(initials(item.name))+'"}));updateImageDiagnostics();">' : '<span class="hub-avatar-fallback">'+esc(initials(item.name))+'</span>';
+    const img = source ? '<img src="'+esc(source)+'" alt="" loading="lazy" data-image-entity="'+esc(item.name||"")+'" data-image-fallback="'+esc(initials(item.name))+'">' : '<span class="hub-avatar-fallback">'+esc(initials(item.name))+'</span>';
     const rank = item.rank != null ? (item.rank===0 ? "C" : "#"+item.rank) : (index+1);
     const extra = [item.team,item.prize_money?"£"+item.prize_money:(item.points!=null?item.points+" pts":null),item.org,credit].filter(Boolean).join(" · ");
     return '<div class="hub-person">'+img+'<span class="hub-rank">'+esc(rank)+'</span><span class="hub-person-name"><strong>'+esc(item.name||"TBC")+'</strong><small>'+esc(extra||label||"")+'</small></span></div>';
@@ -48,11 +50,22 @@
     if(!box) return;
     const d=imageDiagnostics;
     const found=Number(d.found||0), missing=Number(d.missing||0);
-    box.innerHTML='<summary>IMAGE CHECK · '+found+' FOUND / '+missing+' NOT FOUND · '+imageFailures+' FAILED TO LOAD</summary><p>Library entries: '+Math.max(Number(d.library_entries||0),Object.keys(localImages).length)+' · Last checked: '+esc(d.checked_at?new Date(d.checked_at).toLocaleString("en-GB",{timeZone:"Europe/London"}):"Not checked")+'</p><p>Only relevant Commons matches with image and licence metadata are published. Failed image loads are counted on this device.</p>';
+    box.innerHTML='<summary>IMAGE CHECK · '+found+' FOUND / '+missing+' NOT FOUND · '+imageFailures+' FAILED TO LOAD · '+imageLoads+' LOADED</summary><p>Library entries: '+Math.max(Number(d.library_entries||0),Object.keys(localImages).length)+' · Last checked: '+esc(d.checked_at?new Date(d.checked_at).toLocaleString("en-GB",{timeZone:"Europe/London"}):"Not checked")+'</p><p>Only relevant Commons matches with image and licence metadata are published. Failed image loads are counted on this device.</p>';
   }
   function render(sport=active) {
     active=sport;
     root.innerHTML=panel(sport);
+    root.querySelectorAll("img[data-image-entity]").forEach(img=>{
+      img.addEventListener("load",()=>{imageLoads++;updateImageDiagnostics();},{once:true});
+      img.addEventListener("error",()=>{
+        imageFailures++;
+        const fallback=document.createElement("span");
+        fallback.className="hub-avatar-fallback";
+        fallback.textContent=img.dataset.imageFallback||"?";
+        img.replaceWith(fallback);
+        updateImageDiagnostics();
+      },{once:true});
+    });
     updateImageDiagnostics();
   }
   Promise.all([
