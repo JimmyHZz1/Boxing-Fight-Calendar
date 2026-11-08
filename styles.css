@@ -375,6 +375,11 @@
 .sport-watch-guide-item small,.sport-page-note{font-size:11px;line-height:1.6;color:var(--muted)}
 .sport-watch-guide-item a{font-size:10px;color:var(--accent);text-decoration:none}
 .sport-page-note{margin:12px 0 0}
+.ranking-search-wrap{display:flex;align-items:center;gap:10px;margin:12px 0;padding:11px 13px;border:1px solid var(--line);background:#0f1013;color:var(--accent)}
+.ranking-search{flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--text);font:500 12px 'DM Sans',sans-serif}
+.ranking-search::placeholder{color:var(--muted)}
+.ranking-search-count{font-size:8px;font-weight:900;letter-spacing:1px;color:var(--muted);white-space:nowrap}
+.sport-ranking-row[hidden],.sport-ranking-group[hidden]{display:none}
 .sport-ranking-group{background:var(--panel);border:1px solid var(--line);padding:14px;margin:10px 0}
 .sport-ranking-group h3{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;font-size:21px;margin:0 0 10px}
 .sport-ranking-row{display:grid;grid-template-columns:36px 1fr auto;gap:8px;align-items:center;padding:9px 0;border-top:1px solid var(--line);font-size:12px}
