@@ -6,7 +6,17 @@
           "rank": 1,
           "name": "Andrea Kimi Antonelli",
           "team": "Mercedes",
-          "points": "380"
+          "points": "380",
+          "image_url": "./assets/images/f1-drivers/andrea-kimi-antonelli.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Andrea_Kimi_Antonelli_2025_Italian_Grand_Prix_FP3.jpg",
+          "image_credit": "Wikimedia Commons · Eustace Bagge · CC BY 4.0",
+          "image_license": "CC BY 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1.0,
+          "image_match_method": "category:Category:Mercedes-AMG F1 W16 E Performance of Andrea Kimi Antonelli",
+          "image_verified_at": "2026-11-08T13:26:53Z",
+          "image_local_path": "assets/images/f1-drivers/andrea-kimi-antonelli.jpg"
         },
         {
           "rank": 2,
@@ -136,19 +146,49 @@
           "rank": 10,
           "name": "Pierre Gasly",
           "team": "Alpine F1 Team",
-          "points": "42"
+          "points": "42",
+          "image_url": "./assets/images/f1-drivers/pierre-gasly.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Pierre_Gasly_2017_Malaysia.jpg",
+          "image_credit": "Wikimedia Commons · Morio · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1.0,
+          "image_match_method": "search:Pierre Gasly",
+          "image_verified_at": "2026-11-08T13:26:53Z",
+          "image_local_path": "assets/images/f1-drivers/pierre-gasly.jpg"
         },
         {
           "rank": 11,
           "name": "Arvid Lindblad",
           "team": "RB F1 Team",
-          "points": "38"
+          "points": "38",
+          "image_url": "./assets/images/f1-drivers/arvid-lindblad.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:2026_Chinese_GP_-_Racing_Bulls_-_Arvid_Lindblad_-_Qualifying.jpg",
+          "image_credit": "Wikimedia Commons · Liauzh · CC BY 4.0",
+          "image_license": "CC BY 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1.0,
+          "image_match_method": "category:Category:RB VCARB 03 of Arvid Lindblad",
+          "image_verified_at": "2026-11-08T13:26:53Z",
+          "image_local_path": "assets/images/f1-drivers/arvid-lindblad.jpg"
         },
         {
           "rank": 12,
           "name": "Franco Colapinto",
           "team": "Alpine F1 Team",
-          "points": "27"
+          "points": "27",
+          "image_url": "./assets/images/f1-drivers/franco-colapinto.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:2026_Chinese_GP_-_Alpine_-_Franco_Colapinto_-_Qualifying.jpg",
+          "image_credit": "Wikimedia Commons · Liauzh · CC BY 4.0",
+          "image_license": "CC BY 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1.0,
+          "image_match_method": "category:Category:Alpine A526 of Franco Colapinto",
+          "image_verified_at": "2026-11-08T13:26:53Z",
+          "image_local_path": "assets/images/f1-drivers/franco-colapinto.jpg"
         },
         {
           "rank": 13,
@@ -3653,17 +3693,89 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 0,
-    "found": 8,
-    "missing": 540,
+    "attempted": 5,
+    "found": 13,
+    "missing": 722,
     "rejected": 0,
-    "by_sport": {},
-    "newly_found": 0,
+    "by_sport": {
+      "f1 drivers": {
+        "attempted": 5,
+        "found": 4,
+        "missing": 1,
+        "rejected": 0
+      }
+    },
+    "rejection_reasons": {
+      "not_an_image": 16,
+      "missing_licence_or_source_metadata": 9,
+      "surname_not_matched": 17,
+      "given_name_not_matched": 9
+    },
+    "search_details": [
+      {
+        "name": "Andrea Kimi Antonelli",
+        "queries": 5,
+        "candidate_files": 20,
+        "accepted": 6,
+        "rejections": {
+          "not_an_image": 5,
+          "missing_licence_or_source_metadata": 3,
+          "surname_not_matched": 3,
+          "given_name_not_matched": 3
+        }
+      },
+      {
+        "name": "Pierre Gasly",
+        "queries": 1,
+        "candidate_files": 20,
+        "accepted": 2,
+        "rejections": {
+          "surname_not_matched": 1,
+          "not_an_image": 11,
+          "missing_licence_or_source_metadata": 6
+        }
+      },
+      {
+        "name": "Arvid Lindblad",
+        "queries": 3,
+        "candidate_files": 18,
+        "accepted": 4,
+        "rejections": {
+          "surname_not_matched": 11,
+          "given_name_not_matched": 3
+        }
+      },
+      {
+        "name": "Franco Colapinto",
+        "queries": 3,
+        "candidate_files": 8,
+        "accepted": 3,
+        "rejections": {
+          "surname_not_matched": 2,
+          "given_name_not_matched": 3
+        }
+      },
+      {
+        "name": "Oliver Bearman",
+        "queries": 0,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      }
+    ],
+    "checked_at": "2026-11-08T13:26:53Z",
+    "library_entries": 13,
+    "newly_found": 4,
     "coverage": {
+      "boxing fight card fighters": {
+        "total": 187,
+        "with_image": 1,
+        "missing": 186
+      },
       "f1 drivers": {
         "total": 25,
-        "with_image": 8,
-        "missing": 17
+        "with_image": 12,
+        "missing": 13
       },
       "f1 constructors": {
         "total": 11,
@@ -3685,9 +3797,7 @@
         "with_image": 0,
         "missing": 81
       }
-    },
-    "checked_at": "2026-11-08T13:25:33Z",
-    "library_entries": 9
+    }
   },
   "last_updated": "2026-11-08T13:25:33Z"
 }
