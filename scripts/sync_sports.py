@@ -207,7 +207,10 @@ def enrich_event_fighter_images(events):
                 elif key not in images and key not in attempted: pending[key] = name
     import time
     for key, name in list(pending.items())[:30]:
-        result = commons_photo(name, image_kind=image_kind)
+        if IMAGE_LOOKUP_RATE_LIMITED or IMAGE_DIAGNOSTICS["attempted"] >= IMAGE_LOOKUP_BUDGET:
+            break
+        IMAGE_DIAGNOSTICS["attempted"] += 1
+        result = commons_photo(name, image_kind="portrait")
         attempted[key] = datetime.now(timezone.utc).date().isoformat()
         if result and result.get("image_url"):
             images[key] = result
@@ -396,6 +399,8 @@ IMAGE_LIBRARY_PATH = os.path.join(DATA, "sports-images.json")
 IMAGE_DIAGNOSTICS = {"attempted": 0, "found": 0, "missing": 0, "rejected": 0, "by_sport": {}}
 IMAGE_LIBRARY = {"version": 1, "images": {}}
 IMAGE_LIBRARY_LOADED = False
+IMAGE_LOOKUP_BUDGET = 12
+IMAGE_LOOKUP_RATE_LIMITED = False
 
 def image_key(name):
     import unicodedata
@@ -446,7 +451,8 @@ def image_aliases(name):
     return aliases.get(key, [str(name).strip()])
 
 def commons_photo(name, image_kind="portrait"):
-    """Find a high-confidence, reusable Commons image and retain its attribution."""
+    """Find a high-confidence Commons image, stopping promptly on API throttling."""
+    global IMAGE_LOOKUP_RATE_LIMITED
     if not name:
         return None
     import html, unicodedata
@@ -467,10 +473,17 @@ def commons_photo(name, image_kind="portrait"):
             "prop": "imageinfo", "iiprop": "url|extmetadata|mime", "iiurlwidth": 480,
             "iiextmetadatafilter": "Artist|Credit|LicenseShortName|LicenseUrl|UsageTerms"
         }
+        if IMAGE_LOOKUP_RATE_LIMITED:
+            break
         try:
             payload = request_json("https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode(params), provider="Wikimedia Commons")
+            import time
+            time.sleep(1.0)
         except Exception as exc:
             print(f"COMMONS_IMAGE_WARNING: {name}: {exc}")
+            if "HTTP 429" in str(exc):
+                IMAGE_LOOKUP_RATE_LIMITED = True
+                break
             continue
         for page in (payload.get("query") or {}).get("pages", {}).values():
             title = page.get("title", "").replace("File:", "")
@@ -539,6 +552,7 @@ def record_image(name, result, sport="other"):
 
 def add_photos(rows, name_field="name", limit=8, sport="other", image_kind="portrait"):
     load_image_library()
+    global IMAGE_LOOKUP_RATE_LIMITED
     for row_index, row in enumerate(rows):
         name = row.get(name_field)
         key = image_key(name)
@@ -552,10 +566,12 @@ def add_photos(rows, name_field="name", limit=8, sport="other", image_kind="port
             continue
         if not name or row_index >= limit:
             continue
+        if IMAGE_LOOKUP_RATE_LIMITED or IMAGE_DIAGNOSTICS["attempted"] >= IMAGE_LOOKUP_BUDGET:
+            break
         IMAGE_DIAGNOSTICS["attempted"] += 1
         bucket = IMAGE_DIAGNOSTICS["by_sport"].setdefault(sport, {"attempted": 0, "found": 0, "missing": 0, "rejected": 0})
         bucket["attempted"] += 1
-        result = commons_photo(name)
+        result = commons_photo(name, image_kind=image_kind)
         if result:
             row.update(result)
             record_image(name, result, sport)
