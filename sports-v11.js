@@ -18,10 +18,8 @@
   const status=e=>String(e?.status||"").toLowerCase().replace(/[ -]/g,"_");
   const isLive=e=>{
     if(["live","in_progress","ongoing","inprogress"].includes(status(e))||e?.is_live===true||e?.live===true||(e?.sessions||[]).some(s=>["live","in_progress","ongoing"].includes(String(s.status||"").toLowerCase().replace(/[ -]/g,"_"))||s.is_live===true))return true;
-    if(/^f1-/.test(String(e?.id||"")) && !(e?.results||[]).length){
-      const start=new Date(e.start_at||e.date||"").getTime(),elapsed=Date.now()-start;
-      return Number.isFinite(start)&&elapsed>=0&&elapsed<4*60*60*1000;
-    }
+    // F1 sessions can finish well before the race weekend's four-hour window.
+    // Never infer LIVE from a passed scheduled start; require explicit feed status.
     return false;
   };
   const isUpcoming=e=>{
