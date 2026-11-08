@@ -793,3 +793,5 @@
 .favourites-head-to-head-row span{font-size:10px;color:var(--accent);font-weight:800;text-align:right;}
 .favourites-head-to-head-row small{grid-column:1/-1;color:var(--muted);font-size:10px;line-height:1.5;}
 @media(max-width:520px){.favourites-head-to-head-row{grid-template-columns:1fr}.favourites-head-to-head-row span{text-align:left}}
+
+.favourites-head-to-head-row .favourite-form-edge{color:var(--muted);font-size:9px;letter-spacing:.2px;font-weight:600;}
