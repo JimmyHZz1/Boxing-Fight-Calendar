@@ -178,6 +178,7 @@
     $("featured-event-open").onclick=()=>window.SportPages?.open?.(sport);
     root.hidden=false;
   }
+  $("compact-view-toggle")?.addEventListener("click",()=>requestAnimationFrame(render));
   $("live-centre-calendar")?.addEventListener("click",()=>window.showScreen?.("calendar-screen"));
   $("open-version-history")?.addEventListener("click",e=>{e.preventDefault();window.showScreen?.("version-history-screen");});
   $("version-history-back")?.addEventListener("click",()=>window.showScreen?.("home-screen"));
