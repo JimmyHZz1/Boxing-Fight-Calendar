@@ -588,3 +588,17 @@
   #home-screen.screen.active { grid-template-columns: minmax(290px,.75fr) minmax(480px,1.25fr); gap: 15px; }
   .sport-slide { padding: 16px 11px; }
 }
+
+
+/* F1 standings image treatment: larger driver crops and simplified constructor wordmarks. */
+.hub-person:has(.hub-driver-portrait){grid-template-columns:50px 26px minmax(0,1fr);min-height:68px;gap:9px}
+.hub-person>img.hub-driver-portrait,.hub-person>.hub-driver-fallback{width:46px;height:54px;object-fit:cover;object-position:50% 18%;border-radius:7px;background:#252830;border:1px solid #3b3e47;display:grid;place-items:center}
+.hub-person>img.hub-constructor-logo{width:62px;height:40px;max-width:62px;object-fit:contain;object-position:center;background:transparent;border:0;border-radius:0;padding:1px}
+.hub-person:has(.hub-constructor-logo),.hub-person:has(.hub-constructor-fallback){grid-template-columns:66px 26px minmax(0,1fr);min-height:58px;gap:9px}
+.hub-constructor-fallback{width:62px;height:38px;display:flex;align-items:center;justify-content:center;overflow:hidden;color:#f4f2ed;font:900 12px/1 "Barlow Condensed",sans-serif;letter-spacing:.3px;text-align:center;text-wrap:balance;border-bottom:2px solid var(--accent);background:linear-gradient(90deg,rgba(226,180,91,.10),transparent);}
+@media(max-width:420px){.hub-person:has(.hub-driver-portrait){grid-template-columns:46px 23px minmax(0,1fr);gap:7px;min-height:62px}.hub-person>img.hub-driver-portrait,.hub-person>.hub-driver-fallback{width:42px;height:50px}.hub-person>img.hub-constructor-logo{width:56px;height:36px}.hub-person:has(.hub-constructor-logo),.hub-person:has(.hub-constructor-fallback){grid-template-columns:58px 23px minmax(0,1fr);gap:7px}.hub-constructor-fallback{width:54px;height:34px;font-size:11px}}
+
+/* Keep the top sport icons neutral until their sport is selected. */
+.top-sport-button img{filter:none;transition:filter .18s ease}
+.top-sport-button[aria-current="true"] img{filter:drop-shadow(0 0 6px rgba(226,180,91,.62))}
+@media(prefers-reduced-motion:reduce){.top-sport-button img{transition:none}}
