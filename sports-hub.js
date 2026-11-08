@@ -60,7 +60,7 @@
     root.querySelectorAll("img[data-image-entity]").forEach(img=>{
       img.addEventListener("load",()=>{imageLoads++;updateImageDiagnostics();},{once:true});
       img.addEventListener("error",()=>{
-        if(img.dataset.remoteRetry!=="1" && img.dataset.imageEntity){
+        if(img.dataset.remoteRetry!=="1" && img.dataset.imageEntity && img.dataset.officialF1!=="1"){
           img.dataset.remoteRetry="1";
           const local=localImages[imageKey(img.dataset.imageEntity)];
           const path=local?.path;
