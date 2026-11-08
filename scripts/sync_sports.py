@@ -803,6 +803,8 @@ def sync_sports_hub():
                     "points": row.get("points"),
                     "image_url": row.get("image_url") or player.get("image_url") or player.get("photo_url")
                 })
+        except Exception:
+            rankings = []
         if not rankings: rankings = darts_rankings_from_web()
         hub["sports"]["darts"] = {"rankings": add_photos(rankings, limit=40, sport="darts"), "source_url": "https://www.dartsrankings.com/", "notice": "PDC Order of Merit live table. Rankings are updated after PDC ranking events."}
     except Exception as exc:
