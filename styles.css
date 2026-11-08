@@ -883,3 +883,99 @@
 .featured-event-button{flex:none;border:1px solid var(--accent);background:var(--accent);color:#17130d;padding:10px 13px;border-radius:3px;font:800 9px 'DM Sans',sans-serif;letter-spacing:.8px;cursor:pointer}
 @media(max-width:420px){.featured-event-widget{padding:15px}.featured-event-content{grid-template-columns:66px minmax(0,1fr);gap:12px}.featured-event-mark{width:66px;height:66px}.featured-event-footer{align-items:flex-start;flex-direction:column}.featured-event-button{width:100%}}
 
+
+
+/* V1.7 visual refresh — refined event hierarchy, personalisation and responsive controls. */
+:root{scroll-behavior:smooth}
+.app-shell{max-width:1440px}
+.topbar{gap:18px}
+.global-search-open{display:inline-flex;align-items:center;gap:7px}
+.global-search-open:first-letter{font-size:18px}
+.global-search-open span{font-size:9px;font-weight:800;letter-spacing:.8px}
+.home-display-tools{display:flex;justify-content:flex-end;gap:8px;margin:10px 0 2px}
+.home-display-tools button{border:1px solid var(--line);background:rgba(255,255,255,.025);color:var(--muted);padding:8px 11px;font-size:8px;font-weight:900;letter-spacing:.8px;cursor:pointer;transition:border-color .2s,color .2s,background .2s}
+.home-display-tools button:hover,.home-display-tools button[aria-pressed="true"],.home-display-tools button[aria-expanded="true"]{border-color:var(--accent);color:var(--accent);background:rgba(226,180,91,.07)}
+.featured-event-widget{min-height:205px;padding:22px 24px;background:radial-gradient(ellipse at 88% 10%,color-mix(in srgb,var(--accent) 24%,transparent),transparent 40%),linear-gradient(112deg,rgba(30,32,38,.98),rgba(17,18,22,.97));}
+.featured-event-widget:after{content:"";position:absolute;right:-30px;bottom:-95px;width:280px;height:220px;border:1px solid color-mix(in srgb,var(--accent) 20%,transparent);border-radius:50%;box-shadow:0 0 0 24px rgba(255,255,255,.012),0 0 0 48px rgba(255,255,255,.009);pointer-events:none}
+.featured-event-content,.featured-event-footer,.featured-event-topline{position:relative;z-index:1}
+.featured-event-mark{background:rgba(0,0,0,.34);border-color:color-mix(in srgb,var(--accent) 24%,transparent);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.featured-event-copy h2{max-width:780px;letter-spacing:.25px}
+.featured-event-countdown{font-variant-numeric:tabular-nums}
+.live-centre{border-top:1px solid var(--line);padding-top:18px}
+.live-centre-heading{align-items:end}
+.live-centre-event{border-radius:4px;transition:transform .18s,border-color .18s,background .18s}
+.live-centre-event[role="button"]{cursor:pointer}
+.live-centre-event[role="button"]:hover{transform:translateY(-2px);border-color:var(--accent);background:rgba(226,180,91,.055)}
+.live-centre-badge{white-space:nowrap}
+.live-centre-event:has(.live-centre-badge:first-letter){min-width:0}
+.event-list,.live-centre-list,.favourites-grid{gap:12px}
+.calendar-panel,.favourites-add-panel,.sport-page-section,.live-centre,.sports-hub-banner{border-radius:5px}
+.calendar-toolbar{padding:14px 16px}
+.calendar-grid button{transition:background .15s,border-color .15s}
+.calendar-grid button:hover{border-color:var(--accent)}
+.calendar-sport-filters button,.favourites-filters button,.global-search-filters button{border-radius:3px;transition:background .15s,border-color .15s}
+.favourite-card,.sport-watch-guide-item,.sport-page-event-card{transition:transform .18s,border-color .18s,box-shadow .18s}
+.favourite-card:hover,.sport-watch-guide-item:hover{transform:translateY(-2px);border-color:color-mix(in srgb,var(--accent) 55%,var(--line));box-shadow:0 12px 28px rgba(0,0,0,.2)}
+.sport-watch-guide-item{display:grid;grid-template-columns:48px minmax(0,1fr);align-items:center;column-gap:12px}
+.sport-watch-guide-item .sport-watch-guide-brand{grid-row:span 3;width:44px;height:44px}
+.sport-watch-guide-item .sport-watch-guide-brand-mark{font-size:11px}
+.sport-watch-guide-item strong,.sport-watch-guide-item small,.sport-watch-guide-item a{min-width:0}
+.global-search-dialog{position:fixed;inset:0;z-index:2000;display:grid;place-items:start center;padding:8vh 16px 24px;background:rgba(0,0,0,.78);backdrop-filter:blur(9px)}
+.global-search-dialog[hidden]{display:none}
+.global-search-panel{width:min(720px,100%);max-height:84vh;overflow:hidden;display:flex;flex-direction:column;background:#17191e;border:1px solid #51452f;border-top:3px solid var(--accent);box-shadow:0 25px 90px rgba(0,0,0,.6);padding:20px}
+.global-search-heading{display:flex;align-items:center;justify-content:space-between;gap:15px}
+.global-search-heading h2{margin:4px 0 15px;font:800 clamp(27px,5vw,38px)/1 'Barlow Condensed',sans-serif}
+.global-search-heading h2 em{color:var(--accent);font-style:normal}
+#global-search-close{width:34px;height:34px;border:1px solid var(--line);background:transparent;color:var(--muted);font-size:24px;cursor:pointer}
+.global-search-input-wrap{display:flex;align-items:center;gap:10px;padding:12px;border:1px solid var(--line);background:#0f1013;color:var(--accent)}
+.global-search-input-wrap input{flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--text);font:500 14px 'DM Sans',sans-serif}
+.global-search-input-wrap kbd{font-size:8px;color:var(--muted);border:1px solid var(--line);padding:4px 6px}
+.global-search-filters{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
+.global-search-filters button{padding:7px 10px;border:1px solid var(--line);background:transparent;color:var(--muted);font-size:8px;font-weight:900;letter-spacing:.7px;cursor:pointer}
+.global-search-filters button[aria-pressed="true"]{border-color:var(--accent);background:rgba(226,180,91,.09);color:var(--accent)}
+.global-search-results{overflow:auto;min-height:100px}
+.global-search-results>p{color:var(--muted);font-size:11px;line-height:1.6}
+.global-search-result{display:grid;grid-template-columns:58px minmax(0,1fr) auto;align-items:center;gap:12px;padding:11px 8px;border-bottom:1px solid rgba(255,255,255,.07);cursor:pointer}
+.global-search-result:hover{background:rgba(255,255,255,.035)}
+.global-search-result-sport{color:var(--accent);font-size:8px;font-weight:900;letter-spacing:.8px}
+.global-search-result strong{display:block;font-size:12px;line-height:1.35}
+.global-search-result small{display:block;margin-top:4px;color:var(--muted);font-size:9px}
+.global-search-result-action{color:var(--accent);font-size:8px;font-weight:900;white-space:nowrap}
+.home-customise-panel{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:8px 0 14px;padding:12px;border:1px solid var(--line);background:rgba(20,22,27,.94)}
+.home-customise-panel[hidden]{display:none}
+.home-customise-panel strong{width:100%;font-size:9px;letter-spacing:1px;color:var(--accent)}
+.home-customise-panel label{display:flex;align-items:center;gap:6px;padding:7px 9px;background:rgba(255,255,255,.035);color:var(--muted);font-size:9px;cursor:pointer}
+.home-customise-panel input{accent-color:var(--accent)}
+body.compact-view .event-list,body.compact-view .live-centre-list,body.compact-view .favourites-grid{gap:6px}
+body.compact-view .live-centre-event,body.compact-view .favourite-card{padding:9px}
+body.compact-view .featured-event-widget{padding:14px 18px}
+body.compact-view .featured-event-content{margin:9px 0;grid-template-columns:58px minmax(0,1fr)}
+body.compact-view .featured-event-mark{width:58px;height:58px}
+body.compact-view .sport-page-section{margin-top:16px}
+body.compact-view .event-list>*{padding-top:9px;padding-bottom:9px}
+body.home-personalised [data-home-hide="true"]{display:none!important}
+body.home-personalised .home-customise-panel{display:flex}
+@media(min-width:900px){
+ .featured-event-widget{padding:25px 30px}
+ .featured-event-content{grid-template-columns:104px minmax(0,1fr);gap:22px}
+ .featured-event-mark{width:104px;height:104px}
+ #live-sports-centre{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:22px}
+ #live-sports-centre>.live-centre-heading{grid-column:1/-1}
+ #live-sports-centre>.live-now-panel,#live-sports-centre>.live-upcoming-panel{min-width:0}
+ #sports-carousel-section{margin-top:30px}
+ .sports-carousel{gap:16px}
+ .sport-slide{min-height:245px}
+ .favourites-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:620px){
+ .global-search-open{padding:7px 8px!important}
+ .global-search-open span{display:none}
+ .home-display-tools{justify-content:stretch}
+ .home-display-tools button{flex:1}
+ .global-search-dialog{padding:4vh 9px 12px}
+ .global-search-panel{padding:14px}
+ .global-search-result{grid-template-columns:48px minmax(0,1fr);gap:8px}
+ .global-search-result-action{grid-column:2}
+ .sport-watch-guide-item{grid-template-columns:40px minmax(0,1fr);column-gap:9px}
+ .sport-watch-guide-item .sport-watch-guide-brand{width:36px;height:36px}
+}
