@@ -72,7 +72,7 @@
     if(f.sport==="f1"){
       allSportEvents("f1").forEach(e=>(e.results||[]).forEach(r=>{
         const match=f.type==="team"?norm(r.team)===name:norm(r.driver)===name;
-        if(match)out.push({date:e.date,title:e.name||"Grand Prix",detail:"P"+(r.position||"—")+" · "+(r.points??"0")+" pts",win:String(r.position)==="1",source:e.url||e.source_url});
+        if(match){const position=Number(r.position)||null;const points=Number(r.points)||0;out.push({date:e.date,title:e.name||"Grand Prix",detail:"P"+(r.position||"—")+" · "+(r.points??"0")+" pts",win:position===1,position,points,outcome:position===1?"WIN":position&&position<=3?"PODIUM":"FINISH",source:e.url||e.source_url});}
       }));
     }else{
       allSportEvents(f.sport).forEach(e=>(e.bouts||e.fights||[]).forEach(b=>{
@@ -83,10 +83,42 @@
         const fighterId=(norm(a)===name?b.fighter_a?.id:b.fighter_b?.id);
         const won=(winner&&norm(winner)===name)||(winnerId!=null&&fighterId!=null&&String(winnerId)===String(fighterId));
         const status=String(b.status||"").toLowerCase();
-        if(result.method||winner||status==="completed")out.push({date:e.date||e.start_at,title:e.name||e.title||"Fight night",detail:(won?"WIN":winner?"LOSS":"RESULT")+" · "+(result.method||result.finish||status||"Result published"),win:won,source:e.source_url||e.url});
+        const verdict=norm(result.outcome||result.decision||b.outcome||"");
+        const draw=verdict.includes("draw")||verdict.includes("tie")||norm(winner)==="draw"||norm(winner)==="tie";
+        const loss=!!winner&&!won&&!draw;
+        const outcome=won?"WIN":draw?"DRAW":loss?"LOSS":"RESULT";
+        if(result.method||winner||status==="completed")out.push({date:e.date||e.start_at,title:e.name||e.title||"Fight night",detail:outcome+" · "+(result.method||result.finish||status||"Result published"),win:won,outcome,source:e.source_url||e.url});
       }));
     }
     return out.filter(x=>x.date).sort((a,b)=>String(b.date).localeCompare(String(a.date)));
+  }
+  function performanceStats(f,results,profile){
+    if(f.sport==="f1"){
+      const classified=results.filter(r=>Number.isFinite(r.position)&&r.position>0);
+      if(!classified.length)return [];
+      const wins=classified.filter(r=>r.position===1).length;
+      const podiums=classified.filter(r=>r.position<=3).length;
+      const points=classified.reduce((sum,r)=>sum+(Number(r.points)||0),0);
+      const average=classified.reduce((sum,r)=>sum+r.position,0)/classified.length;
+      const form=classified.slice(0,5).map(r=>"P"+r.position).join(" · ");
+      return [["RESULTS IN LOADED FEED",classified.length],["WINS",wins],["PODIUMS",podiums],["POINTS IN LOADED FEED",points],["AVERAGE FINISH",average.toFixed(1)],["LAST RESULTS",form]];
+    }
+    if(["boxing","ufc","bkfc"].includes(f.sport)){
+      const known=results.filter(r=>["WIN","LOSS","DRAW"].includes(r.outcome));
+      if(!known.length)return [];
+      const wins=known.filter(r=>r.outcome==="WIN").length;
+      const losses=known.filter(r=>r.outcome==="LOSS").length;
+      const draws=known.filter(r=>r.outcome==="DRAW").length;
+      return [["REPORTED RESULTS",known.length],["W-L-D IN LOADED FEED",wins+"-"+losses+"-"+draws],["LAST RESULTS",known.slice(0,5).map(r=>r.outcome).join(" · ")]];
+    }
+    if(f.sport==="darts"&&profile){
+      const out=[];
+      if(profile.rank!=null)out.push(["CURRENT ORDER OF MERIT",profile.rank===0?"CHAMPION":"#"+profile.rank]);
+      if(profile.points!=null)out.push(["PUBLISHED RANKING POINTS",profile.points]);
+      if(profile.prize_money!=null)out.push(["PUBLISHED PRIZE MONEY","£"+profile.prize_money]);
+      return out;
+    }
+    return [];
   }
   function profileAchievements(f,profile,results){
     const items=[];
@@ -124,6 +156,16 @@
     if(results.length){results.slice(0,5).forEach(r=>{const row=make("div","favourite-profile-result");row.append(make("span","favourite-result-date",String(r.date).slice(0,10)),make("strong","",r.title),make("small",r.win?"favourite-result-win":"",r.detail));recent.append(row);});}
     else recent.append(make("p","favourite-profile-muted","No verified recent results are available in the current feed."));
     achievementSection.append(recent);panel.append(achievementSection);
+    const performance=performanceStats(f,results,profile);
+    const performanceSection=make("section","favourite-profile-section");
+    performanceSection.append(make("h3","favourite-profile-section-title","PERFORMANCE SNAPSHOT"));
+    if(performance.length){
+      const grid=make("div","favourite-profile-stats favourite-performance-grid");
+      performance.forEach(([k,v])=>{const cell=make("div","favourite-stat");cell.append(make("small","",k),make("strong","",String(v)));grid.append(cell);});
+      performanceSection.append(grid);
+      performanceSection.append(make("p","favourite-profile-muted","Calculated only from results present in the current published feed; this is not a complete career record."));
+    }else performanceSection.append(make("p","favourite-profile-muted","No reliable match-level or historical performance data is currently published for this competitor."));
+    panel.append(performanceSection);
     const next=make("section","favourite-profile-section");next.append(make("h3","favourite-profile-section-title","NEXT APPEARANCE"));
     if(upcoming){const row=make("div","favourite-profile-next");row.append(make("strong","",upcoming.name||upcoming.title||"Upcoming event"),make("span","",String(upcoming.date||upcoming.start_at||"Date TBC").slice(0,10)+" · "+(upcoming.venue||upcoming.location||upcoming.circuit||"Venue TBC")));next.append(row);}
     else next.append(make("p","favourite-profile-muted","No upcoming appearance is currently listed for this favourite."));
@@ -143,7 +185,7 @@
     const head=make("div","favourites-comparison-head");head.append(make("h3","","COMPARE FAVOURITES"));
     const clear=make("button","favourites-compare-clear","CLEAR");clear.type="button";clear.addEventListener("click",()=>{compareIds.clear();render();});head.append(clear);panel.append(head);
     const grid=make("div","favourites-comparison-grid");
-    selected.forEach(f=>{const col=make("div","favourites-comparison-item");const p=lookup(f);col.append(make("strong","",f.name),make("small","",labels[f.sport]));const pairs=statPairs(f,p);if(f.sport==="f1"&&p?.rank!=null)pairs.unshift(["RANK","#"+p.rank]);if(!pairs.length)col.append(make("p","favourite-profile-muted","No verified stats available."));else pairs.slice(0,5).forEach(([k,v])=>col.append(make("p","",""+k+": "+v)));grid.append(col);});
+    selected.forEach(f=>{const col=make("div","favourites-comparison-item");const p=lookup(f);col.append(make("strong","",f.name),make("small","",labels[f.sport]));const pairs=statPairs(f,p);if(f.sport==="f1"&&p?.rank!=null)pairs.unshift(["RANK","#"+p.rank]);performanceStats(f,profileResults(f),p).forEach(pair=>{if(!pairs.some(x=>x[0]===pair[0]))pairs.push(pair);});if(!pairs.length)col.append(make("p","favourite-profile-muted","No verified stats available."));else pairs.slice(0,8).forEach(([k,v])=>col.append(make("p","",""+k+": "+v)));grid.append(col);});
     panel.append(grid);toolbar.after(panel);
   }
 
