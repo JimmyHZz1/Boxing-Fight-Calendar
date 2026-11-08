@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Fetch F1, PDC darts, UFC and BKFC schedules into static JSON feeds."""
 from __future__ import annotations
-import json, os, sys, re, urllib.error, urllib.parse, urllib.request
+import json, os, sys, re, time, urllib.error, urllib.parse, urllib.request
 from html.parser import HTMLParser
 from datetime import datetime, timedelta, timezone
 
@@ -14,6 +14,10 @@ def iso_now():
     return NOW.isoformat(timespec="seconds").replace("+00:00", "Z")
 
 def request_json(url, key=None, provider="API"):
+    # Wikimedia Commons asks automated clients to keep request rates low.
+    # Pace each request to avoid HTTP 429 and wasting an image-enrichment batch.
+    if provider == "Wikimedia Commons":
+        time.sleep(1.2)
     headers = {"Accept": "application/json", "User-Agent": "Sports-Calendar/1.0 (scheduled data sync)"}
     if key:
         headers["Authorization"] = "Bearer " + key
