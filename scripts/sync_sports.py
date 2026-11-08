@@ -633,6 +633,10 @@ def commons_photo(name, image_kind="portrait"):
             page_url = info.get("descriptionurl")
             licence = meta_value("LicenseShortName")
             licence_url = meta_value("LicenseUrl")
+            # Commons public-domain text logos sometimes omit LicenseUrl while
+            # explicitly identifying their status in LicenseShortName.
+            if not licence_url and "public domain" in licence.lower():
+                licence_url = "https://commons.wikimedia.org/wiki/Commons:Licensing"
             if not image_url or not page_url or not licence or not licence_url:
                 reject("missing_licence_or_source_metadata")
                 continue
@@ -640,23 +644,37 @@ def commons_photo(name, image_kind="portrait"):
             title_words = words(title)
             metadata_words = words(meta_value("Artist") + " " + meta_value("Credit"))
             all_identity_words = title_words | metadata_words
-            surname = sorted(wanted, key=len)[-1]
-            given_names = wanted - {surname}
-            if surname not in all_identity_words:
-                reject("surname_not_matched")
-                continue
-            # For three-part names such as Andrea Kimi Antonelli, a file titled
-            # "Kimi Antonelli..." is a valid identity match; requiring all three
-            # words incorrectly rejects genuine Commons photographs.
-            if given_names and not (given_names & all_identity_words):
-                reject("given_name_not_matched")
-                continue
-            title_hits = wanted.intersection(title_words)
-            meta_hits = wanted.intersection(metadata_words)
-            score = len(title_hits | meta_hits) / max(1, len(wanted))
-            if score < 0.50:
-                reject("identity_match_too_weak")
-                continue
+            if image_kind == "logo":
+                alias_words = words(" ".join(query_names)) - {"logo", "team", "f1", "racing", "formula", "one", "visa", "cash", "app"}
+                identity_words = wanted | alias_words
+                identity_words -= {"logo", "team", "f1", "racing", "formula", "one"}
+                title_hits = identity_words.intersection(title_words)
+                meta_hits = identity_words.intersection(metadata_words)
+                if not (title_hits | meta_hits):
+                    reject("logo_identity_not_matched")
+                    continue
+                score = len(title_hits | meta_hits) / max(1, len(identity_words))
+                if score < 0.20:
+                    reject("identity_match_too_weak")
+                    continue
+            else:
+                surname = sorted(wanted, key=len)[-1]
+                given_names = wanted - {surname}
+                if surname not in all_identity_words:
+                    reject("surname_not_matched")
+                    continue
+                # For three-part names such as Andrea Kimi Antonelli, a file titled
+                # "Kimi Antonelli..." is a valid identity match; requiring all three
+                # words incorrectly rejects genuine Commons photographs.
+                if given_names and not (given_names & all_identity_words):
+                    reject("given_name_not_matched")
+                    continue
+                title_hits = wanted.intersection(title_words)
+                meta_hits = wanted.intersection(metadata_words)
+                score = len(title_hits | meta_hits) / max(1, len(wanted))
+                if score < 0.50:
+                    reject("identity_match_too_weak")
+                    continue
             candidates.append((score, {
                 "image_url": image_url,
                 "image_page_url": page_url,
@@ -689,47 +707,49 @@ def commons_photo(name, image_kind="portrait"):
                 IMAGE_LOOKUP_RATE_LIMITED = True
                 break
 
-    # Search Commons category names, then inspect files in matching person categories.
-    # This catches images whose file titles do not contain the full competitor name.
-    if not IMAGE_LOOKUP_RATE_LIMITED and image_kind == "portrait" and not candidates:
-        params = {
-            "action": "query", "format": "json", "list": "search",
-            "srsearch": "intitle:\"" + name + "\"",
-            "srnamespace": 14, "srlimit": 3
-        }
-        try:
-            payload = request_json("https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode(params), provider="Wikimedia Commons")
-            query_count += 1
-            categories = (payload.get("query") or {}).get("search", [])
-            for category in categories:
-                if IMAGE_LOOKUP_RATE_LIMITED:
+    # Search Commons categories for both people and constructor logos. This
+    # catches logo files whose names are indexed under a team category instead.
+    if not IMAGE_LOOKUP_RATE_LIMITED and not candidates:
+        for category_query in query_names:
+            if IMAGE_LOOKUP_RATE_LIMITED or candidates:
+                break
+            params = {
+                "action": "query", "format": "json", "list": "search",
+                "srsearch": "intitle:\"" + category_query + "\"",
+                "srnamespace": 14, "srlimit": 3
+            }
+            try:
+                payload = request_json("https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode(params), provider="Wikimedia Commons")
+                query_count += 1
+                categories = (payload.get("query") or {}).get("search", [])
+                for category in categories:
+                    if IMAGE_LOOKUP_RATE_LIMITED or candidates:
+                        break
+                    category_title = category.get("title", "")
+                    if not category_title.startswith("Category:"):
+                        continue
+                    category_params = {
+                        "action": "query", "format": "json", "generator": "categorymembers",
+                        "gcmtitle": category_title, "gcmtype": "file", "gcmlimit": 30,
+                        "prop": "imageinfo", "iiprop": "url|extmetadata|mime", "iiurlwidth": 480,
+                        "iiextmetadatafilter": "Artist|Credit|LicenseShortName|LicenseUrl|UsageTerms"
+                    }
+                    try:
+                        category_payload = request_json("https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode(category_params), provider="Wikimedia Commons")
+                        query_count += 1
+                        inspect_pages((category_payload.get("query") or {}).get("pages", {}).values(), "category:" + category_title)
+                        if candidates:
+                            break
+                    except Exception as exc:
+                        print(f"COMMONS_IMAGE_CATEGORY_WARNING: {name} [{category_title}]: {exc}")
+                        if "HTTP 429" in str(exc):
+                            IMAGE_LOOKUP_RATE_LIMITED = True
+                            break
+            except Exception as exc:
+                print(f"COMMONS_IMAGE_CATEGORY_SEARCH_WARNING: {name} [{category_query}]: {exc}")
+                if "HTTP 429" in str(exc):
+                    IMAGE_LOOKUP_RATE_LIMITED = True
                     break
-                category_title = category.get("title", "")
-                if not category_title.startswith("Category:"):
-                    continue
-                category_params = {
-                    "action": "query", "format": "json", "generator": "categorymembers",
-                    "gcmtitle": category_title, "gcmtype": "file", "gcmlimit": 30,
-                    "prop": "imageinfo", "iiprop": "url|extmetadata|mime", "iiurlwidth": 480,
-                    "iiextmetadatafilter": "Artist|Credit|LicenseShortName|LicenseUrl|UsageTerms"
-                }
-                try:
-                    category_payload = request_json("https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode(category_params), provider="Wikimedia Commons")
-                    query_count += 1
-                    inspect_pages((category_payload.get("query") or {}).get("pages", {}).values(), "category:" + category_title)
-                    # Stop as soon as a category yields a licensed identity match;
-                    # continuing through more categories wastes Commons quota.
-                    if candidates:
-                        break
-                except Exception as exc:
-                    print(f"COMMONS_IMAGE_CATEGORY_WARNING: {name} [{category_title}]: {exc}")
-                    if "HTTP 429" in str(exc):
-                        IMAGE_LOOKUP_RATE_LIMITED = True
-                        break
-        except Exception as exc:
-            print(f"COMMONS_IMAGE_CATEGORY_SEARCH_WARNING: {name}: {exc}")
-            if "HTTP 429" in str(exc):
-                IMAGE_LOOKUP_RATE_LIMITED = True
 
     IMAGE_DIAGNOSTICS.setdefault("search_details", []).append({
         "name": name, "queries": query_count, "candidate_files": len(seen_titles),
