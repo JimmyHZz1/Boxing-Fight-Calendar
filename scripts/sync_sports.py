@@ -302,17 +302,25 @@ def sync_ufc():
     recent_url = "https://api.ufcalendar.com/v1/events?org=ufc&status=completed&from=" + (TODAY - timedelta(days=45)).isoformat() + "&limit=100"
     upcoming = api_data(request_json(upcoming_url, key, "UFCalendar"))
     completed = api_data(request_json(recent_url, key, "UFCalendar"))
-    upcoming.sort(key=lambda e: e.get("starts_at") or "")
-    completed.sort(key=lambda e: e.get("starts_at") or "", reverse=True)
-    chosen = []
-    for event in upcoming[:2] + completed[:1]:
+    upcoming.sort(key=lambda e: e.get("starts_at") or e.get("start_at") or "")
+    completed.sort(key=lambda e: e.get("starts_at") or e.get("start_at") or "", reverse=True)
+
+    # Keep every upcoming event in the calendar, but only make detail calls for
+    # the next two cards (plus the latest completed card) to protect API quota.
+    detail_targets = upcoming[:2] + completed[:1]
+    detailed = {}
+    for event in detail_targets:
+        identity = str(event.get("id") or event.get("slug") or event.get("starts_at") or event.get("start_at") or "")
         try:
-            chosen.append(ufc_detail(key, event))
+            detailed[identity] = ufc_detail(key, event)
         except Exception as exc:
             print(f"UFC_CARD_WARNING: {event.get('title') or event.get('slug')}: {exc}")
-            chosen.append(event)
+            detailed[identity] = event
+
     events = []
-    for raw in chosen:
+    for event in upcoming + completed[:1]:
+        identity = str(event.get("id") or event.get("slug") or event.get("starts_at") or event.get("start_at") or "")
+        raw = detailed.get(identity, event)
         fights = raw.get("fights") or raw.get("card") or raw.get("bouts") or []
         events.append({
             "id": raw.get("id") or raw.get("slug"),
@@ -328,9 +336,8 @@ def sync_ufc():
         })
     events.sort(key=lambda e: (e.get("date") or "", e.get("name") or ""))
     enrich_event_fighter_images(events)
-    save("ufc.json", {"sport": "ufc", "provider": "UFCalendar", "events": events, "notice": "UFC event schedule and selected full fight cards. Free API allowance: 1,000 requests per month."})
-    print(f"UFC: saved {len(events)} events, including up to two upcoming cards and the latest completed card.")
-
+    save("ufc.json", {"sport": "ufc", "provider": "UFCalendar", "events": events, "notice": "All upcoming UFC events returned by UFCalendar, with detailed fight cards for the next two events and the latest completed card. Free API allowance: 1,000 requests per month."})
+    print(f"UFC: saved {len(events)} events; detailed cards fetched for the next two upcoming events and latest completed event.")
 
 
 def sync_bkfc():
@@ -885,8 +892,15 @@ def enrich_cached_images():
     IMAGE_DIAGNOSTICS = {"attempted": 0, "found": 0, "missing": 0, "rejected": 0, "by_sport": {}}
     IMAGE_LOOKUP_RATE_LIMITED = False
     load_image_library()
-    # Prioritise fighters on upcoming confirmed boxing cards, then move through the
-    # standings queues. The same five-image budget applies across the whole run.
+    hub_path = os.path.join(DATA, "sports-hub.json")
+    with open(hub_path, encoding="utf-8") as handle:
+        hub = json.load(handle)
+    sports = hub.get("sports") or hub
+    f1 = sports.get("f1") or {}
+    f1["drivers"] = add_photos(f1.get("drivers") or [], limit=30, sport="f1 drivers")
+    f1["constructors"] = add_photos(f1.get("constructors") or [], limit=20, sport="f1 constructors", image_kind="logo")
+    # F1 gets first claim on the five-image budget: driver portraits, then team logos.
+    # Only after F1 coverage has been processed do we spend any remaining budget elsewhere.
     fights_path = os.path.join(DATA, "fights.json")
     fighter_cache_path = os.path.join(DATA, "fighter-images.json")
     try:
@@ -918,14 +932,6 @@ def enrich_cached_images():
     fighter_cache["updated_at"] = iso_now()
     with open(fighter_cache_path, "w", encoding="utf-8") as handle:
         json.dump(fighter_cache, handle, ensure_ascii=False, indent=2)
-        handle.write("\n")
-    hub_path = os.path.join(DATA, "sports-hub.json")
-    with open(hub_path, encoding="utf-8") as handle:
-        hub = json.load(handle)
-    sports = hub.get("sports") or hub
-    f1 = sports.get("f1") or {}
-    f1["drivers"] = add_photos(f1.get("drivers") or [], limit=30, sport="f1 drivers")
-    f1["constructors"] = add_photos(f1.get("constructors") or [], limit=20, sport="f1 constructors", image_kind="logo")
     darts = sports.get("darts") or {}
     darts["rankings"] = add_photos(darts.get("rankings") or [], limit=40, sport="darts")
     ufc = sports.get("ufc") or {}
