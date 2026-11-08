@@ -61,6 +61,7 @@
     root.classList.remove("is-auto-scrolling","is-paused");
     root.replaceChildren();
     const track=make("div","next-event-track");
+    const group=make("div","next-event-group");
     const originals=[];
     sports.forEach(sport=>{
       const rows=allEvents().filter(x=>x.sport===sport);
@@ -74,26 +75,27 @@
       const target=event.start_at||event.main_card_at||event.start_time_utc||event.date||event.event_date;
       if(!live&&target){
         const timer=make("small","next-event-countdown",window.SportsCountdown?.text?.(target)||"DATE TBC");
-        timer.dataset.countdownTarget=/^\d{4}-\d{2}-\d{2}$/.test(String(target))?String(target):new Date(target).toISOString();
+        timer.dataset.countdownTarget=/^\\d{4}-\\d{2}-\\d{2}$/.test(String(target))?String(target):new Date(target).toISOString();
         info.append(timer);
       }
       const badge=make("span","next-event-state "+(live?"is-live":"is-upcoming"));
       badge.append(make("i","next-event-state-icon",live?"●":"▣"),make("b",null,live?"LIVE":"UPCOMING"));
-      button.append(info,badge);track.append(button);originals.push(button);
+      button.append(info,badge);group.append(button);originals.push(button);
     });
     if(!originals.length){root.append(make("span","next-event-loading","No live or upcoming events currently listed."));return;}
-    root.append(track);
-    const groupWidth=track.scrollWidth;
-    const required=Math.max(root.clientWidth*2.2,groupWidth*2);
+    track.append(group);root.append(track);
+    // Duplicate complete, identical groups. Measuring the whole group keeps the
+    // loop distance exact, including the spacing between its cards.
+    const groupWidth=group.getBoundingClientRect().width||group.scrollWidth;
+    if(!groupWidth){root.classList.remove("is-auto-scrolling");return;}
+    const targetWidth=Math.max(root.clientWidth+groupWidth*1.25,groupWidth*2.5);
     let copies=1;
-    while(track.scrollWidth<required&&copies<12){
-      originals.forEach(node=>{
-        const clone=node.cloneNode(true);
-        clone.dataset.tickerClone="true";
-        clone.setAttribute("aria-hidden","true");
-        clone.tabIndex=-1;
-        track.append(clone);
-      });
+    while(track.scrollWidth<targetWidth&&copies<20){
+      const clone=group.cloneNode(true);
+      clone.dataset.tickerClone="true";
+      clone.setAttribute("aria-hidden","true");
+      clone.querySelectorAll("button").forEach(button=>{button.tabIndex=-1;});
+      track.append(clone);
       copies++;
     }
     track.style.setProperty("--ticker-distance",groupWidth+"px");
@@ -101,7 +103,7 @@
     track.style.setProperty("--ticker-duration",Math.max(24,groupWidth/22)+"s");
     root.classList.add("is-auto-scrolling");
   }
-  const tickerRoot=$("next-event-ticker");
+  let tickerResizeTimer;\n  window.addEventListener("resize",()=>{clearTimeout(tickerResizeTimer);tickerResizeTimer=setTimeout(renderTicker,140);});\n  const tickerRoot=$("next-event-ticker");
   if(tickerRoot){
     tickerRoot.addEventListener("click",event=>{
       const card=event.target.closest(".next-event-item");
