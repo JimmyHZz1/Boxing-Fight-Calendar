@@ -6,8 +6,13 @@ on:
     paths:
       - "scripts/sync_sports.py"
       - ".github/workflows/enrich-images.yml"
-      - "data/image-library.json"
+      - "data/sports-hub.json"
+      - "data/sports-images.json"
+      - "data/fighter-images.json"
+      - "data/event-fighter-images.json"
+      - "assets/images/**"
   schedule:
+    # Recovery check in case a run is interrupted or Commons rate-limits us.
     - cron: "*/15 * * * *"
   workflow_dispatch:
 
@@ -21,6 +26,7 @@ concurrency:
 jobs:
   enrich-images:
     runs-on: ubuntu-latest
+    timeout-minutes: 350
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -30,28 +36,84 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Enrich five images from the saved queue
-        run: python scripts/sync_sports.py --images-only
-      - name: Commit image progress and cache with retry
+      - name: Drain image queues in consecutive five-image batches
         shell: bash
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          for attempt in 1 2 3; do
-            git add data/ assets/images/
-            if git diff --cached --quiet; then
-              echo "No image-library changes."
+
+          run_batch() {
+            local output
+            output="$(python scripts/sync_sports.py --images-only 2>&1)" || {
+              echo "$output"
+              return 1
+            }
+            echo "$output"
+            local summary
+            summary="$(printf '%s\n' "$output" | grep 'IMAGE_ENRICHMENT:' | tail -n 1 | sed 's/^.*IMAGE_ENRICHMENT: //')"
+            if [ -z "$summary" ]; then
+              echo "Image enrichment did not return its diagnostics summary."
+              return 1
+            fi
+            BATCH_ATTEMPTED="$(python -c 'import json,sys; print(int(json.loads(sys.argv[1]).get("attempted",0)))' "$summary")"
+            BATCH_RATE_LIMITED="$(python -c 'import json,sys; print("true" if json.loads(sys.argv[1]).get("rate_limited") else "false")' "$summary")"
+          }
+
+          MAX_BATCHES=120
+          for batch in $(seq 1 "$MAX_BATCHES"); do
+            echo "::group::Image enrichment batch $batch"
+            run_batch
+
+            if [ "$BATCH_ATTEMPTED" -eq 0 ]; then
+              echo "No eligible image lookups remain. Queue drained."
+              # Discard timestamp-only changes from the final empty check.
+              git reset --hard HEAD
+              echo "::endgroup::"
               exit 0
             fi
-            git commit -m "Enrich sports image library in small batches"
-            if git push origin HEAD:main; then
+
+            published=false
+            for attempt in 1 2 3; do
+              git add data/ assets/images/
+              if git diff --cached --quiet; then
+                echo "No files changed in this batch."
+                published=true
+                break
+              fi
+              git commit -m "Enrich sports image library batch $batch"
+              if git push origin HEAD:main; then
+                published=true
+                break
+              fi
+
+              echo "main moved during batch publication; refreshing and retrying (attempt $attempt)."
+              git fetch origin main
+              git reset --hard origin/main
+              run_batch
+              if [ "$BATCH_ATTEMPTED" -eq 0 ]; then
+                echo "Queue was completed by another run."
+                published=true
+                break
+              fi
+            done
+
+            if [ "$published" != true ]; then
+              echo "Could not publish image batch after three attempts."
+              exit 1
+            fi
+
+            echo "Published batch $batch ($BATCH_ATTEMPTED lookups attempted)."
+            echo "::endgroup::"
+
+            if [ "$BATCH_RATE_LIMITED" = "true" ]; then
+              echo "Wikimedia Commons rate limit detected; pausing until the scheduled recovery run."
               exit 0
             fi
-            echo "main moved during image enrichment; refreshing and retrying (attempt $attempt)."
-            git fetch origin main
-            git reset --hard origin/main
-            python scripts/sync_sports.py --images-only
+            if [ "$BATCH_ATTEMPTED" -lt 5 ]; then
+              echo "Fewer than five eligible lookups were available; queue is drained."
+              exit 0
+            fi
           done
-          echo "Could not publish image batch after three attempts."
-          exit 1
+
+          echo "Reached the safety cap of $MAX_BATCHES batches; the scheduled recovery run will continue the remaining queue."
