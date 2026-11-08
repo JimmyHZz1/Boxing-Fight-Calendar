@@ -16,7 +16,7 @@
         <span class="brand-mark">S</span>
         <span><strong>SPORTS</strong><small>CALENDAR</small></span>
       </a>
-      <div class="topbar-actions"><button id="open-settings" class="secondary-button settings-open" type="button" aria-label="Personalise your F1 team theme"><img src="https://www.formula1.com/assets/home/_next/static/media/f1-logo.43a01c6b.svg" alt="" aria-hidden="true"><span>TEAM</span></button><span class="live-status"><i></i> SCHEDULE</span><button id="manual-refresh" class="primary-button topbar-refresh" type="button" aria-label="Check for newly published sports data">CHECKING…</button></div>
+      <div class="topbar-actions"><button id="global-search-open" class="secondary-button global-search-open" type="button" aria-label="Search all sports">⌕ <span>SEARCH</span></button><button id="open-settings" class="secondary-button settings-open" type="button" aria-label="Personalise your F1 team theme"><img src="https://www.formula1.com/assets/home/_next/static/media/f1-logo.43a01c6b.svg" alt="" aria-hidden="true"><span>TEAM</span></button><span class="live-status"><i></i> SCHEDULE</span><button id="manual-refresh" class="primary-button topbar-refresh" type="button" aria-label="Check for newly published sports data">CHECKING…</button></div>
     </header>
     <nav class="top-sport-selector" aria-label="Switch sport">
       <button type="button" class="top-sport-button" data-top-sport="f1" aria-label="Formula 1"><img src="https://www.formula1.com/assets/home/_next/static/media/f1-logo.43a01c6b.svg" alt=""><span>F1</span></button>
@@ -39,6 +39,7 @@
           <div class="hero-meta"><span>🇬🇧 UK LOCAL TIME</span><span id="home-updated">WAITING FOR FIRST SYNC</span></div>
           <p id="refresh-help" class="refresh-help" role="status" aria-live="polite">Data syncs automatically every 4 hours. Tap to check for the latest published schedules.</p>
         </div>
+        <div class="home-display-tools" aria-label="Home page display options"><button type="button" id="home-customise-toggle" aria-expanded="false">⚙ PERSONALISE HOME</button><button type="button" id="compact-view-toggle" aria-pressed="false">▤ COMPACT VIEW</button></div>
         <section id="featured-event-widget" class="featured-event-widget" aria-label="Featured upcoming sports event" hidden>
           <div class="featured-event-topline"><span class="eyebrow">THE NEXT BIG ONE</span><span id="featured-event-kicker" class="featured-event-kicker">FEATURED EVENT</span></div>
           <div class="featured-event-content">
@@ -219,6 +220,7 @@
       </section>
     </main>
 
+    <div id="global-search-dialog" class="global-search-dialog" hidden role="dialog" aria-modal="true" aria-labelledby="global-search-title"><div class="global-search-panel"><div class="global-search-heading"><div><span class="eyebrow">ALL FIVE SPORTS</span><h2 id="global-search-title">Find your <em>next event.</em></h2></div><button type="button" id="global-search-close" aria-label="Close search">×</button></div><label class="global-search-input-wrap"><span>⌕</span><input id="global-search-input" type="search" placeholder="Search events, fighters, drivers, teams…" autocomplete="off"><kbd>ESC</kbd></label><div class="global-search-filters" id="global-search-filters"><button type="button" data-search-sport="all" aria-pressed="true">ALL</button><button type="button" data-search-sport="f1" aria-pressed="false">F1</button><button type="button" data-search-sport="darts" aria-pressed="false">DARTS</button><button type="button" data-search-sport="boxing" aria-pressed="false">BOXING</button><button type="button" data-search-sport="ufc" aria-pressed="false">UFC</button><button type="button" data-search-sport="bkfc" aria-pressed="false">BKFC</button></div><div id="global-search-results" class="global-search-results"><p>Start typing to search across events and competitors.</p></div></div></div>
     <nav class="bottom-nav" aria-label="Main navigation">
       <button class="nav-item active" data-screen="home-screen"><span>⌂</span><small>HOME</small></button>
       <button class="nav-item" data-screen="calendar-screen"><span>▦</span><small>CALENDAR</small></button>
