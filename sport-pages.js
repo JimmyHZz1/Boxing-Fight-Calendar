@@ -217,7 +217,7 @@
       // metadata. Merge those fields with the published image records instead
       // of replacing the records and silently dropping every portrait/logo.
       const savedF1=hub.f1||{};
-      const normaliseName=value=>String(value||"").normalize("NFKD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
+      const normaliseName=value=>String(value||"").normalize("NFKD").replace(/[̀-ͯ]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
       const imageFields=["image_url","image_page_url","image_credit","image_license","image_license_url","image_source","image_match_score","image_match_method","image_verified_at","image_local_path"];
       const savedByName=rows=>new Map((Array.isArray(rows)?rows:[]).map(item=>[normaliseName(item.name||item.team||item.driver),item]));
       const mergeSavedImages=(liveRows,savedRows)=>{
