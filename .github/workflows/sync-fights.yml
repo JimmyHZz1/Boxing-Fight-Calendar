@@ -51,7 +51,7 @@ jobs:
 
           # Stage first: git diff ignores newly-created files, including the
           # first sports-hub.json snapshot. Compare the staged snapshot instead.
-          git add data/fights.json data/fighter-images.json data/f1.json data/darts.json data/ufc.json data/bkfc.json data/sports-hub.json
+          git add data/fights.json data/fighter-images.json data/f1.json data/darts.json data/ufc.json data/bkfc.json data/sports-hub.json data/sports-images.json data/event-fighter-images.json
           if git diff --cached --quiet; then
             echo "No schedule changes."
             exit 0

@@ -168,6 +168,75 @@ def ufc_detail(key, event):
         return merged
     return event
 
+
+def enrich_event_fighter_images(events):
+    """Attach Commons portraits to UFC/BKFC card rows, with attribution and a local cache."""
+    cache_path = os.path.join(DATA, "event-fighter-images.json")
+    try:
+        with open(cache_path, encoding="utf-8") as handle:
+            cache = json.load(handle)
+    except (FileNotFoundError, json.JSONDecodeError):
+        cache = {"images": {}, "attempted": {}}
+    load_image_library()
+    images, attempted = cache.setdefault("images", {}), cache.setdefault("attempted", {})
+    def person_name(value):
+        if isinstance(value, dict):
+            return value.get("name") or " ".join(x for x in [value.get("given_name"), value.get("family_name")] if x)
+        return str(value or "").strip()
+    def image_from(value):
+        if isinstance(value, dict):
+            return value.get("image_url") or value.get("photo_url") or value.get("portrait_url") or value.get("image") or value.get("photo")
+        return None
+    def sides(bout):
+        return [
+            ("fighter1", bout.get("fighter1") or bout.get("fighter_a") or bout.get("red") or bout.get("corner_a")),
+            ("fighter2", bout.get("fighter2") or bout.get("fighter_b") or bout.get("blue") or bout.get("corner_b"))
+        ]
+    pending = {}
+    for event in events:
+        for bout in event.get("fights") or event.get("card") or event.get("bouts") or []:
+            if not isinstance(bout, dict): continue
+            for side, raw in sides(bout):
+                name = person_name(raw)
+                key = re.sub(r"[^a-z0-9]+", " ", name.lower()).strip()
+                if not key or name.upper() == "TBC": continue
+                direct = bout.get(side + "_image") or bout.get(side + "_photo") or image_from(raw)
+                if direct: bout[side + "_image"] = direct
+                elif key in IMAGE_LIBRARY.get("images", {}):
+                    images[key] = IMAGE_LIBRARY["images"][key]
+                elif key not in images and key not in attempted: pending[key] = name
+    import time
+    for key, name in list(pending.items())[:30]:
+        result = commons_photo(name, image_kind=image_kind)
+        attempted[key] = datetime.now(timezone.utc).date().isoformat()
+        if result and result.get("image_url"):
+            images[key] = result
+            record_image(name, result, "ufc/bkfc event fighters")
+            print(f"EVENT_FIGHTER_IMAGE_FOUND: {name}")
+        else:
+            print(f"EVENT_FIGHTER_IMAGE_NOT_FOUND: {name}")
+        time.sleep(0.2)
+    for event in events:
+        for bout in event.get("fights") or event.get("card") or event.get("bouts") or []:
+            if not isinstance(bout, dict): continue
+            for side, raw in sides(bout):
+                key = re.sub(r"[^a-z0-9]+", " ", person_name(raw).lower()).strip()
+                result = images.get(key) or {}
+                if not bout.get(side + "_image") and result.get("image_url"):
+                    bout[side + "_image"] = result["image_url"]
+                if result.get("image_credit"):
+                    bout[side + "_image_credit"] = result["image_credit"]
+    cache["updated_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
+    IMAGE_DIAGNOSTICS["checked_at"] = iso_now()
+    IMAGE_DIAGNOSTICS["library_entries"] = len(IMAGE_LIBRARY.get("images", {}))
+    save_image_library()
+    os.makedirs(DATA, exist_ok=True)
+    with open(cache_path, "w", encoding="utf-8") as handle:
+        json.dump(cache, handle, ensure_ascii=False, indent=2)
+        handle.write("\n")
+    return events
+
+
 def sync_ufc():
     key = os.environ.get("UFCALENDAR_API_KEY", "").strip()
     if not key:
@@ -203,6 +272,7 @@ def sync_ufc():
             "fights": fights, "source": "UFCalendar"
         })
     events.sort(key=lambda e: (e.get("date") or "", e.get("name") or ""))
+    enrich_event_fighter_images(events)
     save("ufc.json", {"sport": "ufc", "provider": "UFCalendar", "events": events, "notice": "UFC event schedule and selected full fight cards. Free API allowance: 1,000 requests per month."})
     print(f"UFC: saved {len(events)} events, including up to two upcoming cards and the latest completed card.")
 
@@ -314,6 +384,7 @@ def sync_bkfc():
         pass
 
     events.sort(key=lambda e: (e.get("date") or "", e.get("name") or ""))
+    enrich_event_fighter_images(events)
     save("bkfc.json", {
         "sport": "bkfc", "provider": "BKFC official events", "events": events,
         "notice": "Schedule sourced from BKFC's official events page. Start times and full fight cards are shown only when published by BKFC. UK viewing is event-dependent: BKFC+ carries many live events; selected cards are exclusive to DAZN."
@@ -321,39 +392,176 @@ def sync_bkfc():
     print(f"BKFC: saved {len(events)} official event listings.")
 
 
-def commons_photo(name):
-    """Find one reusable Commons thumbnail; return attribution with the image URL."""
+IMAGE_LIBRARY_PATH = os.path.join(DATA, "sports-images.json")
+IMAGE_DIAGNOSTICS = {"attempted": 0, "found": 0, "missing": 0, "rejected": 0, "by_sport": {}}
+IMAGE_LIBRARY = {"version": 1, "images": {}}
+IMAGE_LIBRARY_LOADED = False
+
+def image_key(name):
+    import unicodedata
+    value = unicodedata.normalize("NFKD", str(name or "")).encode("ascii", "ignore").decode().lower()
+    return re.sub(r"[^a-z0-9]+", " ", value).strip()
+
+def load_image_library():
+    global IMAGE_LIBRARY, IMAGE_LIBRARY_LOADED
+    if IMAGE_LIBRARY_LOADED:
+        return IMAGE_LIBRARY
+    try:
+        with open(IMAGE_LIBRARY_PATH, encoding="utf-8") as handle:
+            loaded = json.load(handle)
+        if isinstance(loaded, dict) and isinstance(loaded.get("images"), dict):
+            IMAGE_LIBRARY = loaded
+    except (FileNotFoundError, json.JSONDecodeError):
+        IMAGE_LIBRARY = {"version": 1, "images": {}}
+    IMAGE_LIBRARY_LOADED = True
+    return IMAGE_LIBRARY
+
+def save_image_library():
+    os.makedirs(DATA, exist_ok=True)
+    IMAGE_LIBRARY["updated_at"] = iso_now()
+    with open(IMAGE_LIBRARY_PATH, "w", encoding="utf-8") as handle:
+        json.dump(IMAGE_LIBRARY, handle, ensure_ascii=False, indent=2)
+        handle.write("\n")
+
+def image_aliases(name):
+    key = image_key(name)
+    aliases = {
+        "max verstappen": ["Max Verstappen"],
+        "lewis hamilton": ["Lewis Hamilton"],
+        "lando norris": ["Lando Norris"],
+        "charles leclerc": ["Charles Leclerc"],
+        "fernando alonso": ["Fernando Alonso"],
+        "sergio perez": ["Sergio Perez"],
+        "red bull racing": ["Red Bull Racing", "Oracle Red Bull Racing"],
+        "mercedes": ["Mercedes AMG Petronas F1 Team", "Mercedes F1"],
+        "mclaren": ["McLaren Formula One Team", "McLaren F1"],
+        "aston martin": ["Aston Martin Aramco F1 Team"],
+        "williams": ["Williams Racing"],
+        "alpine": ["BWT Alpine F1 Team"],
+        "ferrari": ["Scuderia Ferrari"],
+        "racing bulls": ["Visa Cash App Racing Bulls"],
+        "kick sauber": ["Stake F1 Team", "Sauber F1 Team"],
+        "haas": ["MoneyGram Haas F1 Team"]
+    }
+    return aliases.get(key, [str(name).strip()])
+
+def commons_photo(name, image_kind="portrait"):
+    """Find a high-confidence, reusable Commons image and retain its attribution."""
     if not name:
         return None
-    params = {
-        "action": "query", "format": "json", "generator": "search",
-        "gsrsearch": 'filetype:bitmap "' + str(name) + '"',
-        "gsrnamespace": 6, "gsrlimit": 1,
-        "prop": "imageinfo", "iiprop": "url|extmetadata", "iiurlwidth": 240
-    }
-    try:
-        payload = request_json("https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode(params), provider="Wikimedia Commons")
-        pages = (payload.get("query") or {}).get("pages") or {}
-        page = next(iter(pages.values()), {})
-        info = (page.get("imageinfo") or [{}])[0]
-        meta = info.get("extmetadata") or {}
-        artist = (meta.get("Artist") or {}).get("value", "")
-        license_name = (meta.get("LicenseShortName") or {}).get("value", "")
-        return {"image_url": info.get("thumburl") or info.get("url"), "image_credit": "Wikimedia Commons" + ((" · " + artist) if artist else "") + ((" · " + license_name) if license_name else "")}
-    except Exception:
+    import html, unicodedata
+    def words(value):
+        value = unicodedata.normalize("NFKD", str(value or "")).encode("ascii", "ignore").decode().lower()
+        return set(re.findall(r"[a-z0-9]+", value))
+    wanted = words(name) - {"jr", "sr", "ii", "iii", "iv", "team", "f1", "racing", "club"}
+    if not wanted:
         return None
+    query_names = image_aliases(name)
+    candidates = []
+    seen_titles = set()
+    for query_name in query_names:
+        params = {
+            "action": "query", "format": "json", "generator": "search",
+            "gsrsearch": query_name + (" logo" if image_kind == "logo" else " portrait"),
+            "gsrnamespace": 6, "gsrlimit": 20,
+            "prop": "imageinfo", "iiprop": "url|extmetadata|mime", "iiurlwidth": 480,
+            "iiextmetadatafilter": "Artist|Credit|LicenseShortName|LicenseUrl|UsageTerms"
+        }
+        try:
+            payload = request_json("https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode(params), provider="Wikimedia Commons")
+        except Exception as exc:
+            print(f"COMMONS_IMAGE_WARNING: {name}: {exc}")
+            continue
+        for page in (payload.get("query") or {}).get("pages", {}).values():
+            title = page.get("title", "").replace("File:", "")
+            if title in seen_titles:
+                continue
+            seen_titles.add(title)
+            info = (page.get("imageinfo") or [{}])[0]
+            if not str(info.get("mime", "")).startswith("image/"):
+                continue
+            meta = info.get("extmetadata") or {}
+            def meta_value(key):
+                value = meta.get(key) or {}
+                raw = value.get("value", "") if isinstance(value, dict) else str(value)
+                return html.unescape(re.sub(r"<[^>]+>", "", str(raw))).strip()
+            image_url = info.get("thumburl") or info.get("url")
+            page_url = info.get("descriptionurl")
+            licence = meta_value("LicenseShortName")
+            licence_url = meta_value("LicenseUrl")
+            if not image_url or not page_url or not licence or not licence_url:
+                IMAGE_DIAGNOSTICS["rejected"] += 1
+                continue
+            title_words = words(title)
+            metadata_words = words(meta_value("Artist") + " " + meta_value("Credit"))
+            # Prefer title matches. Metadata can strengthen a match but never
+            # substitute a missing surname for a multi-word person's name.
+            title_hits = wanted.intersection(title_words)
+            meta_hits = wanted.intersection(metadata_words)
+            surname = sorted(wanted, key=len)[-1]
+            if len(wanted) >= 2 and surname not in title_words and surname not in metadata_words:
+                IMAGE_DIAGNOSTICS["rejected"] += 1
+                continue
+            coverage = len(title_hits) / max(1, len(wanted))
+            metadata_coverage = len(meta_hits) / max(1, len(wanted))
+            score = max(coverage, coverage * 0.75 + metadata_coverage * 0.25)
+            if len(wanted) == 1:
+                score = 1.0 if next(iter(wanted)) in title_words else 0.0
+            if score < 0.62:
+                IMAGE_DIAGNOSTICS["rejected"] += 1
+                continue
+            candidates.append((score, {
+                "image_url": image_url,
+                "image_page_url": page_url,
+                "image_credit": "Wikimedia Commons · " + (meta_value("Artist") or meta_value("Credit") or "See source file") + " · " + licence,
+                "image_license": licence,
+                "image_license_url": licence_url,
+                "image_source": "Wikimedia Commons",
+                "image_match_score": round(score, 2),
+                "image_verified_at": iso_now()
+            }))
+    if not candidates:
+        return None
+    candidates.sort(key=lambda item: item[0], reverse=True)
+    return candidates[0][1]
 
-def add_photos(rows, name_field="name", limit=8):
-    cache = {}
-    for row in rows[:limit]:
+def record_image(name, result, sport="other"):
+    if not result or not result.get("image_url"):
+        return
+    key = image_key(name)
+    if not key:
+        return
+    record = {"name": name, "sport": sport, **result}
+    IMAGE_LIBRARY.setdefault("images", {})[key] = record
+    bucket = IMAGE_DIAGNOSTICS["by_sport"].setdefault(sport, {"attempted": 0, "found": 0, "missing": 0, "rejected": 0})
+    bucket["found"] += 1
+    IMAGE_DIAGNOSTICS["found"] += 1
+
+def add_photos(rows, name_field="name", limit=8, sport="other", image_kind="portrait"):
+    load_image_library()
+    for row_index, row in enumerate(rows):
+        name = row.get(name_field)
+        key = image_key(name)
         if row.get("image_url") or row.get("image") or row.get("photo_url"):
             row["image_url"] = row.get("image_url") or row.get("image") or row.get("photo_url")
+            row.setdefault("image_source", "Upstream data")
             continue
-        name = row.get(name_field)
-        if name and name not in cache:
-            cache[name] = commons_photo(name)
-        if cache.get(name):
-            row.update(cache[name])
+        cached = IMAGE_LIBRARY.get("images", {}).get(key) if key else None
+        if cached and cached.get("image_url"):
+            row.update({k: v for k, v in cached.items() if k.startswith("image_")})
+            continue
+        if not name or row_index >= limit:
+            continue
+        IMAGE_DIAGNOSTICS["attempted"] += 1
+        bucket = IMAGE_DIAGNOSTICS["by_sport"].setdefault(sport, {"attempted": 0, "found": 0, "missing": 0, "rejected": 0})
+        bucket["attempted"] += 1
+        result = commons_photo(name)
+        if result:
+            row.update(result)
+            record_image(name, result, sport)
+        else:
+            IMAGE_DIAGNOSTICS["missing"] += 1
+            bucket["missing"] += 1
     return rows
 
 class RankingTableParser(HTMLParser):
@@ -420,7 +628,7 @@ def sync_sports_hub():
             "team": ", ".join(c.get("name", "") for c in x.get("Constructors", [])), "points": x.get("points")
         } for x in drivers_raw]
         constructors = [{"rank": int(x.get("position", 0)), "name": (x.get("Constructor") or {}).get("name"), "points": x.get("points")} for x in constructors_raw]
-        hub["sports"]["f1"] = {"drivers": add_photos(drivers, limit=25), "constructors": add_photos(constructors, limit=20), "season": year, "notice": "Official season standings sourced from the community-maintained Jolpica F1 API."}
+        hub["sports"]["f1"] = {"drivers": add_photos(drivers, limit=25, sport="f1 drivers"), "constructors": add_photos(constructors, limit=11, sport="f1 constructors", image_kind="logo"), "season": year, "notice": "Official season standings sourced from the community-maintained Jolpica F1 API."}
     except Exception as exc:
         hub["sports"]["f1"] = {**previous.get("f1", {"drivers": [], "constructors": []}), "sync_warning": str(exc)}
 
@@ -441,7 +649,7 @@ def sync_sports_hub():
         except Exception:
             rankings = []
         if not rankings: rankings = darts_rankings_from_web()
-        hub["sports"]["darts"] = {"rankings": add_photos(rankings, limit=20), "source_url": "https://www.dartsrankings.com/", "notice": "PDC Order of Merit live table. Rankings are updated after PDC ranking events."}
+        hub["sports"]["darts"] = {"rankings": add_photos(rankings, limit=40, sport="darts"), "source_url": "https://www.dartsrankings.com/", "notice": "PDC Order of Merit live table. Rankings are updated after PDC ranking events."}
     except Exception as exc:
         hub["sports"]["darts"] = {**previous.get("darts", {"rankings": []}), "sync_warning": str(exc)}
 
@@ -457,7 +665,7 @@ def sync_sports_hub():
             entries = []
             for row in division.get("entries") or []:
                 entries.append({"rank": row.get("rank"), "name": row.get("name") or row.get("fighter_name"), "image_url": row.get("image_url") or row.get("photo_url") or row.get("image")})
-            divisions.append({"division": division.get("division"), "name": str(division.get("division") or "").replace("-", " ").title(), "entries": add_photos(entries, limit=4)})
+            divisions.append({"division": division.get("division"), "name": str(division.get("division") or "").replace("-", " ").title(), "entries": add_photos(entries, limit=5, sport="ufc")})
         if not divisions or not any(x.get("entries") for x in divisions):
             raise RuntimeError("UFCalendar returned no UFC ranking entries; keeping the last published snapshot.")
         hub["sports"]["ufc"] = {"divisions": divisions, "snapshot_date": board.get("snapshot_date"), "notice": "Official UFC divisional rankings from UFCalendar. Rank 0 denotes the champion; rankings are updated when the publisher releases a new snapshot."}
@@ -482,17 +690,36 @@ def sync_sports_hub():
             grouped.setdefault(weight, []).append({"name": name, "org": org, "rank": 0, "since": period.get("begins"), "image_url": champion.get("image_url")})
         divisions = []
         for weight, rows in sorted(grouped.items()):
-            divisions.append({"name": weight, "champions": add_photos(rows, limit=3)})
+            divisions.append({"name": weight, "champions": add_photos(rows, limit=3, sport="boxing")})
         if not divisions:
             raise RuntimeError("Open Boxing returned no current title reigns; keeping the last published snapshot.")
         hub["sports"]["boxing"] = {"divisions": divisions, "notice": "Current reigns from Open Boxing, covering the major sanctioning bodies and The Ring where recorded. Boxing title status can change between updates; data coverage is subject to the source database."}
     except Exception as exc:
         hub["sports"]["boxing"] = {**previous.get("boxing", {"divisions": []}), "sync_warning": str(exc)}
 
-    for sport in hub["sports"].values():
-        sport["last_updated"] = iso_now()
+    for sport_data in hub["sports"].values():
+        sport_data["last_updated"] = iso_now()
+    coverage = {}
+    def count_rows(rows):
+        rows = rows or []
+        return {"total": len(rows), "with_image": sum(1 for row in rows if row.get("image_url")), "missing": sum(1 for row in rows if not row.get("image_url"))}
+    f1_data = hub["sports"].get("f1", {})
+    coverage["f1 drivers"] = count_rows(f1_data.get("drivers"))
+    coverage["f1 constructors"] = count_rows(f1_data.get("constructors"))
+    coverage["darts"] = count_rows(hub["sports"].get("darts", {}).get("rankings"))
+    coverage["ufc"] = count_rows([entry for division in hub["sports"].get("ufc", {}).get("divisions", []) for entry in division.get("entries", [])])
+    coverage["boxing"] = count_rows([champion for division in hub["sports"].get("boxing", {}).get("divisions", []) for champion in division.get("champions", [])])
+    IMAGE_DIAGNOSTICS["newly_found"] = IMAGE_DIAGNOSTICS.get("found", 0)
+    IMAGE_DIAGNOSTICS["coverage"] = coverage
+    IMAGE_DIAGNOSTICS["found"] = sum(item["with_image"] for item in coverage.values())
+    IMAGE_DIAGNOSTICS["missing"] = sum(item["missing"] for item in coverage.values())
+    IMAGE_DIAGNOSTICS["checked_at"] = iso_now()
+    IMAGE_DIAGNOSTICS["library_entries"] = len(IMAGE_LIBRARY.get("images", {}))
+    hub["image_diagnostics"] = IMAGE_DIAGNOSTICS
+    save_image_library()
     save("sports-hub.json", hub)
-    print("Sports hub: standings, rankings and title-holder feed refreshed.")
+    print("IMAGE_DIAGNOSTICS: " + json.dumps(IMAGE_DIAGNOSTICS, ensure_ascii=False))
+    print("Sports hub: standings, rankings, title-holders and image diagnostics refreshed.")
 
 def main():
     try:

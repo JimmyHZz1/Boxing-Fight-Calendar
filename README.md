@@ -36,3 +36,9 @@ Boxing Data API docs: https://boxingapi.net/documentation/fights-upcoming
 
 ## Local testing
 Serve the repository root with any static HTTP server. Opening `index.html` directly as a file may prevent service-worker and fetch features from working.
+
+
+## Version 1.1
+- Adds the Live Sports Centre on the home screen with a five-sport live-status view and a combined seven-day upcoming list.
+- Adds a discreet Version History link in the footer.
+- Retains the established dark charcoal and gold theme, individual sport pages, calendar, event cards and UK-local time formatting.
