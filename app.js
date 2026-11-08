@@ -54,11 +54,11 @@ function showScreen(id) {
     });
   }
   document.querySelectorAll(".screen").forEach(s => s.classList.toggle("active",s.id===id));
-  document.querySelectorAll(".nav-item").forEach(b => b.classList.toggle("active",b.dataset.screen===id || (id==="sport-detail-screen"&&b.dataset.screen==="home-screen")));
+  document.querySelectorAll(".nav-item,.topbar-nav-item").forEach(b => b.classList.toggle("active",b.dataset.screen===id || (id==="sport-detail-screen"&&b.dataset.screen==="home-screen")));
   window.scrollTo({top:0,behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
 }
 window.showScreen=showScreen;
-document.querySelectorAll(".nav-item").forEach(b => b.addEventListener("click",()=>showScreen(b.dataset.screen)));
+document.querySelectorAll(".nav-item,.topbar-nav-item").forEach(b => b.addEventListener("click",()=>showScreen(b.dataset.screen)));
 const favouriteTeamThemes = {
   "Mercedes":{accent:"#00d2be",glow:"#123b3a",chrome:"#101c1c"},
   "Ferrari":{accent:"#ef1a2d",glow:"#3a171c",chrome:"#241014"},
