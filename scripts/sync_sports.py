@@ -1157,11 +1157,15 @@ def enrich_cached_images():
     sports = hub.get("sports") or hub
     f1 = sports.get("f1") or {}
     f1["drivers"] = add_photos(f1.get("drivers") or [], limit=30, sport="f1 drivers")
-    # Give the PDC player portraits first claim on each five-image batch. F1 driver
-    # portraits are supplied by official profiles, and constructors now use crisp
-    # in-app team marks, so neither needs Commons lookups in this enrichment pass.
-    darts = sports.get("darts") or {}
-    darts["rankings"] = add_photos(darts.get("rankings") or [], limit=50, sport="darts")
+    # Prioritise fighters before the long tail of the PDC list. The PDC Top 50
+    # already has complete portrait coverage; processing the remaining 175 first
+    # would otherwise consume every five-image batch before UFC/boxing are reached.
+    ufc = sports.get("ufc") or {}
+    for division in ufc.get("divisions") or []:
+        division["entries"] = add_photos(division.get("entries") or [], limit=15, sport="ufc")
+    boxing = sports.get("boxing") or {}
+    for division in boxing.get("divisions") or []:
+        division["champions"] = add_photos(division.get("champions") or [], limit=12, sport="boxing")
     fights_path = os.path.join(DATA, "fights.json")
     fighter_cache_path = os.path.join(DATA, "fighter-images.json")
     try:
@@ -1193,12 +1197,10 @@ def enrich_cached_images():
     fighter_cache["updated_at"] = iso_now()
     with open(fighter_cache_path, "w", encoding="utf-8") as handle:
         json.dump(fighter_cache, handle, ensure_ascii=False, indent=2)
-    ufc = sports.get("ufc") or {}
-    for division in ufc.get("divisions") or []:
-        division["entries"] = add_photos(division.get("entries") or [], limit=15, sport="ufc")
-    boxing = sports.get("boxing") or {}
-    for division in boxing.get("divisions") or []:
-        division["champions"] = add_photos(division.get("champions") or [], limit=12, sport="boxing")
+    # After UFC and boxing title-holders, process boxing event fighters and
+    # then the wider PDC list. Keep the already-complete Top 50 out of the way.
+    darts = sports.get("darts") or {}
+    darts["rankings"] = add_photos(darts.get("rankings") or [], limit=225, sport="darts")
     for sport in ("ufc", "bkfc"):
         path = os.path.join(DATA, sport + ".json")
         try:
