@@ -3973,71 +3973,37 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 5,
+    "attempted": 1,
     "found": 56,
     "missing": 679,
     "rejected": 0,
     "by_sport": {
       "ufc": {
-        "attempted": 5,
-        "found": 3,
-        "missing": 2,
+        "attempted": 1,
+        "found": 0,
+        "missing": 1,
         "rejected": 0
       }
     },
     "rejection_reasons": {
-      "not_an_image": 22,
-      "surname_not_matched": 15
+      "not_an_image": 12,
+      "surname_not_matched": 2
     },
     "search_details": [
       {
-        "name": "Petr Yan",
-        "queries": 3,
-        "candidate_files": 26,
-        "accepted": 1,
-        "rejections": {
-          "not_an_image": 18,
-          "surname_not_matched": 7
-        }
-      },
-      {
-        "name": "Merab Dvalishvili",
-        "queries": 3,
-        "candidate_files": 4,
-        "accepted": 4,
-        "rejections": {}
-      },
-      {
-        "name": "Sean O'Malley",
-        "queries": 3,
-        "candidate_files": 13,
-        "accepted": 4,
-        "rejections": {
-          "not_an_image": 3,
-          "surname_not_matched": 6
-        }
-      },
-      {
-        "name": "Song Yadong",
-        "queries": 3,
-        "candidate_files": 0,
-        "accepted": 0,
-        "rejections": {}
-      },
-      {
-        "name": "Umar Nurmagomedov",
-        "queries": 3,
-        "candidate_files": 3,
+        "name": "Mario Bautista",
+        "queries": 2,
+        "candidate_files": 14,
         "accepted": 0,
         "rejections": {
-          "surname_not_matched": 2,
-          "not_an_image": 1
+          "not_an_image": 12,
+          "surname_not_matched": 2
         }
       }
     ],
-    "checked_at": "2026-11-08T20:18:56Z",
+    "checked_at": "2026-11-08T20:19:29Z",
     "library_entries": 56,
-    "newly_found": 3,
+    "newly_found": 0,
     "coverage": {
       "boxing fight card fighters": {
         "total": 187,
@@ -4070,7 +4036,7 @@
         "missing": 81
       }
     },
-    "rate_limited": false
+    "rate_limited": true
   },
   "last_updated": "2026-11-08T20:17:58Z"
 }
