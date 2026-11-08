@@ -1383,3 +1383,6 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
     min-height:108px!important;
   }
 }
+
+/* F1 constructor logos are wordmarks, not portraits: keep the full mark visible on favourite cards and profiles. */
+.favourite-card-portrait img.favourite-f1-team-logo,.favourite-profile-portrait img.favourite-f1-team-logo{object-fit:contain;object-position:center;padding:7px;background:#fff;border-radius:2px}
