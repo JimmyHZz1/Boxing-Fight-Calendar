@@ -123,7 +123,9 @@ function fighterPortrait(name, imageUrl) {
   const photo=state.fighterImages[normaliseFighterKey(name)]||{};
   const src=imageUrl||photo.url;
   if(src && (/^https:\/\//i.test(src) || String(src).startsWith("./assets/images/"))){
-    const img=document.createElement("img");img.src=src;img.alt=name+" portrait";img.loading="lazy";
+    const img=document.createElement("img");
+    img.src=String(src).startsWith("./assets/images/")?new URL(src,document.baseURI).href:src;
+    img.alt=name+" portrait";img.loading="lazy";img.decoding="async";
     img.onerror=()=>{img.remove();const credit=wrap.querySelector(".portrait-credit");if(credit)credit.remove();};
     wrap.append(img);
     if(photo.page_url){
