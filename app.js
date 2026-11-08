@@ -48,7 +48,7 @@ function allBouts() {
 }
 function showScreen(id) {
   document.querySelectorAll(".screen").forEach(s => s.classList.toggle("active",s.id===id));
-  document.querySelectorAll(".nav-item").forEach(b => b.classList.toggle("active",b.dataset.screen===id));
+  document.querySelectorAll(".nav-item").forEach(b => b.classList.toggle("active",b.dataset.screen===id || (id==="sport-detail-screen"&&b.dataset.screen==="home-screen")));
   window.scrollTo({top:0,behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
 }
 window.showScreen=showScreen;
@@ -531,7 +531,7 @@ $("manual-refresh").addEventListener("click",async()=>{
 });
 $("prev-month").addEventListener("click",()=>{state.month.setMonth(state.month.getMonth()-1);renderCalendar();});
 $("next-month").addEventListener("click",()=>{state.month.setMonth(state.month.getMonth()+1);renderCalendar();});
-window.BoxingSchedule={getNextEvent:()=>state.events.filter(e=>eventDateKey(e)>=todayKey()).sort(compareEvents)[0]||null};
+window.BoxingSchedule={getNextEvent:()=>state.events.filter(e=>eventDateKey(e)>=todayKey()).sort(compareEvents)[0]||null,getEvents:()=>state.events.slice().sort(compareEvents),renderEventCard:(event,expanded=false)=>renderEventCard(event,expanded),getAllBouts:()=>allBouts()};
 loadData();setInterval(async()=>{await loadData();if(window.SportsData?.load)await window.SportsData.load();state.lastChecked=new Date();refreshHelpMessage();syncAgeLabel();},5*60*1000);
 if("serviceWorker" in navigator && location.protocol.startsWith("http"))navigator.serviceWorker.register("./sw.js").catch(()=>{});
 

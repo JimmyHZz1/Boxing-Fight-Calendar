@@ -343,3 +343,35 @@
   .app-shell > nav.top-sport-selector{gap:3px;}
   .app-shell > nav.top-sport-selector > .top-sport-button{font-size:6px;letter-spacing:0;padding-left:0;padding-right:0;}
 }
+
+
+/* Dedicated sport profile pages */
+.sport-detail-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:2px 0 20px}
+.sport-detail-hero{padding:28px 26px;border:1px solid var(--line);background:linear-gradient(120deg,rgba(226,180,91,.13),rgba(25,27,32,.96) 65%),var(--panel);margin-bottom:14px}
+.sport-detail-hero-top{display:flex;align-items:center;gap:12px}
+.sport-detail-icon{font-size:32px}
+.sport-detail-hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(48px,10vw,76px);line-height:.95;text-transform:uppercase;margin:18px 0 10px}
+.sport-detail-hero p{max-width:650px;color:#c1c1c5;font-size:14px;line-height:1.75;margin:0}
+.sport-detail-meta{display:flex;flex-wrap:wrap;gap:9px 18px;margin-top:22px;color:var(--muted);font-size:9px;letter-spacing:1.2px}
+.sport-detail-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:14px 0 28px}
+.sport-detail-stat{padding:15px 12px;background:var(--panel);border:1px solid var(--line);min-width:0}
+.sport-detail-stat strong{display:block;font-family:'Barlow Condensed',sans-serif;font-size:30px;color:var(--accent);line-height:1}
+.sport-detail-stat small{display:block;color:var(--muted);font-size:8px;letter-spacing:.8px;line-height:1.4;margin-top:7px}
+.sport-page-section{margin:28px 0}
+.sport-page-section-heading{display:flex;align-items:end;justify-content:space-between;margin-bottom:13px}
+.sport-page-section-heading h2{font-family:'Barlow Condensed',sans-serif;font-size:30px;text-transform:uppercase;margin:5px 0 0}
+.sport-page-empty{padding:22px;background:var(--panel);border:1px dashed var(--line);color:var(--muted);font-size:13px;line-height:1.7}
+.sport-breakdown-grid,.sport-watch-guide-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.sport-breakdown-item,.sport-watch-guide-item{display:flex;flex-direction:column;gap:8px;padding:15px;background:var(--panel);border:1px solid var(--line);min-width:0}
+.sport-breakdown-number{font-size:9px;letter-spacing:1px;color:var(--accent)}
+.sport-breakdown-item strong,.sport-watch-guide-item strong{font-family:'Barlow Condensed',sans-serif;font-size:19px;text-transform:uppercase}
+.sport-watch-guide-item small,.sport-page-note{font-size:11px;line-height:1.6;color:var(--muted)}
+.sport-watch-guide-item a{font-size:10px;color:var(--accent);text-decoration:none}
+.sport-page-note{margin:12px 0 0}
+.sport-ranking-group{background:var(--panel);border:1px solid var(--line);padding:14px;margin:10px 0}
+.sport-ranking-group h3{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;font-size:21px;margin:0 0 10px}
+.sport-ranking-row{display:grid;grid-template-columns:36px 1fr auto;gap:8px;align-items:center;padding:9px 0;border-top:1px solid var(--line);font-size:12px}
+.sport-ranking-position{color:var(--accent);font-weight:700}
+.sport-ranking-row small{color:var(--muted);font-size:10px;text-align:right}
+.sport-detail-footer{display:flex;justify-content:center;padding:15px 0 30px}
+@media(max-width:520px){.sport-detail-hero{padding:22px 17px}.sport-detail-stats{gap:6px}.sport-detail-stat{padding:12px 8px}.sport-detail-stat strong{font-size:26px}.sport-detail-stat small{font-size:7px;letter-spacing:.3px}.sport-breakdown-grid,.sport-watch-guide-grid{grid-template-columns:1fr}.sport-ranking-row{grid-template-columns:30px 1fr}.sport-ranking-row small{grid-column:2;text-align:left}.sport-detail-toolbar{align-items:flex-start;flex-direction:column}}
