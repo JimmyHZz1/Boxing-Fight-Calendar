@@ -53,7 +53,7 @@
       if(img.dataset.retry!=="1"){
         img.dataset.retry="1";
         img.src="https://icons.duckduckgo.com/ip3/"+domain+".ico";
-      }else img.remove();
+      }else{img.remove();badge.style.display="inline-flex";}
     };
     const visual=el("div","sport-watch-guide-brand");
     visual.append(badge,img);item.append(visual);
