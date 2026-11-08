@@ -182,7 +182,7 @@
     root.append(make("p","sport-sync-note",bits.join(" · ")||"PDC tournament date"));
     root.append(make("p","sport-sync-note","Tournament calendar entry. Match-by-match scores are not included."));
   }
-  function fighterName(value) {
+  function fighterPortrait(name, url) {\n    if (!url || !/^https?:\\/\\//i.test(String(url))) return null;\n    const img=make("img","sport-fight-portrait");img.src=url;img.alt=name+" portrait";img.loading="lazy";img.referrerPolicy="no-referrer";img.onerror=()=>img.remove();return img;\n  }\n  function fighterName(value) {
     if (!value) return "TBC";
     if (typeof value==="string") return value;
     return value.name||[value.given_name,value.family_name].filter(Boolean).join(" ")||"TBC";

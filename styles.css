@@ -422,3 +422,12 @@
 .version-entry li+li{margin-top:3px}
 .version-history-back{display:flex;justify-content:flex-start;padding:8px 0 20px}
 @media(max-width:420px){.live-centre{padding:13px}.live-centre-heading h2{font-size:27px}.live-centre-event{grid-template-columns:42px minmax(0,1fr) auto;gap:7px;padding:9px}.live-centre-logo{width:38px}.live-centre-info strong{font-size:14px}.live-centre-badge{font-size:7px}.version-entry{padding:15px}}
+
+/* v1.1 fight-card portraits for UFC and BKFC */
+.sport-fight-row{display:flex;align-items:center;flex-wrap:wrap;gap:9px}
+.sport-fight-side{display:flex;align-items:center;gap:7px;min-width:0;flex:1 1 105px}
+.sport-fight-side strong{font-size:10px;line-height:1.25}
+.sport-fight-portrait{width:36px;height:36px;flex:0 0 36px;object-fit:cover;border-radius:50%;border:1px solid var(--line);background:#222}
+.sport-fight-versus{font:800 9px 'Barlow Condensed',sans-serif;color:var(--accent)}
+.sport-fight-row small{flex-basis:100%;text-align:left}
+@media(max-width:420px){.sport-fight-side{flex-basis:calc(50% - 14px)}.sport-fight-portrait{width:32px;height:32px;flex-basis:32px}}
