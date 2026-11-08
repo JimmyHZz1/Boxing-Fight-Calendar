@@ -37,9 +37,10 @@
     info.append(make("strong",null,event.name||event.title||"Event"));
     const meta=[names[sport],formatDate(event),formatTime(event),event.location||event.venue||event.circuit].filter(Boolean);
     info.append(make("small",null,meta.join(" · ")));
-    const target=event.start_at||event.main_card_at||event.start_time_utc;
-    if(!live&&target&&new Date(target).getTime()>Date.now()){
-      const timer=make("small","live-centre-countdown",window.SportsCountdown?.text?.(target)||"COUNTDOWN");timer.dataset.countdownTarget=new Date(target).toISOString();info.append(timer);
+    const target=event.start_at||event.main_card_at||event.start_time_utc||event.date||event.event_date;
+    const dateOnly=typeof target==="string"&&/^\\d{4}-\\d{2}-\\d{2}$/.test(target);
+    if(!live&&target&&(dateOnly||new Date(target).getTime()>Date.now())){
+      const timer=make("small","live-centre-countdown",window.SportsCountdown?.text?.(target)||"COUNTDOWN");timer.dataset.countdownTarget=dateOnly?target:new Date(target).toISOString();info.append(timer);
     }
     row.append(mark,info,make("span","live-centre-badge",live?"● LIVE":"UPCOMING"));
     return row;
