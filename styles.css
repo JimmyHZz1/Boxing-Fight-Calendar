@@ -466,14 +466,14 @@
 
 
 /* F1 team marks: contain the full logo rather than cropping it like a portrait. */
-.hub-person>img.hub-constructor-logo{width:42px;height:32px;object-fit:contain;border-radius:0;background:transparent;border:0;padding:0;box-sizing:border-box;mix-blend-mode:multiply}
+.hub-person>img.hub-constructor-logo{width:42px;height:32px;object-fit:contain;border-radius:0;background:transparent;border:0;padding:0;box-sizing:border-box;}
 .hub-person:has(.hub-constructor-logo){grid-template-columns:44px 26px minmax(0,1fr)}
-.sport-ranking-row.is-constructor .sport-ranking-image{width:48px;height:36px;object-fit:contain;border-radius:0;background:transparent;padding:0;box-sizing:border-box;mix-blend-mode:multiply}
+.sport-ranking-row.is-constructor .sport-ranking-image{width:48px;height:36px;object-fit:contain;border-radius:0;background:transparent;padding:0;box-sizing:border-box;}
 .sport-ranking-row.is-constructor{grid-template-columns:30px 50px minmax(0,1fr) auto}
 .sport-ranking-row.is-constructor .sport-ranking-image-fallback{width:48px;height:36px;border-radius:6px}
 .sport-watch-guide-brand{position:relative;display:flex;align-items:center;justify-content:flex-start;min-height:42px}
 .sport-watch-guide-brand-mark{display:inline-flex;align-items:center;justify-content:center;min-width:54px;height:34px;padding:0 8px;background:#fff;color:#16181d;border-radius:5px;font:900 15px 'Barlow Condensed',sans-serif;letter-spacing:-.4px}
-.sport-watch-guide-logo{position:absolute;left:0;top:0;width:auto;height:34px;max-width:92px;min-width:34px;object-fit:contain;background:transparent;border-radius:0;padding:0;box-sizing:border-box;mix-blend-mode:multiply}
+.sport-watch-guide-logo{position:absolute;left:0;top:0;width:auto;height:34px;max-width:92px;min-width:34px;object-fit:contain;background:transparent;border-radius:0;padding:0;box-sizing:border-box;}
 .sport-watch-guide-item .sport-watch-guide-brand+.sport-watch-guide-item strong{margin-top:0}
 @media(max-width:420px){.hub-person>img.hub-constructor-logo{width:38px;height:30px}.hub-person:has(.hub-constructor-logo){grid-template-columns:40px 23px minmax(0,1fr)}.sport-ranking-row.is-constructor{grid-template-columns:26px 42px minmax(0,1fr)}.sport-ranking-row.is-constructor .sport-ranking-image{width:40px;height:32px}.sport-ranking-row.is-constructor small{grid-column:3;text-align:left}}
 
