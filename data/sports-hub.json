@@ -6,109 +6,109 @@
           "rank": 1,
           "name": "Andrea Kimi Antonelli",
           "team": "Mercedes",
-          "points": "380",
+          "points": "390",
           "image_url": "https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/mercedes/andant01/2026mercedesandant01right.webp",
           "image_page_url": "https://www.formula1.com/en/drivers/kimi-antonelli",
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-08T16:53:59Z"
+          "image_verified_at": "2026-11-08T20:17:58Z"
         },
         {
           "rank": 2,
           "name": "Max Verstappen",
           "team": "Red Bull",
-          "points": "261",
+          "points": "279",
           "image_url": "https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/redbullracing/maxver01/2026redbullracingmaxver01right.webp",
           "image_page_url": "https://www.formula1.com/en/drivers/max-verstappen",
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-08T16:53:59Z"
+          "image_verified_at": "2026-11-08T20:17:58Z"
         },
         {
           "rank": 3,
-          "name": "Lewis Hamilton",
-          "team": "Ferrari",
-          "points": "259",
-          "image_url": "https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/ferrari/lewham01/2026ferrarilewham01right.webp",
-          "image_page_url": "https://www.formula1.com/en/drivers/lewis-hamilton",
-          "image_credit": "Official Formula 1 driver profile",
-          "image_source": "Formula1.com",
-          "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-08T16:53:59Z"
-        },
-        {
-          "rank": 4,
           "name": "George Russell",
           "team": "Mercedes",
-          "points": "250",
+          "points": "262",
           "image_url": "https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/mercedes/georus01/2026mercedesgeorus01right.webp",
           "image_page_url": "https://www.formula1.com/en/drivers/george-russell",
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-08T16:53:59Z"
+          "image_verified_at": "2026-11-08T20:17:58Z"
+        },
+        {
+          "rank": 4,
+          "name": "Lewis Hamilton",
+          "team": "Ferrari",
+          "points": "261",
+          "image_url": "https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/ferrari/lewham01/2026ferrarilewham01right.webp",
+          "image_page_url": "https://www.formula1.com/en/drivers/lewis-hamilton",
+          "image_credit": "Official Formula 1 driver profile",
+          "image_source": "Formula1.com",
+          "image_match_method": "official-driver-profile",
+          "image_verified_at": "2026-11-08T20:17:58Z"
         },
         {
           "rank": 5,
           "name": "Charles Leclerc",
           "team": "Ferrari",
-          "points": "245",
+          "points": "251",
           "image_url": "https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/ferrari/chalec01/2026ferrarichalec01right.webp",
           "image_page_url": "https://www.formula1.com/en/drivers/charles-leclerc",
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-08T16:53:59Z"
+          "image_verified_at": "2026-11-08T20:17:58Z"
         },
         {
           "rank": 6,
           "name": "Lando Norris",
           "team": "McLaren",
-          "points": "221",
+          "points": "246",
           "image_url": "https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/mclaren/lannor01/2026mclarenlannor01right.webp",
           "image_page_url": "https://www.formula1.com/en/drivers/lando-norris",
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-08T16:53:59Z"
+          "image_verified_at": "2026-11-08T20:17:58Z"
         },
         {
           "rank": 7,
           "name": "Oscar Piastri",
           "team": "McLaren",
-          "points": "144",
+          "points": "152",
           "image_url": "https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/mclaren/oscpia01/2026mclarenoscpia01right.webp",
           "image_page_url": "https://www.formula1.com/en/drivers/oscar-piastri",
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-08T16:53:59Z"
+          "image_verified_at": "2026-11-08T20:17:58Z"
         },
         {
           "rank": 8,
           "name": "Isack Hadjar",
           "team": "Red Bull",
-          "points": "107",
+          "points": "122",
           "image_url": "https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/redbullracing/isahad01/2026redbullracingisahad01right.webp",
           "image_page_url": "https://www.formula1.com/en/drivers/isack-hadjar",
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-08T16:53:59Z"
+          "image_verified_at": "2026-11-08T20:17:58Z"
         },
         {
           "rank": 9,
           "name": "Liam Lawson",
           "team": "RB F1 Team, Red Bull",
-          "points": "83",
+          "points": "87",
           "image_url": "https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/racingbulls/lialaw01/2026racingbullslialaw01right.webp",
           "image_page_url": "https://www.formula1.com/en/drivers/liam-lawson",
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-08T16:53:59Z"
+          "image_verified_at": "2026-11-08T20:17:58Z"
         },
         {
           "rank": 10,
@@ -120,7 +120,7 @@
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-08T16:53:59Z"
+          "image_verified_at": "2026-11-08T20:17:58Z"
         },
         {
           "rank": 11,
@@ -132,7 +132,7 @@
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-08T16:53:59Z"
+          "image_verified_at": "2026-11-08T20:17:58Z"
         },
         {
           "rank": 12,
@@ -144,7 +144,7 @@
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-08T16:53:59Z"
+          "image_verified_at": "2026-11-08T20:17:58Z"
         },
         {
           "rank": 13,
@@ -156,7 +156,7 @@
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-08T16:53:59Z"
+          "image_verified_at": "2026-11-08T20:17:58Z"
         },
         {
           "rank": 14,
@@ -168,19 +168,19 @@
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-08T16:53:59Z"
+          "image_verified_at": "2026-11-08T20:17:58Z"
         },
         {
           "rank": 15,
           "name": "Nico Hülkenberg",
           "team": "Audi",
-          "points": "13",
+          "points": "14",
           "image_url": "https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/audi/nichul01/2026audinichul01right.webp",
           "image_page_url": "https://www.formula1.com/en/drivers/nico-hulkenberg",
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-08T16:53:59Z"
+          "image_verified_at": "2026-11-08T20:17:58Z"
         },
         {
           "rank": 16,
@@ -192,7 +192,7 @@
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-08T16:53:59Z"
+          "image_verified_at": "2026-11-08T20:17:58Z"
         },
         {
           "rank": 17,
@@ -204,7 +204,7 @@
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-08T16:53:59Z"
+          "image_verified_at": "2026-11-08T20:17:58Z"
         },
         {
           "rank": 18,
@@ -216,7 +216,7 @@
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-08T16:53:59Z"
+          "image_verified_at": "2026-11-08T20:17:58Z"
         },
         {
           "rank": 19,
@@ -228,39 +228,19 @@
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-08T16:53:59Z"
+          "image_verified_at": "2026-11-08T20:17:58Z"
         },
         {
           "rank": 20,
           "name": "Yuki Tsunoda",
           "team": "RB F1 Team",
-          "points": "1",
-          "image_url": "./assets/images/f1-drivers/yuki-tsunoda.jpg",
-          "image_page_url": "https://commons.wikimedia.org/wiki/File:Yuki_Tsunoda_Macau_2019.jpg",
-          "image_credit": "Wikimedia Commons · Smith007 · CC BY-SA 4.0",
-          "image_license": "CC BY-SA 4.0",
-          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-          "image_source": "Wikimedia Commons",
-          "image_match_score": 1,
-          "image_match_method": "category:Category:Yuki Tsunoda in 2019",
-          "image_verified_at": "2026-11-08T13:28:36Z",
-          "image_local_path": "assets/images/f1-drivers/yuki-tsunoda.jpg"
+          "points": "1"
         },
         {
           "rank": 21,
           "name": "Ryo Hirakawa",
           "team": "Haas F1 Team",
-          "points": "1",
-          "image_url": "./assets/images/f1-drivers/ryo-hirakawa.jpg",
-          "image_page_url": "https://commons.wikimedia.org/wiki/File:Ryo_Hirakawa_2024_WEC_Fuji_1.jpg",
-          "image_credit": "Wikimedia Commons · Morio · CC BY-SA 4.0",
-          "image_license": "CC BY-SA 4.0",
-          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-          "image_source": "Wikimedia Commons",
-          "image_match_score": 1,
-          "image_match_method": "search:Ryo Hirakawa",
-          "image_verified_at": "2026-11-08T13:28:36Z",
-          "image_local_path": "assets/images/f1-drivers/ryo-hirakawa.jpg"
+          "points": "1"
         },
         {
           "rank": 22,
@@ -272,7 +252,7 @@
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-08T16:53:59Z"
+          "image_verified_at": "2026-11-08T20:17:58Z"
         },
         {
           "rank": 23,
@@ -284,7 +264,7 @@
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-08T16:53:59Z"
+          "image_verified_at": "2026-11-08T20:17:58Z"
         },
         {
           "rank": 24,
@@ -296,7 +276,7 @@
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-08T16:53:59Z"
+          "image_verified_at": "2026-11-08T20:17:58Z"
         },
         {
           "rank": 25,
@@ -308,164 +288,175 @@
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-08T16:53:59Z"
+          "image_verified_at": "2026-11-08T20:17:58Z"
         }
       ],
       "constructors": [
         {
           "rank": 1,
           "name": "Mercedes",
-          "points": "630",
-          "image_url": "https://media.formula1.com/image/upload/c_fit,h_64/q_auto/v1740000000/common/f1/2026/mercedes/2026mercedeslogowhite.webp",
-          "image_page_url": "https://www.formula1.com/en/teams",
-          "image_credit": "Official Formula 1 2026 team mark",
-          "image_source": "Formula1.com",
+          "points": "652",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Mercedes-AMG_Petronas_F1_Team_logo_%282026%29.svg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Mercedes-AMG_Petronas_F1_Team_logo_(2026).svg",
+          "image_credit": "Mercedes-AMG Petronas F1 Team · Public domain (text/logo mark)",
+          "image_license": "Public domain",
+          "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+          "image_source": "Wikimedia Commons",
           "image_match_score": 1,
-          "image_match_method": "official-f1-timing-board-team-mark",
-          "image_verified_at": "2026-11-08T18:55:00Z",
-          "image_rights": "Formula One World Championship Limited / respective F1 teams; official CDN asset"
+          "image_match_method": "verified-team-logo",
+          "image_verified_at": "2026-11-08T18:00:00Z"
         },
         {
           "rank": 2,
           "name": "Ferrari",
-          "points": "504",
-          "image_url": "https://media.formula1.com/image/upload/c_fit,h_64/q_auto/v1740000000/common/f1/2026/ferrari/2026ferrarilogo.webp",
-          "image_page_url": "https://www.formula1.com/en/teams",
-          "image_credit": "Official Formula 1 2026 team mark",
-          "image_source": "Formula1.com",
+          "points": "512",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Ferrari_wordmark.svg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Ferrari_wordmark.svg",
+          "image_credit": "Ferrari · Public domain (text/logo mark)",
+          "image_license": "Public domain",
+          "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+          "image_source": "Wikimedia Commons",
           "image_match_score": 1,
-          "image_match_method": "official-f1-timing-board-team-mark",
-          "image_verified_at": "2026-11-08T18:55:00Z",
-          "image_rights": "Formula One World Championship Limited / respective F1 teams; official CDN asset"
+          "image_match_method": "verified-team-logo",
+          "image_verified_at": "2026-11-08T18:00:00Z"
         },
         {
           "rank": 3,
           "name": "Red Bull",
-          "points": "382",
-          "image_url": "https://media.formula1.com/image/upload/c_fit,h_64/q_auto/v1740000000/common/f1/2026/redbullracing/2026redbullracinglogo.webp",
-          "image_page_url": "https://www.formula1.com/en/teams",
-          "image_credit": "Official Formula 1 2026 team mark",
-          "image_source": "Formula1.com",
+          "points": "415",
+          "image_url": "./assets/images/f1-constructors/red-bull.png",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Red_Bull_Racing_logo_ita.png",
+          "image_credit": "Wikimedia Commons · Unknown authorUnknown author · Public domain",
+          "image_license": "Public domain",
+          "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+          "image_source": "Wikimedia Commons",
           "image_match_score": 0.75,
-          "image_match_method": "official-f1-timing-board-team-mark",
-          "image_verified_at": "2026-11-08T18:55:00Z",
-          "image_local_path": "assets/images/f1-constructors/red-bull.png",
-          "image_rights": "Formula One World Championship Limited / respective F1 teams; official CDN asset"
+          "image_match_method": "known-file-title",
+          "image_verified_at": "2026-11-08T13:36:08Z",
+          "image_local_path": "assets/images/f1-constructors/red-bull.png"
         },
         {
           "rank": 4,
           "name": "McLaren",
-          "points": "365",
-          "image_url": "https://media.formula1.com/image/upload/c_fit,h_64/q_auto/v1740000000/common/f1/2026/mclaren/2026mclarenlogo.webp",
-          "image_page_url": "https://www.formula1.com/en/teams",
-          "image_credit": "Official Formula 1 2026 team mark",
-          "image_source": "Formula1.com",
+          "points": "398",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/bc/McLaren_logo_%282026%29.svg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:McLaren_logo_(2026).svg",
+          "image_credit": "McLaren · Public domain (text/logo mark)",
+          "image_license": "Public domain",
+          "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+          "image_source": "Wikimedia Commons",
           "image_match_score": 1,
-          "image_match_method": "official-f1-timing-board-team-mark",
-          "image_verified_at": "2026-11-08T18:55:00Z",
-          "image_rights": "Formula One World Championship Limited / respective F1 teams; official CDN asset"
+          "image_match_method": "verified-team-logo",
+          "image_verified_at": "2026-11-08T18:00:00Z"
         },
         {
           "rank": 5,
           "name": "RB F1 Team",
-          "points": "108",
-          "image_url": "https://media.formula1.com/image/upload/c_fit,h_64/q_auto/v1740000000/common/f1/2026/racingbulls/2026racingbullslogowhite.webp",
-          "image_page_url": "https://www.formula1.com/en/teams",
-          "image_credit": "Official Formula 1 2026 team mark",
-          "image_source": "Formula1.com",
+          "points": "112",
+          "image_url": "https://www.visa.com/vcom-assets/content/dam/VCOM/regional/ve/unitedkingdom/in-page-images/redbull/uk-visa-red-bull-logo-900x900.jpg",
+          "image_page_url": "https://www.visa.com/en-gb/partnerships/red-bull-f1-racing-partnership",
+          "image_credit": "Visa · Official Visa Cash App Racing Bulls team mark shown on partnership page",
+          "image_license": "Official brand asset; trademark rights remain with the respective owners",
+          "image_license_url": "https://www.visa.com/en-gb/partnerships/red-bull-f1-racing-partnership",
+          "image_source": "Visa official partnership asset",
           "image_match_score": 1,
-          "image_match_method": "official-f1-timing-board-team-mark",
-          "image_verified_at": "2026-11-08T18:55:00Z",
-          "image_rights": "Formula One World Championship Limited / respective F1 teams; official CDN asset"
+          "image_match_method": "official-visa-team-mark",
+          "image_verified_at": "2026-11-08T18:00:00Z"
         },
         {
           "rank": 6,
           "name": "Alpine F1 Team",
           "points": "69",
-          "image_url": "https://media.formula1.com/image/upload/c_fit,h_64/q_auto/v1740000000/common/f1/2026/alpine/2026alpinelogo.webp",
-          "image_page_url": "https://www.formula1.com/en/teams",
-          "image_credit": "Official Formula 1 2026 team mark",
-          "image_source": "Formula1.com",
+          "image_url": "./assets/images/f1-constructors/alpine-f1-team.png",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Logo_of_alpine_f1_team_2022.png",
+          "image_credit": "Wikimedia Commons · KarlMarx1889 · CC0",
+          "image_license": "CC0",
+          "image_license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "image_source": "Wikimedia Commons",
           "image_match_score": 1,
-          "image_match_method": "official-f1-timing-board-team-mark",
-          "image_verified_at": "2026-11-08T18:55:00Z",
-          "image_local_path": "assets/images/f1-constructors/alpine-f1-team.png",
-          "image_rights": "Formula One World Championship Limited / respective F1 teams; official CDN asset"
+          "image_match_method": "search:BWT Alpine F1 Team",
+          "image_verified_at": "2026-11-08T13:30:56Z",
+          "image_local_path": "assets/images/f1-constructors/alpine-f1-team.png"
         },
         {
           "rank": 7,
           "name": "Haas F1 Team",
           "points": "31",
-          "image_url": "https://media.formula1.com/image/upload/c_fit,h_64/q_auto/v1740000000/common/f1/2026/haas/2026haaslogo.webp",
-          "image_page_url": "https://www.formula1.com/en/teams",
-          "image_credit": "Official Formula 1 2026 team mark",
-          "image_source": "Formula1.com",
+          "image_url": "./assets/images/f1-constructors/haas-f1-team.png",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:MoneyGram_Haas_F1_Team_Logo.svg",
+          "image_credit": "Wikimedia Commons · Haas F1 Team · Public domain",
+          "image_license": "Public domain",
+          "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+          "image_source": "Wikimedia Commons",
           "image_match_score": 1,
-          "image_match_method": "official-f1-timing-board-team-mark",
-          "image_verified_at": "2026-11-08T18:55:00Z",
-          "image_local_path": "assets/images/f1-constructors/haas-f1-team.png",
-          "image_rights": "Formula One World Championship Limited / respective F1 teams; official CDN asset"
+          "image_match_method": "search:MoneyGram Haas F1 Team",
+          "image_verified_at": "2026-11-08T13:32:47Z",
+          "image_local_path": "assets/images/f1-constructors/haas-f1-team.png"
         },
         {
           "rank": 8,
           "name": "Audi",
-          "points": "27",
-          "image_url": "https://media.formula1.com/image/upload/c_fit,h_64/q_auto/v1740000000/common/f1/2026/audi/2026audilogo.webp",
-          "image_page_url": "https://www.formula1.com/en/teams",
-          "image_credit": "Official Formula 1 2026 team mark",
-          "image_source": "Formula1.com",
+          "points": "28",
+          "image_url": "./assets/images/f1-constructors/audi.png",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Audif1.com_logo17.svg",
+          "image_credit": "Wikimedia Commons · Audi Revolut F1 Team / Sauber Motorsports AG · Public domain",
+          "image_license": "Public domain",
+          "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+          "image_source": "Wikimedia Commons",
           "image_match_score": 1,
-          "image_match_method": "official-f1-timing-board-team-mark",
-          "image_verified_at": "2026-11-08T18:55:00Z",
-          "image_local_path": "assets/images/f1-constructors/audi.png",
-          "image_rights": "Formula One World Championship Limited / respective F1 teams; official CDN asset"
+          "image_match_method": "search:Audi Revolut F1 Team",
+          "image_verified_at": "2026-11-08T13:32:47Z",
+          "image_local_path": "assets/images/f1-constructors/audi.png"
         },
         {
           "rank": 9,
           "name": "Williams",
           "points": "12",
-          "image_url": "https://media.formula1.com/image/upload/c_fit,h_64/q_auto/v1740000000/common/f1/2026/williams/2026williamslogo.webp",
-          "image_page_url": "https://www.formula1.com/en/teams",
-          "image_credit": "Official Formula 1 2026 team mark",
-          "image_source": "Formula1.com",
+          "image_url": "./assets/images/f1-constructors/williams.png",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:20150130002217!Williams_Martini_Racing_logo.png",
+          "image_credit": "Wikimedia Commons · Unknown authorUnknown author · Public domain",
+          "image_license": "Public domain",
+          "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+          "image_source": "Wikimedia Commons",
           "image_match_score": 1,
-          "image_match_method": "official-f1-timing-board-team-mark",
-          "image_verified_at": "2026-11-08T18:55:00Z",
-          "image_local_path": "assets/images/f1-constructors/williams.png",
-          "image_rights": "Formula One World Championship Limited / respective F1 teams; official CDN asset"
+          "image_match_method": "search:Williams Racing",
+          "image_verified_at": "2026-11-08T13:32:47Z",
+          "image_local_path": "assets/images/f1-constructors/williams.png"
         },
         {
           "rank": 10,
           "name": "Aston Martin",
           "points": "7",
-          "image_url": "https://media.formula1.com/image/upload/c_fit,h_64/q_auto/v1740000000/common/f1/2026/astonmartin/2026astonmartinlogowhite.webp",
-          "image_page_url": "https://www.formula1.com/en/teams",
-          "image_credit": "Official Formula 1 2026 team mark",
-          "image_source": "Formula1.com",
+          "image_url": "./assets/images/f1-constructors/aston-martin.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Aston_Martin_F1_Team_logo_2024.jpg",
+          "image_credit": "Wikimedia Commons · Unknown authorUnknown author · CC BY 4.0",
+          "image_license": "CC BY 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by/4.0",
+          "image_source": "Wikimedia Commons",
           "image_match_score": 0.75,
-          "image_match_method": "official-f1-timing-board-team-mark",
-          "image_verified_at": "2026-11-08T18:55:00Z",
-          "image_local_path": "assets/images/f1-constructors/aston-martin.jpg",
-          "image_rights": "Formula One World Championship Limited / respective F1 teams; official CDN asset"
+          "image_match_method": "known-file-title",
+          "image_verified_at": "2026-11-08T13:36:08Z",
+          "image_local_path": "assets/images/f1-constructors/aston-martin.jpg"
         },
         {
           "rank": 11,
           "name": "Cadillac F1 Team",
           "points": "0",
-          "image_url": "https://media.formula1.com/image/upload/c_fit,h_64/q_auto/v1740000000/common/f1/2026/cadillac/2026cadillaclogo.webp",
-          "image_page_url": "https://www.formula1.com/en/teams",
-          "image_credit": "Official Formula 1 2026 team mark",
-          "image_source": "Formula1.com",
+          "image_url": "./assets/images/f1-constructors/cadillac-f1-team.png",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Cadillac_Formula_1_Team_logo.png",
+          "image_credit": "Wikimedia Commons · TedNauru · CC0",
+          "image_license": "CC0",
+          "image_license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "image_source": "Wikimedia Commons",
           "image_match_score": 1,
-          "image_match_method": "official-f1-timing-board-team-mark",
-          "image_verified_at": "2026-11-08T18:55:00Z",
-          "image_local_path": "assets/images/f1-constructors/cadillac-f1-team.png",
-          "image_rights": "Formula One World Championship Limited / respective F1 teams; official CDN asset"
+          "image_match_method": "search:Cadillac Formula 1 Team",
+          "image_verified_at": "2026-11-08T13:32:47Z",
+          "image_local_path": "assets/images/f1-constructors/cadillac-f1-team.png"
         }
       ],
       "season": 2026,
       "notice": "Official Formula 1 driver profile portraits; championship data sourced from Jolpica F1.",
-      "last_updated": "2026-11-08T16:53:59Z"
+      "last_updated": "2026-11-08T20:17:58Z"
     },
     "darts": {
       "rankings": [
@@ -474,26 +465,14 @@
           "name": "Luke Littler",
           "prize_money": null,
           "points": null,
-          "image_url": "https://www.pdc-europe.tv/images/players/luke-littler.webp",
-          "image_page_url": "https://www.pdc-europe.tv/spieler/luke-littler",
-          "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_source": "PDC Europe",
-          "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
+          "image_url": null
         },
         {
           "rank": 2,
           "name": "Luke Humphries",
           "prize_money": null,
           "points": null,
-          "image_url": "https://www.pdc-europe.tv/images/players/luke-humphries.webp",
-          "image_page_url": "https://www.pdc-europe.tv/spieler/luke-humphries",
-          "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_source": "PDC Europe",
-          "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
+          "image_url": null
         },
         {
           "rank": 3,
@@ -584,13 +563,7 @@
           "name": "Stephen Bunting",
           "prize_money": null,
           "points": null,
-          "image_url": "https://www.pdc-europe.tv/images/players/stephen-bunting.webp",
-          "image_page_url": "https://www.pdc-europe.tv/spieler/stephen-bunting",
-          "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_source": "PDC Europe",
-          "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
+          "image_url": null
         },
         {
           "rank": 10,
@@ -723,416 +696,224 @@
           "name": "Krzysztof Ratajski",
           "prize_money": null,
           "points": null,
-          "image_url": "https://www.pdc-europe.tv/images/players/krzysztof-ratajski.webp",
-          "image_page_url": "https://www.pdc-europe.tv/spieler/krzysztof-ratajski",
-          "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_source": "PDC Europe",
-          "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
+          "image_url": null
         },
         {
           "rank": 20,
           "name": "Martin Schindler",
           "prize_money": null,
           "points": null,
-          "image_url": "https://www.pdc-europe.tv/images/players/martin-schindler.webp",
-          "image_page_url": "https://www.pdc-europe.tv/spieler/martin-schindler",
-          "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_source": "PDC Europe",
-          "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
+          "image_url": null
         },
         {
           "rank": 21,
           "name": "Damon Heta",
           "prize_money": null,
           "points": null,
-          "image_url": "https://www.pdc-europe.tv/images/players/damon-heta.webp",
-          "image_page_url": "https://www.pdc-europe.tv/spieler/damon-heta",
-          "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_source": "PDC Europe",
-          "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
+          "image_url": null
         },
         {
           "rank": 21,
           "name": "Dirk van Duijvenbode",
           "prize_money": null,
           "points": null,
-          "image_url": "https://www.pdc-europe.tv/images/players/dirk-van-duijvenbode.webp",
-          "image_page_url": "https://www.pdc-europe.tv/spieler/dirk-van-duijvenbode",
-          "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_source": "PDC Europe",
-          "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
+          "image_url": null
         },
         {
           "rank": 23,
           "name": "Kevin Doets",
           "prize_money": null,
           "points": null,
-          "image_url": "https://www.pdc-europe.tv/images/players/kevin-doets.webp",
-          "image_page_url": "https://www.pdc-europe.tv/spieler/kevin-doets",
-          "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_source": "PDC Europe",
-          "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
+          "image_url": null
         },
         {
           "rank": 24,
           "name": "Rob Cross",
           "prize_money": null,
           "points": null,
-          "image_url": "https://www.pdc-europe.tv/images/players/rob-cross.webp",
-          "image_page_url": "https://www.pdc-europe.tv/spieler/rob-cross",
-          "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_source": "PDC Europe",
-          "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
+          "image_url": null
         },
         {
           "rank": 25,
           "name": "Ryan Joyce",
           "prize_money": null,
           "points": null,
-          "image_url": "https://www.pdc-europe.tv/images/players/ryan-joyce.webp",
-          "image_page_url": "https://www.pdc-europe.tv/spieler/ryan-joyce",
-          "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_source": "PDC Europe",
-          "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
+          "image_url": null
         },
         {
           "rank": 26,
           "name": "Cameron Menzies",
           "prize_money": null,
           "points": null,
-          "image_url": "https://www.pdc-europe.tv/images/players/cameron-menzies.webp",
-          "image_page_url": "https://www.pdc-europe.tv/spieler/cameron-menzies",
-          "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_source": "PDC Europe",
-          "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
+          "image_url": null
         },
         {
           "rank": 27,
           "name": "Andrew Gilding",
           "prize_money": null,
           "points": null,
-          "image_url": "https://www.pdc-europe.tv/images/players/andrew-gilding.webp",
-          "image_page_url": "https://www.pdc-europe.tv/spieler/andrew-gilding",
-          "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_source": "PDC Europe",
-          "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
+          "image_url": null
         },
         {
           "rank": 28,
           "name": "Niels Zonneveld",
           "prize_money": null,
           "points": null,
-          "image_url": "https://www.pdc-europe.tv/images/players/niels-zonneveld.webp",
-          "image_page_url": "https://www.pdc-europe.tv/spieler/niels-zonneveld",
-          "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_source": "PDC Europe",
-          "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
+          "image_url": null
         },
         {
           "rank": 29,
           "name": "Daryl Gurney",
           "prize_money": null,
           "points": null,
-          "image_url": "https://www.pdc-europe.tv/images/players/daryl-gurney.webp",
-          "image_page_url": "https://www.pdc-europe.tv/spieler/daryl-gurney",
-          "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_source": "PDC Europe",
-          "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
+          "image_url": null
         },
         {
           "rank": 29,
           "name": "William O'Connor",
           "prize_money": null,
           "points": null,
-          "image_url": "https://www.pdc-europe.tv/images/players/william-o-connor.webp",
-          "image_page_url": "https://www.pdc-europe.tv/spieler/william-o-connor",
-          "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_source": "PDC Europe",
-          "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
+          "image_url": null
         },
         {
           "rank": 31,
           "name": "Dave Chisnall",
           "prize_money": null,
           "points": null,
-          "image_url": "https://www.pdc-europe.tv/images/players/dave-chisnall.webp",
-          "image_page_url": "https://www.pdc-europe.tv/spieler/dave-chisnall",
-          "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_source": "PDC Europe",
-          "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
+          "image_url": null
         },
         {
           "rank": 32,
           "name": "Joe Cullen",
           "prize_money": null,
           "points": null,
-          "image_url": "https://www.pdc-europe.tv/images/players/joe-cullen.webp",
-          "image_page_url": "https://www.pdc-europe.tv/spieler/joe-cullen",
-          "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_source": "PDC Europe",
-          "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
+          "image_url": null
         },
         {
           "rank": 33,
           "name": "Mike De Decker",
           "prize_money": null,
           "points": null,
-          "image_url": "https://www.pdc-europe.tv/images/players/mike-de-decker.webp",
-          "image_page_url": "https://www.pdc-europe.tv/spieler/mike-de-decker",
-          "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_source": "PDC Europe",
-          "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
+          "image_url": null
         },
         {
           "rank": 34,
           "name": "Niko Springer",
           "prize_money": null,
           "points": null,
-          "image_url": "https://www.pdc-europe.tv/images/players/niko-springer.webp",
-          "image_page_url": "https://www.pdc-europe.tv/spieler/niko-springer",
-          "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_source": "PDC Europe",
-          "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
+          "image_url": null
         },
         {
           "rank": 35,
           "name": "Peter Wright",
           "prize_money": null,
           "points": null,
-          "image_url": "https://www.pdc-europe.tv/images/players/peter-wright.webp",
-          "image_page_url": "https://www.pdc-europe.tv/spieler/peter-wright",
-          "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_source": "PDC Europe",
-          "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
+          "image_url": null
         },
         {
           "rank": 36,
           "name": "Ricardo Pietreczko",
           "prize_money": null,
           "points": null,
-          "image_url": "https://www.pdc-europe.tv/images/players/ricardo-pietreczko.webp",
-          "image_page_url": "https://www.pdc-europe.tv/spieler/ricardo-pietreczko",
-          "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_source": "PDC Europe",
-          "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
+          "image_url": null
         },
         {
           "rank": 37,
           "name": "Michael Smith",
           "prize_money": null,
           "points": null,
-          "image_url": "https://www.pdc-europe.tv/images/players/michael-smith.webp",
-          "image_page_url": "https://www.pdc-europe.tv/spieler/michael-smith",
-          "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_source": "PDC Europe",
-          "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
+          "image_url": null
         },
         {
           "rank": 38,
           "name": "Justin Hood",
           "prize_money": null,
           "points": null,
-          "image_url": "https://www.pdc-europe.tv/images/players/justin-hood.webp",
-          "image_page_url": "https://www.pdc-europe.tv/spieler/justin-hood",
-          "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_source": "PDC Europe",
-          "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
+          "image_url": null
         },
         {
           "rank": 39,
           "name": "Jeffrey de Graaf",
           "prize_money": null,
           "points": null,
-          "image_url": "https://www.pdc-europe.tv/images/players/jeffrey-de-graaf.webp",
-          "image_page_url": "https://www.pdc-europe.tv/spieler/jeffrey-de-graaf",
-          "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_source": "PDC Europe",
-          "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
+          "image_url": null
         },
         {
           "rank": 40,
           "name": "Callan Rydz",
           "prize_money": null,
           "points": null,
-          "image_url": "https://www.pdc-europe.tv/images/players/callan-rydz.webp",
-          "image_page_url": "https://www.pdc-europe.tv/spieler/callan-rydz",
-          "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_source": "PDC Europe",
-          "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
+          "image_url": null
         },
         {
           "rank": 41,
           "name": "Mickey Mansell",
           "prize_money": null,
           "points": null,
-          "image_url": "https://www.pdc-europe.tv/images/players/mickey-mansell.webp",
-          "image_page_url": "https://www.pdc-europe.tv/spieler/mickey-mansell",
-          "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_source": "PDC Europe",
-          "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
+          "image_url": null
         },
         {
           "rank": 42,
           "name": "Karel Sedlacek",
           "prize_money": null,
           "points": null,
-          "image_url": "https://www.pdc-europe.tv/images/players/karel-sedlacek.webp",
-          "image_page_url": "https://www.pdc-europe.tv/spieler/karel-sedlacek",
-          "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_source": "PDC Europe",
-          "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
+          "image_url": null
         },
         {
           "rank": 43,
           "name": "Martin Lukeman",
           "prize_money": null,
           "points": null,
-          "image_url": "https://www.pdc-europe.tv/images/players/martin-lukeman.webp",
-          "image_page_url": "https://www.pdc-europe.tv/spieler/martin-lukeman",
-          "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_source": "PDC Europe",
-          "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
+          "image_url": null
         },
         {
           "rank": 44,
           "name": "Kim Huybrechts",
           "prize_money": null,
           "points": null,
-          "image_url": "https://www.pdc-europe.tv/images/players/kim-huybrechts.webp",
-          "image_page_url": "https://www.pdc-europe.tv/spieler/kim-huybrechts",
-          "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_source": "PDC Europe",
-          "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
+          "image_url": null
         },
         {
           "rank": 45,
           "name": "Scott Williams",
           "prize_money": null,
           "points": null,
-          "image_url": "https://www.pdc-europe.tv/images/players/scott-williams.webp",
-          "image_page_url": "https://www.pdc-europe.tv/spieler/scott-williams",
-          "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_source": "PDC Europe",
-          "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
+          "image_url": null
         },
         {
           "rank": 46,
           "name": "James Hurrell",
           "prize_money": null,
           "points": null,
-          "image_url": "https://www.pdc-europe.tv/images/players/james-hurrell.webp",
-          "image_page_url": "https://www.pdc-europe.tv/spieler/james-hurrell",
-          "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_source": "PDC Europe",
-          "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
+          "image_url": null
         },
         {
           "rank": 47,
           "name": "Raymond van Barneveld",
           "prize_money": null,
           "points": null,
-          "image_url": "https://www.pdc-europe.tv/images/players/raymond-van-barneveld.webp",
-          "image_page_url": "https://www.pdc-europe.tv/spieler/raymond-van-barneveld",
-          "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_source": "PDC Europe",
-          "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
+          "image_url": null
         },
         {
           "rank": 48,
           "name": "Brendan Dolan",
           "prize_money": null,
           "points": null,
-          "image_url": "https://www.pdc-europe.tv/images/players/brendan-dolan.webp",
-          "image_page_url": "https://www.pdc-europe.tv/spieler/brendan-dolan",
-          "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_source": "PDC Europe",
-          "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
+          "image_url": null
         },
         {
           "rank": 49,
           "name": "Madars Razma",
           "prize_money": null,
           "points": null,
-          "image_url": "https://www.pdc-europe.tv/images/players/madars-razma.webp",
-          "image_page_url": "https://www.pdc-europe.tv/spieler/madars-razma",
-          "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_source": "PDC Europe",
-          "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
+          "image_url": null
         },
         {
           "rank": 50,
           "name": "Connor Scutt",
           "prize_money": null,
           "points": null,
-          "image_url": "https://www.pdc-europe.tv/images/players/connor-scutt.webp",
-          "image_page_url": "https://www.pdc-europe.tv/spieler/connor-scutt",
-          "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_source": "PDC Europe",
-          "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
+          "image_url": null
         },
         {
           "rank": 51,
@@ -2361,8 +2142,8 @@
         }
       ],
       "source_url": "https://www.dartsrankings.com/",
-      "notice": "PDC Order of Merit data; top 50 player portraits use official PDC Tour Card photos served from PDC Europe profiles.",
-      "last_updated": "2026-11-08T16:53:59Z"
+      "notice": "PDC Order of Merit live table. Rankings are updated after PDC ranking events.",
+      "last_updated": "2026-11-08T20:17:58Z"
     },
     "ufc": {
       "divisions": [
@@ -3477,7 +3258,7 @@
       ],
       "snapshot_date": "2026-11-03",
       "notice": "Official UFC divisional rankings from UFCalendar. Rank 0 denotes the champion; rankings are updated when the publisher releases a new snapshot.",
-      "last_updated": "2026-11-08T16:53:59Z"
+      "last_updated": "2026-11-08T20:17:58Z"
     },
     "boxing": {
       "divisions": [
@@ -4140,59 +3921,22 @@
         }
       ],
       "notice": "Current reigns from Open Boxing, covering the major sanctioning bodies and The Ring where recorded. Boxing title status can change between updates; data coverage is subject to the source database.",
-      "last_updated": "2026-11-08T16:53:59Z"
+      "last_updated": "2026-11-08T20:17:58Z"
     }
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 2,
-    "found": 88,
-    "missing": 647,
+    "attempted": 0,
+    "found": 49,
+    "missing": 499,
     "rejected": 0,
-    "by_sport": {
-      "boxing fighters": {
-        "attempted": 2,
-        "found": 0,
-        "missing": 2,
-        "rejected": 0
-      }
-    },
-    "rejection_reasons": {
-      "not_an_image": 13,
-      "surname_not_matched": 1
-    },
-    "search_details": [
-      {
-        "name": "Bobby Faulkner",
-        "queries": 2,
-        "candidate_files": 14,
-        "accepted": 0,
-        "rejections": {
-          "not_an_image": 13,
-          "surname_not_matched": 1
-        }
-      },
-      {
-        "name": "Brandon Grant",
-        "queries": 0,
-        "candidate_files": 0,
-        "accepted": 0,
-        "rejections": {}
-      }
-    ],
-    "checked_at": "2026-11-08T18:53:18Z",
-    "library_entries": 53,
+    "by_sport": {},
     "newly_found": 0,
     "coverage": {
-      "boxing fight card fighters": {
-        "total": 187,
-        "with_image": 2,
-        "missing": 185
-      },
       "f1 drivers": {
         "total": 25,
-        "with_image": 25,
-        "missing": 0
+        "with_image": 23,
+        "missing": 2
       },
       "f1 constructors": {
         "total": 11,
@@ -4201,8 +3945,8 @@
       },
       "darts": {
         "total": 225,
-        "with_image": 50,
-        "missing": 175
+        "with_image": 15,
+        "missing": 210
       },
       "ufc": {
         "total": 206,
@@ -4215,7 +3959,8 @@
         "missing": 81
       }
     },
-    "rate_limited": true
+    "checked_at": "2026-11-08T20:17:58Z",
+    "library_entries": 53
   },
-  "last_updated": "2026-11-08T16:53:59Z"
+  "last_updated": "2026-11-08T20:17:58Z"
 }
