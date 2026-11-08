@@ -263,8 +263,10 @@ function makeBoutRow(b) {
   const vs=document.createElement("div"); vs.className="vs"; vs.textContent="VS";
   const right=document.createElement("div"); right.className="fighter"; appendFighterName(right,c,b.fighter2_nationality||b.fighter2_country||b.fighter2_country_code);
   const meta=document.createElement("div"); meta.className="bout-meta";
-  const timeLabel = b.start_time_utc ? "FIGHT TIME " + (formatTime(b.start_time_utc,b.date)||"TBC") : (b.eventStartTime ? "CARD START " + (formatTime(b.eventStartTime,b.eventDate)||"TBC") : null);
-  const details=[b.weight_class||b.division,b.rounds ? b.rounds+" rounds" : null,b.title_text,b.eventCountry ? "COUNTRY "+b.eventCountry : null,timeLabel].filter(Boolean);
+  const boutTime=b.start_datetime_utc||b.start_time_utc||b.ring_walk_time_utc||b.scheduled_start_utc||b.fight_time_utc||b.start_time||b.ring_walk_time||b.scheduled_time||null;
+  const timeLabel="FIGHT TIME "+(boutTime?(formatTime(boutTime,b.date)||"TBC"):"TBC");
+  const cardTime=b.eventStartTime?"CARD START "+(formatTime(b.eventStartTime,b.eventDate)||"TBC"):null;
+  const details=[b.weight_class||b.division,b.rounds ? b.rounds+" rounds" : null,b.title_text,b.eventCountry ? "COUNTRY "+b.eventCountry : null,timeLabel,cardTime].filter(Boolean);
   const detailLine=document.createElement("span");
   detailLine.textContent=details.length ? details.join(" · ") : "Weight division not supplied";
   meta.append(detailLine);
