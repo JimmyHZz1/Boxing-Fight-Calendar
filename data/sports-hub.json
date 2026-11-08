@@ -602,28 +602,64 @@
           "name": "Danny Noppert",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "./assets/images/darts/danny-noppert.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Danny_noppert_en_theo_de_jong-1510986499.jpg",
+          "image_credit": "Wikimedia Commons · Rudy · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1.0,
+          "image_match_method": "search:Danny Noppert",
+          "image_verified_at": "2026-11-08T18:13:37Z",
+          "image_local_path": "assets/images/darts/danny-noppert.jpg"
         },
         {
           "rank": 11,
           "name": "Michael van Gerwen",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "./assets/images/darts/michael-van-gerwen.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Michael_van_Gerwen_5-8_Joe_Cullen_-_Joe_Cullen,_Michael_van_Gerwen_-_2019251222829_2019-09-08_PDC_European_Darts_Matchplay_-_1220_-_AK8I1221.jpg",
+          "image_credit": "Wikimedia Commons · Sven Mandel · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1.0,
+          "image_match_method": "category:Category:Michael van Gerwen in 2019",
+          "image_verified_at": "2026-11-08T18:13:37Z",
+          "image_local_path": "assets/images/darts/michael-van-gerwen.jpg"
         },
         {
           "rank": 11,
           "name": "Nathan Aspinall",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "./assets/images/darts/nathan-aspinall.png",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Nathan_Aspinall_2024.png",
+          "image_credit": "Wikimedia Commons · DARTS NOW · CC BY 3.0",
+          "image_license": "CC BY 3.0",
+          "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1.0,
+          "image_match_method": "category:Category:Nathan Aspinall",
+          "image_verified_at": "2026-11-08T18:13:37Z",
+          "image_local_path": "assets/images/darts/nathan-aspinall.png"
         },
         {
           "rank": 13,
           "name": "Wessel Nijman",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "./assets/images/darts/wessel-nijman.png",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Wessel_Nijman_2024.png",
+          "image_credit": "Wikimedia Commons · DARTS NOW · CC BY 3.0",
+          "image_license": "CC BY 3.0",
+          "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1.0,
+          "image_match_method": "category:Category:Wessel Nijman",
+          "image_verified_at": "2026-11-08T18:13:37Z",
+          "image_local_path": "assets/images/darts/wessel-nijman.png"
         },
         {
           "rank": 14,
@@ -3896,74 +3932,67 @@
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
     "attempted": 5,
-    "found": 44,
-    "missing": 691,
+    "found": 48,
+    "missing": 687,
     "rejected": 0,
     "by_sport": {
       "darts": {
         "attempted": 5,
-        "found": 5,
-        "missing": 0,
+        "found": 4,
+        "missing": 1,
         "rejected": 0
       }
     },
     "rejection_reasons": {
-      "not_an_image": 37,
-      "given_name_not_matched": 6,
-      "surname_not_matched": 4
+      "not_an_image": 28,
+      "surname_not_matched": 58
     },
     "search_details": [
       {
-        "name": "Gerwyn Price",
+        "name": "Stephen Bunting",
         "queries": 3,
-        "candidate_files": 31,
-        "accepted": 30,
+        "candidate_files": 50,
+        "accepted": 0,
         "rejections": {
-          "not_an_image": 1
+          "not_an_image": 18,
+          "surname_not_matched": 32
         }
       },
       {
-        "name": "Jonny Clayton",
+        "name": "Danny Noppert",
+        "queries": 1,
+        "candidate_files": 2,
+        "accepted": 2,
+        "rejections": {}
+      },
+      {
+        "name": "Michael van Gerwen",
         "queries": 3,
         "candidate_files": 30,
         "accepted": 30,
         "rejections": {}
       },
       {
-        "name": "Ross Smith",
-        "queries": 1,
-        "candidate_files": 20,
-        "accepted": 11,
+        "name": "Nathan Aspinall",
+        "queries": 3,
+        "candidate_files": 39,
+        "accepted": 3,
         "rejections": {
-          "given_name_not_matched": 5,
-          "surname_not_matched": 1,
-          "not_an_image": 3
+          "not_an_image": 10,
+          "surname_not_matched": 26
         }
       },
       {
-        "name": "James Wade",
-        "queries": 1,
-        "candidate_files": 20,
-        "accepted": 2,
-        "rejections": {
-          "not_an_image": 18
-        }
-      },
-      {
-        "name": "Josh Rock",
-        "queries": 1,
-        "candidate_files": 20,
-        "accepted": 1,
-        "rejections": {
-          "surname_not_matched": 3,
-          "not_an_image": 15,
-          "given_name_not_matched": 1
-        }
+        "name": "Wessel Nijman",
+        "queries": 3,
+        "candidate_files": 3,
+        "accepted": 3,
+        "rejections": {}
       }
     ],
-    "checked_at": "2026-11-08T18:04:36Z",
-    "library_entries": 44,
-    "newly_found": 5,
+    "checked_at": "2026-11-08T18:13:37Z",
+    "library_entries": 48,
+    "newly_found": 4,
     "coverage": {
       "boxing fight card fighters": {
         "total": 187,
@@ -3982,8 +4011,8 @@
       },
       "darts": {
         "total": 225,
-        "with_image": 6,
-        "missing": 219
+        "with_image": 10,
+        "missing": 215
       },
       "ufc": {
         "total": 206,
@@ -3995,7 +4024,8 @@
         "with_image": 0,
         "missing": 81
       }
-    }
+    },
+    "rate_limited": false
   },
   "last_updated": "2026-11-08T16:53:59Z"
 }

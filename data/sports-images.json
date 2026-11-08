@@ -607,9 +607,65 @@
       "image_match_method": "search:Josh Rock",
       "image_verified_at": "2026-11-08T18:04:36Z",
       "image_local_path": "assets/images/darts/josh-rock.jpg"
+    },
+    "danny noppert": {
+      "name": "Danny Noppert",
+      "sport": "darts",
+      "image_url": "./assets/images/darts/danny-noppert.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Danny_noppert_en_theo_de_jong-1510986499.jpg",
+      "image_credit": "Wikimedia Commons · Rudy · CC BY-SA 4.0",
+      "image_license": "CC BY-SA 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "search:Danny Noppert",
+      "image_verified_at": "2026-11-08T18:13:37Z",
+      "image_local_path": "assets/images/darts/danny-noppert.jpg"
+    },
+    "michael van gerwen": {
+      "name": "Michael van Gerwen",
+      "sport": "darts",
+      "image_url": "./assets/images/darts/michael-van-gerwen.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Michael_van_Gerwen_5-8_Joe_Cullen_-_Joe_Cullen,_Michael_van_Gerwen_-_2019251222829_2019-09-08_PDC_European_Darts_Matchplay_-_1220_-_AK8I1221.jpg",
+      "image_credit": "Wikimedia Commons · Sven Mandel · CC BY-SA 4.0",
+      "image_license": "CC BY-SA 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Michael van Gerwen in 2019",
+      "image_verified_at": "2026-11-08T18:13:37Z",
+      "image_local_path": "assets/images/darts/michael-van-gerwen.jpg"
+    },
+    "nathan aspinall": {
+      "name": "Nathan Aspinall",
+      "sport": "darts",
+      "image_url": "./assets/images/darts/nathan-aspinall.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Nathan_Aspinall_2024.png",
+      "image_credit": "Wikimedia Commons · DARTS NOW · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Nathan Aspinall",
+      "image_verified_at": "2026-11-08T18:13:37Z",
+      "image_local_path": "assets/images/darts/nathan-aspinall.png"
+    },
+    "wessel nijman": {
+      "name": "Wessel Nijman",
+      "sport": "darts",
+      "image_url": "./assets/images/darts/wessel-nijman.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Wessel_Nijman_2024.png",
+      "image_credit": "Wikimedia Commons · DARTS NOW · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Wessel Nijman",
+      "image_verified_at": "2026-11-08T18:13:37Z",
+      "image_local_path": "assets/images/darts/wessel-nijman.png"
     }
   },
-  "updated_at": "2026-11-08T18:04:36Z",
+  "updated_at": "2026-11-08T18:13:37Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -667,6 +723,11 @@
     "jonny clayton": "2026-11-08T18:04:36Z",
     "ross smith": "2026-11-08T18:04:36Z",
     "james wade": "2026-11-08T18:04:36Z",
-    "josh rock": "2026-11-08T18:04:36Z"
+    "josh rock": "2026-11-08T18:04:36Z",
+    "stephen bunting": "2026-11-08T18:13:37Z",
+    "danny noppert": "2026-11-08T18:13:37Z",
+    "michael van gerwen": "2026-11-08T18:13:37Z",
+    "nathan aspinall": "2026-11-08T18:13:37Z",
+    "wessel nijman": "2026-11-08T18:13:37Z"
   }
 }
