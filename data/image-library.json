@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "updated_at": null,
+  "storage": "repository",
+  "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
+  "images": {},
+  "collections": {
+    "f1-drivers": {
+      "sport": "f1",
+      "kind": "portrait",
+      "priority": 1
+    },
+    "f1-constructors": {
+      "sport": "f1",
+      "kind": "logo",
+      "priority": 1
+    },
+    "pdc-players": {
+      "sport": "darts",
+      "kind": "portrait",
+      "priority": 1
+    },
+    "boxing-champions": {
+      "sport": "boxing",
+      "kind": "portrait",
+      "priority": 1
+    },
+    "ufc-fighters": {
+      "sport": "ufc",
+      "kind": "portrait",
+      "priority": 1
+    },
+    "bkfc-fighters": {
+      "sport": "bkfc",
+      "kind": "portrait",
+      "priority": 2
+    }
+  }
+}
