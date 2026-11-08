@@ -91,7 +91,7 @@
     if(sport==="darts") return [
       {name:"Sky Sports Darts · selected events",href:"https://www.skysports.com/darts",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/Sky_Sports_Darts_-_Logo_2025.svg"},
       {name:"ITV4 · selected events",href:"https://www.itv.com/watch",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/ITV_logo.svg"},
-      {name:"PDCTV · where UK rights allow",href:"https://video.pdc.tv/",logo:null}
+      {name:"PDC TV / PDCTV · selected live coverage where UK rights allow",href:"https://video.pdc.tv/",logo:null}
     ];
     return [];
   }

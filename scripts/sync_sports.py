@@ -130,24 +130,27 @@ def sync_darts():
         preserve_or_status("darts.json", "darts", "Darts API", "DARTS_API_KEY is not configured in GitHub repository secrets.")
         print("Darts: skipped; DARTS_API_KEY secret is not configured.")
         return
-    rows = []
-    for organiser in ("pdc", "pdc_development", "pdc_affiliate"):
-        rows.extend(paged_darts_calendar(key, organiser))
+    rows = paged_darts_calendar(key, "pdc")
     seen, events = set(), []
     for row in rows:
         event_id = row.get("event_id")
         if not event_id or event_id in seen:
             continue
         seen.add(event_id)
+        event_name = row.get("name") or "PDC event"
+        televised = re.search(r"world championship|world matchplay|premier league|uk open|world grand prix|grand slam|european championship|players championship finals|world cup of darts|world series of darts finals|world masters|\bmasters\b|\b(?:bahrain|nordic|us|new zealand|australian|poland|saudi arabia) darts masters\b", event_name, re.I)
+        excluded = re.search(r"\b(?:u\s?23|youth|development|qualifier|qualifying|players championships?\b(?!\s+finals)|challenge tour|development tour|affiliate|pro tour)\b", event_name, re.I)
+        if not televised or excluded:
+            continue
         events.append({
-            "id": str(event_id), "name": row.get("name") or "PDC event",
+            "id": str(event_id), "name": event_name,
             "date": row.get("date"), "status": row.get("status") or "scheduled",
             "organiser": row.get("organiser"), "tier": row.get("tier"),
             "matches": row.get("matches"), "competition_id": row.get("competition_id"),
             "source": "Darts API"
         })
     events.sort(key=lambda e: (e.get("date") or "", e.get("name") or ""))
-    save("darts.json", {"sport": "darts", "provider": "Darts API", "organisers_included": ["pdc", "pdc_development", "pdc_affiliate"], "events": events, "notice": "PDC, PDC Development Tour and PDC Affiliate events. MODUS and non-PDC events are excluded. Free API calendar data may lag the live feed by up to seven days."})
+    save("darts.json", {"sport": "darts", "provider": "Darts API", "organisers_included": ["pdc"], "events": events, "notice": "Main televised PDC tournaments only. U23, youth, development, affiliate, qualifier and non-televised Players Championship events are excluded. Viewing varies by UK broadcast rights; PDCTV is listed where available."})
     print(f"Darts: saved {len(events)} PDC-related calendar events.")
 
 def api_data(payload):
@@ -179,6 +182,7 @@ def enrich_event_fighter_images(events):
         cache = {"images": {}, "attempted": {}}
     load_image_library()
     images, attempted = cache.setdefault("images", {}), cache.setdefault("attempted", {})
+    library_attempted = IMAGE_LIBRARY.setdefault("attempted", {})
     def person_name(value):
         if isinstance(value, dict):
             return value.get("name") or " ".join(x for x in [value.get("given_name"), value.get("family_name")] if x)
@@ -204,14 +208,22 @@ def enrich_event_fighter_images(events):
                 if direct: bout[side + "_image"] = direct
                 elif key in IMAGE_LIBRARY.get("images", {}):
                     images[key] = IMAGE_LIBRARY["images"][key]
-                elif key not in images and key not in attempted: pending[key] = name
+                elif key not in images and key not in attempted:
+                    last_attempt = library_attempted.get(key)
+                    try:
+                        cooling_down = last_attempt and (datetime.now(timezone.utc).date() - datetime.fromisoformat(last_attempt[:10]).date()).days < 30
+                    except ValueError:
+                        cooling_down = False
+                    if not cooling_down: pending[key] = name
     import time
     for key, name in list(pending.items())[:30]:
         if IMAGE_LOOKUP_RATE_LIMITED or IMAGE_DIAGNOSTICS["attempted"] >= IMAGE_LOOKUP_BUDGET:
             break
         IMAGE_DIAGNOSTICS["attempted"] += 1
         result = commons_photo(name, image_kind="portrait")
-        attempted[key] = datetime.now(timezone.utc).date().isoformat()
+        if not IMAGE_LOOKUP_RATE_LIMITED:
+            attempted[key] = datetime.now(timezone.utc).date().isoformat()
+            library_attempted[key] = iso_now()
         if result and result.get("image_url"):
             images[key] = result
             record_image(name, result, "ufc/bkfc event fighters")
@@ -326,8 +338,8 @@ def sync_bkfc():
     # Use its published dates and names as a safe fallback; do not guess time zones.
     if not records:
         visible = html.unescape(re.sub(r"<[^>]+>", " ", page))
-        visible = re.sub(r"\\s+", " ", visible)
-        pattern = r"((?:January|February|March|April|May|June|July|August|September|October|November|December) \\d{1,2}, \\d{4}) \\1 \\d{1,2}:\\d{2} \\s*[AP]M \\s*#? \\s*(BKFC[^#]{3,100}?) \\s*Buy tickets"
+        visible = re.sub(r"\s+", " ", visible)
+        pattern = r"((?:January|February|March|April|May|June|July|August|September|October|November|December) \\d{1,2}, \\d{4}) \\1 \\d{1,2}:\\d{2} \s*[AP]M \s*#? \s*(BKFC[^#]{3,100}?) \s*Buy tickets"
         for match in re.finditer(pattern, visible, re.I):
             records.append({"@type":"Event","name":match.group(2).strip(),"startDate":match.group(1),"url":url,"eventStatus":"EventScheduled"})
     events, seen = [], set()
@@ -399,7 +411,7 @@ IMAGE_LIBRARY_PATH = os.path.join(DATA, "sports-images.json")
 IMAGE_DIAGNOSTICS = {"attempted": 0, "found": 0, "missing": 0, "rejected": 0, "by_sport": {}}
 IMAGE_LIBRARY = {"version": 1, "images": {}}
 IMAGE_LIBRARY_LOADED = False
-IMAGE_LOOKUP_BUDGET = 12
+IMAGE_LOOKUP_BUDGET = 0  # Image searches run in a separate scheduled workflow.
 IMAGE_LOOKUP_RATE_LIMITED = False
 
 def image_key(name):
@@ -416,8 +428,9 @@ def load_image_library():
             loaded = json.load(handle)
         if isinstance(loaded, dict) and isinstance(loaded.get("images"), dict):
             IMAGE_LIBRARY = loaded
+            IMAGE_LIBRARY.setdefault("attempted", {})
     except (FileNotFoundError, json.JSONDecodeError):
-        IMAGE_LIBRARY = {"version": 1, "images": {}}
+        IMAGE_LIBRARY = {"version": 1, "images": {}, "attempted": {}}
     IMAGE_LIBRARY_LOADED = True
     return IMAGE_LIBRARY
 
@@ -566,12 +579,22 @@ def add_photos(rows, name_field="name", limit=8, sport="other", image_kind="port
             continue
         if not name or row_index >= limit:
             continue
+        attempted = IMAGE_LIBRARY.setdefault("attempted", {})
+        last_attempt = attempted.get(key) if key else None
+        if last_attempt:
+            try:
+                if (datetime.now(timezone.utc).date() - datetime.fromisoformat(last_attempt[:10]).date()).days < 30:
+                    continue
+            except ValueError:
+                pass
         if IMAGE_LOOKUP_RATE_LIMITED or IMAGE_DIAGNOSTICS["attempted"] >= IMAGE_LOOKUP_BUDGET:
             break
         IMAGE_DIAGNOSTICS["attempted"] += 1
         bucket = IMAGE_DIAGNOSTICS["by_sport"].setdefault(sport, {"attempted": 0, "found": 0, "missing": 0, "rejected": 0})
         bucket["attempted"] += 1
         result = commons_photo(name, image_kind=image_kind)
+        if not IMAGE_LOOKUP_RATE_LIMITED and key:
+            attempted[key] = iso_now()
         if result:
             row.update(result)
             record_image(name, result, sport)
@@ -737,6 +760,62 @@ def sync_sports_hub():
     print("IMAGE_DIAGNOSTICS: " + json.dumps(IMAGE_DIAGNOSTICS, ensure_ascii=False))
     print("Sports hub: standings, rankings, title-holders and image diagnostics refreshed.")
 
+def enrich_cached_images():
+    """Enrich published image rows in a separate, rate-limited workflow."""
+    global IMAGE_LOOKUP_BUDGET, IMAGE_DIAGNOSTICS, IMAGE_LOOKUP_RATE_LIMITED
+    IMAGE_LOOKUP_BUDGET = 5
+    IMAGE_DIAGNOSTICS = {"attempted": 0, "found": 0, "missing": 0, "rejected": 0, "by_sport": {}}
+    IMAGE_LOOKUP_RATE_LIMITED = False
+    load_image_library()
+    hub_path = os.path.join(DATA, "sports-hub.json")
+    with open(hub_path, encoding="utf-8") as handle:
+        hub = json.load(handle)
+    sports = hub.get("sports") or hub
+    f1 = sports.get("f1") or {}
+    f1["drivers"] = add_photos(f1.get("drivers") or [], limit=30, sport="f1 drivers")
+    f1["constructors"] = add_photos(f1.get("constructors") or [], limit=20, sport="f1 constructors", image_kind="logo")
+    darts = sports.get("darts") or {}
+    darts["rankings"] = add_photos(darts.get("rankings") or [], limit=40, sport="darts")
+    ufc = sports.get("ufc") or {}
+    for division in ufc.get("divisions") or []:
+        division["entries"] = add_photos(division.get("entries") or [], limit=15, sport="ufc")
+    boxing = sports.get("boxing") or {}
+    for division in boxing.get("divisions") or []:
+        division["champions"] = add_photos(division.get("champions") or [], limit=12, sport="boxing")
+    for sport in ("ufc", "bkfc"):
+        path = os.path.join(DATA, sport + ".json")
+        try:
+            with open(path, encoding="utf-8") as handle:
+                feed = json.load(handle)
+            feed["events"] = enrich_event_fighter_images(feed.get("events") or [])
+            with open(path, "w", encoding="utf-8") as handle:
+                json.dump(feed, handle, ensure_ascii=False, indent=2)
+                handle.write("\n")
+        except (FileNotFoundError, json.JSONDecodeError):
+            continue
+    def count_rows(rows):
+        rows = rows or []
+        return {"total": len(rows), "with_image": sum(1 for row in rows if row.get("image_url")), "missing": sum(1 for row in rows if not row.get("image_url"))}
+    coverage = {
+        "f1 drivers": count_rows(f1.get("drivers")), "f1 constructors": count_rows(f1.get("constructors")),
+        "darts": count_rows(darts.get("rankings")),
+        "ufc": count_rows([r for d in ufc.get("divisions", []) for r in d.get("entries", [])]),
+        "boxing": count_rows([r for d in boxing.get("divisions", []) for r in d.get("champions", [])])
+    }
+    IMAGE_DIAGNOSTICS["newly_found"] = IMAGE_DIAGNOSTICS["found"]
+    IMAGE_DIAGNOSTICS["coverage"] = coverage
+    IMAGE_DIAGNOSTICS["found"] = sum(v["with_image"] for v in coverage.values())
+    IMAGE_DIAGNOSTICS["missing"] = sum(v["missing"] for v in coverage.values())
+    IMAGE_DIAGNOSTICS["checked_at"] = iso_now()
+    IMAGE_DIAGNOSTICS["library_entries"] = len(IMAGE_LIBRARY.get("images", {}))
+    hub["image_diagnostics"] = IMAGE_DIAGNOSTICS
+    save_image_library()
+    with open(hub_path, "w", encoding="utf-8") as handle:
+        json.dump(hub, handle, ensure_ascii=False, indent=2)
+        handle.write("\n")
+    print("IMAGE_ENRICHMENT: " + json.dumps(IMAGE_DIAGNOSTICS, ensure_ascii=False))
+
+
 def main():
     try:
         sync_sports_hub()
@@ -763,4 +842,7 @@ def main():
         print(f"BKFC_SYNC_WARNING: {exc}")
 
 if __name__ == "__main__":
-    main()
+    if "--images-only" in sys.argv:
+        enrich_cached_images()
+    else:
+        main()
