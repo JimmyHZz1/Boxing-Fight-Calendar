@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-08T15:57:32Z",
+  "updated_at": "2026-11-08T18:04:36Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -387,6 +387,61 @@
       "creator": "Wikimedia Commons · DARTS NOW · CC BY 3.0",
       "attribution": "Wikimedia Commons · DARTS NOW · CC BY 3.0",
       "verified_at": "2026-11-08T15:57:32Z",
+      "sport": "darts"
+    },
+    "gerwyn price": {
+      "name": "Gerwyn Price",
+      "path": "assets/images/darts/gerwyn-price.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Gerwyn_Price_2019.jpg",
+      "licence": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "creator": "Wikimedia Commons · Dartsfan1234 · CC BY-SA 4.0",
+      "attribution": "Wikimedia Commons · Dartsfan1234 · CC BY-SA 4.0",
+      "verified_at": "2026-11-08T18:04:36Z",
+      "sport": "darts"
+    },
+    "jonny clayton": {
+      "name": "Jonny Clayton",
+      "path": "assets/images/darts/jonny-clayton.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Jonny_Clayton_4-6_James_Wade_-_Jonny_Clayton_-_2019251202133_2019-09-08_PDC_European_Darts_Matchplay_-_0408_-_AK8I0409.jpg",
+      "licence": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "creator": "Wikimedia Commons · Sven Mandel · CC BY-SA 4.0",
+      "attribution": "Wikimedia Commons · Sven Mandel · CC BY-SA 4.0",
+      "verified_at": "2026-11-08T18:04:36Z",
+      "sport": "darts"
+    },
+    "ross smith": {
+      "name": "Ross Smith",
+      "path": "assets/images/darts/ross-smith.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:John_Ross_by_John_Rubens_Smith,_1841,_watercolor_and_ink_on_paper,_from_the_National_Portrait_Gallery_-_NPG-7200144A.jpg",
+      "licence": "Public domain",
+      "licence_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "creator": "Wikimedia Commons · John Rubens Smith · Public domain",
+      "attribution": "Wikimedia Commons · John Rubens Smith · Public domain",
+      "verified_at": "2026-11-08T18:04:36Z",
+      "sport": "darts"
+    },
+    "james wade": {
+      "name": "James Wade",
+      "path": "assets/images/darts/james-wade.png",
+      "source_url": "https://commons.wikimedia.org/wiki/File:James_W._Wade_(Men_of_affairs,_1914).png",
+      "licence": "Public domain",
+      "licence_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "creator": "Wikimedia Commons · Unknown authorUnknown author · Public domain",
+      "attribution": "Wikimedia Commons · Unknown authorUnknown author · Public domain",
+      "verified_at": "2026-11-08T18:04:36Z",
+      "sport": "darts"
+    },
+    "josh rock": {
+      "name": "Josh Rock",
+      "path": "assets/images/darts/josh-rock.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Foo_Fighters_-_2023153234522_2023-06-02_Rock_am_Ring_-_Sven_-_1D_X_MK_II_-_4704_-_B70I5860_(Josh_Freese_portrait).jpg",
+      "licence": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "creator": "Wikimedia Commons · Sven Mandel · CC BY-SA 4.0",
+      "attribution": "Wikimedia Commons · Sven Mandel · CC BY-SA 4.0",
+      "verified_at": "2026-11-08T18:04:36Z",
       "sport": "darts"
     }
   },

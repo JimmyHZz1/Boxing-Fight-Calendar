@@ -537,9 +537,79 @@
       "image_match_method": "category:Category:Gian van Veen",
       "image_verified_at": "2026-11-08T15:57:32Z",
       "image_local_path": "assets/images/darts/gian-van-veen.png"
+    },
+    "gerwyn price": {
+      "name": "Gerwyn Price",
+      "sport": "darts",
+      "image_url": "./assets/images/darts/gerwyn-price.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Gerwyn_Price_2019.jpg",
+      "image_credit": "Wikimedia Commons · Dartsfan1234 · CC BY-SA 4.0",
+      "image_license": "CC BY-SA 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Gerwyn Price in 2019",
+      "image_verified_at": "2026-11-08T18:04:36Z",
+      "image_local_path": "assets/images/darts/gerwyn-price.jpg"
+    },
+    "jonny clayton": {
+      "name": "Jonny Clayton",
+      "sport": "darts",
+      "image_url": "./assets/images/darts/jonny-clayton.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Jonny_Clayton_4-6_James_Wade_-_Jonny_Clayton_-_2019251202133_2019-09-08_PDC_European_Darts_Matchplay_-_0408_-_AK8I0409.jpg",
+      "image_credit": "Wikimedia Commons · Sven Mandel · CC BY-SA 4.0",
+      "image_license": "CC BY-SA 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Jonny Clayton in 2019",
+      "image_verified_at": "2026-11-08T18:04:36Z",
+      "image_local_path": "assets/images/darts/jonny-clayton.jpg"
+    },
+    "ross smith": {
+      "name": "Ross Smith",
+      "sport": "darts",
+      "image_url": "./assets/images/darts/ross-smith.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:John_Ross_by_John_Rubens_Smith,_1841,_watercolor_and_ink_on_paper,_from_the_National_Portrait_Gallery_-_NPG-7200144A.jpg",
+      "image_credit": "Wikimedia Commons · John Rubens Smith · Public domain",
+      "image_license": "Public domain",
+      "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "search:Ross Smith",
+      "image_verified_at": "2026-11-08T18:04:36Z",
+      "image_local_path": "assets/images/darts/ross-smith.jpg"
+    },
+    "james wade": {
+      "name": "James Wade",
+      "sport": "darts",
+      "image_url": "./assets/images/darts/james-wade.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:James_W._Wade_(Men_of_affairs,_1914).png",
+      "image_credit": "Wikimedia Commons · Unknown authorUnknown author · Public domain",
+      "image_license": "Public domain",
+      "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "search:James Wade",
+      "image_verified_at": "2026-11-08T18:04:36Z",
+      "image_local_path": "assets/images/darts/james-wade.png"
+    },
+    "josh rock": {
+      "name": "Josh Rock",
+      "sport": "darts",
+      "image_url": "./assets/images/darts/josh-rock.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Foo_Fighters_-_2023153234522_2023-06-02_Rock_am_Ring_-_Sven_-_1D_X_MK_II_-_4704_-_B70I5860_(Josh_Freese_portrait).jpg",
+      "image_credit": "Wikimedia Commons · Sven Mandel · CC BY-SA 4.0",
+      "image_license": "CC BY-SA 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "search:Josh Rock",
+      "image_verified_at": "2026-11-08T18:04:36Z",
+      "image_local_path": "assets/images/darts/josh-rock.jpg"
     }
   },
-  "updated_at": "2026-11-08T16:53:59Z",
+  "updated_at": "2026-11-08T18:04:36Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -592,6 +662,11 @@
     "anthony olascuaga": "2026-11-08T13:36:08Z",
     "luke littler": "2026-11-08T15:57:32Z",
     "luke humphries": "2026-11-08T15:57:32Z",
-    "gian van veen": "2026-11-08T15:57:32Z"
+    "gian van veen": "2026-11-08T15:57:32Z",
+    "gerwyn price": "2026-11-08T18:04:36Z",
+    "jonny clayton": "2026-11-08T18:04:36Z",
+    "ross smith": "2026-11-08T18:04:36Z",
+    "james wade": "2026-11-08T18:04:36Z",
+    "josh rock": "2026-11-08T18:04:36Z"
   }
 }
