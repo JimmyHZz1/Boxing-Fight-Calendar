@@ -31,7 +31,8 @@
   }
   function dropdown(title, items, label, max=30) {
     const list=(items||[]).slice(0,max);
-    return '<details class="hub-dropdown"><summary>'+esc(title)+'<span>'+list.length+' ENTRIES</span></summary><div class="hub-dropdown-list">'+(list.length?list.map((x,i)=>person(x,i,label)).join(""):'<p class="hub-empty">No published data available yet.</p>')+'</div></details>';
+    const rankingClass = title==="PDC Order of Merit" ? " hub-dropdown-list-ranking" : "";
+    return '<details class="hub-dropdown"><summary>'+esc(title)+'<span>'+list.length+' ENTRIES</span></summary><div class="hub-dropdown-list'+rankingClass+'">'+(list.length?list.map((x,i)=>person(x,i,label)).join(""):'<p class="hub-empty">No published data available yet.</p>')+'</div></details>';
   }
   function panel(sport) {
     const d=payload[sport]||{};
