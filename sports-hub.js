@@ -15,7 +15,7 @@
   function person(item, index, label) {
     const local = localImages[imageKey(item.name)];
     const localPath = local && local.path ? "./"+String(local.path).replace(/^[/]+/,"") : (item.image_url && item.image_url.startsWith("./assets/") ? item.image_url : "");
-    const source = localPath ? new URL(localPath, document.baseURI).href : item.image_url;
+    const source = localPath ? "https://raw.githubusercontent.com/JimmyHZz1/Boxing-Fight-Calendar/main/"+String(local?.path || item.image_url).replace(/^\.\//,"").replace(/^\//,"") : item.image_url;
     const credit = local?.attribution || item.image_credit;
     const img = source ? '<img src="'+esc(source)+'" alt="" loading="lazy" data-image-entity="'+esc(item.name||"")+'" data-image-fallback="'+esc(initials(item.name))+'">' : '<span class="hub-avatar-fallback">'+esc(initials(item.name))+'</span>';
     const rank = item.rank != null ? (item.rank===0 ? "C" : "#"+item.rank) : (index+1);
@@ -58,6 +58,12 @@
     root.querySelectorAll("img[data-image-entity]").forEach(img=>{
       img.addEventListener("load",()=>{imageLoads++;updateImageDiagnostics();},{once:true});
       img.addEventListener("error",()=>{
+        if(img.dataset.remoteRetry!=="1" && img.dataset.imageEntity){
+          img.dataset.remoteRetry="1";
+          const local=localImages[imageKey(img.dataset.imageEntity)];
+          const path=local?.path;
+          if(path){img.src="https://raw.githubusercontent.com/JimmyHZz1/Boxing-Fight-Calendar/main/"+String(path).replace(/^\//,"");return;}
+        }
         imageFailures++;
         const fallback=document.createElement("span");
         fallback.className="hub-avatar-fallback";
