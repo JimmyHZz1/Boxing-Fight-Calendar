@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#101114">
   <meta name="description" content="Boxing, Formula 1, UFC and PDC darts schedules in one sports calendar, shown in UK local time.">
   <link rel="manifest" href="./manifest.json">
-  <link rel="stylesheet" href="./styles.css?v=20261108-42">
+  <link rel="stylesheet" href="./styles.css?v=20261108-43">
   <title>Sports Calendar</title>
 </head>
 <body>
@@ -19,11 +19,11 @@
       <div class="topbar-actions"><span class="live-status"><i></i> SCHEDULE</span><button id="manual-refresh" class="primary-button topbar-refresh" type="button" aria-label="Check for newly published sports data">CHECKING…</button></div>
     </header>
     <nav class="top-sport-selector" aria-label="Switch sport">
-      <button type="button" class="top-sport-button" data-top-sport="f1" aria-label="Formula 1"><img src="https://www.formula1.com/assets/home/_next/static/media/f1-logo.43a01c6b.svg" alt=""><span>F1</span></button>
-      <button type="button" class="top-sport-button" data-top-sport="darts" aria-label="PDC Darts"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Professional%20Darts%20Corporation%20logo.png" alt=""><span>DARTS</span></button>
-      <button type="button" class="top-sport-button" data-top-sport="boxing" aria-label="Boxing"><span class="top-sport-wordmark boxing-mark">BOX</span><span>BOXING</span></button>
-      <button type="button" class="top-sport-button" data-top-sport="ufc" aria-label="UFC"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/UFC%20Logo.svg" alt=""><span>UFC</span></button>
-      <button type="button" class="top-sport-button" data-top-sport="bkfc" aria-label="BKFC"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bkfc-logo.png" alt=""><span>BKFC</span></button>
+      <button type="button" class="top-sport-button" data-top-sport="f1" data-logo-fallback="F1" aria-label="Formula 1" aria-pressed="true"><img src="https://www.formula1.com/assets/home/_next/static/media/f1-logo.43a01c6b.svg" alt="" aria-hidden="true"><span>F1</span></button>
+      <button type="button" class="top-sport-button" data-top-sport="darts" data-logo-fallback="PDC" aria-label="PDC Darts" aria-pressed="false"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Professional%20Darts%20Corporation%20logo.png" alt="" aria-hidden="true"><span>DARTS</span></button>
+      <button type="button" class="top-sport-button" data-top-sport="boxing" aria-label="Boxing" aria-pressed="false"><span class="top-sport-wordmark boxing-mark" aria-hidden="true">BOX</span><span>BOXING</span></button>
+      <button type="button" class="top-sport-button" data-top-sport="ufc" data-logo-fallback="UFC" aria-label="UFC" aria-pressed="false"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/UFC%20Logo.svg" alt="" aria-hidden="true"><span>UFC</span></button>
+      <button type="button" class="top-sport-button" data-top-sport="bkfc" data-logo-fallback="BKFC" aria-label="BKFC" aria-pressed="false"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bkfc-logo.png" alt="" aria-hidden="true"><span>BKFC</span></button>
     </nav>
     <section class="next-event-strip" aria-label="Next upcoming event in each sport">
       <div class="next-event-strip-heading"><span class="eyebrow">UP NEXT</span><span>SELECT AN EVENT TO OPEN ITS SPORT</span></div>
@@ -135,7 +135,7 @@
   <script src="./sports-data.js?v=20261107-07"></script>
   <script src="./sports.js?v=20261107-09"></script>
   <script src="./sports-hub.js?v=20261107-01"></script>
-  <script src="./sports-nav.js?v=20261107-02"></script>
+  <script src="./sports-nav.js?v=20261108-03"></script>
   <script src="./sport-pages.js?v=20261108-04"></script>
 </body>
 </html>
