@@ -645,6 +645,12 @@ def commons_photo(name, image_kind="portrait"):
             metadata_words = words(meta_value("Artist") + " " + meta_value("Credit"))
             all_identity_words = title_words | metadata_words
             if image_kind == "logo":
+                # A constructor result must explicitly identify itself as a logo/mark.
+                # This prevents Commons search from accepting cars, liveries or race photos.
+                description_words = words(meta_value("ImageDescription"))
+                if not ({"logo", "wordmark", "emblem", "crest", "badge", "insignia"} & (title_words | description_words)):
+                    reject("logo_asset_not_explicit")
+                    continue
                 alias_words = words(" ".join(query_names)) - {"logo", "team", "f1", "racing", "formula", "one", "visa", "cash", "app"}
                 identity_words = wanted | alias_words
                 identity_words -= {"logo", "team", "f1", "racing", "formula", "one"}
@@ -692,7 +698,10 @@ def commons_photo(name, image_kind="portrait"):
     if image_kind == "logo":
         known_logo_files = {
             "red bull": ["Red Bull Racing logo ita.png", "Red Bull Racing - 2005 Logo.png"],
-            "aston martin": ["Aston Martin F1 Team logo 2024.jpg"]
+            "aston martin": ["Aston Martin F1 Team logo 2024.jpg"],
+            "mercedes": ["Mercedes-AMG Petronas F1 Team logo (2026).svg"],
+            "ferrari": ["Ferrari wordmark.svg"],
+            "mclaren": ["McLaren logo (2026).svg"]
         }
         known_titles = known_logo_files.get(image_key(name), [])
         if known_titles and not IMAGE_LOOKUP_RATE_LIMITED:

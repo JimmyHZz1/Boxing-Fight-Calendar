@@ -13,7 +13,7 @@
           "image_license": "CC BY 4.0",
           "image_license_url": "https://creativecommons.org/licenses/by/4.0",
           "image_source": "Wikimedia Commons",
-          "image_match_score": 1.0,
+          "image_match_score": 1,
           "image_match_method": "category:Category:Mercedes-AMG F1 W16 E Performance of Andrea Kimi Antonelli",
           "image_verified_at": "2026-11-08T13:26:53Z",
           "image_local_path": "assets/images/f1-drivers/andrea-kimi-antonelli.jpg"
@@ -29,7 +29,7 @@
           "image_license": "CC BY-SA 3.0 de",
           "image_license_url": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
           "image_source": "Wikimedia Commons",
-          "image_match_score": 1.0,
+          "image_match_score": 1,
           "image_verified_at": "2026-11-08T12:58:07Z",
           "image_local_path": "assets/images/f1-drivers/max-verstappen.jpg"
         },
@@ -44,7 +44,7 @@
           "image_license": "CC BY 2.0",
           "image_license_url": "https://creativecommons.org/licenses/by/2.0",
           "image_source": "Wikimedia Commons",
-          "image_match_score": 1.0,
+          "image_match_score": 1,
           "image_verified_at": "2026-11-08T12:58:07Z",
           "image_local_path": "assets/images/f1-drivers/lewis-hamilton.jpg"
         },
@@ -59,7 +59,7 @@
           "image_license": "CC BY-SA 4.0",
           "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
           "image_source": "Wikimedia Commons",
-          "image_match_score": 1.0,
+          "image_match_score": 1,
           "image_verified_at": "2026-11-08T12:58:07Z",
           "image_local_path": "assets/images/f1-drivers/george-russell.png"
         },
@@ -74,7 +74,7 @@
           "image_license": "CC BY-SA 4.0",
           "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
           "image_source": "Wikimedia Commons",
-          "image_match_score": 1.0,
+          "image_match_score": 1,
           "image_verified_at": "2026-11-08T12:58:07Z",
           "image_local_path": "assets/images/f1-drivers/charles-leclerc.jpg"
         },
@@ -89,7 +89,7 @@
           "image_license": "CC BY 2.0",
           "image_license_url": "https://creativecommons.org/licenses/by/2.0",
           "image_source": "Wikimedia Commons",
-          "image_match_score": 1.0,
+          "image_match_score": 1,
           "image_match_method": "search:Lando Norris",
           "image_verified_at": "2026-11-08T13:21:01Z",
           "image_local_path": "assets/images/f1-drivers/lando-norris.jpg"
@@ -105,7 +105,7 @@
           "image_license": "CC BY-SA 4.0",
           "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
           "image_source": "Wikimedia Commons",
-          "image_match_score": 1.0,
+          "image_match_score": 1,
           "image_match_method": "category:Category:Oscar Piastri",
           "image_verified_at": "2026-11-08T13:21:01Z",
           "image_local_path": "assets/images/f1-drivers/oscar-piastri.jpg"
@@ -121,7 +121,7 @@
           "image_license": "CC BY 4.0",
           "image_license_url": "https://creativecommons.org/licenses/by/4.0",
           "image_source": "Wikimedia Commons",
-          "image_match_score": 1.0,
+          "image_match_score": 1,
           "image_match_method": "category:Category:RB VCARB 02 of Isack Hadjar",
           "image_verified_at": "2026-11-08T13:23:30Z",
           "image_local_path": "assets/images/f1-drivers/isack-hadjar.jpg"
@@ -137,7 +137,7 @@
           "image_license": "CC BY 4.0",
           "image_license_url": "https://creativecommons.org/licenses/by/4.0",
           "image_source": "Wikimedia Commons",
-          "image_match_score": 1.0,
+          "image_match_score": 1,
           "image_match_method": "category:Category:RB VCARB 03 of Liam Lawson",
           "image_verified_at": "2026-11-08T13:23:30Z",
           "image_local_path": "assets/images/f1-drivers/liam-lawson.jpg"
@@ -153,7 +153,7 @@
           "image_license": "CC BY-SA 4.0",
           "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
           "image_source": "Wikimedia Commons",
-          "image_match_score": 1.0,
+          "image_match_score": 1,
           "image_match_method": "search:Pierre Gasly",
           "image_verified_at": "2026-11-08T13:26:53Z",
           "image_local_path": "assets/images/f1-drivers/pierre-gasly.jpg"
@@ -169,7 +169,7 @@
           "image_license": "CC BY 4.0",
           "image_license_url": "https://creativecommons.org/licenses/by/4.0",
           "image_source": "Wikimedia Commons",
-          "image_match_score": 1.0,
+          "image_match_score": 1,
           "image_match_method": "category:Category:RB VCARB 03 of Arvid Lindblad",
           "image_verified_at": "2026-11-08T13:26:53Z",
           "image_local_path": "assets/images/f1-drivers/arvid-lindblad.jpg"
@@ -185,7 +185,7 @@
           "image_license": "CC BY 4.0",
           "image_license_url": "https://creativecommons.org/licenses/by/4.0",
           "image_source": "Wikimedia Commons",
-          "image_match_score": 1.0,
+          "image_match_score": 1,
           "image_match_method": "category:Category:Alpine A526 of Franco Colapinto",
           "image_verified_at": "2026-11-08T13:26:53Z",
           "image_local_path": "assets/images/f1-drivers/franco-colapinto.jpg"
@@ -201,7 +201,7 @@
           "image_license": "CC BY 4.0",
           "image_license_url": "https://creativecommons.org/licenses/by/4.0",
           "image_source": "Wikimedia Commons",
-          "image_match_score": 1.0,
+          "image_match_score": 1,
           "image_match_method": "category:Category:Haas VF-26 of Oliver Bearman",
           "image_verified_at": "2026-11-08T13:27:48Z",
           "image_local_path": "assets/images/f1-drivers/oliver-bearman.jpg"
@@ -217,7 +217,7 @@
           "image_license": "CC BY-SA 4.0",
           "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
           "image_source": "Wikimedia Commons",
-          "image_match_score": 1.0,
+          "image_match_score": 1,
           "image_match_method": "category:Category:Audi R26 of Gabriel Bortoleto",
           "image_verified_at": "2026-11-08T13:27:48Z",
           "image_local_path": "assets/images/f1-drivers/gabriel-bortoleto.jpg"
@@ -233,7 +233,7 @@
           "image_license": "CC BY-SA 3.0",
           "image_license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
           "image_source": "Wikimedia Commons",
-          "image_match_score": 1.0,
+          "image_match_score": 1,
           "image_match_method": "search:Nico Hülkenberg",
           "image_verified_at": "2026-11-08T13:27:48Z",
           "image_local_path": "assets/images/f1-drivers/nico-hulkenberg.jpg"
@@ -249,7 +249,7 @@
           "image_license": "CC BY-SA 4.0",
           "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
           "image_source": "Wikimedia Commons",
-          "image_match_score": 1.0,
+          "image_match_score": 1,
           "image_match_method": "search:Esteban Ocon",
           "image_verified_at": "2026-11-08T13:27:48Z",
           "image_local_path": "assets/images/f1-drivers/esteban-ocon.jpg"
@@ -265,7 +265,7 @@
           "image_license": "CC BY-SA 3.0",
           "image_license_url": "https://creativecommons.org/licenses/by-sa/3.0",
           "image_source": "Wikimedia Commons",
-          "image_match_score": 1.0,
+          "image_match_score": 1,
           "image_match_method": "search:Fernando Alonso",
           "image_verified_at": "2026-11-08T13:27:48Z",
           "image_local_path": "assets/images/f1-drivers/fernando-alonso.jpg"
@@ -281,7 +281,7 @@
           "image_license": "CC BY-SA 4.0",
           "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
           "image_source": "Wikimedia Commons",
-          "image_match_score": 1.0,
+          "image_match_score": 1,
           "image_match_method": "search:Carlos Sainz",
           "image_verified_at": "2026-11-08T13:28:36Z",
           "image_local_path": "assets/images/f1-drivers/carlos-sainz.png"
@@ -297,7 +297,7 @@
           "image_license": "CC BY-SA 3.0",
           "image_license_url": "https://creativecommons.org/licenses/by-sa/3.0",
           "image_source": "Wikimedia Commons",
-          "image_match_score": 1.0,
+          "image_match_score": 1,
           "image_match_method": "search:Alexander Albon",
           "image_verified_at": "2026-11-08T13:28:36Z",
           "image_local_path": "assets/images/f1-drivers/alexander-albon.jpg"
@@ -313,7 +313,7 @@
           "image_license": "CC BY-SA 4.0",
           "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
           "image_source": "Wikimedia Commons",
-          "image_match_score": 1.0,
+          "image_match_score": 1,
           "image_match_method": "category:Category:Yuki Tsunoda in 2019",
           "image_verified_at": "2026-11-08T13:28:36Z",
           "image_local_path": "assets/images/f1-drivers/yuki-tsunoda.jpg"
@@ -329,7 +329,7 @@
           "image_license": "CC BY-SA 4.0",
           "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
           "image_source": "Wikimedia Commons",
-          "image_match_score": 1.0,
+          "image_match_score": 1,
           "image_match_method": "search:Ryo Hirakawa",
           "image_verified_at": "2026-11-08T13:28:36Z",
           "image_local_path": "assets/images/f1-drivers/ryo-hirakawa.jpg"
@@ -345,7 +345,7 @@
           "image_license": "CC BY-SA 4.0",
           "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
           "image_source": "Wikimedia Commons",
-          "image_match_score": 1.0,
+          "image_match_score": 1,
           "image_match_method": "search:Lance Stroll",
           "image_verified_at": "2026-11-08T13:28:36Z",
           "image_local_path": "assets/images/f1-drivers/lance-stroll.jpg"
@@ -361,7 +361,7 @@
           "image_license": "CC BY-SA 4.0",
           "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
           "image_source": "Wikimedia Commons",
-          "image_match_score": 1.0,
+          "image_match_score": 1,
           "image_match_method": "search:Valtteri Bottas",
           "image_verified_at": "2026-11-08T13:29:20Z",
           "image_local_path": "assets/images/f1-drivers/valtteri-bottas.jpg"
@@ -377,7 +377,7 @@
           "image_license": "CC BY-SA 4.0",
           "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
           "image_source": "Wikimedia Commons",
-          "image_match_score": 1.0,
+          "image_match_score": 1,
           "image_match_method": "search:Sergio Perez",
           "image_verified_at": "2026-11-08T13:29:20Z",
           "image_local_path": "assets/images/f1-drivers/sergio-perez.jpg"
@@ -393,7 +393,7 @@
           "image_license": "CC BY-SA 4.0",
           "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
           "image_source": "Wikimedia Commons",
-          "image_match_score": 1.0,
+          "image_match_score": 1,
           "image_match_method": "category:Category:Rafael Câmara in 2022",
           "image_verified_at": "2026-11-08T13:29:20Z",
           "image_local_path": "assets/images/f1-drivers/rafael-camara.jpg"
@@ -404,31 +404,29 @@
           "rank": 1,
           "name": "Mercedes",
           "points": "630",
-          "image_url": "./assets/images/f1-constructors/mercedes.jpg",
-          "image_page_url": "https://commons.wikimedia.org/wiki/File:Lewis_Hamilton_2014_China_Race.jpg",
-          "image_credit": "Wikimedia Commons · emperornie · CC BY-SA 2.0",
-          "image_license": "CC BY-SA 2.0",
-          "image_license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Mercedes-AMG_Petronas_F1_Team_logo_%282026%29.svg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Mercedes-AMG_Petronas_F1_Team_logo_(2026).svg",
+          "image_credit": "Mercedes-AMG Petronas F1 Team · Public domain (text/logo mark)",
+          "image_license": "Public domain",
+          "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
           "image_source": "Wikimedia Commons",
-          "image_match_score": 1.0,
-          "image_match_method": "search:Mercedes F1",
-          "image_verified_at": "2026-11-08T13:29:20Z",
-          "image_local_path": "assets/images/f1-constructors/mercedes.jpg"
+          "image_match_score": 1,
+          "image_match_method": "verified-team-logo",
+          "image_verified_at": "2026-11-08T18:00:00Z"
         },
         {
           "rank": 2,
           "name": "Ferrari",
           "points": "504",
-          "image_url": "./assets/images/f1-constructors/ferrari.jpg",
-          "image_page_url": "https://commons.wikimedia.org/wiki/File:011_-_Ferrari_F430_scuderia_-_Flickr_-_Price-Photography.jpg",
-          "image_credit": "Wikimedia Commons · Michael Price from Houston, USA · CC BY 2.0",
-          "image_license": "CC BY 2.0",
-          "image_license_url": "https://creativecommons.org/licenses/by/2.0",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Ferrari_wordmark.svg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Ferrari_wordmark.svg",
+          "image_credit": "Ferrari · Public domain (text/logo mark)",
+          "image_license": "Public domain",
+          "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
           "image_source": "Wikimedia Commons",
-          "image_match_score": 1.0,
-          "image_match_method": "search:Scuderia Ferrari",
-          "image_verified_at": "2026-11-08T13:30:56Z",
-          "image_local_path": "assets/images/f1-constructors/ferrari.jpg"
+          "image_match_score": 1,
+          "image_match_method": "verified-team-logo",
+          "image_verified_at": "2026-11-08T18:00:00Z"
         },
         {
           "rank": 3,
@@ -449,21 +447,29 @@
           "rank": 4,
           "name": "McLaren",
           "points": "365",
-          "image_url": "./assets/images/f1-constructors/mclaren.jpg",
-          "image_page_url": "https://commons.wikimedia.org/wiki/File:Emerson_Fittipaldi_McLaren_M23_1974_Britain.jpg",
-          "image_credit": "Wikimedia Commons · Gerald Swan · CC BY-SA 3.0",
-          "image_license": "CC BY-SA 3.0",
-          "image_license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/bc/McLaren_logo_%282026%29.svg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:McLaren_logo_(2026).svg",
+          "image_credit": "McLaren · Public domain (text/logo mark)",
+          "image_license": "Public domain",
+          "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
           "image_source": "Wikimedia Commons",
-          "image_match_score": 1.0,
-          "image_match_method": "search:McLaren Formula One Team",
-          "image_verified_at": "2026-11-08T13:30:56Z",
-          "image_local_path": "assets/images/f1-constructors/mclaren.jpg"
+          "image_match_score": 1,
+          "image_match_method": "verified-team-logo",
+          "image_verified_at": "2026-11-08T18:00:00Z"
         },
         {
           "rank": 5,
           "name": "RB F1 Team",
-          "points": "108"
+          "points": "108",
+          "image_url": "https://www.visa.com/vcom-assets/content/dam/VCOM/regional/ve/unitedkingdom/in-page-images/redbull/uk-visa-red-bull-logo-900x900.jpg",
+          "image_page_url": "https://www.visa.com/en-gb/partnerships/red-bull-f1-racing-partnership",
+          "image_credit": "Visa · Official Visa Cash App Racing Bulls team mark shown on partnership page",
+          "image_license": "Official brand asset; trademark rights remain with the respective owners",
+          "image_license_url": "https://www.visa.com/en-gb/partnerships/red-bull-f1-racing-partnership",
+          "image_source": "Visa official partnership asset",
+          "image_match_score": 1,
+          "image_match_method": "official-visa-team-mark",
+          "image_verified_at": "2026-11-08T18:00:00Z"
         },
         {
           "rank": 6,
@@ -475,7 +481,7 @@
           "image_license": "CC0",
           "image_license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
           "image_source": "Wikimedia Commons",
-          "image_match_score": 1.0,
+          "image_match_score": 1,
           "image_match_method": "search:BWT Alpine F1 Team",
           "image_verified_at": "2026-11-08T13:30:56Z",
           "image_local_path": "assets/images/f1-constructors/alpine-f1-team.png"
@@ -490,7 +496,7 @@
           "image_license": "Public domain",
           "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
           "image_source": "Wikimedia Commons",
-          "image_match_score": 1.0,
+          "image_match_score": 1,
           "image_match_method": "search:MoneyGram Haas F1 Team",
           "image_verified_at": "2026-11-08T13:32:47Z",
           "image_local_path": "assets/images/f1-constructors/haas-f1-team.png"
@@ -505,7 +511,7 @@
           "image_license": "Public domain",
           "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
           "image_source": "Wikimedia Commons",
-          "image_match_score": 1.0,
+          "image_match_score": 1,
           "image_match_method": "search:Audi Revolut F1 Team",
           "image_verified_at": "2026-11-08T13:32:47Z",
           "image_local_path": "assets/images/f1-constructors/audi.png"
@@ -520,7 +526,7 @@
           "image_license": "Public domain",
           "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
           "image_source": "Wikimedia Commons",
-          "image_match_score": 1.0,
+          "image_match_score": 1,
           "image_match_method": "search:Williams Racing",
           "image_verified_at": "2026-11-08T13:32:47Z",
           "image_local_path": "assets/images/f1-constructors/williams.png"
@@ -550,7 +556,7 @@
           "image_license": "CC0",
           "image_license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
           "image_source": "Wikimedia Commons",
-          "image_match_score": 1.0,
+          "image_match_score": 1,
           "image_match_method": "search:Cadillac Formula 1 Team",
           "image_verified_at": "2026-11-08T13:32:47Z",
           "image_local_path": "assets/images/f1-constructors/cadillac-f1-team.png"
