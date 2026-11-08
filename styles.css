@@ -714,3 +714,30 @@
 .jobs-todo-status{margin-top:1px;padding:5px 7px;border:1px solid var(--line);font-size:7px;font-weight:800;letter-spacing:.7px;color:var(--muted);white-space:nowrap}.jobs-todo-item:first-of-type .jobs-todo-status{color:var(--accent);border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
 .jobs-todo-later{margin-top:22px}.jobs-todo-release{display:grid;grid-template-columns:42px minmax(0,1fr);gap:10px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.07)}.jobs-todo-release>b{font:800 14px 'Barlow Condensed',sans-serif;color:var(--accent)}.jobs-todo-release strong{display:block;font-size:11px;margin-bottom:4px}
 @media(max-width:520px){.jobs-todo{padding:15px}.jobs-todo-heading{gap:8px}.jobs-todo-count{font-size:7px;padding:6px}.jobs-todo-item{grid-template-columns:22px minmax(0,1fr);gap:8px}.jobs-todo-status{grid-column:2;justify-self:start;margin-top:-3px}.jobs-todo-item p{font-size:10px}}
+
+/* My Favourites — uses the existing charcoal, panel, line and accent tokens. */
+.favourites-add-panel{margin:24px 0 25px;padding:19px;border:1px solid var(--line);border-top:2px solid var(--accent);background:linear-gradient(145deg,color-mix(in srgb,var(--accent) 7%,var(--panel)),var(--panel) 58%);border-radius:5px}
+.favourites-form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.favourites-form label{display:grid;gap:7px;color:var(--muted);font-size:9px;font-weight:800;letter-spacing:1px}
+.favourites-form input,.favourites-form select{width:100%;min-height:43px;padding:10px 12px;border:1px solid var(--line);border-radius:3px;background:#111318;color:var(--text);font:500 13px 'DM Sans',sans-serif;letter-spacing:0}
+.favourites-form input:focus,.favourites-form select:focus{outline:1px solid var(--accent);border-color:var(--accent)}
+.favourite-name-field{grid-column:1/-1}.favourite-note-field{grid-column:1/-1}
+.favourites-form .primary-button{grid-column:1/-1;justify-self:start}
+.favourites-storage-note{font-size:10px;line-height:1.6;color:var(--muted);margin:12px 0 0}
+.favourites-toolbar{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:24px 0 13px}.favourites-toolbar>div:first-child{display:grid;gap:5px}.favourites-toolbar strong{font:700 19px 'Barlow Condensed',sans-serif;letter-spacing:.7px}
+.favourites-filters{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}.favourites-filters button{padding:7px 9px;border:1px solid var(--line);background:var(--panel);color:var(--muted);font-size:8px;font-weight:800;letter-spacing:.7px;cursor:pointer}.favourites-filters button[aria-pressed="true"]{border-color:var(--accent);color:var(--accent);background:color-mix(in srgb,var(--accent) 9%,var(--panel))}
+.favourites-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.favourite-card{min-width:0;padding:15px;border:1px solid var(--line);border-top:2px solid var(--accent);border-radius:4px;background:linear-gradient(150deg,color-mix(in srgb,var(--accent) 5%,var(--panel2)),var(--panel) 55%)}
+.favourite-card-top{display:grid;grid-template-columns:65px minmax(0,1fr) 27px;align-items:center;gap:11px}
+.favourite-card-portrait{width:65px;height:72px;display:grid;place-items:center;overflow:hidden;background:#111318;border:1px solid var(--line);color:var(--accent);font:800 25px 'Barlow Condensed',sans-serif}
+.favourite-card-portrait img{width:100%;height:100%;object-fit:cover;object-position:top}
+.favourite-card-identity{min-width:0}.favourite-sport-label{display:block;color:var(--accent);font-size:8px;font-weight:800;letter-spacing:1px}.favourite-card-identity h3{margin:5px 0 3px;font:700 21px/1.05 'Barlow Condensed',sans-serif;overflow-wrap:anywhere}.favourite-card-identity small{color:var(--muted);font-size:8px;letter-spacing:.8px}
+.favourite-remove{align-self:start;width:27px;height:27px;border:1px solid var(--line);background:transparent;color:var(--muted);font-size:19px;cursor:pointer}
+.favourite-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin-top:14px}
+.favourite-stat{padding:9px;background:rgba(8,9,12,.45);border:1px solid rgba(255,255,255,.055);min-width:0}.favourite-stat small{display:block;color:var(--muted);font-size:7px;letter-spacing:.8px}.favourite-stat strong{display:block;margin-top:4px;color:var(--text);font:700 18px 'Barlow Condensed',sans-serif;overflow-wrap:anywhere}
+.favourite-no-stats,.favourite-no-event{color:var(--muted);font-size:10px;line-height:1.55;margin:13px 0 0}
+.favourite-next-event{display:grid;gap:4px;margin-top:13px;padding:11px;border-left:2px solid var(--accent);background:rgba(8,9,12,.45)}.favourite-next-event small{font-size:7px;letter-spacing:.8px;color:var(--accent);font-weight:800}.favourite-next-event strong{font-size:11px}.favourite-next-event span{font-size:9px;color:var(--muted)}
+.favourite-personal-note{padding:9px 10px;margin:12px 0 0;background:rgba(255,255,255,.035);color:#c7c3bb;font-size:9px;line-height:1.5}
+.favourite-source{display:inline-block;margin-top:12px;color:var(--accent);font-size:8px;font-weight:800;letter-spacing:.8px;text-decoration:none}
+.favourites-empty{grid-column:1/-1;display:grid;justify-items:center;text-align:center;padding:36px 20px;border:1px dashed var(--line);background:rgba(25,27,32,.5)}.favourites-empty>span{font-size:28px;color:var(--accent)}.favourites-empty h3{margin:12px 0 5px;font:700 25px 'Barlow Condensed',sans-serif}.favourites-empty p{max-width:390px;margin:0;color:var(--muted);font-size:11px;line-height:1.7}.favourites-error{color:#e58b83;font-size:11px}
+@media(max-width:620px){.favourites-form{grid-template-columns:1fr}.favourites-form label,.favourite-name-field,.favourite-note-field{grid-column:1}.favourites-form .primary-button{width:100%}.favourites-grid{grid-template-columns:1fr}.favourites-toolbar{align-items:flex-start;flex-direction:column}.favourites-filters{justify-content:flex-start}.favourite-card{padding:13px}}
