@@ -200,9 +200,20 @@
     const third=sport==="f1"?[String(sessionCount),"RACE SESSIONS"]:sport==="darts"?[String(matchCount),"MATCHES SCHEDULED"]:[String(totalFights),"FIGHTS / BOUTS LISTED"];
     [[String(upcoming.length),"UPCOMING EVENTS"],[String(past.length),"PAST EVENTS"],third].forEach(([n,l])=>{const c=el("div","sport-detail-stat");c.append(el("strong",null,n),el("small",null,l));stats.append(c);});
     target.append(stats);
+    const next=upcoming[0]||null;
+    const nextSection=section("Up next","YOUR NEXT EVENT");
+    if(next){
+      const card=renderEvent(sport,next);
+      if(card)nextSection.append(card);
+      else nextSection.append(empty(eventName(next)));
+    }else{
+      nextSection.append(empty("No upcoming "+info.name+" events are currently listed. The section will fill automatically when the next schedule sync publishes fixtures."));
+    }
+    target.append(nextSection);
     const up=section(sport==="boxing"?"Upcoming fight nights":"Upcoming schedule",sport==="darts"?"PDC TOUR DATES":"WHAT’S COMING UP");
-    if(upcoming.length)upcoming.forEach(event=>{const card=renderEvent(sport,event);if(card)up.append(card);});
-    else up.append(empty("No upcoming events are available in the current published feed."));
+    const remainingUpcoming=next?upcoming.slice(1):[];
+    if(remainingUpcoming.length)remainingUpcoming.forEach(event=>{const card=renderEvent(sport,event);if(card)up.append(card);});
+    else up.append(empty(next?"No further upcoming events are currently listed.":"No upcoming events are available in the current published feed."));
     target.append(up);
     if(past.length){
       const recent=section(sport==="boxing"?"Recent fight cards":"Recent events & results","LATEST RESULTS");
