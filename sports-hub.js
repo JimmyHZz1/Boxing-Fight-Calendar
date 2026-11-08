@@ -7,7 +7,9 @@
   const sportNames = {f1:"FORMULA 1",darts:"PDC DARTS",boxing:"BOXING WORLD CHAMPIONS",ufc:"UFC"};
   const esc = value => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
   const initials = name => String(name || "?").split(/\s+/).slice(0,2).map(x=>x[0]||"").join("").toUpperCase();
-  let imageFailures = 0;\n  let localImages = {};\n  const imageKey = name => String(name||"").normalize("NFKD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
+  let imageFailures = 0;
+  let localImages = {};
+  const imageKey = name => String(name||"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
   function person(item, index, label) {
     const local = localImages[imageKey(item.name)];
     const source = local && local.path ? "./"+String(local.path).replace(/^\\//,"") : item.image_url;
