@@ -8,20 +8,26 @@
   const ukKey = value => {
     if (!value) return "";
     const raw = String(value);
-    if (/^\\d{4}-\\d{2}-\\d{2}$/.test(raw)) return raw;
+    if (/^\d{4}-\d{2}-\d{2}$/.test(raw)) return raw;
     const date = new Date(raw);
     return Number.isNaN(date.getTime()) ? "" : new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/London"}).format(date);
   };
+  const startValue = event => {
+    const value = event.start_at || event.start_time_utc || event.main_card_at || event.race_start_at || event.date || event.event_date;
+    if (!value) return null;
+    if (/^\d{1,2}:\d{2}(?::\d{2})?$/.test(String(value)) && event.date) return event.date+"T"+String(value).padStart(5,"0")+"Z";
+    return value;
+  };
   const timestamp = event => {
-    const value = event.start_at || event.start_time_utc || event.date || event.event_date;
+    const value = startValue(event);
     if (!value) return Number.MAX_SAFE_INTEGER;
-    const date = new Date(/^\\d{4}-\\d{2}-\\d{2}$/.test(String(value)) ? value+"T12:00:00Z" : value);
+    const date = new Date(/^\d{4}-\d{2}-\d{2}$/.test(String(value)) ? value+"T12:00:00Z" : value);
     return Number.isNaN(date.getTime()) ? Number.MAX_SAFE_INTEGER : date.getTime();
   };
   const dateLabel = key => new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",weekday:"long",day:"numeric",month:"long"}).format(new Date(key+"T12:00:00Z"));
   const timeLabel = event => {
-    const value = event.start_at || event.start_time_utc || event.main_card_at || event.race_start_at;
-    if (!value || /^\\d{4}-\\d{2}-\\d{2}$/.test(String(value))) return "TIME TBC";
+    const value = startValue(event);
+    if (!value || /^\d{4}-\d{2}-\d{2}$/.test(String(value))) return "TIME TBC";
     const date = new Date(value);
     return Number.isNaN(date.getTime()) ? "TIME TBC" : new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",hour:"2-digit",minute:"2-digit"}).format(date)+" UK";
   };
@@ -38,7 +44,7 @@
       events.forEach(event => all.push({sport,event}));
     });
     return all.filter(item => {
-      const key = ukKey(item.event.start_at || item.event.start_time_utc || item.event.date || item.event.event_date);
+      const key = ukKey(startValue(item.event));
       return key && key >= todayKey() && key <= endKey();
     }).sort((a,b) => timestamp(a.event)-timestamp(b.event));
   }
