@@ -7,11 +7,14 @@
   const sportNames = {f1:"FORMULA 1",darts:"PDC DARTS",boxing:"BOXING WORLD CHAMPIONS",ufc:"UFC"};
   const esc = value => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
   const initials = name => String(name || "?").split(/\s+/).slice(0,2).map(x=>x[0]||"").join("").toUpperCase();
-  let imageFailures = 0;
+  let imageFailures = 0;\n  let localImages = {};\n  const imageKey = name => String(name||"").normalize("NFKD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
   function person(item, index, label) {
-    const img = item.image_url ? '<img src="'+esc(item.image_url)+'" alt="" loading="lazy" data-image-entity="'+esc(item.name||"")+'" onerror="imageFailures++;this.replaceWith(Object.assign(document.createElement("span"),{className:"hub-avatar-fallback",textContent:"'+esc(initials(item.name))+'"}));updateImageDiagnostics();">' : '<span class="hub-avatar-fallback">'+esc(initials(item.name))+'</span>';
+    const local = localImages[imageKey(item.name)];
+    const source = local && local.path ? "./"+String(local.path).replace(/^\\//,"") : item.image_url;
+    const credit = local?.attribution || item.image_credit;
+    const img = source ? '<img src="'+esc(source)+'" alt="" loading="lazy" data-image-entity="'+esc(item.name||"")+'" onerror="imageFailures++;this.replaceWith(Object.assign(document.createElement("span"),{className:"hub-avatar-fallback",textContent:"'+esc(initials(item.name))+'"}));updateImageDiagnostics();">' : '<span class="hub-avatar-fallback">'+esc(initials(item.name))+'</span>';
     const rank = item.rank != null ? (item.rank===0 ? "C" : "#"+item.rank) : (index+1);
-    const extra = [item.team,item.prize_money?"£"+item.prize_money:(item.points!=null?item.points+" pts":null),item.org,item.image_credit].filter(Boolean).join(" · ");
+    const extra = [item.team,item.prize_money?"£"+item.prize_money:(item.points!=null?item.points+" pts":null),item.org,credit].filter(Boolean).join(" · ");
     return '<div class="hub-person">'+img+'<span class="hub-rank">'+esc(rank)+'</span><span class="hub-person-name"><strong>'+esc(item.name||"TBC")+'</strong><small>'+esc(extra||label||"")+'</small></span></div>';
   }
   function dropdown(title, items, label, max=30) {
@@ -49,10 +52,14 @@
     root.innerHTML=panel(sport);
     updateImageDiagnostics();
   }
-  fetch("./data/sports-hub.json?t="+Date.now(),{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("HTTP "+r.status);return r.json();}).then(data=>{
+  Promise.all([
+    fetch("./data/sports-hub.json?t="+Date.now(),{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("HTTP "+r.status);return r.json();}),
+    fetch("./data/image-library.json?t="+Date.now(),{cache:"no-store"}).then(r=>r.ok?r.json():{images:{}})
+  ]).then(([data,library])=>{
     payload=data.sports||data;
+    localImages=library.images||{};
     render(active);
-  }).catch(()=>{root.innerHTML='<p class="hub-empty">Standings and rankings will appear here after the next successful sync.</p>';});
+  }).catch(()=>{root.innerHTML='<p class="hub-empty">Standings and rankings are not available yet.</p>';});
   document.addEventListener("sports:select",e=>{if(e.detail&&e.detail.sport)render(e.detail.sport);});
   document.addEventListener("DOMContentLoaded",()=>render(active));
 })();
