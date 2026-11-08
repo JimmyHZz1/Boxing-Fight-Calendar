@@ -13,14 +13,71 @@
       "image_match_score": 1.0,
       "image_verified_at": "2026-11-08T12:34:52Z",
       "image_local_path": "assets/images/boxing-fighters/adam-azim.png"
+    },
+    "max verstappen": {
+      "name": "Max Verstappen",
+      "sport": "f1 drivers",
+      "image_url": "./assets/images/f1-drivers/max-verstappen.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:2014_F3_HockenheimringII_Max_Verstappen_by_2eight_DSC7625.jpg",
+      "image_credit": "Wikimedia Commons · Stefan Brending (2eight) · CC BY-SA 3.0 de",
+      "image_license": "CC BY-SA 3.0 de",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_verified_at": "2026-11-08T12:58:07Z",
+      "image_local_path": "assets/images/f1-drivers/max-verstappen.jpg"
+    },
+    "lewis hamilton": {
+      "name": "Lewis Hamilton",
+      "sport": "f1 drivers",
+      "image_url": "./assets/images/f1-drivers/lewis-hamilton.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Lewis_Hamilton,_2019_Canadian_Grand_Prix_(cropped).jpg",
+      "image_credit": "Wikimedia Commons · Steve_Melnyk · CC BY 2.0",
+      "image_license": "CC BY 2.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/2.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_verified_at": "2026-11-08T12:58:07Z",
+      "image_local_path": "assets/images/f1-drivers/lewis-hamilton.jpg"
+    },
+    "george russell": {
+      "name": "George Russell",
+      "sport": "f1 drivers",
+      "image_url": "./assets/images/f1-drivers/george-russell.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:George_Russell_racing_driver_cropd.png",
+      "image_credit": "Wikimedia Commons · Lukas Raich\n\nhttps://commons.wikimedia.org/wiki/User:Lukas_Raich · CC BY-SA 4.0",
+      "image_license": "CC BY-SA 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_verified_at": "2026-11-08T12:58:07Z",
+      "image_local_path": "assets/images/f1-drivers/george-russell.png"
+    },
+    "charles leclerc": {
+      "name": "Charles Leclerc",
+      "sport": "f1 drivers",
+      "image_url": "./assets/images/f1-drivers/charles-leclerc.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Charles-Leclerc.jpg",
+      "image_credit": "Wikimedia Commons · Gilzetbase · CC BY-SA 4.0",
+      "image_license": "CC BY-SA 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_verified_at": "2026-11-08T12:58:07Z",
+      "image_local_path": "assets/images/f1-drivers/charles-leclerc.jpg"
     }
   },
-  "updated_at": "2026-11-08T12:35:45Z",
+  "updated_at": "2026-11-08T12:58:07Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
     "agit kabayel": "2026-11-08T12:34:52Z",
     "aiden anderson": "2026-11-08T12:34:52Z",
-    "alberto palmetta": "2026-11-08T12:34:52Z"
+    "alberto palmetta": "2026-11-08T12:34:52Z",
+    "andrea kimi antonelli": "2026-11-08T12:58:07Z",
+    "max verstappen": "2026-11-08T12:58:07Z",
+    "lewis hamilton": "2026-11-08T12:58:07Z",
+    "george russell": "2026-11-08T12:58:07Z",
+    "charles leclerc": "2026-11-08T12:58:07Z"
   }
 }

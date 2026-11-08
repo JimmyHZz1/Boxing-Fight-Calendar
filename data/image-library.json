@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-08T12:34:52Z",
+  "updated_at": "2026-11-08T12:58:07Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -14,6 +14,50 @@
       "attribution": "Wikimedia Commons · The President's Office, Maldives · CC BY 4.0",
       "verified_at": "2026-11-08T12:34:52Z",
       "sport": "boxing fighters"
+    },
+    "max verstappen": {
+      "name": "Max Verstappen",
+      "path": "assets/images/f1-drivers/max-verstappen.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:2014_F3_HockenheimringII_Max_Verstappen_by_2eight_DSC7625.jpg",
+      "licence": "CC BY-SA 3.0 de",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+      "creator": "Wikimedia Commons · Stefan Brending (2eight) · CC BY-SA 3.0 de",
+      "attribution": "Wikimedia Commons · Stefan Brending (2eight) · CC BY-SA 3.0 de",
+      "verified_at": "2026-11-08T12:58:07Z",
+      "sport": "f1 drivers"
+    },
+    "lewis hamilton": {
+      "name": "Lewis Hamilton",
+      "path": "assets/images/f1-drivers/lewis-hamilton.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lewis_Hamilton,_2019_Canadian_Grand_Prix_(cropped).jpg",
+      "licence": "CC BY 2.0",
+      "licence_url": "https://creativecommons.org/licenses/by/2.0",
+      "creator": "Wikimedia Commons · Steve_Melnyk · CC BY 2.0",
+      "attribution": "Wikimedia Commons · Steve_Melnyk · CC BY 2.0",
+      "verified_at": "2026-11-08T12:58:07Z",
+      "sport": "f1 drivers"
+    },
+    "george russell": {
+      "name": "George Russell",
+      "path": "assets/images/f1-drivers/george-russell.png",
+      "source_url": "https://commons.wikimedia.org/wiki/File:George_Russell_racing_driver_cropd.png",
+      "licence": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "creator": "Wikimedia Commons · Lukas Raich\n\nhttps://commons.wikimedia.org/wiki/User:Lukas_Raich · CC BY-SA 4.0",
+      "attribution": "Wikimedia Commons · Lukas Raich\n\nhttps://commons.wikimedia.org/wiki/User:Lukas_Raich · CC BY-SA 4.0",
+      "verified_at": "2026-11-08T12:58:07Z",
+      "sport": "f1 drivers"
+    },
+    "charles leclerc": {
+      "name": "Charles Leclerc",
+      "path": "assets/images/f1-drivers/charles-leclerc.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Charles-Leclerc.jpg",
+      "licence": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "creator": "Wikimedia Commons · Gilzetbase · CC BY-SA 4.0",
+      "attribution": "Wikimedia Commons · Gilzetbase · CC BY-SA 4.0",
+      "verified_at": "2026-11-08T12:58:07Z",
+      "sport": "f1 drivers"
     }
   },
   "collections": {

@@ -12,25 +12,61 @@
           "rank": 2,
           "name": "Max Verstappen",
           "team": "Red Bull",
-          "points": "261"
+          "points": "261",
+          "image_url": "./assets/images/f1-drivers/max-verstappen.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:2014_F3_HockenheimringII_Max_Verstappen_by_2eight_DSC7625.jpg",
+          "image_credit": "Wikimedia Commons · Stefan Brending (2eight) · CC BY-SA 3.0 de",
+          "image_license": "CC BY-SA 3.0 de",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1.0,
+          "image_verified_at": "2026-11-08T12:58:07Z",
+          "image_local_path": "assets/images/f1-drivers/max-verstappen.jpg"
         },
         {
           "rank": 3,
           "name": "Lewis Hamilton",
           "team": "Ferrari",
-          "points": "259"
+          "points": "259",
+          "image_url": "./assets/images/f1-drivers/lewis-hamilton.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Lewis_Hamilton,_2019_Canadian_Grand_Prix_(cropped).jpg",
+          "image_credit": "Wikimedia Commons · Steve_Melnyk · CC BY 2.0",
+          "image_license": "CC BY 2.0",
+          "image_license_url": "https://creativecommons.org/licenses/by/2.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1.0,
+          "image_verified_at": "2026-11-08T12:58:07Z",
+          "image_local_path": "assets/images/f1-drivers/lewis-hamilton.jpg"
         },
         {
           "rank": 4,
           "name": "George Russell",
           "team": "Mercedes",
-          "points": "250"
+          "points": "250",
+          "image_url": "./assets/images/f1-drivers/george-russell.png",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:George_Russell_racing_driver_cropd.png",
+          "image_credit": "Wikimedia Commons · Lukas Raich\n\nhttps://commons.wikimedia.org/wiki/User:Lukas_Raich · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1.0,
+          "image_verified_at": "2026-11-08T12:58:07Z",
+          "image_local_path": "assets/images/f1-drivers/george-russell.png"
         },
         {
           "rank": 5,
           "name": "Charles Leclerc",
           "team": "Ferrari",
-          "points": "245"
+          "points": "245",
+          "image_url": "./assets/images/f1-drivers/charles-leclerc.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Charles-Leclerc.jpg",
+          "image_credit": "Wikimedia Commons · Gilzetbase · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1.0,
+          "image_verified_at": "2026-11-08T12:58:07Z",
+          "image_local_path": "assets/images/f1-drivers/charles-leclerc.jpg"
         },
         {
           "rank": 6,
@@ -3577,17 +3613,31 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 0,
-    "found": 0,
-    "missing": 548,
-    "rejected": 0,
-    "by_sport": {},
-    "newly_found": 0,
+    "attempted": 5,
+    "found": 5,
+    "missing": 730,
+    "rejected": 30,
+    "by_sport": {
+      "f1 drivers": {
+        "attempted": 5,
+        "found": 4,
+        "missing": 1,
+        "rejected": 0
+      }
+    },
+    "checked_at": "2026-11-08T12:58:07Z",
+    "library_entries": 5,
+    "newly_found": 4,
     "coverage": {
+      "boxing fight card fighters": {
+        "total": 187,
+        "with_image": 1,
+        "missing": 186
+      },
       "f1 drivers": {
         "total": 25,
-        "with_image": 0,
-        "missing": 25
+        "with_image": 4,
+        "missing": 21
       },
       "f1 constructors": {
         "total": 11,
@@ -3609,9 +3659,7 @@
         "with_image": 0,
         "missing": 81
       }
-    },
-    "checked_at": "2026-11-08T12:35:45Z",
-    "library_entries": 1
+    }
   },
   "last_updated": "2026-11-08T12:35:45Z"
 }
