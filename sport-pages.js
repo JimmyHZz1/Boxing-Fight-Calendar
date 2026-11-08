@@ -102,6 +102,14 @@
     }
     return s;
   }
+  function constructorFallback(name){
+    const marks={"Mercedes":"★","Ferrari":"SF","Red Bull":"RBR","McLaren":"MCL","RB F1 Team":"VCARB","Alpine F1 Team":"ALP","Haas F1 Team":"HAAS","Audi":"AUDI","Williams":"W","Aston Martin":"AM","Cadillac F1 Team":"CAD"};
+    const colours={"Mercedes":"#00d2be","Ferrari":"#ef1a2d","Red Bull":"#4776d0","McLaren":"#ff8700","RB F1 Team":"#6c9bd2","Alpine F1 Team":"#168bd2","Haas F1 Team":"#c7cbd1","Audi":"#f02b32","Williams":"#39a9df","Aston Martin":"#00a58b","Cadillac F1 Team":"#e5e5e5"};
+    const mark=el("span","sport-ranking-image-fallback constructor-mark",marks[name]||String(name||"F1").slice(0,4).toUpperCase());
+    mark.style.setProperty("--team-color",colours[name]||"#e2b45b");
+    mark.setAttribute("aria-label",name+" mark");
+    return mark;
+  }
   function rankingRow(item,rank,kind="person"){
     const row=el("div","sport-ranking-row has-image"+(kind==="constructor"?" is-constructor":""));
     row.append(el("span","sport-ranking-position",rank==="C"?"C":"#"+rank));
@@ -116,10 +124,10 @@
           img.src="https://raw.githubusercontent.com/JimmyHZz1/Boxing-Fight-Calendar/main/"+item.image_url.slice(2);
           return;
         }
-        img.replaceWith(el("span","sport-ranking-image-fallback",name.split(/\s+/).map(x=>x[0]||"").slice(0,2).join("").toUpperCase()));
+        img.replaceWith((kind==="constructor"?constructorFallback(name):el("span","sport-ranking-image-fallback",name.split(/\s+/).map(x=>x[0]||"").slice(0,2).join("").toUpperCase())));
       };
       row.append(img);
-    }else row.append(el("span","sport-ranking-image-fallback",name.split(/\s+/).map(x=>x[0]||"").slice(0,2).join("").toUpperCase()));
+    }else row.append((kind==="constructor"?constructorFallback(name):el("span","sport-ranking-image-fallback",name.split(/\s+/).map(x=>x[0]||"").slice(0,2).join("").toUpperCase())));
     row.append(el("strong",null,name));
     return row;
   }
