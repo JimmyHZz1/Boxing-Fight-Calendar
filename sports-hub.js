@@ -47,7 +47,7 @@
     if(!box) return;
     const d=payload.image_diagnostics||{};
     const found=Number(d.found||0), missing=Number(d.missing||0);
-    box.innerHTML='<summary>IMAGE CHECK · '+found+' FOUND / '+missing+' NOT FOUND · '+imageFailures+' FAILED TO LOAD</summary><p>Library entries: '+Number(d.library_entries||0)+' · Last checked: '+esc(d.checked_at?new Date(d.checked_at).toLocaleString("en-GB",{timeZone:"Europe/London"}):"Not checked")+'</p><p>Only relevant Commons matches with image and licence metadata are published. Failed image loads are counted on this device.</p>';
+    box.innerHTML='<summary>IMAGE CHECK · '+found+' FOUND / '+missing+' NOT FOUND · '+imageFailures+' FAILED TO LOAD</summary><p>Library entries: '+Math.max(Number(d.library_entries||0),Object.keys(localImages).length)+' · Last checked: '+esc(d.checked_at?new Date(d.checked_at).toLocaleString("en-GB",{timeZone:"Europe/London"}):"Not checked")+'</p><p>Only relevant Commons matches with image and licence metadata are published. Failed image loads are counted on this device.</p>';
   }
   function render(sport=active) {
     active=sport;
