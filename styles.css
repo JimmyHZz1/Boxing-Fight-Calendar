@@ -781,3 +781,13 @@
 
 /* Keep official F1 headshots framed consistently in the dedicated championship table. */
 .sport-ranking-image.f1-driver-portrait{object-position:50% 18%;}
+
+/* V1.3 event countdown and expandable results archive */
+.sport-next-countdown-value{display:block;font:800 clamp(24px,5vw,34px)/1.1 "Barlow Condensed",sans-serif;color:var(--accent);letter-spacing:.7px;padding:12px 15px;border:1px solid var(--line);background:linear-gradient(110deg,color-mix(in srgb,var(--accent) 10%,var(--panel)),var(--panel));}
+.sport-next-countdown-name{margin:8px 0 0;color:var(--muted);font-size:11px;}
+.sport-results-archive{border:1px solid var(--line);background:var(--panel);}
+.sport-results-archive>summary{cursor:pointer;list-style:none;padding:14px 16px;color:var(--accent);font-size:10px;font-weight:850;letter-spacing:1px;}
+.sport-results-archive>summary::-webkit-details-marker{display:none;}
+.sport-results-archive[open]>summary{border-bottom:1px solid var(--line);}
+.sport-results-archive-year{padding:14px 12px;border-bottom:1px solid var(--line);}
+.sport-results-archive-year h3{margin:0 0 10px;font:800 16px "Barlow Condensed",sans-serif;color:var(--accent);}
