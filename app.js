@@ -98,7 +98,7 @@ function ukBroadcasterLogos(items) {
       link.title=value+" — logo source and details";
       link.setAttribute("aria-label",value);
       const img=document.createElement("img");
-      img.src="https://commons.wikimedia.org/wiki/Special:FilePath/"+entry.file;
+      img.src="https://commons.wikimedia.org/wiki/Special:Redirect/file/"+entry.file;
       img.alt=value+" logo";img.loading="lazy";img.decoding="async";
       img.onerror=()=>{link.replaceWith(document.createTextNode(value));};
       link.append(img);group.append(link);
