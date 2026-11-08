@@ -207,7 +207,7 @@ def enrich_event_fighter_images(events):
                 elif key not in images and key not in attempted: pending[key] = name
     import time
     for key, name in list(pending.items())[:30]:
-        result = commons_photo(name)
+        result = commons_photo(name, image_kind=image_kind)
         attempted[key] = datetime.now(timezone.utc).date().isoformat()
         if result and result.get("image_url"):
             images[key] = result
@@ -445,7 +445,7 @@ def image_aliases(name):
     }
     return aliases.get(key, [str(name).strip()])
 
-def commons_photo(name):
+def commons_photo(name, image_kind="portrait"):
     """Find a high-confidence, reusable Commons image and retain its attribution."""
     if not name:
         return None
@@ -462,7 +462,7 @@ def commons_photo(name):
     for query_name in query_names:
         params = {
             "action": "query", "format": "json", "generator": "search",
-            "gsrsearch": query_name + " portrait",
+            "gsrsearch": query_name + (" logo" if image_kind == "logo" else " portrait"),
             "gsrnamespace": 6, "gsrlimit": 20,
             "prop": "imageinfo", "iiprop": "url|extmetadata|mime", "iiurlwidth": 480,
             "iiextmetadatafilter": "Artist|Credit|LicenseShortName|LicenseUrl|UsageTerms"
@@ -537,7 +537,7 @@ def record_image(name, result, sport="other"):
     bucket["found"] += 1
     IMAGE_DIAGNOSTICS["found"] += 1
 
-def add_photos(rows, name_field="name", limit=8, sport="other"):
+def add_photos(rows, name_field="name", limit=8, sport="other", image_kind="portrait"):
     load_image_library()
     for row_index, row in enumerate(rows):
         name = row.get(name_field)
@@ -628,7 +628,7 @@ def sync_sports_hub():
             "team": ", ".join(c.get("name", "") for c in x.get("Constructors", [])), "points": x.get("points")
         } for x in drivers_raw]
         constructors = [{"rank": int(x.get("position", 0)), "name": (x.get("Constructor") or {}).get("name"), "points": x.get("points")} for x in constructors_raw]
-        hub["sports"]["f1"] = {"drivers": add_photos(drivers, limit=25, sport="f1 drivers"), "constructors": add_photos(constructors, limit=11, sport="f1 constructors"), "season": year, "notice": "Official season standings sourced from the community-maintained Jolpica F1 API."}
+        hub["sports"]["f1"] = {"drivers": add_photos(drivers, limit=25, sport="f1 drivers"), "constructors": add_photos(constructors, limit=11, sport="f1 constructors", image_kind="logo"), "season": year, "notice": "Official season standings sourced from the community-maintained Jolpica F1 API."}
     except Exception as exc:
         hub["sports"]["f1"] = {**previous.get("f1", {"drivers": [], "constructors": []}), "sync_warning": str(exc)}
 
