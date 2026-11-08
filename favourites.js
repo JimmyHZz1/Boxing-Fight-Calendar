@@ -28,8 +28,9 @@
     const unique=[...new Set(items.filter(Boolean))].sort((a,b)=>a.localeCompare(b));
     $("favourite-suggestions").replaceChildren(...unique.slice(0,250).map(name=>{const o=make("option");o.value=name;return o;}));
   }
+  const teamAliases={"red bull racing":"Red Bull","oracle red bull racing":"Red Bull","visa cash app rb":"RB F1 Team","racing bulls":"RB F1 Team","rb":"RB F1 Team","alpine":"Alpine F1 Team","haas":"Haas F1 Team","audi f1 team":"Audi","cadillac":"Cadillac F1 Team"};
   function lookup(f){
-    const d=hub[f.sport]||{},n=norm(f.name);
+    const d=hub[f.sport]||{},raw=norm(f.name),n=f.sport==="f1"&&f.type==="team"?norm(teamAliases[raw]||f.name):raw;
     const find=(arr,field="name")=>(arr||[]).find(x=>norm(x[field])===n);
     if(f.sport==="f1")return f.type==="team"?find(d.constructors):find(d.drivers);
     if(f.sport==="darts")return find(d.rankings);
@@ -37,6 +38,7 @@
     if(f.sport==="boxing"){for(const div of d.divisions||[]){const hit=find(div.champions);if(hit)return {...hit,division:div.name};}}
     return null;
   }
+  function displayName(f,profile=lookup(f)){return f.sport==="f1"&&f.type==="team"&&profile?.name?profile.name:f.name;}
   function allSportEvents(sport){
     if(sport==="boxing"){const feed=window.BoxingSchedule?.getEvents?.()||[];return feed.length?feed:events[sport]||[];}
     const feed=window.SportsData?.getEvents?.(sport,true)||[];
@@ -63,12 +65,12 @@
       if(profile.division)pairs.push(["DIVISION",profile.division]);
       if(profile.org)pairs.push(["ORGANISATION",profile.org]);
     }
-    if(f.sport==="f1"&&f.type==="team"&&profile?.points!=null)pairs.push(["CHAMPIONSHIP","POINTS"]);
+
     return pairs.slice(0,4);
   }
 
   function profileResults(f){
-    const name=norm(f.name),out=[];
+    const name=norm(displayName(f)),out=[];
     if(f.sport==="f1"){
       allSportEvents("f1").forEach(e=>(e.results||[]).forEach(r=>{
         const match=f.type==="team"?norm(r.team)===name:norm(r.driver)===name;
@@ -106,8 +108,8 @@
     const close=make("button","favourite-profile-close","×");close.type="button";close.setAttribute("aria-label","Close profile");close.addEventListener("click",()=>modal.remove());
     const head=make("div","favourite-profile-head");
     const portrait=make("div","favourite-profile-portrait");
-    if(profile?.image_url){const img=make("img",f.sport==="f1"&&f.type==="driver"?"favourite-f1-driver-portrait":"");img.src=profile.image_url;img.alt=f.name;img.onerror=()=>{img.remove();portrait.textContent=f.name.split(/\s+/).map(x=>x[0]).slice(0,2).join("").toUpperCase();};portrait.append(img);}else portrait.textContent=f.name.split(/\s+/).map(x=>x[0]).slice(0,2).join("").toUpperCase();
-    const identity=make("div","favourite-profile-identity");identity.append(make("span","favourite-sport-label",labels[f.sport]),make("h2","",f.name),make("p","",f.type==="team"?"TEAM / CONSTRUCTOR":f.type.toUpperCase()));
+    if(profile?.image_url){const img=make("img",f.sport==="f1"&&f.type==="driver"?"favourite-f1-driver-portrait":(f.sport==="f1"&&f.type==="team"?"favourite-f1-team-logo":""));img.src=profile.image_url;img.alt=displayName(f,profile)+(f.type==="team"?" logo":" portrait");img.onerror=()=>{img.remove();portrait.textContent=f.name.split(/\s+/).map(x=>x[0]).slice(0,2).join("").toUpperCase();};portrait.append(img);}else portrait.textContent=f.name.split(/\s+/).map(x=>x[0]).slice(0,2).join("").toUpperCase();
+    const shownName=displayName(f,profile);const identity=make("div","favourite-profile-identity");identity.append(make("span","favourite-sport-label",labels[f.sport]),make("h2","",shownName),make("p","",f.type==="team"?"F1 CONSTRUCTOR":f.type.toUpperCase()));
     head.append(portrait,identity,close);panel.append(head);
     const statTitle=make("h3","favourite-profile-section-title","CURRENT PROFILE");
     panel.append(statTitle);
@@ -149,12 +151,12 @@
 
   function card(f){
     const profile=lookup(f),event=nextEvent(f),article=make("article","favourite-card favourite-card-"+f.sport);
-    const top=make("div","favourite-card-top");
+    const shownName=displayName(f,profile);const top=make("div","favourite-card-top");
     const portrait=make("div","favourite-card-portrait");
-    if(profile?.image_url){const img=make("img",f.sport==="f1"&&f.type==="driver"?"favourite-f1-driver-portrait":"");img.src=profile.image_url;img.alt=f.name+" portrait";img.loading="lazy";img.onerror=()=>{img.remove();portrait.textContent=f.name.split(/\s+/).slice(0,2).map(x=>x[0]).join("").toUpperCase();};portrait.append(img);}
+    if(profile?.image_url){const img=make("img",f.sport==="f1"&&f.type==="driver"?"favourite-f1-driver-portrait":(f.sport==="f1"&&f.type==="team"?"favourite-f1-team-logo":""));img.src=profile.image_url;img.alt=shownName+(f.type==="team"?" logo":" portrait");img.loading="lazy";img.onerror=()=>{img.remove();portrait.textContent=f.name.split(/\s+/).slice(0,2).map(x=>x[0]).join("").toUpperCase();};portrait.append(img);}
     else portrait.textContent=f.name.split(/\s+/).slice(0,2).map(x=>x[0]).join("").toUpperCase();
-    const identity=make("div","favourite-card-identity");identity.append(make("span","favourite-sport-label",labels[f.sport]),make("h3","",f.name),make("small","",f.type==="team"?"TEAM / CONSTRUCTOR":f.type.toUpperCase()));
-    const remove=make("button","favourite-remove","×");remove.type="button";remove.setAttribute("aria-label","Remove "+f.name+" from favourites");remove.addEventListener("click",()=>{favourites=favourites.filter(x=>x.id!==f.id);compareIds.delete(f.id);save();render();});
+    const identity=make("div","favourite-card-identity");identity.append(make("span","favourite-sport-label",labels[f.sport]),make("h3","",shownName),make("small","",f.type==="team"?"F1 CONSTRUCTOR":f.type.toUpperCase()));
+    const remove=make("button","favourite-remove","×");remove.type="button";remove.setAttribute("aria-label","Remove "+shownName+" from favourites");remove.addEventListener("click",()=>{favourites=favourites.filter(x=>x.id!==f.id);compareIds.delete(f.id);save();render();});
     top.append(portrait,identity,remove);article.append(top);
     const actions=make("div","favourite-card-actions");const view=make("button","favourite-view-profile","VIEW PROFILE ↗");view.type="button";view.addEventListener("click",()=>openProfile(f));actions.append(view);
     if(compareIds.has(f.id)){}const compareLabel=make("label","favourite-compare-label");const compare=make("input","");compare.type="checkbox";compare.checked=compareIds.has(f.id);compare.addEventListener("change",()=>{if(compare.checked&&compareIds.size>=3){compare.checked=false;return;}if(compare.checked)compareIds.add(f.id);else compareIds.delete(f.id);render();});compareLabel.append(compare,document.createTextNode("COMPARE"));actions.append(compareLabel);article.append(actions);
