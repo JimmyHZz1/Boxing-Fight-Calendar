@@ -79,7 +79,7 @@ let savedFavouriteTeam="";try{savedFavouriteTeam=localStorage.getItem("sports-ca
 applyFavouriteTeam(savedFavouriteTeam,false);
 $("open-settings")?.addEventListener("click",()=>showScreen("settings-screen"));
 $("settings-back")?.addEventListener("click",()=>showScreen("home-screen"));
-$("favourite-f1-team")?.addEventListener("change",event=>applyFavouriteTeam(event.target.value,true));
+$("favourite-f1-team")?.addEventListener("change",event=>{savedFavouriteTeam=event.target.value;applyFavouriteTeam(savedFavouriteTeam,true);});
 // Interactive team theme preview: preview changes are temporary until Apply is pressed.
 let previewFavouriteTeam=savedFavouriteTeam;
 function setThemePreview(team){
