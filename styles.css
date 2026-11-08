@@ -1141,3 +1141,10 @@ body.compact-view #home-screen .live-centre-empty{display:block!important;font-s
   .topbar-nav-item{padding:8px 9px;font-size:9px}
   .topbar-actions{gap:7px}
 }
+
+
+/* Portrait framing: lift PDC player and F1 driver faces into view. */
+.hub-person:has(.hub-pdc-player),.hub-person.hub-pdc-player{overflow:hidden}
+.hub-person.hub-pdc-player>img{object-fit:cover!important;object-position:50% 6%!important;transform:scale(1.42);transform-origin:50% 0!important}
+.hub-person>img.hub-driver-portrait-official-f1{object-fit:cover!important;object-position:50% 4%!important;transform:scale(1.52)!important;transform-origin:50% 0!important}
+@media(max-width:520px){.hub-person.hub-pdc-player>img{transform:scale(1.38)}.hub-person>img.hub-driver-portrait-official-f1{transform:scale(1.46)!important}}
