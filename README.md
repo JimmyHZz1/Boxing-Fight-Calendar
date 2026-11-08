@@ -42,3 +42,14 @@ Serve the repository root with any static HTTP server. Opening `index.html` dire
 - Adds the Live Sports Centre on the home screen with a five-sport live-status view and a combined seven-day upcoming list.
 - Adds a discreet Version History link in the footer.
 - Retains the established dark charcoal and gold theme, individual sport pages, calendar, event cards and UK-local time formatting.
+
+
+## Version 1.2 — Live
+- My Sports Weekend and cross-sport event navigation improvements.
+- PDC televised calendar and Order of Merit work.
+- Sports image library, competitor favourites and profiles, and UK Where to Watch guide.
+
+## Version 1.3 — In development
+- Live data, standings, rankings and results improvements across all five sports.
+- Event countdowns, championship trackers and results archive.
+- Expanded F1 race-weekend and PDC tournament views, plus richer event details.
