@@ -93,9 +93,37 @@
       "image_match_method": "category:Category:Oscar Piastri",
       "image_verified_at": "2026-11-08T13:21:01Z",
       "image_local_path": "assets/images/f1-drivers/oscar-piastri.jpg"
+    },
+    "isack hadjar": {
+      "name": "Isack Hadjar",
+      "sport": "f1 drivers",
+      "image_url": "./assets/images/f1-drivers/isack-hadjar.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:2025_ImolaGP_Isack_Hadjar.jpg",
+      "image_credit": "Wikimedia Commons · Buczkowiak94 · CC BY 4.0",
+      "image_license": "CC BY 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:RB VCARB 02 of Isack Hadjar",
+      "image_verified_at": "2026-11-08T13:23:30Z",
+      "image_local_path": "assets/images/f1-drivers/isack-hadjar.jpg"
+    },
+    "liam lawson": {
+      "name": "Liam Lawson",
+      "sport": "f1 drivers",
+      "image_url": "./assets/images/f1-drivers/liam-lawson.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:2026_Chinese_GP_-_Racing_Bulls_-_Liam_Lawson_-_FP1.jpg",
+      "image_credit": "Wikimedia Commons · Liauzh · CC BY 4.0",
+      "image_license": "CC BY 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:RB VCARB 03 of Liam Lawson",
+      "image_verified_at": "2026-11-08T13:23:30Z",
+      "image_local_path": "assets/images/f1-drivers/liam-lawson.jpg"
     }
   },
-  "updated_at": "2026-11-08T13:22:21Z",
+  "updated_at": "2026-11-08T13:23:30Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -108,6 +136,7 @@
     "george russell": "2026-11-08T12:58:07Z",
     "charles leclerc": "2026-11-08T12:58:07Z",
     "lando norris": "2026-11-08T13:21:01Z",
-    "oscar piastri": "2026-11-08T13:21:01Z"
+    "oscar piastri": "2026-11-08T13:21:01Z",
+    "isack hadjar": "2026-11-08T13:23:30Z"
   }
 }

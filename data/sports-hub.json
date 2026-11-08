@@ -104,13 +104,33 @@
           "rank": 8,
           "name": "Isack Hadjar",
           "team": "Red Bull",
-          "points": "107"
+          "points": "107",
+          "image_url": "./assets/images/f1-drivers/isack-hadjar.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:2025_ImolaGP_Isack_Hadjar.jpg",
+          "image_credit": "Wikimedia Commons · Buczkowiak94 · CC BY 4.0",
+          "image_license": "CC BY 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1.0,
+          "image_match_method": "category:Category:RB VCARB 02 of Isack Hadjar",
+          "image_verified_at": "2026-11-08T13:23:30Z",
+          "image_local_path": "assets/images/f1-drivers/isack-hadjar.jpg"
         },
         {
           "rank": 9,
           "name": "Liam Lawson",
           "team": "RB F1 Team, Red Bull",
-          "points": "83"
+          "points": "83",
+          "image_url": "./assets/images/f1-drivers/liam-lawson.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:2026_Chinese_GP_-_Racing_Bulls_-_Liam_Lawson_-_FP1.jpg",
+          "image_credit": "Wikimedia Commons · Liauzh · CC BY 4.0",
+          "image_license": "CC BY 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1.0,
+          "image_match_method": "category:Category:RB VCARB 03 of Liam Lawson",
+          "image_verified_at": "2026-11-08T13:23:30Z",
+          "image_local_path": "assets/images/f1-drivers/liam-lawson.jpg"
         },
         {
           "rank": 10,
@@ -3633,17 +3653,61 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 0,
-    "found": 6,
-    "missing": 542,
+    "attempted": 2,
+    "found": 9,
+    "missing": 726,
     "rejected": 0,
-    "by_sport": {},
-    "newly_found": 0,
+    "by_sport": {
+      "f1 drivers": {
+        "attempted": 2,
+        "found": 2,
+        "missing": 0,
+        "rejected": 0
+      }
+    },
+    "rejection_reasons": {
+      "given_name_not_matched": 12,
+      "missing_licence_or_source_metadata": 2,
+      "surname_not_matched": 2,
+      "not_an_image": 19
+    },
+    "search_details": [
+      {
+        "name": "Isack Hadjar",
+        "queries": 7,
+        "candidate_files": 28,
+        "accepted": 16,
+        "rejections": {
+          "given_name_not_matched": 9,
+          "missing_licence_or_source_metadata": 1,
+          "surname_not_matched": 2
+        }
+      },
+      {
+        "name": "Liam Lawson",
+        "queries": 3,
+        "candidate_files": 28,
+        "accepted": 5,
+        "rejections": {
+          "not_an_image": 19,
+          "missing_licence_or_source_metadata": 1,
+          "given_name_not_matched": 3
+        }
+      }
+    ],
+    "checked_at": "2026-11-08T13:23:30Z",
+    "library_entries": 9,
+    "newly_found": 2,
     "coverage": {
+      "boxing fight card fighters": {
+        "total": 187,
+        "with_image": 1,
+        "missing": 186
+      },
       "f1 drivers": {
         "total": 25,
-        "with_image": 6,
-        "missing": 19
+        "with_image": 8,
+        "missing": 17
       },
       "f1 constructors": {
         "total": 11,
@@ -3665,9 +3729,7 @@
         "with_image": 0,
         "missing": 81
       }
-    },
-    "checked_at": "2026-11-08T13:22:21Z",
-    "library_entries": 7
+    }
   },
   "last_updated": "2026-11-08T13:22:21Z"
 }

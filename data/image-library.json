@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-08T13:21:01Z",
+  "updated_at": "2026-11-08T13:23:30Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -79,6 +79,28 @@
       "creator": "Wikimedia Commons · Liauzh · CC BY-SA 4.0",
       "attribution": "Wikimedia Commons · Liauzh · CC BY-SA 4.0",
       "verified_at": "2026-11-08T13:21:01Z",
+      "sport": "f1 drivers"
+    },
+    "isack hadjar": {
+      "name": "Isack Hadjar",
+      "path": "assets/images/f1-drivers/isack-hadjar.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:2025_ImolaGP_Isack_Hadjar.jpg",
+      "licence": "CC BY 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by/4.0",
+      "creator": "Wikimedia Commons · Buczkowiak94 · CC BY 4.0",
+      "attribution": "Wikimedia Commons · Buczkowiak94 · CC BY 4.0",
+      "verified_at": "2026-11-08T13:23:30Z",
+      "sport": "f1 drivers"
+    },
+    "liam lawson": {
+      "name": "Liam Lawson",
+      "path": "assets/images/f1-drivers/liam-lawson.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:2026_Chinese_GP_-_Racing_Bulls_-_Liam_Lawson_-_FP1.jpg",
+      "licence": "CC BY 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by/4.0",
+      "creator": "Wikimedia Commons · Liauzh · CC BY 4.0",
+      "attribution": "Wikimedia Commons · Liauzh · CC BY 4.0",
+      "verified_at": "2026-11-08T13:23:30Z",
       "sport": "f1 drivers"
     }
   },
