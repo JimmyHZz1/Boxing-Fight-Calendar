@@ -394,7 +394,7 @@ def sync_bkfc():
 
 IMAGE_LIBRARY_PATH = os.path.join(DATA, "sports-images.json")
 IMAGE_DIAGNOSTICS = {"attempted": 0, "found": 0, "missing": 0, "rejected": 0, "by_sport": {}}
-IMAGE_LIBRARY = {"version": 1, "images": {}}
+IMAGE_LIBRARY = {"version": 1, "images": {}}\nIMAGE_LIBRARY_LOADED = False
 
 def image_key(name):
     import unicodedata
@@ -402,7 +402,9 @@ def image_key(name):
     return re.sub(r"[^a-z0-9]+", " ", value).strip()
 
 def load_image_library():
-    global IMAGE_LIBRARY
+    global IMAGE_LIBRARY, IMAGE_LIBRARY_LOADED
+    if IMAGE_LIBRARY_LOADED:
+        return IMAGE_LIBRARY
     try:
         with open(IMAGE_LIBRARY_PATH, encoding="utf-8") as handle:
             loaded = json.load(handle)
@@ -410,6 +412,7 @@ def load_image_library():
             IMAGE_LIBRARY = loaded
     except (FileNotFoundError, json.JSONDecodeError):
         IMAGE_LIBRARY = {"version": 1, "images": {}}
+    IMAGE_LIBRARY_LOADED = True
     return IMAGE_LIBRARY
 
 def save_image_library():
