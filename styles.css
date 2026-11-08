@@ -781,3 +781,50 @@
 
 /* Keep official F1 headshots framed consistently in the dedicated championship table. */
 .sport-ranking-image.f1-driver-portrait{object-position:50% 18%;}
+
+
+/* iOS top sport banner: preserve each logo's natural aspect ratio and give it room. */
+@media (max-width: 600px) {
+  .app-shell > nav.top-sport-selector {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 6px !important;
+    padding: 10px 0 9px;
+  }
+  .app-shell > nav.top-sport-selector > .top-sport-button {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    min-height: 58px;
+    padding: 7px 2px 6px !important;
+    gap: 6px;
+    overflow: hidden;
+  }
+  .app-shell > nav.top-sport-selector > .top-sport-button img {
+    display: block;
+    flex: 0 0 27px;
+    width: auto !important;
+    height: 27px !important;
+    max-width: calc(100% - 4px) !important;
+    object-fit: contain !important;
+    object-position: center;
+  }
+  .app-shell > nav.top-sport-selector > .top-sport-button .top-sport-wordmark {
+    flex: 0 0 27px;
+    height: 27px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+}
+@media (max-width: 380px) {
+  .app-shell > nav.top-sport-selector { gap: 4px !important; }
+  .app-shell > nav.top-sport-selector > .top-sport-button { min-height: 55px; }
+  .app-shell > nav.top-sport-selector > .top-sport-button img {
+    height: 24px !important;
+    flex-basis: 24px;
+  }
+  .app-shell > nav.top-sport-selector > .top-sport-button .top-sport-wordmark {
+    height: 24px;
+    flex-basis: 24px;
+    font-size: 16px;
+  }
+}
