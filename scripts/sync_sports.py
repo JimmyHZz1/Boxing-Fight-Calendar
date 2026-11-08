@@ -264,6 +264,7 @@ def enrich_event_fighter_images(events):
             attempted[key] = datetime.now(timezone.utc).date().isoformat()
             library_attempted[key] = iso_now()
         if result and result.get("image_url"):
+            result = cache_image_locally(name, result, "ufc/bkfc event fighters")
             images[key] = result
             record_image(name, result, "ufc/bkfc event fighters")
             print(f"EVENT_FIGHTER_IMAGE_FOUND: {name}")
@@ -480,6 +481,74 @@ def save_image_library():
         json.dump(IMAGE_LIBRARY, handle, ensure_ascii=False, indent=2)
         handle.write("\n")
 
+
+IMAGE_MANIFEST_PATH = os.path.join(DATA, "image-library.json")
+
+def load_image_manifest():
+    try:
+        with open(IMAGE_MANIFEST_PATH, encoding="utf-8") as handle:
+            manifest = json.load(handle)
+        if not isinstance(manifest, dict):
+            raise ValueError("Image manifest must be an object.")
+    except (FileNotFoundError, json.JSONDecodeError, ValueError):
+        manifest = {"version": 1, "images": {}, "collections": {}}
+    manifest.setdefault("images", {})
+    manifest.setdefault("collections", {})
+    return manifest
+
+def save_image_manifest(manifest):
+    os.makedirs(DATA, exist_ok=True)
+    manifest["updated_at"] = iso_now()
+    with open(IMAGE_MANIFEST_PATH, "w", encoding="utf-8") as handle:
+        json.dump(manifest, handle, ensure_ascii=False, indent=2)
+        handle.write("\\n")
+
+def cache_image_locally(name, result, sport):
+    """Download a licensed Commons thumbnail into the repository image library."""
+    if not result or not str(result.get("image_url", "")).startswith("https://"):
+        return result
+    import mimetypes
+    url = result["image_url"]
+    req = urllib.request.Request(url, headers={"User-Agent": "Sports-Calendar/1.2 (licensed image cache)"})
+    try:
+        with urllib.request.urlopen(req, timeout=30) as response:
+            content_type = response.headers.get("Content-Type", "").split(";")[0].lower()
+            payload = response.read(4 * 1024 * 1024 + 1)
+        if not content_type.startswith("image/") or len(payload) > 4 * 1024 * 1024:
+            print(f"IMAGE_DOWNLOAD_REJECTED: {name}: unsupported content type or file too large")
+            return result
+    except Exception as exc:
+        print(f"IMAGE_DOWNLOAD_WARNING: {name}: {exc}")
+        return result
+    extension = {
+        "image/jpeg": ".jpg", "image/png": ".png", "image/webp": ".webp",
+        "image/gif": ".gif", "image/svg+xml": ".svg"
+    }.get(content_type) or mimetypes.guess_extension(content_type) or ".img"
+    category = re.sub(r"[^a-z0-9]+", "-", str(sport).lower()).strip("-") or "other"
+    slug = re.sub(r"[^a-z0-9]+", "-", image_key(name)).strip("-") or "image"
+    relative = f"assets/images/{category}/{slug}{extension}"
+    absolute = os.path.join(ROOT, relative)
+    os.makedirs(os.path.dirname(absolute), exist_ok=True)
+    if not os.path.exists(absolute):
+        with open(absolute, "wb") as handle:
+            handle.write(payload)
+    manifest = load_image_manifest()
+    manifest.setdefault("images", {})[image_key(name)] = {
+        "name": name, "path": relative,
+        "source_url": result.get("image_page_url"),
+        "licence": result.get("image_license"),
+        "licence_url": result.get("image_license_url"),
+        "creator": result.get("image_credit"),
+        "attribution": result.get("image_credit"),
+        "verified_at": result.get("image_verified_at") or iso_now(),
+        "sport": sport
+    }
+    save_image_manifest(manifest)
+    local_result = dict(result)
+    local_result["image_url"] = "./" + relative
+    local_result["image_local_path"] = relative
+    return local_result
+
 def image_aliases(name):
     key = image_key(name)
     aliases = {
@@ -635,6 +704,7 @@ def add_photos(rows, name_field="name", limit=8, sport="other", image_kind="port
         if not IMAGE_LOOKUP_RATE_LIMITED and key:
             attempted[key] = iso_now()
         if result:
+            result = cache_image_locally(name, result, sport)
             row.update(result)
             record_image(name, result, sport)
         else:
