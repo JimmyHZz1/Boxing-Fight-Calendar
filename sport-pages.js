@@ -35,6 +35,29 @@
     h.append(left);s.append(h);return s;
   }
   function empty(message){return el("div","sport-page-empty",message);}
+  const BROADCASTER_BRANDS=[
+    [/sky/i,"skysports.com","SKY"],[/^now$/i,"nowtv.com","NOW"],[/channel\\s*4/i,"channel4.com","C4"],
+    [/itv/i,"itv.com","ITV"],[/pdc\\s*tv/i,"video.pdc.tv","PDC"],[/tnt/i,"tntsports.co.uk","TNT"],
+    [/ufc/i,"ufcfightpass.com","UFC"],[/bkfc/i,"bkfc.com","BKFC"],[/dazn/i,"dazn.com","DAZN"]
+  ];
+  function watchBrand(item,name){
+    const match=BROADCASTER_BRANDS.find(([pattern])=>pattern.test(name));
+    if(!match)return;
+    const [,domain,mark]=match;
+    const badge=el("span","sport-watch-guide-brand-mark",mark);
+    badge.setAttribute("aria-hidden","true");
+    const img=el("img","sport-watch-guide-logo");
+    img.alt=name+" logo";img.loading="lazy";img.decoding="async";
+    img.src="https://www.google.com/s2/favicons?domain="+encodeURIComponent(domain)+"&sz=128";
+    img.onerror=()=>{
+      if(img.dataset.retry!=="1"){
+        img.dataset.retry="1";
+        img.src="https://icons.duckduckgo.com/ip3/"+domain+".ico";
+      }else img.remove();
+    };
+    const visual=el("div","sport-watch-guide-brand");
+    visual.append(badge,img);item.append(visual);
+  }
   function watchGuide(sport,events){
     const s=section("Where to watch","UK BROADCAST GUIDE");
     if(sport==="boxing"){
@@ -54,7 +77,7 @@
       return s;
     }
     const grid=el("div","sport-watch-guide-grid");
-    INFO[sport].watch.forEach(([name,href,note])=>{const item=el("div","sport-watch-guide-item");item.append(el("strong",null,name),el("small",null,note));const a=el("a",null,"Official site ↗");a.href=href;a.target="_blank";a.rel="noopener noreferrer";item.append(a);grid.append(item);});
+    INFO[sport].watch.forEach(([name,href,note])=>{const item=el("div","sport-watch-guide-item");watchBrand(item,name);item.append(el("strong",null,name),el("small",null,note));const a=el("a",null,"Official site ↗");a.href=href;a.target="_blank";a.rel="noopener noreferrer";item.append(a);grid.append(item);});
     s.append(grid);
     const note=sport==="bkfc"?"Availability varies by event: BKFC+ carries many live events, while DAZN carries selected exclusives.":sport==="ufc"?"Check the individual event listing for the applicable UK broadcast and start time.":sport==="darts"?"Coverage varies by tournament and UK rights.": "Coverage varies by session and event.";
     s.append(el("p","sport-page-note",note));return s;
@@ -79,8 +102,8 @@
     }
     return s;
   }
-  function rankingRow(item,rank){
-    const row=el("div","sport-ranking-row has-image");
+  function rankingRow(item,rank,kind="person"){
+    const row=el("div","sport-ranking-row has-image"+(kind==="constructor"?" is-constructor":""));
     row.append(el("span","sport-ranking-position",rank==="C"?"C":"#"+rank));
     const name=item.name||item.driver||item.team||"TBC";
     if(item.image_url){
@@ -118,7 +141,7 @@
       const group=el("div","sport-ranking-group");
       group.append(el("h3",null,f1TableChoice==="drivers"?"Drivers’ championship":"Constructors’ championship"));
       items.forEach((item,index)=>{
-        const row=rankingRow(item,item.rank||index+1);
+        const row=rankingRow(item,item.rank||index+1,f1TableChoice==="constructors"?"constructor":"person");
         const extra=[item.team,item.points!=null?item.points+" pts":null].filter(Boolean).join(" · ");
         if(extra)row.append(el("small",null,extra));group.append(row);
       });
