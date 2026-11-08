@@ -781,3 +781,41 @@
 
 /* Keep official F1 headshots framed consistently in the dedicated championship table. */
 .sport-ranking-image.f1-driver-portrait{object-position:50% 18%;}
+
+/* V1.3 event countdown and expandable results archive */
+.sport-next-countdown-value{display:block;font:800 clamp(24px,5vw,34px)/1.1 "Barlow Condensed",sans-serif;color:var(--accent);letter-spacing:.7px;padding:12px 15px;border:1px solid var(--line);background:linear-gradient(110deg,color-mix(in srgb,var(--accent) 10%,var(--panel)),var(--panel));}
+.sport-next-countdown-name{margin:8px 0 0;color:var(--muted);font-size:11px;}
+.sport-results-archive{border:1px solid var(--line);background:var(--panel);}
+.sport-results-archive>summary{cursor:pointer;list-style:none;padding:14px 16px;color:var(--accent);font-size:10px;font-weight:850;letter-spacing:1px;}
+.sport-results-archive>summary::-webkit-details-marker{display:none;}
+.sport-results-archive[open]>summary{border-bottom:1px solid var(--line);}
+.sport-results-archive-year{padding:14px 12px;border-bottom:1px solid var(--line);}
+.sport-results-archive-year h3{margin:0 0 10px;font:800 16px "Barlow Condensed",sans-serif;color:var(--accent);}
+
+/* V1.4 local event notification preferences */
+.alerts-panel{margin-top:20px;}
+.alerts-option{display:flex;align-items:flex-start;gap:12px;padding:13px 0;border-top:1px solid var(--line);cursor:pointer;}
+.alerts-option input{width:18px;height:18px;accent-color:var(--accent);flex:0 0 auto;margin-top:2px;}
+.alerts-option span{display:grid;gap:4px;min-width:0;}
+.alerts-option strong{font-size:12px;}
+.alerts-option small,.alerts-footnote{font-size:10px;line-height:1.6;color:var(--muted);}
+.alerts-select-option{align-items:center;justify-content:space-between;gap:15px;}
+.alerts-select-option .favourite-team-select{max-width:190px;min-height:42px;font-size:11px;}
+.alerts-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:14px;}
+.alerts-status{font-size:10px;color:var(--muted);}
+.alerts-footnote{margin-top:14px;}
+@media(max-width:520px){.alerts-select-option{align-items:flex-start;flex-direction:column}.alerts-select-option .favourite-team-select{max-width:none;width:100%}.alerts-actions .primary-button{width:100%}}
+
+/* V1.5 data-backed performance snapshots */
+.favourite-performance-grid{margin-top:10px;}
+.favourite-performance-grid .favourite-stat strong{overflow-wrap:anywhere;}
+
+.favourites-head-to-head{margin-top:18px;padding-top:14px;border-top:1px solid var(--line);}
+.favourites-head-to-head h4{margin:0 0 10px;color:var(--accent);font-size:10px;letter-spacing:1px;}
+.favourites-head-to-head-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:5px 12px;padding:11px 0;border-top:1px solid rgba(255,255,255,.07);}
+.favourites-head-to-head-row strong{font-size:11px;}
+.favourites-head-to-head-row span{font-size:10px;color:var(--accent);font-weight:800;text-align:right;}
+.favourites-head-to-head-row small{grid-column:1/-1;color:var(--muted);font-size:10px;line-height:1.5;}
+@media(max-width:520px){.favourites-head-to-head-row{grid-template-columns:1fr}.favourites-head-to-head-row span{text-align:left}}
+
+.favourites-head-to-head-row .favourite-form-edge{color:var(--muted);font-size:9px;letter-spacing:.2px;font-weight:600;}
