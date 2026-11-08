@@ -86,8 +86,12 @@ let previewFavouriteTeam=savedFavouriteTeam;
 function setThemePreview(team){
   previewFavouriteTeam=team||"";
   const theme=favouriteTeamThemes[previewFavouriteTeam]||{accent:"#e2b45b",glow:"#29221a",chrome:"#101114"};
-  const name=previewFavouriteTeam||"Sports Calendar";
-  const title=$("theme-preview-name");if(title)title.textContent=name.toUpperCase();
+  const teamNames={"Mercedes":"MERCEDES-AMG PETRONAS","Ferrari":"SCUDERIA FERRARI","Red Bull":"ORACLE RED BULL RACING","McLaren":"MCLAREN","RB F1 Team":"VISA CASH APP RACING BULLS","Alpine F1 Team":"BWT ALPINE","Haas F1 Team":"MONEYGRAM HAAS","Audi":"AUDI","Williams":"WILLIAMS RACING","Aston Martin":"ASTON MARTIN","Cadillac F1 Team":"CADILLAC"};
+  const teamMarks={"Mercedes":"★","Ferrari":"SF","Red Bull":"RBR","McLaren":"MCL","RB F1 Team":"RB","Alpine F1 Team":"A","Haas F1 Team":"HAAS","Audi":"AUDI","Williams":"W","Aston Martin":"AM","Cadillac F1 Team":"CAD"};
+  const name=previewFavouriteTeam?teamNames[previewFavouriteTeam]||previewFavouriteTeam.toUpperCase():"SPORTS CALENDAR";
+  const title=$("theme-preview-name");if(title)title.textContent=name;
+  const teamLabel=$("theme-preview-team-name");if(teamLabel)teamLabel.textContent=previewFavouriteTeam?name:"TEAM THEME PREVIEW";
+  const teamMark=$("theme-preview-team-mark");if(teamMark)teamMark.textContent=previewFavouriteTeam?(teamMarks[previewFavouriteTeam]||"F1"):"F1";
   const stage=$("theme-preview-stage");
   if(stage){
     stage.dataset.team=previewFavouriteTeam||"default";
