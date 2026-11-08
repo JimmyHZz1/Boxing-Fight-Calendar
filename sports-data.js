@@ -28,12 +28,42 @@
     return new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",weekday:"short",day:"numeric",month:"short"}).format(d);
   }
   function statusLabel(event) {
-    const s=String(event.status||"").toLowerCase();
-    if (["completed","complete","finished","ended"].includes(s)) return "COMPLETED";
-    if (["live","in_progress","ongoing"].includes(s)) return "IN PROGRESS";
+    const s=String(event.status||"").toLowerCase().replace(/[ -]/g,"_");
+    if (["completed","complete","finished","ended"].includes(s) || (event.results||[]).length) return "COMPLETED";
+    if (["live","in_progress","ongoing","inprogress"].includes(s) || event.is_live===true || event.live===true) return "IN PROGRESS";
     if (["cancelled","canceled"].includes(s)) return "CANCELLED";
-    if (["postponed"].includes(s)) return "POSTPONED";
+    if (s==="postponed") return "POSTPONED";
+    if (event._sport==="f1" || event.sport==="f1" || /^f1-/.test(String(event.id||""))) {
+      const start=new Date(event.start_at||event.date||"").getTime(), elapsed=Date.now()-start;
+      if (Number.isFinite(start) && elapsed>=0 && elapsed<4*60*60*1000) return "IN PROGRESS";
+      if (Number.isFinite(start) && elapsed>=4*60*60*1000) return "RESULTS PENDING";
+    }
     return "UPCOMING";
+  }
+  function countdownText(value) {
+    if (!value) return "";
+    const target=new Date(value).getTime(), remaining=target-Date.now();
+    if (!Number.isFinite(target)) return "";
+    if (remaining<=0) return "STARTED";
+    const seconds=Math.floor(remaining/1000), days=Math.floor(seconds/86400), hours=Math.floor(seconds%86400/3600), minutes=Math.floor(seconds%3600/60), secs=seconds%60;
+    return days>0 ? "STARTS IN "+days+"D "+String(hours).padStart(2,"0")+"H "+String(minutes).padStart(2,"0")+"M" : "STARTS IN "+String(hours).padStart(2,"0")+"H "+String(minutes).padStart(2,"0")+"M "+String(secs).padStart(2,"0")+"S";
+  }
+  function addCountdown(root,value) {
+    if (!value) return;
+    const target=new Date(value);
+    if (Number.isNaN(target.getTime()) || target.getTime()<=Date.now()) return;
+    const timer=make("span","event-countdown",countdownText(value));
+    timer.dataset.countdownTarget=target.toISOString();
+    timer.setAttribute("aria-label","Countdown to event start");
+    root.append(timer);
+  }
+  function tickCountdowns() {
+    document.querySelectorAll("[data-countdown-target]").forEach(node=>{
+      const target=node.dataset.countdownTarget;
+      const text=countdownText(target);
+      if (text) node.textContent=text;
+      if (text==="STARTED") node.classList.add("countdown-started");
+    });
   }
   function make(tag, cls, text) {
     const el=document.createElement(tag);
@@ -135,7 +165,9 @@
     if (sport==="ufc") sub.push(event.number?"EVENT "+event.number:null,event.start_at?timeLabel(event.start_at):null);
     if (sport==="bkfc") sub.push(event.location||event.venue||null,event.start_at?timeLabel(event.start_at):null);
     main.append(make("small",null,sub.filter(Boolean).join(" · ")||dateLabel(event.date||event.start_at)));
-    summary.append(visual,date,main,make("span","sport-event-badge",statusLabel(event)));
+    const countdownTarget=event.start_at||event.main_card_at||event.start_time_utc||null;
+    addCountdown(main,countdownTarget);
+    summary.append(visual,date,main,make("span","sport-event-badge",statusLabel({...event,_sport:sport})));
     card.append(summary);
     const body=make("div","sport-event-body");
     if (sport==="f1") renderF1Details(body,event);
@@ -312,6 +344,8 @@
     renderEventCards();
   }
   document.querySelectorAll("[data-calendar-sport]").forEach(button=>button.addEventListener("click",()=>setCalendarFilter(button.dataset.calendarSport)));
-  window.SportsData={load:async()=>{await Promise.all(SPORTS.map(fetchFeed));renderAll();if(window.renderCalendar)window.renderCalendar();document.dispatchEvent(new CustomEvent("sports:feeds-updated"));},renderActive,renderAll,renderEventCards,renderSelectedDate,markCalendarDays,getCalendarFilter,getNextEvent,getEvents:(sport,includePast=true)=>includePast?data[sport].map(e=>({...e,sport})):sortedEvents(sport).map(e=>({...e,sport})),getMeta:sport=>meta[sport]||{},renderEventCard:(sport,event)=>eventCard(sport,event)};
+  window.SportsCountdown={text:countdownText,tick:tickCountdowns};
+  setInterval(tickCountdowns,1000);
+  window.SportsData={load:async()=>{await Promise.all(SPORTS.map(fetchFeed));renderAll();tickCountdowns();if(window.renderCalendar)window.renderCalendar();document.dispatchEvent(new CustomEvent("sports:feeds-updated"));},renderActive,renderAll,renderEventCards,renderSelectedDate,markCalendarDays,getCalendarFilter,getNextEvent,getEvents:(sport,includePast=true)=>includePast?data[sport].map(e=>({...e,sport})):sortedEvents(sport).map(e=>({...e,sport})),getMeta:sport=>meta[sport]||{},renderEventCard:(sport,event)=>eventCard(sport,event)};
   window.SportsData.load();
 })();
