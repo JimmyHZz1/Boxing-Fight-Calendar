@@ -24,6 +24,14 @@
     }
     return false;
   };
+  const isUpcoming=e=>{
+    const s=status(e),finished=["completed","complete","finished","ended","cancelled","canceled","postponed","abandoned"];
+    if(finished.includes(s))return false;
+    const value=dateValue(e),key=dateKey(value);
+    if(!value||key<today())return false;
+    if(/^\d{4}-\d{2}-\d{2}$/.test(String(value)))return true;
+    return timestamp(e)>Date.now();
+  };
   const make=(tag,cls,text)=>{const el=document.createElement(tag);if(cls)el.className=cls;if(text!=null)el.textContent=text;return el;};
   function eventsFor(sport){
     if(sport==="boxing")return window.BoxingSchedule?.getEvents?.()||[];
@@ -57,7 +65,7 @@
     sports.forEach(sport=>{
       const rows=allEvents().filter(x=>x.sport===sport);
       const live=rows.filter(x=>isLive(x.event)).sort((a,b)=>timestamp(a.event)-timestamp(b.event))[0];
-      const next=rows.filter(x=>!isLive(x.event)&&dateKey(dateValue(x.event))>=today()).sort((a,b)=>timestamp(a.event)-timestamp(b.event))[0];
+      const next=rows.filter(x=>!isLive(x.event)&&isUpcoming(x.event)).sort((a,b)=>timestamp(a.event)-timestamp(b.event))[0];
       const chosen=live||next;if(!chosen)return;
       const event=chosen.event,button=make("button","next-event-item");
       button.type="button";button.dataset.sport=sport;
@@ -109,7 +117,7 @@
     const all=allEvents(),live=all.filter(x=>isLive(x.event)).sort((a,b)=>timestamp(a.event)-timestamp(b.event));
     liveRoot.replaceChildren();
     const compact=document.body.classList.contains("compact-view");
-    const nextUpcoming=all.filter(x=>!isLive(x.event)&&dateKey(dateValue(x.event))>=today()).sort((a,b)=>timestamp(a.event)-timestamp(b.event))[0];
+    const nextUpcoming=all.filter(x=>!isLive(x.event)&&isUpcoming(x.event)).sort((a,b)=>timestamp(a.event)-timestamp(b.event))[0];
     const centreTitle=$("live-now-title");
     const centreRows=compact?(live.length?live.slice(0,3):(nextUpcoming?[nextUpcoming]:[])):live;
     if(centreTitle)centreTitle.textContent=compact&&!live.length?"NEXT UP":"LIVE NOW";
@@ -117,7 +125,7 @@
     if(centreRows.length)centreRows.forEach(x=>{const row=renderSummary(x.sport,x.event,isLive(x.event));row.tabIndex=0;row.setAttribute("role","button");row.setAttribute("aria-label","Open "+names[x.sport]+" event: "+(x.event.name||x.event.title||"Event"));const open=()=>window.SportPages?.open?.(x.sport);row.addEventListener("click",open);row.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();open();}});liveRoot.append(row);});
     else liveRoot.append(make("p","live-centre-empty",compact?"No live or upcoming events are listed in the published feeds.":"No events are currently marked live in the published feeds. Live indicators appear only when a source explicitly reports an event or session as live."));
     const todayKey=today(),limit=new Date(Date.now()+7*86400000);const limitKey=new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/London"}).format(limit);
-    const upcoming=all.filter(x=>dateKey(dateValue(x.event))>=todayKey&&dateKey(dateValue(x.event))<=limitKey&&!isLive(x.event)).sort((a,b)=>timestamp(a.event)-timestamp(b.event)).slice(0,12);
+    const upcoming=all.filter(x=>isUpcoming(x.event)&&dateKey(dateValue(x.event))<=limitKey&&!isLive(x.event)).sort((a,b)=>timestamp(a.event)-timestamp(b.event)).slice(0,12);
     const upcomingCount=$("live-upcoming-count");if(upcomingCount)upcomingCount.textContent=upcoming.length+" UPCOMING";
     upcomingRoot.replaceChildren();
     if(upcoming.length)upcoming.forEach(x=>{const row=renderSummary(x.sport,x.event,false);row.classList.add("live-centre-upcoming");upcomingRoot.append(row);});
