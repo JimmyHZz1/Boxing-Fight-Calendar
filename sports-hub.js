@@ -33,13 +33,28 @@
     const list=(items||[]).slice(0,max);
     return '<details class="hub-dropdown"><summary>'+esc(title)+'<span>'+list.length+' ENTRIES</span></summary><div class="hub-dropdown-list">'+(list.length?list.map((x,i)=>person(x,i,label)).join(""):'<p class="hub-empty">No published data available yet.</p>')+'</div></details>';
   }
+  function dartsRanking(items) {
+    const list=(items||[]).slice(0,50);
+    if(!list.length) return '<p class="hub-empty">PDC Order of Merit data is not available yet.</p>';
+    const podium=list.slice(0,3);
+    const rows=list.slice(3);
+    const card=(item,index)=>'<article class="darts-podium-card" data-darts-player="'+esc(item.name)+'">'+person(item,index,"Player")+'</article>';
+    return '<section class="darts-ranking-desktop" aria-label="Top 50 PDC Order of Merit">'+
+      '<div class="darts-ranking-heading"><div><span class="eyebrow">THE PROFESSIONAL DARTS CORPORATION</span><h2>ORDER OF <em>MERIT</em></h2><p>THE TOP 50 PLAYERS · OFFICIAL RANKING</p></div><span class="darts-ranking-count">50 PLAYERS</span></div>'+
+      '<div class="darts-ranking-search"><span aria-hidden="true">⌕</span><input type="search" id="darts-ranking-search" placeholder="Search the top 50 players…" aria-label="Search the top 50 PDC players"><small>FILTER PLAYERS</small></div>'+
+      '<div class="darts-podium">'+podium.map(card).join("")+'</div>'+
+      '<div class="darts-ranking-list" id="darts-ranking-list"><div class="darts-ranking-list-head"><span>RANK</span><span>PLAYER</span><span>DETAILS</span></div>'+
+      rows.map((item,index)=>'<div class="darts-ranking-row" data-darts-player="'+esc(item.name)+'">'+person(item,index+3,"Player")+'</div>').join("")+'</div>'+
+      '<p class="darts-ranking-empty" hidden>No players match that search.</p></section>'+
+      '<div class="darts-ranking-mobile">'+dropdown("PDC Order of Merit",list,"Player",50)+'</div>';
+  }
   function panel(sport) {
     const d=payload[sport]||{};
     let out="";
     if(sport==="f1"){
       out=dropdown("Drivers’ championship",d.drivers,"Driver",30)+dropdown("Constructors’ championship",d.constructors,"Constructor",20);
     } else if(sport==="darts"){
-      out=dropdown("PDC Order of Merit",d.rankings,"Player",40);
+      out=dartsRanking(d.rankings);
     } else if(sport==="ufc"){
       const divisions=d.divisions||[];
       out=divisions.length?divisions.map(div=>dropdown(div.name||div.division,div.entries,"Fighter",15)).join(""):'<p class="hub-empty">UFC rankings are not available yet.</p>';
@@ -91,5 +106,17 @@
     render(active);
   }).catch(()=>{root.innerHTML='<p class="hub-empty">Standings and rankings are not available yet.</p>';});
   document.addEventListener("sports:select",e=>{if(e.detail&&e.detail.sport)render(e.detail.sport);});
+  document.addEventListener("input",e=>{
+    if(e.target?.id!=="darts-ranking-search") return;
+    const query=e.target.value.trim().toLocaleLowerCase();
+    let visible=0;
+    root.querySelectorAll("[data-darts-player]").forEach(node=>{
+      const match=node.dataset.dartsPlayer.toLocaleLowerCase().includes(query);
+      node.hidden=!match;
+      if(match) visible++;
+    });
+    const empty=root.querySelector(".darts-ranking-empty");
+    if(empty) empty.hidden=visible!==0;
+  });
   document.addEventListener("DOMContentLoaded",()=>render(active));
 })();
