@@ -75,7 +75,7 @@
       const target=event.start_at||event.main_card_at||event.start_time_utc||event.date||event.event_date;
       if(!live&&target){
         const timer=make("small","next-event-countdown",window.SportsCountdown?.text?.(target)||"DATE TBC");
-        timer.dataset.countdownTarget=/^\\d{4}-\\d{2}-\\d{2}$/.test(String(target))?String(target):new Date(target).toISOString();
+        timer.dataset.countdownTarget=/^\d{4}-\d{2}-\d{2}$/.test(String(target))?String(target):new Date(target).toISOString();
         info.append(timer);
       }
       const badge=make("span","next-event-state "+(live?"is-live":"is-upcoming"));
@@ -103,7 +103,9 @@
     track.style.setProperty("--ticker-duration",Math.max(24,groupWidth/22)+"s");
     root.classList.add("is-auto-scrolling");
   }
-  let tickerResizeTimer;\n  window.addEventListener("resize",()=>{clearTimeout(tickerResizeTimer);tickerResizeTimer=setTimeout(renderTicker,140);});\n  const tickerRoot=$("next-event-ticker");
+  let tickerResizeTimer;
+  window.addEventListener("resize",()=>{clearTimeout(tickerResizeTimer);tickerResizeTimer=setTimeout(renderTicker,140);});
+  const tickerRoot=$("next-event-ticker");
   if(tickerRoot){
     tickerRoot.addEventListener("click",event=>{
       const card=event.target.closest(".next-event-item");
