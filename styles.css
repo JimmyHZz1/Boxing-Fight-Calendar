@@ -781,3 +781,65 @@
 
 /* Keep official F1 headshots framed consistently in the dedicated championship table. */
 .sport-ranking-image.f1-driver-portrait{object-position:50% 18%;}
+
+
+/* iOS header banner: size the app mark and actions without touching sport selector logos. */
+@media (max-width: 520px) {
+  .topbar {
+    height: auto;
+    min-height: 66px;
+    padding: 10px 0;
+    gap: 8px;
+    align-items: center;
+  }
+  .topbar .brand {
+    flex: 0 0 auto;
+    min-width: 0;
+    gap: 6px;
+  }
+  .topbar .brand-mark {
+    flex: 0 0 32px;
+    width: 32px;
+    height: 32px;
+    font-size: 22px;
+  }
+  .topbar .brand strong {
+    font-size: 10px;
+    letter-spacing: 1.1px;
+  }
+  .topbar .brand small {
+    font-size: 8px;
+    letter-spacing: 1.3px;
+  }
+  .topbar .topbar-actions {
+    flex: 1 1 auto;
+    min-width: 0;
+    justify-content: flex-end;
+    gap: 6px;
+  }
+  .topbar .live-status {
+    display: none;
+  }
+  .topbar .topbar-actions button {
+    flex: 0 1 auto;
+    min-width: 0;
+    min-height: 34px;
+    padding: 7px 8px;
+    font-size: 9px;
+    line-height: 1.1;
+    letter-spacing: .45px;
+    white-space: nowrap;
+  }
+}
+@media (max-width: 360px) {
+  .topbar .brand-mark {
+    flex-basis: 29px;
+    width: 29px;
+    height: 29px;
+    font-size: 20px;
+  }
+  .topbar .brand strong { font-size: 9px; }
+  .topbar .brand small { font-size: 7px; }
+  .topbar .topbar-actions { gap: 5px; }
+  .topbar .topbar-actions button { padding: 7px 6px; font-size: 8px; }
+}
