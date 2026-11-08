@@ -76,22 +76,22 @@
   }
   function watchInfo(sport,event) {
     if(sport==="f1") return [
-      {name:"Sky Sports F1",href:"https://www.skysports.com/f1",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/Sky_Sports_2026.svg"},
-      {name:"NOW",href:"https://www.nowtv.com/watch-sky-sports",logo:null},
-      ...(/british grand prix/i.test(event.name||"")?[{name:"Channel 4 · live British GP & highlights",href:"https://www.channel4.com/",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/Channel_4_2022.svg"}]:[])
+      {name:"Sky Sports F1",href:"https://www.skysports.com/f1",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/Sky_Sports_F1_-_Logo_2025.svg",source:"Wikimedia Commons"},
+      {name:"NOW",href:"https://www.nowtv.com/watch-sky-sports",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/Now_logo.svg",source:"Wikimedia Commons"},
+      ...(/british grand prix/i.test(event.name||"")?[{name:"Channel 4 · live British GP & highlights",href:"https://www.channel4.com/",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/Channel_4_2022.svg",source:"Wikimedia Commons"}]:[])
     ];
     if(sport==="ufc") return [
-      {name:"TNT Sports",href:"https://www.tntsports.co.uk/",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/TNT_Sports_(2023).svg"},
-      {name:"UFC Fight Pass",href:"https://ufcfightpass.com/",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/UFC_Fight_Pass_Logo.svg"}
+      {name:"TNT Sports",href:"https://www.tntsports.co.uk/",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/TNT_Sports_(2023).svg",source:"Wikimedia Commons"},
+      {name:"UFC Fight Pass",href:"https://ufcfightpass.com/",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/UFC_Fight_Pass_Logo.svg",source:"Wikimedia Commons"}
     ];
     if(sport==="bkfc") return [
-      {name:"BKFC+ · most live events; check event access",href:"https://bkfc.live/",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/Bkfc-logo.png"},
-      {name:"DAZN · selected exclusive events",href:"https://www.dazn.com/",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/DAZN_logo.svg"}
+      {name:"BKFC+ · most live events; check event access",href:"https://bkfc.live/",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/Bkfc-logo.png",source:"Wikimedia Commons"},
+      {name:"DAZN · selected exclusive events",href:"https://www.dazn.com/",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/DAZN_logo.svg",source:"Wikimedia Commons"}
     ];
     if(sport==="darts") return [
-      {name:"Sky Sports Darts · selected events",href:"https://www.skysports.com/darts",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/Sky_Sports_Darts_-_Logo_2025.svg"},
-      {name:"ITV4 · selected events",href:"https://www.itv.com/watch",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/ITV_logo.svg"},
-      {name:"PDC TV / PDCTV · selected live coverage where UK rights allow",href:"https://video.pdc.tv/",logo:null}
+      {name:"Sky Sports Darts · selected events",href:"https://www.skysports.com/darts",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/Sky_Sports_Darts_-_Logo_2025.svg",source:"Wikimedia Commons"},
+      {name:"ITV4 · selected events",href:"https://www.itv.com/watch",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/ITV_Final_Logo.svg",source:"Wikimedia Commons"},
+      {name:"PDC TV / PDCTV · selected live coverage where UK rights allow",href:"https://video.pdc.tv/",logo:"https://commons.wikimedia.org/wiki/Special:FilePath/Professional_Darts_Corporation_logo.png",source:"Wikimedia Commons"}
     ];
     return [];
   }
@@ -99,12 +99,17 @@
     const providers=watchInfo(sport,event);
     if(!providers.length)return;
     const section=make("div","sport-watch-panel");
-    section.append(make("small","sport-watch-label","WHERE TO WATCH · UK"));
+    section.append(make("small","sport-watch-label","WHERE TO WATCH · UK OPTIONS"));
+    section.append(make("p","sport-watch-note","Coverage varies by event and competition. Check the broadcaster’s listing before watching."));
     const row=make("div","sport-watch-providers");
     providers.forEach(provider=>{
-      const link=make("a","sport-watch-provider");link.href=provider.href;link.target="_blank";link.rel="noopener noreferrer";link.title=provider.name;
-      if(provider.logo){const img=make("img");img.src=provider.logo;img.alt=provider.name+" logo";img.loading="lazy";img.onerror=()=>{img.remove();link.append(make("span",null,provider.name));};link.append(img);}
-      else link.append(make("span",null,provider.name));
+      const link=make("a","sport-watch-provider");link.href=provider.href;link.target="_blank";link.rel="noopener noreferrer";link.title=provider.name;link.setAttribute("aria-label","Visit "+provider.name);
+      if(provider.logo){
+        const img=make("img");img.src=provider.logo;img.alt=provider.name+" logo";img.loading="lazy";img.decoding="async";
+        img.onerror=()=>{img.remove();link.classList.add("logo-fallback");};
+        link.append(img);
+      } else link.classList.add("logo-fallback");
+      link.append(make("span","sport-watch-provider-name",provider.name));
       row.append(link);
     });
     section.append(row);root.append(section);
