@@ -437,3 +437,25 @@
 .hub-image-diagnostics summary{cursor:pointer;color:var(--accent);font-size:9px;font-weight:700;letter-spacing:1px}
 .hub-image-diagnostics p{margin:7px 0 0}
 .hub-person>img{width:38px;height:38px;object-fit:cover;border-radius:50%;background:var(--panel2);border:1px solid var(--line)}
+
+
+/* v1.2 My Sports Weekend */
+.weekend-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:18px 0 12px;padding:12px 14px;border:1px solid var(--line);background:var(--panel);color:var(--muted);font-size:9px;font-weight:800;letter-spacing:1px}
+.weekend-content{display:grid;gap:18px}
+.weekend-day{min-width:0}
+.weekend-day-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 2px 8px;border-bottom:1px solid var(--line)}
+.weekend-day-heading h2{margin:0;font:800 22px 'Barlow Condensed',sans-serif;text-transform:uppercase}
+.weekend-day-heading>span{color:var(--accent);font-size:8px;font-weight:800;letter-spacing:1px}
+.weekend-day-list{display:grid;gap:7px;margin-top:9px}
+.weekend-event{display:grid;grid-template-columns:78px minmax(0,1fr) auto;align-items:center;gap:11px;padding:12px;background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);min-width:0}
+.weekend-f1{border-left-color:#e33b36}.weekend-darts{border-left-color:#a57dcf}.weekend-boxing{border-left-color:#d4b05e}.weekend-ufc{border-left-color:#bfc2c8}.weekend-bkfc{border-left-color:#d3bd54}
+.weekend-event-time strong,.weekend-event-time small,.weekend-event-info strong,.weekend-event-info small{display:block}
+.weekend-event-time strong{font:800 15px 'Barlow Condensed',sans-serif;color:var(--accent);white-space:nowrap}
+.weekend-event-time small{margin-top:4px;color:var(--muted);font-size:8px;font-weight:800;letter-spacing:.8px}
+.weekend-event-info{min-width:0}
+.weekend-event-info strong{font:700 15px 'Barlow Condensed',sans-serif;text-transform:uppercase;overflow-wrap:anywhere}
+.weekend-event-info small{margin-top:4px;color:var(--muted);font-size:9px;line-height:1.5}
+.weekend-open{padding:7px 9px;border:1px solid #655234;background:rgba(212,176,94,.08);color:var(--accent);font-size:8px;font-weight:800;letter-spacing:.8px;cursor:pointer}
+.weekend-empty{padding:20px;border:1px dashed var(--line);color:var(--muted);font-size:11px;line-height:1.7}
+.weekend-note{margin:16px 0 24px;color:var(--muted);font-size:9px;line-height:1.6}
+@media(max-width:420px){.weekend-event{grid-template-columns:68px minmax(0,1fr) auto;gap:8px;padding:10px}.weekend-event-info strong{font-size:13px}.weekend-event-time strong{font-size:13px}.weekend-open{padding:7px 6px}}
