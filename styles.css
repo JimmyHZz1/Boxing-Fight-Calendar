@@ -597,3 +597,8 @@
 .hub-person:has(.hub-constructor-logo),.hub-person:has(.hub-constructor-fallback){grid-template-columns:66px 26px minmax(0,1fr);min-height:58px;gap:9px}
 .hub-constructor-fallback{width:62px;height:38px;display:flex;align-items:center;justify-content:center;overflow:hidden;color:#f4f2ed;font:900 12px/1 "Barlow Condensed",sans-serif;letter-spacing:.3px;text-align:center;text-wrap:balance;border-bottom:2px solid var(--accent);background:linear-gradient(90deg,rgba(226,180,91,.10),transparent);}
 @media(max-width:420px){.hub-person:has(.hub-driver-portrait){grid-template-columns:46px 23px minmax(0,1fr);gap:7px;min-height:62px}.hub-person>img.hub-driver-portrait,.hub-person>.hub-driver-fallback{width:42px;height:50px}.hub-person>img.hub-constructor-logo{width:56px;height:36px}.hub-person:has(.hub-constructor-logo),.hub-person:has(.hub-constructor-fallback){grid-template-columns:58px 23px minmax(0,1fr);gap:7px}.hub-constructor-fallback{width:54px;height:34px;font-size:11px}}
+
+/* Keep the top sport icons neutral until their sport is selected. */
+.top-sport-button img{filter:none;transition:filter .18s ease}
+.top-sport-button[aria-current="true"] img{filter:drop-shadow(0 0 6px rgba(226,180,91,.62))}
+@media(prefers-reduced-motion:reduce){.top-sport-button img{transition:none}}
