@@ -20,7 +20,8 @@
     const people=favourites().filter(f=>f.sport===sport);
     if(!people.length)return false;
     const bouts=event.bouts||event.fights||[];
-    const haystack=normalise([event.name,event.title,event.team,event.driver,event.location,...bouts.flatMap(b=>[b.fighter1,b.fighter2,b.fighter_a,b.fighter_b,b.red_corner,b.blue_corner])].filter(Boolean).join(" "));
+    const results=event.results||[];
+    const haystack=normalise([event.name,event.title,event.team,event.driver,event.location,...results.flatMap(r=>[r.driver,r.team]),...bouts.flatMap(b=>[b.fighter1,b.fighter2,b.fighter_a?.name||b.fighter_a,b.fighter_b?.name||b.fighter_b,b.red_corner,b.blue_corner])].filter(Boolean).join(" "));
     return people.some(f=>haystack.includes(normalise(f.name)));
   }
   function eventTime(event){
