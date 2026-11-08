@@ -1070,3 +1070,20 @@ body.compact-view .screen>.section-heading{margin-top:10px}
  body.compact-view .high-profile-matchup{gap:4px}
  body.compact-view .uk-headliner-matchup{gap:4px}
 }
+
+
+/* Final compact overrides: keep the dashboard as a glanceable scoreboard. */
+body.compact-view #home-screen .hero:after{display:none!important}
+body.compact-view #home-screen .event-card{grid-template-columns:minmax(0,1fr) auto!important;gap:6px!important}
+body.compact-view #home-screen .event-date{display:none!important}
+body.compact-view #home-screen .live-centre-event{grid-template-columns:minmax(0,1fr) auto!important;gap:6px!important}
+body.compact-view #home-screen .live-centre-logo{display:none!important}
+body.compact-view #home-screen .live-centre-info small{display:none!important}
+body.compact-view .event-card .event-info p,
+body.compact-view .sport-event-card .event-info p{display:none!important}
+body.compact-view .next-event-ticker{display:flex!important;flex-wrap:nowrap!important;overflow-x:auto!important;overflow-y:hidden!important}
+body.compact-view .next-event-item{flex:0 0 min(205px,76vw)!important}
+@media(max-width:620px){
+ body.compact-view .next-event-ticker{display:flex!important;flex-wrap:nowrap!important}
+ body.compact-view .next-event-item{flex:0 0 min(190px,78vw)!important}
+}
