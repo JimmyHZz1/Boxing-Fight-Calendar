@@ -3909,38 +3909,39 @@
     "rejected": 0,
     "by_sport": {
       "f1 constructors": {
-        "attempted": 5,
-        "found": 4,
-        "missing": 1,
+        "attempted": 3,
+        "found": 0,
+        "missing": 3,
+        "rejected": 0
+      },
+      "boxing fighters": {
+        "attempted": 2,
+        "found": 0,
+        "missing": 2,
         "rejected": 0
       }
     },
     "rejection_reasons": {
-      "not_an_image": 4
+      "not_an_image": 10
     },
     "search_details": [
       {
-        "name": "Haas F1 Team",
-        "queries": 2,
-        "candidate_files": 11,
-        "accepted": 10,
+        "name": "Red Bull",
+        "queries": 6,
+        "candidate_files": 7,
+        "accepted": 0,
         "rejections": {
-          "not_an_image": 1
+          "not_an_image": 7
         }
       },
       {
-        "name": "Audi",
-        "queries": 2,
-        "candidate_files": 2,
-        "accepted": 2,
-        "rejections": {}
-      },
-      {
-        "name": "Williams",
-        "queries": 1,
-        "candidate_files": 20,
-        "accepted": 20,
-        "rejections": {}
+        "name": "RB F1 Team",
+        "queries": 4,
+        "candidate_files": 3,
+        "accepted": 0,
+        "rejections": {
+          "not_an_image": 3
+        }
       },
       {
         "name": "Aston Martin",
@@ -3950,18 +3951,23 @@
         "rejections": {}
       },
       {
-        "name": "Cadillac F1 Team",
+        "name": "Albina Maldozhanova",
         "queries": 2,
-        "candidate_files": 4,
-        "accepted": 1,
-        "rejections": {
-          "not_an_image": 3
-        }
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Alexander Castellano",
+        "queries": 0,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
       }
     ],
-    "checked_at": "2026-11-08T13:32:47Z",
+    "checked_at": "2026-11-08T13:33:50Z",
     "library_entries": 34,
-    "newly_found": 4,
+    "newly_found": 0,
     "coverage": {
       "boxing fight card fighters": {
         "total": 187,
