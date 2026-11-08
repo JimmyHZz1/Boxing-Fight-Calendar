@@ -1074,23 +1074,63 @@ def sync_sports_hub():
                 })
         except Exception:
             rankings = []
-        if not rankings: rankings = darts_rankings_from_web()
-        # Preserve verified portraits from the last published snapshot when the upstream
-        # rankings endpoint omits image fields. A routine ranking refresh must never
-        # erase an already verified player portrait.
         previous_darts = previous.get("darts", {}).get("rankings", [])
+        previous_by_name = {
+            image_key(row.get("name")): row
+            for row in previous_darts
+            if isinstance(row, dict) and row.get("name")
+        }
+
+        if not rankings:
+            # The public live table is also the fallback when the API is unavailable.
+            rankings = darts_rankings_from_web()
+        else:
+            # The API ranking feed can return the player order without the prize-money
+            # amounts. Enrich those same rows from the live Order of Merit table, keeping
+            # the API's ordering and all previously verified player identities/images.
+            try:
+                live_money_rows = darts_rankings_from_web()
+                live_money = {
+                    image_key(row.get("name")): row
+                    for row in live_money_rows
+                    if row.get("name") and row.get("prize_money")
+                }
+                enriched = 0
+                for row in rankings:
+                    amount = live_money.get(image_key(row.get("name")))
+                    if amount and not row.get("prize_money"):
+                        row["prize_money"] = amount["prize_money"]
+                        row["prize_money_source"] = "DartsRankings.com live PDC Order of Merit"
+                        row["prize_money_updated_at"] = iso_now()
+                        enriched += 1
+                print(f"PDC_PRIZE_MONEY_ENRICHED: {enriched}/{len(rankings)} ranking rows.")
+            except Exception as exc:
+                print(f"PDC_PRIZE_MONEY_REFRESH_WARNING: {exc}")
+
+        # If the live money table was temporarily unavailable, retain the last known
+        # amount for each player rather than blanking the valuation on a routine sync.
+        # Keep verified portraits as well: upstream ranking feeds often omit image data.
         previous_images = {
             image_key(row.get("name")): row
             for row in previous_darts
             if isinstance(row, dict) and row.get("name") and row.get("image_url")
         }
         for row in rankings:
-            prior = previous_images.get(image_key(row.get("name")))
-            if prior and not row.get("image_url"):
-                for field, value in prior.items():
-                    if field == "image_url" or field == "image_rights" or field.startswith("image_"):
-                        row[field] = value
-        hub["sports"]["darts"] = {"rankings": add_photos(rankings, limit=40, sport="darts"), "source_url": "https://www.dartsrankings.com/", "notice": "PDC Order of Merit live table. Rankings are updated after PDC ranking events."}
+            prior = previous_by_name.get(image_key(row.get("name")))
+            if prior:
+                if not row.get("prize_money") and prior.get("prize_money"):
+                    row["prize_money"] = prior["prize_money"]
+                    row["prize_money_source"] = prior.get("prize_money_source", "Previously published PDC Order of Merit")
+                    row["prize_money_updated_at"] = prior.get("prize_money_updated_at")
+                if not row.get("image_url"):
+                    for field, value in prior.items():
+                        if field == "image_url" or field == "image_rights" or field.startswith("image_"):
+                            row[field] = value
+        hub["sports"]["darts"] = {
+            "rankings": add_photos(rankings, limit=40, sport="darts"),
+            "source_url": "https://www.dartsrankings.com/",
+            "notice": "PDC Order of Merit prize money (rolling two-year ranking total), updated after PDC ranking events."
+        }
     except Exception as exc:
         hub["sports"]["darts"] = {**previous.get("darts", {"rankings": []}), "sync_warning": str(exc)}
 
