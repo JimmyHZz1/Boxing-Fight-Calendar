@@ -183,9 +183,10 @@
     root.append(make("p","sport-sync-note","Tournament calendar entry. Match-by-match scores are not included."));
   }
   function fighterPortrait(name, url) {
-    if (!url || !/^https?:\/\//i.test(String(url))) return null;
+    const source=String(url||"");
+    if (!(source.indexOf("https://")===0 || source.indexOf("http://")===0)) return null;
     const img=make("img","sport-fight-portrait");
-    img.src=url;img.alt=name+" portrait";img.loading="lazy";
+    img.src=source;img.alt=name+" portrait";img.loading="lazy";
     img.referrerPolicy="no-referrer";img.onerror=()=>img.remove();
     return img;
   }
