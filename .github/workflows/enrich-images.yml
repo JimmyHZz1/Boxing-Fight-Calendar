@@ -30,7 +30,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/
+          git add data/ assets/images/
           if git diff --cached --quiet; then
             echo "No image-library changes."
             exit 0
