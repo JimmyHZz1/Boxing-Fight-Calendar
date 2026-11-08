@@ -22,7 +22,7 @@
     const input=$("global-search-input"),root=$("global-search-results");if(!input||!root)return;
     const q=input.value.trim().toLowerCase();
     if(!q){root.replaceChildren(Object.assign(document.createElement("p"),{textContent:"Start typing to search events, fighters, drivers and teams."}));return;}
-    const matches=records.filter(r=>(sportFilter==="all"||r.sport===sportFilter)&&[r.name,r.event.venue,r.event.location,r.event.circuit,r.event.country,...r.people].join(" ").toLowerCase().includes(q)).slice(0,30);
+    const matches=records.filter(r=>(sportFilter==="all"||r.sport===sportFilter)&&[r.name,r.event.venue,r.event.location,r.event.circuit,r.event.country,...r.people,JSON.stringify(r.event)].join(" ").toLowerCase().includes(q)).slice(0,30);
     root.replaceChildren();
     if(!matches.length){root.append(Object.assign(document.createElement("p"),{textContent:"No matches found. Try another name or choose a different sport."}));return;}
     matches.forEach(r=>{
