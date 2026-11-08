@@ -349,6 +349,7 @@
 .sport-detail-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:2px 0 20px}
 .sport-detail-hero{padding:28px 26px;border:1px solid var(--line);background:linear-gradient(120deg,rgba(226,180,91,.13),rgba(25,27,32,.96) 65%),var(--panel);margin-bottom:14px}
 .sport-detail-hero-top{display:flex;align-items:center;gap:12px}
+.sport-detail-logo{display:block;width:76px;height:42px;object-fit:contain;object-position:left center;filter:drop-shadow(0 2px 8px rgba(0,0,0,.25))}
 .sport-detail-icon{font-size:32px}
 .sport-detail-hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(48px,10vw,76px);line-height:.95;text-transform:uppercase;margin:18px 0 10px}
 .sport-detail-hero p{max-width:650px;color:#c1c1c5;font-size:14px;line-height:1.75;margin:0}
