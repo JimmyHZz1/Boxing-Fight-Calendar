@@ -85,7 +85,7 @@
     const name=item.name||item.driver||item.team||"TBC";
     if(item.image_url){
       const img=el("img","sport-ranking-image");
-      const localSource=item.image_url.startsWith("./assets/")?new URL(item.image_url,document.baseURI).href:item.image_url;
+      const localSource=item.image_url.startsWith("./assets/")?"https://raw.githubusercontent.com/JimmyHZz1/Boxing-Fight-Calendar/main/"+item.image_url.slice(2):item.image_url;
       img.src=localSource;img.alt=name+" photo";img.loading="lazy";img.decoding="async";
       img.onerror=()=>{
         if(item.image_url.startsWith("./assets/")&&!img.dataset.remoteRetry){
