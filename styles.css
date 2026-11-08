@@ -1141,3 +1141,12 @@ body.compact-view #home-screen .live-centre-empty{display:block!important;font-s
   .topbar-nav-item{padding:8px 9px;font-size:9px}
   .topbar-actions{gap:7px}
 }
+
+
+/* Up Next ticker: give long event names room without compressing the status badge. */
+.next-event-ticker.is-auto-scrolling .next-event-item{flex-basis:min(320px,84vw)!important;min-width:0;min-height:76px!important;align-items:center;gap:12px!important;padding:11px 13px!important}
+.next-event-ticker.is-auto-scrolling .next-event-info{flex:1 1 auto;min-width:0;gap:5px}
+.next-event-ticker.is-auto-scrolling .next-event-name{display:-webkit-box!important;-webkit-box-orient:vertical;-webkit-line-clamp:3;white-space:normal!important;overflow:hidden;text-overflow:clip;overflow-wrap:anywhere;word-break:normal;font-size:16px!important;line-height:1.12!important}
+.next-event-ticker.is-auto-scrolling .next-event-state{flex:0 0 auto;align-self:center}
+@media(max-width:520px){.next-event-ticker.is-auto-scrolling .next-event-item{flex-basis:min(270px,86vw)!important;min-height:72px!important;padding:9px 10px!important;gap:9px!important}.next-event-ticker.is-auto-scrolling .next-event-name{font-size:15px!important;-webkit-line-clamp:3}}
+@media(min-width:1100px){.next-event-ticker.is-auto-scrolling .next-event-item{flex-basis:340px!important;min-height:78px!important}}
