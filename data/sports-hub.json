@@ -490,7 +490,8 @@
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
           "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z"
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 2,
@@ -502,7 +503,8 @@
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
           "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z"
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 3,
@@ -512,13 +514,11 @@
           "image_url": "https://www.pdc-europe.tv/images/players/gian-van-veen.webp",
           "image_page_url": "https://www.pdc-europe.tv/spieler/gian-van-veen",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_license": "CC BY 3.0",
-          "image_license_url": "https://creativecommons.org/licenses/by/3.0",
           "image_source": "PDC Europe",
           "image_match_score": 1,
           "image_match_method": "official-pdc-tour-card-photo",
           "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_local_path": "assets/images/darts/gian-van-veen.png"
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 4,
@@ -528,13 +528,11 @@
           "image_url": "https://www.pdc-europe.tv/images/players/gerwyn-price.webp",
           "image_page_url": "https://www.pdc-europe.tv/spieler/gerwyn-price",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_license": "CC BY-SA 4.0",
-          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
           "image_source": "PDC Europe",
           "image_match_score": 1,
           "image_match_method": "official-pdc-tour-card-photo",
           "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_local_path": "assets/images/darts/gerwyn-price.jpg"
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 5,
@@ -544,13 +542,11 @@
           "image_url": "https://www.pdc-europe.tv/images/players/jonny-clayton.webp",
           "image_page_url": "https://www.pdc-europe.tv/spieler/jonny-clayton",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_license": "CC BY-SA 4.0",
-          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
           "image_source": "PDC Europe",
           "image_match_score": 1,
           "image_match_method": "official-pdc-tour-card-photo",
           "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_local_path": "assets/images/darts/jonny-clayton.jpg"
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 6,
@@ -560,13 +556,11 @@
           "image_url": "https://www.pdc-europe.tv/images/players/ross-smith.webp",
           "image_page_url": "https://www.pdc-europe.tv/spieler/ross-smith",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_license": "Public domain",
-          "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
           "image_source": "PDC Europe",
           "image_match_score": 1,
           "image_match_method": "official-pdc-tour-card-photo",
           "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_local_path": "assets/images/darts/ross-smith.jpg"
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 7,
@@ -576,13 +570,11 @@
           "image_url": "https://www.pdc-europe.tv/images/players/james-wade.webp",
           "image_page_url": "https://www.pdc-europe.tv/spieler/james-wade",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_license": "Public domain",
-          "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
           "image_source": "PDC Europe",
           "image_match_score": 1,
           "image_match_method": "official-pdc-tour-card-photo",
           "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_local_path": "assets/images/darts/james-wade.png"
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 8,
@@ -592,13 +584,11 @@
           "image_url": "https://www.pdc-europe.tv/images/players/josh-rock.webp",
           "image_page_url": "https://www.pdc-europe.tv/spieler/josh-rock",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_license": "CC BY-SA 4.0",
-          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
           "image_source": "PDC Europe",
           "image_match_score": 1,
           "image_match_method": "official-pdc-tour-card-photo",
           "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_local_path": "assets/images/darts/josh-rock.jpg"
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 9,
@@ -610,7 +600,8 @@
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
           "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z"
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 10,
@@ -620,13 +611,11 @@
           "image_url": "https://www.pdc-europe.tv/images/players/danny-noppert.webp",
           "image_page_url": "https://www.pdc-europe.tv/spieler/danny-noppert",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_license": "CC BY-SA 4.0",
-          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
           "image_source": "PDC Europe",
           "image_match_score": 1,
           "image_match_method": "official-pdc-tour-card-photo",
           "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_local_path": "assets/images/darts/danny-noppert.jpg"
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 11,
@@ -636,13 +625,11 @@
           "image_url": "https://www.pdc-europe.tv/images/players/michael-van-gerwen.webp",
           "image_page_url": "https://www.pdc-europe.tv/spieler/michael-van-gerwen",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_license": "CC BY-SA 4.0",
-          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
           "image_source": "PDC Europe",
           "image_match_score": 1,
           "image_match_method": "official-pdc-tour-card-photo",
           "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_local_path": "assets/images/darts/michael-van-gerwen.jpg"
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 11,
@@ -652,13 +639,11 @@
           "image_url": "https://www.pdc-europe.tv/images/players/nathan-aspinall.webp",
           "image_page_url": "https://www.pdc-europe.tv/spieler/nathan-aspinall",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_license": "CC BY 3.0",
-          "image_license_url": "https://creativecommons.org/licenses/by/3.0",
           "image_source": "PDC Europe",
           "image_match_score": 1,
           "image_match_method": "official-pdc-tour-card-photo",
           "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_local_path": "assets/images/darts/nathan-aspinall.png"
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 13,
@@ -668,13 +653,11 @@
           "image_url": "https://www.pdc-europe.tv/images/players/wessel-nijman.webp",
           "image_page_url": "https://www.pdc-europe.tv/spieler/wessel-nijman",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_license": "CC BY 3.0",
-          "image_license_url": "https://creativecommons.org/licenses/by/3.0",
           "image_source": "PDC Europe",
           "image_match_score": 1,
           "image_match_method": "official-pdc-tour-card-photo",
           "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_local_path": "assets/images/darts/wessel-nijman.png"
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 14,
@@ -684,13 +667,11 @@
           "image_url": "https://www.pdc-europe.tv/images/players/gary-anderson.webp",
           "image_page_url": "https://www.pdc-europe.tv/spieler/gary-anderson",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_license": "CC BY-SA 3.0",
-          "image_license_url": "https://creativecommons.org/licenses/by-sa/3.0",
           "image_source": "PDC Europe",
           "image_match_score": 1,
           "image_match_method": "official-pdc-tour-card-photo",
           "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_local_path": "assets/images/darts/gary-anderson.jpg"
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 15,
@@ -700,13 +681,11 @@
           "image_url": "https://www.pdc-europe.tv/images/players/ryan-searle.webp",
           "image_page_url": "https://www.pdc-europe.tv/spieler/ryan-searle",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_license": "CC BY 3.0",
-          "image_license_url": "https://creativecommons.org/licenses/by/3.0",
           "image_source": "PDC Europe",
           "image_match_score": 1,
           "image_match_method": "official-pdc-tour-card-photo",
           "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_local_path": "assets/images/darts/ryan-searle.png"
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 16,
@@ -716,13 +695,11 @@
           "image_url": "https://www.pdc-europe.tv/images/players/chris-dobey.webp",
           "image_page_url": "https://www.pdc-europe.tv/spieler/chris-dobey",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_license": "CC BY 3.0",
-          "image_license_url": "https://creativecommons.org/licenses/by/3.0",
           "image_source": "PDC Europe",
           "image_match_score": 1,
           "image_match_method": "official-pdc-tour-card-photo",
           "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_local_path": "assets/images/darts/chris-dobey.png"
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 17,
@@ -732,13 +709,11 @@
           "image_url": "https://www.pdc-europe.tv/images/players/luke-woodhouse.webp",
           "image_page_url": "https://www.pdc-europe.tv/spieler/luke-woodhouse",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_license": "CC BY 3.0",
-          "image_license_url": "https://creativecommons.org/licenses/by/3.0",
           "image_source": "PDC Europe",
           "image_match_score": 1,
           "image_match_method": "official-pdc-tour-card-photo",
           "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_local_path": "assets/images/darts/luke-woodhouse.png"
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 18,
@@ -748,13 +723,11 @@
           "image_url": "https://www.pdc-europe.tv/images/players/jermaine-wattimena.webp",
           "image_page_url": "https://www.pdc-europe.tv/spieler/jermaine-wattimena",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
-          "image_license": "CC BY 3.0",
-          "image_license_url": "https://creativecommons.org/licenses/by/3.0",
           "image_source": "PDC Europe",
           "image_match_score": 1,
           "image_match_method": "official-pdc-tour-card-photo",
           "image_verified_at": "2026-11-08T18:50:00Z",
-          "image_local_path": "assets/images/darts/jermaine-wattimena.png"
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 19,
@@ -766,7 +739,8 @@
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
           "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z"
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 20,
@@ -778,7 +752,8 @@
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
           "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z"
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 21,
@@ -790,7 +765,8 @@
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
           "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z"
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 21,
@@ -802,7 +778,8 @@
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
           "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z"
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 23,
@@ -814,7 +791,8 @@
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
           "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z"
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 24,
@@ -826,7 +804,8 @@
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
           "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z"
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 25,
@@ -838,7 +817,8 @@
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
           "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z"
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 26,
@@ -850,7 +830,8 @@
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
           "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z"
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 27,
@@ -862,7 +843,8 @@
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
           "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z"
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 28,
@@ -874,7 +856,8 @@
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
           "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z"
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 29,
@@ -886,7 +869,8 @@
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
           "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z"
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 29,
@@ -898,7 +882,8 @@
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
           "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z"
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 31,
@@ -910,7 +895,8 @@
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
           "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z"
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 32,
@@ -922,7 +908,8 @@
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
           "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z"
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 33,
@@ -934,7 +921,8 @@
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
           "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z"
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 34,
@@ -946,7 +934,8 @@
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
           "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z"
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 35,
@@ -958,7 +947,8 @@
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
           "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z"
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 36,
@@ -970,7 +960,8 @@
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
           "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z"
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 37,
@@ -982,7 +973,8 @@
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
           "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z"
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 38,
@@ -994,7 +986,8 @@
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
           "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z"
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 39,
@@ -1006,7 +999,8 @@
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
           "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z"
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 40,
@@ -1018,7 +1012,8 @@
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
           "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z"
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 41,
@@ -1030,7 +1025,8 @@
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
           "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z"
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 42,
@@ -1042,7 +1038,8 @@
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
           "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z"
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 43,
@@ -1054,7 +1051,8 @@
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
           "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z"
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 44,
@@ -1066,7 +1064,8 @@
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
           "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z"
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 45,
@@ -1078,7 +1077,8 @@
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
           "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z"
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 46,
@@ -1090,7 +1090,8 @@
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
           "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z"
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 47,
@@ -1102,7 +1103,8 @@
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
           "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z"
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 48,
@@ -1114,7 +1116,8 @@
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
           "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z"
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 49,
@@ -1126,7 +1129,8 @@
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
           "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z"
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 50,
@@ -1138,7 +1142,8 @@
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
           "image_match_method": "official-pdc-tour-card-photo",
-          "image_verified_at": "2026-11-08T18:50:00Z"
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 51,
