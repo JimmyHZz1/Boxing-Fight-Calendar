@@ -155,6 +155,31 @@
     }
     return {label:"Match data unavailable",detail:"The current PDC feed provides rankings but not player-versus-player match results."};
   }
+  function formEdge(a,b){
+    if(a.sport!==b.sport)return "No cross-sport form comparison.";
+    if(a.sport==="darts"){
+      const pa=lookup(a),pb=lookup(b);
+      if(pa?.rank==null||pb?.rank==null)return "Order of Merit comparison unavailable.";
+      return pa.rank===pb.rank?"Order of Merit: level":pa.rank<pb.rank?a.name+" leads the current Order of Merit":b.name+" leads the current Order of Merit";
+    }
+    const ra=profileResults(a).slice(0,5),rb=profileResults(b).slice(0,5);
+    if(a.sport==="f1"){
+      const aa=ra.filter(x=>x.position>0),bb=rb.filter(x=>x.position>0);
+      if(!aa.length||!bb.length)return "Not enough published race results to compare form.";
+      const avgA=aa.reduce((n,x)=>n+x.position,0)/aa.length,avgB=bb.reduce((n,x)=>n+x.position,0)/bb.length;
+      if(Math.abs(avgA-avgB)<0.01)return "Recent finishing form is level.";
+      return (avgA<avgB?a.name:b.name)+" has the better average finish in the loaded results.";
+    }
+    if(["boxing","ufc","bkfc"].includes(a.sport)){
+      const knownA=ra.filter(x=>["WIN","LOSS","DRAW"].includes(x.outcome)),knownB=rb.filter(x=>["WIN","LOSS","DRAW"].includes(x.outcome));
+      if(!knownA.length||!knownB.length)return "Not enough published fight results to compare form.";
+      const score=list=>list.reduce((n,x)=>n+(x.outcome==="WIN"?1:x.outcome==="DRAW"?.5:0),0)/list.length;
+      const sa=score(knownA),sb=score(knownB);
+      if(Math.abs(sa-sb)<0.001)return "Recent reported fight form is level.";
+      return (sa>sb?a.name:b.name)+" has the stronger result ratio in the loaded feed.";
+    }
+    return "No comparable form data is available.";
+  }
   function profileAchievements(f,profile,results){
     const items=[];
     if(profile?.rank===0)items.push("Current champion"+(profile.org?" · "+profile.org:""));
@@ -228,7 +253,7 @@
       for(let i=0;i<selected.length;i++)for(let j=i+1;j<selected.length;j++){
         const result=headToHead(selected[i],selected[j]);
         const row=make("div","favourites-head-to-head-row");
-        row.append(make("strong","",selected[i].name+" vs "+selected[j].name),make("span","",result.label),make("small","",result.detail));
+        row.append(make("strong","",selected[i].name+" vs "+selected[j].name),make("span","",result.label),make("small","",result.detail),make("small","favourite-form-edge","FORM EDGE · "+formEdge(selected[i],selected[j])));
         comparisons.append(row);
       }
       panel.append(comparisons);
