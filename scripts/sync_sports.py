@@ -557,14 +557,16 @@ def cache_image_locally(name, result, sport):
     return local_result
 
 def image_aliases(name):
+    """Return ordered Commons search phrases, including common sporting-name variants."""
     key = image_key(name)
     aliases = {
-        "max verstappen": ["Max Verstappen"],
-        "lewis hamilton": ["Lewis Hamilton"],
-        "lando norris": ["Lando Norris"],
-        "charles leclerc": ["Charles Leclerc"],
-        "fernando alonso": ["Fernando Alonso"],
-        "sergio perez": ["Sergio Perez"],
+        "max verstappen": ["Max Verstappen", "Verstappen F1"],
+        "lewis hamilton": ["Lewis Hamilton", "Hamilton F1"],
+        "lando norris": ["Lando Norris", "Norris F1"],
+        "charles leclerc": ["Charles Leclerc", "Leclerc F1"],
+        "fernando alonso": ["Fernando Alonso", "Alonso F1"],
+        "sergio perez": ["Sergio Perez", "Perez F1"],
+        "andrea kimi antonelli": ["Kimi Antonelli", "Andrea Kimi Antonelli", "Antonelli Formula One"],
         "red bull racing": ["Red Bull Racing", "Oracle Red Bull Racing"],
         "mercedes": ["Mercedes AMG Petronas F1 Team", "Mercedes F1"],
         "mclaren": ["McLaren Formula One Team", "McLaren F1"],
@@ -579,7 +581,7 @@ def image_aliases(name):
     return aliases.get(key, [str(name).strip()])
 
 def commons_photo(name, image_kind="portrait"):
-    """Find a high-confidence Commons image, stopping promptly on API throttling."""
+    """Find a high-confidence, licensed Commons image using alternate names and category fallback."""
     global IMAGE_LOOKUP_RATE_LIMITED
     if not name:
         return None
@@ -590,36 +592,27 @@ def commons_photo(name, image_kind="portrait"):
     wanted = words(name) - {"jr", "sr", "ii", "iii", "iv", "team", "f1", "racing", "club"}
     if not wanted:
         return None
-    query_names = image_aliases(name)[:1]  # One Commons API request per queued image.
+    query_names = image_aliases(name)
     candidates = []
     seen_titles = set()
-    for query_name in query_names:
-        params = {
-            "action": "query", "format": "json", "generator": "search",
-            "gsrsearch": query_name + (" logo" if image_kind == "logo" else " portrait"),
-            "gsrnamespace": 6, "gsrlimit": 20,
-            "prop": "imageinfo", "iiprop": "url|extmetadata|mime", "iiurlwidth": 480,
-            "iiextmetadatafilter": "Artist|Credit|LicenseShortName|LicenseUrl|UsageTerms"
-        }
-        if IMAGE_LOOKUP_RATE_LIMITED:
-            break
-        try:
-            payload = request_json("https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode(params), provider="Wikimedia Commons")
-            import time
-            time.sleep(1.0)
-        except Exception as exc:
-            print(f"COMMONS_IMAGE_WARNING: {name}: {exc}")
-            if "HTTP 429" in str(exc):
-                IMAGE_LOOKUP_RATE_LIMITED = True
-                break
-            continue
-        for page in (payload.get("query") or {}).get("pages", {}).values():
+    rejection_counts = {}
+    query_count = 0
+
+    def reject(reason):
+        rejection_counts[reason] = rejection_counts.get(reason, 0) + 1
+        IMAGE_DIAGNOSTICS.setdefault("rejection_reasons", {})[reason] = (
+            IMAGE_DIAGNOSTICS.setdefault("rejection_reasons", {}).get(reason, 0) + 1
+        )
+
+    def inspect_pages(pages, source_label):
+        for page in pages:
             title = page.get("title", "").replace("File:", "")
-            if title in seen_titles:
+            if not title or title in seen_titles:
                 continue
             seen_titles.add(title)
             info = (page.get("imageinfo") or [{}])[0]
             if not str(info.get("mime", "")).startswith("image/"):
+                reject("not_an_image")
                 continue
             meta = info.get("extmetadata") or {}
             def meta_value(key):
@@ -631,25 +624,28 @@ def commons_photo(name, image_kind="portrait"):
             licence = meta_value("LicenseShortName")
             licence_url = meta_value("LicenseUrl")
             if not image_url or not page_url or not licence or not licence_url:
-                IMAGE_DIAGNOSTICS["rejected"] += 1
+                reject("missing_licence_or_source_metadata")
                 continue
+
             title_words = words(title)
             metadata_words = words(meta_value("Artist") + " " + meta_value("Credit"))
-            # Prefer title matches. Metadata can strengthen a match but never
-            # substitute a missing surname for a multi-word person's name.
+            all_identity_words = title_words | metadata_words
+            surname = sorted(wanted, key=len)[-1]
+            given_names = wanted - {surname}
+            if surname not in all_identity_words:
+                reject("surname_not_matched")
+                continue
+            # For three-part names such as Andrea Kimi Antonelli, a file titled
+            # "Kimi Antonelli..." is a valid identity match; requiring all three
+            # words incorrectly rejects genuine Commons photographs.
+            if given_names and not (given_names & all_identity_words):
+                reject("given_name_not_matched")
+                continue
             title_hits = wanted.intersection(title_words)
             meta_hits = wanted.intersection(metadata_words)
-            surname = sorted(wanted, key=len)[-1]
-            if len(wanted) >= 2 and surname not in title_words and surname not in metadata_words:
-                IMAGE_DIAGNOSTICS["rejected"] += 1
-                continue
-            coverage = len(title_hits) / max(1, len(wanted))
-            metadata_coverage = len(meta_hits) / max(1, len(wanted))
-            score = max(coverage, coverage * 0.75 + metadata_coverage * 0.25)
-            if len(wanted) == 1:
-                score = 1.0 if next(iter(wanted)) in title_words else 0.0
-            if score < 0.62:
-                IMAGE_DIAGNOSTICS["rejected"] += 1
+            score = len(title_hits | meta_hits) / max(1, len(wanted))
+            if score < 0.50:
+                reject("identity_match_too_weak")
                 continue
             candidates.append((score, {
                 "image_url": image_url,
@@ -659,11 +655,77 @@ def commons_photo(name, image_kind="portrait"):
                 "image_license_url": licence_url,
                 "image_source": "Wikimedia Commons",
                 "image_match_score": round(score, 2),
+                "image_match_method": source_label,
                 "image_verified_at": iso_now()
             }))
+
+    for query_name in query_names:
+        if IMAGE_LOOKUP_RATE_LIMITED:
+            break
+        params = {
+            "action": "query", "format": "json", "generator": "search",
+            "gsrsearch": query_name + (" logo" if image_kind == "logo" else " portrait"),
+            "gsrnamespace": 6, "gsrlimit": 20,
+            "prop": "imageinfo", "iiprop": "url|extmetadata|mime", "iiurlwidth": 480,
+            "iiextmetadatafilter": "Artist|Credit|LicenseShortName|LicenseUrl|UsageTerms"
+        }
+        try:
+            payload = request_json("https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode(params), provider="Wikimedia Commons")
+            query_count += 1
+            inspect_pages((payload.get("query") or {}).get("pages", {}).values(), "search:" + query_name)
+        except Exception as exc:
+            print(f"COMMONS_IMAGE_WARNING: {name} [{query_name}]: {exc}")
+            if "HTTP 429" in str(exc):
+                IMAGE_LOOKUP_RATE_LIMITED = True
+                break
+
+    # Search Commons category names, then inspect files in matching person categories.
+    # This catches images whose file titles do not contain the full competitor name.
+    if not IMAGE_LOOKUP_RATE_LIMITED and image_kind == "portrait" and not candidates:
+        params = {
+            "action": "query", "format": "json", "list": "search",
+            "srsearch": "intitle:\"" + name + "\"",
+            "srnamespace": 14, "srlimit": 5
+        }
+        try:
+            payload = request_json("https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode(params), provider="Wikimedia Commons")
+            query_count += 1
+            categories = (payload.get("query") or {}).get("search", [])
+            for category in categories:
+                if IMAGE_LOOKUP_RATE_LIMITED:
+                    break
+                category_title = category.get("title", "")
+                if not category_title.startswith("Category:"):
+                    continue
+                category_params = {
+                    "action": "query", "format": "json", "generator": "categorymembers",
+                    "gcmtitle": category_title, "gcmtype": "file", "gcmlimit": 30,
+                    "prop": "imageinfo", "iiprop": "url|extmetadata|mime", "iiurlwidth": 480,
+                    "iiextmetadatafilter": "Artist|Credit|LicenseShortName|LicenseUrl|UsageTerms"
+                }
+                try:
+                    category_payload = request_json("https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode(category_params), provider="Wikimedia Commons")
+                    query_count += 1
+                    inspect_pages((category_payload.get("query") or {}).get("pages", {}).values(), "category:" + category_title)
+                except Exception as exc:
+                    print(f"COMMONS_IMAGE_CATEGORY_WARNING: {name} [{category_title}]: {exc}")
+                    if "HTTP 429" in str(exc):
+                        IMAGE_LOOKUP_RATE_LIMITED = True
+                        break
+        except Exception as exc:
+            print(f"COMMONS_IMAGE_CATEGORY_SEARCH_WARNING: {name}: {exc}")
+            if "HTTP 429" in str(exc):
+                IMAGE_LOOKUP_RATE_LIMITED = True
+
+    IMAGE_DIAGNOSTICS.setdefault("search_details", []).append({
+        "name": name, "queries": query_count, "candidate_files": len(seen_titles),
+        "accepted": len(candidates), "rejections": rejection_counts
+    })
     if not candidates:
+        print(f"COMMONS_IMAGE_NOT_FOUND: {name}; queries={query_count}; candidates={len(seen_titles)}; rejections={rejection_counts}")
         return None
     candidates.sort(key=lambda item: item[0], reverse=True)
+    print(f"COMMONS_IMAGE_MATCH: {name}; method={candidates[0][1].get('image_match_method')}; score={candidates[0][0]:.2f}")
     return candidates[0][1]
 
 def record_image(name, result, sport="other"):
