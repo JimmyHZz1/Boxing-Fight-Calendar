@@ -24,6 +24,14 @@
     }
     return false;
   };
+  const isUpcoming=e=>{
+    const s=status(e),finished=["completed","complete","finished","ended","cancelled","canceled","postponed","abandoned"];
+    if(finished.includes(s))return false;
+    const value=dateValue(e),key=dateKey(value);
+    if(!value||key<today())return false;
+    if(/^\d{4}-\d{2}-\d{2}$/.test(String(value)))return true;
+    return timestamp(e)>Date.now();
+  };
   const make=(tag,cls,text)=>{const el=document.createElement(tag);if(cls)el.className=cls;if(text!=null)el.textContent=text;return el;};
   function eventsFor(sport){
     if(sport==="boxing")return window.BoxingSchedule?.getEvents?.()||[];
@@ -50,58 +58,57 @@
   }
   function renderTicker(){
     const root=$("next-event-ticker");if(!root)return;
+    root.classList.remove("is-auto-scrolling","is-paused");
     root.replaceChildren();
+    const track=make("div","next-event-track");
+    const originals=[];
     sports.forEach(sport=>{
       const rows=allEvents().filter(x=>x.sport===sport);
       const live=rows.filter(x=>isLive(x.event)).sort((a,b)=>timestamp(a.event)-timestamp(b.event))[0];
-      const next=rows.filter(x=>!isLive(x.event)&&dateKey(dateValue(x.event))>=today()).sort((a,b)=>timestamp(a.event)-timestamp(b.event))[0];
+      const next=rows.filter(x=>!isLive(x.event)&&isUpcoming(x.event)).sort((a,b)=>timestamp(a.event)-timestamp(b.event))[0];
       const chosen=live||next;if(!chosen)return;
       const event=chosen.event,button=make("button","next-event-item");
       button.type="button";button.dataset.sport=sport;
-      const sportName=make("small","next-event-sport",names[sport]);
-      const title=make("strong","next-event-name",event.name||event.title||"Event");
-      const badge=make("span","next-event-state",live?"● LIVE":"UPCOMING");
-      const target=event.start_at||event.main_card_at||event.start_time_utc||event.date||event.event_date;
       const info=make("span","next-event-info");
-      info.append(sportName,title);
-      if(!live&&target){const timer=make("small","next-event-countdown",window.SportsCountdown?.text?.(target)||"DATE TBC");timer.dataset.countdownTarget=/^\d{4}-\d{2}-\d{2}$/.test(String(target))?String(target):new Date(target).toISOString();info.append(timer);}
-      button.append(info,badge);
-      root.append(button);
-    });
-    if(!root.childElementCount)root.append(make("span","next-event-loading","No live or upcoming events currently listed."));
-    root.querySelectorAll("[data-ticker-clone]").forEach(node=>node.remove());
-    const originals=[...root.children].filter(node=>node.classList.contains("next-event-item"));
-    if(originals.length>1){
-      originals.forEach(node=>{const clone=node.cloneNode(true);clone.dataset.tickerClone="true";clone.setAttribute("aria-hidden","true");clone.tabIndex=-1;clone.querySelectorAll("button,a,[tabindex]").forEach(child=>child.tabIndex=-1);root.append(clone);});
-    }
-    root.scrollLeft=0;
-  }
-  let tickerFrame=0,tickerLast=0,tickerPaused=false;
-  function stopTicker(){if(tickerFrame)cancelAnimationFrame(tickerFrame);tickerFrame=0;tickerLast=0;}
-  function startTicker(){
-    stopTicker();
-    const root=$("next-event-ticker");
-    if(!root||window.matchMedia("(prefers-reduced-motion: reduce)").matches||root.scrollWidth<=root.clientWidth)return;
-    const step=now=>{
-      if(!tickerLast)tickerLast=now;
-      const delta=Math.min(50,now-tickerLast);tickerLast=now;
-      if(!tickerPaused){
-        const loopWidth=root.scrollWidth/2;
-        if(loopWidth>0){root.scrollLeft+=delta*.028;if(root.scrollLeft>=loopWidth)root.scrollLeft-=loopWidth;}
+      info.append(make("small","next-event-sport",names[sport]),make("strong","next-event-name",event.name||event.title||"Event"));
+      const target=event.start_at||event.main_card_at||event.start_time_utc||event.date||event.event_date;
+      if(!live&&target){
+        const timer=make("small","next-event-countdown",window.SportsCountdown?.text?.(target)||"DATE TBC");
+        timer.dataset.countdownTarget=/^\d{4}-\d{2}-\d{2}$/.test(String(target))?String(target):new Date(target).toISOString();
+        info.append(timer);
       }
-      tickerFrame=requestAnimationFrame(step);
-    };
-    tickerFrame=requestAnimationFrame(step);
+      const badge=make("span","next-event-state "+(live?"is-live":"is-upcoming"));
+      badge.append(make("i","next-event-state-icon",live?"●":"▣"),make("b",null,live?"LIVE":"UPCOMING"));
+      button.append(info,badge);track.append(button);originals.push(button);
+    });
+    if(!originals.length){root.append(make("span","next-event-loading","No live or upcoming events currently listed."));return;}
+    root.append(track);
+    const groupWidth=track.scrollWidth;
+    const required=Math.max(root.clientWidth*2.2,groupWidth*2);
+    let copies=1;
+    while(track.scrollWidth<required&&copies<12){
+      originals.forEach(node=>{
+        const clone=node.cloneNode(true);
+        clone.dataset.tickerClone="true";
+        clone.setAttribute("aria-hidden","true");
+        clone.tabIndex=-1;
+        track.append(clone);
+      });
+      copies++;
+    }
+    track.style.setProperty("--ticker-distance",groupWidth+"px");
+    track.style.setProperty("--ticker-offset","-"+groupWidth+"px");
+    track.style.setProperty("--ticker-duration",Math.max(24,groupWidth/22)+"s");
+    root.classList.add("is-auto-scrolling");
   }
   const tickerRoot=$("next-event-ticker");
   if(tickerRoot){
-    tickerRoot.addEventListener("click",event=>{const card=event.target.closest(".next-event-item");if(card&&!card.dataset.tickerClone)window.SportPages?.open?.(card.dataset.sport);});
-    tickerRoot.addEventListener("pointerenter",()=>{tickerPaused=true;});
-    tickerRoot.addEventListener("pointerleave",()=>{tickerPaused=false;});
-    tickerRoot.addEventListener("focusin",()=>{tickerPaused=true;});
-    tickerRoot.addEventListener("focusout",()=>{tickerPaused=false;});
-    tickerRoot.addEventListener("touchstart",()=>{tickerPaused=true;},{passive:true});
-    tickerRoot.addEventListener("touchend",()=>{tickerPaused=false;},{passive:true});
+    tickerRoot.addEventListener("click",event=>{
+      const card=event.target.closest(".next-event-item");
+      if(card)window.SportPages?.open?.(card.dataset.sport);
+    });
+    tickerRoot.addEventListener("touchstart",()=>tickerRoot.classList.add("is-paused"),{passive:true});
+    tickerRoot.addEventListener("touchend",()=>setTimeout(()=>tickerRoot.classList.remove("is-paused"),1200),{passive:true});
   }
   function render(){
     const liveRoot=$("live-now-events"),upcomingRoot=$("live-upcoming-events");
@@ -109,11 +116,16 @@
     renderTicker();
     const all=allEvents(),live=all.filter(x=>isLive(x.event)).sort((a,b)=>timestamp(a.event)-timestamp(b.event));
     liveRoot.replaceChildren();
-    $("live-now-count").textContent=live.length+" LIVE";
-    if(live.length)live.forEach(x=>{const row=renderSummary(x.sport,x.event,true);row.tabIndex=0;row.setAttribute("role","button");row.setAttribute("aria-label","Open "+names[x.sport]+" event: "+(x.event.name||x.event.title||"Event"));const open=()=>window.SportPages?.open?.(x.sport);row.addEventListener("click",open);row.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();open();}});liveRoot.append(row);});
-    else liveRoot.append(make("p","live-centre-empty","No events are currently marked live in the published feeds. Live indicators appear only when a source explicitly reports an event or session as live."));
+    const compact=document.body.classList.contains("compact-view");
+    const nextUpcoming=all.filter(x=>!isLive(x.event)&&isUpcoming(x.event)).sort((a,b)=>timestamp(a.event)-timestamp(b.event))[0];
+    const centreTitle=$("live-now-title");
+    const centreRows=compact?(live.length?live.slice(0,3):(nextUpcoming?[nextUpcoming]:[])):live;
+    if(centreTitle)centreTitle.textContent=compact&&!live.length?"NEXT UP":"LIVE NOW";
+    $("live-now-count").textContent=compact?(live.length?live.length+" LIVE":nextUpcoming?"NEXT EVENT":"NO EVENTS"):live.length+" LIVE";
+    if(centreRows.length)centreRows.forEach(x=>{const row=renderSummary(x.sport,x.event,isLive(x.event));row.tabIndex=0;row.setAttribute("role","button");row.setAttribute("aria-label","Open "+names[x.sport]+" event: "+(x.event.name||x.event.title||"Event"));const open=()=>window.SportPages?.open?.(x.sport);row.addEventListener("click",open);row.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();open();}});liveRoot.append(row);});
+    else liveRoot.append(make("p","live-centre-empty",compact?"No live or upcoming events are listed in the published feeds.":"No events are currently marked live in the published feeds. Live indicators appear only when a source explicitly reports an event or session as live."));
     const todayKey=today(),limit=new Date(Date.now()+7*86400000);const limitKey=new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/London"}).format(limit);
-    const upcoming=all.filter(x=>dateKey(dateValue(x.event))>=todayKey&&dateKey(dateValue(x.event))<=limitKey&&!isLive(x.event)).sort((a,b)=>timestamp(a.event)-timestamp(b.event)).slice(0,12);
+    const upcoming=all.filter(x=>isUpcoming(x.event)&&dateKey(dateValue(x.event))<=limitKey&&!isLive(x.event)).sort((a,b)=>timestamp(a.event)-timestamp(b.event)).slice(0,12);
     const upcomingCount=$("live-upcoming-count");if(upcomingCount)upcomingCount.textContent=upcoming.length+" UPCOMING";
     upcomingRoot.replaceChildren();
     if(upcoming.length)upcoming.forEach(x=>{const row=renderSummary(x.sport,x.event,false);row.classList.add("live-centre-upcoming");upcomingRoot.append(row);});
@@ -175,6 +187,7 @@
     $("featured-event-open").onclick=()=>window.SportPages?.open?.(sport);
     root.hidden=false;
   }
+  $("compact-view-toggle")?.addEventListener("click",()=>requestAnimationFrame(render));
   $("live-centre-calendar")?.addEventListener("click",()=>window.showScreen?.("calendar-screen"));
   $("open-version-history")?.addEventListener("click",e=>{e.preventDefault();window.showScreen?.("version-history-screen");});
   $("version-history-back")?.addEventListener("click",()=>window.showScreen?.("home-screen"));

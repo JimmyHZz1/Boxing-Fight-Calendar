@@ -1087,3 +1087,33 @@ body.compact-view .next-event-item{flex:0 0 min(205px,76vw)!important}
  body.compact-view .next-event-ticker{display:flex!important;flex-wrap:nowrap!important}
  body.compact-view .next-event-item{flex:0 0 min(190px,78vw)!important}
 }
+
+
+/* Reliable left-to-right Up Next ticker and readable compact live centre. */
+.next-event-ticker{display:block!important;position:relative;overflow-x:auto!important;overflow-y:hidden!important;white-space:nowrap;touch-action:pan-x;scrollbar-width:none}
+.next-event-ticker::-webkit-scrollbar{display:none}
+.next-event-track{display:flex;width:max-content;min-width:max-content;gap:9px;will-change:transform;animation:nextTickerRight var(--ticker-duration,42s) linear infinite}
+.next-event-ticker.is-auto-scrolling:hover .next-event-track,
+.next-event-ticker.is-auto-scrolling:focus-within .next-event-track,
+.next-event-ticker.is-paused .next-event-track{animation-play-state:paused}
+.next-event-ticker.is-auto-scrolling .next-event-item{flex:0 0 min(250px,78vw)!important;min-height:66px}
+@keyframes nextTickerRight{from{transform:translateX(var(--ticker-offset,-50%))}to{transform:translateX(0)}}
+.next-event-state{display:inline-flex!important;align-items:center;gap:5px;border-radius:3px;padding:6px 8px!important;font-size:9px!important;font-weight:900;letter-spacing:.7px;white-space:nowrap}
+.next-event-state-icon{font-size:12px;line-height:1}
+.next-event-state.is-live{background:rgba(220,63,70,.16)!important;border-color:#e34b52!important;color:#ff7378!important}
+.next-event-state.is-upcoming{background:rgba(226,180,91,.13)!important;border-color:#b98c42!important;color:#e9c47d!important}
+.next-event-state.is-live .next-event-state-icon{animation:livePulse 1.4s ease-in-out infinite}
+@keyframes livePulse{50%{opacity:.35;transform:scale(.82)}}
+body.compact-view #home-screen .live-upcoming-panel{display:none!important}
+body.compact-view #home-screen #live-now-events{display:grid!important;gap:6px!important}
+body.compact-view #home-screen .live-centre-info small{display:block!important;font-size:9px!important;line-height:1.2}
+body.compact-view #home-screen .live-centre-event{grid-template-columns:minmax(0,1fr) auto!important;gap:8px!important;padding:8px 10px!important}
+body.compact-view #home-screen .live-centre-info strong{font-size:15px!important}
+body.compact-view #home-screen .live-centre-badge{font-size:8px!important}
+body.compact-view #home-screen .live-centre-empty{display:block!important;font-size:10px}
+@media(prefers-reduced-motion:reduce){.next-event-track{animation:none!important;transform:none!important}.next-event-state.is-live .next-event-state-icon{animation:none!important}}
+/* Driver assets are tall cut-outs; anchor the crop at the face rather than the chest. */
+.hub-person>img.hub-driver-portrait-official-f1{object-fit:cover!important;object-position:50% 0%!important;transform:scale(1.32);transform-origin:50% 0}
+.hub-person:has(.hub-driver-portrait-official-f1){overflow:hidden}
+.hub-person>img.hub-constructor-logo{width:74px!important;height:46px!important;max-width:74px!important;object-fit:contain!important;object-position:center!important;background:transparent!important;border:0!important;border-radius:0!important;padding:2px!important}
+@media(max-width:520px){.next-event-ticker.is-auto-scrolling .next-event-item{flex-basis:min(215px,82vw)!important;min-height:58px}.hub-person>img.hub-driver-portrait-official-f1{transform:scale(1.3)}.hub-person>img.hub-constructor-logo{width:66px!important;height:42px!important}}

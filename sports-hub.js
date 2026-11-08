@@ -18,12 +18,13 @@
   function person(item, index, label) {
     const local = localImages[imageKey(item.name)];
     const officialF1 = (active==="f1" && label==="Driver") || item.image_source==="Formula1.com" || item.image_match_method==="official-driver-profile";
-    const localPath = !officialF1 && local && local.path ? "./"+String(local.path).replace(/^[/]+/,"") : (!officialF1 && item.image_url && item.image_url.startsWith("./assets/") ? item.image_url : "");
-    const source = officialF1 ? item.image_url : (localPath ? "https://raw.githubusercontent.com/JimmyHZz1/Boxing-Fight-Calendar/main/"+String(local?.path || item.image_url).replace(/^\.\//,"").replace(/^\//,"") : item.image_url);
-    const credit = local?.attribution || item.image_credit;
+    const officialPdc = item.image_source==="PDC Europe" || item.image_match_method==="official-pdc-tour-card-photo";
+    const localPath = !officialF1 && !officialPdc && local && local.path ? "./"+String(local.path).replace(/^[/]+/,"") : (!officialF1 && !officialPdc && item.image_url && item.image_url.startsWith("./assets/") ? item.image_url : "");
+    const source = (officialF1 || officialPdc) ? item.image_url : (localPath ? "https://raw.githubusercontent.com/JimmyHZz1/Boxing-Fight-Calendar/main/"+String(local?.path || item.image_url).replace(/^\.\//,"").replace(/^\//,"") : item.image_url);
+    const credit = (officialPdc || officialF1) ? item.image_credit : (local?.attribution || item.image_credit);
     const constructor = label==="Constructor";
     const fallback = constructor ? constructorWordmark(item.name) : initials(item.name);
-    const img = constructor ? '<span class="hub-constructor-fallback" role="img" aria-label="'+esc(item.name+" logo")+'" style="--team-color:'+constructorColour(item.name)+'">'+constructorBadge(item.name)+'</span>' : (source ? '<img class="hub-driver-portrait'+(officialF1?' hub-driver-portrait-official-f1':'')+'" src="'+esc(source)+'" alt="'+esc(item.name+" portrait")+'" loading="lazy" data-image-kind="driver" data-official-f1="'+(officialF1?"1":"0")+'" data-image-entity="'+esc(item.name||"") + '" data-image-fallback="'+esc(fallback)+'">': '<span class="hub-avatar-fallback hub-driver-fallback">'+esc(fallback)+'</span>');
+    const img = constructor ? (source ? '<img class="hub-constructor-logo" src="'+esc(source)+'" alt="'+esc(item.name+" logo")+'" loading="lazy" data-image-kind="constructor" data-image-entity="'+esc(item.name||"")+'" data-image-fallback="'+esc(fallback)+'" style="--team-color:'+constructorColour(item.name)+'">' : '<span class="hub-constructor-fallback" role="img" aria-label="'+esc(item.name+" logo")+'" style="--team-color:'+constructorColour(item.name)+'">'+constructorBadge(item.name)+'</span>') : (source ? '<img class="hub-driver-portrait'+(officialF1?' hub-driver-portrait-official-f1':'')+'" src="'+esc(source)+'" alt="'+esc(item.name+" portrait")+'" loading="lazy" data-image-kind="driver" data-official-pdc="' + (officialPdc?"1":"0") + '" data-official-f1="'+(officialF1?"1":"0")+'" data-image-entity="'+esc(item.name||"") + '" data-image-fallback="'+esc(fallback)+'">': '<span class="hub-avatar-fallback hub-driver-fallback">'+esc(fallback)+'</span>');
     const rank = item.rank != null ? (item.rank===0 ? "C" : "#"+item.rank) : (index+1);
     const extra = [item.team,item.prize_money?"£"+item.prize_money:(item.points!=null?item.points+" pts":null),item.org,credit].filter(Boolean).join(" · ");
     return '<div class="hub-person">'+img+'<span class="hub-rank">'+esc(rank)+'</span><span class="hub-person-name"><strong>'+esc(item.name||"TBC")+'</strong><small>'+esc(extra||label||"")+'</small></span></div>';
@@ -64,7 +65,7 @@
     root.querySelectorAll("img[data-image-entity]").forEach(img=>{
       img.addEventListener("load",()=>{imageLoads++;updateImageDiagnostics();},{once:true});
       img.addEventListener("error",()=>{
-        if(img.dataset.remoteRetry!=="1" && img.dataset.imageEntity && img.dataset.officialF1!=="1"){
+        if(img.dataset.remoteRetry!=="1" && img.dataset.imageEntity && img.dataset.officialF1!=="1" && img.dataset.officialPdc!=="1"){
           img.dataset.remoteRetry="1";
           const local=localImages[imageKey(img.dataset.imageEntity)];
           const path=local?.path;
