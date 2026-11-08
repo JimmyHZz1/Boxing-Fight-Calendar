@@ -8,7 +8,7 @@ on:
       - ".github/workflows/enrich-images.yml"
       - "data/image-library.json"
   schedule:
-    - cron: "47 */4 * * *"
+    - cron: "*/15 * * * *"
   workflow_dispatch:
 
 permissions:
