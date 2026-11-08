@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#101114">
   <meta name="description" content="Boxing, Formula 1, UFC and PDC darts schedules in one sports calendar, shown in UK local time.">
   <link rel="manifest" href="./manifest.json">
-  <link rel="stylesheet" href="./styles.css?v=20261108-62">
+  <link rel="stylesheet" href="./styles.css?v=20261108-63">
   <title>Sports Calendar</title>
 </head>
 <body>
@@ -148,11 +148,17 @@
             </select>
             <p class="settings-help">Previewing won't change your saved favourite until you apply it.</p>
           </div>
-          <div class="theme-preview-stage" id="theme-preview-stage" aria-live="polite">
+          <div class="theme-preview-stage theme-preview-fullpage" id="theme-preview-stage" aria-live="polite">
             <div class="theme-preview-diagonals" aria-hidden="true"></div>
-            <div class="theme-preview-caption"><span class="eyebrow">LIVE THEME PREVIEW</span><strong id="theme-preview-name">SPORTS CALENDAR</strong></div>
-            <div class="theme-preview-hero"><span class="eyebrow">FIVE SPORTS · ONE PLACE</span><h3>Every sport.<br><em>One calendar.</em></h3><p>Formula 1, PDC darts, boxing, UFC and BKFC.</p><span class="theme-preview-cta">EXPLORE CALENDAR&nbsp; →</span></div>
-            <div class="theme-preview-mini-grid"><div><small>UP NEXT</small><strong>RACE WEEKEND</strong><span>Formula 1</span></div><div><small>CHAMPIONSHIP</small><strong>DRIVER STANDINGS</strong><span>2026 season</span></div></div>
+            <div class="theme-preview-caption"><span class="eyebrow">FULL WEBSITE THEME PREVIEW</span><strong id="theme-preview-name">SPORTS CALENDAR</strong></div>
+            <div class="preview-site-topbar"><div class="preview-site-brand"><b>S</b><span><strong>SPORTS</strong><small>CALENDAR</small></span></div><span class="preview-site-status"><i></i> SCHEDULE</span></div>
+            <div class="preview-site-sports"><span class="selected">F1</span><span>DARTS</span><span>BOXING</span><span>UFC</span><span>BKFC</span></div>
+            <div class="preview-site-ticker"><b>UP NEXT</b><span>FORMULA 1&nbsp; · &nbsp;RACE WEEKEND</span><span>→</span></div>
+            <section class="preview-site-hero"><span class="eyebrow">FIVE SPORTS · ONE PLACE</span><h3>Every sport.<br><em>One calendar.</em></h3><p>Formula 1, PDC darts, boxing, UFC and BKFC — all in one place.</p><span class="theme-preview-cta">EXPLORE CALENDAR&nbsp; →</span><div class="preview-site-meta">🇬🇧 UK LOCAL TIME <span>LIVE SPORTS CENTRE</span></div></section>
+            <section class="preview-site-section"><div class="preview-site-heading"><span class="eyebrow">ACROSS ALL FIVE SPORTS</span><b>Live Sports Centre</b></div><div class="preview-site-live"><i></i><span><small>LIVE NOW</small><strong>Race weekend coverage</strong></span><b>LIVE</b></div><div class="preview-site-live"><i></i><span><small>COMING UP</small><strong>Next events across your sports</strong></span><b>→</b></div></section>
+            <section class="preview-site-section"><div class="preview-site-heading"><span class="eyebrow">CHOOSE YOUR SPORT</span><b>Explore the calendar</b></div><div class="preview-site-sportcards"><div><small>MOTORSPORT</small><b>FORMULA 1</b><span>RACES · RESULTS</span></div><div><small>PDC TOUR</small><b>DARTS</b><span>TOURNAMENTS</span></div><div><small>THE FIGHT GAME</small><b>BOXING</b><span>FIGHT NIGHTS</span></div></div></section>
+            <section class="preview-site-section"><div class="preview-site-heading"><span class="eyebrow">CHAMPIONSHIP</span><b>Driver standings</b></div><div class="preview-site-standing"><b>01</b><span>Driver championship</span><strong>2026</strong></div><div class="preview-site-standing"><b>02</b><span>Constructor championship</span><strong>2026</strong></div></section>
+            <div class="preview-site-bottomnav"><span class="active">⌂<small>HOME</small></span><span>▦<small>CALENDAR</small></span><span>◷<small>WEEKEND</small></span><span>⚙<small>SETTINGS</small></span></div>
           </div>
           <div class="theme-preview-actions"><button type="button" class="primary-button" id="apply-preview-theme">APPLY THIS THEME</button><button type="button" class="secondary-button" id="cancel-preview-theme">CANCEL PREVIEW</button></div>
           <div class="favourite-team-actions"><button type="button" class="secondary-button" id="settings-back">← BACK TO HOME</button></div>
@@ -180,7 +186,7 @@
     </nav>
     <footer class="footer"><a class="version-history-link" href="#version-history" id="open-version-history">VERSION HISTORY</a><span>•</span> SPORTS CALENDAR <span>•</span> UK LOCAL TIME <span>•</span> PDC logo: <a href="https://commons.wikimedia.org/wiki/File:Professional_Darts_Corporation_logo.png" target="_blank" rel="noopener noreferrer">Chris Ibbotson, CC BY-SA 4.0</a> <span>•</span> BKFC SCHEDULE: <a href="https://www.bkfc.com/events" target="_blank" rel="noopener noreferrer">BKFC</a> <span>•</span> BOXING DATA: <a href="https://boxerbook.com" target="_blank" rel="noopener noreferrer">BOXERBOOK</a></footer>
   </div>
-  <script src="./app.js?v=20261108-39"></script>
+  <script src="./app.js?v=20261108-40"></script>
   <script src="./sports-data.js?v=20261108-06"></script>
   <script src="./sports.js?v=20261107-09"></script>
   <script src="./sports-hub.js?v=20261108-13"></script>
