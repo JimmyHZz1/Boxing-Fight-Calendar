@@ -159,6 +159,7 @@ function appendFighterName(container,name,nationality) {
   container.replaceChildren();
   const flag=nationalityFlag(nationality);
   if(flag){const icon=document.createElement("span");icon.className="nationality-flag";icon.textContent=flag.emoji;icon.title=countryName(flag.code)||flag.code;icon.setAttribute("aria-label",icon.title+" flag");container.append(icon);}
+  container.append(fighterPortrait(name));
   const label=document.createElement("span");label.className="fighter-name";label.textContent=name;container.append(label);
 }
 
