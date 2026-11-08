@@ -415,9 +415,65 @@
       "image_match_method": "search:BWT Alpine F1 Team",
       "image_verified_at": "2026-11-08T13:30:56Z",
       "image_local_path": "assets/images/f1-constructors/alpine-f1-team.png"
+    },
+    "haas f1 team": {
+      "name": "Haas F1 Team",
+      "sport": "f1 constructors",
+      "image_url": "./assets/images/f1-constructors/haas-f1-team.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:MoneyGram_Haas_F1_Team_Logo.svg",
+      "image_credit": "Wikimedia Commons · Haas F1 Team · Public domain",
+      "image_license": "Public domain",
+      "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "search:MoneyGram Haas F1 Team",
+      "image_verified_at": "2026-11-08T13:32:47Z",
+      "image_local_path": "assets/images/f1-constructors/haas-f1-team.png"
+    },
+    "audi": {
+      "name": "Audi",
+      "sport": "f1 constructors",
+      "image_url": "./assets/images/f1-constructors/audi.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Audif1.com_logo17.svg",
+      "image_credit": "Wikimedia Commons · Audi Revolut F1 Team / Sauber Motorsports AG · Public domain",
+      "image_license": "Public domain",
+      "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "search:Audi Revolut F1 Team",
+      "image_verified_at": "2026-11-08T13:32:47Z",
+      "image_local_path": "assets/images/f1-constructors/audi.png"
+    },
+    "williams": {
+      "name": "Williams",
+      "sport": "f1 constructors",
+      "image_url": "./assets/images/f1-constructors/williams.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:20150130002217!Williams_Martini_Racing_logo.png",
+      "image_credit": "Wikimedia Commons · Unknown authorUnknown author · Public domain",
+      "image_license": "Public domain",
+      "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "search:Williams Racing",
+      "image_verified_at": "2026-11-08T13:32:47Z",
+      "image_local_path": "assets/images/f1-constructors/williams.png"
+    },
+    "cadillac f1 team": {
+      "name": "Cadillac F1 Team",
+      "sport": "f1 constructors",
+      "image_url": "./assets/images/f1-constructors/cadillac-f1-team.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Cadillac_Formula_1_Team_logo.png",
+      "image_credit": "Wikimedia Commons · TedNauru · CC0",
+      "image_license": "CC0",
+      "image_license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "search:Cadillac Formula 1 Team",
+      "image_verified_at": "2026-11-08T13:32:47Z",
+      "image_local_path": "assets/images/f1-constructors/cadillac-f1-team.png"
     }
   },
-  "updated_at": "2026-11-08T13:30:56Z",
+  "updated_at": "2026-11-08T13:32:47Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -453,6 +509,11 @@
     "red bull": "2026-11-08T13:30:56Z",
     "mclaren": "2026-11-08T13:30:56Z",
     "rb f1 team": "2026-11-08T13:30:56Z",
-    "alpine f1 team": "2026-11-08T13:30:56Z"
+    "alpine f1 team": "2026-11-08T13:30:56Z",
+    "haas f1 team": "2026-11-08T13:32:47Z",
+    "audi": "2026-11-08T13:32:47Z",
+    "williams": "2026-11-08T13:32:47Z",
+    "aston martin": "2026-11-08T13:32:47Z",
+    "cadillac f1 team": "2026-11-08T13:32:47Z"
   }
 }

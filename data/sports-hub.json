@@ -473,17 +473,47 @@
         {
           "rank": 7,
           "name": "Haas F1 Team",
-          "points": "31"
+          "points": "31",
+          "image_url": "./assets/images/f1-constructors/haas-f1-team.png",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:MoneyGram_Haas_F1_Team_Logo.svg",
+          "image_credit": "Wikimedia Commons · Haas F1 Team · Public domain",
+          "image_license": "Public domain",
+          "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1.0,
+          "image_match_method": "search:MoneyGram Haas F1 Team",
+          "image_verified_at": "2026-11-08T13:32:47Z",
+          "image_local_path": "assets/images/f1-constructors/haas-f1-team.png"
         },
         {
           "rank": 8,
           "name": "Audi",
-          "points": "27"
+          "points": "27",
+          "image_url": "./assets/images/f1-constructors/audi.png",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Audif1.com_logo17.svg",
+          "image_credit": "Wikimedia Commons · Audi Revolut F1 Team / Sauber Motorsports AG · Public domain",
+          "image_license": "Public domain",
+          "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1.0,
+          "image_match_method": "search:Audi Revolut F1 Team",
+          "image_verified_at": "2026-11-08T13:32:47Z",
+          "image_local_path": "assets/images/f1-constructors/audi.png"
         },
         {
           "rank": 9,
           "name": "Williams",
-          "points": "12"
+          "points": "12",
+          "image_url": "./assets/images/f1-constructors/williams.png",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:20150130002217!Williams_Martini_Racing_logo.png",
+          "image_credit": "Wikimedia Commons · Unknown authorUnknown author · Public domain",
+          "image_license": "Public domain",
+          "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1.0,
+          "image_match_method": "search:Williams Racing",
+          "image_verified_at": "2026-11-08T13:32:47Z",
+          "image_local_path": "assets/images/f1-constructors/williams.png"
         },
         {
           "rank": 10,
@@ -493,7 +523,17 @@
         {
           "rank": 11,
           "name": "Cadillac F1 Team",
-          "points": "0"
+          "points": "0",
+          "image_url": "./assets/images/f1-constructors/cadillac-f1-team.png",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Cadillac_Formula_1_Team_logo.png",
+          "image_credit": "Wikimedia Commons · TedNauru · CC0",
+          "image_license": "CC0",
+          "image_license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1.0,
+          "image_match_method": "search:Cadillac Formula 1 Team",
+          "image_verified_at": "2026-11-08T13:32:47Z",
+          "image_local_path": "assets/images/f1-constructors/cadillac-f1-team.png"
         }
       ],
       "season": 2026,
@@ -3864,76 +3904,64 @@
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
     "attempted": 5,
-    "found": 30,
-    "missing": 705,
+    "found": 34,
+    "missing": 701,
     "rejected": 0,
     "by_sport": {
       "f1 constructors": {
         "attempted": 5,
-        "found": 3,
-        "missing": 2,
+        "found": 4,
+        "missing": 1,
         "rejected": 0
       }
     },
     "rejection_reasons": {
-      "surname_not_matched": 5,
-      "missing_licence_or_source_metadata": 10,
-      "not_an_image": 37
+      "not_an_image": 4
     },
     "search_details": [
       {
-        "name": "Ferrari",
+        "name": "Haas F1 Team",
+        "queries": 2,
+        "candidate_files": 11,
+        "accepted": 10,
+        "rejections": {
+          "not_an_image": 1
+        }
+      },
+      {
+        "name": "Audi",
+        "queries": 2,
+        "candidate_files": 2,
+        "accepted": 2,
+        "rejections": {}
+      },
+      {
+        "name": "Williams",
         "queries": 1,
         "candidate_files": 20,
-        "accepted": 15,
-        "rejections": {
-          "surname_not_matched": 3,
-          "missing_licence_or_source_metadata": 2
-        }
+        "accepted": 20,
+        "rejections": {}
       },
       {
-        "name": "Red Bull",
-        "queries": 3,
-        "candidate_files": 7,
-        "accepted": 0,
-        "rejections": {
-          "not_an_image": 7
-        }
-      },
-      {
-        "name": "McLaren",
+        "name": "Aston Martin",
         "queries": 2,
-        "candidate_files": 36,
-        "accepted": 6,
-        "rejections": {
-          "not_an_image": 22,
-          "missing_licence_or_source_metadata": 6,
-          "surname_not_matched": 2
-        }
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
       },
       {
-        "name": "RB F1 Team",
+        "name": "Cadillac F1 Team",
         "queries": 2,
-        "candidate_files": 3,
-        "accepted": 0,
+        "candidate_files": 4,
+        "accepted": 1,
         "rejections": {
           "not_an_image": 3
         }
-      },
-      {
-        "name": "Alpine F1 Team",
-        "queries": 2,
-        "candidate_files": 8,
-        "accepted": 1,
-        "rejections": {
-          "missing_licence_or_source_metadata": 2,
-          "not_an_image": 5
-        }
       }
     ],
-    "checked_at": "2026-11-08T13:30:56Z",
-    "library_entries": 30,
-    "newly_found": 3,
+    "checked_at": "2026-11-08T13:32:47Z",
+    "library_entries": 34,
+    "newly_found": 4,
     "coverage": {
       "boxing fight card fighters": {
         "total": 187,
@@ -3947,8 +3975,8 @@
       },
       "f1 constructors": {
         "total": 11,
-        "with_image": 4,
-        "missing": 7
+        "with_image": 8,
+        "missing": 3
       },
       "darts": {
         "total": 225,

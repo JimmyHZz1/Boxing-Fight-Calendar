@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-08T13:30:56Z",
+  "updated_at": "2026-11-08T13:32:47Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -332,6 +332,50 @@
       "creator": "Wikimedia Commons · KarlMarx1889 · CC0",
       "attribution": "Wikimedia Commons · KarlMarx1889 · CC0",
       "verified_at": "2026-11-08T13:30:56Z",
+      "sport": "f1 constructors"
+    },
+    "haas f1 team": {
+      "name": "Haas F1 Team",
+      "path": "assets/images/f1-constructors/haas-f1-team.png",
+      "source_url": "https://commons.wikimedia.org/wiki/File:MoneyGram_Haas_F1_Team_Logo.svg",
+      "licence": "Public domain",
+      "licence_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "creator": "Wikimedia Commons · Haas F1 Team · Public domain",
+      "attribution": "Wikimedia Commons · Haas F1 Team · Public domain",
+      "verified_at": "2026-11-08T13:32:47Z",
+      "sport": "f1 constructors"
+    },
+    "audi": {
+      "name": "Audi",
+      "path": "assets/images/f1-constructors/audi.png",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Audif1.com_logo17.svg",
+      "licence": "Public domain",
+      "licence_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "creator": "Wikimedia Commons · Audi Revolut F1 Team / Sauber Motorsports AG · Public domain",
+      "attribution": "Wikimedia Commons · Audi Revolut F1 Team / Sauber Motorsports AG · Public domain",
+      "verified_at": "2026-11-08T13:32:47Z",
+      "sport": "f1 constructors"
+    },
+    "williams": {
+      "name": "Williams",
+      "path": "assets/images/f1-constructors/williams.png",
+      "source_url": "https://commons.wikimedia.org/wiki/File:20150130002217!Williams_Martini_Racing_logo.png",
+      "licence": "Public domain",
+      "licence_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "creator": "Wikimedia Commons · Unknown authorUnknown author · Public domain",
+      "attribution": "Wikimedia Commons · Unknown authorUnknown author · Public domain",
+      "verified_at": "2026-11-08T13:32:47Z",
+      "sport": "f1 constructors"
+    },
+    "cadillac f1 team": {
+      "name": "Cadillac F1 Team",
+      "path": "assets/images/f1-constructors/cadillac-f1-team.png",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Cadillac_Formula_1_Team_logo.png",
+      "licence": "CC0",
+      "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "creator": "Wikimedia Commons · TedNauru · CC0",
+      "attribution": "Wikimedia Commons · TedNauru · CC0",
+      "verified_at": "2026-11-08T13:32:47Z",
       "sport": "f1 constructors"
     }
   },
