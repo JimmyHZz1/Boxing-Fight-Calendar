@@ -72,33 +72,41 @@ function applyFavouriteTeam(team,save=true){
   document.documentElement.style.setProperty("--team-glow",theme.glow);
   const meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.content=theme.chrome;
   document.documentElement.dataset.favouriteF1Team=team||"none";
-  const select=$("favourite-f1-team");if(select&&select.value!==team)select.value=team||"";
   if(save){try{localStorage.setItem("sports-calendar-favourite-f1-team",team||"");}catch(_){}}
 }
 let savedFavouriteTeam="";try{savedFavouriteTeam=localStorage.getItem("sports-calendar-favourite-f1-team")||"";}catch(_){}
 applyFavouriteTeam(savedFavouriteTeam,false);
-$("open-settings")?.addEventListener("click",()=>showScreen("settings-screen"));
-$("settings-back")?.addEventListener("click",()=>showScreen("home-screen"));
-$("favourite-f1-team")?.addEventListener("change",event=>{savedFavouriteTeam=event.target.value;applyFavouriteTeam(savedFavouriteTeam,true);});
-// Interactive team theme preview: changes remain temporary until Apply is pressed.
 let previewFavouriteTeam=savedFavouriteTeam;
 function setThemePreview(team){
   previewFavouriteTeam=team||"";
-  applyFavouriteTeam(previewFavouriteTeam,false);
+  const theme=favouriteTeamThemes[previewFavouriteTeam]||{accent:"#e2b45b",glow:"#29221a",chrome:"#101114"};
   const name=previewFavouriteTeam||"Sports Calendar";
   const title=$("theme-preview-name");if(title)title.textContent=name.toUpperCase();
-  const stage=$("theme-preview-stage");if(stage)stage.dataset.team=previewFavouriteTeam||"default";
+  const stage=$("theme-preview-stage");
+  if(stage){
+    stage.dataset.team=previewFavouriteTeam||"default";
+    stage.style.setProperty("--preview-accent",theme.accent);
+    stage.style.setProperty("--preview-glow",theme.glow);
+  }
   const select=$("theme-preview-team");if(select&&select.value!==previewFavouriteTeam)select.value=previewFavouriteTeam;
 }
-$("open-settings")?.addEventListener("click",()=>setThemePreview(savedFavouriteTeam));
+function openThemeSettings(){
+  setThemePreview(savedFavouriteTeam);
+  showScreen("settings-screen");
+}
+function cancelThemePreview(){
+  setThemePreview(savedFavouriteTeam);
+  showScreen("home-screen");
+}
+$("open-settings")?.addEventListener("click",openThemeSettings);
 $("theme-preview-team")?.addEventListener("change",event=>setThemePreview(event.target.value));
 $("apply-preview-theme")?.addEventListener("click",()=>{
   savedFavouriteTeam=previewFavouriteTeam;
   applyFavouriteTeam(savedFavouriteTeam,true);
-  const mainSelect=$("favourite-f1-team");if(mainSelect)mainSelect.value=savedFavouriteTeam;
   showScreen("home-screen");
 });
-$("cancel-preview-theme")?.addEventListener("click",()=>setThemePreview(savedFavouriteTeam));
+$("cancel-preview-theme")?.addEventListener("click",cancelThemePreview);
+$("settings-back")?.addEventListener("click",cancelThemePreview);
 
 function fighterNames(b) {
   return [b.fighter1||b.fighter_a||b.red_corner||b.boxer1||"TBC", b.fighter2||b.fighter_b||b.blue_corner||b.boxer2||"TBC"];
