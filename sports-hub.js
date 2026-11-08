@@ -7,6 +7,12 @@
   const sportNames = {f1:"FORMULA 1",darts:"PDC DARTS",boxing:"BOXING WORLD CHAMPIONS",ufc:"UFC"};
   const esc = value => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
   const initials = name => String(name || "?").split(/\s+/).slice(0,2).map(x=>x[0]||"").join("").toUpperCase();
+  const moneyLabel = value => {
+    const raw = String(value ?? "").trim();
+    if (!raw) return "";
+    const amount = Number(raw.replace(/[£,\\s]/g, ""));
+    return Number.isFinite(amount) ? "£" + amount.toLocaleString("en-GB", {maximumFractionDigits:0}) + " prize money" : "£" + raw + " prize money";
+  };
   const constructorWordmark = name => ({Mercedes:"MER",Ferrari:"FER","Red Bull":"RBR",McLaren:"MCL","RB F1 Team":"RB","Alpine F1 Team":"ALP","Haas F1 Team":"HAS",Audi:"AUD",Williams:"WIL","Aston Martin":"AMR","Cadillac F1 Team":"CAD"}[name] || String(name||"F1").slice(0,3).toUpperCase());
   const constructorColour = name => ({Mercedes:"#00d2be",Ferrari:"#ef1a2d","Red Bull":"#4776d0",McLaren:"#ff8700","RB F1 Team":"#6c9bd2","Alpine F1 Team":"#168bd2","Haas F1 Team":"#c7cbd1",Audi:"#f02b32",Williams:"#39a9df","Aston Martin":"#00a58b","Cadillac F1 Team":"#e5e5e5"}[name] || "#e2b45b");
   const constructorBadge = name => name==="Mercedes" ? '<svg class="hub-mercedes-star" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><circle cx="50" cy="50" r="43" fill="none" stroke="currentColor" stroke-width="5"/><path d="M50 12 L45 48 L19 70 L24 77 L50 60 L76 77 L81 70 L55 48 Z" fill="currentColor"/><path d="M50 12 L50 50 L45 48 Z M50 50 L19 70 L24 77 Z M50 50 L81 70 L76 77 Z" fill="#17191e" opacity=".32"/></svg>' : esc(constructorWordmark(name));
@@ -26,7 +32,7 @@
     const fallback = constructor ? constructorWordmark(item.name) : initials(item.name);
     const img = constructor ? '<span class="hub-constructor-fallback hub-constructor-broadcast" role="img" aria-label="'+esc(item.name+" F1 timing-board mark")+'" style="--team-color:'+constructorColour(item.name)+'">'+constructorBadge(item.name)+'</span>' : (source ? '<img class="hub-driver-portrait'+(officialF1?' hub-driver-portrait-official-f1':'')+'" src="'+esc(source)+'" alt="'+esc(item.name+" portrait")+'" loading="lazy" data-image-kind="driver" data-official-pdc="' + (officialPdc?"1":"0") + '" data-official-f1="'+(officialF1?"1":"0")+'" data-image-entity="'+esc(item.name||"") + '" data-image-fallback="'+esc(fallback)+'">': '<span class="hub-avatar-fallback hub-driver-fallback">'+esc(fallback)+'</span>');
     const rank = item.rank != null ? (item.rank===0 ? "C" : "#"+item.rank) : (index+1);
-    const extra = [item.team,item.prize_money?"£"+item.prize_money:(item.points!=null?item.points+" pts":null),item.org,credit].filter(Boolean).join(" · ");
+    const extra = [item.team,item.prize_money?moneyLabel(item.prize_money):(item.points!=null?item.points+" pts":null),item.org,credit].filter(Boolean).join(" · ");
     return '<div class="hub-person'+(label==="Player" && officialPdc?' hub-pdc-player':'')+'">'+img+'<span class="hub-rank">'+esc(rank)+'</span><span class="hub-person-name"><strong>'+esc(item.name||"TBC")+'</strong><small>'+esc(extra||label||"")+'</small></span></div>';
   }
   function dropdown(title, items, label, max=30) {
