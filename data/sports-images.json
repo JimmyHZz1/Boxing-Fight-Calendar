@@ -317,9 +317,65 @@
       "image_match_method": "search:Lance Stroll",
       "image_verified_at": "2026-11-08T13:28:36Z",
       "image_local_path": "assets/images/f1-drivers/lance-stroll.jpg"
+    },
+    "valtteri bottas": {
+      "name": "Valtteri Bottas",
+      "sport": "f1 drivers",
+      "image_url": "./assets/images/f1-drivers/valtteri-bottas.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Valtteri_Bottas_2016_Malaysia.jpg",
+      "image_credit": "Wikimedia Commons · Morio · CC BY-SA 4.0",
+      "image_license": "CC BY-SA 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "search:Valtteri Bottas",
+      "image_verified_at": "2026-11-08T13:29:20Z",
+      "image_local_path": "assets/images/f1-drivers/valtteri-bottas.jpg"
+    },
+    "sergio perez": {
+      "name": "Sergio Pérez",
+      "sport": "f1 drivers",
+      "image_url": "./assets/images/f1-drivers/sergio-perez.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:2021_US_GP_Sergio_Perez.jpg",
+      "image_credit": "Wikimedia Commons · Grahampurse · CC BY-SA 4.0",
+      "image_license": "CC BY-SA 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "search:Sergio Perez",
+      "image_verified_at": "2026-11-08T13:29:20Z",
+      "image_local_path": "assets/images/f1-drivers/sergio-perez.jpg"
+    },
+    "rafael camara": {
+      "name": "Rafael Camara",
+      "sport": "f1 drivers",
+      "image_url": "./assets/images/f1-drivers/rafael-camara.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Rafael_C%C3%A2mara_in_2022.jpg",
+      "image_credit": "Wikimedia Commons · KVYTICAL · CC BY-SA 4.0",
+      "image_license": "CC BY-SA 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Rafael Câmara in 2022",
+      "image_verified_at": "2026-11-08T13:29:20Z",
+      "image_local_path": "assets/images/f1-drivers/rafael-camara.jpg"
+    },
+    "mercedes": {
+      "name": "Mercedes",
+      "sport": "f1 constructors",
+      "image_url": "./assets/images/f1-constructors/mercedes.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Lewis_Hamilton_2014_China_Race.jpg",
+      "image_credit": "Wikimedia Commons · emperornie · CC BY-SA 2.0",
+      "image_license": "CC BY-SA 2.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "search:Mercedes F1",
+      "image_verified_at": "2026-11-08T13:29:20Z",
+      "image_local_path": "assets/images/f1-constructors/mercedes.jpg"
     }
   },
-  "updated_at": "2026-11-08T13:28:36Z",
+  "updated_at": "2026-11-08T13:29:20Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -346,6 +402,10 @@
     "alexander albon": "2026-11-08T13:28:36Z",
     "yuki tsunoda": "2026-11-08T13:28:36Z",
     "ryo hirakawa": "2026-11-08T13:28:36Z",
-    "lance stroll": "2026-11-08T13:28:36Z"
+    "lance stroll": "2026-11-08T13:28:36Z",
+    "valtteri bottas": "2026-11-08T13:29:20Z",
+    "sergio perez": "2026-11-08T13:29:20Z",
+    "rafael camara": "2026-11-08T13:29:20Z",
+    "mercedes": "2026-11-08T13:29:20Z"
   }
 }

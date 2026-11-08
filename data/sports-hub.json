@@ -354,26 +354,66 @@
           "rank": 23,
           "name": "Valtteri Bottas",
           "team": "Cadillac F1 Team",
-          "points": "0"
+          "points": "0",
+          "image_url": "./assets/images/f1-drivers/valtteri-bottas.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Valtteri_Bottas_2016_Malaysia.jpg",
+          "image_credit": "Wikimedia Commons · Morio · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1.0,
+          "image_match_method": "search:Valtteri Bottas",
+          "image_verified_at": "2026-11-08T13:29:20Z",
+          "image_local_path": "assets/images/f1-drivers/valtteri-bottas.jpg"
         },
         {
           "rank": 24,
           "name": "Sergio Pérez",
           "team": "Cadillac F1 Team",
-          "points": "0"
+          "points": "0",
+          "image_url": "./assets/images/f1-drivers/sergio-perez.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:2021_US_GP_Sergio_Perez.jpg",
+          "image_credit": "Wikimedia Commons · Grahampurse · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1.0,
+          "image_match_method": "search:Sergio Perez",
+          "image_verified_at": "2026-11-08T13:29:20Z",
+          "image_local_path": "assets/images/f1-drivers/sergio-perez.jpg"
         },
         {
           "rank": 25,
           "name": "Rafael Camara",
           "team": "Haas F1 Team",
-          "points": "0"
+          "points": "0",
+          "image_url": "./assets/images/f1-drivers/rafael-camara.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Rafael_C%C3%A2mara_in_2022.jpg",
+          "image_credit": "Wikimedia Commons · KVYTICAL · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1.0,
+          "image_match_method": "category:Category:Rafael Câmara in 2022",
+          "image_verified_at": "2026-11-08T13:29:20Z",
+          "image_local_path": "assets/images/f1-drivers/rafael-camara.jpg"
         }
       ],
       "constructors": [
         {
           "rank": 1,
           "name": "Mercedes",
-          "points": "630"
+          "points": "630",
+          "image_url": "./assets/images/f1-constructors/mercedes.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Lewis_Hamilton_2014_China_Race.jpg",
+          "image_credit": "Wikimedia Commons · emperornie · CC BY-SA 2.0",
+          "image_license": "CC BY-SA 2.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1.0,
+          "image_match_method": "search:Mercedes F1",
+          "image_verified_at": "2026-11-08T13:29:20Z",
+          "image_local_path": "assets/images/f1-constructors/mercedes.jpg"
         },
         {
           "rank": 2,
@@ -3794,75 +3834,84 @@
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
     "attempted": 5,
-    "found": 23,
-    "missing": 712,
+    "found": 27,
+    "missing": 708,
     "rejected": 0,
     "by_sport": {
       "f1 drivers": {
-        "attempted": 5,
-        "found": 5,
+        "attempted": 3,
+        "found": 3,
         "missing": 0,
+        "rejected": 0
+      },
+      "f1 constructors": {
+        "attempted": 2,
+        "found": 1,
+        "missing": 1,
         "rejected": 0
       }
     },
     "rejection_reasons": {
-      "surname_not_matched": 26,
-      "not_an_image": 27,
-      "given_name_not_matched": 1
+      "missing_licence_or_source_metadata": 19,
+      "surname_not_matched": 27,
+      "not_an_image": 35,
+      "given_name_not_matched": 4
     },
     "search_details": [
       {
-        "name": "Carlos Sainz",
+        "name": "Valtteri Bottas",
         "queries": 1,
-        "candidate_files": 20,
-        "accepted": 5,
+        "candidate_files": 3,
+        "accepted": 2,
         "rejections": {
-          "surname_not_matched": 12,
-          "not_an_image": 3
+          "missing_licence_or_source_metadata": 1
         }
       },
       {
-        "name": "Alexander Albon",
-        "queries": 1,
-        "candidate_files": 20,
+        "name": "Sergio Pérez",
+        "queries": 2,
+        "candidate_files": 37,
+        "accepted": 6,
+        "rejections": {
+          "surname_not_matched": 10,
+          "not_an_image": 15,
+          "missing_licence_or_source_metadata": 6
+        }
+      },
+      {
+        "name": "Rafael Camara",
+        "queries": 5,
+        "candidate_files": 35,
         "accepted": 1,
         "rejections": {
-          "surname_not_matched": 4,
-          "not_an_image": 15
+          "surname_not_matched": 16,
+          "missing_licence_or_source_metadata": 4,
+          "not_an_image": 10,
+          "given_name_not_matched": 4
         }
       },
       {
-        "name": "Yuki Tsunoda",
-        "queries": 3,
-        "candidate_files": 2,
-        "accepted": 1,
+        "name": "Mercedes",
+        "queries": 2,
+        "candidate_files": 21,
+        "accepted": 2,
         "rejections": {
-          "given_name_not_matched": 1
+          "missing_licence_or_source_metadata": 8,
+          "not_an_image": 10,
+          "surname_not_matched": 1
         }
       },
       {
-        "name": "Ryo Hirakawa",
-        "queries": 1,
-        "candidate_files": 5,
-        "accepted": 3,
-        "rejections": {
-          "not_an_image": 2
-        }
-      },
-      {
-        "name": "Lance Stroll",
-        "queries": 1,
-        "candidate_files": 20,
-        "accepted": 3,
-        "rejections": {
-          "not_an_image": 7,
-          "surname_not_matched": 10
-        }
+        "name": "Ferrari",
+        "queries": 0,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
       }
     ],
-    "checked_at": "2026-11-08T13:28:36Z",
-    "library_entries": 23,
-    "newly_found": 5,
+    "checked_at": "2026-11-08T13:29:20Z",
+    "library_entries": 27,
+    "newly_found": 4,
     "coverage": {
       "boxing fight card fighters": {
         "total": 187,
@@ -3871,13 +3920,13 @@
       },
       "f1 drivers": {
         "total": 25,
-        "with_image": 22,
-        "missing": 3
+        "with_image": 25,
+        "missing": 0
       },
       "f1 constructors": {
         "total": 11,
-        "with_image": 0,
-        "missing": 11
+        "with_image": 1,
+        "missing": 10
       },
       "darts": {
         "total": 225,
