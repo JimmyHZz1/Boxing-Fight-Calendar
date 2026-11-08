@@ -109,9 +109,14 @@
     renderTicker();
     const all=allEvents(),live=all.filter(x=>isLive(x.event)).sort((a,b)=>timestamp(a.event)-timestamp(b.event));
     liveRoot.replaceChildren();
-    $("live-now-count").textContent=live.length+" LIVE";
-    if(live.length)live.forEach(x=>{const row=renderSummary(x.sport,x.event,true);row.tabIndex=0;row.setAttribute("role","button");row.setAttribute("aria-label","Open "+names[x.sport]+" event: "+(x.event.name||x.event.title||"Event"));const open=()=>window.SportPages?.open?.(x.sport);row.addEventListener("click",open);row.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();open();}});liveRoot.append(row);});
-    else liveRoot.append(make("p","live-centre-empty","No events are currently marked live in the published feeds. Live indicators appear only when a source explicitly reports an event or session as live."));
+    const compact=document.body.classList.contains("compact-view");
+    const nextUpcoming=all.filter(x=>!isLive(x.event)&&dateKey(dateValue(x.event))>=today()).sort((a,b)=>timestamp(a.event)-timestamp(b.event))[0];
+    const centreTitle=$("live-now-title");
+    const centreRows=compact?(live.length?live.slice(0,3):(nextUpcoming?[nextUpcoming]:[])):live;
+    if(centreTitle)centreTitle.textContent=compact&&!live.length?"NEXT UP":"LIVE NOW";
+    $("live-now-count").textContent=compact?(live.length?live.length+" LIVE":nextUpcoming?"NEXT EVENT":"NO EVENTS"):live.length+" LIVE";
+    if(centreRows.length)centreRows.forEach(x=>{const row=renderSummary(x.sport,x.event,isLive(x.event));row.tabIndex=0;row.setAttribute("role","button");row.setAttribute("aria-label","Open "+names[x.sport]+" event: "+(x.event.name||x.event.title||"Event"));const open=()=>window.SportPages?.open?.(x.sport);row.addEventListener("click",open);row.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();open();}});liveRoot.append(row);});
+    else liveRoot.append(make("p","live-centre-empty",compact?"No live or upcoming events are listed in the published feeds.":"No events are currently marked live in the published feeds. Live indicators appear only when a source explicitly reports an event or session as live."));
     const todayKey=today(),limit=new Date(Date.now()+7*86400000);const limitKey=new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/London"}).format(limit);
     const upcoming=all.filter(x=>dateKey(dateValue(x.event))>=todayKey&&dateKey(dateValue(x.event))<=limitKey&&!isLive(x.event)).sort((a,b)=>timestamp(a.event)-timestamp(b.event)).slice(0,12);
     const upcomingCount=$("live-upcoming-count");if(upcomingCount)upcomingCount.textContent=upcoming.length+" UPCOMING";
