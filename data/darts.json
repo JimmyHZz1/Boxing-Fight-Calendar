@@ -8,79 +8,13 @@
   ],
   "events": [
     {
-      "id": "ev_67ZA1A",
-      "name": "ADS Women's Series South",
-      "date": "2026-10-31",
-      "status": "completed",
-      "organiser": "pdc_affiliate",
-      "tier": "regional",
-      "matches": 43,
-      "competition_id": "cp_BYYTBW",
-      "source": "Darts API"
-    },
-    {
-      "id": "ev_XHF1S5",
-      "name": "African Continental Tour",
-      "date": "2026-10-31",
-      "status": "completed",
-      "organiser": "pdc_affiliate",
-      "tier": "regional",
-      "matches": 136,
-      "competition_id": "cp_7915AS",
-      "source": "Darts API"
-    },
-    {
-      "id": "ev_QH5FK1",
-      "name": "Lakeside Open Youth, 31 Oct 2026",
-      "date": "2026-10-31",
-      "status": "completed",
-      "organiser": "pdc_development",
-      "tier": "tour_other",
-      "matches": 3,
-      "competition_id": "cp_PFA2YQ",
-      "source": "Darts API"
-    },
-    {
-      "id": "ev_CJK3Y2",
-      "name": "MODUS Super Series #15 Week",
-      "date": "2026-10-31",
-      "status": "completed",
-      "organiser": "pdc_affiliate",
-      "tier": "regional",
-      "matches": 102,
-      "competition_id": "cp_2WREDF",
-      "source": "Darts API"
-    },
-    {
-      "id": "ev_E9E063",
-      "name": "PDC China Pro Tour",
-      "date": "2026-10-31",
-      "status": "completed",
-      "organiser": "pdc_affiliate",
-      "tier": "regional",
-      "matches": 56,
-      "competition_id": "cp_8BFHEQ",
-      "source": "Darts API"
-    },
-    {
-      "id": "ev_ZVQHWD",
-      "name": "PDC China Pro Tour",
-      "date": "2026-10-31",
-      "status": "completed",
-      "organiser": "pdc_affiliate",
-      "tier": "regional",
-      "matches": 64,
-      "competition_id": "cp_8BFHEQ",
-      "source": "Darts API"
-    },
-    {
       "id": "ev_6DE3Z6",
       "name": "ADC Global Championship, 1 Nov 2026",
       "date": "2026-11-01",
-      "status": "no_results_held",
+      "status": "completed",
       "organiser": "pdc_affiliate",
       "tier": "regional",
-      "matches": 0,
+      "matches": 1,
       "competition_id": "cp_HBSJ51",
       "source": "Darts API"
     },
@@ -88,10 +22,10 @@
       "id": "ev_QN12V5",
       "name": "Nitra Masters U23 Youth 2026, 1 Nov 2026",
       "date": "2026-11-01",
-      "status": "no_results_held",
+      "status": "completed",
       "organiser": "pdc_development",
       "tier": "tour_other",
-      "matches": 0,
+      "matches": 2,
       "competition_id": "cp_43VBM9",
       "source": "Darts API"
     },
@@ -99,10 +33,10 @@
       "id": "ev_M54SA0",
       "name": "Nitra Masters U23 Youth, 1 Nov 2026",
       "date": "2026-11-01",
-      "status": "no_results_held",
+      "status": "completed",
       "organiser": "pdc_development",
       "tier": "tour_other",
-      "matches": 0,
+      "matches": 1,
       "competition_id": "cp_43VBM9",
       "source": "Darts API"
     },
@@ -110,10 +44,10 @@
       "id": "ev_57ZSAJ",
       "name": "Nitra Masters Youth 2026, 1 Nov 2026",
       "date": "2026-11-01",
-      "status": "no_results_held",
+      "status": "completed",
       "organiser": "pdc_development",
       "tier": "tour_other",
-      "matches": 0,
+      "matches": 3,
       "competition_id": "cp_N2RN0K",
       "source": "Darts API"
     },
@@ -121,10 +55,10 @@
       "id": "ev_E4YZPS",
       "name": "Nitra Masters Youth, 1 Nov 2026",
       "date": "2026-11-01",
-      "status": "no_results_held",
+      "status": "completed",
       "organiser": "pdc_development",
       "tier": "tour_other",
-      "matches": 0,
+      "matches": 12,
       "competition_id": "cp_N2RN0K",
       "source": "Darts API"
     },
@@ -132,10 +66,10 @@
       "id": "ev_BAC4W7",
       "name": "Nitra Open U23 Youth 2026, 1 Nov 2026",
       "date": "2026-11-01",
-      "status": "no_results_held",
+      "status": "completed",
       "organiser": "pdc_development",
       "tier": "tour_other",
-      "matches": 0,
+      "matches": 3,
       "competition_id": "cp_MFHRGT",
       "source": "Darts API"
     },
@@ -143,10 +77,10 @@
       "id": "ev_PHRZER",
       "name": "Nitra Open Youth, 1 Nov 2026",
       "date": "2026-11-01",
-      "status": "no_results_held",
+      "status": "completed",
       "organiser": "pdc_development",
       "tier": "tour_other",
-      "matches": 0,
+      "matches": 9,
       "competition_id": "cp_KWDXZZ",
       "source": "Darts API"
     },
@@ -328,5 +262,5 @@
     }
   ],
   "notice": "PDC, PDC Development Tour and PDC Affiliate events. MODUS and non-PDC events are excluded. Free API calendar data may lag the live feed by up to seven days.",
-  "last_updated": "2026-11-07T21:47:36Z"
+  "last_updated": "2026-11-08T01:06:11Z"
 }

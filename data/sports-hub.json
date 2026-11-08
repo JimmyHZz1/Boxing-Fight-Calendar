@@ -1,0 +1,1345 @@
+{
+  "sports": {
+    "f1": {
+      "drivers": [
+        {
+          "rank": 1,
+          "name": "Andrea Kimi Antonelli",
+          "team": "Mercedes",
+          "points": "380"
+        },
+        {
+          "rank": 2,
+          "name": "Max Verstappen",
+          "team": "Red Bull",
+          "points": "261"
+        },
+        {
+          "rank": 3,
+          "name": "Lewis Hamilton",
+          "team": "Ferrari",
+          "points": "259"
+        },
+        {
+          "rank": 4,
+          "name": "George Russell",
+          "team": "Mercedes",
+          "points": "250"
+        },
+        {
+          "rank": 5,
+          "name": "Charles Leclerc",
+          "team": "Ferrari",
+          "points": "245"
+        },
+        {
+          "rank": 6,
+          "name": "Lando Norris",
+          "team": "McLaren",
+          "points": "221"
+        },
+        {
+          "rank": 7,
+          "name": "Oscar Piastri",
+          "team": "McLaren",
+          "points": "144"
+        },
+        {
+          "rank": 8,
+          "name": "Isack Hadjar",
+          "team": "Red Bull",
+          "points": "107"
+        },
+        {
+          "rank": 9,
+          "name": "Liam Lawson",
+          "team": "RB F1 Team, Red Bull",
+          "points": "83"
+        },
+        {
+          "rank": 10,
+          "name": "Pierre Gasly",
+          "team": "Alpine F1 Team",
+          "points": "42"
+        },
+        {
+          "rank": 11,
+          "name": "Arvid Lindblad",
+          "team": "RB F1 Team",
+          "points": "38"
+        },
+        {
+          "rank": 12,
+          "name": "Franco Colapinto",
+          "team": "Alpine F1 Team",
+          "points": "27"
+        },
+        {
+          "rank": 13,
+          "name": "Oliver Bearman",
+          "team": "Haas F1 Team",
+          "points": "23"
+        },
+        {
+          "rank": 14,
+          "name": "Gabriel Bortoleto",
+          "team": "Audi",
+          "points": "14"
+        },
+        {
+          "rank": 15,
+          "name": "Nico Hülkenberg",
+          "team": "Audi",
+          "points": "13"
+        },
+        {
+          "rank": 16,
+          "name": "Esteban Ocon",
+          "team": "Haas F1 Team",
+          "points": "7"
+        },
+        {
+          "rank": 17,
+          "name": "Fernando Alonso",
+          "team": "Aston Martin",
+          "points": "7"
+        },
+        {
+          "rank": 18,
+          "name": "Carlos Sainz",
+          "team": "Williams",
+          "points": "7"
+        },
+        {
+          "rank": 19,
+          "name": "Alexander Albon",
+          "team": "Williams",
+          "points": "5"
+        },
+        {
+          "rank": 20,
+          "name": "Yuki Tsunoda",
+          "team": "RB F1 Team",
+          "points": "1"
+        },
+        {
+          "rank": 21,
+          "name": "Ryo Hirakawa",
+          "team": "Haas F1 Team",
+          "points": "1"
+        },
+        {
+          "rank": 22,
+          "name": "Lance Stroll",
+          "team": "Aston Martin",
+          "points": "0"
+        },
+        {
+          "rank": 23,
+          "name": "Valtteri Bottas",
+          "team": "Cadillac F1 Team",
+          "points": "0"
+        },
+        {
+          "rank": 24,
+          "name": "Sergio Pérez",
+          "team": "Cadillac F1 Team",
+          "points": "0"
+        },
+        {
+          "rank": 25,
+          "name": "Rafael Camara",
+          "team": "Haas F1 Team",
+          "points": "0"
+        }
+      ],
+      "constructors": [
+        {
+          "rank": 1,
+          "name": "Mercedes",
+          "points": "630"
+        },
+        {
+          "rank": 2,
+          "name": "Ferrari",
+          "points": "504"
+        },
+        {
+          "rank": 3,
+          "name": "Red Bull",
+          "points": "382"
+        },
+        {
+          "rank": 4,
+          "name": "McLaren",
+          "points": "365"
+        },
+        {
+          "rank": 5,
+          "name": "RB F1 Team",
+          "points": "108"
+        },
+        {
+          "rank": 6,
+          "name": "Alpine F1 Team",
+          "points": "69"
+        },
+        {
+          "rank": 7,
+          "name": "Haas F1 Team",
+          "points": "31"
+        },
+        {
+          "rank": 8,
+          "name": "Audi",
+          "points": "27"
+        },
+        {
+          "rank": 9,
+          "name": "Williams",
+          "points": "12"
+        },
+        {
+          "rank": 10,
+          "name": "Aston Martin",
+          "points": "7"
+        },
+        {
+          "rank": 11,
+          "name": "Cadillac F1 Team",
+          "points": "0"
+        }
+      ],
+      "season": 2026,
+      "notice": "Official season standings sourced from the community-maintained Jolpica F1 API.",
+      "last_updated": "2026-11-08T01:06:11Z"
+    },
+    "darts": {
+      "rankings": [],
+      "sync_warning": "Darts API returned no Order of Merit rows; keeping the last published snapshot.",
+      "last_updated": "2026-11-08T01:06:11Z"
+    },
+    "ufc": {
+      "divisions": [
+        {
+          "division": "bantamweight",
+          "name": "Bantamweight",
+          "entries": [
+            {
+              "rank": 0,
+              "name": "Petr Yan",
+              "image_url": null
+            },
+            {
+              "rank": 1,
+              "name": "Merab Dvalishvili",
+              "image_url": null
+            },
+            {
+              "rank": 2,
+              "name": "Sean O'Malley",
+              "image_url": null
+            },
+            {
+              "rank": 3,
+              "name": "Song Yadong",
+              "image_url": null
+            },
+            {
+              "rank": 4,
+              "name": "Umar Nurmagomedov",
+              "image_url": null
+            },
+            {
+              "rank": 5,
+              "name": "Mario Bautista",
+              "image_url": null
+            },
+            {
+              "rank": 6,
+              "name": "Cory Sandhagen",
+              "image_url": null
+            },
+            {
+              "rank": 7,
+              "name": "Payton Talbott",
+              "image_url": null
+            },
+            {
+              "rank": 8,
+              "name": "David Martinez",
+              "image_url": null
+            },
+            {
+              "rank": 9,
+              "name": "Aiemann Zahabi",
+              "image_url": null
+            },
+            {
+              "rank": 10,
+              "name": "Raul Rosas Jr.",
+              "image_url": null
+            },
+            {
+              "rank": 11,
+              "name": "Marlon Vera",
+              "image_url": null
+            },
+            {
+              "rank": 12,
+              "name": "Deiveson Figueiredo",
+              "image_url": null
+            },
+            {
+              "rank": 13,
+              "name": "Marcus McGhee",
+              "image_url": null
+            },
+            {
+              "rank": 14,
+              "name": "Raoni Barcelos",
+              "image_url": null
+            },
+            {
+              "rank": 15,
+              "name": "Bryce Mitchell",
+              "image_url": null
+            }
+          ]
+        },
+        {
+          "division": "featherweight",
+          "name": "Featherweight",
+          "entries": [
+            {
+              "rank": 0,
+              "name": "Alexander Volkanovski",
+              "image_url": null
+            },
+            {
+              "rank": 1,
+              "name": "Movsar Evloev",
+              "image_url": null
+            },
+            {
+              "rank": 2,
+              "name": "Diego Lopes",
+              "image_url": null
+            },
+            {
+              "rank": 3,
+              "name": "Lerone Murphy",
+              "image_url": null
+            },
+            {
+              "rank": 4,
+              "name": "Aljamain Sterling",
+              "image_url": null
+            },
+            {
+              "rank": 5,
+              "name": "Jean Silva",
+              "image_url": null
+            },
+            {
+              "rank": 6,
+              "name": "Yair Rodriguez",
+              "image_url": null
+            },
+            {
+              "rank": 7,
+              "name": "Arnold Allen",
+              "image_url": null
+            },
+            {
+              "rank": 8,
+              "name": "Youssef Zalal",
+              "image_url": null
+            },
+            {
+              "rank": 9,
+              "name": "Kevin Vallejos",
+              "image_url": null
+            },
+            {
+              "rank": 10,
+              "name": "Steve Garcia",
+              "image_url": null
+            },
+            {
+              "rank": 11,
+              "name": "Aaron Pico",
+              "image_url": null
+            },
+            {
+              "rank": 12,
+              "name": "Melquizael Costa",
+              "image_url": null
+            },
+            {
+              "rank": 13,
+              "name": "Brian Ortega",
+              "image_url": null
+            },
+            {
+              "rank": 14,
+              "name": "Patricio Pitbull",
+              "image_url": null
+            },
+            {
+              "rank": 15,
+              "name": "David Onama",
+              "image_url": null
+            }
+          ]
+        },
+        {
+          "division": "flyweight",
+          "name": "Flyweight",
+          "entries": [
+            {
+              "rank": 0,
+              "name": "Joshua Van",
+              "image_url": null
+            },
+            {
+              "rank": 1,
+              "name": "Alexandre Pantoja",
+              "image_url": null
+            },
+            {
+              "rank": 2,
+              "name": "Manel Kape",
+              "image_url": null
+            },
+            {
+              "rank": 3,
+              "name": "Brandon Royval",
+              "image_url": null
+            },
+            {
+              "rank": 4,
+              "name": "Tatsuro Taira",
+              "image_url": null
+            },
+            {
+              "rank": 5,
+              "name": "Kyoji Horiguchi",
+              "image_url": null
+            },
+            {
+              "rank": 6,
+              "name": "Lone’er Kavanagh",
+              "image_url": null
+            },
+            {
+              "rank": 7,
+              "name": "Asu Almabayev",
+              "image_url": null
+            },
+            {
+              "rank": 8,
+              "name": "Brandon Moreno",
+              "image_url": null
+            },
+            {
+              "rank": 9,
+              "name": "Amir Albazi",
+              "image_url": null
+            },
+            {
+              "rank": 10,
+              "name": "Ramazan Temirov",
+              "image_url": null
+            },
+            {
+              "rank": 11,
+              "name": "Tim Elliott",
+              "image_url": null
+            },
+            {
+              "rank": 12,
+              "name": "Steve Erceg",
+              "image_url": null
+            },
+            {
+              "rank": 13,
+              "name": "Sumudaerji",
+              "image_url": null
+            },
+            {
+              "rank": 14,
+              "name": "Tagir Ulanbekov",
+              "image_url": null
+            },
+            {
+              "rank": 15,
+              "name": "Alex Perez",
+              "image_url": null
+            }
+          ]
+        },
+        {
+          "division": "heavyweight",
+          "name": "Heavyweight",
+          "entries": [
+            {
+              "rank": 0,
+              "name": "Ciryl Gane",
+              "image_url": null
+            },
+            {
+              "rank": 1,
+              "name": "Tom Aspinall",
+              "image_url": null
+            },
+            {
+              "rank": 2,
+              "name": "Alexander Volkov",
+              "image_url": null
+            },
+            {
+              "rank": 3,
+              "name": "Sergei Pavlovich",
+              "image_url": null
+            },
+            {
+              "rank": 4,
+              "name": "Josh Hokit",
+              "image_url": null
+            },
+            {
+              "rank": 5,
+              "name": "Curtis Blaydes",
+              "image_url": null
+            },
+            {
+              "rank": 6,
+              "name": "Waldo Cortes Acosta",
+              "image_url": null
+            },
+            {
+              "rank": 7,
+              "name": "Rizvan Kuniev",
+              "image_url": null
+            },
+            {
+              "rank": 8,
+              "name": "Vitor Petrino",
+              "image_url": null
+            },
+            {
+              "rank": 9,
+              "name": "Serghei Spivac",
+              "image_url": null
+            },
+            {
+              "rank": 10,
+              "name": "Ante Delija",
+              "image_url": null
+            },
+            {
+              "rank": 11,
+              "name": "Valter Walker",
+              "image_url": null
+            },
+            {
+              "rank": 12,
+              "name": "Tyrell Fortune",
+              "image_url": null
+            },
+            {
+              "rank": 12,
+              "name": "Derrick Lewis",
+              "image_url": null
+            },
+            {
+              "rank": 14,
+              "name": "Aleksandar Rakić",
+              "image_url": null
+            },
+            {
+              "rank": 15,
+              "name": "Mario Pinto",
+              "image_url": null
+            }
+          ]
+        },
+        {
+          "division": "light-heavyweight",
+          "name": "Light Heavyweight",
+          "entries": [
+            {
+              "rank": 0,
+              "name": "Carlos Ulberg",
+              "image_url": null
+            },
+            {
+              "rank": 1,
+              "name": "Magomed Ankalaev",
+              "image_url": null
+            },
+            {
+              "rank": 2,
+              "name": "Jiří Procházka",
+              "image_url": null
+            },
+            {
+              "rank": 3,
+              "name": "Alex Pereira",
+              "image_url": null
+            },
+            {
+              "rank": 4,
+              "name": "Khalil Rountree Jr.",
+              "image_url": null
+            },
+            {
+              "rank": 5,
+              "name": "Navajo Stirling",
+              "image_url": null
+            },
+            {
+              "rank": 6,
+              "name": "Paulo Costa",
+              "image_url": null
+            },
+            {
+              "rank": 7,
+              "name": "Dominick Reyes",
+              "image_url": null
+            },
+            {
+              "rank": 8,
+              "name": "Bogdan Guskov",
+              "image_url": null
+            },
+            {
+              "rank": 9,
+              "name": "Jan Błachowicz",
+              "image_url": null
+            },
+            {
+              "rank": 10,
+              "name": "Azamat Murzakanov",
+              "image_url": null
+            },
+            {
+              "rank": 11,
+              "name": "Robert Whittaker",
+              "image_url": null
+            },
+            {
+              "rank": 12,
+              "name": "Abdul Rakhman Yakhyaev",
+              "image_url": null
+            },
+            {
+              "rank": 13,
+              "name": "Alonzo Menifield",
+              "image_url": null
+            },
+            {
+              "rank": 14,
+              "name": "Reinier de Ridder",
+              "image_url": null
+            },
+            {
+              "rank": 15,
+              "name": "Nikita Krylov",
+              "image_url": null
+            }
+          ]
+        },
+        {
+          "division": "lightweight",
+          "name": "Lightweight",
+          "entries": [
+            {
+              "rank": 0,
+              "name": "Justin Gaethje",
+              "image_url": null
+            },
+            {
+              "rank": 1,
+              "name": "Ilia Topuria",
+              "image_url": null
+            },
+            {
+              "rank": 2,
+              "name": "Arman Tsarukyan",
+              "image_url": null
+            },
+            {
+              "rank": 3,
+              "name": "Charles Oliveira",
+              "image_url": null
+            },
+            {
+              "rank": 4,
+              "name": "Max Holloway",
+              "image_url": null
+            },
+            {
+              "rank": 5,
+              "name": "Paddy Pimblett",
+              "image_url": null
+            },
+            {
+              "rank": 6,
+              "name": "Benoît Saint Denis",
+              "image_url": null
+            },
+            {
+              "rank": 7,
+              "name": "Quillan Salkilld",
+              "image_url": null
+            },
+            {
+              "rank": 8,
+              "name": "Mauricio Ruffy",
+              "image_url": null
+            },
+            {
+              "rank": 9,
+              "name": "Salahdine Parnasse",
+              "image_url": null
+            },
+            {
+              "rank": 10,
+              "name": "Mateusz Gamrot",
+              "image_url": null
+            },
+            {
+              "rank": 11,
+              "name": "Rafael Fiziev",
+              "image_url": null
+            },
+            {
+              "rank": 12,
+              "name": "Renato Moicano",
+              "image_url": null
+            },
+            {
+              "rank": 13,
+              "name": "Tom Nolan",
+              "image_url": null
+            },
+            {
+              "rank": 14,
+              "name": "Dan Hooker",
+              "image_url": null
+            },
+            {
+              "rank": 15,
+              "name": "Beneil Dariush",
+              "image_url": null
+            }
+          ]
+        },
+        {
+          "division": "mens-pound-for-pound",
+          "name": "Mens Pound For Pound",
+          "entries": [
+            {
+              "rank": 1,
+              "name": "Islam Makhachev",
+              "image_url": null
+            },
+            {
+              "rank": 2,
+              "name": "Alexander Volkanovski",
+              "image_url": null
+            },
+            {
+              "rank": 3,
+              "name": "Petr Yan",
+              "image_url": null
+            },
+            {
+              "rank": 4,
+              "name": "Justin Gaethje",
+              "image_url": null
+            },
+            {
+              "rank": 5,
+              "name": "Ilia Topuria",
+              "image_url": null
+            },
+            {
+              "rank": 6,
+              "name": "Joshua Van",
+              "image_url": null
+            },
+            {
+              "rank": 7,
+              "name": "Sean Strickland",
+              "image_url": null
+            },
+            {
+              "rank": 8,
+              "name": "Tom Aspinall",
+              "image_url": null
+            },
+            {
+              "rank": 9,
+              "name": "Merab Dvalishvili",
+              "image_url": null
+            },
+            {
+              "rank": 10,
+              "name": "Alex Pereira",
+              "image_url": null
+            },
+            {
+              "rank": 11,
+              "name": "Khamzat Chimaev",
+              "image_url": null
+            },
+            {
+              "rank": 11,
+              "name": "Ciryl Gane",
+              "image_url": null
+            },
+            {
+              "rank": 13,
+              "name": "Arman Tsarukyan",
+              "image_url": null
+            },
+            {
+              "rank": 14,
+              "name": "Alexandre Pantoja",
+              "image_url": null
+            },
+            {
+              "rank": 15,
+              "name": "Carlos Ulberg",
+              "image_url": null
+            }
+          ]
+        },
+        {
+          "division": "middleweight",
+          "name": "Middleweight",
+          "entries": [
+            {
+              "rank": 0,
+              "name": "Sean Strickland",
+              "image_url": null
+            },
+            {
+              "rank": 1,
+              "name": "Khamzat Chimaev",
+              "image_url": null
+            },
+            {
+              "rank": 2,
+              "name": "Dricus Du Plessis",
+              "image_url": null
+            },
+            {
+              "rank": 3,
+              "name": "Nassourdine Imavov",
+              "image_url": null
+            },
+            {
+              "rank": 4,
+              "name": "Brendan Allen",
+              "image_url": null
+            },
+            {
+              "rank": 5,
+              "name": "Caio Borralho",
+              "image_url": null
+            },
+            {
+              "rank": 6,
+              "name": "Joe Pyfer",
+              "image_url": null
+            },
+            {
+              "rank": 7,
+              "name": "Gregory Rodrigues",
+              "image_url": null
+            },
+            {
+              "rank": 8,
+              "name": "Anthony Hernandez",
+              "image_url": null
+            },
+            {
+              "rank": 9,
+              "name": "Israel Adesanya",
+              "image_url": null
+            },
+            {
+              "rank": 10,
+              "name": "Christian Leroy Duncan",
+              "image_url": null
+            },
+            {
+              "rank": 11,
+              "name": "Abus Magomedov",
+              "image_url": null
+            },
+            {
+              "rank": 12,
+              "name": "Jared Cannonier",
+              "image_url": null
+            },
+            {
+              "rank": 13,
+              "name": "Ikram Aliskerov",
+              "image_url": null
+            },
+            {
+              "rank": 14,
+              "name": "Bo Nickal",
+              "image_url": null
+            },
+            {
+              "rank": 15,
+              "name": "Shara Magomedov",
+              "image_url": null
+            }
+          ]
+        },
+        {
+          "division": "welterweight",
+          "name": "Welterweight",
+          "entries": [
+            {
+              "rank": 0,
+              "name": "Islam Makhachev",
+              "image_url": null
+            },
+            {
+              "rank": 1,
+              "name": "Ian Machado Garry",
+              "image_url": null
+            },
+            {
+              "rank": 2,
+              "name": "Carlos Prates",
+              "image_url": null
+            },
+            {
+              "rank": 3,
+              "name": "Michael Morales",
+              "image_url": null
+            },
+            {
+              "rank": 4,
+              "name": "Jack Della Maddalena",
+              "image_url": null
+            },
+            {
+              "rank": 5,
+              "name": "Gabriel Bonfim",
+              "image_url": null
+            },
+            {
+              "rank": 6,
+              "name": "Sean Brady",
+              "image_url": null
+            },
+            {
+              "rank": 7,
+              "name": "Belal Muhammad",
+              "image_url": null
+            },
+            {
+              "rank": 8,
+              "name": "Leon Edwards",
+              "image_url": null
+            },
+            {
+              "rank": 9,
+              "name": "Mike Malott",
+              "image_url": null
+            },
+            {
+              "rank": 9,
+              "name": "Kamaru Usman",
+              "image_url": null
+            },
+            {
+              "rank": 11,
+              "name": "Yaroslav Amosov",
+              "image_url": null
+            },
+            {
+              "rank": 12,
+              "name": "Uroš Medić",
+              "image_url": null
+            },
+            {
+              "rank": 13,
+              "name": "Joaquin Buckley",
+              "image_url": null
+            },
+            {
+              "rank": 14,
+              "name": "Daniel Rodriguez",
+              "image_url": null
+            },
+            {
+              "rank": 15,
+              "name": "Kevin Holland",
+              "image_url": null
+            }
+          ]
+        },
+        {
+          "division": "womens-bantamweight",
+          "name": "Womens Bantamweight",
+          "entries": [
+            {
+              "rank": 0,
+              "name": "Kayla Harrison",
+              "image_url": null
+            },
+            {
+              "rank": 1,
+              "name": "Julianna Peña",
+              "image_url": null
+            },
+            {
+              "rank": 2,
+              "name": "Joselyne Edwards",
+              "image_url": null
+            },
+            {
+              "rank": 3,
+              "name": "Ailin Perez",
+              "image_url": null
+            },
+            {
+              "rank": 4,
+              "name": "Norma Dumont",
+              "image_url": null
+            },
+            {
+              "rank": 5,
+              "name": "Luana Santos",
+              "image_url": null
+            },
+            {
+              "rank": 5,
+              "name": "Raquel Pennington",
+              "image_url": null
+            },
+            {
+              "rank": 7,
+              "name": "Yana Santos",
+              "image_url": null
+            },
+            {
+              "rank": 8,
+              "name": "Jacqueline Cavalcanti",
+              "image_url": null
+            },
+            {
+              "rank": 9,
+              "name": "Macy Chiasson",
+              "image_url": null
+            },
+            {
+              "rank": 10,
+              "name": "Karol Rosa",
+              "image_url": null
+            },
+            {
+              "rank": 11,
+              "name": "Bia Mesquita",
+              "image_url": null
+            },
+            {
+              "rank": 12,
+              "name": "Michelle Montague",
+              "image_url": null
+            },
+            {
+              "rank": 13,
+              "name": "Nora Cornolle",
+              "image_url": null
+            },
+            {
+              "rank": 14,
+              "name": "Chelsea Chandler",
+              "image_url": null
+            },
+            {
+              "rank": 15,
+              "name": "Alice Pereira",
+              "image_url": null
+            }
+          ]
+        },
+        {
+          "division": "womens-flyweight",
+          "name": "Womens Flyweight",
+          "entries": [
+            {
+              "rank": 0,
+              "name": "Natalia Silva",
+              "image_url": null
+            },
+            {
+              "rank": 1,
+              "name": "Valentina Shevchenko",
+              "image_url": null
+            },
+            {
+              "rank": 2,
+              "name": "Alexa Grasso",
+              "image_url": null
+            },
+            {
+              "rank": 3,
+              "name": "Manon Fiorot",
+              "image_url": null
+            },
+            {
+              "rank": 4,
+              "name": "Jasmine Jasudavicius",
+              "image_url": null
+            },
+            {
+              "rank": 5,
+              "name": "Erin Blanchfield",
+              "image_url": null
+            },
+            {
+              "rank": 6,
+              "name": "Rose Namajunas",
+              "image_url": null
+            },
+            {
+              "rank": 7,
+              "name": "Maycee Barber",
+              "image_url": null
+            },
+            {
+              "rank": 8,
+              "name": "Wang Cong",
+              "image_url": null
+            },
+            {
+              "rank": 9,
+              "name": "Tracy Cortez",
+              "image_url": null
+            },
+            {
+              "rank": 10,
+              "name": "Miranda Maverick",
+              "image_url": null
+            },
+            {
+              "rank": 11,
+              "name": "Karine Silva",
+              "image_url": null
+            },
+            {
+              "rank": 12,
+              "name": "Casey O'Neill",
+              "image_url": null
+            },
+            {
+              "rank": 13,
+              "name": "Eduarda Moura",
+              "image_url": null
+            },
+            {
+              "rank": 14,
+              "name": "Regina Tarin",
+              "image_url": null
+            },
+            {
+              "rank": 15,
+              "name": "Gabriella Fernandes",
+              "image_url": null
+            }
+          ]
+        },
+        {
+          "division": "womens-pound-for-pound",
+          "name": "Womens Pound For Pound",
+          "entries": [
+            {
+              "rank": 1,
+              "name": "Valentina Shevchenko",
+              "image_url": null
+            },
+            {
+              "rank": 2,
+              "name": "Kayla Harrison",
+              "image_url": null
+            },
+            {
+              "rank": 3,
+              "name": "Zhang Weili",
+              "image_url": null
+            },
+            {
+              "rank": 4,
+              "name": "Natalia Silva",
+              "image_url": null
+            },
+            {
+              "rank": 5,
+              "name": "Mackenzie Dern",
+              "image_url": null
+            },
+            {
+              "rank": 6,
+              "name": "Alexa Grasso",
+              "image_url": null
+            },
+            {
+              "rank": 7,
+              "name": "Manon Fiorot",
+              "image_url": null
+            },
+            {
+              "rank": 8,
+              "name": "Tatiana Suarez",
+              "image_url": null
+            },
+            {
+              "rank": 9,
+              "name": "Jasmine Jasudavicius",
+              "image_url": null
+            },
+            {
+              "rank": 10,
+              "name": "Erin Blanchfield",
+              "image_url": null
+            },
+            {
+              "rank": 11,
+              "name": "Julianna Peña",
+              "image_url": null
+            },
+            {
+              "rank": 12,
+              "name": "Virna Jandiroba",
+              "image_url": null
+            },
+            {
+              "rank": 13,
+              "name": "Rose Namajunas",
+              "image_url": null
+            },
+            {
+              "rank": 14,
+              "name": "Raquel Pennington",
+              "image_url": null
+            },
+            {
+              "rank": 15,
+              "name": "Denise Gomes",
+              "image_url": null
+            }
+          ]
+        },
+        {
+          "division": "womens-strawweight",
+          "name": "Womens Strawweight",
+          "entries": [
+            {
+              "rank": 0,
+              "name": "Mackenzie Dern",
+              "image_url": null
+            },
+            {
+              "rank": 1,
+              "name": "Zhang Weili",
+              "image_url": null
+            },
+            {
+              "rank": 2,
+              "name": "Tatiana Suarez",
+              "image_url": null
+            },
+            {
+              "rank": 3,
+              "name": "Virna Jandiroba",
+              "image_url": null
+            },
+            {
+              "rank": 4,
+              "name": "Denise Gomes",
+              "image_url": null
+            },
+            {
+              "rank": 5,
+              "name": "Gillian Robertson",
+              "image_url": null
+            },
+            {
+              "rank": 6,
+              "name": "Yan Xiaonan",
+              "image_url": null
+            },
+            {
+              "rank": 7,
+              "name": "Fatima Kline",
+              "image_url": null
+            },
+            {
+              "rank": 8,
+              "name": "Loopy Godinez",
+              "image_url": null
+            },
+            {
+              "rank": 9,
+              "name": "Alexia Thainara",
+              "image_url": null
+            },
+            {
+              "rank": 10,
+              "name": "Tabatha Ricci",
+              "image_url": null
+            },
+            {
+              "rank": 11,
+              "name": "Jéssica Andrade",
+              "image_url": null
+            },
+            {
+              "rank": 12,
+              "name": "Amanda Lemos",
+              "image_url": null
+            },
+            {
+              "rank": 13,
+              "name": "Amanda Ribas",
+              "image_url": null
+            },
+            {
+              "rank": 14,
+              "name": "Angela Hill",
+              "image_url": null
+            },
+            {
+              "rank": 15,
+              "name": "Mizuki",
+              "image_url": null
+            }
+          ]
+        }
+      ],
+      "snapshot_date": "2026-11-03",
+      "notice": "Official UFC divisional rankings from UFCalendar. Rank 0 denotes the champion; rankings are updated when the publisher releases a new snapshot.",
+      "last_updated": "2026-11-08T01:06:11Z"
+    },
+    "boxing": {
+      "divisions": [],
+      "sync_warning": "Open Boxing returned no current title reigns; keeping the last published snapshot.",
+      "last_updated": "2026-11-08T01:06:11Z"
+    }
+  },
+  "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
+  "last_updated": "2026-11-08T01:06:11Z"
+}

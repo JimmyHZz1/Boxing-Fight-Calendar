@@ -192,5 +192,7 @@
       "source": "BKFC official",
       "start_at": "2027-02-13T14:00:00Z"
     }
-  ]
+  ],
+  "sync_warning": "The official BKFC page returned no machine-readable event records. Existing published schedule was preserved; parser needs review.",
+  "sync_attempted_at": "2026-11-08T01:06:11Z"
 }
