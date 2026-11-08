@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-08T18:00:00Z",
+  "updated_at": "2026-11-08T15:57:32Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -377,6 +377,17 @@
       "attribution": "Wikimedia Commons · Unknown authorUnknown author · CC BY 4.0",
       "verified_at": "2026-11-08T13:36:08Z",
       "sport": "f1 constructors"
+    },
+    "gian van veen": {
+      "name": "Gian van Veen",
+      "path": "assets/images/darts/gian-van-veen.png",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Gian_van_Veen_2025_World_Matchplay.png",
+      "licence": "CC BY 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by/3.0",
+      "creator": "Wikimedia Commons · DARTS NOW · CC BY 3.0",
+      "attribution": "Wikimedia Commons · DARTS NOW · CC BY 3.0",
+      "verified_at": "2026-11-08T15:57:32Z",
+      "sport": "darts"
     }
   },
   "collections": {

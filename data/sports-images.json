@@ -523,9 +523,23 @@
       "image_match_score": 1,
       "image_match_method": "official-visa-team-mark",
       "image_verified_at": "2026-11-08T18:00:00Z"
+    },
+    "gian van veen": {
+      "name": "Gian van Veen",
+      "sport": "darts",
+      "image_url": "./assets/images/darts/gian-van-veen.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Gian_van_Veen_2025_World_Matchplay.png",
+      "image_credit": "Wikimedia Commons · DARTS NOW · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Gian van Veen",
+      "image_verified_at": "2026-11-08T15:57:32Z",
+      "image_local_path": "assets/images/darts/gian-van-veen.png"
     }
   },
-  "updated_at": "2026-11-08T15:29:57Z",
+  "updated_at": "2026-11-08T15:57:32Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -575,6 +589,9 @@
     "aston martin": "2026-11-08T13:36:08Z",
     "amari jones": "2026-11-08T13:36:08Z",
     "andres teran": "2026-11-08T13:36:08Z",
-    "anthony olascuaga": "2026-11-08T13:36:08Z"
+    "anthony olascuaga": "2026-11-08T13:36:08Z",
+    "luke littler": "2026-11-08T15:57:32Z",
+    "luke humphries": "2026-11-08T15:57:32Z",
+    "gian van veen": "2026-11-08T15:57:32Z"
   }
 }

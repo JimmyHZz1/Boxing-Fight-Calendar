@@ -234,13 +234,33 @@
           "rank": 20,
           "name": "Yuki Tsunoda",
           "team": "RB F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/yuki-tsunoda.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Yuki_Tsunoda_Macau_2019.jpg",
+          "image_credit": "Wikimedia Commons · Smith007 · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "category:Category:Yuki Tsunoda in 2019",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/yuki-tsunoda.jpg"
         },
         {
           "rank": 21,
           "name": "Ryo Hirakawa",
           "team": "Haas F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/ryo-hirakawa.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Ryo_Hirakawa_2024_WEC_Fuji_1.jpg",
+          "image_credit": "Wikimedia Commons · Morio · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "search:Ryo Hirakawa",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/ryo-hirakawa.jpg"
         },
         {
           "rank": 22,
@@ -479,7 +499,16 @@
           "name": "Gian van Veen",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "./assets/images/darts/gian-van-veen.png",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Gian_van_Veen_2025_World_Matchplay.png",
+          "image_credit": "Wikimedia Commons · DARTS NOW · CC BY 3.0",
+          "image_license": "CC BY 3.0",
+          "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1.0,
+          "image_match_method": "category:Category:Gian van Veen",
+          "image_verified_at": "2026-11-08T15:57:32Z",
+          "image_local_path": "assets/images/darts/gian-van-veen.png"
         },
         {
           "rank": 4,
@@ -3821,17 +3850,76 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 0,
-    "found": 34,
-    "missing": 514,
+    "attempted": 4,
+    "found": 39,
+    "missing": 696,
     "rejected": 0,
-    "by_sport": {},
-    "newly_found": 0,
+    "by_sport": {
+      "darts": {
+        "attempted": 4,
+        "found": 1,
+        "missing": 3,
+        "rejected": 0
+      }
+    },
+    "rejection_reasons": {
+      "not_an_image": 42,
+      "surname_not_matched": 76
+    },
+    "search_details": [
+      {
+        "name": "Luke Littler",
+        "queries": 3,
+        "candidate_files": 50,
+        "accepted": 0,
+        "rejections": {
+          "not_an_image": 19,
+          "surname_not_matched": 31
+        }
+      },
+      {
+        "name": "Luke Humphries",
+        "queries": 3,
+        "candidate_files": 50,
+        "accepted": 0,
+        "rejections": {
+          "surname_not_matched": 31,
+          "not_an_image": 19
+        }
+      },
+      {
+        "name": "Gian van Veen",
+        "queries": 3,
+        "candidate_files": 22,
+        "accepted": 5,
+        "rejections": {
+          "not_an_image": 3,
+          "surname_not_matched": 14
+        }
+      },
+      {
+        "name": "Gerwyn Price",
+        "queries": 1,
+        "candidate_files": 1,
+        "accepted": 0,
+        "rejections": {
+          "not_an_image": 1
+        }
+      }
+    ],
+    "checked_at": "2026-11-08T15:57:32Z",
+    "library_entries": 39,
+    "newly_found": 1,
     "coverage": {
+      "boxing fight card fighters": {
+        "total": 187,
+        "with_image": 2,
+        "missing": 185
+      },
       "f1 drivers": {
         "total": 25,
-        "with_image": 23,
-        "missing": 2
+        "with_image": 25,
+        "missing": 0
       },
       "f1 constructors": {
         "total": 11,
@@ -3840,8 +3928,8 @@
       },
       "darts": {
         "total": 225,
-        "with_image": 0,
-        "missing": 225
+        "with_image": 1,
+        "missing": 224
       },
       "ufc": {
         "total": 206,
@@ -3853,9 +3941,7 @@
         "with_image": 0,
         "missing": 81
       }
-    },
-    "checked_at": "2026-11-08T15:29:57Z",
-    "library_entries": 38
+    }
   },
   "last_updated": "2026-11-08T15:29:57Z"
 }
