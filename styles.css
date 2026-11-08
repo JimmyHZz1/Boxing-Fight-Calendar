@@ -1175,3 +1175,155 @@ body.compact-view #home-screen .live-centre-empty{display:block!important;font-s
 .version-dropdown[open] .version-entry-summary{padding-bottom:10px}
 .version-dropdown:focus-within{border-color:color-mix(in srgb,var(--accent) 55%,var(--line))}
 @media(max-width:520px){.version-entry-summary{padding:13px}.version-entry-title{font-size:16px}.version-dropdown>ul{padding:0 15px 15px 32px}}
+
+
+
+
+/* Calendar selected-date event alignment: keep sport marks, dates, titles and status badges in consistent columns. */
+#selected-date-events .event-card {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+#selected-date-events .event-date {
+  width: 64px;
+  min-height: 62px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#selected-date-events .event-info {
+  min-width: 0;
+}
+#selected-date-events .event-info h3 {
+  line-height: 1.12;
+  overflow-wrap: anywhere;
+}
+#selected-date-events .event-info p {
+  overflow-wrap: anywhere;
+}
+#selected-date-events .event-tag {
+  grid-column: auto;
+  justify-self: end;
+  align-self: center;
+  text-align: right;
+  white-space: nowrap;
+}
+#sports-selected-date-events {
+  min-width: 0;
+}
+#sports-selected-date-events .sport-event-card {
+  min-width: 0;
+  height: 100%;
+}
+#sports-selected-date-events .sport-event-card > summary {
+  display: grid;
+  grid-template-columns: 42px 48px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+  min-height: 104px;
+}
+#sports-selected-date-events .sport-event-visual,
+#sports-selected-date-events .sport-event-date {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+#sports-selected-date-events .sport-event-main {
+  min-width: 0;
+  align-self: center;
+}
+#sports-selected-date-events .sport-event-main strong,
+#sports-selected-date-events .sport-event-main small {
+  overflow-wrap: anywhere;
+}
+#sports-selected-date-events .sport-event-badge {
+  justify-self: end;
+  align-self: center;
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.3;
+}
+@media (max-width: 520px) {
+  #selected-date-events .event-card {
+    grid-template-columns: 54px minmax(0, 1fr);
+    gap: 10px;
+    padding: 12px;
+  }
+  #selected-date-events .event-date {
+    width: 54px;
+    min-height: 58px;
+  }
+  #selected-date-events .event-tag {
+    grid-column: 2;
+    justify-self: start;
+    text-align: left;
+    white-space: normal;
+  }
+  #sports-selected-date-events .sport-event-card > summary {
+    grid-template-columns: 36px 42px minmax(0, 1fr);
+    gap: 8px;
+    min-height: 88px;
+    padding: 12px 10px;
+  }
+  #sports-selected-date-events .sport-event-visual {
+    width: 36px;
+    height: 36px;
+  }
+  #sports-selected-date-events .sport-event-date {
+    width: 42px;
+    min-height: 48px;
+  }
+  #sports-selected-date-events .sport-event-badge {
+    grid-column: 3;
+    justify-self: start;
+    align-self: start;
+    margin-top: -2px;
+    text-align: left;
+  }
+}
+@media (min-width: 521px) and (max-width: 760px) {
+  #sports-selected-date-events .sport-event-card > summary {
+    grid-template-columns: 38px 42px minmax(0, 1fr);
+    gap: 8px;
+  }
+  #sports-selected-date-events .sport-event-badge {
+    grid-column: 3;
+    justify-self: start;
+    text-align: left;
+  }
+}
+
+
+
+/* Player portrait pass: frame faces consistently instead of showing shoulders/chests. */
+.hub-person.hub-pdc-player{overflow:hidden}
+.hub-person.hub-pdc-player>img{
+  object-fit:cover!important;
+  object-position:50% 0%!important;
+  transform:scale(1.56)!important;
+  transform-origin:50% 0!important;
+}
+.hub-person>img.hub-driver-portrait-official-f1{
+  object-fit:cover!important;
+  object-position:50% 2%!important;
+  transform:scale(1.58)!important;
+  transform-origin:50% 0!important;
+}
+.sport-ranking-image:not(.f1-driver-portrait){object-position:50% 8%}
+.sport-ranking-image.f1-driver-portrait{object-position:50% 2%!important}
+.fighter-portrait img{object-position:50% 10%;transform:scale(1.16);transform-origin:50% 8%}
+.sport-fight-portrait{object-position:50% 10%;transform:scale(1.14);transform-origin:50% 8%}
+.favourite-card-portrait img,
+.favourite-profile-portrait img{object-position:50% 7%}
+.favourite-card-portrait img.favourite-f1-driver-portrait{object-position:74% 3%!important}
+@media(max-width:520px){
+  .hub-person.hub-pdc-player>img{transform:scale(1.5)!important}
+  .hub-person>img.hub-driver-portrait-official-f1{transform:scale(1.52)!important}
+  .fighter-portrait img,.sport-fight-portrait{transform:scale(1.1)}
+}
