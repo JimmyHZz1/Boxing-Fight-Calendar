@@ -17,7 +17,8 @@
     const localPath = local && local.path ? "./"+String(local.path).replace(/^[/]+/,"") : (item.image_url && item.image_url.startsWith("./assets/") ? item.image_url : "");
     const source = localPath ? "https://raw.githubusercontent.com/JimmyHZz1/Boxing-Fight-Calendar/main/"+String(local?.path || item.image_url).replace(/^\.\//,"").replace(/^\//,"") : item.image_url;
     const credit = local?.attribution || item.image_credit;
-    const img = source ? '<img src="'+esc(source)+'" alt="" loading="lazy" data-image-entity="'+esc(item.name||"")+'" data-image-fallback="'+esc(initials(item.name))+'">' : '<span class="hub-avatar-fallback">'+esc(initials(item.name))+'</span>';
+    const constructor = label==="Constructor";
+    const img = source ? '<img class="'+(constructor?"hub-constructor-logo":"hub-driver-portrait")+'" src="'+esc(source)+'" alt="" loading="lazy" data-image-entity="'+esc(item.name||"")+'" data-image-fallback="'+esc(initials(item.name))+'">' : '<span class="hub-avatar-fallback">'+esc(initials(item.name))+'</span>';
     const rank = item.rank != null ? (item.rank===0 ? "C" : "#"+item.rank) : (index+1);
     const extra = [item.team,item.prize_money?"£"+item.prize_money:(item.points!=null?item.points+" pts":null),item.org,credit].filter(Boolean).join(" · ");
     return '<div class="hub-person">'+img+'<span class="hub-rank">'+esc(rank)+'</span><span class="hub-person-name"><strong>'+esc(item.name||"TBC")+'</strong><small>'+esc(extra||label||"")+'</small></span></div>';
