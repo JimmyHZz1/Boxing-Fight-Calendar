@@ -248,7 +248,7 @@
       ],
       "season": 2026,
       "notice": "Official season standings sourced from the community-maintained Jolpica F1 API.",
-      "last_updated": "2026-11-08T12:35:45Z"
+      "last_updated": "2026-11-08T13:19:31Z"
     },
     "darts": {
       "rankings": [
@@ -1830,7 +1830,7 @@
       ],
       "source_url": "https://www.dartsrankings.com/",
       "notice": "PDC Order of Merit live table. Rankings are updated after PDC ranking events.",
-      "last_updated": "2026-11-08T12:35:45Z"
+      "last_updated": "2026-11-08T13:19:31Z"
     },
     "ufc": {
       "divisions": [
@@ -2945,7 +2945,7 @@
       ],
       "snapshot_date": "2026-11-03",
       "notice": "Official UFC divisional rankings from UFCalendar. Rank 0 denotes the champion; rankings are updated when the publisher releases a new snapshot.",
-      "last_updated": "2026-11-08T12:35:45Z"
+      "last_updated": "2026-11-08T13:19:31Z"
     },
     "boxing": {
       "divisions": [
@@ -3608,32 +3608,18 @@
         }
       ],
       "notice": "Current reigns from Open Boxing, covering the major sanctioning bodies and The Ring where recorded. Boxing title status can change between updates; data coverage is subject to the source database.",
-      "last_updated": "2026-11-08T12:35:45Z"
+      "last_updated": "2026-11-08T13:19:31Z"
     }
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 5,
-    "found": 5,
-    "missing": 730,
-    "rejected": 30,
-    "by_sport": {
-      "f1 drivers": {
-        "attempted": 5,
-        "found": 4,
-        "missing": 1,
-        "rejected": 0
-      }
-    },
-    "checked_at": "2026-11-08T12:58:07Z",
-    "library_entries": 5,
-    "newly_found": 4,
+    "attempted": 0,
+    "found": 4,
+    "missing": 544,
+    "rejected": 0,
+    "by_sport": {},
+    "newly_found": 0,
     "coverage": {
-      "boxing fight card fighters": {
-        "total": 187,
-        "with_image": 1,
-        "missing": 186
-      },
       "f1 drivers": {
         "total": 25,
         "with_image": 4,
@@ -3659,7 +3645,9 @@
         "with_image": 0,
         "missing": 81
       }
-    }
+    },
+    "checked_at": "2026-11-08T13:19:31Z",
+    "library_entries": 5
   },
-  "last_updated": "2026-11-08T12:35:45Z"
+  "last_updated": "2026-11-08T13:19:31Z"
 }

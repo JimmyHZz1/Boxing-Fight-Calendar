@@ -1480,8 +1480,72 @@
         }
       ],
       "source": "UFCalendar"
+    },
+    {
+      "id": 2562,
+      "slug": "ufc-335-2026-12-13",
+      "name": "UFC 335: Oliveira vs Lopes",
+      "date": "2026-12-12",
+      "start_at": "2026-12-12T22:00:00.000Z",
+      "status": "announced",
+      "number": null,
+      "is_ppv": true,
+      "is_title_card": false,
+      "main_card_at": "2026-12-13T02:00:00.000Z",
+      "prelims_at": "2026-12-13T00:00:00.000Z",
+      "early_prelims_at": "2026-12-12T22:00:00.000Z",
+      "fights": [],
+      "source": "UFCalendar"
+    },
+    {
+      "id": 3554,
+      "slug": "ufc-fight-night-2027-01-17",
+      "name": "UFC Dallas",
+      "date": "2027-01-16",
+      "start_at": "2027-01-16T22:00:00.000Z",
+      "status": "announced",
+      "number": null,
+      "is_ppv": false,
+      "is_title_card": false,
+      "main_card_at": "2027-01-17T01:00:00.000Z",
+      "prelims_at": "2027-01-16T22:00:00.000Z",
+      "early_prelims_at": null,
+      "fights": [],
+      "source": "UFCalendar"
+    },
+    {
+      "id": 3553,
+      "slug": "ufc-336-2027-01-30",
+      "name": "UFC 336: Van vs Kape",
+      "date": "2027-01-30",
+      "start_at": "2027-01-30T22:00:00.000Z",
+      "status": "announced",
+      "number": null,
+      "is_ppv": true,
+      "is_title_card": true,
+      "main_card_at": "2027-01-31T02:00:00.000Z",
+      "prelims_at": "2027-01-31T00:00:00.000Z",
+      "early_prelims_at": "2027-01-30T22:00:00.000Z",
+      "fights": [],
+      "source": "UFCalendar"
+    },
+    {
+      "id": 3541,
+      "slug": "ufc-fight-night-2027-02-06",
+      "name": "UFC Fight Night: Salkilld vs Saint Denis",
+      "date": "2027-02-06",
+      "start_at": "2027-02-06T20:00:00.000Z",
+      "status": "announced",
+      "number": null,
+      "is_ppv": false,
+      "is_title_card": false,
+      "main_card_at": "2027-02-06T22:00:00.000Z",
+      "prelims_at": "2027-02-06T20:00:00.000Z",
+      "early_prelims_at": null,
+      "fights": [],
+      "source": "UFCalendar"
     }
   ],
-  "notice": "UFC event schedule and selected full fight cards. Free API allowance: 1,000 requests per month.",
-  "last_updated": "2026-11-08T12:35:45Z"
+  "notice": "All upcoming UFC events returned by UFCalendar, with detailed fight cards for the next two events and the latest completed card. Free API allowance: 1,000 requests per month.",
+  "last_updated": "2026-11-08T13:19:31Z"
 }
