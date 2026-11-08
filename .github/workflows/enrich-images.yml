@@ -32,16 +32,26 @@ jobs:
           python-version: "3.12"
       - name: Enrich five images from the saved queue
         run: python scripts/sync_sports.py --images-only
-      - name: Commit image progress and cache
+      - name: Commit image progress and cache with retry
+        shell: bash
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/ assets/images/
-          if git diff --cached --quiet; then
-            echo "No image-library changes."
-            exit 0
-          fi
-          git commit -m "Enrich sports image library in small batches"
-          git fetch origin main
-          git rebase origin/main
-          git push origin HEAD:main
+          for attempt in 1 2 3; do
+            git add data/ assets/images/
+            if git diff --cached --quiet; then
+              echo "No image-library changes."
+              exit 0
+            fi
+            git commit -m "Enrich sports image library in small batches"
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "main moved during image enrichment; refreshing and retrying (attempt $attempt)."
+            git fetch origin main
+            git reset --hard origin/main
+            python scripts/sync_sports.py --images-only
+          done
+          echo "Could not publish image batch after three attempts."
+          exit 1
