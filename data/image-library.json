@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-08T13:27:48Z",
+  "updated_at": "2026-11-08T13:28:36Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -200,6 +200,61 @@
       "creator": "Wikimedia Commons · F1fans · CC BY-SA 3.0",
       "attribution": "Wikimedia Commons · F1fans · CC BY-SA 3.0",
       "verified_at": "2026-11-08T13:27:48Z",
+      "sport": "f1 drivers"
+    },
+    "carlos sainz": {
+      "name": "Carlos Sainz",
+      "path": "assets/images/f1-drivers/carlos-sainz.png",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Carlos_Sainz_Jr_2016_European_GP.png",
+      "licence": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "creator": "Wikimedia Commons · Twkera · CC BY-SA 4.0",
+      "attribution": "Wikimedia Commons · Twkera · CC BY-SA 4.0",
+      "verified_at": "2026-11-08T13:28:36Z",
+      "sport": "f1 drivers"
+    },
+    "alexander albon": {
+      "name": "Alexander Albon",
+      "path": "assets/images/f1-drivers/alexander-albon.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Alexander_Albon.JPG",
+      "licence": "CC BY-SA 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "creator": "Wikimedia Commons · Henry Mineur · CC BY-SA 3.0",
+      "attribution": "Wikimedia Commons · Henry Mineur · CC BY-SA 3.0",
+      "verified_at": "2026-11-08T13:28:36Z",
+      "sport": "f1 drivers"
+    },
+    "yuki tsunoda": {
+      "name": "Yuki Tsunoda",
+      "path": "assets/images/f1-drivers/yuki-tsunoda.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Yuki_Tsunoda_Macau_2019.jpg",
+      "licence": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "creator": "Wikimedia Commons · Smith007 · CC BY-SA 4.0",
+      "attribution": "Wikimedia Commons · Smith007 · CC BY-SA 4.0",
+      "verified_at": "2026-11-08T13:28:36Z",
+      "sport": "f1 drivers"
+    },
+    "ryo hirakawa": {
+      "name": "Ryo Hirakawa",
+      "path": "assets/images/f1-drivers/ryo-hirakawa.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ryo_Hirakawa_2024_WEC_Fuji_1.jpg",
+      "licence": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "creator": "Wikimedia Commons · Morio · CC BY-SA 4.0",
+      "attribution": "Wikimedia Commons · Morio · CC BY-SA 4.0",
+      "verified_at": "2026-11-08T13:28:36Z",
+      "sport": "f1 drivers"
+    },
+    "lance stroll": {
+      "name": "Lance Stroll",
+      "path": "assets/images/f1-drivers/lance-stroll.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lance_Stroll_2017_Malaysia_1.jpg",
+      "licence": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "creator": "Wikimedia Commons · Morio · CC BY-SA 4.0",
+      "attribution": "Wikimedia Commons · Morio · CC BY-SA 4.0",
+      "verified_at": "2026-11-08T13:28:36Z",
       "sport": "f1 drivers"
     }
   },

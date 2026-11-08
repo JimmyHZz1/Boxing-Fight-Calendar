@@ -274,31 +274,81 @@
           "rank": 18,
           "name": "Carlos Sainz",
           "team": "Williams",
-          "points": "7"
+          "points": "7",
+          "image_url": "./assets/images/f1-drivers/carlos-sainz.png",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Carlos_Sainz_Jr_2016_European_GP.png",
+          "image_credit": "Wikimedia Commons · Twkera · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1.0,
+          "image_match_method": "search:Carlos Sainz",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/carlos-sainz.png"
         },
         {
           "rank": 19,
           "name": "Alexander Albon",
           "team": "Williams",
-          "points": "5"
+          "points": "5",
+          "image_url": "./assets/images/f1-drivers/alexander-albon.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Alexander_Albon.JPG",
+          "image_credit": "Wikimedia Commons · Henry Mineur · CC BY-SA 3.0",
+          "image_license": "CC BY-SA 3.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1.0,
+          "image_match_method": "search:Alexander Albon",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/alexander-albon.jpg"
         },
         {
           "rank": 20,
           "name": "Yuki Tsunoda",
           "team": "RB F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/yuki-tsunoda.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Yuki_Tsunoda_Macau_2019.jpg",
+          "image_credit": "Wikimedia Commons · Smith007 · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1.0,
+          "image_match_method": "category:Category:Yuki Tsunoda in 2019",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/yuki-tsunoda.jpg"
         },
         {
           "rank": 21,
           "name": "Ryo Hirakawa",
           "team": "Haas F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/ryo-hirakawa.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Ryo_Hirakawa_2024_WEC_Fuji_1.jpg",
+          "image_credit": "Wikimedia Commons · Morio · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1.0,
+          "image_match_method": "search:Ryo Hirakawa",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/ryo-hirakawa.jpg"
         },
         {
           "rank": 22,
           "name": "Lance Stroll",
           "team": "Aston Martin",
-          "points": "0"
+          "points": "0",
+          "image_url": "./assets/images/f1-drivers/lance-stroll.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Lance_Stroll_2017_Malaysia_1.jpg",
+          "image_credit": "Wikimedia Commons · Morio · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1.0,
+          "image_match_method": "search:Lance Stroll",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/lance-stroll.jpg"
         },
         {
           "rank": 23,
@@ -3744,8 +3794,8 @@
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
     "attempted": 5,
-    "found": 18,
-    "missing": 717,
+    "found": 23,
+    "missing": 712,
     "rejected": 0,
     "by_sport": {
       "f1 drivers": {
@@ -3756,61 +3806,62 @@
       }
     },
     "rejection_reasons": {
-      "not_an_image": 7,
-      "surname_not_matched": 6,
-      "given_name_not_matched": 8,
-      "missing_licence_or_source_metadata": 1
+      "surname_not_matched": 26,
+      "not_an_image": 27,
+      "given_name_not_matched": 1
     },
     "search_details": [
       {
-        "name": "Oliver Bearman",
-        "queries": 3,
-        "candidate_files": 16,
-        "accepted": 7,
+        "name": "Carlos Sainz",
+        "queries": 1,
+        "candidate_files": 20,
+        "accepted": 5,
         "rejections": {
-          "not_an_image": 2,
-          "surname_not_matched": 1,
-          "given_name_not_matched": 6
+          "surname_not_matched": 12,
+          "not_an_image": 3
         }
       },
       {
-        "name": "Gabriel Bortoleto",
-        "queries": 3,
-        "candidate_files": 7,
-        "accepted": 4,
-        "rejections": {
-          "surname_not_matched": 1,
-          "given_name_not_matched": 2
-        }
-      },
-      {
-        "name": "Nico Hülkenberg",
+        "name": "Alexander Albon",
         "queries": 1,
-        "candidate_files": 3,
-        "accepted": 3,
-        "rejections": {}
-      },
-      {
-        "name": "Esteban Ocon",
-        "queries": 1,
-        "candidate_files": 3,
-        "accepted": 3,
-        "rejections": {}
-      },
-      {
-        "name": "Fernando Alonso",
-        "queries": 2,
-        "candidate_files": 27,
-        "accepted": 17,
+        "candidate_files": 20,
+        "accepted": 1,
         "rejections": {
           "surname_not_matched": 4,
-          "missing_licence_or_source_metadata": 1,
-          "not_an_image": 5
+          "not_an_image": 15
+        }
+      },
+      {
+        "name": "Yuki Tsunoda",
+        "queries": 3,
+        "candidate_files": 2,
+        "accepted": 1,
+        "rejections": {
+          "given_name_not_matched": 1
+        }
+      },
+      {
+        "name": "Ryo Hirakawa",
+        "queries": 1,
+        "candidate_files": 5,
+        "accepted": 3,
+        "rejections": {
+          "not_an_image": 2
+        }
+      },
+      {
+        "name": "Lance Stroll",
+        "queries": 1,
+        "candidate_files": 20,
+        "accepted": 3,
+        "rejections": {
+          "not_an_image": 7,
+          "surname_not_matched": 10
         }
       }
     ],
-    "checked_at": "2026-11-08T13:27:48Z",
-    "library_entries": 18,
+    "checked_at": "2026-11-08T13:28:36Z",
+    "library_entries": 23,
     "newly_found": 5,
     "coverage": {
       "boxing fight card fighters": {
@@ -3820,8 +3871,8 @@
       },
       "f1 drivers": {
         "total": 25,
-        "with_image": 17,
-        "missing": 8
+        "with_image": 22,
+        "missing": 3
       },
       "f1 constructors": {
         "total": 11,

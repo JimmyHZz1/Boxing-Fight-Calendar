@@ -247,9 +247,79 @@
       "image_match_method": "search:Fernando Alonso",
       "image_verified_at": "2026-11-08T13:27:48Z",
       "image_local_path": "assets/images/f1-drivers/fernando-alonso.jpg"
+    },
+    "carlos sainz": {
+      "name": "Carlos Sainz",
+      "sport": "f1 drivers",
+      "image_url": "./assets/images/f1-drivers/carlos-sainz.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Carlos_Sainz_Jr_2016_European_GP.png",
+      "image_credit": "Wikimedia Commons · Twkera · CC BY-SA 4.0",
+      "image_license": "CC BY-SA 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "search:Carlos Sainz",
+      "image_verified_at": "2026-11-08T13:28:36Z",
+      "image_local_path": "assets/images/f1-drivers/carlos-sainz.png"
+    },
+    "alexander albon": {
+      "name": "Alexander Albon",
+      "sport": "f1 drivers",
+      "image_url": "./assets/images/f1-drivers/alexander-albon.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Alexander_Albon.JPG",
+      "image_credit": "Wikimedia Commons · Henry Mineur · CC BY-SA 3.0",
+      "image_license": "CC BY-SA 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "search:Alexander Albon",
+      "image_verified_at": "2026-11-08T13:28:36Z",
+      "image_local_path": "assets/images/f1-drivers/alexander-albon.jpg"
+    },
+    "yuki tsunoda": {
+      "name": "Yuki Tsunoda",
+      "sport": "f1 drivers",
+      "image_url": "./assets/images/f1-drivers/yuki-tsunoda.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Yuki_Tsunoda_Macau_2019.jpg",
+      "image_credit": "Wikimedia Commons · Smith007 · CC BY-SA 4.0",
+      "image_license": "CC BY-SA 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Yuki Tsunoda in 2019",
+      "image_verified_at": "2026-11-08T13:28:36Z",
+      "image_local_path": "assets/images/f1-drivers/yuki-tsunoda.jpg"
+    },
+    "ryo hirakawa": {
+      "name": "Ryo Hirakawa",
+      "sport": "f1 drivers",
+      "image_url": "./assets/images/f1-drivers/ryo-hirakawa.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Ryo_Hirakawa_2024_WEC_Fuji_1.jpg",
+      "image_credit": "Wikimedia Commons · Morio · CC BY-SA 4.0",
+      "image_license": "CC BY-SA 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "search:Ryo Hirakawa",
+      "image_verified_at": "2026-11-08T13:28:36Z",
+      "image_local_path": "assets/images/f1-drivers/ryo-hirakawa.jpg"
+    },
+    "lance stroll": {
+      "name": "Lance Stroll",
+      "sport": "f1 drivers",
+      "image_url": "./assets/images/f1-drivers/lance-stroll.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Lance_Stroll_2017_Malaysia_1.jpg",
+      "image_credit": "Wikimedia Commons · Morio · CC BY-SA 4.0",
+      "image_license": "CC BY-SA 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "search:Lance Stroll",
+      "image_verified_at": "2026-11-08T13:28:36Z",
+      "image_local_path": "assets/images/f1-drivers/lance-stroll.jpg"
     }
   },
-  "updated_at": "2026-11-08T13:27:48Z",
+  "updated_at": "2026-11-08T13:28:36Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -271,6 +341,11 @@
     "gabriel bortoleto": "2026-11-08T13:27:48Z",
     "nico hulkenberg": "2026-11-08T13:27:48Z",
     "esteban ocon": "2026-11-08T13:27:48Z",
-    "fernando alonso": "2026-11-08T13:27:48Z"
+    "fernando alonso": "2026-11-08T13:27:48Z",
+    "carlos sainz": "2026-11-08T13:28:36Z",
+    "alexander albon": "2026-11-08T13:28:36Z",
+    "yuki tsunoda": "2026-11-08T13:28:36Z",
+    "ryo hirakawa": "2026-11-08T13:28:36Z",
+    "lance stroll": "2026-11-08T13:28:36Z"
   }
 }
