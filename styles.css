@@ -376,3 +376,9 @@
 .sport-ranking-row small{color:var(--muted);font-size:10px;text-align:right}
 .sport-detail-footer{display:flex;justify-content:center;padding:15px 0 30px}
 @media(max-width:520px){.sport-detail-hero{padding:22px 17px}.sport-detail-stats{gap:6px}.sport-detail-stat{padding:12px 8px}.sport-detail-stat strong{font-size:26px}.sport-detail-stat small{font-size:7px;letter-spacing:.3px}.sport-breakdown-grid,.sport-watch-guide-grid{grid-template-columns:1fr}.sport-ranking-row{grid-template-columns:30px 1fr}.sport-ranking-row small{grid-column:2;text-align:left}.sport-detail-toolbar{align-items:flex-start;flex-direction:column}}
+
+/* F1 championship selector: two clear, side-by-side options */
+.f1-standings-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0 0 12px}
+.f1-standings-tab{min-width:0;padding:13px 8px;border:1px solid var(--line);background:var(--panel);color:var(--muted);font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:700;letter-spacing:.8px;cursor:pointer}
+.f1-standings-tab.active{background:var(--accent);border-color:var(--accent);color:#111}
+.f1-standings-tab:focus-visible{outline:2px solid var(--accent);outline-offset:3px}

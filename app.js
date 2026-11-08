@@ -263,8 +263,8 @@ function makeBoutRow(b) {
   const vs=document.createElement("div"); vs.className="vs"; vs.textContent="VS";
   const right=document.createElement("div"); right.className="fighter"; appendFighterName(right,c,b.fighter2_nationality||b.fighter2_country||b.fighter2_country_code);
   const meta=document.createElement("div"); meta.className="bout-meta";
-  const boutTime=b.start_datetime_utc||b.start_time_utc||b.ring_walk_time_utc||b.scheduled_start_utc||b.fight_time_utc||b.start_time||b.ring_walk_time||b.scheduled_time||null;
-  const timeLabel="FIGHT TIME "+(boutTime?(formatTime(boutTime,b.date)||"TBC"):"TBC");
+  const boutTime=b.displayFightTime||b.start_datetime_utc||b.start_time_utc||b.ring_walk_time_utc||b.scheduled_start_utc||b.fight_time_utc||b.start_time||b.ring_walk_time||b.scheduled_time||null;
+  const timeLabel=(b.fightTimeEstimated?"EST. FIGHT TIME ":"FIGHT TIME ")+(boutTime?(formatTime(boutTime,b.date)||"TBC"):"TBC");
   const cardTime=b.eventStartTime?"CARD START "+(formatTime(b.eventStartTime,b.eventDate)||"TBC"):null;
   const details=[b.weight_class||b.division,b.rounds ? b.rounds+" rounds" : null,b.title_text,b.eventCountry ? "COUNTRY "+b.eventCountry : null,timeLabel,cardTime].filter(Boolean);
   const detailLine=document.createElement("span");
@@ -316,11 +316,24 @@ function eventBouts(event) {
       const record=b.record1; b.record1=b.record2; b.record2=record;
     }
   });
-  return bouts.sort((x,y)=>{
+  const ordered=bouts.sort((x,y)=>{
     const xt=x.title_text?1:0, yt=y.title_text?1:0;
     if(xt!==yt)return yt-xt;
     return (Number(y.rounds)||0)-(Number(x.rounds)||0);
   });
+  // Individual ring-walk times are rarely supplied by the event feed. Where
+  // only a card start is known, publish clearly-labelled estimates based on
+  // bout order, scheduled rounds and typical between-bout intervals.
+  const cardStart=parseDate(event.start_time_utc||event.card_start_time_utc||event.event_start_time_utc);
+  let elapsedMinutes=15;
+  ordered.forEach(b=>{
+    const supplied=b.start_datetime_utc||b.start_time_utc||b.ring_walk_time_utc||b.scheduled_start_utc||b.fight_time_utc||b.start_time||b.ring_walk_time||b.scheduled_time;
+    if(supplied){b.displayFightTime=supplied;b.fightTimeEstimated=false;}
+    else if(cardStart){b.displayFightTime=new Date(cardStart.getTime()+elapsedMinutes*60000).toISOString();b.fightTimeEstimated=true;}
+    else {b.displayFightTime=null;b.fightTimeEstimated=false;}
+    elapsedMinutes+=(Math.max(4,Number(b.rounds)||6)*3)+8;
+  });
+  return ordered;
 }
 function countryName(value) {
   if (!value) return null;
