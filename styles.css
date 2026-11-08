@@ -476,3 +476,6 @@
 .sport-watch-guide-logo{position:absolute;left:0;top:0;width:auto;height:34px;max-width:92px;min-width:34px;object-fit:contain;background:transparent;border-radius:0;padding:0;box-sizing:border-box;mix-blend-mode:multiply}
 .sport-watch-guide-item .sport-watch-guide-brand+.sport-watch-guide-item strong{margin-top:0}
 @media(max-width:420px){.hub-person>img.hub-constructor-logo{width:38px;height:30px}.hub-person:has(.hub-constructor-logo){grid-template-columns:40px 23px minmax(0,1fr)}.sport-ranking-row.is-constructor{grid-template-columns:26px 42px minmax(0,1fr)}.sport-ranking-row.is-constructor .sport-ranking-image{width:40px;height:32px}.sport-ranking-row.is-constructor small{grid-column:3;text-align:left}}
+
+/* Blend white logo canvases into the charcoal theme instead of showing white tiles */
+.sport-slide-logo,.sport-event-visual img,.sport-watch-provider img,.uk-broadcaster-logo img,.top-sport-button img,.hub-sport-shortcut img,.sport-detail-logo,.live-centre-logo img{mix-blend-mode:multiply}
