@@ -34,9 +34,12 @@
     if (["cancelled","canceled"].includes(s)) return "CANCELLED";
     if (s==="postponed") return "POSTPONED";
     if (event._sport==="f1" || event.sport==="f1" || /^f1-/.test(String(event.id||""))) {
-      const start=new Date(event.start_at||event.date||"").getTime(), elapsed=Date.now()-start;
-      if (Number.isFinite(start) && elapsed>=0 && elapsed<4*60*60*1000) return "IN PROGRESS";
-      if (Number.isFinite(start) && elapsed>=4*60*60*1000) return "RESULTS PENDING";
+      // A scheduled start time is not proof that a race is still running.
+      // Only explicit feed status can mark an F1 event live; once its start
+      // time has passed, wait for the results feed instead of using a stale
+      // multi-hour "live" window.
+      const start=new Date(event.start_at||event.date||"").getTime();
+      if (Number.isFinite(start) && start<=Date.now()) return "RESULTS PENDING";
     }
     return "UPCOMING";
   }
