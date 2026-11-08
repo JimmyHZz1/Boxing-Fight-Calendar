@@ -319,12 +319,11 @@
           "image_url": "https://media.formula1.com/image/upload/c_fit,h_64/q_auto/v1740000000/common/f1/2026/mercedes/2026mercedeslogowhite.webp",
           "image_page_url": "https://www.formula1.com/en/teams",
           "image_credit": "Official Formula 1 2026 team mark",
-          "image_license": "Public domain",
-          "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
           "image_source": "Formula1.com",
           "image_match_score": 1,
           "image_match_method": "official-f1-timing-board-team-mark",
-          "image_verified_at": "2026-11-08T18:55:00Z"
+          "image_verified_at": "2026-11-08T18:55:00Z",
+          "image_rights": "Formula One World Championship Limited / respective F1 teams; official CDN asset"
         },
         {
           "rank": 2,
@@ -333,12 +332,11 @@
           "image_url": "https://media.formula1.com/image/upload/c_fit,h_64/q_auto/v1740000000/common/f1/2026/ferrari/2026ferrarilogo.webp",
           "image_page_url": "https://www.formula1.com/en/teams",
           "image_credit": "Official Formula 1 2026 team mark",
-          "image_license": "Public domain",
-          "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
           "image_source": "Formula1.com",
           "image_match_score": 1,
           "image_match_method": "official-f1-timing-board-team-mark",
-          "image_verified_at": "2026-11-08T18:55:00Z"
+          "image_verified_at": "2026-11-08T18:55:00Z",
+          "image_rights": "Formula One World Championship Limited / respective F1 teams; official CDN asset"
         },
         {
           "rank": 3,
@@ -347,13 +345,12 @@
           "image_url": "https://media.formula1.com/image/upload/c_fit,h_64/q_auto/v1740000000/common/f1/2026/redbullracing/2026redbullracinglogo.webp",
           "image_page_url": "https://www.formula1.com/en/teams",
           "image_credit": "Official Formula 1 2026 team mark",
-          "image_license": "Public domain",
-          "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
           "image_source": "Formula1.com",
           "image_match_score": 0.75,
           "image_match_method": "official-f1-timing-board-team-mark",
           "image_verified_at": "2026-11-08T18:55:00Z",
-          "image_local_path": "assets/images/f1-constructors/red-bull.png"
+          "image_local_path": "assets/images/f1-constructors/red-bull.png",
+          "image_rights": "Formula One World Championship Limited / respective F1 teams; official CDN asset"
         },
         {
           "rank": 4,
@@ -362,12 +359,11 @@
           "image_url": "https://media.formula1.com/image/upload/c_fit,h_64/q_auto/v1740000000/common/f1/2026/mclaren/2026mclarenlogo.webp",
           "image_page_url": "https://www.formula1.com/en/teams",
           "image_credit": "Official Formula 1 2026 team mark",
-          "image_license": "Public domain",
-          "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
           "image_source": "Formula1.com",
           "image_match_score": 1,
           "image_match_method": "official-f1-timing-board-team-mark",
-          "image_verified_at": "2026-11-08T18:55:00Z"
+          "image_verified_at": "2026-11-08T18:55:00Z",
+          "image_rights": "Formula One World Championship Limited / respective F1 teams; official CDN asset"
         },
         {
           "rank": 5,
@@ -376,12 +372,11 @@
           "image_url": "https://media.formula1.com/image/upload/c_fit,h_64/q_auto/v1740000000/common/f1/2026/racingbulls/2026racingbullslogo.webp",
           "image_page_url": "https://www.formula1.com/en/teams",
           "image_credit": "Official Formula 1 2026 team mark",
-          "image_license": "Official brand asset; trademark rights remain with the respective owners",
-          "image_license_url": "https://www.visa.com/en-gb/partnerships/red-bull-f1-racing-partnership",
           "image_source": "Formula1.com",
           "image_match_score": 1,
           "image_match_method": "official-f1-timing-board-team-mark",
-          "image_verified_at": "2026-11-08T18:55:00Z"
+          "image_verified_at": "2026-11-08T18:55:00Z",
+          "image_rights": "Formula One World Championship Limited / respective F1 teams; official CDN asset"
         },
         {
           "rank": 6,
@@ -390,13 +385,12 @@
           "image_url": "https://media.formula1.com/image/upload/c_fit,h_64/q_auto/v1740000000/common/f1/2026/alpine/2026alpinelogo.webp",
           "image_page_url": "https://www.formula1.com/en/teams",
           "image_credit": "Official Formula 1 2026 team mark",
-          "image_license": "CC0",
-          "image_license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
           "image_source": "Formula1.com",
           "image_match_score": 1,
           "image_match_method": "official-f1-timing-board-team-mark",
           "image_verified_at": "2026-11-08T18:55:00Z",
-          "image_local_path": "assets/images/f1-constructors/alpine-f1-team.png"
+          "image_local_path": "assets/images/f1-constructors/alpine-f1-team.png",
+          "image_rights": "Formula One World Championship Limited / respective F1 teams; official CDN asset"
         },
         {
           "rank": 7,
@@ -405,13 +399,12 @@
           "image_url": "https://media.formula1.com/image/upload/c_fit,h_64/q_auto/v1740000000/common/f1/2026/haas/2026haaslogo.webp",
           "image_page_url": "https://www.formula1.com/en/teams",
           "image_credit": "Official Formula 1 2026 team mark",
-          "image_license": "Public domain",
-          "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
           "image_source": "Formula1.com",
           "image_match_score": 1,
           "image_match_method": "official-f1-timing-board-team-mark",
           "image_verified_at": "2026-11-08T18:55:00Z",
-          "image_local_path": "assets/images/f1-constructors/haas-f1-team.png"
+          "image_local_path": "assets/images/f1-constructors/haas-f1-team.png",
+          "image_rights": "Formula One World Championship Limited / respective F1 teams; official CDN asset"
         },
         {
           "rank": 8,
@@ -420,13 +413,12 @@
           "image_url": "https://media.formula1.com/image/upload/c_fit,h_64/q_auto/v1740000000/common/f1/2026/audi/2026audilogo.webp",
           "image_page_url": "https://www.formula1.com/en/teams",
           "image_credit": "Official Formula 1 2026 team mark",
-          "image_license": "Public domain",
-          "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
           "image_source": "Formula1.com",
           "image_match_score": 1,
           "image_match_method": "official-f1-timing-board-team-mark",
           "image_verified_at": "2026-11-08T18:55:00Z",
-          "image_local_path": "assets/images/f1-constructors/audi.png"
+          "image_local_path": "assets/images/f1-constructors/audi.png",
+          "image_rights": "Formula One World Championship Limited / respective F1 teams; official CDN asset"
         },
         {
           "rank": 9,
@@ -435,13 +427,12 @@
           "image_url": "https://media.formula1.com/image/upload/c_fit,h_64/q_auto/v1740000000/common/f1/2026/williams/2026williamslogo.webp",
           "image_page_url": "https://www.formula1.com/en/teams",
           "image_credit": "Official Formula 1 2026 team mark",
-          "image_license": "Public domain",
-          "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
           "image_source": "Formula1.com",
           "image_match_score": 1,
           "image_match_method": "official-f1-timing-board-team-mark",
           "image_verified_at": "2026-11-08T18:55:00Z",
-          "image_local_path": "assets/images/f1-constructors/williams.png"
+          "image_local_path": "assets/images/f1-constructors/williams.png",
+          "image_rights": "Formula One World Championship Limited / respective F1 teams; official CDN asset"
         },
         {
           "rank": 10,
@@ -450,13 +441,12 @@
           "image_url": "https://media.formula1.com/image/upload/c_fit,h_64/q_auto/v1740000000/common/f1/2026/astonmartin/2026astonmartinlogo.webp",
           "image_page_url": "https://www.formula1.com/en/teams",
           "image_credit": "Official Formula 1 2026 team mark",
-          "image_license": "CC BY 4.0",
-          "image_license_url": "https://creativecommons.org/licenses/by/4.0",
           "image_source": "Formula1.com",
           "image_match_score": 0.75,
           "image_match_method": "official-f1-timing-board-team-mark",
           "image_verified_at": "2026-11-08T18:55:00Z",
-          "image_local_path": "assets/images/f1-constructors/aston-martin.jpg"
+          "image_local_path": "assets/images/f1-constructors/aston-martin.jpg",
+          "image_rights": "Formula One World Championship Limited / respective F1 teams; official CDN asset"
         },
         {
           "rank": 11,
@@ -465,13 +455,12 @@
           "image_url": "https://media.formula1.com/image/upload/c_fit,h_64/q_auto/v1740000000/common/f1/2026/cadillac/2026cadillaclogo.webp",
           "image_page_url": "https://www.formula1.com/en/teams",
           "image_credit": "Official Formula 1 2026 team mark",
-          "image_license": "CC0",
-          "image_license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
           "image_source": "Formula1.com",
           "image_match_score": 1,
           "image_match_method": "official-f1-timing-board-team-mark",
           "image_verified_at": "2026-11-08T18:55:00Z",
-          "image_local_path": "assets/images/f1-constructors/cadillac-f1-team.png"
+          "image_local_path": "assets/images/f1-constructors/cadillac-f1-team.png",
+          "image_rights": "Formula One World Championship Limited / respective F1 teams; official CDN asset"
         }
       ],
       "season": 2026,
