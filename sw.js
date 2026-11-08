@@ -3,7 +3,7 @@ const APP_FILES=[
   "./",
   "./index.html",
   "./styles.css?v=20261108-46",
-  "./app.js?v=20261108-31",
+  "./app.js?v=20261108-32",
   "./sports-data.js?v=20261108-02",
   "./sports.js?v=20261107-09",
   "./sports-hub.js?v=20261108-04",
