@@ -1,6 +1,12 @@
 name: Gradual image enrichment
 
 on:
+  push:
+    branches: [feature/v1.2-sports-weekend-image-library]
+    paths:
+      - "scripts/sync_sports.py"
+      - ".github/workflows/enrich-images.yml"
+      - "data/image-library.json"
   schedule:
     - cron: "47 */4 * * *"
   workflow_dispatch:
@@ -36,6 +42,6 @@ jobs:
             exit 0
           fi
           git commit -m "Enrich sports image library in small batches"
-          git fetch origin main
-          git rebase origin/main
-          git push origin HEAD:main
+          git fetch origin feature/v1.2-sports-weekend-image-library
+          git rebase origin/feature/v1.2-sports-weekend-image-library
+          git push origin HEAD:feature/v1.2-sports-weekend-image-library
