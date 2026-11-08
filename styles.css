@@ -472,7 +472,7 @@
 .sport-ranking-row.is-constructor{grid-template-columns:30px 50px minmax(0,1fr) auto}
 .sport-ranking-row.is-constructor .sport-ranking-image-fallback{width:48px;height:36px;border-radius:6px}
 .sport-watch-guide-brand{position:relative;display:flex;align-items:center;justify-content:flex-start;min-height:42px}
-.sport-watch-guide-brand-mark{display:inline-flex;align-items:center;justify-content:center;min-width:54px;height:34px;padding:0 8px;background:#fff;color:#16181d;border-radius:5px;font:900 15px 'Barlow Condensed',sans-serif;letter-spacing:-.4px}
+.sport-watch-guide-brand-mark{display:inline-flex;align-items:center;justify-content:center;min-width:54px;height:34px;padding:0 8px;background:transparent;color:var(--accent);border:1px solid var(--line);border-radius:5px;font:900 15px 'Barlow Condensed',sans-serif;letter-spacing:-.4px}
 .sport-watch-guide-logo{position:absolute;left:0;top:0;width:auto;height:34px;max-width:92px;min-width:34px;object-fit:contain;background:transparent;border-radius:0;padding:0;box-sizing:border-box;}
 .sport-watch-guide-item .sport-watch-guide-brand+.sport-watch-guide-item strong{margin-top:0}
 @media(max-width:420px){.hub-person>img.hub-constructor-logo{width:38px;height:30px}.hub-person:has(.hub-constructor-logo){grid-template-columns:40px 23px minmax(0,1fr)}.sport-ranking-row.is-constructor{grid-template-columns:26px 42px minmax(0,1fr)}.sport-ranking-row.is-constructor .sport-ranking-image{width:40px;height:32px}.sport-ranking-row.is-constructor small{grid-column:3;text-align:left}}
@@ -531,7 +531,8 @@
   #home-screen > #sports-hub-banner,
   #home-screen > #sport-data-panel,
   #home-screen > #boxing-home-content { grid-column: 1 / -1; min-width: 0; }
-  .live-centre { padding: 24px; }
+  .live-centre { padding: 24px; display: grid; grid-template-columns: minmax(0,.82fr) minmax(0,1.18fr); gap: 18px; }
+  .live-centre-heading { grid-column: 1 / -1; }
   .live-centre-heading h2 { font-size: 36px; }
   .live-centre-list { max-height: 390px; overflow: auto; }
   .live-centre-event { grid-template-columns: 56px minmax(0,1fr) auto; padding: 12px 14px; }
@@ -577,7 +578,7 @@
 @media (min-width: 1500px) {
   #home-screen.screen.active { grid-template-columns: minmax(390px, .72fr) minmax(700px, 1.28fr); gap: 26px; }
   .live-centre { padding: 28px; }
-  .live-centre-panels { display: grid; grid-template-columns: .8fr 1.2fr; gap: 18px; }
+  .live-centre { grid-template-columns: minmax(0,.82fr) minmax(0,1.18fr); gap: 20px; }
   .sport-slide { min-height: 270px; }
   #sports-hub-content { grid-template-columns: repeat(3, minmax(0,1fr)); }
 }
