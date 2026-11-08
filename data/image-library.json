@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-08T13:26:53Z",
+  "updated_at": "2026-11-08T13:27:48Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -145,6 +145,61 @@
       "creator": "Wikimedia Commons · Liauzh · CC BY 4.0",
       "attribution": "Wikimedia Commons · Liauzh · CC BY 4.0",
       "verified_at": "2026-11-08T13:26:53Z",
+      "sport": "f1 drivers"
+    },
+    "oliver bearman": {
+      "name": "Oliver Bearman",
+      "path": "assets/images/f1-drivers/oliver-bearman.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:2026_Chinese_GP_-_Haas_-_Oliver_Bearman_-_Qualifying.jpg",
+      "licence": "CC BY 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by/4.0",
+      "creator": "Wikimedia Commons · Liauzh · CC BY 4.0",
+      "attribution": "Wikimedia Commons · Liauzh · CC BY 4.0",
+      "verified_at": "2026-11-08T13:27:48Z",
+      "sport": "f1 drivers"
+    },
+    "gabriel bortoleto": {
+      "name": "Gabriel Bortoleto",
+      "path": "assets/images/f1-drivers/gabriel-bortoleto.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:2026_Bahrain_GP_-_Audi_-_Gabriel_Bortoleto_-_Race.jpg",
+      "licence": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "creator": "Wikimedia Commons · Liauzh · CC BY-SA 4.0",
+      "attribution": "Wikimedia Commons · Liauzh · CC BY-SA 4.0",
+      "verified_at": "2026-11-08T13:27:48Z",
+      "sport": "f1 drivers"
+    },
+    "nico hulkenberg": {
+      "name": "Nico Hülkenberg",
+      "path": "assets/images/f1-drivers/nico-hulkenberg.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Nico_Hulkenberg_2010_Malaysia.jpg",
+      "licence": "CC BY-SA 3.0",
+      "licence_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "creator": "Wikimedia Commons · Morio · CC BY-SA 3.0",
+      "attribution": "Wikimedia Commons · Morio · CC BY-SA 3.0",
+      "verified_at": "2026-11-08T13:27:48Z",
+      "sport": "f1 drivers"
+    },
+    "esteban ocon": {
+      "name": "Esteban Ocon",
+      "path": "assets/images/f1-drivers/esteban-ocon.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Esteban_Ocon_2016_Malaysia.jpg",
+      "licence": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "creator": "Wikimedia Commons · Morio · CC BY-SA 4.0",
+      "attribution": "Wikimedia Commons · Morio · CC BY-SA 4.0",
+      "verified_at": "2026-11-08T13:27:48Z",
+      "sport": "f1 drivers"
+    },
+    "fernando alonso": {
+      "name": "Fernando Alonso",
+      "path": "assets/images/f1-drivers/fernando-alonso.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Fernando-alonso-malaysia-2013.jpg",
+      "licence": "CC BY-SA 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "creator": "Wikimedia Commons · F1fans · CC BY-SA 3.0",
+      "attribution": "Wikimedia Commons · F1fans · CC BY-SA 3.0",
+      "verified_at": "2026-11-08T13:27:48Z",
       "sport": "f1 drivers"
     }
   },

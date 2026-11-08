@@ -177,9 +177,79 @@
       "image_match_method": "category:Category:Alpine A526 of Franco Colapinto",
       "image_verified_at": "2026-11-08T13:26:53Z",
       "image_local_path": "assets/images/f1-drivers/franco-colapinto.jpg"
+    },
+    "oliver bearman": {
+      "name": "Oliver Bearman",
+      "sport": "f1 drivers",
+      "image_url": "./assets/images/f1-drivers/oliver-bearman.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:2026_Chinese_GP_-_Haas_-_Oliver_Bearman_-_Qualifying.jpg",
+      "image_credit": "Wikimedia Commons · Liauzh · CC BY 4.0",
+      "image_license": "CC BY 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Haas VF-26 of Oliver Bearman",
+      "image_verified_at": "2026-11-08T13:27:48Z",
+      "image_local_path": "assets/images/f1-drivers/oliver-bearman.jpg"
+    },
+    "gabriel bortoleto": {
+      "name": "Gabriel Bortoleto",
+      "sport": "f1 drivers",
+      "image_url": "./assets/images/f1-drivers/gabriel-bortoleto.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:2026_Bahrain_GP_-_Audi_-_Gabriel_Bortoleto_-_Race.jpg",
+      "image_credit": "Wikimedia Commons · Liauzh · CC BY-SA 4.0",
+      "image_license": "CC BY-SA 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Audi R26 of Gabriel Bortoleto",
+      "image_verified_at": "2026-11-08T13:27:48Z",
+      "image_local_path": "assets/images/f1-drivers/gabriel-bortoleto.jpg"
+    },
+    "nico hulkenberg": {
+      "name": "Nico Hülkenberg",
+      "sport": "f1 drivers",
+      "image_url": "./assets/images/f1-drivers/nico-hulkenberg.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Nico_Hulkenberg_2010_Malaysia.jpg",
+      "image_credit": "Wikimedia Commons · Morio · CC BY-SA 3.0",
+      "image_license": "CC BY-SA 3.0",
+      "image_license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "search:Nico Hülkenberg",
+      "image_verified_at": "2026-11-08T13:27:48Z",
+      "image_local_path": "assets/images/f1-drivers/nico-hulkenberg.jpg"
+    },
+    "esteban ocon": {
+      "name": "Esteban Ocon",
+      "sport": "f1 drivers",
+      "image_url": "./assets/images/f1-drivers/esteban-ocon.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Esteban_Ocon_2016_Malaysia.jpg",
+      "image_credit": "Wikimedia Commons · Morio · CC BY-SA 4.0",
+      "image_license": "CC BY-SA 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "search:Esteban Ocon",
+      "image_verified_at": "2026-11-08T13:27:48Z",
+      "image_local_path": "assets/images/f1-drivers/esteban-ocon.jpg"
+    },
+    "fernando alonso": {
+      "name": "Fernando Alonso",
+      "sport": "f1 drivers",
+      "image_url": "./assets/images/f1-drivers/fernando-alonso.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Fernando-alonso-malaysia-2013.jpg",
+      "image_credit": "Wikimedia Commons · F1fans · CC BY-SA 3.0",
+      "image_license": "CC BY-SA 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "search:Fernando Alonso",
+      "image_verified_at": "2026-11-08T13:27:48Z",
+      "image_local_path": "assets/images/f1-drivers/fernando-alonso.jpg"
     }
   },
-  "updated_at": "2026-11-08T13:26:53Z",
+  "updated_at": "2026-11-08T13:27:48Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -196,6 +266,11 @@
     "andrea kimi antonelli": "2026-11-08T13:26:53Z",
     "pierre gasly": "2026-11-08T13:26:53Z",
     "arvid lindblad": "2026-11-08T13:26:53Z",
-    "franco colapinto": "2026-11-08T13:26:53Z"
+    "franco colapinto": "2026-11-08T13:26:53Z",
+    "oliver bearman": "2026-11-08T13:27:48Z",
+    "gabriel bortoleto": "2026-11-08T13:27:48Z",
+    "nico hulkenberg": "2026-11-08T13:27:48Z",
+    "esteban ocon": "2026-11-08T13:27:48Z",
+    "fernando alonso": "2026-11-08T13:27:48Z"
   }
 }
