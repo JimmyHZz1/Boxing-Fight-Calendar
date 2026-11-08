@@ -66,20 +66,29 @@ const favouriteTeamThemes = {
   "Aston Martin":{accent:"#00a58b",glow:"#10352f",chrome:"#0d211e"},
   "Cadillac F1 Team":{accent:"#e5e5e5",glow:"#292b30",chrome:"#17191d"}
 };
-function applyFavouriteTeam(team,save=true){
+function applyFavouriteTeam(team,save=false){
   const theme=favouriteTeamThemes[team]||{accent:"#e2b45b",glow:"#29221a",chrome:"#101114"};
   document.documentElement.style.setProperty("--accent",theme.accent);
   document.documentElement.style.setProperty("--team-glow",theme.glow);
   const meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.content=theme.chrome;
   document.documentElement.dataset.favouriteF1Team=team||"none";
-  const select=$("favourite-f1-team");if(select&&select.value!==team)select.value=team||"";
   if(save){try{localStorage.setItem("sports-calendar-favourite-f1-team",team||"");}catch(_){}}
+  const previewName=$("theme-preview-team");if(previewName)previewName.textContent=team||"DEFAULT SPORTS CALENDAR";
+  const preview=$("theme-preview-card");if(preview)preview.setAttribute("aria-label",(team||"Default")+" theme preview");
 }
 let savedFavouriteTeam="";try{savedFavouriteTeam=localStorage.getItem("sports-calendar-favourite-f1-team")||"";}catch(_){}
 applyFavouriteTeam(savedFavouriteTeam,false);
-$("open-settings")?.addEventListener("click",()=>showScreen("settings-screen"));
-$("settings-back")?.addEventListener("click",()=>showScreen("home-screen"));
-$("favourite-f1-team")?.addEventListener("change",event=>applyFavouriteTeam(event.target.value,true));
+const favouriteTeamSelect=$("favourite-f1-team");
+if(favouriteTeamSelect)favouriteTeamSelect.value=savedFavouriteTeam;
+$("open-settings")?.addEventListener("click",()=>{if(favouriteTeamSelect)favouriteTeamSelect.value=savedFavouriteTeam;applyFavouriteTeam(savedFavouriteTeam,false);showScreen("settings-screen");});
+$("settings-back")?.addEventListener("click",()=>{if(favouriteTeamSelect)favouriteTeamSelect.value=savedFavouriteTeam;applyFavouriteTeam(savedFavouriteTeam,false);showScreen("home-screen");});
+favouriteTeamSelect?.addEventListener("change",event=>applyFavouriteTeam(event.target.value,false));
+$("save-favourite-team")?.addEventListener("click",()=>{
+  savedFavouriteTeam=favouriteTeamSelect?.value||"";
+  applyFavouriteTeam(savedFavouriteTeam,true);
+  const saveButton=$("save-favourite-team");
+  if(saveButton){saveButton.textContent="SAVED";saveButton.classList.add("is-saved");}
+});
 function fighterNames(b) {
   return [b.fighter1||b.fighter_a||b.red_corner||b.boxer1||"TBC", b.fighter2||b.fighter_b||b.blue_corner||b.boxer2||"TBC"];
 }
