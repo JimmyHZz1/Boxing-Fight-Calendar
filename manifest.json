@@ -1,0 +1,12 @@
+{
+  "name": "Sports Calendar",
+  "short_name": "Sports Calendar",
+  "description": "Formula 1, PDC darts, boxing and UFC schedules in UK local time.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#101114",
+  "theme_color": "#101114",
+  "orientation": "portrait",
+  "icons": []
+}

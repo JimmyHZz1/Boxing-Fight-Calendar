@@ -1,0 +1,68 @@
+name: Refresh sports schedules
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/sync_sports.py"
+      - ".github/workflows/sync-fights.yml"
+  schedule:
+    # Every four hours; Boxerbook free key allows 100 requests per day.
+    - cron: "17 */4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sports-data-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch event cards and upcoming bouts
+        env:
+          BOXERBOOK_API_KEY: ${{ secrets.BOXERBOOK_API_KEY }}
+          BOXING_API_KEY: ${{ secrets.BOXING_API_KEY }}
+        run: python scripts/sync_fights.py
+
+      - name: Fetch Formula 1, PDC darts, UFC and BKFC schedules
+        env:
+          DARTS_API_KEY: ${{ secrets.DARTS_API_KEY }}
+          UFCALENDAR_API_KEY: ${{ secrets.UFCALENDAR_API_KEY }}
+        run: python scripts/sync_sports.py
+
+      - name: Commit and publish updated schedules and boxer portraits
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Stage first: git diff ignores newly-created files, including the
+          # first sports-hub.json snapshot. Compare the staged snapshot instead.
+          git add data/fights.json data/fighter-images.json data/f1.json data/darts.json data/ufc.json data/bkfc.json data/sports-hub.json
+          if git diff --cached --quiet; then
+            echo "No schedule changes."
+            exit 0
+          fi
+
+          # Commit the generated file BEFORE rebasing. Pulling first fails
+          # because the sync script has already modified data/fights.json.
+          git commit -m "Refresh multi-sport schedules and boxer portraits"
+
+          # Rebase our generated snapshot onto any changes made to main
+          # since checkout, then publish it.
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
