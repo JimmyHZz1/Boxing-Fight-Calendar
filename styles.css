@@ -385,3 +385,6 @@
 
 /* Portraits in championship and ranking tables. */
 .sport-ranking-row.has-image{grid-template-columns:30px 38px minmax(0,1fr) auto;gap:9px}.sport-ranking-image,.sport-ranking-image-fallback{display:grid;width:36px;height:36px;border-radius:50%;object-fit:cover;place-items:center;background:#30333b;color:#e6c85b;font-size:11px;font-weight:900;overflow:hidden}.sport-ranking-row.has-image strong{min-width:0}@media(max-width:520px){.sport-ranking-row.has-image{grid-template-columns:26px 34px minmax(0,1fr)}.sport-ranking-image,.sport-ranking-image-fallback{width:32px;height:32px}.sport-ranking-row.has-image small{grid-column:3;text-align:left}}
+
+/* Compact fighter portraits beside bout-card names. */
+.fighter{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px}.fighter .fighter-portrait{width:44px;height:44px;margin:0 auto;border-width:1px}.fighter .portrait-fallback{font-size:15px}
