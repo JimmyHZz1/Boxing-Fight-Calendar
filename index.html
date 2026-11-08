@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#101114">
   <meta name="description" content="Boxing, Formula 1, UFC and PDC darts schedules in one sports calendar, shown in UK local time.">
   <link rel="manifest" href="./manifest.json">
-  <link rel="stylesheet" href="./styles.css?v=20261108-60">
+  <link rel="stylesheet" href="./styles.css?v=20261108-61">
   <title>Sports Calendar</title>
 </head>
 <body>
@@ -144,7 +144,22 @@
             <option value="">Default Sports Calendar theme</option>
             <option value="Mercedes">Mercedes</option><option value="Ferrari">Scuderia Ferrari</option><option value="Red Bull">Oracle Red Bull Racing</option><option value="McLaren">McLaren</option><option value="RB F1 Team">Racing Bulls</option><option value="Alpine F1 Team">BWT Alpine</option><option value="Haas F1 Team">MoneyGram Haas</option><option value="Audi">Audi</option><option value="Williams">Williams</option><option value="Aston Martin">Aston Martin</option><option value="Cadillac F1 Team">Cadillac</option>
           </select>
-          <p class="settings-help">The selected team colour will update highlights, buttons, borders and the subtle background glow. Text and panels stay high contrast.</p>
+          <p class="settings-help">Your chosen team colour updates highlights, buttons, borders and the subtle background glow. Text and panels stay high contrast.</p>
+          <div class="theme-preview-tools">
+            <label for="theme-preview-team">Preview a team</label>
+            <select id="theme-preview-team" class="favourite-team-select">
+              <option value="">Default Sports Calendar</option>
+              <option value="Mercedes">Mercedes</option><option value="Ferrari">Scuderia Ferrari</option><option value="Red Bull">Oracle Red Bull Racing</option><option value="McLaren">McLaren</option><option value="RB F1 Team">Racing Bulls</option><option value="Alpine F1 Team">BWT Alpine</option><option value="Haas F1 Team">MoneyGram Haas</option><option value="Audi">Audi</option><option value="Williams">Williams</option><option value="Aston Martin">Aston Martin</option><option value="Cadillac F1 Team">Cadillac</option>
+            </select>
+            <p class="settings-help">Previewing won't change your saved favourite until you apply it.</p>
+          </div>
+          <div class="theme-preview-stage" id="theme-preview-stage" aria-live="polite">
+            <div class="theme-preview-diagonals" aria-hidden="true"></div>
+            <div class="theme-preview-caption"><span class="eyebrow">LIVE THEME PREVIEW</span><strong id="theme-preview-name">SPORTS CALENDAR</strong></div>
+            <div class="theme-preview-hero"><span class="eyebrow">FIVE SPORTS · ONE PLACE</span><h3>Every sport.<br><em>One calendar.</em></h3><p>Formula 1, PDC darts, boxing, UFC and BKFC.</p><span class="theme-preview-cta">EXPLORE CALENDAR&nbsp; →</span></div>
+            <div class="theme-preview-mini-grid"><div><small>UP NEXT</small><strong>RACE WEEKEND</strong><span>Formula 1</span></div><div><small>CHAMPIONSHIP</small><strong>DRIVER STANDINGS</strong><span>2026 season</span></div></div>
+          </div>
+          <div class="theme-preview-actions"><button type="button" class="primary-button" id="apply-preview-theme">APPLY THIS THEME</button><button type="button" class="secondary-button" id="cancel-preview-theme">CANCEL PREVIEW</button></div>
           <div class="favourite-team-actions"><button type="button" class="secondary-button" id="settings-back">← BACK TO HOME</button></div>
         </section>
       </section>
@@ -170,7 +185,7 @@
     </nav>
     <footer class="footer"><a class="version-history-link" href="#version-history" id="open-version-history">VERSION HISTORY</a><span>•</span> SPORTS CALENDAR <span>•</span> UK LOCAL TIME <span>•</span> PDC logo: <a href="https://commons.wikimedia.org/wiki/File:Professional_Darts_Corporation_logo.png" target="_blank" rel="noopener noreferrer">Chris Ibbotson, CC BY-SA 4.0</a> <span>•</span> BKFC SCHEDULE: <a href="https://www.bkfc.com/events" target="_blank" rel="noopener noreferrer">BKFC</a> <span>•</span> BOXING DATA: <a href="https://boxerbook.com" target="_blank" rel="noopener noreferrer">BOXERBOOK</a></footer>
   </div>
-  <script src="./app.js?v=20261108-37"></script>
+  <script src="./app.js?v=20261108-38"></script>
   <script src="./sports-data.js?v=20261108-06"></script>
   <script src="./sports.js?v=20261107-09"></script>
   <script src="./sports-hub.js?v=20261108-13"></script>
