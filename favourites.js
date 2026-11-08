@@ -44,6 +44,7 @@
   function eventMatch(f,e){
     const name=norm(f.name),title=norm(e.name||e.title);
     if(f.sport==="f1"&&f.type==="team")return (e.results||[]).some(x=>norm(x.team).includes(name))||(e.sessions||[]).length>0&&title.includes("grand prix");
+    if(f.sport==="f1")return (e.sessions||[]).length>0||/grand prix/.test(title);
     const fights=e.bouts||e.fights||[];
     return fights.some(b=>[b.fighter1,b.fighter2,b.fighter_a?.name,b.fighter_b?.name].some(x=>norm(x)===name));
   }
