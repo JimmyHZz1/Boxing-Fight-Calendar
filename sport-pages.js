@@ -114,7 +114,7 @@
     const row=el("div","sport-ranking-row has-image"+(kind==="constructor"?" is-constructor":""));
     row.append(el("span","sport-ranking-position",rank==="C"?"C":"#"+rank));
     const name=item.name||item.driver||item.team||"TBC";
-    if(item.image_url){
+    if(item.image_url && kind!=="constructor"){
       const img=el("img","sport-ranking-image");
       const localSource=item.image_url.startsWith("./assets/")?"https://raw.githubusercontent.com/JimmyHZz1/Boxing-Fight-Calendar/main/"+item.image_url.slice(2):item.image_url;
       img.src=localSource;img.alt=name+(kind==="constructor"?" logo":" portrait");img.loading="lazy";img.decoding="async";
