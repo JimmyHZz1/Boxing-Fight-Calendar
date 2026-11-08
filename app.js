@@ -47,6 +47,12 @@ function allBouts() {
     .sort((a,b) => (parseDate(boutDateTime(a))?.getTime() || 0) - (parseDate(boutDateTime(b))?.getTime() || 0));
 }
 function showScreen(id) {
+  if(id==="home-screen"){
+    document.querySelectorAll("[data-top-sport]").forEach(button=>{
+      button.classList.remove("user-selected");
+      button.removeAttribute("aria-current");
+    });
+  }
   document.querySelectorAll(".screen").forEach(s => s.classList.toggle("active",s.id===id));
   document.querySelectorAll(".nav-item").forEach(b => b.classList.toggle("active",b.dataset.screen===id || (id==="sport-detail-screen"&&b.dataset.screen==="home-screen")));
   window.scrollTo({top:0,behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
