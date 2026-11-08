@@ -66,7 +66,7 @@
       const target=event.start_at||event.main_card_at||event.start_time_utc||event.date||event.event_date;
       if(!live&&target){
         const timer=make("small","next-event-countdown",window.SportsCountdown?.text?.(target)||"DATE TBC");
-        timer.dataset.countdownTarget=/^\\d{4}-\\d{2}-\\d{2}$/.test(String(target))?String(target):new Date(target).toISOString();
+        timer.dataset.countdownTarget=/^\d{4}-\d{2}-\d{2}$/.test(String(target))?String(target):new Date(target).toISOString();
         info.append(timer);
       }
       const badge=make("span","next-event-state "+(live?"is-live":"is-upcoming"));
