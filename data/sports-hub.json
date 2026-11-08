@@ -212,7 +212,7 @@
       ],
       "season": 2026,
       "notice": "Official season standings sourced from the community-maintained Jolpica F1 API.",
-      "last_updated": "2026-11-08T11:40:44Z"
+      "last_updated": "2026-11-08T11:59:55Z"
     },
     "darts": {
       "rankings": [
@@ -1344,7 +1344,7 @@
       ],
       "source_url": "https://www.dartsrankings.com/",
       "notice": "PDC Order of Merit live table. Rankings are updated after PDC ranking events.",
-      "last_updated": "2026-11-08T11:40:44Z"
+      "last_updated": "2026-11-08T11:59:55Z"
     },
     "ufc": {
       "divisions": [
@@ -2459,7 +2459,7 @@
       ],
       "snapshot_date": "2026-11-03",
       "notice": "Official UFC divisional rankings from UFCalendar. Rank 0 denotes the champion; rankings are updated when the publisher releases a new snapshot.",
-      "last_updated": "2026-11-08T11:40:44Z"
+      "last_updated": "2026-11-08T11:59:55Z"
     },
     "boxing": {
       "divisions": [
@@ -3122,23 +3122,16 @@
         }
       ],
       "notice": "Current reigns from Open Boxing, covering the major sanctioning bodies and The Ring where recorded. Boxing title status can change between updates; data coverage is subject to the source database.",
-      "last_updated": "2026-11-08T11:40:44Z"
+      "last_updated": "2026-11-08T11:59:55Z"
     }
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 1,
+    "attempted": 0,
     "found": 0,
     "missing": 548,
     "rejected": 0,
-    "by_sport": {
-      "f1 drivers": {
-        "attempted": 1,
-        "found": 0,
-        "missing": 1,
-        "rejected": 0
-      }
-    },
+    "by_sport": {},
     "newly_found": 0,
     "coverage": {
       "f1 drivers": {
@@ -3167,8 +3160,8 @@
         "missing": 81
       }
     },
-    "checked_at": "2026-11-08T11:40:44Z",
+    "checked_at": "2026-11-08T11:59:55Z",
     "library_entries": 0
   },
-  "last_updated": "2026-11-08T11:40:44Z"
+  "last_updated": "2026-11-08T11:59:55Z"
 }
