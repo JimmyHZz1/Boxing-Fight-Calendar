@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#101114">
   <meta name="description" content="Boxing, Formula 1, UFC and PDC darts schedules in one sports calendar, shown in UK local time.">
   <link rel="manifest" href="./manifest.json">
-  <link rel="stylesheet" href="./styles.css?v=20261108-71">
+  <link rel="stylesheet" href="./styles.css?v=20261108-73">
   <title>Sports Calendar</title>
 </head>
 <body>
@@ -172,6 +172,16 @@
           <div class="theme-preview-actions"><button type="button" class="primary-button" id="apply-preview-theme">APPLY THIS THEME</button><button type="button" class="secondary-button" id="cancel-preview-theme">CANCEL PREVIEW</button></div>
           <div class="favourite-team-actions"><button type="button" class="secondary-button" id="settings-back">← BACK TO HOME</button></div>
         </section>
+        <section class="favourite-team-panel alerts-panel" aria-labelledby="alerts-heading">
+          <span class="eyebrow">V1.4 · PERSONAL ALERTS</span>
+          <h2 id="alerts-heading">Event notifications</h2>
+          <p class="settings-help">Choose which reminders you want. Notifications are checked while this app is open; background delivery while it is closed needs a separate push service.</p>
+          <label class="alerts-option"><input id="alerts-enabled" type="checkbox"><span><strong>Enable event reminders</strong><small>Allow the app to send browser notifications.</small></span></label>
+          <label class="alerts-option"><input id="alerts-favourites" type="checkbox" checked><span><strong>Prioritise my favourites</strong><small>Include events involving saved drivers, teams, darts players and fighters.</small></span></label>
+          <label class="alerts-option alerts-select-option" for="alerts-lead-time"><span><strong>Remind me</strong><small>For events with a confirmed start time.</small></span><select id="alerts-lead-time" class="favourite-team-select"><option value="15">15 minutes before</option><option value="60" selected>1 hour before</option><option value="180">3 hours before</option><option value="1440">1 day before</option></select></label>
+          <div class="alerts-actions"><button type="button" class="primary-button" id="alerts-test">SEND TEST NOTIFICATION</button><span id="alerts-status" class="alerts-status" role="status" aria-live="polite">Notifications are off.</span></div>
+          <p class="alerts-footnote">Date-only fixtures can be flagged on the day when you open the app. Exact reminder times are only used when a feed supplies a start time. Your choices are saved on this device.</p>
+        </section>
       </section>
       <section id="version-history-screen" class="screen" aria-labelledby="version-history-title">
         <div class="page-intro"><span class="eyebrow">SPORTS CALENDAR · RELEASE NOTES</span><h1 id="version-history-title">Version <em>history.</em></h1><p>A record of the features, improvements and fixes added to each release.</p></div>
@@ -227,5 +237,6 @@
   <script src="./sports-v11.js?v=20261108-01"></script>
   <script src="./sports-weekend.js?v=20261108-02"></script>
   <script src="./favourites.js?v=20261108-04"></script>
+  <script src="./notifications.js?v=20261108-01"></script>
 </body>
 </html>
