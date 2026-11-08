@@ -72,15 +72,15 @@ function ukBroadcasterLogos(items) {
   const names=ukBroadcasters(items);
   const seen=new Set();
   const registry=[
-    {id:"dazn",match:/\bdazn\b/i,file:"DAZN_LOGO_SVG.svg",page:"https://commons.wikimedia.org/wiki/File:DAZN_LOGO_SVG.svg"},
-    {id:"sky-sports",match:/\bsky\b/i,file:"Sky_Sports_2026.svg",page:"https://commons.wikimedia.org/wiki/File:Sky_Sports_2026.svg"},
-    {id:"tnt-sports",match:/\btnt\s*sports\b/i,file:"TNT_Sports_(2023).svg",page:"https://commons.wikimedia.org/wiki/File:TNT_Sports_(2023).svg"},
-    {id:"espn",match:/\bespn(?:\+|\b)/i,file:"ESPN_wordmark.svg",page:"https://commons.wikimedia.org/wiki/File:ESPN_wordmark.svg"},
-    {id:"paramount",match:/\bparamount\s*\+/i,file:"Paramount%2B_logo.svg",page:"https://commons.wikimedia.org/wiki/File:Paramount%2B_logo.svg"},
-    {id:"bbc",match:/\bbbc(?:\s*(?:one|two|three|four|iplayer))?\b/i,file:"BBC_Logo_2021.svg",page:"https://commons.wikimedia.org/wiki/File:BBC_Logo_2021.svg"},
-    {id:"itv",match:/\bitv\b/i,file:"ITV_logo.svg",page:"https://commons.wikimedia.org/wiki/File:ITV_logo.svg"},
-    {id:"youtube",match:/\byoutube\b/i,file:"YouTube_full-color_icon_(2017).svg",page:"https://commons.wikimedia.org/wiki/File:YouTube_full-color_icon_(2017).svg"},
-    {id:"channel-4",match:/\bchannel\s*4\b/i,file:"Channel_4_2022.svg",page:"https://commons.wikimedia.org/wiki/File:Channel_4_2022.svg"}
+    {id:"dazn",match:/\bdazn\b/i,domain:"dazn.com",page:"https://www.dazn.com/"},
+    {id:"sky-sports",match:/\bsky\b/i,domain:"skysports.com",page:"https://www.skysports.com/"},
+    {id:"tnt-sports",match:/\btnt\s*sports\b/i,domain:"tntsports.co.uk",page:"https://www.tntsports.co.uk/"},
+    {id:"espn",match:/\bespn(?:\+|\b)/i,domain:"espn.com",page:"https://www.espn.com/"},
+    {id:"paramount",match:/\bparamount\s*\+/i,domain:"paramountplus.com",page:"https://www.paramountplus.com/"},
+    {id:"bbc",match:/\bbbc(?:\s*(?:one|two|three|four|iplayer))?\b/i,domain:"bbc.co.uk",page:"https://www.bbc.co.uk/"},
+    {id:"itv",match:/\bitv\b/i,domain:"itv.com",page:"https://www.itv.com/"},
+    {id:"youtube",match:/\byoutube\b/i,domain:"youtube.com",page:"https://www.youtube.com/"},
+    {id:"channel-4",match:/\bchannel\s*4\b/i,domain:"channel4.com",page:"https://www.channel4.com/"}
   ];
   const group=document.createElement("div");
   group.className="uk-broadcaster-logos";
@@ -98,9 +98,12 @@ function ukBroadcasterLogos(items) {
       link.title=value+" — logo source and details";
       link.setAttribute("aria-label",value);
       const img=document.createElement("img");
-      img.src="https://commons.wikimedia.org/wiki/Special:Redirect/file/"+entry.file;
+      img.src="https://www.google.com/s2/favicons?domain="+encodeURIComponent(entry.domain)+"&sz=128";
       img.alt=value+" logo";img.loading="lazy";img.decoding="async";
-      img.onerror=()=>{link.replaceWith(document.createTextNode(value));};
+      img.onerror=()=>{
+        if(img.dataset.retry!=="1"){img.dataset.retry="1";img.src="https://icons.duckduckgo.com/ip3/"+entry.domain+".ico";}
+        else link.replaceWith(document.createTextNode(value));
+      };
       link.append(img);group.append(link);
     } else {
       const label=document.createElement("span");
