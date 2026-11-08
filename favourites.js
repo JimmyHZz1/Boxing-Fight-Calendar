@@ -111,13 +111,6 @@
       const draws=known.filter(r=>r.outcome==="DRAW").length;
       return [["REPORTED RESULTS",known.length],["W-L-D IN LOADED FEED",wins+"-"+losses+"-"+draws],["LAST RESULTS",known.slice(0,5).map(r=>r.outcome).join(" · ")]];
     }
-    if(f.sport==="darts"&&profile){
-      const out=[];
-      if(profile.rank!=null)out.push(["CURRENT ORDER OF MERIT",profile.rank===0?"CHAMPION":"#"+profile.rank]);
-      if(profile.points!=null)out.push(["PUBLISHED RANKING POINTS",profile.points]);
-      if(profile.prize_money!=null)out.push(["PUBLISHED PRIZE MONEY","£"+profile.prize_money]);
-      return out;
-    }
     return [];
   }
   function profileAchievements(f,profile,results){
