@@ -1,4 +1,4 @@
-const CACHE="sports-calendar-v50";
+const CACHE="sports-calendar-v51";
 const APP_FILES=[
   "./",
   "./index.html",
@@ -10,7 +10,7 @@ const APP_FILES=[
   "./sports-nav.js?v=20261107-02",
   "./sport-pages.js?v=20261108-04",
   "./sports-v11.js?v=20261108-01",
-  "./sports-weekend.js?v=20261108-01",
+  "./sports-weekend.js?v=20261108-02",
   "./manifest.json"
 ];
 const DATA_PATHS=["/data/fights.json","/data/fighter-images.json","/data/event-fighter-images.json","/data/f1.json","/data/darts.json","/data/ufc.json","/data/bkfc.json","/data/sports-hub.json","/data/sports-images.json","/data/image-library.json"];
