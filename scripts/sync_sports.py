@@ -141,7 +141,7 @@ def is_main_televised_pdc_event(row):
         return False
     allowed_tiers = {"majors", "european_tour", "world_series"}
     name_match = re.search(
-        r"world championship|world matchplay|premier league|uk open|world grand prix|grand slam|"
+        r"world(?: darts)? championship|world matchplay|premier league|uk open|world grand prix|grand slam|"
         r"european championship|european tour|players championship finals|world cup of darts|"
         r"world series of darts|world masters|\bmasters\b|"
         r"\b(?:bahrain|nordic|us|new zealand|australian|poland|saudi arabia) darts masters\b",
