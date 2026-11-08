@@ -334,7 +334,7 @@ def commons_photo(name):
         return None
     params = {
         "action": "query", "format": "json", "generator": "search",
-        "gsrsearch": 'filetype:bitmap "' + str(name) + '"',
+        "gsrsearch": '"' + str(name) + '"'',
         "gsrnamespace": 6, "gsrlimit": 12,
         "prop": "imageinfo", "iiprop": "url|extmetadata|mime", "iiurlwidth": 320,
         "iiextmetadatafilter": "Artist|Credit|LicenseShortName|LicenseUrl|UsageTerms"
