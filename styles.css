@@ -294,7 +294,9 @@
 .hub-sport-shortcut:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .hub-sport-shortcut:active{border-color:var(--accent);background:var(--panel2)}
 @media(max-width:420px){.hub-sport-shortcuts{grid-template-columns:repeat(5,minmax(0,1fr));gap:4px}.hub-sport-shortcut{min-height:56px;padding:6px 2px;font-size:7px;letter-spacing:.35px}.hub-sport-shortcut img{width:100%;max-width:48px;height:20px}.hub-shortcut-boxing{height:20px;font-size:15px}}
-\n.sport-logo-bkfc{width:min(190px,62%);height:54px;object-fit:contain}.sport-logo-bkfc-fallback{display:grid;place-items:center;width:190px;height:54px;margin:14px auto 10px;color:#e6c85b;font:1000 32px 'Barlow Condensed',sans-serif;letter-spacing:1px}.sport-bkfc{background:linear-gradient(145deg,rgba(168,145,45,.22),rgba(18,19,22,.98) 65%),var(--panel)}.sport-event-bkfc .sport-event-visual img{max-width:60px;max-height:35px}.hub-sport-shortcuts{grid-template-columns:repeat(5,minmax(0,1fr))}.hub-sport-shortcut img{max-width:92%}.sport-watch-provider{min-width:0;min-height:76px}.sport-watch-provider img{max-width:112px;max-height:30px}.sport-watch-provider-name{font-weight:750;letter-spacing:0}\n
+
+.sport-logo-bkfc{width:min(190px,62%);height:54px;object-fit:contain}.sport-logo-bkfc-fallback{display:grid;place-items:center;width:190px;height:54px;margin:14px auto 10px;color:#e6c85b;font:1000 32px 'Barlow Condensed',sans-serif;letter-spacing:1px}.sport-bkfc{background:linear-gradient(145deg,rgba(168,145,45,.22),rgba(18,19,22,.98) 65%),var(--panel)}.sport-event-bkfc .sport-event-visual img{max-width:60px;max-height:35px}.hub-sport-shortcuts{grid-template-columns:repeat(5,minmax(0,1fr))}.hub-sport-shortcut img{max-width:92%}.sport-watch-provider{min-width:0;min-height:76px}.sport-watch-provider img{max-width:112px;max-height:30px}.sport-watch-provider-name{font-weight:750;letter-spacing:0}
+
 
 /* Global sport switcher and swipeable upcoming-event ticker */
 .top-sport-selector{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;padding:12px 0 10px;border-bottom:1px solid var(--line)}
@@ -1089,10 +1091,11 @@ body.compact-view .next-event-item{flex:0 0 min(205px,76vw)!important}
 }
 
 
-/* Reliable left-to-right Up Next ticker and readable compact live centre. */
+/* Seamless right-to-left Up Next ticker and readable compact live centre. */
 .next-event-ticker{display:block!important;position:relative;overflow-x:auto!important;overflow-y:hidden!important;white-space:nowrap;touch-action:pan-x;scrollbar-width:none}
 .next-event-ticker::-webkit-scrollbar{display:none}
-.next-event-track{display:flex;width:max-content;min-width:max-content;gap:9px;will-change:transform;animation:nextTickerRight var(--ticker-duration,42s) linear infinite}
+.next-event-track{display:flex;width:max-content;min-width:max-content;gap:0;will-change:transform;animation:nextTickerRight var(--ticker-duration,42s) linear infinite}
+.next-event-group{display:flex;flex:0 0 auto;gap:9px;width:max-content;min-width:max-content}
 .next-event-ticker.is-auto-scrolling:hover .next-event-track,
 .next-event-ticker.is-auto-scrolling:focus-within .next-event-track,
 .next-event-ticker.is-paused .next-event-track{animation-play-state:paused}
