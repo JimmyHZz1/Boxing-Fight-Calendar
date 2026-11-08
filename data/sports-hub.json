@@ -465,14 +465,26 @@
           "name": "Luke Littler",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "https://www.pdc-europe.tv/images/players/luke-littler.webp",
+          "image_page_url": "https://www.pdc-europe.tv/spieler/luke-littler",
+          "image_credit": "PDC Europe · Official PDC Tour Card photo",
+          "image_source": "PDC Europe",
+          "image_match_method": "official-pdc-tour-card-photo",
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 2,
           "name": "Luke Humphries",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "https://www.pdc-europe.tv/images/players/luke-humphries.webp",
+          "image_page_url": "https://www.pdc-europe.tv/spieler/luke-humphries",
+          "image_credit": "PDC Europe · Official PDC Tour Card photo",
+          "image_source": "PDC Europe",
+          "image_match_method": "official-pdc-tour-card-photo",
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 3,
@@ -563,7 +575,13 @@
           "name": "Stephen Bunting",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "https://www.pdc-europe.tv/images/players/stephen-bunting.webp",
+          "image_page_url": "https://www.pdc-europe.tv/spieler/stephen-bunting",
+          "image_credit": "PDC Europe · Official PDC Tour Card photo",
+          "image_source": "PDC Europe",
+          "image_match_method": "official-pdc-tour-card-photo",
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 10,
@@ -696,224 +714,416 @@
           "name": "Krzysztof Ratajski",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "https://www.pdc-europe.tv/images/players/krzysztof-ratajski.webp",
+          "image_page_url": "https://www.pdc-europe.tv/spieler/krzysztof-ratajski",
+          "image_credit": "PDC Europe · Official PDC Tour Card photo",
+          "image_source": "PDC Europe",
+          "image_match_method": "official-pdc-tour-card-photo",
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 20,
           "name": "Martin Schindler",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "https://www.pdc-europe.tv/images/players/martin-schindler.webp",
+          "image_page_url": "https://www.pdc-europe.tv/spieler/martin-schindler",
+          "image_credit": "PDC Europe · Official PDC Tour Card photo",
+          "image_source": "PDC Europe",
+          "image_match_method": "official-pdc-tour-card-photo",
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 21,
           "name": "Damon Heta",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "https://www.pdc-europe.tv/images/players/damon-heta.webp",
+          "image_page_url": "https://www.pdc-europe.tv/spieler/damon-heta",
+          "image_credit": "PDC Europe · Official PDC Tour Card photo",
+          "image_source": "PDC Europe",
+          "image_match_method": "official-pdc-tour-card-photo",
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 21,
           "name": "Dirk van Duijvenbode",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "https://www.pdc-europe.tv/images/players/dirk-van-duijvenbode.webp",
+          "image_page_url": "https://www.pdc-europe.tv/spieler/dirk-van-duijvenbode",
+          "image_credit": "PDC Europe · Official PDC Tour Card photo",
+          "image_source": "PDC Europe",
+          "image_match_method": "official-pdc-tour-card-photo",
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 23,
           "name": "Kevin Doets",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "https://www.pdc-europe.tv/images/players/kevin-doets.webp",
+          "image_page_url": "https://www.pdc-europe.tv/spieler/kevin-doets",
+          "image_credit": "PDC Europe · Official PDC Tour Card photo",
+          "image_source": "PDC Europe",
+          "image_match_method": "official-pdc-tour-card-photo",
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 24,
           "name": "Rob Cross",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "https://www.pdc-europe.tv/images/players/rob-cross.webp",
+          "image_page_url": "https://www.pdc-europe.tv/spieler/rob-cross",
+          "image_credit": "PDC Europe · Official PDC Tour Card photo",
+          "image_source": "PDC Europe",
+          "image_match_method": "official-pdc-tour-card-photo",
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 25,
           "name": "Ryan Joyce",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "https://www.pdc-europe.tv/images/players/ryan-joyce.webp",
+          "image_page_url": "https://www.pdc-europe.tv/spieler/ryan-joyce",
+          "image_credit": "PDC Europe · Official PDC Tour Card photo",
+          "image_source": "PDC Europe",
+          "image_match_method": "official-pdc-tour-card-photo",
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 26,
           "name": "Cameron Menzies",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "https://www.pdc-europe.tv/images/players/cameron-menzies.webp",
+          "image_page_url": "https://www.pdc-europe.tv/spieler/cameron-menzies",
+          "image_credit": "PDC Europe · Official PDC Tour Card photo",
+          "image_source": "PDC Europe",
+          "image_match_method": "official-pdc-tour-card-photo",
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 27,
           "name": "Andrew Gilding",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "https://www.pdc-europe.tv/images/players/andrew-gilding.webp",
+          "image_page_url": "https://www.pdc-europe.tv/spieler/andrew-gilding",
+          "image_credit": "PDC Europe · Official PDC Tour Card photo",
+          "image_source": "PDC Europe",
+          "image_match_method": "official-pdc-tour-card-photo",
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 28,
           "name": "Niels Zonneveld",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "https://www.pdc-europe.tv/images/players/niels-zonneveld.webp",
+          "image_page_url": "https://www.pdc-europe.tv/spieler/niels-zonneveld",
+          "image_credit": "PDC Europe · Official PDC Tour Card photo",
+          "image_source": "PDC Europe",
+          "image_match_method": "official-pdc-tour-card-photo",
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 29,
           "name": "Daryl Gurney",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "https://www.pdc-europe.tv/images/players/daryl-gurney.webp",
+          "image_page_url": "https://www.pdc-europe.tv/spieler/daryl-gurney",
+          "image_credit": "PDC Europe · Official PDC Tour Card photo",
+          "image_source": "PDC Europe",
+          "image_match_method": "official-pdc-tour-card-photo",
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 29,
           "name": "William O'Connor",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "https://www.pdc-europe.tv/images/players/william-o-connor.webp",
+          "image_page_url": "https://www.pdc-europe.tv/spieler/william-o-connor",
+          "image_credit": "PDC Europe · Official PDC Tour Card photo",
+          "image_source": "PDC Europe",
+          "image_match_method": "official-pdc-tour-card-photo",
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 31,
           "name": "Dave Chisnall",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "https://www.pdc-europe.tv/images/players/dave-chisnall.webp",
+          "image_page_url": "https://www.pdc-europe.tv/spieler/dave-chisnall",
+          "image_credit": "PDC Europe · Official PDC Tour Card photo",
+          "image_source": "PDC Europe",
+          "image_match_method": "official-pdc-tour-card-photo",
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 32,
           "name": "Joe Cullen",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "https://www.pdc-europe.tv/images/players/joe-cullen.webp",
+          "image_page_url": "https://www.pdc-europe.tv/spieler/joe-cullen",
+          "image_credit": "PDC Europe · Official PDC Tour Card photo",
+          "image_source": "PDC Europe",
+          "image_match_method": "official-pdc-tour-card-photo",
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 33,
           "name": "Mike De Decker",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "https://www.pdc-europe.tv/images/players/mike-de-decker.webp",
+          "image_page_url": "https://www.pdc-europe.tv/spieler/mike-de-decker",
+          "image_credit": "PDC Europe · Official PDC Tour Card photo",
+          "image_source": "PDC Europe",
+          "image_match_method": "official-pdc-tour-card-photo",
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 34,
           "name": "Niko Springer",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "https://www.pdc-europe.tv/images/players/niko-springer.webp",
+          "image_page_url": "https://www.pdc-europe.tv/spieler/niko-springer",
+          "image_credit": "PDC Europe · Official PDC Tour Card photo",
+          "image_source": "PDC Europe",
+          "image_match_method": "official-pdc-tour-card-photo",
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 35,
           "name": "Peter Wright",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "https://www.pdc-europe.tv/images/players/peter-wright.webp",
+          "image_page_url": "https://www.pdc-europe.tv/spieler/peter-wright",
+          "image_credit": "PDC Europe · Official PDC Tour Card photo",
+          "image_source": "PDC Europe",
+          "image_match_method": "official-pdc-tour-card-photo",
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 36,
           "name": "Ricardo Pietreczko",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "https://www.pdc-europe.tv/images/players/ricardo-pietreczko.webp",
+          "image_page_url": "https://www.pdc-europe.tv/spieler/ricardo-pietreczko",
+          "image_credit": "PDC Europe · Official PDC Tour Card photo",
+          "image_source": "PDC Europe",
+          "image_match_method": "official-pdc-tour-card-photo",
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 37,
           "name": "Michael Smith",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "https://www.pdc-europe.tv/images/players/michael-smith.webp",
+          "image_page_url": "https://www.pdc-europe.tv/spieler/michael-smith",
+          "image_credit": "PDC Europe · Official PDC Tour Card photo",
+          "image_source": "PDC Europe",
+          "image_match_method": "official-pdc-tour-card-photo",
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 38,
           "name": "Justin Hood",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "https://www.pdc-europe.tv/images/players/justin-hood.webp",
+          "image_page_url": "https://www.pdc-europe.tv/spieler/justin-hood",
+          "image_credit": "PDC Europe · Official PDC Tour Card photo",
+          "image_source": "PDC Europe",
+          "image_match_method": "official-pdc-tour-card-photo",
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 39,
           "name": "Jeffrey de Graaf",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "https://www.pdc-europe.tv/images/players/jeffrey-de-graaf.webp",
+          "image_page_url": "https://www.pdc-europe.tv/spieler/jeffrey-de-graaf",
+          "image_credit": "PDC Europe · Official PDC Tour Card photo",
+          "image_source": "PDC Europe",
+          "image_match_method": "official-pdc-tour-card-photo",
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 40,
           "name": "Callan Rydz",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "https://www.pdc-europe.tv/images/players/callan-rydz.webp",
+          "image_page_url": "https://www.pdc-europe.tv/spieler/callan-rydz",
+          "image_credit": "PDC Europe · Official PDC Tour Card photo",
+          "image_source": "PDC Europe",
+          "image_match_method": "official-pdc-tour-card-photo",
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 41,
           "name": "Mickey Mansell",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "https://www.pdc-europe.tv/images/players/mickey-mansell.webp",
+          "image_page_url": "https://www.pdc-europe.tv/spieler/mickey-mansell",
+          "image_credit": "PDC Europe · Official PDC Tour Card photo",
+          "image_source": "PDC Europe",
+          "image_match_method": "official-pdc-tour-card-photo",
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 42,
           "name": "Karel Sedlacek",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "https://www.pdc-europe.tv/images/players/karel-sedlacek.webp",
+          "image_page_url": "https://www.pdc-europe.tv/spieler/karel-sedlacek",
+          "image_credit": "PDC Europe · Official PDC Tour Card photo",
+          "image_source": "PDC Europe",
+          "image_match_method": "official-pdc-tour-card-photo",
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 43,
           "name": "Martin Lukeman",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "https://www.pdc-europe.tv/images/players/martin-lukeman.webp",
+          "image_page_url": "https://www.pdc-europe.tv/spieler/martin-lukeman",
+          "image_credit": "PDC Europe · Official PDC Tour Card photo",
+          "image_source": "PDC Europe",
+          "image_match_method": "official-pdc-tour-card-photo",
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 44,
           "name": "Kim Huybrechts",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "https://www.pdc-europe.tv/images/players/kim-huybrechts.webp",
+          "image_page_url": "https://www.pdc-europe.tv/spieler/kim-huybrechts",
+          "image_credit": "PDC Europe · Official PDC Tour Card photo",
+          "image_source": "PDC Europe",
+          "image_match_method": "official-pdc-tour-card-photo",
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 45,
           "name": "Scott Williams",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "https://www.pdc-europe.tv/images/players/scott-williams.webp",
+          "image_page_url": "https://www.pdc-europe.tv/spieler/scott-williams",
+          "image_credit": "PDC Europe · Official PDC Tour Card photo",
+          "image_source": "PDC Europe",
+          "image_match_method": "official-pdc-tour-card-photo",
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 46,
           "name": "James Hurrell",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "https://www.pdc-europe.tv/images/players/james-hurrell.webp",
+          "image_page_url": "https://www.pdc-europe.tv/spieler/james-hurrell",
+          "image_credit": "PDC Europe · Official PDC Tour Card photo",
+          "image_source": "PDC Europe",
+          "image_match_method": "official-pdc-tour-card-photo",
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 47,
           "name": "Raymond van Barneveld",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "https://www.pdc-europe.tv/images/players/raymond-van-barneveld.webp",
+          "image_page_url": "https://www.pdc-europe.tv/spieler/raymond-van-barneveld",
+          "image_credit": "PDC Europe · Official PDC Tour Card photo",
+          "image_source": "PDC Europe",
+          "image_match_method": "official-pdc-tour-card-photo",
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 48,
           "name": "Brendan Dolan",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "https://www.pdc-europe.tv/images/players/brendan-dolan.webp",
+          "image_page_url": "https://www.pdc-europe.tv/spieler/brendan-dolan",
+          "image_credit": "PDC Europe · Official PDC Tour Card photo",
+          "image_source": "PDC Europe",
+          "image_match_method": "official-pdc-tour-card-photo",
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 49,
           "name": "Madars Razma",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "https://www.pdc-europe.tv/images/players/madars-razma.webp",
+          "image_page_url": "https://www.pdc-europe.tv/spieler/madars-razma",
+          "image_credit": "PDC Europe · Official PDC Tour Card photo",
+          "image_source": "PDC Europe",
+          "image_match_method": "official-pdc-tour-card-photo",
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 50,
           "name": "Connor Scutt",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "https://www.pdc-europe.tv/images/players/connor-scutt.webp",
+          "image_page_url": "https://www.pdc-europe.tv/spieler/connor-scutt",
+          "image_credit": "PDC Europe · Official PDC Tour Card photo",
+          "image_source": "PDC Europe",
+          "image_match_method": "official-pdc-tour-card-photo",
+          "image_verified_at": "2026-11-08T18:50:00Z",
+          "image_rights": "PDC / PDC Europe official Tour Card photo; externally hosted"
         },
         {
           "rank": 51,
@@ -2160,7 +2370,7 @@
               "image_license": "CC BY 4.0",
               "image_license_url": "https://creativecommons.org/licenses/by/4.0",
               "image_source": "Wikimedia Commons",
-              "image_match_score": 1.0,
+              "image_match_score": 1,
               "image_match_method": "category:Category:Petr Yan",
               "image_verified_at": "2026-11-08T20:18:56Z",
               "image_local_path": "assets/images/ufc/petr-yan.jpg"
@@ -2174,7 +2384,7 @@
               "image_license": "Public domain",
               "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
               "image_source": "Wikimedia Commons",
-              "image_match_score": 1.0,
+              "image_match_score": 1,
               "image_match_method": "category:Category:Merab Dvalishvili",
               "image_verified_at": "2026-11-08T20:18:56Z",
               "image_local_path": "assets/images/ufc/merab-dvalishvili.jpg"
@@ -2188,7 +2398,7 @@
               "image_license": "CC BY-SA 3.0",
               "image_license_url": "https://creativecommons.org/licenses/by-sa/3.0",
               "image_source": "Wikimedia Commons",
-              "image_match_score": 1.0,
+              "image_match_score": 1,
               "image_match_method": "category:Category:Sean O'Malley",
               "image_verified_at": "2026-11-08T20:18:56Z",
               "image_local_path": "assets/images/ufc/sean-o-malley.jpg"
@@ -3954,8 +4164,8 @@
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
     "attempted": 0,
-    "found": 52,
-    "missing": 496,
+    "found": 87,
+    "missing": 461,
     "rejected": 0,
     "by_sport": {},
     "newly_found": 0,
@@ -3972,8 +4182,8 @@
       },
       "darts": {
         "total": 225,
-        "with_image": 15,
-        "missing": 210
+        "with_image": 50,
+        "missing": 175
       },
       "ufc": {
         "total": 206,
@@ -3986,8 +4196,8 @@
         "missing": 81
       }
     },
-    "checked_at": "2026-11-08T20:30:27Z",
+    "checked_at": "2026-11-08T20:40:00Z",
     "library_entries": 56
   },
-  "last_updated": "2026-11-08T20:30:27Z"
+  "last_updated": "2026-11-08T20:40:00Z"
 }
