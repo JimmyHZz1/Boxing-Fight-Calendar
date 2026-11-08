@@ -177,6 +177,7 @@ def enrich_event_fighter_images(events):
             cache = json.load(handle)
     except (FileNotFoundError, json.JSONDecodeError):
         cache = {"images": {}, "attempted": {}}
+    load_image_library()
     images, attempted = cache.setdefault("images", {}), cache.setdefault("attempted", {})
     def person_name(value):
         if isinstance(value, dict):
@@ -201,6 +202,8 @@ def enrich_event_fighter_images(events):
                 if not key or name.upper() == "TBC": continue
                 direct = bout.get(side + "_image") or bout.get(side + "_photo") or image_from(raw)
                 if direct: bout[side + "_image"] = direct
+                elif key in IMAGE_LIBRARY.get("images", {}):
+                    images[key] = IMAGE_LIBRARY["images"][key]
                 elif key not in images and key not in attempted: pending[key] = name
     import time
     for key, name in list(pending.items())[:30]:
@@ -208,6 +211,7 @@ def enrich_event_fighter_images(events):
         attempted[key] = datetime.now(timezone.utc).date().isoformat()
         if result and result.get("image_url"):
             images[key] = result
+            record_image(name, result, "ufc/bkfc event fighters")
             print(f"EVENT_FIGHTER_IMAGE_FOUND: {name}")
         else:
             print(f"EVENT_FIGHTER_IMAGE_NOT_FOUND: {name}")
@@ -223,6 +227,9 @@ def enrich_event_fighter_images(events):
                 if result.get("image_credit"):
                     bout[side + "_image_credit"] = result["image_credit"]
     cache["updated_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
+    IMAGE_DIAGNOSTICS["checked_at"] = iso_now()
+    IMAGE_DIAGNOSTICS["library_entries"] = len(IMAGE_LIBRARY.get("images", {}))
+    save_image_library()
     os.makedirs(DATA, exist_ok=True)
     with open(cache_path, "w", encoding="utf-8") as handle:
         json.dump(cache, handle, ensure_ascii=False, indent=2)
