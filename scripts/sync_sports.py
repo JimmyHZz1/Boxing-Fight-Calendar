@@ -1075,6 +1075,21 @@ def sync_sports_hub():
         except Exception:
             rankings = []
         if not rankings: rankings = darts_rankings_from_web()
+        # Preserve verified portraits from the last published snapshot when the upstream
+        # rankings endpoint omits image fields. A routine ranking refresh must never
+        # erase an already verified player portrait.
+        previous_darts = previous.get("darts", {}).get("rankings", [])
+        previous_images = {
+            image_key(row.get("name")): row
+            for row in previous_darts
+            if isinstance(row, dict) and row.get("name") and row.get("image_url")
+        }
+        for row in rankings:
+            prior = previous_images.get(image_key(row.get("name")))
+            if prior and not row.get("image_url"):
+                for field, value in prior.items():
+                    if field == "image_url" or field == "image_rights" or field.startswith("image_"):
+                        row[field] = value
         hub["sports"]["darts"] = {"rankings": add_photos(rankings, limit=40, sport="darts"), "source_url": "https://www.dartsrankings.com/", "notice": "PDC Order of Merit live table. Rankings are updated after PDC ranking events."}
     except Exception as exc:
         hub["sports"]["darts"] = {**previous.get("darts", {"rankings": []}), "sync_warning": str(exc)}
