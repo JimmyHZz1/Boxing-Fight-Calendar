@@ -1226,6 +1226,7 @@ def enrich_cached_images():
     IMAGE_DIAGNOSTICS["missing"] = sum(v["missing"] for v in coverage.values())
     IMAGE_DIAGNOSTICS["checked_at"] = iso_now()
     IMAGE_DIAGNOSTICS["library_entries"] = len(IMAGE_LIBRARY.get("images", {}))
+    IMAGE_DIAGNOSTICS["rate_limited"] = IMAGE_LOOKUP_RATE_LIMITED
     hub["image_diagnostics"] = IMAGE_DIAGNOSTICS
     save_image_library()
     with open(hub_path, "w", encoding="utf-8") as handle:
