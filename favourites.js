@@ -38,8 +38,9 @@
     return null;
   }
   function allSportEvents(sport){
-    if(sport==="boxing")return window.BoxingSchedule?.getEvents?.()||[];
-    return window.SportsData?.getEvents?.(sport,true)||events[sport]||[];
+    if(sport==="boxing"){const feed=window.BoxingSchedule?.getEvents?.()||[];return feed.length?feed:events[sport]||[];}
+    const feed=window.SportsData?.getEvents?.(sport,true)||[];
+    return feed.length?feed:events[sport]||[];
   }
   function eventMatch(f,e){
     const name=norm(f.name),title=norm(e.name||e.title);
