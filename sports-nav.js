@@ -22,7 +22,7 @@
   }
   document.addEventListener("sports:feeds-updated",render);
   document.addEventListener("sports:boxing-data-updated",render);
-  document.querySelectorAll("[data-top-sport]").forEach(button=>button.addEventListener("click",()=>openSport(button.dataset.topSport)));
+  document.querySelectorAll("[data-top-sport]").forEach(button=>button.addEventListener("click",()=>{document.querySelectorAll("[data-top-sport]").forEach(item=>item.classList.remove("user-selected"));button.classList.add("user-selected");openSport(button.dataset.topSport);}));
   document.addEventListener("sports:select",event=>{document.querySelectorAll("[data-top-sport]").forEach(button=>button.setAttribute("aria-current",String(button.dataset.topSport===event.detail?.sport)));});
   render();
   setInterval(render,30000);
