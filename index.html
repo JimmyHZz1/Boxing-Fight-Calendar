@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#101114">
   <meta name="description" content="Boxing, Formula 1, UFC and PDC darts schedules in one sports calendar, shown in UK local time.">
   <link rel="manifest" href="./manifest.json">
-  <link rel="stylesheet" href="./styles.css?v=20261108-65">
+  <link rel="stylesheet" href="./styles.css?v=20261108-66">
   <title>Sports Calendar</title>
 </head>
 <body>
@@ -122,13 +122,22 @@
         <div id="sports-selected-date-events" class="event-list"></div>
       </section>
 
-      <section id="weekend-screen" class="screen" aria-labelledby="weekend-title">
-        <div class="page-intro"><span class="eyebrow">YOUR NEXT SEVEN DAYS</span><h1 id="weekend-title">My Sports <em>Weekend.</em></h1><p>One simple timeline for the events you follow across all five sports, shown in UK local time.</p></div>
-        <div class="weekend-toolbar"><span id="weekend-range-label">LOADING YOUR FIXTURES…</span><button type="button" class="text-link" id="weekend-refresh">REFRESH LIST ↻</button></div>
-        <div id="weekend-content" class="weekend-content" aria-live="polite"><p class="live-centre-empty">Collecting the latest schedules…</p></div>
-        <p class="weekend-note">Only published event dates and confirmed start times are shown. Where a start time has not been announced, the event is marked TIME TBC.</p>
+      <section id="weekend-screen" class="screen favourites-screen" aria-labelledby="weekend-title">
+        <div class="page-intro"><span class="eyebrow">YOUR PERSONAL SPORTS HUB</span><h1 id="weekend-title">My <em>Favourites.</em></h1><p>Keep the drivers, teams and competitors you follow close. Profiles update with published standings, rankings and event schedules.</p></div>
+        <section class="favourites-add-panel" aria-labelledby="favourites-add-title">
+          <div class="section-heading compact"><div><span class="eyebrow">BUILD YOUR LINE-UP</span><h2 id="favourites-add-title">Add a favourite</h2></div><span class="count-badge">ALL FIVE SPORTS</span></div>
+          <form id="favourites-form" class="favourites-form">
+            <label>SPORT<select id="favourite-sport" required><option value="f1">Formula 1</option><option value="darts">PDC Darts</option><option value="boxing">Boxing</option><option value="ufc">UFC</option><option value="bkfc">BKFC</option></select></label>
+            <label>PROFILE TYPE<select id="favourite-type" required><option value="driver">Driver</option><option value="team">Constructor / Team</option></select></label>
+            <label class="favourite-name-field">NAME<input id="favourite-name" type="text" maxlength="70" placeholder="Search or enter a name" list="favourite-suggestions" autocomplete="off" required><datalist id="favourite-suggestions"></datalist></label>
+            <label class="favourite-note-field">PERSONAL NOTE <input id="favourite-note" type="text" maxlength="120" placeholder="Optional note"></label>
+            <button class="primary-button" type="submit">＋ ADD TO FAVOURITES</button>
+          </form>
+          <p class="favourites-storage-note">Your favourites and personal notes are saved on this device. Published stats and schedules refresh when the app data updates.</p>
+        </section>
+        <div class="favourites-toolbar"><div><span class="eyebrow">YOUR COLLECTION</span><strong id="favourites-count">0 FAVOURITES</strong></div><div id="favourites-filters" class="favourites-filters" aria-label="Filter favourites"><button type="button" data-fav-filter="all" aria-pressed="true">ALL</button><button type="button" data-fav-filter="f1" aria-pressed="false">F1</button><button type="button" data-fav-filter="darts" aria-pressed="false">DARTS</button><button type="button" data-fav-filter="boxing" aria-pressed="false">BOXING</button><button type="button" data-fav-filter="ufc" aria-pressed="false">UFC</button><button type="button" data-fav-filter="bkfc" aria-pressed="false">BKFC</button></div></div>
+        <div id="favourites-content" class="favourites-grid" aria-live="polite"><div class="favourites-empty"><span>★</span><h3>Your sports line-up starts here</h3><p>Add a driver, team, darts player or fighter above. Their available stats and upcoming events will appear in this space.</p></div></div>
       </section>
-
       <section id="cards-screen" class="screen" aria-labelledby="cards-title">
         <div class="page-intro"><span class="eyebrow">ALL FIVE SPORTS</span><h1 id="cards-title">Events &amp; <em>fight cards.</em></h1><p>F1 sessions and results, PDC tournament dates, UFC and BKFC cards, and boxing bouts.</p></div>
         <div id="full-cards" class="event-list"><div class="empty-state"><span class="empty-icon">📋</span><h3>Full cards will appear here</h3><p>Event cards will populate as reliable bout information becomes available.</p></div></div>
@@ -204,7 +213,7 @@
     <nav class="bottom-nav" aria-label="Main navigation">
       <button class="nav-item active" data-screen="home-screen"><span>⌂</span><small>HOME</small></button>
       <button class="nav-item" data-screen="calendar-screen"><span>▦</span><small>CALENDAR</small></button>
-      <button class="nav-item" data-screen="weekend-screen"><span>◷</span><small>MY WEEKEND</small></button>
+      <button class="nav-item" data-screen="weekend-screen"><span>★</span><small>FAVOURITES</small></button>
     </nav>
     <footer class="footer"><a class="version-history-link" href="#version-history" id="open-version-history">VERSION HISTORY</a><span>•</span> SPORTS CALENDAR <span>•</span> UK LOCAL TIME <span>•</span> PDC logo: <a href="https://commons.wikimedia.org/wiki/File:Professional_Darts_Corporation_logo.png" target="_blank" rel="noopener noreferrer">Chris Ibbotson, CC BY-SA 4.0</a> <span>•</span> BKFC SCHEDULE: <a href="https://www.bkfc.com/events" target="_blank" rel="noopener noreferrer">BKFC</a> <span>•</span> BOXING DATA: <a href="https://boxerbook.com" target="_blank" rel="noopener noreferrer">BOXERBOOK</a></footer>
   </div>
@@ -216,5 +225,6 @@
   <script src="./sport-pages.js?v=20261108-09"></script>
   <script src="./sports-v11.js?v=20261108-01"></script>
   <script src="./sports-weekend.js?v=20261108-02"></script>
+  <script src="./favourites.js?v=20261108-01"></script>
 </body>
 </html>
