@@ -1155,3 +1155,23 @@ body.compact-view #home-screen .live-centre-empty{display:block!important;font-s
 .hub-image-coverage-row small{color:var(--muted);font-size:9px;white-space:nowrap}
 .hub-image-warning{padding:9px 11px;border-left:2px solid var(--accent);background:rgba(226,180,91,.08);color:#e7c98f!important}
 @media(max-width:520px){.hub-person.hub-pdc-player>img{transform:scale(1.38)}.hub-person>img.hub-driver-portrait-official-f1{transform:scale(1.46)!important}.hub-constructor-broadcast{width:66px!important;height:42px!important;flex-basis:66px;font-size:18px!important}.hub-image-coverage-row{grid-template-columns:minmax(0,1fr) auto;gap:4px 8px}.hub-image-coverage-row small{grid-column:2}}
+
+
+/* Collapsible release notes grouped inside Jobs to do. */
+.version-history-list{display:grid;gap:8px;margin:16px 0 4px}
+.version-breakdown-title{margin-top:22px;padding-bottom:11px}
+.version-dropdown{padding:0;overflow:hidden}
+.version-entry-summary{display:grid;grid-template-columns:minmax(0,1fr) 22px;align-items:center;gap:6px;padding:15px 17px;cursor:pointer;list-style:none}
+.version-entry-summary::-webkit-details-marker{display:none}
+.version-entry-summary::marker{content:""}
+.version-entry-top{display:flex;align-items:center;gap:12px;min-width:0}
+.version-entry-title{grid-column:1;display:block;margin-top:1px;font:700 17px 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.35px}
+.version-entry-toggle{grid-column:2;grid-row:1/3;position:relative;width:20px;height:20px;border:1px solid var(--line);border-radius:50%}
+.version-entry-toggle::before,.version-entry-toggle::after{content:"";position:absolute;left:5px;right:5px;top:9px;height:1px;background:var(--accent)}
+.version-entry-toggle::after{transform:rotate(90deg);transition:transform .2s ease}
+.version-dropdown[open] .version-entry-toggle::after{transform:rotate(0)}
+.version-dropdown>ul{margin:0;padding:0 22px 17px 38px;color:#b6b6bb;font-size:11px;line-height:1.8}
+.version-dropdown>ul li+li{margin-top:3px}
+.version-dropdown[open] .version-entry-summary{padding-bottom:10px}
+.version-dropdown:focus-within{border-color:color-mix(in srgb,var(--accent) 55%,var(--line))}
+@media(max-width:520px){.version-entry-summary{padding:13px}.version-entry-title{font-size:16px}.version-dropdown>ul{padding:0 15px 15px 32px}}
