@@ -212,1139 +212,1589 @@
       ],
       "season": 2026,
       "notice": "Official season standings sourced from the community-maintained Jolpica F1 API.",
-      "last_updated": "2026-11-08T11:59:55Z"
+      "last_updated": "2026-11-08T12:35:45Z"
     },
     "darts": {
       "rankings": [
         {
           "rank": 1,
           "name": "Luke Littler",
-          "prize_money": "3,141,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 2,
           "name": "Luke Humphries",
-          "prize_money": "1,062,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 3,
           "name": "Gian van Veen",
-          "prize_money": "1,058,750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 4,
           "name": "Gerwyn Price",
-          "prize_money": "833,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 5,
           "name": "Jonny Clayton",
-          "prize_money": "717,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 6,
           "name": "Ross Smith",
-          "prize_money": "715,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 7,
           "name": "James Wade",
-          "prize_money": "672,750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 8,
           "name": "Josh Rock",
-          "prize_money": "603,750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 9,
           "name": "Stephen Bunting",
-          "prize_money": "598,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 10,
           "name": "Danny Noppert",
-          "prize_money": "595,750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 11,
           "name": "Michael van Gerwen",
-          "prize_money": "595,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 11,
           "name": "Nathan Aspinall",
-          "prize_money": "595,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 13,
           "name": "Wessel Nijman",
-          "prize_money": "590,750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 14,
           "name": "Gary Anderson",
-          "prize_money": "572,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 15,
           "name": "Ryan Searle",
-          "prize_money": "559,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 16,
           "name": "Chris Dobey",
-          "prize_money": "550,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 17,
           "name": "Luke Woodhouse",
-          "prize_money": "509,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 18,
           "name": "Jermaine Wattimena",
-          "prize_money": "507,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 19,
           "name": "Krzysztof Ratajski",
-          "prize_money": "492,750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 20,
           "name": "Martin Schindler",
-          "prize_money": "466,000"
-        },
-        {
-          "rank": 21,
-          "name": "Dirk van Duijvenbode",
-          "prize_money": "426,750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 21,
           "name": "Damon Heta",
-          "prize_money": "426,750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 21,
+          "name": "Dirk van Duijvenbode",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 23,
           "name": "Kevin Doets",
-          "prize_money": "399,750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 24,
           "name": "Rob Cross",
-          "prize_money": "398,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 25,
           "name": "Ryan Joyce",
-          "prize_money": "397,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 26,
           "name": "Cameron Menzies",
-          "prize_money": "387,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 27,
           "name": "Andrew Gilding",
-          "prize_money": "353,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 28,
           "name": "Niels Zonneveld",
-          "prize_money": "336,250"
-        },
-        {
-          "rank": 29,
-          "name": "William O'Connor",
-          "prize_money": "290,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 29,
           "name": "Daryl Gurney",
-          "prize_money": "290,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 29,
+          "name": "William O'Connor",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 31,
           "name": "Dave Chisnall",
-          "prize_money": "287,750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 32,
           "name": "Joe Cullen",
-          "prize_money": "273,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 33,
           "name": "Mike De Decker",
-          "prize_money": "252,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 34,
           "name": "Niko Springer",
-          "prize_money": "251,750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 35,
           "name": "Peter Wright",
-          "prize_money": "228,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 36,
           "name": "Ricardo Pietreczko",
-          "prize_money": "227,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 37,
           "name": "Michael Smith",
-          "prize_money": "222,750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 38,
           "name": "Justin Hood",
-          "prize_money": "198,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 39,
           "name": "Jeffrey de Graaf",
-          "prize_money": "195,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 40,
           "name": "Callan Rydz",
-          "prize_money": "194,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 41,
           "name": "Mickey Mansell",
-          "prize_money": "193,750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 42,
           "name": "Karel Sedlacek",
-          "prize_money": "193,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 43,
           "name": "Martin Lukeman",
-          "prize_money": "186,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 44,
           "name": "Kim Huybrechts",
-          "prize_money": "180,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 45,
           "name": "Scott Williams",
-          "prize_money": "177,750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 46,
           "name": "James Hurrell",
-          "prize_money": "177,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 47,
           "name": "Raymond van Barneveld",
-          "prize_money": "173,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 48,
           "name": "Brendan Dolan",
-          "prize_money": "172,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 49,
           "name": "Madars Razma",
-          "prize_money": "171,750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 50,
           "name": "Connor Scutt",
-          "prize_money": "169,750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 51,
           "name": "Sebastian Bialecki",
-          "prize_money": "168,750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 52,
           "name": "Ricky Evans",
-          "prize_money": "167,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 53,
           "name": "Gabriel Clemens",
-          "prize_money": "160,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 54,
           "name": "Ritchie Edhouse",
-          "prize_money": "156,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 55,
           "name": "Mensur Suljovic",
-          "prize_money": "155,750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 56,
           "name": "Keane Barry",
-          "prize_money": "151,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 57,
           "name": "Ian White",
-          "prize_money": "143,750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 58,
           "name": "Richard Veenstra",
-          "prize_money": "140,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 59,
           "name": "Bradley Brooks",
-          "prize_money": "135,750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 60,
           "name": "Dimitri Van den Bergh",
-          "prize_money": "135,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 61,
           "name": "Alan Soutar",
-          "prize_money": "130,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 62,
           "name": "Rob Owen",
-          "prize_money": "128,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 63,
           "name": "Lukas Wenig",
-          "prize_money": "119,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 64,
           "name": "Nick Kenny",
-          "prize_money": "119,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 65,
           "name": "Cristo Reyes",
-          "prize_money": "117,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 66,
           "name": "Max Hopp",
-          "prize_money": "116,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 67,
           "name": "Ryan Meikle",
-          "prize_money": "115,750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 68,
           "name": "Mario Vandenbogaerde",
-          "prize_money": "114,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 69,
           "name": "Cam Crabtree",
-          "prize_money": "107,750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 70,
           "name": "Wesley Plaisier",
-          "prize_money": "103,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 71,
           "name": "Maik Kuivenhoven",
-          "prize_money": "98,750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 72,
           "name": "Thibault Tricole",
-          "prize_money": "98,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 73,
           "name": "Tom Bissell",
-          "prize_money": "84,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 74,
           "name": "Beau Greaves",
-          "prize_money": "81,750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 75,
           "name": "Adam Lipscombe",
-          "prize_money": "81,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 76,
           "name": "Darryl Pilgrim",
-          "prize_money": "72,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 77,
           "name": "Charlie Manby",
-          "prize_money": "69,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 78,
           "name": "Cor Dekker",
-          "prize_money": "68,750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 79,
           "name": "Dominik Gruellich",
-          "prize_money": "65,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 80,
           "name": "Christian Kist",
-          "prize_money": "63,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 81,
           "name": "Tom Sykes",
-          "prize_money": "62,250"
-        },
-        {
-          "rank": 82,
-          "name": "Tommy Morris",
-          "prize_money": "57,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 82,
           "name": "Andy Boulton",
-          "prize_money": "57,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 82,
+          "name": "Tommy Morris",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 84,
           "name": "Jim Long",
-          "prize_money": "56,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 85,
           "name": "Oskar Lukasiak",
-          "prize_money": "49,750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 86,
           "name": "Joe Hunt",
-          "prize_money": "48,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 87,
           "name": "Darius Labanauskas",
-          "prize_money": "46,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 87,
           "name": "Jimmy van Schie",
-          "prize_money": "46,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 89,
           "name": "Thomas Lovely",
-          "prize_money": "44,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 90,
           "name": "Leon Weber",
-          "prize_money": "41,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 91,
           "name": "Viktor Tingstrom",
-          "prize_money": "41,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 92,
           "name": "Shane McGuirk",
-          "prize_money": "39,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 93,
           "name": "Marvin van Velzen",
-          "prize_money": "39,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 94,
           "name": "Alexander Merkx",
-          "prize_money": "38,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 95,
           "name": "Owen Bates",
-          "prize_money": "37,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 96,
           "name": "Henry Coates",
-          "prize_money": "37,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 96,
           "name": "Tavis Dudeney",
-          "prize_money": "37,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 98,
           "name": "Adam Gawlas",
-          "prize_money": "37,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 99,
           "name": "Jurjen van der Velde",
-          "prize_money": "35,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 100,
           "name": "Greg Ritchie",
-          "prize_money": "34,750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 101,
           "name": "Jeffrey De Zwaan",
-          "prize_money": "34,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 102,
           "name": "Kai Gotthardt",
-          "prize_money": "33,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 103,
           "name": "Adam Paxton",
-          "prize_money": "32,750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 104,
           "name": "David Sharp",
-          "prize_money": "32,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 105,
           "name": "Stephen Burton",
-          "prize_money": "32,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 106,
           "name": "Chris Landman",
-          "prize_money": "30,750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 107,
           "name": "Mervyn King",
-          "prize_money": "30,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 108,
           "name": "Benjamin Pratnemer",
-          "prize_money": "29,750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 109,
           "name": "Martijn Dragt",
-          "prize_money": "29,500"
-        },
-        {
-          "rank": 110,
-          "name": "Dennie Olde Kalter",
-          "prize_money": "28,750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 110,
           "name": "Adam Warner",
-          "prize_money": "28,750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
-          "rank": 112,
-          "name": "Tyler Thorpe",
-          "prize_money": "28,250"
+          "rank": 110,
+          "name": "Dennie Olde Kalter",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 112,
           "name": "Jeffrey Sparidaans",
-          "prize_money": "28,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 112,
+          "name": "Tyler Thorpe",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 114,
           "name": "Tommy Lishman",
-          "prize_money": "27,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 115,
           "name": "Sietse Lap",
-          "prize_money": "24,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 116,
           "name": "Derek Coulson",
-          "prize_money": "24,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 116,
           "name": "Niall Culleton",
-          "prize_money": "24,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 118,
           "name": "Adam Leek",
-          "prize_money": "22,500"
-        },
-        {
-          "rank": 118,
-          "name": "Stefan Bellmont",
-          "prize_money": "22,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 118,
           "name": "Scott Waites",
-          "prize_money": "22,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 118,
+          "name": "Stefan Bellmont",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 121,
           "name": "Steve Lennon",
-          "prize_money": "22,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 122,
           "name": "Jack Tweddell",
-          "prize_money": "21,750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 123,
           "name": "Arno Merk",
-          "prize_money": "21,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 124,
           "name": "Maximilian Czerwinski",
-          "prize_money": "20,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 125,
           "name": "Stephen Rosney",
-          "prize_money": "19,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 126,
           "name": "Rhys Griffin",
-          "prize_money": "19,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 127,
           "name": "Stefaan Henderyck",
-          "prize_money": "18,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 128,
           "name": "Nathan Potter",
-          "prize_money": "17,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 129,
           "name": "Carl Sneyd",
-          "prize_money": "16,750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 130,
           "name": "Harry Ward",
-          "prize_money": "16,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 131,
           "name": "Tytus Kanik",
-          "prize_money": "15,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 132,
           "name": "Samuel Price",
-          "prize_money": "14,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 133,
           "name": "Daniel Klose",
-          "prize_money": "13,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 134,
           "name": "Jack Aldridge",
-          "prize_money": "13,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 135,
           "name": "Daniel Ayres",
-          "prize_money": "12,750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 136,
           "name": "Yorick Hofkens",
-          "prize_money": "12,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 137,
           "name": "Lewis Pride",
-          "prize_money": "12,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 137,
           "name": "Pascal Rupprecht",
-          "prize_money": "12,250"
-        },
-        {
-          "rank": 139,
-          "name": "Marvin Kraft",
-          "prize_money": "11,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 139,
           "name": "Andy Baetens",
-          "prize_money": "11,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 139,
+          "name": "Marvin Kraft",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 141,
           "name": "Rusty-Jake Rodriguez",
-          "prize_money": "10,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 142,
           "name": "Paul Krohne",
-          "prize_money": "9,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 143,
           "name": "Boris Krcmar",
-          "prize_money": "8,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 144,
           "name": "Jonas Masalin",
-          "prize_money": "7,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 144,
           "name": "Michael Unterbuchner",
-          "prize_money": "7,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 146,
           "name": "Jan Schmidt",
-          "prize_money": "7,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 146,
           "name": "Patrik Kovacs",
-          "prize_money": "7,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 148,
           "name": "Pero Ljubic",
-          "prize_money": "6,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 149,
           "name": "Archie Self",
-          "prize_money": "6,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 149,
           "name": "Christopher Wickenden",
-          "prize_money": "6,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 151,
           "name": "Johan Engstrom",
-          "prize_money": "6,000"
-        },
-        {
-          "rank": 152,
-          "name": "Patrik Williams",
-          "prize_money": "5,500"
-        },
-        {
-          "rank": 152,
-          "name": "Nandor Major",
-          "prize_money": "5,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 152,
           "name": "Dragutin Horvat",
-          "prize_money": "5,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 152,
           "name": "Marcel Hausotter",
-          "prize_money": "5,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 152,
+          "name": "Nandor Major",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 152,
+          "name": "Patrik Williams",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 156,
           "name": "Oliver Mitchell",
-          "prize_money": "4,250"
-        },
-        {
-          "rank": 157,
-          "name": "Krzysztof Kciuk",
-          "prize_money": "4,000"
-        },
-        {
-          "rank": 157,
-          "name": "Gyorgy Jehirszki",
-          "prize_money": "4,000"
-        },
-        {
-          "rank": 157,
-          "name": "Jani Haavisto",
-          "prize_money": "4,000"
-        },
-        {
-          "rank": 157,
-          "name": "Finn Behrens",
-          "prize_money": "4,000"
-        },
-        {
-          "rank": 157,
-          "name": "Callum Goffin",
-          "prize_money": "4,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 157,
           "name": "Anton Ostlund",
-          "prize_money": "4,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
-          "rank": 163,
-          "name": "Ted Evetts",
-          "prize_money": "3,750"
+          "rank": 157,
+          "name": "Callum Goffin",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 157,
+          "name": "Finn Behrens",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 157,
+          "name": "Gyorgy Jehirszki",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 157,
+          "name": "Jani Haavisto",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 157,
+          "name": "Krzysztof Kciuk",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 163,
           "name": "Aden Kirk",
-          "prize_money": "3,750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 163,
           "name": "Filip Bereza",
-          "prize_money": "3,750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 163,
           "name": "Scott Campbell",
-          "prize_money": "3,750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 163,
+          "name": "Ted Evetts",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 167,
           "name": "Heine Uuldriks",
-          "prize_money": "3,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 167,
           "name": "Laszlo Kadar",
-          "prize_money": "3,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 167,
           "name": "Valters Melderis",
-          "prize_money": "3,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 170,
           "name": "Gilbert van der Meijden",
-          "prize_money": "2,500"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 170,
           "name": "Graham Hall",
-          "prize_money": "2,500"
-        },
-        {
-          "rank": 172,
-          "name": "Maikel Verberk",
-          "prize_money": "2,000"
-        },
-        {
-          "rank": 172,
-          "name": "Alex Fehlmann",
-          "prize_money": "2,000"
-        },
-        {
-          "rank": 172,
-          "name": "Bruno Stoeckli",
-          "prize_money": "2,000"
-        },
-        {
-          "rank": 172,
-          "name": "Roman Wellinger",
-          "prize_money": "2,000"
-        },
-        {
-          "rank": 172,
-          "name": "Jaimy Jacobs",
-          "prize_money": "2,000"
-        },
-        {
-          "rank": 172,
-          "name": "Jeroen Caron",
-          "prize_money": "2,000"
-        },
-        {
-          "rank": 172,
-          "name": "Kevin Lankhuizen",
-          "prize_money": "2,000"
-        },
-        {
-          "rank": 172,
-          "name": "Michael Hansen",
-          "prize_money": "2,000"
-        },
-        {
-          "rank": 172,
-          "name": "Petr Tous",
-          "prize_money": "2,000"
-        },
-        {
-          "rank": 172,
-          "name": "David Rosi",
-          "prize_money": "2,000"
-        },
-        {
-          "rank": 172,
-          "name": "Jiri Brejcha",
-          "prize_money": "2,000"
-        },
-        {
-          "rank": 172,
-          "name": "Martin Homola",
-          "prize_money": "2,000"
-        },
-        {
-          "rank": 172,
-          "name": "Andras Borbely",
-          "prize_money": "2,000"
-        },
-        {
-          "rank": 172,
-          "name": "David Pisek",
-          "prize_money": "2,000"
-        },
-        {
-          "rank": 172,
-          "name": "Milan Biro",
-          "prize_money": "2,000"
-        },
-        {
-          "rank": 172,
-          "name": "Jaimy Van de Weerd",
-          "prize_money": "2,000"
-        },
-        {
-          "rank": 172,
-          "name": "Michal Smejda",
-          "prize_money": "2,000"
-        },
-        {
-          "rank": 172,
-          "name": "Mio Varila",
-          "prize_money": "2,000"
-        },
-        {
-          "rank": 172,
-          "name": "Adrian Dudek",
-          "prize_money": "2,000"
-        },
-        {
-          "rank": 172,
-          "name": "Gabriel Varaljay",
-          "prize_money": "2,000"
-        },
-        {
-          "rank": 172,
-          "name": "Jan Sliacky",
-          "prize_money": "2,000"
-        },
-        {
-          "rank": 172,
-          "name": "Juraj Holub",
-          "prize_money": "2,000"
-        },
-        {
-          "rank": 172,
-          "name": "Peter Kelemen",
-          "prize_money": "2,000"
-        },
-        {
-          "rank": 172,
-          "name": "Jason Riedtke",
-          "prize_money": "2,000"
-        },
-        {
-          "rank": 172,
-          "name": "Teemu Harju",
-          "prize_money": "2,000"
-        },
-        {
-          "rank": 172,
-          "name": "Liam Maendl-Lawrance",
-          "prize_money": "2,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 172,
           "name": "Aaron Hardy",
-          "prize_money": "2,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 172,
-          "name": "Nick Zwittnigg",
-          "prize_money": "2,000"
+          "name": "Adrian Dudek",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 172,
-          "name": "Zoran Lerchbacher",
-          "prize_money": "2,000"
+          "name": "Alex Fehlmann",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 172,
-          "name": "Michael Hurtz",
-          "prize_money": "2,000"
-        },
-        {
-          "rank": 172,
-          "name": "Petr Krivka",
-          "prize_money": "2,000"
-        },
-        {
-          "rank": 172,
-          "name": "Robin Masino",
-          "prize_money": "2,000"
-        },
-        {
-          "rank": 172,
-          "name": "Kevin Troppmann",
-          "prize_money": "2,000"
-        },
-        {
-          "rank": 172,
-          "name": "Francois Schweyen",
-          "prize_money": "2,000"
-        },
-        {
-          "rank": 172,
-          "name": "Pascal Devroey",
-          "prize_money": "2,000"
-        },
-        {
-          "rank": 172,
-          "name": "Florian Hempel",
-          "prize_money": "2,000"
-        },
-        {
-          "rank": 172,
-          "name": "Florian Preis",
-          "prize_money": "2,000"
-        },
-        {
-          "rank": 172,
-          "name": "Wojciech Brulinski",
-          "prize_money": "2,000"
-        },
-        {
-          "rank": 172,
-          "name": "Sam Spivey",
-          "prize_money": "2,000"
+          "name": "Andras Borbely",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 172,
           "name": "Andreas Harrysson",
-          "prize_money": "2,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 172,
+          "name": "Bruno Stoeckli",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 172,
+          "name": "David Pisek",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 172,
+          "name": "David Rosi",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 172,
           "name": "Dawid Robak",
-          "prize_money": "2,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 172,
+          "name": "Florian Hempel",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 172,
+          "name": "Florian Preis",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 172,
+          "name": "Francois Schweyen",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 172,
+          "name": "Gabriel Varaljay",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 172,
+          "name": "Jaimy Jacobs",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 172,
+          "name": "Jaimy Van de Weerd",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 172,
+          "name": "Jan Sliacky",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 172,
+          "name": "Jason Riedtke",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 172,
+          "name": "Jeroen Caron",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 172,
+          "name": "Jiri Brejcha",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 172,
+          "name": "Juraj Holub",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 172,
+          "name": "Kevin Lankhuizen",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 172,
+          "name": "Kevin Troppmann",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 172,
+          "name": "Liam Maendl-Lawrance",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 172,
+          "name": "Maikel Verberk",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 172,
+          "name": "Martin Homola",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 172,
+          "name": "Michael Hansen",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 172,
+          "name": "Michael Hurtz",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 172,
+          "name": "Michal Smejda",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 172,
+          "name": "Milan Biro",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 172,
+          "name": "Mio Varila",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 172,
           "name": "Miroslaw Grudziecki",
-          "prize_money": "2,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 172,
+          "name": "Nick Zwittnigg",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 172,
+          "name": "Pascal Devroey",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 172,
+          "name": "Peter Kelemen",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 172,
+          "name": "Petr Krivka",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 172,
+          "name": "Petr Tous",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 172,
           "name": "Piotr Maciejczak",
-          "prize_money": "2,000"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
-          "rank": 215,
-          "name": "Levy Frauenfelder",
-          "prize_money": "1,250"
+          "rank": 172,
+          "name": "Robin Masino",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
-          "rank": 215,
-          "name": "Kevin Burness",
-          "prize_money": "1,250"
+          "rank": 172,
+          "name": "Roman Wellinger",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 172,
+          "name": "Sam Spivey",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 172,
+          "name": "Teemu Harju",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 172,
+          "name": "Wojciech Brulinski",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 172,
+          "name": "Zoran Lerchbacher",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 215,
           "name": "Danny Trueman",
-          "prize_money": "1,250"
-        },
-        {
-          "rank": 215,
-          "name": "Matthias Ehlers",
-          "prize_money": "1,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 215,
           "name": "Jack Todd",
-          "prize_money": "1,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 215,
           "name": "Jamai van den Herik",
-          "prize_money": "1,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 215,
+          "name": "Kevin Burness",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 215,
+          "name": "Levy Frauenfelder",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
+        },
+        {
+          "rank": 215,
+          "name": "Matthias Ehlers",
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 215,
           "name": "Oliver King",
-          "prize_money": "1,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 215,
           "name": "Ron Meulenkamp",
-          "prize_money": "1,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 215,
           "name": "Samuel Whittaker",
-          "prize_money": "1,250"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 224,
           "name": "Danny van Trijp",
-          "prize_money": "750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         },
         {
           "rank": 224,
           "name": "Jesus Salate",
-          "prize_money": "750"
+          "prize_money": null,
+          "points": null,
+          "image_url": null
         }
       ],
       "source_url": "https://www.dartsrankings.com/",
       "notice": "PDC Order of Merit live table. Rankings are updated after PDC ranking events.",
-      "last_updated": "2026-11-08T11:59:55Z"
+      "last_updated": "2026-11-08T12:35:45Z"
     },
     "ufc": {
       "divisions": [
@@ -2459,7 +2909,7 @@
       ],
       "snapshot_date": "2026-11-03",
       "notice": "Official UFC divisional rankings from UFCalendar. Rank 0 denotes the champion; rankings are updated when the publisher releases a new snapshot.",
-      "last_updated": "2026-11-08T11:59:55Z"
+      "last_updated": "2026-11-08T12:35:45Z"
     },
     "boxing": {
       "divisions": [
@@ -3122,32 +3572,18 @@
         }
       ],
       "notice": "Current reigns from Open Boxing, covering the major sanctioning bodies and The Ring where recorded. Boxing title status can change between updates; data coverage is subject to the source database.",
-      "last_updated": "2026-11-08T11:59:55Z"
+      "last_updated": "2026-11-08T12:35:45Z"
     }
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 5,
-    "found": 1,
-    "missing": 730,
-    "rejected": 3,
-    "by_sport": {
-      "boxing fighters": {
-        "attempted": 5,
-        "found": 1,
-        "missing": 4,
-        "rejected": 0
-      }
-    },
-    "checked_at": "2026-11-08T12:34:52Z",
-    "library_entries": 1,
-    "newly_found": 1,
+    "attempted": 0,
+    "found": 0,
+    "missing": 548,
+    "rejected": 0,
+    "by_sport": {},
+    "newly_found": 0,
     "coverage": {
-      "boxing fight card fighters": {
-        "total": 183,
-        "with_image": 1,
-        "missing": 182
-      },
       "f1 drivers": {
         "total": 25,
         "with_image": 0,
@@ -3173,7 +3609,9 @@
         "with_image": 0,
         "missing": 81
       }
-    }
+    },
+    "checked_at": "2026-11-08T12:35:45Z",
+    "library_entries": 1
   },
-  "last_updated": "2026-11-08T11:59:55Z"
+  "last_updated": "2026-11-08T12:35:45Z"
 }

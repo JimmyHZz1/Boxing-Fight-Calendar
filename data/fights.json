@@ -1,10 +1,10 @@
 {
   "provider": "Boxerbook + Boxing Data API",
-  "last_updated": "2026-11-08T11:59:54Z",
-  "provider_as_of": "2026-11-08T11:59:39Z",
+  "last_updated": "2026-11-08T12:35:45Z",
+  "provider_as_of": "2026-11-08T12:35:45Z",
   "attribution": "Data from Boxerbook (boxerbook.com)",
-  "count_events": 22,
-  "count_bouts": 92,
+  "count_events": 23,
+  "count_bouts": 94,
   "count_fighter_photos": 13,
   "events": [
     {
@@ -641,6 +641,65 @@
       "data_source": "Boxerbook"
     },
     {
+      "id": "boxerbook-None",
+      "source_id": null,
+      "name": "Boxing event",
+      "date": "2026-11-14T12:00:00Z",
+      "event_url": null,
+      "promoter": null,
+      "location": null,
+      "city": null,
+      "country": null,
+      "country_code": null,
+      "start_time_utc": "2026-11-14T23:40Z",
+      "broadcasters": [],
+      "bouts": [
+        {
+          "id": 204217,
+          "fighter1": "Nishant Dev",
+          "fighter2": "Sona Akale",
+          "fighter1_image": null,
+          "fighter2_image": null,
+          "fighter1_nationality": null,
+          "fighter2_nationality": null,
+          "record1": "7-0-0",
+          "record2": "1-2-0",
+          "date": "2026-11-14",
+          "start_time_utc": null,
+          "start_datetime_utc": null,
+          "weight_class": "mid",
+          "rounds": null,
+          "title_text": null,
+          "status": "scheduled",
+          "url": "https://boxerbook.com/bouts/204217/nishant-dev-vs-sona-akale",
+          "broadcaster": null,
+          "data_source": "Boxerbook"
+        },
+        {
+          "id": 204218,
+          "fighter1": "Zaquin Moses",
+          "fighter2": "Manuel Lerma",
+          "fighter1_image": null,
+          "fighter2_image": null,
+          "fighter1_nationality": null,
+          "fighter2_nationality": null,
+          "record1": "8-0-0",
+          "record2": null,
+          "date": "2026-11-14",
+          "start_time_utc": null,
+          "start_datetime_utc": null,
+          "weight_class": "slig",
+          "rounds": null,
+          "title_text": null,
+          "status": "scheduled",
+          "url": "https://boxerbook.com/bouts/204218/zaquin-moses-vs-manuel-lerma",
+          "broadcaster": null,
+          "data_source": "Boxerbook"
+        }
+      ],
+      "data_source": "Boxerbook"
+    },
+    {
       "id": "boxerbook-11865",
       "source_id": 11865,
       "name": "Carson boxing event",
@@ -968,7 +1027,7 @@
       "city": "Riyadh",
       "country": "SA",
       "country_code": null,
-      "start_time_utc": null,
+      "start_time_utc": "2026-11-14T21:30Z",
       "broadcasters": [
         {
           "name": "Paramount+",
@@ -1134,7 +1193,7 @@
       "city": "Wembley",
       "country": "GB",
       "country_code": null,
-      "start_time_utc": null,
+      "start_time_utc": "2026-11-14T21:00Z",
       "broadcasters": [
         {
           "name": "DAZN",
