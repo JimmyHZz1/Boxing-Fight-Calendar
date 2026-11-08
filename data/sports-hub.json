@@ -288,7 +288,7 @@
       ],
       "season": 2026,
       "notice": "Official season standings sourced from the community-maintained Jolpica F1 API.",
-      "last_updated": "2026-11-08T13:22:21Z"
+      "last_updated": "2026-11-08T13:25:33Z"
     },
     "darts": {
       "rankings": [
@@ -1870,7 +1870,7 @@
       ],
       "source_url": "https://www.dartsrankings.com/",
       "notice": "PDC Order of Merit live table. Rankings are updated after PDC ranking events.",
-      "last_updated": "2026-11-08T13:22:21Z"
+      "last_updated": "2026-11-08T13:25:33Z"
     },
     "ufc": {
       "divisions": [
@@ -2985,7 +2985,7 @@
       ],
       "snapshot_date": "2026-11-03",
       "notice": "Official UFC divisional rankings from UFCalendar. Rank 0 denotes the champion; rankings are updated when the publisher releases a new snapshot.",
-      "last_updated": "2026-11-08T13:22:21Z"
+      "last_updated": "2026-11-08T13:25:33Z"
     },
     "boxing": {
       "divisions": [
@@ -3648,62 +3648,18 @@
         }
       ],
       "notice": "Current reigns from Open Boxing, covering the major sanctioning bodies and The Ring where recorded. Boxing title status can change between updates; data coverage is subject to the source database.",
-      "last_updated": "2026-11-08T13:22:21Z"
+      "last_updated": "2026-11-08T13:25:33Z"
     }
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 2,
-    "found": 9,
-    "missing": 726,
+    "attempted": 0,
+    "found": 8,
+    "missing": 540,
     "rejected": 0,
-    "by_sport": {
-      "f1 drivers": {
-        "attempted": 2,
-        "found": 2,
-        "missing": 0,
-        "rejected": 0
-      }
-    },
-    "rejection_reasons": {
-      "given_name_not_matched": 12,
-      "missing_licence_or_source_metadata": 2,
-      "surname_not_matched": 2,
-      "not_an_image": 19
-    },
-    "search_details": [
-      {
-        "name": "Isack Hadjar",
-        "queries": 7,
-        "candidate_files": 28,
-        "accepted": 16,
-        "rejections": {
-          "given_name_not_matched": 9,
-          "missing_licence_or_source_metadata": 1,
-          "surname_not_matched": 2
-        }
-      },
-      {
-        "name": "Liam Lawson",
-        "queries": 3,
-        "candidate_files": 28,
-        "accepted": 5,
-        "rejections": {
-          "not_an_image": 19,
-          "missing_licence_or_source_metadata": 1,
-          "given_name_not_matched": 3
-        }
-      }
-    ],
-    "checked_at": "2026-11-08T13:23:30Z",
-    "library_entries": 9,
-    "newly_found": 2,
+    "by_sport": {},
+    "newly_found": 0,
     "coverage": {
-      "boxing fight card fighters": {
-        "total": 187,
-        "with_image": 1,
-        "missing": 186
-      },
       "f1 drivers": {
         "total": 25,
         "with_image": 8,
@@ -3729,7 +3685,9 @@
         "with_image": 0,
         "missing": 81
       }
-    }
+    },
+    "checked_at": "2026-11-08T13:25:33Z",
+    "library_entries": 9
   },
-  "last_updated": "2026-11-08T13:22:21Z"
+  "last_updated": "2026-11-08T13:25:33Z"
 }
