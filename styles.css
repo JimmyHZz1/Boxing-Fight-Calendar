@@ -645,3 +645,27 @@
 .hub-mercedes-star{width:38px;height:38px;display:block;color:#f4f2ed;filter:drop-shadow(0 1px 2px rgba(0,0,0,.65))}
 .hub-constructor-fallback:has(.hub-mercedes-star){background:linear-gradient(135deg,#00d2be22,#17191e 78%);border:1px solid #00d2be88;border-bottom:3px solid #00d2be}
 @media(max-width:420px){.settings-open{padding:8px 9px;font-size:9px}.favourite-team-panel{padding:18px}.hub-mercedes-star{width:33px;height:33px}}
+
+/* Interactive F1 theme preview — preserves the existing Sports Calendar card language. */
+.theme-preview{max-width:680px;margin:22px 0 24px;padding:16px;border:1px solid var(--line);border-radius:5px;background:radial-gradient(ellipse at 12% 0%,var(--team-glow, #29221a),transparent 65%),#111318;transition:background .2s,border-color .2s}
+.theme-preview-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:13px}
+.theme-preview-heading strong{color:var(--accent);font:800 10px 'DM Sans',sans-serif;letter-spacing:1px;text-align:right}
+.theme-preview-card{padding:17px;border:1px solid color-mix(in srgb,var(--accent) 40%,#3a3d45);border-left:3px solid var(--accent);border-radius:4px;background:linear-gradient(120deg,color-mix(in srgb,var(--team-glow,#29221a) 55%,#191b21),#191b21 65%);box-shadow:0 12px 28px rgba(0,0,0,.22)}
+.theme-preview-card-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.theme-preview-mark{display:grid;place-items:center;width:31px;height:31px;border:1px solid var(--accent);border-radius:4px;color:var(--accent);font:900 12px 'Barlow Condensed',sans-serif}
+.theme-preview-tag,.theme-preview-details{color:var(--muted);font-size:8px;font-weight:800;letter-spacing:1px}
+.theme-preview-card h3{margin:16px 0 3px;font:800 25px 'Barlow Condensed',sans-serif;text-transform:uppercase}
+.theme-preview-card p{margin:0;color:var(--muted);font-size:11px}
+.theme-preview-progress{height:4px;margin:17px 0 12px;border-radius:4px;background:#30333a;overflow:hidden}
+.theme-preview-progress span{display:block;width:68%;height:100%;background:var(--accent);border-radius:4px}
+.theme-preview-details{display:flex;justify-content:space-between;align-items:center}
+.theme-preview-details strong{color:var(--text);font-size:10px}
+.theme-preview-button{display:flex;justify-content:space-between;align-items:center;width:100%;margin-top:15px;padding:11px 13px;border:1px solid var(--accent);border-radius:3px;background:var(--accent);color:#111318;font:900 9px 'DM Sans',sans-serif;letter-spacing:1px}
+.theme-preview-button span{font-size:15px}
+.theme-preview-swatches{display:flex;align-items:center;gap:7px;margin-top:13px}
+.theme-preview-swatches span{width:23px;height:13px;border-radius:2px;border:1px solid rgba(255,255,255,.12);background:var(--accent)}
+.theme-preview-swatches span:nth-child(2){background:var(--panel)}
+.theme-preview-swatches span:nth-child(3){background:var(--team-glow,#29221a)}
+.theme-preview-swatches small{margin-left:auto;color:var(--muted);font-size:7px;letter-spacing:.7px}
+#save-favourite-team.is-saved{filter:saturate(.7);opacity:.85}
+@media(max-width:520px){.theme-preview{padding:12px}.theme-preview-card{padding:14px}.theme-preview-card h3{font-size:23px}.favourite-team-actions{flex-wrap:wrap}.favourite-team-actions button{flex:1 1 100%}}
