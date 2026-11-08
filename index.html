@@ -144,8 +144,23 @@
             <option value="">Default Sports Calendar theme</option>
             <option value="Mercedes">Mercedes</option><option value="Ferrari">Scuderia Ferrari</option><option value="Red Bull">Oracle Red Bull Racing</option><option value="McLaren">McLaren</option><option value="RB F1 Team">Racing Bulls</option><option value="Alpine F1 Team">BWT Alpine</option><option value="Haas F1 Team">MoneyGram Haas</option><option value="Audi">Audi</option><option value="Williams">Williams</option><option value="Aston Martin">Aston Martin</option><option value="Cadillac F1 Team">Cadillac</option>
           </select>
-          <p class="settings-help">The selected team colour will update highlights, buttons, borders and the subtle background glow. Text and panels stay high contrast.</p>
-          <div class="favourite-team-actions"><button type="button" class="secondary-button" id="settings-back">← BACK TO HOME</button></div>
+          <p class="settings-help">Preview each team's colours below. Your current favourite will stay saved until you choose Save Favourite Team.</p>
+          <div class="theme-preview" aria-live="polite">
+            <div class="theme-preview-heading"><span class="eyebrow">LIVE THEME PREVIEW</span><strong id="theme-preview-team">DEFAULT THEME</strong></div>
+            <div class="theme-preview-card">
+              <div class="theme-preview-card-top"><span class="theme-preview-mark">SC</span><span class="theme-preview-tag">UP NEXT · FORMULA 1</span></div>
+              <h3>Race Weekend</h3>
+              <p>McLaren · Grand Prix</p>
+              <div class="theme-preview-progress"><span></span></div>
+              <div class="theme-preview-details"><span>QUALIFYING</span><strong>14:00 UK</strong></div>
+              <button type="button" class="theme-preview-button" disabled>VIEW EVENT <span>→</span></button>
+            </div>
+            <div class="theme-preview-swatches"><span></span><span></span><span></span><small>ACCENT · PANEL · BACKGROUND</small></div>
+          </div>
+          <div class="favourite-team-actions">
+            <button type="button" class="primary-button" id="save-favourite-team">SAVE FAVOURITE TEAM</button>
+            <button type="button" class="secondary-button" id="settings-back">DISCARD &amp; BACK</button>
+          </div>
         </section>
       </section>
       <section id="version-history-screen" class="screen" aria-labelledby="version-history-title">
