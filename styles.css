@@ -865,3 +865,20 @@
 .next-event-countdown{font-size:9px;margin-top:2px}
 .live-centre-countdown{font-size:9px}
 .event-countdown.countdown-started{border-color:rgba(226,180,91,.5)}
+
+/* Home-page cross-sport headline event spotlight */
+.featured-event-widget{position:relative;overflow:hidden;margin:22px 0 26px;padding:18px 20px;border:1px solid #62502f;border-left:4px solid var(--accent);border-radius:4px;background:radial-gradient(circle at 88% 18%,color-mix(in srgb,var(--accent) 19%,transparent),transparent 38%),linear-gradient(120deg,#252119 0%,#191b20 64%);box-shadow:0 12px 30px rgba(0,0,0,.18)}
+.featured-event-widget[hidden]{display:none}
+.featured-event-topline,.featured-event-footer{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.featured-event-kicker{font-size:9px;font-weight:800;letter-spacing:1.2px;color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 45%,transparent);padding:5px 8px;border-radius:3px}
+.featured-event-content{display:grid;grid-template-columns:86px minmax(0,1fr);gap:16px;align-items:center;margin:17px 0}
+.featured-event-mark{width:86px;height:86px;display:grid;place-items:center;background:rgba(0,0,0,.22);border:1px solid rgba(255,255,255,.08);border-radius:4px;color:var(--accent);font-size:40px}
+.featured-event-mark img{display:block;width:72%;height:72%;object-fit:contain}
+.featured-event-sport{font-size:9px;font-weight:800;letter-spacing:1.5px;color:var(--accent)}
+.featured-event-copy h2{font:800 clamp(24px,4vw,34px)/.98 'Barlow Condensed',sans-serif;text-transform:uppercase;margin:6px 0}
+.featured-event-copy p{font-size:11px;line-height:1.5;color:#b9b8bb;margin:0}
+.featured-event-countdown{display:inline-flex;margin-top:10px;padding:6px 9px;border:1px solid rgba(226,180,91,.35);background:rgba(0,0,0,.2);font-size:10px;font-weight:800;letter-spacing:.6px;color:var(--accent)}
+.featured-event-footer{padding-top:12px;border-top:1px solid rgba(255,255,255,.09)}
+.featured-event-footer>span{font-size:10px;color:var(--muted)}
+.featured-event-button{flex:none;border:1px solid var(--accent);background:var(--accent);color:#17130d;padding:10px 13px;border-radius:3px;font:800 9px 'DM Sans',sans-serif;letter-spacing:.8px;cursor:pointer}
+@media(max-width:420px){.featured-event-widget{padding:15px}.featured-event-content{grid-template-columns:66px minmax(0,1fr);gap:12px}.featured-event-mark{width:66px;height:66px}.featured-event-footer{align-items:flex-start;flex-direction:column}.featured-event-button{width:100%}}
