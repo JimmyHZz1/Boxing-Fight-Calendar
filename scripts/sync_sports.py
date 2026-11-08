@@ -111,18 +111,43 @@ def sync_f1():
     print(f"F1: saved {len(events)} events for {year}.")
 
 def paged_darts_calendar(key, organiser):
+    """Read the documented Darts API calendar shape and retain paging metadata."""
     all_rows, cursor = [], None
-    for _ in range(4):
+    for _ in range(8):
         params = {"from": (TODAY - timedelta(days=7)).isoformat(), "to": (TODAY + timedelta(days=370)).isoformat(), "organiser": organiser, "limit": 200}
         if cursor:
             params["cursor"] = cursor
         url = "https://api.dartsapi.com/v1/calendar?" + urllib.parse.urlencode(params)
         payload = request_json(url, key, "Darts API")
-        all_rows.extend(payload.get("data") or [])
+        rows = payload.get("data") or []
+        if isinstance(rows, dict):
+            rows = rows.get("events") or rows.get("items") or rows.get("calendar") or []
+        if not isinstance(rows, list):
+            raise RuntimeError("Darts API calendar returned an unexpected data shape.")
+        all_rows.extend(rows)
         cursor = (payload.get("meta") or {}).get("next_cursor")
         if not cursor:
             break
     return all_rows
+
+def is_main_televised_pdc_event(row):
+    name = str(row.get("name") or row.get("competition_name") or "").strip()
+    organiser = str(row.get("organiser") or "").lower()
+    tier = str(row.get("tier") or "").lower()
+    if organiser and organiser != "pdc":
+        return False
+    excluded = re.search(r"\b(?:u\s?23|youth|junior|development|qualifier|qualifying|challenge tour|development tour|affiliate|players championship(?!s? finals)|women(?:'s)? series|pro tour|floor event)\b", name, re.I)
+    if excluded:
+        return False
+    allowed_tiers = {"majors", "european_tour", "world_series"}
+    name_match = re.search(
+        r"world championship|world matchplay|premier league|uk open|world grand prix|grand slam|"
+        r"european championship|european tour|players championship finals|world cup of darts|"
+        r"world series of darts|world masters|\bmasters\b|"
+        r"\b(?:bahrain|nordic|us|new zealand|australian|poland|saudi arabia) darts masters\b",
+        name, re.I
+    )
+    return bool(name_match or tier in allowed_tiers)
 
 def sync_darts():
     key = os.environ.get("DARTS_API_KEY", "").strip()
@@ -133,25 +158,39 @@ def sync_darts():
     rows = paged_darts_calendar(key, "pdc")
     seen, events = set(), []
     for row in rows:
-        event_id = row.get("event_id")
-        if not event_id or event_id in seen:
+        if not isinstance(row, dict):
             continue
-        seen.add(event_id)
-        event_name = row.get("name") or "PDC event"
-        televised = re.search(r"world championship|world matchplay|premier league|uk open|world grand prix|grand slam|european championship|european tour|players championship finals|world cup of darts|world series of darts|world masters|\bmasters\b|\b(?:bahrain|nordic|us|new zealand|australian|poland|saudi arabia) darts masters\b", event_name, re.I)
-        excluded = re.search(r"\b(?:u\s?23|youth|development|qualifier|qualifying|players championships?\b(?!\s+finals)|challenge tour|development tour|affiliate|pro tour)\b", event_name, re.I)
-        if not televised or excluded:
+        event_name = row.get("name") or row.get("competition_name") or "PDC event"
+        event_id = row.get("event_id") or row.get("id")
+        date = row.get("date") or row.get("starts_at") or row.get("start_date")
+        if not is_main_televised_pdc_event(row) or not date:
             continue
+        stable_id = str(event_id or (str(date) + "-" + re.sub(r"[^a-z0-9]+", "-", event_name.lower()).strip("-")))
+        if stable_id in seen:
+            continue
+        seen.add(stable_id)
         events.append({
-            "id": str(event_id), "name": event_name,
-            "date": row.get("date"), "status": row.get("status") or "scheduled",
-            "organiser": row.get("organiser"), "tier": row.get("tier"),
+            "id": stable_id, "name": event_name, "date": date,
+            "start_at": row.get("starts_at"),
+            "status": row.get("status") or "scheduled",
+            "organiser": row.get("organiser") or "pdc", "tier": row.get("tier"),
             "matches": row.get("matches"), "competition_id": row.get("competition_id"),
             "source": "Darts API"
         })
+    if rows and not events:
+        sample_names = [str((r or {}).get("name") or (r or {}).get("competition_name") or "unnamed") for r in rows[:8] if isinstance(r, dict)]
+        message = "Darts API returned " + str(len(rows)) + " calendar rows but none matched the televised PDC filter. Sample names: " + ", ".join(sample_names)
+        preserve_or_status("darts.json", "darts", "Darts API", message)
+        print("DARTS_FILTER_WARNING: " + message)
+        return
+    if not rows:
+        message = "Darts API returned no calendar rows; retaining the last published PDC schedule rather than publishing an empty feed."
+        preserve_or_status("darts.json", "darts", "Darts API", message)
+        print("DARTS_EMPTY_WARNING: " + message)
+        return
     events.sort(key=lambda e: (e.get("date") or "", e.get("name") or ""))
-    save("darts.json", {"sport": "darts", "provider": "Darts API", "organisers_included": ["pdc"], "events": events, "notice": "Main televised PDC tournaments only. U23, youth, development, affiliate, qualifier and non-televised Players Championship events are excluded. Viewing varies by UK broadcast rights; PDCTV is listed where available."})
-    print(f"Darts: saved {len(events)} PDC-related calendar events.")
+    save("darts.json", {"sport": "darts", "provider": "Darts API", "organisers_included": ["pdc"], "events": events, "notice": "Main televised PDC tournaments only: televised majors, Premier League, European Tour and selected World Series. U23, youth, development, affiliate, qualifier and non-televised floor events are excluded. Viewing varies by UK broadcast rights."})
+    print(f"Darts: saved {len(events)} televised PDC events from {len(rows)} source rows.")
 
 def api_data(payload):
     data = payload.get("data", payload)
@@ -679,14 +718,21 @@ def sync_sports_hub():
         rankings = []
         try:
             raw = request_json("https://api.dartsapi.com/v1/order-of-merit", key, "Darts API")
-            rows = raw.get("data") or []
-            if isinstance(rows, dict): rows = rows.get("players") or rows.get("entries") or rows.get("rankings") or []
+            data = raw.get("data") or {}
+            rows = data.get("table") or data.get("rankings") or data.get("players") or data.get("entries") or []
+            if isinstance(rows, dict):
+                rows = rows.get("table") or rows.get("players") or rows.get("entries") or []
             for i, row in enumerate(rows):
+                if not isinstance(row, dict): continue
                 player = row.get("player") if isinstance(row.get("player"), dict) else {}
                 name = row.get("name") or row.get("player_name") or (row.get("player") if isinstance(row.get("player"), str) else None) or player.get("name") or "Unknown player"
-                rankings.append({"rank": row.get("position") or row.get("rank") or i + 1, "name": name, "prize_money": row.get("prize_money") or row.get("ranking_prize_money"), "points": row.get("points"), "image_url": row.get("image_url") or player.get("image_url") or player.get("photo_url")})
-        except Exception:
-            rankings = []
+                rankings.append({
+                    "rank": row.get("position") or row.get("rank") or row.get("place") or i + 1,
+                    "name": name,
+                    "prize_money": row.get("prize_money") or row.get("ranking_prize_money") or row.get("amount"),
+                    "points": row.get("points"),
+                    "image_url": row.get("image_url") or player.get("image_url") or player.get("photo_url")
+                })
         if not rankings: rankings = darts_rankings_from_web()
         hub["sports"]["darts"] = {"rankings": add_photos(rankings, limit=40, sport="darts"), "source_url": "https://www.dartsrankings.com/", "notice": "PDC Order of Merit live table. Rankings are updated after PDC ranking events."}
     except Exception as exc:
