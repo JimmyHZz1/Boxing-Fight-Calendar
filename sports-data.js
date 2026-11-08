@@ -43,7 +43,7 @@
   function countdownText(value) {
     if (!value) return "";
     const raw=String(value);
-    if (/^\\d{4}-\\d{2}-\\d{2}$/.test(raw)) {
+    if (/^\d{4}-\d{2}-\d{2}$/.test(raw)) {
       const nowKey=today(), nowDate=new Date(nowKey+"T00:00:00Z"), eventDate=new Date(raw+"T00:00:00Z");
       if (Number.isNaN(eventDate.getTime())) return "";
       const days=Math.round((eventDate-nowDate)/86400000);
@@ -57,7 +57,7 @@
   }
   function addCountdown(root,value) {
     if (!value) return;
-    const raw=String(value), dateOnly=/^\\d{4}-\\d{2}-\\d{2}$/.test(raw);
+    const raw=String(value), dateOnly=/^\d{4}-\d{2}-\d{2}$/.test(raw);
     const target=dateOnly?null:new Date(value);
     if (!dateOnly&&(Number.isNaN(target.getTime()) || target.getTime()<=Date.now())) return;
     if (dateOnly && countdownText(raw).startsWith("EVENT DATE PASSED")) return;
