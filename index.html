@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#101114">
   <meta name="description" content="Boxing, Formula 1, UFC and PDC darts schedules in one sports calendar, shown in UK local time.">
   <link rel="manifest" href="./manifest.json">
-  <link rel="stylesheet" href="./styles.css?v=20261108-59">
+  <link rel="stylesheet" href="./styles.css?v=20261108-60">
   <title>Sports Calendar</title>
 </head>
 <body>
@@ -16,7 +16,7 @@
         <span class="brand-mark">S</span>
         <span><strong>SPORTS</strong><small>CALENDAR</small></span>
       </a>
-      <div class="topbar-actions"><span class="live-status"><i></i> SCHEDULE</span><button id="manual-refresh" class="primary-button topbar-refresh" type="button" aria-label="Check for newly published sports data">CHECKING…</button></div>
+      <div class="topbar-actions"><button id="open-settings" class="secondary-button settings-open" type="button" aria-label="Personalise your F1 team theme">F1 TEAM</button><span class="live-status"><i></i> SCHEDULE</span><button id="manual-refresh" class="primary-button topbar-refresh" type="button" aria-label="Check for newly published sports data">CHECKING…</button></div>
     </header>
     <nav class="top-sport-selector" aria-label="Switch sport">
       <button type="button" class="top-sport-button" data-top-sport="f1" aria-label="Formula 1"><img src="https://www.formula1.com/assets/home/_next/static/media/f1-logo.43a01c6b.svg" alt=""><span>F1</span></button>
@@ -134,6 +134,20 @@
         <div id="full-cards" class="event-list"><div class="empty-state"><span class="empty-icon">📋</span><h3>Full cards will appear here</h3><p>Event cards will populate as reliable bout information becomes available.</p></div></div>
         <div id="sports-event-cards" class="event-list"></div>
       </section>
+      <section id="settings-screen" class="screen" aria-labelledby="settings-title">
+        <div class="page-intro"><span class="eyebrow">MAKE IT YOURS</span><h1 id="settings-title">Your <em>settings.</em></h1><p>Choose your favourite Formula 1 constructor and the Sports Calendar will use its colours throughout the app. Your choice is saved on this device.</p></div>
+        <section class="favourite-team-panel" aria-labelledby="favourite-team-heading">
+          <span class="eyebrow">FORMULA 1 PERSONALISATION</span>
+          <h2 id="favourite-team-heading">Favourite team</h2>
+          <label for="favourite-f1-team">Choose your constructor</label>
+          <select id="favourite-f1-team" class="favourite-team-select">
+            <option value="">Default Sports Calendar theme</option>
+            <option value="Mercedes">Mercedes</option><option value="Ferrari">Scuderia Ferrari</option><option value="Red Bull">Oracle Red Bull Racing</option><option value="McLaren">McLaren</option><option value="RB F1 Team">Racing Bulls</option><option value="Alpine F1 Team">BWT Alpine</option><option value="Haas F1 Team">MoneyGram Haas</option><option value="Audi">Audi</option><option value="Williams">Williams</option><option value="Aston Martin">Aston Martin</option><option value="Cadillac F1 Team">Cadillac</option>
+          </select>
+          <p class="settings-help">The selected team colour will update highlights, buttons, borders and the subtle background glow. Text and panels stay high contrast.</p>
+          <div class="favourite-team-actions"><button type="button" class="secondary-button" id="settings-back">← BACK TO HOME</button></div>
+        </section>
+      </section>
       <section id="version-history-screen" class="screen" aria-labelledby="version-history-title">
         <div class="page-intro"><span class="eyebrow">SPORTS CALENDAR · RELEASE NOTES</span><h1 id="version-history-title">Version <em>history.</em></h1><p>A record of the features, improvements and fixes added to each release.</p></div>
         <div class="version-history-list">
@@ -156,10 +170,10 @@
     </nav>
     <footer class="footer"><a class="version-history-link" href="#version-history" id="open-version-history">VERSION HISTORY</a><span>•</span> SPORTS CALENDAR <span>•</span> UK LOCAL TIME <span>•</span> PDC logo: <a href="https://commons.wikimedia.org/wiki/File:Professional_Darts_Corporation_logo.png" target="_blank" rel="noopener noreferrer">Chris Ibbotson, CC BY-SA 4.0</a> <span>•</span> BKFC SCHEDULE: <a href="https://www.bkfc.com/events" target="_blank" rel="noopener noreferrer">BKFC</a> <span>•</span> BOXING DATA: <a href="https://boxerbook.com" target="_blank" rel="noopener noreferrer">BOXERBOOK</a></footer>
   </div>
-  <script src="./app.js?v=20261108-36"></script>
+  <script src="./app.js?v=20261108-37"></script>
   <script src="./sports-data.js?v=20261108-06"></script>
   <script src="./sports.js?v=20261107-09"></script>
-  <script src="./sports-hub.js?v=20261108-12"></script>
+  <script src="./sports-hub.js?v=20261108-13"></script>
   <script src="./sports-nav.js?v=20261108-04"></script>
   <script src="./sport-pages.js?v=20261108-09"></script>
   <script src="./sports-v11.js?v=20261108-01"></script>

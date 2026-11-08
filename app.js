@@ -53,6 +53,33 @@ function showScreen(id) {
 }
 window.showScreen=showScreen;
 document.querySelectorAll(".nav-item").forEach(b => b.addEventListener("click",()=>showScreen(b.dataset.screen)));
+const favouriteTeamThemes = {
+  "Mercedes":{accent:"#00d2be",glow:"#123b3a",chrome:"#101c1c"},
+  "Ferrari":{accent:"#ef1a2d",glow:"#3a171c",chrome:"#241014"},
+  "Red Bull":{accent:"#4776d0",glow:"#172746",chrome:"#101a2c"},
+  "McLaren":{accent:"#ff8700",glow:"#3b2612",chrome:"#21180f"},
+  "RB F1 Team":{accent:"#6c9bd2",glow:"#1b2b43",chrome:"#111c2a"},
+  "Alpine F1 Team":{accent:"#168bd2",glow:"#122d42",chrome:"#101c28"},
+  "Haas F1 Team":{accent:"#c7cbd1",glow:"#292c31",chrome:"#17191d"},
+  "Audi":{accent:"#f02b32",glow:"#38191d",chrome:"#211114"},
+  "Williams":{accent:"#39a9df",glow:"#142e3d",chrome:"#101d27"},
+  "Aston Martin":{accent:"#00a58b",glow:"#10352f",chrome:"#0d211e"},
+  "Cadillac F1 Team":{accent:"#e5e5e5",glow:"#292b30",chrome:"#17191d"}
+};
+function applyFavouriteTeam(team,save=true){
+  const theme=favouriteTeamThemes[team]||{accent:"#e2b45b",glow:"#29221a",chrome:"#101114"};
+  document.documentElement.style.setProperty("--accent",theme.accent);
+  document.documentElement.style.setProperty("--team-glow",theme.glow);
+  const meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.content=theme.chrome;
+  document.documentElement.dataset.favouriteF1Team=team||"none";
+  const select=$("favourite-f1-team");if(select&&select.value!==team)select.value=team||"";
+  if(save){try{localStorage.setItem("sports-calendar-favourite-f1-team",team||"");}catch(_){}}
+}
+let savedFavouriteTeam="";try{savedFavouriteTeam=localStorage.getItem("sports-calendar-favourite-f1-team")||"";}catch(_){}
+applyFavouriteTeam(savedFavouriteTeam,false);
+$("open-settings")?.addEventListener("click",()=>showScreen("settings-screen"));
+$("settings-back")?.addEventListener("click",()=>showScreen("home-screen"));
+$("favourite-f1-team")?.addEventListener("change",event=>applyFavouriteTeam(event.target.value,true));
 function fighterNames(b) {
   return [b.fighter1||b.fighter_a||b.red_corner||b.boxer1||"TBC", b.fighter2||b.fighter_b||b.blue_corner||b.boxer2||"TBC"];
 }
