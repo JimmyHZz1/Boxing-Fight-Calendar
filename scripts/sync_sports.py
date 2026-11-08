@@ -885,6 +885,65 @@ def standings_list(payload, key):
     lists = table.get("StandingsLists") or []
     return (lists[0] or {}).get(key) or [] if lists else []
 
+F1_PROFILE_SLUGS = {
+    "george russell": "george-russell", "andrea kimi antonelli": "kimi-antonelli",
+    "charles leclerc": "charles-leclerc", "lewis hamilton": "lewis-hamilton",
+    "max verstappen": "max-verstappen", "isack hadjar": "isack-hadjar",
+    "lando norris": "lando-norris", "oscar piastri": "oscar-piastri",
+    "liam lawson": "liam-lawson", "arvid lindblad": "arvid-lindblad",
+    "pierre gasly": "pierre-gasly", "franco colapinto": "franco-colapinto",
+    "oliver bearman": "oliver-bearman", "rafael camara": "rafael-camara",
+    "nico hulkenberg": "nico-hulkenberg", "gabriel bortoleto": "gabriel-bortoleto",
+    "carlos sainz": "carlos-sainz", "alexander albon": "alexander-albon",
+    "fernando alonso": "fernando-alonso", "lance stroll": "lance-stroll",
+    "sergio perez": "sergio-perez", "valtteri bottas": "valtteri-bottas",
+    "esteban ocon": "esteban-ocon", "ryo hirakawa": "ryo-hirakawa",
+}
+
+def official_f1_driver_images(rows):
+    """Use the portrait linked by each driver's official Formula1.com profile."""
+    output = []
+    for row in rows:
+        name = row.get("name", "")
+        slug = F1_PROFILE_SLUGS.get(image_key(name))
+        if not slug:
+            row.pop("image_url", None)
+            output.append(row)
+            continue
+        profile_url = "https://www.formula1.com/en/drivers/" + slug
+        try:
+            request = urllib.request.Request(
+                profile_url,
+                headers={"User-Agent": "Mozilla/5.0 (compatible; SportsCalendar/1.0)", "Accept": "text/html"}
+            )
+            with urllib.request.urlopen(request, timeout=25) as response:
+                source = response.read().decode("utf-8", errors="replace")
+            source = source.replace("\\/", "/").replace("\\u002F", "/").replace("\\u002f", "/").replace("&amp;", "&")
+            candidates = re.findall(r'https://media\.formula1\.com/image/upload/[^"\'\s<>]+', source)
+            candidates = [url.rstrip("),;") for url in candidates]
+            portrait = next((url for url in candidates if "/common/f1/2026/" in url and "right.webp" in url.lower()), None)
+            if not portrait:
+                portrait = next((url for url in candidates if "/common/f1/2026/" in url and url.lower().endswith((".webp", ".png", ".jpg", ".jpeg"))), None)
+            if not portrait:
+                raise RuntimeError("Official driver portrait not present on profile page")
+            row.update({
+                "image_url": portrait,
+                "image_page_url": profile_url,
+                "image_credit": "Official Formula 1 driver profile",
+                "image_source": "Formula1.com",
+                "image_match_method": "official-driver-profile",
+                "image_verified_at": iso_now()
+            })
+            print(f"OFFICIAL_F1_PORTRAIT_FOUND: {name}")
+        except Exception as exc:
+            row.pop("image_url", None)
+            for field in ("image_page_url", "image_credit", "image_source", "image_match_method", "image_verified_at", "image_local_path"):
+                row.pop(field, None)
+            print(f"OFFICIAL_F1_PORTRAIT_NOT_FOUND: {name}: {exc}")
+        output.append(row)
+        time.sleep(0.2)
+    return output
+
 def sync_sports_hub():
     """Publish current championship tables and rankings as a single static JSON feed."""
     # Keep the last good rankings when an upstream provider is temporarily down.
@@ -912,7 +971,7 @@ def sync_sports_hub():
             "team": ", ".join(c.get("name", "") for c in x.get("Constructors", [])), "points": x.get("points")
         } for x in drivers_raw]
         constructors = [{"rank": int(x.get("position", 0)), "name": (x.get("Constructor") or {}).get("name"), "points": x.get("points")} for x in constructors_raw]
-        hub["sports"]["f1"] = {"drivers": add_photos(drivers, limit=25, sport="f1 drivers"), "constructors": add_photos(constructors, limit=11, sport="f1 constructors", image_kind="logo"), "season": year, "notice": "Official season standings sourced from the community-maintained Jolpica F1 API."}
+        hub["sports"]["f1"] = {"drivers": official_f1_driver_images(drivers), "constructors": add_photos(constructors, limit=11, sport="f1 constructors", image_kind="logo"), "season": year, "notice": "Official Formula 1 driver profile portraits; championship data sourced from Jolpica F1."}
     except Exception as exc:
         hub["sports"]["f1"] = {**previous.get("f1", {"drivers": [], "constructors": []}), "sync_warning": str(exc)}
 
