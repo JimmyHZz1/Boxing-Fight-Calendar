@@ -234,13 +234,33 @@
           "rank": 20,
           "name": "Yuki Tsunoda",
           "team": "RB F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/yuki-tsunoda.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Yuki_Tsunoda_Macau_2019.jpg",
+          "image_credit": "Wikimedia Commons · Smith007 · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "category:Category:Yuki Tsunoda in 2019",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/yuki-tsunoda.jpg"
         },
         {
           "rank": 21,
           "name": "Ryo Hirakawa",
           "team": "Haas F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/ryo-hirakawa.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Ryo_Hirakawa_2024_WEC_Fuji_1.jpg",
+          "image_credit": "Wikimedia Commons · Morio · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "search:Ryo Hirakawa",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/ryo-hirakawa.jpg"
         },
         {
           "rank": 22,
@@ -2154,17 +2174,44 @@
             {
               "rank": 0,
               "name": "Petr Yan",
-              "image_url": null
+              "image_url": "./assets/images/ufc/petr-yan.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Petr_Yan_at_Kremlin_award_ceremonies_with_president_Putin.jpg",
+              "image_credit": "Wikimedia Commons · kremlin.ru · CC BY 4.0",
+              "image_license": "CC BY 4.0",
+              "image_license_url": "https://creativecommons.org/licenses/by/4.0",
+              "image_source": "Wikimedia Commons",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Petr Yan",
+              "image_verified_at": "2026-11-08T20:18:56Z",
+              "image_local_path": "assets/images/ufc/petr-yan.jpg"
             },
             {
               "rank": 1,
               "name": "Merab Dvalishvili",
-              "image_url": null
+              "image_url": "./assets/images/ufc/merab-dvalishvili.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Donald_Trump_and_Merab_Dvalishvili_at_UFC_316.jpg",
+              "image_credit": "Wikimedia Commons · Margo Martin · Public domain",
+              "image_license": "Public domain",
+              "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+              "image_source": "Wikimedia Commons",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Merab Dvalishvili",
+              "image_verified_at": "2026-11-08T20:18:56Z",
+              "image_local_path": "assets/images/ufc/merab-dvalishvili.jpg"
             },
             {
               "rank": 2,
               "name": "Sean O'Malley",
-              "image_url": null
+              "image_url": "./assets/images/ufc/sean-o-malley.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Sean_O%27malley_defending_his_135_pound_belt_at_ICF_2014-07-07_13-39.jpg",
+              "image_credit": "Wikimedia Commons · User:Weistyguy12 · CC BY-SA 3.0",
+              "image_license": "CC BY-SA 3.0",
+              "image_license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+              "image_source": "Wikimedia Commons",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Sean O'Malley",
+              "image_verified_at": "2026-11-08T20:18:56Z",
+              "image_local_path": "assets/images/ufc/sean-o-malley.jpg"
             },
             {
               "rank": 3,
@@ -3926,17 +3973,81 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 0,
-    "found": 49,
-    "missing": 499,
+    "attempted": 5,
+    "found": 56,
+    "missing": 679,
     "rejected": 0,
-    "by_sport": {},
-    "newly_found": 0,
+    "by_sport": {
+      "ufc": {
+        "attempted": 5,
+        "found": 3,
+        "missing": 2,
+        "rejected": 0
+      }
+    },
+    "rejection_reasons": {
+      "not_an_image": 22,
+      "surname_not_matched": 15
+    },
+    "search_details": [
+      {
+        "name": "Petr Yan",
+        "queries": 3,
+        "candidate_files": 26,
+        "accepted": 1,
+        "rejections": {
+          "not_an_image": 18,
+          "surname_not_matched": 7
+        }
+      },
+      {
+        "name": "Merab Dvalishvili",
+        "queries": 3,
+        "candidate_files": 4,
+        "accepted": 4,
+        "rejections": {}
+      },
+      {
+        "name": "Sean O'Malley",
+        "queries": 3,
+        "candidate_files": 13,
+        "accepted": 4,
+        "rejections": {
+          "not_an_image": 3,
+          "surname_not_matched": 6
+        }
+      },
+      {
+        "name": "Song Yadong",
+        "queries": 3,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Umar Nurmagomedov",
+        "queries": 3,
+        "candidate_files": 3,
+        "accepted": 0,
+        "rejections": {
+          "surname_not_matched": 2,
+          "not_an_image": 1
+        }
+      }
+    ],
+    "checked_at": "2026-11-08T20:18:56Z",
+    "library_entries": 56,
+    "newly_found": 3,
     "coverage": {
+      "boxing fight card fighters": {
+        "total": 187,
+        "with_image": 2,
+        "missing": 185
+      },
       "f1 drivers": {
         "total": 25,
-        "with_image": 23,
-        "missing": 2
+        "with_image": 25,
+        "missing": 0
       },
       "f1 constructors": {
         "total": 11,
@@ -3950,8 +4061,8 @@
       },
       "ufc": {
         "total": 206,
-        "with_image": 0,
-        "missing": 206
+        "with_image": 3,
+        "missing": 203
       },
       "boxing": {
         "total": 81,
@@ -3959,8 +4070,7 @@
         "missing": 81
       }
     },
-    "checked_at": "2026-11-08T20:17:58Z",
-    "library_entries": 53
+    "rate_limited": false
   },
   "last_updated": "2026-11-08T20:17:58Z"
 }

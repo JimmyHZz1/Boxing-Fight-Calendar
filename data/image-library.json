@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-08T18:25:06Z",
+  "updated_at": "2026-11-08T20:18:56Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -542,6 +542,39 @@
       "attribution": "Wikimedia Commons · DARTS NOW · CC BY 3.0",
       "verified_at": "2026-11-08T18:25:06Z",
       "sport": "darts"
+    },
+    "petr yan": {
+      "name": "Petr Yan",
+      "path": "assets/images/ufc/petr-yan.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Petr_Yan_at_Kremlin_award_ceremonies_with_president_Putin.jpg",
+      "licence": "CC BY 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by/4.0",
+      "creator": "Wikimedia Commons · kremlin.ru · CC BY 4.0",
+      "attribution": "Wikimedia Commons · kremlin.ru · CC BY 4.0",
+      "verified_at": "2026-11-08T20:18:56Z",
+      "sport": "ufc"
+    },
+    "merab dvalishvili": {
+      "name": "Merab Dvalishvili",
+      "path": "assets/images/ufc/merab-dvalishvili.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Donald_Trump_and_Merab_Dvalishvili_at_UFC_316.jpg",
+      "licence": "Public domain",
+      "licence_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "creator": "Wikimedia Commons · Margo Martin · Public domain",
+      "attribution": "Wikimedia Commons · Margo Martin · Public domain",
+      "verified_at": "2026-11-08T20:18:56Z",
+      "sport": "ufc"
+    },
+    "sean o malley": {
+      "name": "Sean O'Malley",
+      "path": "assets/images/ufc/sean-o-malley.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sean_O%27malley_defending_his_135_pound_belt_at_ICF_2014-07-07_13-39.jpg",
+      "licence": "CC BY-SA 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "creator": "Wikimedia Commons · User:Weistyguy12 · CC BY-SA 3.0",
+      "attribution": "Wikimedia Commons · User:Weistyguy12 · CC BY-SA 3.0",
+      "verified_at": "2026-11-08T20:18:56Z",
+      "sport": "ufc"
     }
   },
   "collections": {
