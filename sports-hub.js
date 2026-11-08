@@ -10,7 +10,7 @@
   const moneyLabel = value => {
     const raw = String(value ?? "").trim();
     if (!raw) return "";
-    const amount = Number(raw.replace(/[£,\\s]/g, ""));
+    const amount = Number(raw.replace(/[£,\s]/g, ""));
     return Number.isFinite(amount) ? "£" + amount.toLocaleString("en-GB", {maximumFractionDigits:0}) + " prize money" : "£" + raw + " prize money";
   };
   const constructorWordmark = name => ({Mercedes:"MER",Ferrari:"FER","Red Bull":"RBR",McLaren:"MCL","RB F1 Team":"RB","Alpine F1 Team":"ALP","Haas F1 Team":"HAS",Audi:"AUD",Williams:"WIL","Aston Martin":"AMR","Cadillac F1 Team":"CAD"}[name] || String(name||"F1").slice(0,3).toUpperCase());
