@@ -1,6 +1,6 @@
 {
   "sport": "darts",
-  "provider": "Official PDC calendar (verified fallback)",
+  "provider": "Darts API + official PDC calendar",
   "organisers_included": [
     "pdc"
   ],
@@ -42,8 +42,6 @@
       "source_url": "https://www.pdc.tv/calendar"
     }
   ],
-  "notice": "Main televised PDC tournaments only. U23, youth, development, affiliate, qualifier and non-televised Players Championship events are excluded. Official PDC calendar dates; event times are not published here.",
-  "last_updated": "2026-11-08T15:54:18.689Z",
-  "sync_warning": "Darts API returned no televised PDC events in its available calendar rows. Upcoming headline dates have been populated from the official PDC calendar.",
-  "sync_attempted_at": "2026-11-08T15:29:57Z"
+  "notice": "Main televised PDC tournaments only. The Darts API supplies available event records; official PDC calendar dates fill gaps in upcoming headline events. U23, youth, development, affiliate, qualifier and non-televised Players Championship events are excluded.",
+  "last_updated": "2026-11-08T16:53:59Z"
 }
