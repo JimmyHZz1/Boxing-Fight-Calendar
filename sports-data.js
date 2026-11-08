@@ -197,7 +197,9 @@
         const a=f.fighter_a||f.fighter1||f.red||f.corner_a||f.name_a||"TBC";
         const b=f.fighter_b||f.fighter2||f.blue||f.corner_b||f.name_b||"TBC";
         const row=make("div","sport-fight-row");
-        row.append(make("strong",null,fighterName(a)+" vs "+fighterName(b)));
+        const left=make("div","sport-fight-side");const an=fighterName(a);const ai=fighterPortrait(an,f.fighter1_image||f.fighter_a_image||f.image1);if(ai)left.append(ai);left.append(make("strong",null,an));
+        const right=make("div","sport-fight-side");const bn=fighterName(b);const bi=fighterPortrait(bn,f.fighter2_image||f.fighter_b_image||f.image2);if(bi)right.append(bi);right.append(make("strong",null,bn));
+        row.append(left,make("span","sport-fight-versus","VS"),right);
         row.append(make("small",null,[f.card_section,f.weight_class,f.result?.method,f.result?.round?"R"+f.result.round:null].filter(Boolean).join(" · ")||"Fight card"));
         list.append(row);
       });
@@ -218,7 +220,9 @@
         const winner=f.winner||result.winner;
         const finish=[result.method||f.method,result.round?"R"+result.round:null].filter(Boolean).join(" · ");
         const row=make("div","sport-fight-row");
-        row.append(make("strong",null,a+" vs "+b));
+        const left=make("div","sport-fight-side");const ai=fighterPortrait(a,f.fighter1_image||f.fighter_a_image||f.image1);if(ai)left.append(ai);left.append(make("strong",null,a));
+        const right=make("div","sport-fight-side");const bi=fighterPortrait(b,f.fighter2_image||f.fighter_b_image||f.image2);if(bi)right.append(bi);right.append(make("strong",null,b));
+        row.append(left,make("span","sport-fight-versus","VS"),right);
         row.append(make("small",null,winner?fighterName(winner)+" · "+finish:finish||safe(f.card_section,"Fight card")));
         list.append(row);
       });
