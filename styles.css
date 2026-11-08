@@ -1141,3 +1141,17 @@ body.compact-view #home-screen .live-centre-empty{display:block!important;font-s
   .topbar-nav-item{padding:8px 9px;font-size:9px}
   .topbar-actions{gap:7px}
 }
+
+
+/* v1.3 image priorities: timing-tower team marks and face-first portrait crops. */
+.hub-constructor-broadcast{width:74px!important;height:46px!important;max-width:74px!important;display:flex!important;align-items:center!important;justify-content:center!important;flex:0 0 74px;background:linear-gradient(90deg,var(--team-color) 0 5px,rgba(255,255,255,.055) 5px 100%)!important;border:1px solid rgba(255,255,255,.13)!important;border-radius:2px!important;color:#f7f7f7!important;font-family:'Barlow Condensed',sans-serif!important;font-size:20px!important;font-weight:900!important;letter-spacing:1.1px!important;text-shadow:0 1px 3px #000!important}
+.hub-person.hub-pdc-player{overflow:hidden}
+.hub-person.hub-pdc-player>img{object-fit:cover!important;object-position:50% 6%!important;transform:scale(1.42);transform-origin:50% 0!important}
+.hub-person>img.hub-driver-portrait-official-f1{object-fit:cover!important;object-position:50% 4%!important;transform:scale(1.52)!important;transform-origin:50% 0!important}
+.hub-image-coverage{display:grid;gap:5px;margin:10px 0 12px}
+.hub-image-coverage-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:12px;align-items:center;padding:6px 8px;background:rgba(255,255,255,.035);border:1px solid var(--line);font-size:10px}
+.hub-image-coverage-row span{color:var(--muted);text-transform:uppercase;letter-spacing:.4px}
+.hub-image-coverage-row strong{color:var(--accent);font-size:11px}
+.hub-image-coverage-row small{color:var(--muted);font-size:9px;white-space:nowrap}
+.hub-image-warning{padding:9px 11px;border-left:2px solid var(--accent);background:rgba(226,180,91,.08);color:#e7c98f!important}
+@media(max-width:520px){.hub-person.hub-pdc-player>img{transform:scale(1.38)}.hub-person>img.hub-driver-portrait-official-f1{transform:scale(1.46)!important}.hub-constructor-broadcast{width:66px!important;height:42px!important;flex-basis:66px;font-size:18px!important}.hub-image-coverage-row{grid-template-columns:minmax(0,1fr) auto;gap:4px 8px}.hub-image-coverage-row small{grid-column:2}}
