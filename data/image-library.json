@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-08T18:14:10Z",
+  "updated_at": "2026-11-08T18:25:06Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -508,6 +508,39 @@
       "creator": "Wikimedia Commons · DARTS NOW · CC BY 3.0",
       "attribution": "Wikimedia Commons · DARTS NOW · CC BY 3.0",
       "verified_at": "2026-11-08T18:14:10Z",
+      "sport": "darts"
+    },
+    "chris dobey": {
+      "name": "Chris Dobey",
+      "path": "assets/images/darts/chris-dobey.png",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Chris_Dobey_2024.png",
+      "licence": "CC BY 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by/3.0",
+      "creator": "Wikimedia Commons · DARTS NOW · CC BY 3.0",
+      "attribution": "Wikimedia Commons · DARTS NOW · CC BY 3.0",
+      "verified_at": "2026-11-08T18:25:06Z",
+      "sport": "darts"
+    },
+    "luke woodhouse": {
+      "name": "Luke Woodhouse",
+      "path": "assets/images/darts/luke-woodhouse.png",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Luke_Woodhouse_2024.png",
+      "licence": "CC BY 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by/3.0",
+      "creator": "Wikimedia Commons · DARTS NOW · CC BY 3.0",
+      "attribution": "Wikimedia Commons · DARTS NOW · CC BY 3.0",
+      "verified_at": "2026-11-08T18:25:06Z",
+      "sport": "darts"
+    },
+    "jermaine wattimena": {
+      "name": "Jermaine Wattimena",
+      "path": "assets/images/darts/jermaine-wattimena.png",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Jermaine_Wattimena_2024.png",
+      "licence": "CC BY 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by/3.0",
+      "creator": "Wikimedia Commons · DARTS NOW · CC BY 3.0",
+      "attribution": "Wikimedia Commons · DARTS NOW · CC BY 3.0",
+      "verified_at": "2026-11-08T18:25:06Z",
       "sport": "darts"
     }
   },

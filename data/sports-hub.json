@@ -698,21 +698,48 @@
           "name": "Chris Dobey",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "./assets/images/darts/chris-dobey.png",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Chris_Dobey_2024.png",
+          "image_credit": "Wikimedia Commons · DARTS NOW · CC BY 3.0",
+          "image_license": "CC BY 3.0",
+          "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1.0,
+          "image_match_method": "category:Category:Chris Dobey",
+          "image_verified_at": "2026-11-08T18:25:06Z",
+          "image_local_path": "assets/images/darts/chris-dobey.png"
         },
         {
           "rank": 17,
           "name": "Luke Woodhouse",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "./assets/images/darts/luke-woodhouse.png",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Luke_Woodhouse_2024.png",
+          "image_credit": "Wikimedia Commons · DARTS NOW · CC BY 3.0",
+          "image_license": "CC BY 3.0",
+          "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1.0,
+          "image_match_method": "category:Category:Luke Woodhouse",
+          "image_verified_at": "2026-11-08T18:25:06Z",
+          "image_local_path": "assets/images/darts/luke-woodhouse.png"
         },
         {
           "rank": 18,
           "name": "Jermaine Wattimena",
           "prize_money": null,
           "points": null,
-          "image_url": null
+          "image_url": "./assets/images/darts/jermaine-wattimena.png",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Jermaine_Wattimena_2024.png",
+          "image_credit": "Wikimedia Commons · DARTS NOW · CC BY 3.0",
+          "image_license": "CC BY 3.0",
+          "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1.0,
+          "image_match_method": "category:Category:Jermaine Wattimena",
+          "image_verified_at": "2026-11-08T18:25:06Z",
+          "image_local_path": "assets/images/darts/jermaine-wattimena.png"
         },
         {
           "rank": 19,
@@ -3949,53 +3976,60 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 3,
-    "found": 50,
-    "missing": 685,
+    "attempted": 4,
+    "found": 53,
+    "missing": 682,
     "rejected": 0,
     "by_sport": {
       "darts": {
-        "attempted": 3,
-        "found": 2,
+        "attempted": 4,
+        "found": 3,
         "missing": 1,
         "rejected": 0
       }
     },
     "rejection_reasons": {
-      "not_an_image": 38,
-      "surname_not_matched": 1
+      "surname_not_matched": 19,
+      "not_an_image": 19
     },
     "search_details": [
       {
-        "name": "Gary Anderson",
-        "queries": 1,
-        "candidate_files": 20,
-        "accepted": 1,
+        "name": "Chris Dobey",
+        "queries": 3,
+        "candidate_files": 21,
+        "accepted": 3,
         "rejections": {
-          "not_an_image": 19
+          "surname_not_matched": 18
         }
       },
       {
-        "name": "Ryan Searle",
+        "name": "Luke Woodhouse",
         "queries": 3,
-        "candidate_files": 23,
-        "accepted": 3,
+        "candidate_files": 22,
+        "accepted": 2,
         "rejections": {
           "not_an_image": 19,
           "surname_not_matched": 1
         }
       },
       {
-        "name": "Chris Dobey",
-        "queries": 2,
+        "name": "Jermaine Wattimena",
+        "queries": 3,
+        "candidate_files": 4,
+        "accepted": 4,
+        "rejections": {}
+      },
+      {
+        "name": "Krzysztof Ratajski",
+        "queries": 1,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       }
     ],
-    "checked_at": "2026-11-08T18:14:10Z",
-    "library_entries": 50,
-    "newly_found": 2,
+    "checked_at": "2026-11-08T18:25:06Z",
+    "library_entries": 53,
+    "newly_found": 3,
     "coverage": {
       "boxing fight card fighters": {
         "total": 187,
@@ -4014,8 +4048,8 @@
       },
       "darts": {
         "total": 225,
-        "with_image": 12,
-        "missing": 213
+        "with_image": 15,
+        "missing": 210
       },
       "ufc": {
         "total": 206,

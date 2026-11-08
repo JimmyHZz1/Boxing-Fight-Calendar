@@ -689,9 +689,51 @@
       "image_match_method": "category:Category:Ryan Searle",
       "image_verified_at": "2026-11-08T18:14:10Z",
       "image_local_path": "assets/images/darts/ryan-searle.png"
+    },
+    "chris dobey": {
+      "name": "Chris Dobey",
+      "sport": "darts",
+      "image_url": "./assets/images/darts/chris-dobey.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Chris_Dobey_2024.png",
+      "image_credit": "Wikimedia Commons · DARTS NOW · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Chris Dobey",
+      "image_verified_at": "2026-11-08T18:25:06Z",
+      "image_local_path": "assets/images/darts/chris-dobey.png"
+    },
+    "luke woodhouse": {
+      "name": "Luke Woodhouse",
+      "sport": "darts",
+      "image_url": "./assets/images/darts/luke-woodhouse.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Luke_Woodhouse_2024.png",
+      "image_credit": "Wikimedia Commons · DARTS NOW · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Luke Woodhouse",
+      "image_verified_at": "2026-11-08T18:25:06Z",
+      "image_local_path": "assets/images/darts/luke-woodhouse.png"
+    },
+    "jermaine wattimena": {
+      "name": "Jermaine Wattimena",
+      "sport": "darts",
+      "image_url": "./assets/images/darts/jermaine-wattimena.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Jermaine_Wattimena_2024.png",
+      "image_credit": "Wikimedia Commons · DARTS NOW · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Jermaine Wattimena",
+      "image_verified_at": "2026-11-08T18:25:06Z",
+      "image_local_path": "assets/images/darts/jermaine-wattimena.png"
     }
   },
-  "updated_at": "2026-11-08T18:14:10Z",
+  "updated_at": "2026-11-08T18:25:06Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -756,6 +798,9 @@
     "nathan aspinall": "2026-11-08T18:13:37Z",
     "wessel nijman": "2026-11-08T18:13:37Z",
     "gary anderson": "2026-11-08T18:14:10Z",
-    "ryan searle": "2026-11-08T18:14:10Z"
+    "ryan searle": "2026-11-08T18:14:10Z",
+    "chris dobey": "2026-11-08T18:25:06Z",
+    "luke woodhouse": "2026-11-08T18:25:06Z",
+    "jermaine wattimena": "2026-11-08T18:25:06Z"
   }
 }
