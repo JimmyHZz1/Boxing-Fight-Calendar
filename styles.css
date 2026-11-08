@@ -1155,3 +1155,31 @@ body.compact-view #home-screen .live-centre-empty{display:block!important;font-s
 .hub-image-coverage-row small{color:var(--muted);font-size:9px;white-space:nowrap}
 .hub-image-warning{padding:9px 11px;border-left:2px solid var(--accent);background:rgba(226,180,91,.08);color:#e7c98f!important}
 @media(max-width:520px){.hub-person.hub-pdc-player>img{transform:scale(1.38)}.hub-person>img.hub-driver-portrait-official-f1{transform:scale(1.46)!important}.hub-constructor-broadcast{width:66px!important;height:42px!important;flex-basis:66px;font-size:18px!important}.hub-image-coverage-row{grid-template-columns:minmax(0,1fr) auto;gap:4px 8px}.hub-image-coverage-row small{grid-column:2}}
+
+
+/* Player portrait pass: frame faces consistently instead of showing shoulders/chests. */
+.hub-person.hub-pdc-player{overflow:hidden}
+.hub-person.hub-pdc-player>img{
+  object-fit:cover!important;
+  object-position:50% 0%!important;
+  transform:scale(1.56)!important;
+  transform-origin:50% 0!important;
+}
+.hub-person>img.hub-driver-portrait-official-f1{
+  object-fit:cover!important;
+  object-position:50% 2%!important;
+  transform:scale(1.58)!important;
+  transform-origin:50% 0!important;
+}
+.sport-ranking-image:not(.f1-driver-portrait){object-position:50% 8%}
+.sport-ranking-image.f1-driver-portrait{object-position:50% 2%!important}
+.fighter-portrait img{object-position:50% 10%;transform:scale(1.16);transform-origin:50% 8%}
+.sport-fight-portrait{object-position:50% 10%;transform:scale(1.14);transform-origin:50% 8%}
+.favourite-card-portrait img,
+.favourite-profile-portrait img{object-position:50% 7%}
+.favourite-card-portrait img.favourite-f1-driver-portrait{object-position:74% 3%!important}
+@media(max-width:520px){
+  .hub-person.hub-pdc-player>img{transform:scale(1.5)!important}
+  .hub-person>img.hub-driver-portrait-official-f1{transform:scale(1.52)!important}
+  .fighter-portrait img,.sport-fight-portrait{transform:scale(1.1)}
+}
