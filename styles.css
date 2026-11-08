@@ -594,17 +594,12 @@
 .hub-person:has(.hub-driver-portrait),.hub-person:has(.hub-driver-fallback){grid-template-columns:40px 26px minmax(0,1fr);min-height:52px;gap:9px}
 .hub-person>img.hub-driver-portrait,.hub-person>.hub-driver-fallback{width:36px;height:36px;object-fit:cover;object-position:50% 14%;border-radius:50%;background:#252830;border:1px solid #3b3e47;display:grid;place-items:center;overflow:hidden}
 .hub-person>img.hub-constructor-logo{width:62px;height:40px;max-width:62px;object-fit:contain;object-position:center;background:transparent;border:0;border-radius:0;padding:1px}
-.hub-person:has(.hub-constructor-logo),.hub-person:has(.hub-constructor-fallback){grid-template-columns:66px 26px minmax(0,1fr);min-height:58px;gap:9px}
-.hub-constructor-fallback{width:62px;height:38px;display:flex;align-items:center;justify-content:center;overflow:hidden;color:#f4f2ed;font:900 12px/1 "Barlow Condensed",sans-serif;letter-spacing:.3px;text-align:center;text-wrap:balance;border-bottom:2px solid var(--accent);background:linear-gradient(90deg,rgba(226,180,91,.10),transparent);}
-@media(max-width:420px){.hub-person:has(.hub-driver-portrait),.hub-person:has(.hub-driver-fallback){grid-template-columns:38px 23px minmax(0,1fr);gap:7px;min-height:48px}.hub-person>img.hub-driver-portrait,.hub-person>.hub-driver-fallback{width:34px;height:34px}.hub-person>img.hub-constructor-logo{width:56px;height:36px}.hub-person:has(.hub-constructor-logo),.hub-person:has(.hub-constructor-fallback){grid-template-columns:58px 23px minmax(0,1fr);gap:7px}.hub-constructor-fallback{width:54px;height:34px;font-size:11px}}
+.hub-person:has(.hub-constructor-logo),.hub-person:has(.hub-constructor-fallback){grid-template-columns:84px 26px minmax(0,1fr);min-height:58px;gap:9px}
+.hub-constructor-fallback{width:80px;height:38px;display:flex;align-items:center;justify-content:center;overflow:hidden;color:var(--team-color,#f4f2ed);font:900 12px/1 "Barlow Condensed",sans-serif;letter-spacing:.35px;text-align:center;text-wrap:balance;border-bottom:2px solid var(--team-color,var(--accent));background:linear-gradient(90deg,color-mix(in srgb,var(--team-color,#e2b45b) 14%,transparent),transparent);}
+@media(max-width:420px){.hub-person:has(.hub-driver-portrait),.hub-person:has(.hub-driver-fallback){grid-template-columns:38px 23px minmax(0,1fr);gap:7px;min-height:48px}.hub-person>img.hub-driver-portrait,.hub-person>.hub-driver-fallback{width:34px;height:34px}.hub-person>img.hub-constructor-logo{width:56px;height:36px}.hub-person:has(.hub-constructor-logo),.hub-person:has(.hub-constructor-fallback){grid-template-columns:76px 23px minmax(0,1fr);gap:7px}.hub-constructor-fallback{width:72px;height:34px;font-size:11px}}
 
-/* Keep the top sport icons neutral until their sport is selected. */
-.top-sport-button img{filter:none;transition:filter .18s ease}
-.top-sport-button[aria-current="true"] img{filter:drop-shadow(0 0 6px rgba(226,180,91,.62))}
-@media(prefers-reduced-motion:reduce){.top-sport-button img{transition:none}}
-
-
-/* Reliable sport-icon state: no glow at startup; glow only after a deliberate selection. */
+/* Sport tabs start completely neutral. Only a user click adds the selected state. */
+.app-shell .top-sport-selector .top-sport-button,
 .app-shell .top-sport-selector .top-sport-button img{
   filter:none!important;
   -webkit-filter:none!important;
@@ -614,7 +609,6 @@
   filter:drop-shadow(0 0 6px rgba(226,180,91,.62))!important;
   -webkit-filter:drop-shadow(0 0 6px rgba(226,180,91,.62))!important;
 }
-.app-shell .top-sport-selector .top-sport-button{box-shadow:none!important;}
 .app-shell .top-sport-selector .top-sport-button.user-selected{
   border-color:var(--accent);
   box-shadow:0 0 0 1px rgba(226,180,91,.24),0 0 12px rgba(226,180,91,.12)!important;
