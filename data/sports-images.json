@@ -485,9 +485,37 @@
       "image_match_method": "search:Alexander Flores",
       "image_verified_at": "2026-11-08T13:35:19Z",
       "image_local_path": "assets/images/boxing-fighters/alexander-flores.png"
+    },
+    "red bull": {
+      "name": "Red Bull",
+      "sport": "f1 constructors",
+      "image_url": "./assets/images/f1-constructors/red-bull.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Red_Bull_Racing_logo_ita.png",
+      "image_credit": "Wikimedia Commons · Unknown authorUnknown author · Public domain",
+      "image_license": "Public domain",
+      "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 0.75,
+      "image_match_method": "known-file-title",
+      "image_verified_at": "2026-11-08T13:36:08Z",
+      "image_local_path": "assets/images/f1-constructors/red-bull.png"
+    },
+    "aston martin": {
+      "name": "Aston Martin",
+      "sport": "f1 constructors",
+      "image_url": "./assets/images/f1-constructors/aston-martin.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Aston_Martin_F1_Team_logo_2024.jpg",
+      "image_credit": "Wikimedia Commons · Unknown authorUnknown author · CC BY 4.0",
+      "image_license": "CC BY 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 0.75,
+      "image_match_method": "known-file-title",
+      "image_verified_at": "2026-11-08T13:36:08Z",
+      "image_local_path": "assets/images/f1-constructors/aston-martin.jpg"
     }
   },
-  "updated_at": "2026-11-08T13:35:19Z",
+  "updated_at": "2026-11-08T13:36:08Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -532,6 +560,11 @@
     "alexander castro": "2026-11-08T13:35:19Z",
     "alexander flores": "2026-11-08T13:35:19Z",
     "alexis rocha": "2026-11-08T13:35:19Z",
-    "alycia baumgardner": "2026-11-08T13:35:19Z"
+    "alycia baumgardner": "2026-11-08T13:35:19Z",
+    "red bull": "2026-11-08T13:36:08Z",
+    "aston martin": "2026-11-08T13:36:08Z",
+    "amari jones": "2026-11-08T13:36:08Z",
+    "andres teran": "2026-11-08T13:36:08Z",
+    "anthony olascuaga": "2026-11-08T13:36:08Z"
   }
 }

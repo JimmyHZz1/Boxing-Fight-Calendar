@@ -433,7 +433,17 @@
         {
           "rank": 3,
           "name": "Red Bull",
-          "points": "382"
+          "points": "382",
+          "image_url": "./assets/images/f1-constructors/red-bull.png",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Red_Bull_Racing_logo_ita.png",
+          "image_credit": "Wikimedia Commons · Unknown authorUnknown author · Public domain",
+          "image_license": "Public domain",
+          "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 0.75,
+          "image_match_method": "known-file-title",
+          "image_verified_at": "2026-11-08T13:36:08Z",
+          "image_local_path": "assets/images/f1-constructors/red-bull.png"
         },
         {
           "rank": 4,
@@ -518,7 +528,17 @@
         {
           "rank": 10,
           "name": "Aston Martin",
-          "points": "7"
+          "points": "7",
+          "image_url": "./assets/images/f1-constructors/aston-martin.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Aston_Martin_F1_Team_logo_2024.jpg",
+          "image_credit": "Wikimedia Commons · Unknown authorUnknown author · CC BY 4.0",
+          "image_license": "CC BY 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 0.75,
+          "image_match_method": "known-file-title",
+          "image_verified_at": "2026-11-08T13:36:08Z",
+          "image_local_path": "assets/images/f1-constructors/aston-martin.jpg"
         },
         {
           "rank": 11,
@@ -3904,73 +3924,72 @@
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
     "attempted": 5,
-    "found": 35,
-    "missing": 700,
+    "found": 37,
+    "missing": 698,
     "rejected": 0,
     "by_sport": {
+      "f1 constructors": {
+        "attempted": 2,
+        "found": 2,
+        "missing": 0,
+        "rejected": 0
+      },
       "boxing fighters": {
-        "attempted": 5,
-        "found": 1,
-        "missing": 4,
+        "attempted": 3,
+        "found": 0,
+        "missing": 3,
         "rejected": 0
       }
     },
-    "rejection_reasons": {
-      "not_an_image": 59,
-      "given_name_not_matched": 4,
-      "surname_not_matched": 3
-    },
     "search_details": [
       {
-        "name": "Alexander Castellano",
-        "queries": 2,
-        "candidate_files": 20,
-        "accepted": 0,
-        "rejections": {
-          "not_an_image": 19,
-          "given_name_not_matched": 1
-        }
-      },
-      {
-        "name": "Alexander Castro",
-        "queries": 2,
-        "candidate_files": 20,
-        "accepted": 0,
-        "rejections": {
-          "surname_not_matched": 3,
-          "not_an_image": 17
-        }
-      },
-      {
-        "name": "Alexander Flores",
+        "name": "Red Bull",
         "queries": 1,
-        "candidate_files": 20,
+        "candidate_files": 2,
         "accepted": 2,
-        "rejections": {
-          "given_name_not_matched": 3,
-          "not_an_image": 15
-        }
+        "rejections": {}
       },
       {
-        "name": "Alexis Rocha",
+        "name": "Aston Martin",
+        "queries": 1,
+        "candidate_files": 1,
+        "accepted": 1,
+        "rejections": {}
+      },
+      {
+        "name": "Amari Jones",
         "queries": 2,
-        "candidate_files": 8,
+        "candidate_files": 20,
         "accepted": 0,
         "rejections": {
-          "not_an_image": 8
+          "not_an_image": 20
         }
       },
       {
-        "name": "Alycia Baumgardner",
+        "name": "Andres Teran",
+        "queries": 2,
+        "candidate_files": 12,
+        "accepted": 0,
+        "rejections": {
+          "surname_not_matched": 5,
+          "not_an_image": 7
+        }
+      },
+      {
+        "name": "Anthony Olascuaga",
         "queries": 2,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       }
     ],
-    "checked_at": "2026-11-08T13:35:19Z",
-    "library_entries": 35,
-    "newly_found": 1,
+    "rejection_reasons": {
+      "not_an_image": 27,
+      "surname_not_matched": 5
+    },
+    "checked_at": "2026-11-08T13:36:08Z",
+    "library_entries": 37,
+    "newly_found": 2,
     "coverage": {
       "boxing fight card fighters": {
         "total": 187,
@@ -3984,8 +4003,8 @@
       },
       "f1 constructors": {
         "total": 11,
-        "with_image": 8,
-        "missing": 3
+        "with_image": 10,
+        "missing": 1
       },
       "darts": {
         "total": 225,
