@@ -8,13 +8,13 @@
   const dateKey=value=>{
     if(!value)return "";
     const s=String(value);
-    if(/^\\d{4}-\\d{2}-\\d{2}$/.test(s))return s;
+    if(/^\d{4}-\d{2}-\d{2}$/.test(s))return s;
     const d=new Date(s);
     return Number.isNaN(d.getTime())?"":new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/London"}).format(d);
   };
   const timestamp=e=>{const v=dateValue(e);if(!v)return Number.MAX_SAFE_INTEGER;const d=new Date(v);return Number.isNaN(d.getTime())?Number.MAX_SAFE_INTEGER:d.getTime();};
-  const formatDate=e=>{const v=dateValue(e);if(!v)return "Date TBC";const d=new Date(/^\\d{4}-\\d{2}-\\d{2}$/.test(String(v))?v+"T12:00:00Z":v);return Number.isNaN(d.getTime())?"Date TBC":new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",weekday:"short",day:"numeric",month:"short"}).format(d);};
-  const formatTime=e=>{const v=dateValue(e);if(!v||/^\\d{4}-\\d{2}-\\d{2}$/.test(String(v)))return "Time TBC";const d=new Date(v);return Number.isNaN(d.getTime())?"Time TBC":new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",hour:"2-digit",minute:"2-digit"}).format(d)+" UK";};
+  const formatDate=e=>{const v=dateValue(e);if(!v)return "Date TBC";const d=new Date(/^\d{4}-\d{2}-\d{2}$/.test(String(v))?v+"T12:00:00Z":v);return Number.isNaN(d.getTime())?"Date TBC":new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",weekday:"short",day:"numeric",month:"short"}).format(d);};
+  const formatTime=e=>{const v=dateValue(e);if(!v||/^\d{4}-\d{2}-\d{2}$/.test(String(v)))return "Time TBC";const d=new Date(v);return Number.isNaN(d.getTime())?"Time TBC":new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",hour:"2-digit",minute:"2-digit"}).format(d)+" UK";};
   const status=e=>String(e?.status||"").toLowerCase().replace(/[ -]/g,"_");
   const isLive=e=>{
     if(["live","in_progress","ongoing","inprogress"].includes(status(e))||e?.is_live===true||e?.live===true||(e?.sessions||[]).some(s=>["live","in_progress","ongoing"].includes(String(s.status||"").toLowerCase().replace(/[ -]/g,"_"))||s.is_live===true))return true;
@@ -38,7 +38,7 @@
     const meta=[names[sport],formatDate(event),formatTime(event),event.location||event.venue||event.circuit].filter(Boolean);
     info.append(make("small",null,meta.join(" · ")));
     const target=event.start_at||event.main_card_at||event.start_time_utc||event.date||event.event_date;
-    const dateOnly=typeof target==="string"&&/^\\d{4}-\\d{2}-\\d{2}$/.test(target);
+    const dateOnly=typeof target==="string"&&/^\d{4}-\d{2}-\d{2}$/.test(target);
     if(!live&&target&&(dateOnly||new Date(target).getTime()>Date.now())){
       const timer=make("small","live-centre-countdown",window.SportsCountdown?.text?.(target)||"COUNTDOWN");timer.dataset.countdownTarget=dateOnly?target:new Date(target).toISOString();info.append(timer);
     }
