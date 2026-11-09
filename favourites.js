@@ -116,6 +116,7 @@
     const close=make("button","favourite-profile-close","×");close.type="button";close.setAttribute("aria-label","Close profile");close.addEventListener("click",()=>modal.remove());
     const head=make("div","favourite-profile-head");
     const portrait=make("div","favourite-profile-portrait");
+    const shownName=displayName(f,profile);const identity=make("div","favourite-profile-identity");identity.append(make("span","favourite-sport-label",labels[f.sport]),make("h2","",shownName),make("p","",f.type==="team"?"F1 CONSTRUCTOR":f.type.toUpperCase()));
     if(f.sport==="f1"&&f.type==="team"){portrait.append(constructorBroadcastMark(shownName));}
     else if(profile?.image_url){const img=make("img",f.sport==="f1"&&f.type==="driver"?"favourite-f1-driver-portrait":"");img.src=profile.image_url;img.alt=displayName(f,profile)+" portrait";img.onerror=()=>{img.remove();portrait.textContent=f.name.split(/\s+/).map(x=>x[0]).slice(0,2).join("").toUpperCase();};portrait.append(img);}
     else portrait.textContent=f.name.split(/\s+/).map(x=>x[0]).slice(0,2).join("").toUpperCase();
