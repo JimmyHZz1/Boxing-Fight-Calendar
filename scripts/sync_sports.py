@@ -160,7 +160,8 @@ def paged_darts_results(key):
         event = row.get("event") if isinstance(row.get("event"), dict) else {}
         event_name = event.get("name") or row.get("competition") or row.get("competition_name") or ""
         event_tier = event.get("tier") or row.get("tier")
-        if not is_main_televised_pdc_event({"name": event_name, "organiser": "pdc", "tier": event_tier}):
+        organiser = event.get("organiser") or row.get("organiser") or "pdc"
+        if not is_main_televised_pdc_event({"name": event_name, "organiser": organiser}):
             continue
         winner = row.get("winner") if isinstance(row.get("winner"), dict) else {}
         loser = row.get("loser") if isinstance(row.get("loser"), dict) else {}
