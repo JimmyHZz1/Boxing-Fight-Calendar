@@ -815,9 +815,23 @@
       "image_match_method": "category:Category:Deiveson Figueiredo",
       "image_verified_at": "2026-11-09T00:10:34Z",
       "image_local_path": "assets/images/ufc/deiveson-figueiredo.jpg"
+    },
+    "alexander volkanovski": {
+      "name": "Alexander Volkanovski",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/alexander-volkanovski.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Alexander_Volkanovski_at_UFC_232.jpg",
+      "image_credit": "Wikimedia Commons · MMAnytt · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Alexander Volkanovski",
+      "image_verified_at": "2026-11-09T00:11:07Z",
+      "image_local_path": "assets/images/ufc/alexander-volkanovski.jpg"
     }
   },
-  "updated_at": "2026-11-09T00:10:34Z",
+  "updated_at": "2026-11-09T00:11:07Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -904,6 +918,10 @@
     "aiemann zahabi": "2026-11-09T00:10:34Z",
     "raul rosas jr": "2026-11-09T00:10:34Z",
     "marlon vera": "2026-11-09T00:10:34Z",
-    "deiveson figueiredo": "2026-11-09T00:10:34Z"
+    "deiveson figueiredo": "2026-11-09T00:10:34Z",
+    "marcus mcghee": "2026-11-09T00:11:07Z",
+    "raoni barcelos": "2026-11-09T00:11:07Z",
+    "alexander volkanovski": "2026-11-09T00:11:07Z",
+    "movsar evloev": "2026-11-09T00:11:07Z"
   }
 }

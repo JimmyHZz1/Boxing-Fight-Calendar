@@ -2992,7 +2992,16 @@
             {
               "rank": 0,
               "name": "Alexander Volkanovski",
-              "image_url": null
+              "image_url": "./assets/images/ufc/alexander-volkanovski.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Alexander_Volkanovski_at_UFC_232.jpg",
+              "image_credit": "Wikimedia Commons · MMAnytt · CC BY 3.0",
+              "image_license": "CC BY 3.0",
+              "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+              "image_source": "Wikimedia Commons",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Alexander Volkanovski",
+              "image_verified_at": "2026-11-09T00:11:07Z",
+              "image_local_path": "assets/images/ufc/alexander-volkanovski.jpg"
             },
             {
               "rank": 1,
@@ -4678,75 +4687,59 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 5,
-    "found": 96,
-    "missing": 639,
+    "attempted": 4,
+    "found": 97,
+    "missing": 638,
     "rejected": 0,
     "by_sport": {
       "ufc": {
-        "attempted": 5,
-        "found": 5,
-        "missing": 0,
+        "attempted": 4,
+        "found": 1,
+        "missing": 3,
         "rejected": 0
       }
     },
     "rejection_reasons": {
-      "given_name_not_matched": 3,
-      "surname_not_matched": 14,
-      "not_an_image": 30
+      "not_an_image": 10,
+      "given_name_not_matched": 1
     },
     "search_details": [
       {
-        "name": "David Martinez",
-        "queries": 1,
-        "candidate_files": 20,
-        "accepted": 11,
+        "name": "Marcus McGhee",
+        "queries": 2,
+        "candidate_files": 10,
+        "accepted": 0,
         "rejections": {
-          "given_name_not_matched": 3,
-          "surname_not_matched": 4,
-          "not_an_image": 2
+          "not_an_image": 10
         }
       },
       {
-        "name": "Aiemann Zahabi",
+        "name": "Raoni Barcelos",
+        "queries": 2,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Alexander Volkanovski",
         "queries": 3,
-        "candidate_files": 7,
-        "accepted": 1,
+        "candidate_files": 3,
+        "accepted": 2,
         "rejections": {
-          "surname_not_matched": 6
+          "given_name_not_matched": 1
         }
       },
       {
-        "name": "Raul Rosas Jr.",
-        "queries": 3,
-        "candidate_files": 22,
-        "accepted": 1,
-        "rejections": {
-          "not_an_image": 19,
-          "surname_not_matched": 2
-        }
-      },
-      {
-        "name": "Marlon Vera",
-        "queries": 3,
-        "candidate_files": 16,
-        "accepted": 5,
-        "rejections": {
-          "not_an_image": 9,
-          "surname_not_matched": 2
-        }
-      },
-      {
-        "name": "Deiveson Figueiredo",
-        "queries": 3,
-        "candidate_files": 1,
-        "accepted": 1,
+        "name": "Movsar Evloev",
+        "queries": 0,
+        "candidate_files": 0,
+        "accepted": 0,
         "rejections": {}
       }
     ],
-    "checked_at": "2026-11-09T00:10:34Z",
-    "library_entries": 61,
-    "newly_found": 5,
+    "checked_at": "2026-11-09T00:11:07Z",
+    "library_entries": 62,
+    "newly_found": 1,
     "coverage": {
       "boxing fight card fighters": {
         "total": 187,
@@ -4770,8 +4763,8 @@
       },
       "ufc": {
         "total": 206,
-        "with_image": 8,
-        "missing": 198
+        "with_image": 9,
+        "missing": 197
       },
       "boxing": {
         "total": 81,
@@ -4779,7 +4772,7 @@
         "missing": 81
       }
     },
-    "rate_limited": false
+    "rate_limited": true
   },
   "last_updated": "2026-11-08T20:56:52Z"
 }

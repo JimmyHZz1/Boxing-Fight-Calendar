@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-09T00:10:34Z",
+  "updated_at": "2026-11-09T00:11:07Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -629,6 +629,17 @@
       "creator": "Wikimedia Commons · Show Me The Money · CC BY 3.0",
       "attribution": "Wikimedia Commons · Show Me The Money · CC BY 3.0",
       "verified_at": "2026-11-09T00:10:34Z",
+      "sport": "ufc"
+    },
+    "alexander volkanovski": {
+      "name": "Alexander Volkanovski",
+      "path": "assets/images/ufc/alexander-volkanovski.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Alexander_Volkanovski_at_UFC_232.jpg",
+      "licence": "CC BY 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by/3.0",
+      "creator": "Wikimedia Commons · MMAnytt · CC BY 3.0",
+      "attribution": "Wikimedia Commons · MMAnytt · CC BY 3.0",
+      "verified_at": "2026-11-09T00:11:07Z",
       "sport": "ufc"
     }
   },
