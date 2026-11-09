@@ -172,7 +172,7 @@
       s.append(el("p","sport-page-note","Live table from Jolpica F1; refreshes when this page is opened."));
       return s;
     }
-    const candidates=sport==="darts"?[["PDC Order of Merit",d.rankings,20]]:sport==="ufc"?(d.divisions||[]).map(x=>[x.name||x.division,x.entries]):sport==="boxing"?(d.divisions||[]).map(x=>[x.name,x.champions]):[];
+    const candidates=sport==="darts"?[["PDC Order of Merit",d.rankings,40]]:sport==="ufc"?(d.divisions||[]).map(x=>[x.name||x.division,x.entries]):sport==="boxing"?(d.divisions||[]).map(x=>[x.name,x.champions]):[];
     const valid=candidates.filter(x=>Array.isArray(x[1])&&x[1].length);
     if(!valid.length){s.append(empty(d.sync_warning||"The latest standings have not been published yet. They will appear after the next successful data sync."));return s;}
     valid.forEach(([title,items,limit])=>{
@@ -181,14 +181,17 @@
       const group=el("div","sport-ranking-group");group.append(el("h3",null,title));
       items.slice(0,limit||8).forEach((item,index)=>{
         const row=rankingRow(item,item.rank!=null?(item.rank===0?"C":item.rank):index+1);
-        const extra=[item.org,item.team,item.points!=null?item.points+" pts":null,item.prize_money? "£"+item.prize_money:null].filter(Boolean).join(" · ");
+        const movement=item.movement!=null?"Movement "+String(item.movement):item.previous_rank!=null?"Previously #"+item.previous_rank:null;
+        const extra=[item.org,item.team,item.points!=null?item.points+" pts":null,item.prize_money? "£"+item.prize_money:null,movement].filter(Boolean).join(" · ");
         if(extra)row.append(el("small",null,extra));group.append(row);
       });
       disclosure.append(el("summary","",title+" · "+items.length+" ENTRIES"),group);s.append(disclosure);
     });
-    const updated=d.last_updated?new Date(d.last_updated).toLocaleString("en-GB",{timeZone:"Europe/London",dateStyle:"medium",timeStyle:"short"}):null;
-    if(updated)s.append(el("p","sport-page-note","Standings updated "+updated+" UK."));
-    if(d.notice||d.sync_warning)s.append(el("p","sport-page-note",d.notice||d.sync_warning));
+    const timestamp=d.last_successful_update||d.last_updated;
+    const updated=timestamp?new Date(timestamp).toLocaleString("en-GB",{timeZone:"Europe/London",dateStyle:"medium",timeStyle:"short"}):null;
+    if(updated)s.append(el("p","sport-page-note","Last successful Order of Merit update: "+updated+" UK."));
+    if(d.data_status==="stale"||d.sync_warning)s.append(el("p","sport-page-note","The published ranking snapshot may be out of date. "+(d.sync_warning||"The latest provider check did not complete.")));
+    if(d.notice)s.append(el("p","sport-page-note",d.notice));
     return s;
   }
   function render(sport){
