@@ -118,7 +118,7 @@ def paged_darts_calendar(key, organiser):
     """Read the documented Darts API calendar shape and retain paging metadata."""
     all_rows, cursor = [], None
     for _ in range(8):
-        params = {"from": (TODAY - timedelta(days=7)).isoformat(), "to": (TODAY + timedelta(days=370)).isoformat(), "organiser": organiser, "limit": 200}
+        params = {"from": (TODAY - timedelta(days=7)).isoformat(), "to": (TODAY + timedelta(days=60)).isoformat(), "organiser": organiser, "limit": 200}
         if cursor:
             params["cursor"] = cursor
         url = "https://api.dartsapi.com/v1/calendar?" + urllib.parse.urlencode(params)
@@ -133,6 +133,53 @@ def paged_darts_calendar(key, organiser):
         if not cursor:
             break
     return all_rows
+
+def paged_darts_results(key):
+    """Fetch the recent settled-match window exposed by the configured Darts API plan."""
+    all_rows, cursor = [], None
+    for _ in range(8):
+        params = {
+            "from": (TODAY - timedelta(days=30)).isoformat(),
+            "to": (TODAY - timedelta(days=7)).isoformat(),
+            "limit": 200,
+        }
+        if cursor:
+            params["cursor"] = cursor
+        payload = request_json("https://api.dartsapi.com/v1/results?" + urllib.parse.urlencode(params), key, "Darts API")
+        rows = payload.get("data") or []
+        if not isinstance(rows, list):
+            raise RuntimeError("Darts API results returned an unexpected data shape.")
+        all_rows.extend(rows)
+        cursor = (payload.get("meta") or {}).get("next_cursor")
+        if not cursor:
+            break
+    results = []
+    for row in all_rows:
+        if not isinstance(row, dict):
+            continue
+        event = row.get("event") if isinstance(row.get("event"), dict) else {}
+        event_name = event.get("name") or row.get("competition") or row.get("competition_name") or ""
+        event_tier = event.get("tier") or row.get("tier")
+        organiser = event.get("organiser") or row.get("organiser") or "pdc"
+        if not is_main_televised_pdc_event({"name": event_name, "organiser": organiser}):
+            continue
+        winner = row.get("winner") if isinstance(row.get("winner"), dict) else {}
+        loser = row.get("loser") if isinstance(row.get("loser"), dict) else {}
+        results.append({
+            "match_id": row.get("match_id") or row.get("id"),
+            "played_on": row.get("played_on") or row.get("date"),
+            "round": row.get("round"),
+            "winner": {"name": winner.get("name"), "score": winner.get("score")},
+            "loser": {"name": loser.get("name"), "score": loser.get("score")},
+            "result_status": row.get("result_status") or "final",
+            "event_id": event.get("event_id") or row.get("event_id"),
+            "competition_id": event.get("competition_id") or row.get("competition_id"),
+            "event_name": event_name,
+            "event_tier": event_tier,
+        })
+    results.sort(key=lambda item: (item.get("played_on") or "", item.get("event_name") or "", item.get("round") or ""))
+    return results
+
 
 def is_main_televised_pdc_event(row):
     name = str(row.get("name") or row.get("competition_name") or "").strip()
@@ -188,7 +235,7 @@ def pdc_official_fallback_events():
     ]
     events = []
     for item in schedule:
-        if item["date"] < TODAY.isoformat() and item["end_date"] < TODAY.isoformat():
+        if item["date"] < (TODAY - timedelta(days=7)).isoformat() or item["date"] > (TODAY + timedelta(days=60)).isoformat():
             continue
         events.append({
             **item,
@@ -221,14 +268,17 @@ def sync_darts():
                 if stable_id in seen:
                     continue
                 seen.add(stable_id)
+                if str(date)[:10] > (TODAY + timedelta(days=60)).isoformat():
+                    continue
                 api_events.append({
                     "id": stable_id, "name": event_name, "date": date,
-                    "start_at": row.get("starts_at"),
+                    "start_at": row.get("starts_at"), "end_date": row.get("end_date") or row.get("ends_at"),
                     "status": row.get("status") or "scheduled",
                     "organiser": row.get("organiser") or "pdc", "tier": row.get("tier"),
+                    "venue": row.get("venue") or row.get("location"),
                     "matches": row.get("matches"), "competition_id": row.get("competition_id"),
                     "source": "Darts API",
-                    "source_url": "https://www.pdc.tv/calendar",
+                    "source_url": row.get("url") or "https://www.pdc.tv/calendar",
                 })
         except Exception as exc:
             warning = "Darts API calendar unavailable: " + str(exc)
@@ -244,6 +294,8 @@ def sync_darts():
         key_name = re.sub(r"[^a-z0-9]+", " ", event["name"].lower()).strip()
         if event["id"] not in merged and key_name not in api_names:
             merged[event["id"]] = event
+    if key and not api_events and not warning:
+        warning = "Darts API returned no matching televised PDC events in the 60-day window; using official fallback dates."
     events = list(merged.values())
     events.sort(key=lambda e: (e.get("date") or "", e.get("name") or ""))
 
@@ -261,9 +313,41 @@ def sync_darts():
     payload = {
         "sport": "darts", "provider": "Darts API + official PDC calendar",
         "organisers_included": ["pdc"], "events": events, "notice": notice,
+        "sync_attempted_at": iso_now(),
+        "data_status": "fallback" if warning else "current",
     }
+    try:
+        if key:
+            payload["results"] = paged_darts_results(key)
+            payload["results_last_successful_update"] = iso_now()
+            payload["results_window"] = {
+                "from": (TODAY - timedelta(days=30)).isoformat(),
+                "to": (TODAY - timedelta(days=7)).isoformat(),
+                "note": "Weekly settled-results snapshot; live match scores are not included."
+            }
+        else:
+            raise RuntimeError("DARTS_API_KEY is not configured; retaining the last published results.")
+    except Exception as exc:
+        payload["results"] = []
+        payload["results_sync_warning"] = str(exc)
+        try:
+            with open(os.path.join(DATA, "darts.json"), encoding="utf-8") as previous_file:
+                previous_results = json.load(previous_file)
+            payload["results"] = previous_results.get("results", [])
+            payload["results_last_successful_update"] = previous_results.get("results_last_successful_update")
+        except (FileNotFoundError, json.JSONDecodeError):
+            pass
     if warning:
         payload["sync_warning"] = warning
+        try:
+            with open(os.path.join(DATA, "darts.json"), encoding="utf-8") as previous_file:
+                previous_payload = json.load(previous_file)
+            if previous_payload.get("last_successful_update"):
+                payload["last_successful_update"] = previous_payload["last_successful_update"]
+        except (FileNotFoundError, json.JSONDecodeError):
+            pass
+    else:
+        payload["last_successful_update"] = iso_now()
     save("darts.json", payload)
     print(f"Darts: saved {len(events)} televised PDC events ({len(api_events)} API, {len(fallback)} official fallback candidates from {len(api_rows)} API rows).")
 
@@ -1099,6 +1183,8 @@ def sync_sports_hub():
                     "name": name,
                     "prize_money": row.get("prize_money") or row.get("ranking_prize_money") or row.get("amount"),
                     "points": row.get("points"),
+                    "movement": row.get("movement") or row.get("position_change") or row.get("rank_change"),
+                    "previous_rank": row.get("previous_position") or row.get("previous_rank"),
                     "image_url": row.get("image_url") or player.get("image_url") or player.get("photo_url")
                 })
         except Exception:
@@ -1161,7 +1247,7 @@ def sync_sports_hub():
             "notice": "PDC Order of Merit prize money (rolling two-year ranking total), updated after PDC ranking events."
         }
     except Exception as exc:
-        hub["sports"]["darts"] = {**previous.get("darts", {"rankings": []}), "sync_warning": str(exc)}
+        hub["sports"]["darts"] = {**previous.get("darts", {"rankings": []}), "sync_warning": str(exc), "data_status": "stale", "sync_attempted_at": iso_now()}
 
     # UFC official divisional rankings and champion rows.
     try:
@@ -1207,8 +1293,16 @@ def sync_sports_hub():
     except Exception as exc:
         hub["sports"]["boxing"] = {**previous.get("boxing", {"divisions": []}), "sync_warning": str(exc)}
 
-    for sport_data in hub["sports"].values():
-        sport_data["last_updated"] = iso_now()
+    for sport_name, sport_data in hub["sports"].items():
+        if sport_name == "darts" and sport_data.get("sync_warning"):
+            # A retained ranking snapshot is not a fresh update. Keep its last
+            # successful timestamp and expose the failed attempt separately.
+            sport_data["sync_attempted_at"] = iso_now()
+        else:
+            sport_data["last_updated"] = iso_now()
+            if sport_name == "darts":
+                sport_data["last_successful_update"] = iso_now()
+                sport_data["data_status"] = "current"
     coverage = {}
     def count_rows(rows):
         rows = rows or []
@@ -1367,7 +1461,7 @@ def enrich_cached_images():
     print("IMAGE_ENRICHMENT: " + json.dumps(IMAGE_DIAGNOSTICS, ensure_ascii=False))
 
 
-def main():
+def main(skip_darts_calendar=False):
     try:
         sync_sports_hub()
     except Exception as exc:
@@ -1377,11 +1471,12 @@ def main():
     except Exception as exc:
         preserve_or_status("f1.json", "f1", "Jolpica F1", str(exc))
         print(f"F1_SYNC_WARNING: {exc}")
-    try:
-        sync_darts()
-    except Exception as exc:
-        preserve_or_status("darts.json", "darts", "Darts API", str(exc))
-        print(f"DARTS_SYNC_WARNING: {exc}")
+    if not skip_darts_calendar:
+        try:
+            sync_darts()
+        except Exception as exc:
+            preserve_or_status("darts.json", "darts", "Darts API", str(exc))
+            print(f"DARTS_SYNC_WARNING: {exc}")
     try:
         sync_ufc()
     except Exception as exc:
@@ -1395,5 +1490,12 @@ def main():
 if __name__ == "__main__":
     if "--images-only" in sys.argv:
         enrich_cached_images()
+    elif "--darts-calendar-only" in sys.argv:
+        try:
+            sync_darts()
+        except Exception as exc:
+            preserve_or_status("darts.json", "darts", "Darts API", str(exc))
+            print(f"DARTS_SYNC_WARNING: {exc}")
+            raise
     else:
-        main()
+        main(skip_darts_calendar="--skip-darts-calendar" in sys.argv)

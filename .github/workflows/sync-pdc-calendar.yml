@@ -1,0 +1,67 @@
+name: Weekly PDC calendar refresh
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/sync_sports.py"
+      - ".github/workflows/sync-pdc-calendar.yml"
+  schedule:
+    # Check the televised PDC calendar once a week; keep the forward window short.
+    - cron: "17 5 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sports-data-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh-pdc-calendar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Refresh televised PDC calendar
+        env:
+          DARTS_API_KEY: ${{ secrets.DARTS_API_KEY }}
+        run: python scripts/sync_sports.py --darts-calendar-only
+
+      - name: Publish PDC calendar snapshot
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          for attempt in 1 2 3; do
+            git add data/darts.json
+            if git diff --cached --quiet; then
+              echo "PDC calendar unchanged."
+              exit 0
+            fi
+
+            git commit -m "Refresh televised PDC calendar"
+            if git push origin HEAD:main; then
+              echo "Published weekly PDC calendar refresh."
+              exit 0
+            fi
+
+            echo "main moved during publication; regenerating against latest main (attempt $attempt)."
+            git fetch origin main
+            git reset --hard origin/main
+            python scripts/sync_sports.py --darts-calendar-only
+          done
+
+          echo "Could not publish PDC calendar after three attempts."
+          exit 1
