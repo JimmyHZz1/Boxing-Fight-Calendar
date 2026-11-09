@@ -1764,3 +1764,28 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
   .favourite-profile-portrait:has(.favourite-f1-team-broadcast){width:84px;height:64px}
   .favourite-f1-team-broadcast{font-size:19px}
 }
+
+
+/* Follow-up: compact PDC ranking panel and give F1 portraits/logos proper room. */
+@media (min-width: 1200px) {
+  .hub-ranking-columns { grid-template-columns: repeat(3,minmax(0,1fr)) !important; gap: 0 14px; }
+}
+@media (min-width: 700px) and (max-width: 1199px) {
+  .hub-ranking-columns { grid-template-columns: repeat(2,minmax(0,1fr)) !important; gap: 0 16px; }
+}
+.hub-dropdown-list-ranking .hub-person { min-width:0; padding:5px 3px; gap:7px; }
+.hub-dropdown-list-ranking .hub-person-name { min-width:0; }
+.hub-dropdown-list-ranking .hub-person-name strong { font-size:12px; }
+.hub-dropdown-list-ranking .hub-person-name small { font-size:9px; }
+.hub-person:has(.hub-driver-portrait),.hub-person:has(.hub-driver-fallback) { grid-template-columns:62px 26px minmax(0,1fr); min-height:72px; }
+.hub-person>img.hub-driver-portrait,.hub-person>.hub-driver-fallback { width:58px; height:58px; }
+.hub-person>img.hub-constructor-logo { width:86px; height:52px; max-width:86px; object-fit:contain; object-position:center; background:transparent; border:0; border-radius:0; padding:2px; }
+.hub-person:has(.hub-constructor-logo) { grid-template-columns:94px 26px minmax(0,1fr); min-height:66px; }
+@media(max-width:699px) {
+  .hub-person:has(.hub-driver-portrait),.hub-person:has(.hub-driver-fallback) { grid-template-columns:48px 23px minmax(0,1fr); min-height:58px; }
+  .hub-person>img.hub-driver-portrait,.hub-person>.hub-driver-fallback { width:44px; height:44px; }
+  .hub-person>img.hub-constructor-logo { width:66px; height:42px; }
+  .hub-person:has(.hub-constructor-logo) { grid-template-columns:72px 23px minmax(0,1fr); min-height:54px; }
+}
+.sport-ranking-row.is-constructor .sport-ranking-image.f1-constructor-logo { width:86px; height:54px; max-width:86px; object-fit:contain; background:transparent; padding:3px; border-radius:0; }
+.favourite-card-portrait img.favourite-f1-team-logo,.favourite-profile-portrait img.favourite-f1-team-logo { width:100%; height:100%; max-width:100%; object-fit:contain; object-position:center; padding:5px; background:transparent; border-radius:0; }
