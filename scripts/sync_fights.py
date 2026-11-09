@@ -266,11 +266,11 @@ def main():
     events = list(primary["events"])
     confirmed_pairs = set()
     for event in events:
-        event_date = str(event.get("date", ""))[:10]
         for bout in event.get("bouts", []):
+            bout_date = str(bout.get("date") or event.get("date", ""))[:10]
             pair = sorted((normalise_person_name(bout.get("fighter1")), normalise_person_name(bout.get("fighter2"))))
-            if all(pair):
-                confirmed_pairs.add((event_date, *pair))
+            if all(pair) and "tbc" not in pair:
+                confirmed_pairs.add((bout_date, *pair))
 
     additional_events = []
     additional_count = 0
@@ -280,7 +280,7 @@ def main():
             bout_date = str(bout.get("date") or event.get("date", ""))[:10]
             pair = sorted((normalise_person_name(bout.get("fighter1")), normalise_person_name(bout.get("fighter2"))))
             identity = (bout_date, *pair)
-            if all(pair) and identity in confirmed_pairs:
+            if all(pair) and "tbc" not in pair and identity in confirmed_pairs:
                 continue
             remaining.append(bout)
         if remaining:
