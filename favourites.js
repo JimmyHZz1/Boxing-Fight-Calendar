@@ -10,6 +10,7 @@
   const make=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!=null)n.textContent=text;return n;};
   const constructorLogoSlug = name => ({Mercedes:"mercedes",Ferrari:"ferrari","Red Bull":"redbullracing","Red Bull Racing":"redbullracing",McLaren:"mclaren","Alpine F1 Team":"alpine",Alpine:"alpine","Haas F1 Team":"haas",Audi:"audi","RB F1 Team":"racingbulls","Racing Bulls":"racingbulls","Aston Martin":"astonmartin","Cadillac F1 Team":"cadillac",Cadillac:"cadillac",Williams:"williams"}[String(name||"").trim()] || "");
   const constructorLogoUrl = name => {const slug=constructorLogoSlug(name);return slug?"https://media.formula1.com/image/upload/common/f1/2026/"+slug+"/2026"+slug+"logo.svg":"";};
+  const constructorMarks={"Mercedes":"MER","Ferrari":"FER","Red Bull":"RBR","McLaren":"MCL","RB F1 Team":"RB","Racing Bulls":"RB","Alpine F1 Team":"ALP","Haas F1 Team":"HAS","Audi":"AUD","Williams":"WIL","Aston Martin":"AMR","Cadillac F1 Team":"CAD"};
   const constructorColours={"Mercedes":"#00d2be","Ferrari":"#ef1a2d","Red Bull":"#4776d0","McLaren":"#ff8700","RB F1 Team":"#6c9bd2","Alpine F1 Team":"#168bd2","Haas F1 Team":"#c7cbd1","Audi":"#f02b32","Williams":"#39a9df","Aston Martin":"#00a58b","Cadillac F1 Team":"#e5e5e5"};
   function constructorBroadcastMark(name){
     const mark=make("span","favourite-f1-team-broadcast",constructorMarks[name]||String(name||"F1").slice(0,3).toUpperCase());
