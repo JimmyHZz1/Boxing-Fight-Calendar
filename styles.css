@@ -2085,29 +2085,14 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
 @media(max-width:420px){.games-release-panel,.games-release-updates,.games-version-list{padding:14px}.games-section-heading{align-items:start;flex-direction:column}.games-page-footer{align-items:flex-start;flex-direction:column}}
 
 
-/* Fix mobile calendar switcher: keep the menu anchored above the bottom navigation. */
-@media(max-width:699px){
-  .mobile-calendar-menu{
-    position:fixed!important;
-    right:15px!important;
-    left:auto!important;
-    bottom:calc(env(safe-area-inset-bottom, 0px) + 82px)!important;
-    width:min(280px,calc(100vw - 30px))!important;
-    margin:0!important;
-    z-index:1000!important;
-    transform:none!important;
-  }
-  .mobile-calendar-menu[hidden]{display:none!important}
-  .mobile-calendar-menu button{min-height:46px;touch-action:manipulation}
-  .nav-item[data-calendar-switcher]{cursor:pointer;touch-action:manipulation}
-}
+/* The switcher now opens directly below the top-left brand. */
 
 /* Top-left calendar switcher: the brand is the mobile calendar control. */
-.topbar{position:relative}
+.topbar{position:relative;z-index:1003;overflow:visible}
 .brand-switcher{appearance:none;border:0;background:transparent;padding:0;cursor:pointer;text-align:left}
 .brand-switcher:focus-visible{outline:2px solid var(--accent);outline-offset:5px}
 .brand-switcher-caret{font-size:13px;color:var(--muted);margin-left:1px}
-.mobile-calendar-menu{position:absolute;top:calc(100% + 8px);left:0;bottom:auto;z-index:1002;width:min(280px,calc(100vw - 30px));margin:0;padding:7px;background:#171d27;border:1px solid rgba(38,133,232,.45);box-shadow:0 12px 35px rgba(0,0,0,.55)}
+.mobile-calendar-menu{position:absolute;top:calc(100% + 7px);left:0;right:auto;bottom:auto;z-index:1004;pointer-events:auto;width:min(280px,calc(100vw - 30px));margin:0;padding:7px;background:#171d27;border:1px solid rgba(38,133,232,.45);box-shadow:0 12px 35px rgba(0,0,0,.55)}
 .mobile-calendar-menu[hidden]{display:none!important}
 .mobile-calendar-menu button{display:flex;align-items:center;gap:11px;width:100%;min-height:48px;padding:10px 12px;border:0;background:transparent;color:var(--text);text-align:left;font:800 10px 'DM Sans',sans-serif;letter-spacing:1px;cursor:pointer;touch-action:manipulation}
 .brand-menu-mark{width:27px;height:27px;display:grid;place-items:center;background:var(--accent);color:#17130d;font:900 19px 'Barlow Condensed',sans-serif;transform:skew(-5deg)}
@@ -2127,11 +2112,11 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
 .games-mode .calendar-panel .day.has-event:after,.games-mode .calendar-legend i{background:#2685e8}
 .games-mode .nav-item.active,.games-mode .eyebrow,.games-mode .live-status{color:#62a7ff}
 .games-mode .brand-mark{background:#2685e8}
-@media(max-width:699px){.topbar{z-index:20}.mobile-calendar-menu{top:calc(100% + 7px);left:0}.brand{min-height:44px}.brand-switcher-caret{font-size:16px}}
+@media(max-width:699px){.topbar{z-index:1003;overflow:visible}.mobile-calendar-menu{top:calc(100% + 7px);left:0;right:auto;bottom:auto}.brand{min-height:44px}.brand-switcher-caret{font-size:16px}}
 
 
 /* Games release notes live discreetly in the global footer, matching Sports history. */
 .games-version-history-link{display:none;border:0;background:transparent;color:#62a7ff;padding:0;font:inherit;letter-spacing:inherit;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
 .games-mode .version-history-link{display:none}
 .games-mode .games-version-history-link{display:inline-block}
-@media(max-width:699px){.topbar{position:relative;z-index:30}.mobile-calendar-menu{z-index:1002;pointer-events:auto}.mobile-calendar-menu button{position:relative;z-index:1;pointer-events:auto}}
+@media(max-width:699px){.topbar{position:relative;z-index:1003;overflow:visible}.mobile-calendar-menu{z-index:1004;pointer-events:auto}.mobile-calendar-menu button{position:relative;z-index:1;min-height:48px;pointer-events:auto;touch-action:manipulation}}
