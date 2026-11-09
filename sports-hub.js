@@ -49,7 +49,8 @@
     }else{
       content=list.length?list.map((x,i)=>person(x,i,label)).join(""):'<p class="hub-empty">No published data available yet.</p>';
     }
-    return '<details class="hub-dropdown"><summary>'+esc(title)+'<span>'+list.length+' ENTRIES</span></summary><div class="hub-dropdown-list'+(isRanking?' hub-dropdown-list-ranking':'')+'">'+content+'</div></details>';
+    const autoOpen=title==="Drivers’ championship"||title==="Constructors’ championship"||isRanking;
+    return '<details class="hub-dropdown"'+(autoOpen?" open":"")+'><summary>'+esc(title)+'<span>'+list.length+' ENTRIES</span></summary><div class="hub-dropdown-list'+(isRanking?' hub-dropdown-list-ranking':'')+'">'+content+'</div></details>';
   }
   function bkfcPanel() {
     const events=(bkfcPayload.events||[]).filter(event=>(event.fights||[]).length);
