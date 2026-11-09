@@ -322,7 +322,7 @@ def sync_darts():
             payload["results_window"] = {
                 "from": (TODAY - timedelta(days=30)).isoformat(),
                 "to": (TODAY - timedelta(days=7)).isoformat(),
-                "note": "Darts API free-key results are delayed by at least seven days."
+                "note": "Weekly settled-results snapshot; live match scores are not included."
             }
         else:
             raise RuntimeError("DARTS_API_KEY is not configured; retaining the last published results.")
