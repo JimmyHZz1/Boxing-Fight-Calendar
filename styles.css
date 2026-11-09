@@ -1859,3 +1859,12 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
   #sports-hub-content .hub-person:has(.hub-constructor-broadcast){grid-template-columns:48px 23px minmax(0,1fr);min-height:46px;gap:7px}
   #sports-hub-content .hub-person .hub-constructor-broadcast{width:48px!important;height:36px!important;min-width:48px!important;max-width:48px!important;flex-basis:48px!important;font-size:16px!important}
 }
+
+
+/* Sports Hub: use the actual compact constructor marks, matching the dedicated F1 standings. */
+#sports-hub-content .hub-person:has(.hub-constructor-logo){grid-template-columns:58px 26px minmax(0,1fr);min-height:50px;gap:8px}
+#sports-hub-content .hub-person>img.hub-constructor-logo{width:54px!important;height:40px!important;max-width:54px!important;min-width:0!important;object-fit:contain!important;object-position:center!important;background:transparent!important;border:0!important;border-radius:0!important;padding:1px!important;flex:0 0 54px!important}
+@media(max-width:520px){
+  #sports-hub-content .hub-person:has(.hub-constructor-logo){grid-template-columns:50px 23px minmax(0,1fr);min-height:46px;gap:7px}
+  #sports-hub-content .hub-person>img.hub-constructor-logo{width:46px!important;height:34px!important;max-width:46px!important;flex-basis:46px!important}
+}
