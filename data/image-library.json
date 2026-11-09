@@ -676,16 +676,6 @@
     }
   },
   "batch_requested_at": "2026-11-08T13:36:00Z",
-  "enrichment": {
-    "batch_number": 0,
-    "cumulative_attempted": 0,
-    "cumulative_found": 0,
-    "cumulative_missing": 0,
-    "last_batch_at": null,
-    "last_successful_batch_at": null,
-    "last_rate_limited_at": null,
-    "history": []
-  },
   "audit": {
     "last_reviewed_at": "2026-11-09T12:15:00Z",
     "notes": "Four UFC portrait entries quarantined after source-title identity mismatch. New portrait matches require an adjacent exact name pair in the same source field.",
