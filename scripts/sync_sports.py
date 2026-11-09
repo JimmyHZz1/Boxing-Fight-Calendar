@@ -699,7 +699,7 @@ def commons_photo(name, image_kind="portrait"):
                 phrase = ('"' + str(alias).strip() + '" ' + suffix).strip()
                 if phrase not in variants:
                     variants.append(phrase)
-        query_names = ["(" + " OR ".join(variants) + ") portrait"]
+        query_names = ["(" + " OR ".join(variants) + ")"]
     candidates = []
     seen_titles = set()
     rejection_counts = {}
