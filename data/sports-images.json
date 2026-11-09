@@ -868,9 +868,39 @@
       "image_match_method": "search:Diego Lopes",
       "image_verified_at": "2026-11-09T12:52:30Z",
       "image_local_path": "assets/images/ufc/diego-lopes.jpg"
+    },
+    "steve garcia": {
+      "name": "Steve Garcia",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/steve-garcia.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Steve_Garcia_GalaxyCon_Oklahoma_City_052026-2.jpg",
+      "image_credit": "Wikimedia Commons · John Manard · CC BY-SA 4.0",
+      "image_license": "CC BY-SA 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "search:Steve Garcia",
+      "image_verified_at": "2026-11-09T12:52:42Z",
+      "image_local_path": "assets/images/ufc/steve-garcia.jpg"
+    },
+    "brian ortega": {
+      "name": "Brian Ortega",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/brian-ortega.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Brian_Ortega_Romero.png",
+      "image_credit": "Wikimedia Commons · Manad2030 · CC BY-SA 3.0",
+      "image_license": "CC BY-SA 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "search:Brian Ortega",
+      "image_verified_at": "2026-11-09T12:52:42Z",
+      "image_local_path": "assets/images/ufc/brian-ortega.png"
     }
   },
-  "updated_at": "2026-11-09T12:52:30Z",
+  "updated_at": "2026-11-09T12:52:42Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -969,7 +999,12 @@
     "diego lopes": "2026-11-09T12:52:30Z",
     "jean silva": "2026-11-09T12:52:30Z",
     "arnold allen": "2026-11-09T12:52:30Z",
-    "kevin vallejos": "2026-11-09T12:52:30Z"
+    "kevin vallejos": "2026-11-09T12:52:30Z",
+    "steve garcia": "2026-11-09T12:52:42Z",
+    "aaron pico": "2026-11-09T12:52:42Z",
+    "melquizael costa": "2026-11-09T12:52:42Z",
+    "brian ortega": "2026-11-09T12:52:42Z",
+    "patricio pitbull": "2026-11-09T12:52:42Z"
   },
   "audit": {
     "last_reviewed_at": "2026-11-09T12:15:00Z",
@@ -1006,19 +1041,27 @@
     }
   },
   "enrichment": {
-    "batch_number": 1,
+    "batch_number": 2,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 98,
-    "cumulative_found": 64,
-    "cumulative_missing": 34,
-    "cumulative_rejected": 77,
-    "last_batch_at": "2026-11-09T12:52:30Z",
-    "last_successful_batch_at": "2026-11-09T12:52:30Z",
+    "cumulative_attempted": 103,
+    "cumulative_found": 66,
+    "cumulative_missing": 37,
+    "cumulative_rejected": 115,
+    "last_batch_at": "2026-11-09T12:52:42Z",
+    "last_successful_batch_at": "2026-11-09T12:52:42Z",
     "last_rate_limited_at": null,
     "history": [
       {
         "batch": 1,
         "at": "2026-11-09T12:52:30Z",
+        "attempted": 5,
+        "found": 2,
+        "missing": 3,
+        "rate_limited": false
+      },
+      {
+        "batch": 2,
+        "at": "2026-11-09T12:52:42Z",
         "attempted": 5,
         "found": 2,
         "missing": 3,

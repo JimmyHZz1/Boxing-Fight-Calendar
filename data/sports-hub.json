@@ -3080,7 +3080,17 @@
             {
               "rank": 10,
               "name": "Steve Garcia",
-              "image_url": null
+              "image_url": "./assets/images/ufc/steve-garcia.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Steve_Garcia_GalaxyCon_Oklahoma_City_052026-2.jpg",
+              "image_credit": "Wikimedia Commons · John Manard · CC BY-SA 4.0",
+              "image_license": "CC BY-SA 4.0",
+              "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "search:Steve Garcia",
+              "image_verified_at": "2026-11-09T12:52:42Z",
+              "image_local_path": "assets/images/ufc/steve-garcia.jpg"
             },
             {
               "rank": 11,
@@ -3095,7 +3105,17 @@
             {
               "rank": 13,
               "name": "Brian Ortega",
-              "image_url": null
+              "image_url": "./assets/images/ufc/brian-ortega.png",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Brian_Ortega_Romero.png",
+              "image_credit": "Wikimedia Commons · Manad2030 · CC BY-SA 3.0",
+              "image_license": "CC BY-SA 3.0",
+              "image_license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "search:Brian Ortega",
+              "image_verified_at": "2026-11-09T12:52:42Z",
+              "image_local_path": "assets/images/ufc/brian-ortega.png"
             },
             {
               "rank": 14,
@@ -4717,9 +4737,9 @@
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
     "attempted": 5,
-    "found": 99,
-    "missing": 616,
-    "rejected": 73,
+    "found": 101,
+    "missing": 614,
+    "rejected": 38,
     "by_sport": {
       "ufc": {
         "attempted": 5,
@@ -4729,68 +4749,63 @@
       }
     },
     "rejection_reasons": {
-      "exact_name_pair_not_matched": 54,
-      "not_an_image": 19
+      "not_an_image": 35,
+      "exact_name_pair_not_matched": 3
     },
     "search_details": [
       {
-        "name": "David Martinez",
+        "name": "Steve Garcia",
         "queries": 1,
         "candidate_files": 20,
-        "accepted": 8,
+        "accepted": 6,
         "rejections": {
-          "exact_name_pair_not_matched": 10,
-          "not_an_image": 2
+          "not_an_image": 11,
+          "exact_name_pair_not_matched": 3
         }
       },
       {
-        "name": "Diego Lopes",
+        "name": "Aaron Pico",
         "queries": 1,
         "candidate_files": 20,
+        "accepted": 0,
+        "rejections": {
+          "not_an_image": 20
+        }
+      },
+      {
+        "name": "Melquizael Costa",
+        "queries": 1,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Brian Ortega",
+        "queries": 1,
+        "candidate_files": 5,
         "accepted": 1,
         "rejections": {
-          "exact_name_pair_not_matched": 19
+          "not_an_image": 4
         }
       },
       {
-        "name": "Jean Silva",
+        "name": "Patricio Pitbull",
         "queries": 1,
-        "candidate_files": 20,
+        "candidate_files": 0,
         "accepted": 0,
-        "rejections": {
-          "exact_name_pair_not_matched": 20
-        }
-      },
-      {
-        "name": "Arnold Allen",
-        "queries": 1,
-        "candidate_files": 20,
-        "accepted": 0,
-        "rejections": {
-          "not_an_image": 15,
-          "exact_name_pair_not_matched": 5
-        }
-      },
-      {
-        "name": "Kevin Vallejos",
-        "queries": 1,
-        "candidate_files": 2,
-        "accepted": 0,
-        "rejections": {
-          "not_an_image": 2
-        }
+        "rejections": {}
       }
     ],
-    "checked_at": "2026-11-09T12:52:30Z",
-    "library_entries": 64,
+    "checked_at": "2026-11-09T12:52:42Z",
+    "library_entries": 66,
     "newly_found": 2,
-    "cumulative_attempted": 98,
-    "cumulative_found": 64,
-    "cumulative_missing": 34,
-    "cumulative_rejected": 77,
-    "batch_number": 1,
-    "last_batch_at": "2026-11-09T12:52:30Z",
-    "last_successful_batch_at": "2026-11-09T12:52:30Z",
+    "cumulative_attempted": 103,
+    "cumulative_found": 66,
+    "cumulative_missing": 37,
+    "cumulative_rejected": 115,
+    "batch_number": 2,
+    "last_batch_at": "2026-11-09T12:52:42Z",
+    "last_successful_batch_at": "2026-11-09T12:52:42Z",
     "last_rate_limited_at": null,
     "coverage": {
       "boxing fight card fighters": {
@@ -4815,8 +4830,8 @@
       },
       "ufc": {
         "total": 206,
-        "with_image": 11,
-        "missing": 195
+        "with_image": 13,
+        "missing": 193
       },
       "boxing": {
         "total": 81,

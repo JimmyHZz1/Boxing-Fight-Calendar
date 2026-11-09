@@ -1,5 +1,21 @@
 {
-  "images": {},
+  "images": {
+    "brian ortega": {
+      "name": "Brian Ortega",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/brian-ortega.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Brian_Ortega_Romero.png",
+      "image_credit": "Wikimedia Commons · Manad2030 · CC BY-SA 3.0",
+      "image_license": "CC BY-SA 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "search:Brian Ortega",
+      "image_verified_at": "2026-11-09T12:52:42Z",
+      "image_local_path": "assets/images/ufc/brian-ortega.png"
+    }
+  },
   "attempted": {},
-  "updated_at": "2026-11-09T12:52:41Z"
+  "updated_at": "2026-11-09T12:52:56Z"
 }

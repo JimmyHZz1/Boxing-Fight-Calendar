@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-09T12:52:30Z",
+  "updated_at": "2026-11-09T12:52:42Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -662,6 +662,28 @@
       "creator": "Wikimedia Commons · Sailko · CC BY 3.0",
       "attribution": "Wikimedia Commons · Sailko · CC BY 3.0",
       "verified_at": "2026-11-09T12:52:30Z",
+      "sport": "ufc"
+    },
+    "steve garcia": {
+      "name": "Steve Garcia",
+      "path": "assets/images/ufc/steve-garcia.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Steve_Garcia_GalaxyCon_Oklahoma_City_052026-2.jpg",
+      "licence": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "creator": "Wikimedia Commons · John Manard · CC BY-SA 4.0",
+      "attribution": "Wikimedia Commons · John Manard · CC BY-SA 4.0",
+      "verified_at": "2026-11-09T12:52:42Z",
+      "sport": "ufc"
+    },
+    "brian ortega": {
+      "name": "Brian Ortega",
+      "path": "assets/images/ufc/brian-ortega.png",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Brian_Ortega_Romero.png",
+      "licence": "CC BY-SA 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "creator": "Wikimedia Commons · Manad2030 · CC BY-SA 3.0",
+      "attribution": "Wikimedia Commons · Manad2030 · CC BY-SA 3.0",
+      "verified_at": "2026-11-09T12:52:42Z",
       "sport": "ufc"
     }
   },

@@ -1290,7 +1290,9 @@
           },
           "result": null,
           "referee": null,
-          "bonus": null
+          "bonus": null,
+          "fighter2_image": "./assets/images/ufc/brian-ortega.png",
+          "fighter2_image_credit": "Wikimedia Commons · Manad2030 · CC BY-SA 3.0"
         },
         {
           "id": 93258,
