@@ -61,6 +61,55 @@
   const list = document.getElementById("games-recent-release-list");
   const status = document.getElementById("games-recent-release-status");
   if (!list) return;
+  const featuredList = document.getElementById("games-aaa-up-next-list");
+  const renderFeaturedGames = items => {
+    if (!featuredList) return;
+    const today = new Intl.DateTimeFormat("en-CA", {timeZone:"Europe/London",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
+    const upcoming = (Array.isArray(items) ? items : [])
+      .filter(game => game && /^\\d{4}-\\d{2}-\\d{2}$/.test(game.release_date || "") && game.release_date >= today)
+      .sort((a,b) => a.release_date.localeCompare(b.release_date))
+      .slice(0,3);
+    featuredList.replaceChildren();
+    if (!upcoming.length) {
+      const empty = document.createElement("p");
+      empty.className = "games-featured-empty";
+      empty.textContent = "No confirmed AAA+ release dates are currently listed. This section will update as major PC and console launch dates are verified.";
+      featuredList.append(empty);
+      return;
+    }
+    upcoming.forEach(game => {
+      const card = document.createElement("article");
+      card.className = "games-featured-card";
+      const date = document.createElement("div");
+      date.className = "games-featured-date";
+      date.textContent = new Intl.DateTimeFormat("en-GB", {timeZone:"Europe/London",day:"numeric",month:"short",year:"numeric"}).format(new Date(game.release_date+"T12:00:00Z")).toUpperCase();
+      const title = document.createElement("h3");
+      title.textContent = game.title || "Upcoming release";
+      const platforms = document.createElement("div");
+      platforms.className = "games-featured-platforms";
+      (game.platforms || []).forEach(platform => {
+        const tag = document.createElement("span");
+        tag.textContent = platform;
+        platforms.append(tag);
+      });
+      card.append(date,title,platforms);
+      if (game.source_url && /^https?:\\/\\//i.test(game.source_url)) {
+        const source = document.createElement("a");
+        source.href = game.source_url;
+        source.target = "_blank";
+        source.rel = "noopener noreferrer";
+        source.textContent = "RELEASE DETAILS ↗";
+        card.append(source);
+      }
+      featuredList.append(card);
+    });
+  };
+  if (featuredList) {
+    fetch("./data/games-featured.json?t="+Date.now(), {cache:"no-store"})
+      .then(response => { if (!response.ok) throw new Error("Featured game feed unavailable"); return response.json(); })
+      .then(data => renderFeaturedGames(data.games))
+      .catch(() => renderFeaturedGames([]));
+  }
   const API_URL = "https://api.github.com/repos/JimmyHZz1/Boxing-Fight-Calendar/pulls?state=closed&sort=updated&direction=desc&per_page=100";
   const CACHE_KEY = "gamesCalendarMergedHistoryV1";
   const CACHE_TTL = 60 * 60 * 1000;
