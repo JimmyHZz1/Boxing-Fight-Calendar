@@ -268,7 +268,7 @@
     if(sport==="darts"){
       const feed=window.SportsData?.getMeta?.("darts")||{};
       const stamp=feed.last_successful_update||feed.last_updated;
-      if(stamp){const checked=new Date(stamp).toLocaleString("en-GB",{timeZone:"Europe/London",dateStyle:"medium",timeStyle:"short"});target.append(el("p","sport-page-note","PDC calendar last successful refresh: "+checked+" UK."));}
+      if(stamp){const checked=new Date(stamp).toLocaleString("en-GB",{timeZone:"Europe/London",dateStyle:"medium",timeStyle:"short"});const label=feed.last_successful_update?"PDC calendar last successful refresh: ":"PDC fallback schedule snapshot published: ";target.append(el("p","sport-page-note",label+checked+" UK."));}
       if(feed.data_status==="fallback"||feed.sync_warning)target.append(el("p","sport-page-note","PDC calendar is using fallback data. "+(feed.sync_warning||"The latest provider check did not return a complete televised schedule.")));
     }
     if(next){
