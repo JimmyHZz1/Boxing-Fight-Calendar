@@ -58,7 +58,7 @@ function showScreen(id) {
   window.scrollTo({top:0,behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
 }
 window.showScreen=showScreen;
-document.querySelectorAll(".nav-item,.topbar-nav-item").forEach(b => b.addEventListener("click",()=>showScreen(b.dataset.screen)));
+document.querySelectorAll(".nav-item,.topbar-nav-item").forEach(b => b.addEventListener("click",()=>{if(!b.hasAttribute("data-calendar-switcher"))showScreen(b.dataset.screen);}));
 const favouriteTeamThemes = {
   "Mercedes":{accent:"#00d2be",glow:"#123b3a",chrome:"#101c1c"},
   "Ferrari":{accent:"#ef1a2d",glow:"#3a171c",chrome:"#241014"},
