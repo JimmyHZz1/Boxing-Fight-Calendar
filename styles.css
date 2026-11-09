@@ -1712,3 +1712,16 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
   #home-screen > .hero > p { font-size: 14px; }
   #home-screen > .home-next-up-panel { padding: 20px; }
 }
+
+/* Home Sports Hub sport tabs and BKFC weight-class bout listings */
+.hub-sport-shortcuts{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;margin:14px 0 18px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.hub-sport-shortcut{min-width:0;min-height:42px;display:flex;align-items:center;justify-content:center;padding:8px 5px;border:1px solid var(--line);border-radius:3px;background:rgba(16,17,20,.62);color:var(--muted);font:800 10px 'DM Sans',sans-serif;letter-spacing:1px;cursor:pointer}
+.hub-sport-shortcut:hover,.hub-sport-shortcut.is-active{border-color:var(--accent);background:rgba(226,180,91,.12);color:var(--accent)}
+.hub-sport-shortcut:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.hub-bkfc-event{grid-column:1/-1;margin:6px 0 12px}
+.hub-bkfc-event-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:10px 0;font:700 16px 'Barlow Condensed',sans-serif;text-transform:uppercase}
+.hub-bkfc-event-title span{font:600 9px 'DM Sans',sans-serif;color:var(--muted);white-space:nowrap}
+.hub-bkfc-bout{grid-template-columns:48px 24px minmax(0,1fr)}
+.hub-bkfc-mark{display:grid;place-items:center;width:44px;height:30px;background:#e6c85b;color:#17130d;font:1000 12px 'Barlow Condensed',sans-serif;letter-spacing:.5px;transform:skew(-5deg)}
+.hub-bkfc-bout .hub-person-name strong i{font-style:normal;color:var(--accent);padding:0 4px}
+@media(max-width:420px){.hub-sport-shortcuts{gap:4px}.hub-sport-shortcut{min-height:38px;font-size:8px;letter-spacing:.5px;padding:6px 2px}.hub-bkfc-bout{grid-template-columns:42px 20px minmax(0,1fr);gap:6px}.hub-bkfc-mark{width:38px;height:27px;font-size:10px}}

@@ -3,8 +3,10 @@
   const root = $("sports-hub-content");
   if (!root) return;
   let payload = {};
+  let bkfcPayload = {};
   let active = "f1";
-  const sportNames = {f1:"FORMULA 1",darts:"PDC DARTS",boxing:"BOXING WORLD CHAMPIONS",ufc:"UFC"};
+  const sportNames = {f1:"FORMULA 1",darts:"PDC DARTS",boxing:"BOXING WORLD CHAMPIONS",ufc:"UFC",bkfc:"BKFC BARE KNUCKLE"};
+  const sportTabs = [{id:"f1",label:"F1"},{id:"darts",label:"DARTS"},{id:"boxing",label:"BOXING"},{id:"ufc",label:"UFC"},{id:"bkfc",label:"BKFC"}];
   const esc = value => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
   const initials = name => String(name || "?").split(/\s+/).slice(0,2).map(x=>x[0]||"").join("").toUpperCase();
   const moneyLabel = value => {
@@ -49,8 +51,28 @@
     }
     return '<details class="hub-dropdown"><summary>'+esc(title)+'<span>'+list.length+' ENTRIES</span></summary><div class="hub-dropdown-list'+(isRanking?' hub-dropdown-list-ranking':'')+'">'+content+'</div></details>';
   }
+  function bkfcPanel() {
+    const events=(bkfcPayload.events||[]).filter(event=>(event.fights||[]).length);
+    if(!events.length) return '<p class="hub-empty">BKFC bout listings and weight classes are not available yet.</p>';
+    return events.map(event=>{
+      const groups={};
+      (event.fights||[]).forEach(fight=>{
+        const weight=String(fight.weight_class||"Weight class TBC").trim();
+        (groups[weight]||(groups[weight]=[])).push(fight);
+      });
+      const sections=Object.entries(groups).sort((a,b)=>a[0].localeCompare(b[0])).map(([weight,fights])=>{
+        const rows=fights.map((fight,index)=>{
+          const a=fight.fighter_a?.name||fight.fighter1||"TBC";
+          const b=fight.fighter_b?.name||fight.fighter2||"TBC";
+          return '<div class="hub-person hub-bkfc-bout"><span class="hub-bkfc-mark">BKFC</span><span class="hub-rank">'+(index+1)+'</span><span class="hub-person-name"><strong>'+esc(a)+' <i>vs</i> '+esc(b)+'</strong><small>'+esc(fight.card_section||"Scheduled bout")+' · '+esc(weight)+'</small></span></div>';
+        }).join("");
+        return '<details class="hub-dropdown"><summary>'+esc(weight)+'<span>'+fights.length+' BOUT'+(fights.length===1?"":"S")+'</span></summary><div class="hub-dropdown-list">'+rows+'</div></details>';
+      }).join("");
+      return '<div class="hub-bkfc-event"><div class="hub-bkfc-event-title"><strong>'+esc(event.name)+'</strong><span>'+esc(event.date||"Date TBC")+'</span></div>'+sections+'</div>';
+    }).join("");
+  }
   function panel(sport) {
-    const d=payload[sport]||{};
+    const d=sport==="bkfc"?bkfcPayload:(payload[sport]||{});
     let out="";
     if(sport==="f1"){
       out=dropdown("Drivers’ championship",d.drivers,"Driver",30)+dropdown("Constructors’ championship",d.constructors,"Constructor",20);
@@ -62,11 +84,14 @@
     } else if(sport==="boxing"){
       const divisions=d.divisions||[];
       out=divisions.length?divisions.map(div=>dropdown(div.name,div.champions,"Champion",12)).join(""):'<p class="hub-empty">World title-holder data is not available yet.</p>';
+    } else if(sport==="bkfc"){
+      out=bkfcPanel();
     }
     const note=d.notice||d.sync_warning||"";
     const updated=d.last_updated?new Date(d.last_updated).toLocaleString("en-GB",{timeZone:"Europe/London",dateStyle:"medium",timeStyle:"short"}):"Awaiting first sync";
     $("sports-hub-updated").textContent=updated.toUpperCase();
-    return '<div class="hub-sport-title"><strong>'+sportNames[sport]+'</strong><span>UPDATED '+esc(updated)+'</span></div>'+out+(note?'<p class="hub-source-note">'+esc(note)+'</p>':"");
+    const tabs='<nav class="hub-sport-shortcuts" aria-label="Sports Hub tabs">'+sportTabs.map(tab=>'<button type="button" class="hub-sport-shortcut'+(tab.id===sport?' is-active':'')+'" data-hub-sport="'+tab.id+'" aria-pressed="'+(tab.id===sport?'true':'false')+'"><span>'+tab.label+'</span></button>').join("")+'</nav>';
+    return tabs+'<div class="hub-sport-title"><strong>'+sportNames[sport]+'</strong><span>UPDATED '+esc(updated)+'</span></div>'+out+(note?'<p class="hub-source-note">'+esc(note)+'</p>':"");
   }
   function updateImageDiagnostics() {
     const box=$("version-image-diagnostics");
@@ -87,6 +112,7 @@
   function render(sport=active) {
     active=sport;
     root.innerHTML=panel(sport);
+    root.querySelectorAll("[data-hub-sport]").forEach(button=>button.addEventListener("click",()=>render(button.dataset.hubSport)));
     root.querySelectorAll("img[data-image-entity]").forEach(img=>{
       img.addEventListener("load",()=>{imageLoads++;updateImageDiagnostics();},{once:true});
       img.addEventListener("error",()=>{
@@ -108,11 +134,13 @@
   }
   Promise.all([
     fetch("./data/sports-hub.json?t="+Date.now(),{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("HTTP "+r.status);return r.json();}),
-    fetch("./data/image-library.json?t="+Date.now(),{cache:"no-store"}).then(r=>r.ok?r.json():{images:{}})
-  ]).then(([data,library])=>{
+    fetch("./data/image-library.json?t="+Date.now(),{cache:"no-store"}).then(r=>r.ok?r.json():{images:{}}),
+    fetch("./data/bkfc.json?t="+Date.now(),{cache:"no-store"}).then(r=>r.ok?r.json():{events:[]})
+  ]).then(([data,library,bkfc])=>{
     payload=data.sports||data;
     imageDiagnostics=data.image_diagnostics||{};
     localImages=library.images||{};
+    bkfcPayload=bkfc||{events:[]};
     render(active);
   }).catch(()=>{root.innerHTML='<p class="hub-empty">Standings and rankings are not available yet.</p>';});
   document.addEventListener("sports:select",e=>{if(e.detail&&e.detail.sport)render(e.detail.sport);});
