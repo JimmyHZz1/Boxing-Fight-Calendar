@@ -980,6 +980,7 @@
     "last_batch_at": null,
     "last_successful_batch_at": null,
     "last_rate_limited_at": null,
-    "history": []
+    "history": [],
+    "last_batch_rate_limited": false
   }
 }
