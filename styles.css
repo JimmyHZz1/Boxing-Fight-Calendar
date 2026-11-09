@@ -2140,3 +2140,34 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
 .games-featured-card a{display:inline-block;margin-top:14px;color:#8fc1ff;font-size:9px;font-weight:800;letter-spacing:1px;text-decoration:none}
 .games-featured-empty{grid-column:1/-1;padding:18px;border:1px dashed rgba(38,133,232,.35);color:var(--muted);font-size:12px}
 @media(max-width:699px){.games-aaa-up-next-list{grid-template-columns:1fr}.games-featured-card{padding:14px}}
+
+
+/* Games Calendar: compact continuously scrolling major-release ticker. */
+.games-up-next-strip{padding:11px 0 13px;margin:0 0 14px;border-top:1px solid rgba(38,133,232,.28);border-bottom:1px solid rgba(38,133,232,.35);overflow:hidden}
+.games-up-next-label{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:7px}
+.games-up-next-label>span:last-child{font-size:8px;letter-spacing:.9px;color:var(--muted);font-weight:800}
+.games-up-next-ticker{overflow:hidden;position:relative;width:100%;min-height:40px}
+.games-up-next-track{display:flex;width:max-content;animation:games-up-next-scroll 42s linear infinite;will-change:transform}
+.games-up-next-group{display:flex;align-items:stretch;flex:none;gap:9px;padding-right:9px}
+.games-up-next-item{display:flex;align-items:center;gap:9px;min-height:38px;padding:7px 12px;border:1px solid rgba(38,133,232,.32);border-left:3px solid #2685e8;background:linear-gradient(100deg,rgba(38,133,232,.12),rgba(23,29,39,.95));color:var(--text);text-decoration:none;white-space:nowrap}
+.games-up-next-item:focus-visible{outline:2px solid #62a7ff;outline-offset:2px}
+.games-up-next-date{font-size:8px;font-weight:900;letter-spacing:.7px;color:#8fc1ff}
+.games-up-next-name{font:800 16px/1 'Barlow Condensed',sans-serif;text-transform:uppercase}
+.games-up-next-platforms{font-size:8px;color:var(--muted);font-weight:700;letter-spacing:.4px}
+.games-up-next-loading{display:block;padding:10px 2px;color:var(--muted);font-size:10px}
+.games-up-next-ticker:hover .games-up-next-track,.games-up-next-ticker:focus-within .games-up-next-track{animation-play-state:paused}
+@keyframes games-up-next-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.games-up-next-ticker{overflow-x:auto;scrollbar-width:thin}.games-up-next-track{animation:none}.games-up-next-group[aria-hidden="true"]{display:none}}
+@media(max-width:699px){.games-up-next-strip{margin-bottom:10px}.games-up-next-label>span:last-child{font-size:7px}.games-up-next-item{gap:7px;padding:7px 9px}.games-up-next-name{font-size:15px}.games-up-next-platforms{font-size:7px}}
+
+
+/* Live Sports Centre: compact per-sport groups with optional expansion. */
+.live-upcoming-sport-group{min-width:0;padding:9px 0 10px;border-bottom:1px solid var(--line)}
+.live-upcoming-sport-group:last-child{border-bottom:0}
+.live-upcoming-sport-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0 2px 7px;color:var(--muted);font-size:9px;font-weight:900;letter-spacing:1px}
+.live-upcoming-sport-heading strong{color:var(--accent)}
+.live-upcoming-sport-list{margin-top:0;gap:7px}
+.live-upcoming-sport-list .live-centre-event[hidden]{display:none!important}
+.live-upcoming-expand{display:block;width:100%;min-height:38px;margin-top:7px;padding:8px 10px;border:1px solid var(--line);background:rgba(255,255,255,.025);color:var(--accent);font:800 9px 'DM Sans',sans-serif;letter-spacing:.8px;text-align:center;cursor:pointer}
+.live-upcoming-expand:hover,.live-upcoming-expand:focus-visible{border-color:var(--accent);background:rgba(226,180,91,.07)}
+@media(max-width:620px){.live-upcoming-sport-group{padding:7px 0}.live-upcoming-expand{min-height:42px}}

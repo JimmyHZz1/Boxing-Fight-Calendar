@@ -61,50 +61,54 @@
   const list = document.getElementById("games-recent-release-list");
   const status = document.getElementById("games-recent-release-status");
   if (!list) return;
-  const featuredList = document.getElementById("games-aaa-up-next-list");
+  const featuredTicker = document.getElementById("games-up-next-ticker");
   const renderFeaturedGames = items => {
-    if (!featuredList) return;
+    if (!featuredTicker) return;
     const today = new Intl.DateTimeFormat("en-CA", {timeZone:"Europe/London",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
     const upcoming = (Array.isArray(items) ? items : [])
       .filter(game => game && typeof game.release_date === "string" && game.release_date.length === 10 && game.release_date[4] === "-" && game.release_date[7] === "-" && game.release_date >= today)
-      .sort((a,b) => a.release_date.localeCompare(b.release_date))
-      .slice(0,3);
-    featuredList.replaceChildren();
+      .sort((a,b) => a.release_date.localeCompare(b.release_date));
+    featuredTicker.replaceChildren();
     if (!upcoming.length) {
-      const empty = document.createElement("p");
-      empty.className = "games-featured-empty";
-      empty.textContent = "No confirmed AAA+ release dates are currently listed. This section will update as major PC and console launch dates are verified.";
-      featuredList.append(empty);
+      const empty = document.createElement("span");
+      empty.className = "games-up-next-loading";
+      empty.textContent = "No confirmed major release dates currently listed.";
+      featuredTicker.append(empty);
       return;
     }
+    const track = document.createElement("div");
+    track.className = "games-up-next-track";
+    const group = document.createElement("div");
+    group.className = "games-up-next-group";
     upcoming.forEach(game => {
-      const card = document.createElement("article");
-      card.className = "games-featured-card";
-      const date = document.createElement("div");
-      date.className = "games-featured-date";
-      date.textContent = new Intl.DateTimeFormat("en-GB", {timeZone:"Europe/London",day:"numeric",month:"short",year:"numeric"}).format(new Date(game.release_date+"T12:00:00Z")).toUpperCase();
-      const title = document.createElement("h3");
-      title.textContent = game.title || "Upcoming release";
-      const platforms = document.createElement("div");
-      platforms.className = "games-featured-platforms";
-      (game.platforms || []).forEach(platform => {
-        const tag = document.createElement("span");
-        tag.textContent = platform;
-        platforms.append(tag);
-      });
-      card.append(date,title,platforms);
-      if (game.source_url && (game.source_url.startsWith("https://") || game.source_url.startsWith("http://"))) {
-        const source = document.createElement("a");
-        source.href = game.source_url;
-        source.target = "_blank";
-        source.rel = "noopener noreferrer";
-        source.textContent = "RELEASE DETAILS ↗";
-        card.append(source);
+      const item = document.createElement(game.source_url && (game.source_url.startsWith("https://") || game.source_url.startsWith("http://")) ? "a" : "span");
+      item.className = "games-up-next-item";
+      if (item.tagName === "A") {
+        item.href = game.source_url;
+        item.target = "_blank";
+        item.rel = "noopener noreferrer";
+        item.setAttribute("aria-label", "Release details for " + (game.title || "upcoming game"));
       }
-      featuredList.append(card);
+      const date = document.createElement("span");
+      date.className = "games-up-next-date";
+      date.textContent = new Intl.DateTimeFormat("en-GB", {timeZone:"Europe/London",day:"numeric",month:"short",year:"numeric"}).format(new Date(game.release_date+"T12:00:00Z")).toUpperCase();
+      const name = document.createElement("strong");
+      name.className = "games-up-next-name";
+      name.textContent = game.title || "Upcoming release";
+      const platforms = document.createElement("span");
+      platforms.className = "games-up-next-platforms";
+      platforms.textContent = Array.isArray(game.platforms) ? game.platforms.join(" · ") : "";
+      item.append(date,name,platforms);
+      group.append(item);
     });
+    track.append(group);
+    const duplicate = group.cloneNode(true);
+    duplicate.setAttribute("aria-hidden","true");
+    duplicate.querySelectorAll("a").forEach(link => link.setAttribute("tabindex","-1"));
+    track.append(duplicate);
+    featuredTicker.append(track);
   };
-  if (featuredList) {
+  if (featuredTicker) {
     fetch("./data/games-featured.json?t="+Date.now(), {cache:"no-store"})
       .then(response => { if (!response.ok) throw new Error("Featured game feed unavailable"); return response.json(); })
       .then(data => renderFeaturedGames(data.games))
