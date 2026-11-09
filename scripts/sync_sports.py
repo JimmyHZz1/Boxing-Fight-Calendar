@@ -1179,7 +1179,7 @@ def sync_sports_hub():
             "notice": "PDC Order of Merit prize money (rolling two-year ranking total), updated after PDC ranking events."
         }
     except Exception as exc:
-        hub["sports"]["darts"] = {**previous.get("darts", {"rankings": []}), "sync_warning": str(exc)}
+        hub["sports"]["darts"] = {**previous.get("darts", {"rankings": []}), "sync_warning": str(exc), "data_status": "stale", "sync_attempted_at": iso_now()}
 
     # UFC official divisional rankings and champion rows.
     try:
