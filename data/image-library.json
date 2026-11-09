@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-09T06:15:25Z",
+  "updated_at": "2026-11-09T12:52:30Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -640,6 +640,28 @@
       "creator": "Wikimedia Commons · Gobierno CDMX · CC0",
       "attribution": "Wikimedia Commons · Gobierno CDMX · CC0",
       "verified_at": "2026-11-09T06:14:52Z",
+      "sport": "ufc"
+    },
+    "david martinez": {
+      "name": "David Martinez",
+      "path": "assets/images/ufc/david-martinez.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:David_Martinez_Gotham_v_Portland_28_August_2026-008.jpg",
+      "licence": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "creator": "Wikimedia Commons · Bryan Berlin · CC BY-SA 4.0",
+      "attribution": "Wikimedia Commons · Bryan Berlin · CC BY-SA 4.0",
+      "verified_at": "2026-11-09T12:52:30Z",
+      "sport": "ufc"
+    },
+    "diego lopes": {
+      "name": "Diego Lopes",
+      "path": "assets/images/ufc/diego-lopes.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Diogo_Lopes_de_Sequeira_(Archaeological_Survey_of_India,_Goa).jpg",
+      "licence": "CC BY 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by/3.0",
+      "creator": "Wikimedia Commons · Sailko · CC BY 3.0",
+      "attribution": "Wikimedia Commons · Sailko · CC BY 3.0",
+      "verified_at": "2026-11-09T12:52:30Z",
       "sport": "ufc"
     }
   },

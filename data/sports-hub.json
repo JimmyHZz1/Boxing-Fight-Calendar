@@ -234,13 +234,33 @@
           "rank": 20,
           "name": "Yuki Tsunoda",
           "team": "RB F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/yuki-tsunoda.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Yuki_Tsunoda_Macau_2019.jpg",
+          "image_credit": "Wikimedia Commons · Smith007 · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "category:Category:Yuki Tsunoda in 2019",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/yuki-tsunoda.jpg"
         },
         {
           "rank": 21,
           "name": "Ryo Hirakawa",
           "team": "Haas F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/ryo-hirakawa.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Ryo_Hirakawa_2024_WEC_Fuji_1.jpg",
+          "image_credit": "Wikimedia Commons · Morio · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "search:Ryo Hirakawa",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/ryo-hirakawa.jpg"
         },
         {
           "rank": 22,
@@ -2884,7 +2904,17 @@
             {
               "rank": 8,
               "name": "David Martinez",
-              "image_url": null
+              "image_url": "./assets/images/ufc/david-martinez.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:David_Martinez_Gotham_v_Portland_28_August_2026-008.jpg",
+              "image_credit": "Wikimedia Commons · Bryan Berlin · CC BY-SA 4.0",
+              "image_license": "CC BY-SA 4.0",
+              "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "search:David Martinez",
+              "image_verified_at": "2026-11-09T12:52:30Z",
+              "image_local_path": "assets/images/ufc/david-martinez.jpg"
             },
             {
               "rank": 9,
@@ -2990,7 +3020,17 @@
             {
               "rank": 2,
               "name": "Diego Lopes",
-              "image_url": null
+              "image_url": "./assets/images/ufc/diego-lopes.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Diogo_Lopes_de_Sequeira_(Archaeological_Survey_of_India,_Goa).jpg",
+              "image_credit": "Wikimedia Commons · Sailko · CC BY 3.0",
+              "image_license": "CC BY 3.0",
+              "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "search:Diego Lopes",
+              "image_verified_at": "2026-11-09T12:52:30Z",
+              "image_local_path": "assets/images/ufc/diego-lopes.jpg"
             },
             {
               "rank": 3,
@@ -3010,7 +3050,17 @@
             {
               "rank": 6,
               "name": "Yair Rodriguez",
-              "image_url": null
+              "image_url": "./assets/images/ufc/yair-rodriguez.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Carrera_con_Yair_%22Pantera%22_Rodr%C3%ADguez_-i---i-_(30139082833).jpg",
+              "image_credit": "Wikimedia Commons · Gobierno CDMX · CC0",
+              "image_license": "CC0",
+              "image_license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+              "image_source": "Wikimedia Commons",
+              "image_match_score": 1,
+              "image_match_method": "category:Category:Yair Rodríguez",
+              "image_verified_at": "2026-11-09T06:14:52Z",
+              "image_local_path": "assets/images/ufc/yair-rodriguez.jpg",
+              "image_source_class": "licensed-third-party"
             },
             {
               "rank": 7,
@@ -4666,17 +4716,92 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 93,
-    "found": 92,
-    "missing": 456,
-    "rejected": 4,
-    "by_sport": {},
-    "newly_found": 0,
+    "attempted": 5,
+    "found": 99,
+    "missing": 616,
+    "rejected": 73,
+    "by_sport": {
+      "ufc": {
+        "attempted": 5,
+        "found": 2,
+        "missing": 3,
+        "rejected": 0
+      }
+    },
+    "rejection_reasons": {
+      "exact_name_pair_not_matched": 54,
+      "not_an_image": 19
+    },
+    "search_details": [
+      {
+        "name": "David Martinez",
+        "queries": 1,
+        "candidate_files": 20,
+        "accepted": 8,
+        "rejections": {
+          "exact_name_pair_not_matched": 10,
+          "not_an_image": 2
+        }
+      },
+      {
+        "name": "Diego Lopes",
+        "queries": 1,
+        "candidate_files": 20,
+        "accepted": 1,
+        "rejections": {
+          "exact_name_pair_not_matched": 19
+        }
+      },
+      {
+        "name": "Jean Silva",
+        "queries": 1,
+        "candidate_files": 20,
+        "accepted": 0,
+        "rejections": {
+          "exact_name_pair_not_matched": 20
+        }
+      },
+      {
+        "name": "Arnold Allen",
+        "queries": 1,
+        "candidate_files": 20,
+        "accepted": 0,
+        "rejections": {
+          "not_an_image": 15,
+          "exact_name_pair_not_matched": 5
+        }
+      },
+      {
+        "name": "Kevin Vallejos",
+        "queries": 1,
+        "candidate_files": 2,
+        "accepted": 0,
+        "rejections": {
+          "not_an_image": 2
+        }
+      }
+    ],
+    "checked_at": "2026-11-09T12:52:30Z",
+    "library_entries": 64,
+    "newly_found": 2,
+    "cumulative_attempted": 98,
+    "cumulative_found": 64,
+    "cumulative_missing": 34,
+    "cumulative_rejected": 77,
+    "batch_number": 1,
+    "last_batch_at": "2026-11-09T12:52:30Z",
+    "last_successful_batch_at": "2026-11-09T12:52:30Z",
+    "last_rate_limited_at": null,
     "coverage": {
+      "boxing fight card fighters": {
+        "total": 167,
+        "with_image": 2,
+        "missing": 165
+      },
       "f1 drivers": {
         "total": 25,
-        "with_image": 23,
-        "missing": 2
+        "with_image": 25,
+        "missing": 0
       },
       "f1 constructors": {
         "total": 11,
@@ -4690,8 +4815,8 @@
       },
       "ufc": {
         "total": 206,
-        "with_image": 8,
-        "missing": 198
+        "with_image": 11,
+        "missing": 195
       },
       "boxing": {
         "total": 81,
@@ -4699,16 +4824,6 @@
         "missing": 81
       }
     },
-    "checked_at": "2026-11-09T12:51:38Z",
-    "library_entries": 62,
-    "cumulative_found": 62,
-    "cumulative_missing": 31,
-    "cumulative_rejected": 4,
-    "batch_number": 0,
-    "last_batch_at": null,
-    "last_successful_batch_at": null,
-    "last_rate_limited_at": null,
-    "enrichment_status": "awaiting next scheduled batch",
     "rate_limited": false
   },
   "last_updated": "2026-11-09T12:51:38Z"

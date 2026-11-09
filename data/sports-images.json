@@ -838,9 +838,39 @@
       "image_verified_at": "2026-11-09T06:14:52Z",
       "image_local_path": "assets/images/ufc/yair-rodriguez.jpg",
       "image_source_class": "licensed-third-party"
+    },
+    "david martinez": {
+      "name": "David Martinez",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/david-martinez.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:David_Martinez_Gotham_v_Portland_28_August_2026-008.jpg",
+      "image_credit": "Wikimedia Commons · Bryan Berlin · CC BY-SA 4.0",
+      "image_license": "CC BY-SA 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "search:David Martinez",
+      "image_verified_at": "2026-11-09T12:52:30Z",
+      "image_local_path": "assets/images/ufc/david-martinez.jpg"
+    },
+    "diego lopes": {
+      "name": "Diego Lopes",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/diego-lopes.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Diogo_Lopes_de_Sequeira_(Archaeological_Survey_of_India,_Goa).jpg",
+      "image_credit": "Wikimedia Commons · Sailko · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "search:Diego Lopes",
+      "image_verified_at": "2026-11-09T12:52:30Z",
+      "image_local_path": "assets/images/ufc/diego-lopes.jpg"
     }
   },
-  "updated_at": "2026-11-09T12:51:38Z",
+  "updated_at": "2026-11-09T12:52:30Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -934,7 +964,12 @@
     "lerone murphy": "2026-11-09T06:14:52Z",
     "aljamain sterling": "2026-11-09T06:14:52Z",
     "yair rodriguez": "2026-11-09T06:14:52Z",
-    "youssef zalal": "2026-11-09T06:15:25Z"
+    "youssef zalal": "2026-11-09T06:15:25Z",
+    "david martinez": "2026-11-09T12:52:30Z",
+    "diego lopes": "2026-11-09T12:52:30Z",
+    "jean silva": "2026-11-09T12:52:30Z",
+    "arnold allen": "2026-11-09T12:52:30Z",
+    "kevin vallejos": "2026-11-09T12:52:30Z"
   },
   "audit": {
     "last_reviewed_at": "2026-11-09T12:15:00Z",
@@ -971,16 +1006,25 @@
     }
   },
   "enrichment": {
-    "batch_number": 0,
+    "batch_number": 1,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 93,
-    "cumulative_found": 62,
-    "cumulative_missing": 31,
-    "cumulative_rejected": 4,
-    "last_batch_at": null,
-    "last_successful_batch_at": null,
+    "cumulative_attempted": 98,
+    "cumulative_found": 64,
+    "cumulative_missing": 34,
+    "cumulative_rejected": 77,
+    "last_batch_at": "2026-11-09T12:52:30Z",
+    "last_successful_batch_at": "2026-11-09T12:52:30Z",
     "last_rate_limited_at": null,
-    "history": [],
+    "history": [
+      {
+        "batch": 1,
+        "at": "2026-11-09T12:52:30Z",
+        "attempted": 5,
+        "found": 2,
+        "missing": 3,
+        "rate_limited": false
+      }
+    ],
     "last_batch_rate_limited": false
   }
 }
