@@ -1,9 +1,9 @@
-const CACHE="sports-calendar-v101";
+const CACHE="sports-calendar-v102";
 const APP_FILES=[
   "./",
   "./index.html",
-  "./styles.css?v=20261109-11",
-  "./app.js?v=20261109-01",
+  "./styles.css?v=20261109-14",
+  "./app.js?v=20261109-02",
   "./sports-data.js?v=20261109-02",
   "./sports.js?v=20261107-09",
   "./sports-hub.js?v=20261109-06",
@@ -15,8 +15,8 @@ const APP_FILES=[
   "./ui-refresh.js?v=20261109-01",
   "./home-next-up.js?v=20261109-01",
   "./version-history.js?v=20261109-01",
-  "./f1-grand-prix-centre.js?v=20261109-02",
-  "./games-calendar.js?v=20261109-01",
+  "./f1-grand-prix-centre.js?v=20261109-03",
+  "./games-calendar.js?v=20261109-02",
   "./manifest.json"
 ];
 const DATA_PATHS=["/data/fights.json","/data/fighter-images.json","/data/event-fighter-images.json","/data/f1.json","/data/darts.json","/data/ufc.json","/data/bkfc.json","/data/sports-hub.json","/data/sports-images.json","/data/image-library.json"];

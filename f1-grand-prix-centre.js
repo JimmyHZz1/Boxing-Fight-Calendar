@@ -40,46 +40,19 @@ async function loadCircuitAssets(){
   const meeting=meetings.find(x=>norm(x.meeting_name)===meetingName)
    ||meetings.find(x=>norm(x.circuit_short_name)===circuitName&&norm(x.country_name)===country)
    ||meetings.find(x=>norm(x.location)===locality&&norm(x.country_name)===country);
-  const assets={eventId:e.id,map:meeting?.circuit_image||"",mapSource:"OpenF1 circuit directory",photo:null};
-  if(meeting){
-   const search=(meeting.circuit_short_name||e.circuit)+" circuit aerial view";
-   const params=new URLSearchParams({action:"query",generator:"search",gsrsearch:search,gsrnamespace:"6",gsrlimit:"10",prop:"imageinfo",iiprop:"url|extmetadata",iiurlwidth:"1600",format:"json",origin:"*"});
-   const photoResponse=await fetch("https://commons.wikimedia.org/w/api.php?"+params.toString());
-   if(photoResponse.ok){
-    const payload=await photoResponse.json(),pages=Object.values(payload.query?.pages||{});
-    const aerial=pages.find(p=>/aerial|overhead|satellite|from above|bird.?s.?eye|air view/i.test(p.title||""));
-    if(aerial?.imageinfo?.[0]){
-     const info=aerial.imageinfo[0],meta=info.extmetadata||{};
-     assets.photo={src:info.thumburl||info.url,title:String(aerial.title||"").replace(/^File:/,""),page:info.descriptionurl||"",artist:cleanMeta(meta.Artist?.value||meta.Credit?.value||""),license:cleanMeta(meta.LicenseShortName?.value||meta.UsageTerms?.value||"")};
-    }
-   }
-  }
+  const assets={eventId:e.id,map:meeting?.circuit_image||"",mapSource:"OpenF1 circuit directory",meeting:meeting||null};
   state.circuitAssets=assets;
-  if(!assets.map&&!assets.photo)state.circuitError="No verified circuit visuals were returned for this Grand Prix.";
-  else if(!assets.photo)state.circuitError="No clearly labelled overhead photograph was found for this circuit yet.";
+  if(!assets.map)state.circuitError="A verified circuit layout is not available for this event.";
  }catch(err){state.circuitError=err.message||"Circuit visuals are temporarily unavailable.";}
  finally{state.circuitLoading=false;render();}
 }
 function circuitVisuals(){
- const wrap=el("div","f1-gp-visuals"),tabs=el("div","f1-gp-tabs");
- [["layout","TRACK LAYOUT"],["photo","OVERHEAD PHOTO"]].forEach(([mode,label])=>{
-  const b=el("button","",label);b.type="button";b.setAttribute("aria-pressed",String(state.visualMode===mode));b.addEventListener("click",()=>{state.visualMode=mode;render();});tabs.append(b);
- });
- wrap.append(tabs);
+ const wrap=el("div","f1-gp-visuals");
  const stage=el("div","f1-gp-visual-stage");
  const assets=state.circuitAssets?.eventId===state.event?.id?state.circuitAssets:null;
- if(state.circuitLoading){stage.append(el("div","f1-gp-empty","Loading verified circuit visuals…"));}
- else if(state.visualMode==="layout"){
-  if(assets?.map){const img=el("img","f1-gp-circuit-map");img.src=assets.map;img.alt=(state.event.circuit||"Grand Prix")+" circuit layout";img.loading="lazy";img.referrerPolicy="no-referrer";stage.append(img);stage.append(el("p","f1-gp-footnote","Circuit layout image supplied through the OpenF1 meeting feed."));}
-  else stage.append(el("div","f1-gp-empty",state.circuitError||"A verified track layout is not available for this event."));
- }else if(assets?.photo){
-  const img=el("img","f1-gp-overhead-photo");img.src=assets.photo.src;img.alt=assets.photo.title||((state.event.circuit||"Circuit")+" overhead aerial photograph");img.loading="lazy";img.referrerPolicy="no-referrer";img.addEventListener("error",()=>{stage.replaceChildren(el("div","f1-gp-empty","The selected overhead image could not be loaded."));});stage.append(img);
-  const credit=el("div","f1-gp-image-credit");
-  const source=el("a","",assets.photo.title||"Image source");source.href=assets.photo.page;source.target="_blank";source.rel="noopener noreferrer";credit.append(source);
-  if(assets.photo.artist)credit.append(el("span","", " · "+assets.photo.artist));
-  if(assets.photo.license)credit.append(el("span","", " · "+assets.photo.license));
-  stage.append(credit);
- }else stage.append(el("div","f1-gp-empty",state.circuitError||"No clearly identified overhead photograph is available for this circuit yet."));
+ if(state.circuitLoading){stage.append(el("div","f1-gp-empty","Loading verified circuit layout…"));}
+ else if(assets?.map){const img=el("img","f1-gp-circuit-map");img.src=assets.map;img.alt=(state.event.circuit||"Grand Prix")+" circuit layout";img.loading="lazy";img.referrerPolicy="no-referrer";stage.append(img);stage.append(el("p","f1-gp-footnote","Official circuit layout image supplied through the OpenF1 meeting feed."));}
+ else stage.append(el("div","f1-gp-empty",state.circuitError||"A verified track layout is not available for this event."));
  wrap.append(stage);return wrap;
 }
 
@@ -93,7 +66,15 @@ function render(){
  const grid=el("div","f1-gp-grid"),schedule=panel(grid,"Weekend schedule",true),list=el("div","f1-gp-session-list");
  if(!ss.length)list.append(el("div","f1-gp-empty","No session timetable is available."));
  ss.forEach((s,i)=>{const row=el("article","f1-gp-session"+(next&&s._i===next._i?" is-next":"")),info=el("div","");info.append(el("div","f1-gp-session-name",s.name),el("span","f1-gp-session-time",fmt(s.start_at||s.date)));const actions=el("div","f1-gp-session-actions"),rows=resultRows(e,s.name),status=el("span","f1-gp-status"+(rows.length?" done":next&&s._i===next._i?" next":""),rows.length?"RESULTS":s._date<Date.now()?"TIME PASSED · NO RESULT":"SCHEDULED");const view=el("button","","VIEW");view.type="button";view.addEventListener("click",()=>{state.session=i;render();document.getElementById("f1-gp-session-centre")?.scrollIntoView({behavior:"smooth"});});const rem=el("button","","＋ REMIND");rem.type="button";rem.setAttribute("aria-pressed",String(reminderSet(e,s)));rem.addEventListener("click",()=>setReminder(e,s));actions.append(status,view,rem);row.append(info,actions);list.append(row);});schedule.append(list);
- const circuit=panel(grid,"Circuit");circuit.append(el("p","f1-gp-meta",[e.circuit,e.locality,e.country].filter(Boolean).join(" · ")),circuitVisuals());const facts=el("div","f1-gp-facts");[["ROUND",e.round||"—"],["LOCATION",[e.locality,e.country].filter(Boolean).join(", ")||"—"],["LENGTH","Not supplied"],["RACE LAPS","Not supplied"],["LAP RECORD","Not supplied"],["DRS ZONES","Not supplied"]].forEach(([k,v])=>{const x=el("div","f1-gp-fact");x.append(el("strong","",String(v)),el("small","",k));facts.append(x);});circuit.append(facts,el("p","f1-gp-footnote","Technical statistics are shown only when verified metadata is available."));
+ const circuit=panel(grid,"Circuit");circuit.append(el("p","f1-gp-meta",[e.circuit,e.locality,e.country].filter(Boolean).join(" · ")),circuitVisuals());const facts=el("div","f1-gp-facts");const meeting=state.circuitAssets?.eventId===e.id?state.circuitAssets.meeting:null;const circuitFacts=[
+ ["GRAND PRIX",e.name||"—"],["ROUND",e.round||"—"],["LOCATION",[e.locality,e.country].filter(Boolean).join(", ")||"—"],
+ ["CIRCUIT TYPE",meeting?.circuit_type||"Not supplied"],["CIRCUIT NAME",meeting?.circuit_short_name||e.circuit||"—"],
+ ["RACE DATE",e.date?new Intl.DateTimeFormat("en-GB",{day:"numeric",month:"long",year:"numeric",timeZone:"UTC"}).format(new Date(e.date+"T00:00:00Z")):"Not confirmed"],
+ ["TRACK LENGTH",e.circuit_length_km?e.circuit_length_km+" km":e.length_km?e.length_km+" km":"Not supplied"],
+ ["NUMBER OF TURNS",e.turns||e.number_of_turns||"Not supplied"],
+ ["RACE DISTANCE",e.race_distance_km?e.race_distance_km+" km":"Not supplied"],
+ ["LAP RECORD",e.lap_record||"Not supplied"]
+];circuitFacts.forEach(([k,v])=>{const x=el("div","f1-gp-fact");x.append(el("strong","",String(v)),el("small","",k));facts.append(x);});circuit.append(facts,el("p","f1-gp-footnote","Track specifications are displayed only when present in verified event or circuit metadata; unpublished figures are not guessed."));
  const wx=panel(grid,"Weather");if(state.busy)wx.append(el("div","f1-gp-empty","Checking forecast…"));else if(state.weather)wx.append(weatherCard(state.weather));else{wx.append(el("div","f1-gp-empty","Forecast is available only when the event date falls within the provider's forecast window."));const b=el("button","f1-gp-inline-button","CHECK WEATHER");b.type="button";b.addEventListener("click",loadWeather);wx.append(b);}wx.append(el("p","f1-gp-footnote","Open-Meteo forecast · not live track telemetry."));
  const favourite=panel(grid,"Your F1 favourites");if(f.length)f.forEach(x=>{const line=el("div","f1-gp-favourite");line.append(el("span","",x.name),el("b","",x.type==="team"?"CONSTRUCTOR":"DRIVER"));favourite.append(line);});else favourite.append(el("div","f1-gp-empty","Add drivers or constructors in the existing Favourites page. They will be highlighted in verified classifications."));
  const reminder=panel(grid,"Session reminders"),controls=el("div","f1-gp-reminder-controls"),data=read(REM)||{lead:15,items:[]},lead=el("select","");[15,30,60].forEach(n=>{const o=el("option","",n+" minutes before");o.value=String(n);o.selected=Number(data.lead||15)===n;lead.append(o);});lead.addEventListener("change",()=>{const d=read(REM)||{items:[]};d.lead=Number(lead.value);save(REM,d);});const notify=el("button","f1-gp-inline-button",("Notification"in window&&Notification.permission==="granted")?"NOTIFICATIONS ENABLED":"ENABLE BROWSER NOTIFICATIONS");notify.type="button";notify.addEventListener("click",enableNotifications);controls.append(lead,notify);reminder.append(controls);const saved=(data.items||[]).filter(x=>x.eventId===e.id);reminder.append(el("div","f1-gp-empty",saved.length?saved.length+" reminder(s) saved for this Grand Prix.":"No reminders saved for this Grand Prix."),el("p","f1-gp-footnote","In-app and browser alerts are checked while the PWA is open. iOS may not deliver scheduled alerts while the app is closed; background delivery is not guaranteed."));
