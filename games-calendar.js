@@ -62,11 +62,23 @@
   const status = document.getElementById("games-recent-release-status");
   if (!list) return;
   const featuredTicker = document.getElementById("games-up-next-ticker");
+  const releaseCountdown = releaseDate => {
+    const target = new Date(releaseDate + "T00:00:00");
+    const remaining = target.getTime() - Date.now();
+    if (!Number.isFinite(remaining)) return "DATE TBC";
+    if (remaining <= 0) return "RELEASE DAY";
+    const days = Math.floor(remaining / 86400000);
+    const hours = Math.floor((remaining % 86400000) / 3600000);
+    const minutes = Math.floor((remaining % 3600000) / 60000);
+    if (days > 0) return "IN " + days + "D " + hours + "H";
+    if (hours > 0) return "IN " + hours + "H " + minutes + "M";
+    return "IN " + minutes + "M";
+  };
   const renderFeaturedGames = items => {
     if (!featuredTicker) return;
     const today = new Intl.DateTimeFormat("en-CA", {timeZone:"Europe/London",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
     const upcoming = (Array.isArray(items) ? items : [])
-      .filter(game => game && typeof game.release_date === "string" && game.release_date.length === 10 && game.release_date[4] === "-" && game.release_date[7] === "-" && game.release_date >= today)
+      .filter(game => game && typeof game.release_date === "string" && /^\\d{4}-\\d{2}-\\d{2}$/.test(game.release_date) && game.release_date >= today)
       .sort((a,b) => a.release_date.localeCompare(b.release_date));
     featuredTicker.replaceChildren();
     if (!upcoming.length) {
@@ -76,12 +88,8 @@
       featuredTicker.append(empty);
       return;
     }
-    const track = document.createElement("div");
-    track.className = "games-up-next-track";
-    const group = document.createElement("div");
-    group.className = "games-up-next-group";
     upcoming.forEach(game => {
-      const item = document.createElement(game.source_url && (game.source_url.startsWith("https://") || game.source_url.startsWith("http://")) ? "a" : "span");
+      const item = document.createElement(game.source_url && /^https?:\\/\\//i.test(game.source_url) ? "a" : "article");
       item.className = "games-up-next-item";
       if (item.tagName === "A") {
         item.href = game.source_url;
@@ -89,30 +97,54 @@
         item.rel = "noopener noreferrer";
         item.setAttribute("aria-label", "Release details for " + (game.title || "upcoming game"));
       }
+      const logoWrap = document.createElement("span");
+      logoWrap.className = "games-up-next-logo";
+      if (game.logo_url && /^https:\\/\\//i.test(game.logo_url)) {
+        const logo = document.createElement("img");
+        logo.src = game.logo_url;
+        logo.alt = (game.title || "Game") + " logo";
+        logo.loading = "lazy";
+        logo.onerror = () => {
+          logo.remove();
+          logoWrap.textContent = String(game.short_name || game.title || "GAME").split(/\\s+/).map(word => word[0]).join("").slice(0,3).toUpperCase();
+          logoWrap.classList.add("games-up-next-logo-fallback");
+        };
+        logoWrap.append(logo);
+      } else {
+        logoWrap.textContent = String(game.short_name || game.title || "GAME").split(/\\s+/).map(word => word[0]).join("").slice(0,3).toUpperCase();
+        logoWrap.classList.add("games-up-next-logo-fallback");
+      }
+      const info = document.createElement("span");
+      info.className = "games-up-next-info";
       const date = document.createElement("span");
       date.className = "games-up-next-date";
       date.textContent = new Intl.DateTimeFormat("en-GB", {timeZone:"Europe/London",day:"numeric",month:"short",year:"numeric"}).format(new Date(game.release_date+"T12:00:00Z")).toUpperCase();
       const name = document.createElement("strong");
       name.className = "games-up-next-name";
       name.textContent = game.title || "Upcoming release";
+      const countdown = document.createElement("span");
+      countdown.className = "games-up-next-countdown";
+      countdown.dataset.releaseDate = game.release_date;
+      countdown.textContent = releaseCountdown(game.release_date);
       const platforms = document.createElement("span");
       platforms.className = "games-up-next-platforms";
       platforms.textContent = Array.isArray(game.platforms) ? game.platforms.join(" · ") : "";
-      item.append(date,name,platforms);
-      group.append(item);
+      info.append(date,name,countdown,platforms);
+      item.append(logoWrap,info);
+      featuredTicker.append(item);
     });
-    track.append(group);
-    const duplicate = group.cloneNode(true);
-    duplicate.setAttribute("aria-hidden","true");
-    duplicate.querySelectorAll("a").forEach(link => link.setAttribute("tabindex","-1"));
-    track.append(duplicate);
-    featuredTicker.append(track);
+  };
+  const updateReleaseCountdowns = () => {
+    featuredTicker?.querySelectorAll("[data-release-date]").forEach(node => {
+      node.textContent = releaseCountdown(node.dataset.releaseDate);
+    });
   };
   if (featuredTicker) {
     fetch("./data/games-featured.json?t="+Date.now(), {cache:"no-store"})
       .then(response => { if (!response.ok) throw new Error("Featured game feed unavailable"); return response.json(); })
-      .then(data => renderFeaturedGames(data.games))
+      .then(data => { renderFeaturedGames(data.games); updateReleaseCountdowns(); })
       .catch(() => renderFeaturedGames([]));
+    window.setInterval(updateReleaseCountdowns, 60000);
   }
   const API_URL = "https://api.github.com/repos/JimmyHZz1/Boxing-Fight-Calendar/pulls?state=closed&sort=updated&direction=desc&per_page=100";
   const CACHE_KEY = "gamesCalendarMergedHistoryV1";
