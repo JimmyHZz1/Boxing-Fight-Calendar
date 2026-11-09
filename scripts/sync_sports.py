@@ -1221,7 +1221,9 @@ def sync_sports_hub():
     IMAGE_DIAGNOSTICS["last_batch_at"] = state.get("last_batch_at")
     IMAGE_DIAGNOSTICS["last_successful_batch_at"] = state.get("last_successful_batch_at")
     IMAGE_DIAGNOSTICS["last_rate_limited_at"] = state.get("last_rate_limited_at")
-    IMAGE_DIAGNOSTICS["enrichment_status"] = "paused after rate limit" if state.get("last_rate_limited_at") and (not state.get("last_successful_batch_at") or state.get("last_rate_limited_at") > state.get("last_successful_batch_at")) else "running / awaiting next batch"
+    paused = bool(state.get("last_rate_limited_at") and (not state.get("last_successful_batch_at") or state.get("last_rate_limited_at") > state.get("last_successful_batch_at")))
+    IMAGE_DIAGNOSTICS["enrichment_status"] = "paused after rate limit" if paused else "awaiting next scheduled batch"
+    IMAGE_DIAGNOSTICS["rate_limited"] = paused
     hub["image_diagnostics"] = IMAGE_DIAGNOSTICS
     save_image_library()
     save("sports-hub.json", hub)
