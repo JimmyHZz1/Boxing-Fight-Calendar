@@ -1,18 +1,19 @@
-const CACHE="sports-calendar-v92";
+const CACHE="sports-calendar-v93";
 const APP_FILES=[
   "./",
   "./index.html",
-  "./styles.css?v=20261109-02",
+  "./styles.css?v=20261109-03",
   "./app.js?v=20261108-43",
   "./sports-data.js?v=20261109-02",
   "./sports.js?v=20261107-09",
   "./sports-hub.js?v=20261109-02",
   "./sports-nav.js?v=20261108-07",
   "./sport-pages.js?v=20261109-02",
-  "./sports-v11.js?v=20261109-03",
+  "./sports-v11.js?v=20261109-04",
   "./sports-weekend.js?v=20261108-02",
   "./favourites.js?v=20261108-04",
   "./ui-refresh.js?v=20261109-01",
+  "./home-next-up.js?v=20261109-01",
   "./manifest.json"
 ];
 const DATA_PATHS=["/data/fights.json","/data/fighter-images.json","/data/event-fighter-images.json","/data/f1.json","/data/darts.json","/data/ufc.json","/data/bkfc.json","/data/sports-hub.json","/data/sports-images.json","/data/image-library.json"];
