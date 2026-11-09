@@ -2,6 +2,7 @@ name: Validate sports calendar
 
 on:
   pull_request:
+  workflow_dispatch:
   push:
     branches:
       - stage-1-four-sport-foundation

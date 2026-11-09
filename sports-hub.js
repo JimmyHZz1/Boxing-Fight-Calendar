@@ -30,11 +30,12 @@
     const officialPdc = item.image_source==="PDC Europe" || item.image_match_method==="official-pdc-tour-card-photo";
     const localPath = !officialF1 && !officialPdc && local && local.path ? "./"+String(local.path).replace(/^[/]+/,"") : (!officialF1 && !officialPdc && item.image_url && item.image_url.startsWith("./assets/") ? item.image_url : "");
     const constructor = label==="Constructor";
-    const broadcastLogo = constructor ? constructorLogoPath(item.name) : "";
-    const source = broadcastLogo ? "https://raw.githubusercontent.com/JimmyHZz1/Boxing-Fight-Calendar/main/assets/images/f1-constructors/"+broadcastLogo : (officialF1 || officialPdc) ? item.image_url : (localPath ? "https://raw.githubusercontent.com/JimmyHZz1/Boxing-Fight-Calendar/main/"+String(local?.path || item.image_url).replace(/^\.\//,"").replace(/^\//,"") : item.image_url);
+    const source = constructor ? "" : (officialF1 || officialPdc) ? item.image_url : (localPath ? "https://raw.githubusercontent.com/JimmyHZz1/Boxing-Fight-Calendar/main/"+String(local?.path || item.image_url).replace(/^\.\//,"").replace(/^\//,"") : item.image_url);
     const credit = (officialPdc || officialF1) ? item.image_credit : (local?.attribution || item.image_credit);
     const fallback = constructor ? constructorWordmark(item.name) : initials(item.name);
-    const img = source ? '<img class="'+(constructor?'hub-constructor-logo':'hub-driver-portrait'+(officialF1?' hub-driver-portrait-official-f1':''))+'" src="'+esc(source)+'" alt="'+esc(item.name+(constructor?" constructor logo":" portrait"))+'" loading="lazy" data-image-kind="'+(constructor?'constructor':'driver')+'" data-official-pdc="' + (officialPdc?"1":"0") + '" data-official-f1="'+(officialF1?"1":"0")+'" data-image-entity="'+esc(item.name||"") + '" data-image-fallback="'+esc(fallback)+'">' : (constructor ? '<span class="hub-constructor-fallback">'+esc(fallback)+'</span>' : '<span class="hub-avatar-fallback hub-driver-fallback">'+esc(fallback)+'</span>');
+    const img = constructor
+      ? '<span class="hub-constructor-broadcast" style="--team-color:'+esc(constructorColour(item.name))+'" role="img" aria-label="'+esc(item.name)+' F1 television timing-board mark">'+constructorBadge(item.name)+'</span>'
+      : source ? '<img class="hub-driver-portrait'+(officialF1?' hub-driver-portrait-official-f1':'')+'" src="'+esc(source)+'" alt="'+esc(item.name+" portrait")+'" loading="lazy" data-image-kind="driver" data-official-pdc="' + (officialPdc?"1":"0") + '" data-official-f1="'+(officialF1?"1":"0")+'" data-image-entity="'+esc(item.name||"") + '" data-image-fallback="'+esc(fallback)+'">' : '<span class="hub-avatar-fallback hub-driver-fallback">'+esc(fallback)+'</span>';
     const rank = item.rank != null ? (item.rank===0 ? "C" : "#"+item.rank) : (index+1);
     const extra = [item.team,item.prize_money?moneyLabel(item.prize_money):(item.points!=null?item.points+" pts":null),item.org,credit].filter(Boolean).join(" · ");
     return '<div class="hub-person'+(label==="Player" && officialPdc?' hub-pdc-player':'')+'">'+img+'<span class="hub-rank">'+esc(rank)+'</span><span class="hub-person-name"><strong>'+esc(item.name||"TBC")+'</strong><small>'+esc(extra||label||"")+'</small></span></div>';
@@ -48,7 +49,7 @@
       const columnCount=window.matchMedia("(min-width: 1200px)").matches?3:2;
       const perColumn=Math.ceil(list.length/columnCount);
       const columns=Array.from({length:columnCount},(_,column)=>'<div class="hub-ranking-column">'+list.slice(column*perColumn,(column+1)*perColumn).map((x,i)=>person(x,column*perColumn+i,label)).join("")+'</div>').join("");
-      content='<div class="hub-ranking-columns">'+columns+'</div>';
+      content='<div class="hub-ranking-columns" style="grid-template-columns:repeat('+columnCount+',minmax(0,1fr))">'+columns+'</div>';
     }else{
       content=list.length?list.map((x,i)=>person(x,i,label)).join(""):'<p class="hub-empty">No published data available yet.</p>';
     }
@@ -115,6 +116,7 @@
   }
   function render(sport=active) {
     active=sport;
+    root.dataset.activeSport=sport;
     root.innerHTML=panel(sport);
     root.querySelectorAll("[data-hub-sport]").forEach(button=>button.addEventListener("click",()=>render(button.dataset.hubSport)));
     root.querySelectorAll("img[data-image-entity]").forEach(img=>{
