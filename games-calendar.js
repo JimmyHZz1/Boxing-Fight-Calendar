@@ -78,7 +78,7 @@
     if (!featuredTicker) return;
     const today = new Intl.DateTimeFormat("en-CA", {timeZone:"Europe/London",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
     const upcoming = (Array.isArray(items) ? items : [])
-      .filter(game => game && typeof game.release_date === "string" && /^\\d{4}-\\d{2}-\\d{2}$/.test(game.release_date) && game.release_date >= today)
+      .filter(game => game && typeof game.release_date === "string" && game.release_date.length === 10 && game.release_date[4] === "-" && game.release_date[7] === "-" && game.release_date >= today)
       .sort((a,b) => a.release_date.localeCompare(b.release_date));
     featuredTicker.replaceChildren();
     if (!upcoming.length) {
@@ -89,7 +89,7 @@
       return;
     }
     upcoming.forEach(game => {
-      const item = document.createElement(game.source_url && /^https?:\\/\\//i.test(game.source_url) ? "a" : "article");
+      const item = document.createElement(game.source_url && (game.source_url.startsWith("https://") || game.source_url.startsWith("http://")) ? "a" : "article");
       item.className = "games-up-next-item";
       if (item.tagName === "A") {
         item.href = game.source_url;
@@ -99,14 +99,14 @@
       }
       const logoWrap = document.createElement("span");
       logoWrap.className = "games-up-next-logo";
-      if (game.logo_url && /^https:\\/\\//i.test(game.logo_url)) {
+      if (game.logo_url && game.logo_url.startsWith("https://")) {
         const logo = document.createElement("img");
         logo.src = game.logo_url;
         logo.alt = (game.title || "Game") + " logo";
         logo.loading = "lazy";
         logo.onerror = () => {
           logo.remove();
-          logoWrap.textContent = String(game.short_name || game.title || "GAME").split(/\\s+/).map(word => word[0]).join("").slice(0,3).toUpperCase();
+          logoWrap.textContent = String(game.short_name || game.title || "GAME").split(" ").map(word => word[0]).join("").slice(0,3).toUpperCase();
           logoWrap.classList.add("games-up-next-logo-fallback");
         };
         logoWrap.append(logo);
