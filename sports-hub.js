@@ -31,8 +31,16 @@
   }
   function dropdown(title, items, label, max=30) {
     const list=(items||[]).slice(0,max);
-    const rankingClass = title==="PDC Order of Merit" ? " hub-dropdown-list-ranking" : "";
-    return '<details class="hub-dropdown"><summary>'+esc(title)+'<span>'+list.length+' ENTRIES</span></summary><div class="hub-dropdown-list'+rankingClass+'">'+(list.length?list.map((x,i)=>person(x,i,label)).join(""):'<p class="hub-empty">No published data available yet.</p>')+'</div></details>';
+    const isRanking=title==="PDC Order of Merit";
+    let content="";
+    if(isRanking){
+      const left=list.slice(0,20).map((x,i)=>person(x,i,label)).join("");
+      const right=list.slice(20,40).map((x,i)=>person(x,i+20,label)).join("");
+      content='<div class="hub-ranking-columns"><div class="hub-ranking-column">'+left+'</div><div class="hub-ranking-column">'+right+'</div></div>';
+    }else{
+      content=list.length?list.map((x,i)=>person(x,i,label)).join(""):'<p class="hub-empty">No published data available yet.</p>';
+    }
+    return '<details class="hub-dropdown"><summary>'+esc(title)+'<span>'+list.length+' ENTRIES</span></summary><div class="hub-dropdown-list'+(isRanking?' hub-dropdown-list-ranking':'')+'">'+content+'</div></details>';
   }
   function panel(sport) {
     const d=payload[sport]||{};
