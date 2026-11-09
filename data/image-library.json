@@ -576,17 +576,6 @@
       "verified_at": "2026-11-08T20:18:56Z",
       "sport": "ufc"
     },
-    "david martinez": {
-      "name": "David Martinez",
-      "path": "assets/images/ufc/david-martinez.png",
-      "source_url": "https://commons.wikimedia.org/wiki/File:David_Garc%C3%ADa_Mart%C3%ADnez,_consultor_SEO.png",
-      "licence": "CC BY-SA 4.0",
-      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
-      "creator": "Wikimedia Commons · David García Martínez · CC BY-SA 4.0",
-      "attribution": "Wikimedia Commons · David García Martínez · CC BY-SA 4.0",
-      "verified_at": "2026-11-09T00:10:34Z",
-      "sport": "ufc"
-    },
     "aiemann zahabi": {
       "name": "Aiemann Zahabi",
       "path": "assets/images/ufc/aiemann-zahabi.png",
@@ -642,28 +631,6 @@
       "verified_at": "2026-11-09T00:11:07Z",
       "sport": "ufc"
     },
-    "diego lopes": {
-      "name": "Diego Lopes",
-      "path": "assets/images/ufc/diego-lopes.jpg",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Diogo_Lopes_de_Sequeira_(Archaeological_Survey_of_India,_Goa).jpg",
-      "licence": "CC BY 3.0",
-      "licence_url": "https://creativecommons.org/licenses/by/3.0",
-      "creator": "Wikimedia Commons · Sailko · CC BY 3.0",
-      "attribution": "Wikimedia Commons · Sailko · CC BY 3.0",
-      "verified_at": "2026-11-09T06:14:52Z",
-      "sport": "ufc"
-    },
-    "jean silva": {
-      "name": "Jean Silva",
-      "path": "assets/images/ufc/jean-silva.jpg",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Fernando_de_Silva_y_Alvarez_of_Toledo,_12th_Duke_of_Alba_(1714-1776),_by_Jean-Marc_Nattier.jpg",
-      "licence": "Public domain",
-      "licence_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
-      "creator": "Wikimedia Commons · Jean-Marc Nattier · Public domain",
-      "attribution": "Wikimedia Commons · Jean-Marc Nattier · Public domain",
-      "verified_at": "2026-11-09T06:14:52Z",
-      "sport": "ufc"
-    },
     "yair rodriguez": {
       "name": "Yair Rodriguez",
       "path": "assets/images/ufc/yair-rodriguez.jpg",
@@ -673,17 +640,6 @@
       "creator": "Wikimedia Commons · Gobierno CDMX · CC0",
       "attribution": "Wikimedia Commons · Gobierno CDMX · CC0",
       "verified_at": "2026-11-09T06:14:52Z",
-      "sport": "ufc"
-    },
-    "arnold allen": {
-      "name": "Arnold Allen",
-      "path": "assets/images/ufc/arnold-allen.jpg",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Mrs._Allen_Gouverneur_Wellman_(Frances_Alexander)._Genthe,_Vogue_1919.jpg",
-      "licence": "Public domain",
-      "licence_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
-      "creator": "Wikimedia Commons · Arnold Genthe · Public domain",
-      "attribution": "Wikimedia Commons · Arnold Genthe · Public domain",
-      "verified_at": "2026-11-09T06:15:25Z",
       "sport": "ufc"
     }
   },
@@ -719,5 +675,41 @@
       "priority": 2
     }
   },
-  "batch_requested_at": "2026-11-08T13:36:00Z"
+  "batch_requested_at": "2026-11-08T13:36:00Z",
+  "enrichment": {
+    "batch_number": 0,
+    "cumulative_attempted": 0,
+    "cumulative_found": 0,
+    "cumulative_missing": 0,
+    "last_batch_at": null,
+    "last_successful_batch_at": null,
+    "last_rate_limited_at": null,
+    "history": []
+  },
+  "audit": {
+    "last_reviewed_at": "2026-11-09T12:00:00Z",
+    "notes": "Four UFC portrait entries quarantined after source-title identity mismatch. New portrait matches require an adjacent exact name pair in the same source field.",
+    "quarantined": {
+      "david martinez": {
+        "name": "David Martinez",
+        "reason": "Source file title does not identify this athlete",
+        "quarantined_at": "2026-11-09T12:00:00Z"
+      },
+      "diego lopes": {
+        "name": "Diego Lopes",
+        "reason": "Source file title does not identify this athlete",
+        "quarantined_at": "2026-11-09T12:00:00Z"
+      },
+      "jean silva": {
+        "name": "Jean Silva",
+        "reason": "Source file title does not identify this athlete",
+        "quarantined_at": "2026-11-09T12:00:00Z"
+      },
+      "arnold allen": {
+        "name": "Arnold Allen",
+        "reason": "Source file title does not identify this athlete",
+        "quarantined_at": "2026-11-09T12:00:00Z"
+      }
+    }
+  }
 }
