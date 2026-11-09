@@ -171,7 +171,7 @@
       }
       track.style.setProperty("--ticker-distance", loopDistance + "px");
       track.style.setProperty("--ticker-offset", "-" + loopDistance + "px");
-      track.style.setProperty("--ticker-duration", Math.max(24, loopDistance / 22) + "s");
+      track.style.setProperty("--ticker-duration", Math.max(14, loopDistance / 38) + "s");
       featuredTicker.classList.add("is-auto-scrolling");
     }
   };
