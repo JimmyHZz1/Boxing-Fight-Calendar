@@ -164,11 +164,68 @@
     if(/^\d{4}-\d{2}-\d{2}$/.test(raw))return raw;
     const d=new Date(raw);return Number.isNaN(d.getTime())?"":new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/London"}).format(d);
   }
+  function featuredDetailLines(sport,event){
+    const lines=[];
+    const add=(label,value)=>{if(value!==undefined&&value!==null&&String(value).trim())lines.push({label,value:String(value).trim()});};
+    if(sport==="f1"){
+      add("ROUND",event.round?String(event.round):null);
+      add("CIRCUIT",event.circuit);
+      add("LOCATION",[event.locality,event.country].filter(Boolean).join(", "));
+      const sessions=(event.sessions||[]).filter(s=>s?.start_at||s?.date).sort((a,b)=>timestamp(a)-timestamp(b));
+      const next=sessions.find(s=>timestamp(s)>Date.now());
+      if(next)add("NEXT SESSION",next.name+" · "+formatDate(next)+" · "+formatTime(next));
+    }else if(sport==="darts"){
+      add("TOURNAMENT",String(event.tier||"").replaceAll("_"," ").toUpperCase());
+      add("VENUE",event.venue||event.location);
+      if(event.end_date)add("FINISHES",formatDate({date:event.end_date}));
+      if(event.matches)add("SCHEDULED MATCHES",event.matches);
+    }else if(sport==="ufc"){
+      const fights=eventBouts(event);
+      const main=fights.find(f=>f.is_main||Number(f.ordering)===1)||fights.find(f=>String(f.card_section||"").toLowerCase()==="main");
+      if(main){
+        const a=boxerName(main.fighter_a||main.fighter1||main.red_corner),b=boxerName(main.fighter_b||main.fighter2||main.blue_corner);
+        if(a&&b)add("MAIN EVENT",a+" vs "+b);
+      }
+      const titleBouts=fights.filter(f=>f.is_title||f.title_text);
+      if(titleBouts.length)add("TITLE BOUTS",titleBouts.length+" scheduled");
+      if(event.main_card_at)add("MAIN CARD",formatTime({start_at:event.main_card_at}));
+      if(event.prelims_at)add("PRELIMS",formatTime({start_at:event.prelims_at}));
+    }else if(sport==="boxing"){
+      const bouts=eventBouts(event);
+      const title=bouts.find(b=>b.title_text||b.is_title||b.title);
+      const headline=title||bouts[0];
+      if(headline){
+        const a=boxerName(headline.fighter1||headline.fighter_a||headline.red_corner),b=boxerName(headline.fighter2||headline.fighter_b||headline.blue_corner);
+        if(a&&b)add(title?"TITLE FIGHT":"FEATURED BOUT",a+" vs "+b);
+        if(headline.title_text)add("ON THE LINE",headline.title_text);
+      }
+      if(bouts.length)add("BOUTS LISTED",bouts.length);
+    }else if(sport==="bkfc"){
+      const fights=eventBouts(event);
+      if(fights.length){
+        const f=fights[0],a=boxerName(f.fighter_a||f.fighter1||f.red),b=boxerName(f.fighter_b||f.fighter2||f.blue);
+        if(a&&b)add("FEATURED BOUT",a+" vs "+b);
+        add("FIGHTS LISTED",fights.length);
+      }
+    }
+    return lines.slice(0,4);
+  }
+  function renderFeaturedDetails(sport,event){
+    const root=$("featured-event-details");if(!root)return;
+    root.replaceChildren();
+    const lines=featuredDetailLines(sport,event);
+    if(!lines.length)return;
+    lines.forEach(item=>{
+      const row=make("div","featured-event-detail");
+      row.append(make("small",null,item.label),make("strong",null,item.value));
+      root.append(row);
+    });
+  }
   function renderFeaturedEvent(){
     const root=$("featured-event-widget");if(!root)return;
     const candidates=sports.flatMap(sport=>eventsFor(sport).map(event=>({sport,event}))).filter(({event})=>{
       const key=featuredDateKey(featuredDateValue(event)),s=String(event.status||"").toLowerCase();
-      return key>=today()&&!["completed","complete","finished","ended","cancelled","canceled","postponed"].includes(s);
+      return key>=today()&& !["completed","complete","finished","ended","cancelled","canceled","postponed","abandoned"].includes(s);
     }).map(item=>({...item,score:featuredScore(item.sport,item.event)}));
     candidates.sort((a,b)=>b.score-a.score||featuredDateKey(featuredDateValue(a.event)).localeCompare(featuredDateKey(featuredDateValue(b.event)))||timestamp(a.event)-timestamp(b.event));
     const chosen=candidates[0];
@@ -183,9 +240,10 @@
     $("featured-event-mark").replaceChildren();
     if(sportLogo){const img=make("img");img.src=sportLogo;img.alt="";img.loading="lazy";img.onerror=()=>{$("featured-event-mark").textContent=featuredIcons[sport];};$("featured-event-mark").append(img);}
     else $("featured-event-mark").textContent=featuredIcons[sport];
-    const countdown= $("featured-event-countdown");
+    const countdown=$("featured-event-countdown");
     countdown.textContent=window.SportsCountdown?.text?.(target)||"DATE TO BE CONFIRMED";
     countdown.dataset.countdownTarget=target?(/^\d{4}-\d{2}-\d{2}$/.test(String(target))?String(target):new Date(target).toISOString()):"";
+    renderFeaturedDetails(sport,event);
     $("featured-event-note").textContent=sport==="boxing"?"Headline boxing matchup":sport==="darts"?"Featured televised PDC tournament":sport==="ufc"?(event.is_title_card?"Title-card event":event.is_ppv?"Numbered pay-per-view event":"Featured UFC card"):sport==="f1"?"Next Grand Prix on the Formula 1 calendar":"Featured event across the fight calendar";
     $("featured-event-open").onclick=()=>window.SportPages?.open?.(sport);
     root.hidden=false;
