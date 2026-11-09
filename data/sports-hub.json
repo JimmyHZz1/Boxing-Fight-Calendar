@@ -234,13 +234,33 @@
           "rank": 20,
           "name": "Yuki Tsunoda",
           "team": "RB F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/yuki-tsunoda.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Yuki_Tsunoda_Macau_2019.jpg",
+          "image_credit": "Wikimedia Commons · Smith007 · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "category:Category:Yuki Tsunoda in 2019",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/yuki-tsunoda.jpg"
         },
         {
           "rank": 21,
           "name": "Ryo Hirakawa",
           "team": "Haas F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/ryo-hirakawa.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Ryo_Hirakawa_2024_WEC_Fuji_1.jpg",
+          "image_credit": "Wikimedia Commons · Morio · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "search:Ryo Hirakawa",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/ryo-hirakawa.jpg"
         },
         {
           "rank": 22,
@@ -4716,17 +4736,62 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 109,
-    "found": 97,
-    "missing": 451,
-    "rejected": 139,
-    "by_sport": {},
+    "attempted": 3,
+    "found": 101,
+    "missing": 614,
+    "rejected": 0,
+    "by_sport": {
+      "ufc": {
+        "attempted": 3,
+        "found": 0,
+        "missing": 3,
+        "rejected": 0
+      }
+    },
+    "search_details": [
+      {
+        "name": "Kyoji Horiguchi",
+        "queries": 4,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Lone’er Kavanagh",
+        "queries": 4,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Asu Almabayev",
+        "queries": 2,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      }
+    ],
+    "checked_at": "2026-11-09T13:33:36Z",
+    "library_entries": 66,
     "newly_found": 0,
+    "cumulative_attempted": 112,
+    "cumulative_found": 66,
+    "cumulative_missing": 46,
+    "cumulative_rejected": 139,
+    "batch_number": 5,
+    "last_batch_at": "2026-11-09T13:33:36Z",
+    "last_successful_batch_at": "2026-11-09T13:33:36Z",
+    "last_rate_limited_at": "2026-11-09T13:33:36Z",
     "coverage": {
+      "boxing fight card fighters": {
+        "total": 167,
+        "with_image": 2,
+        "missing": 165
+      },
       "f1 drivers": {
         "total": 25,
-        "with_image": 23,
-        "missing": 2
+        "with_image": 25,
+        "missing": 0
       },
       "f1 constructors": {
         "total": 11,
@@ -4749,17 +4814,7 @@
         "missing": 81
       }
     },
-    "checked_at": "2026-11-09T13:32:43Z",
-    "library_entries": 66,
-    "cumulative_found": 66,
-    "cumulative_missing": 43,
-    "cumulative_rejected": 139,
-    "batch_number": 4,
-    "last_batch_at": "2026-11-09T13:10:18Z",
-    "last_successful_batch_at": "2026-11-09T13:10:18Z",
-    "last_rate_limited_at": "2026-11-09T12:52:57Z",
-    "enrichment_status": "awaiting next scheduled batch",
-    "rate_limited": false
+    "rate_limited": true
   },
   "last_updated": "2026-11-09T13:32:43Z"
 }
