@@ -1946,3 +1946,24 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
   border-radius:4px!important;background:rgba(0,201,165,.18)!important;
   filter:brightness(1.42) contrast(1.14) saturate(1.55) drop-shadow(0 0 5px rgba(0,201,165,.42))!important;
 }
+
+
+/* Render the four selected constructor emblems as clean white silhouettes. */
+.hub-person>img.hub-constructor-logo[data-image-entity="Mercedes"],
+.sport-ranking-row.is-constructor .sport-ranking-image.f1-constructor-logo[alt="Mercedes logo"],
+.favourite-card-portrait img.favourite-f1-team-logo[alt="Mercedes constructor logo"],
+.favourite-profile-portrait img.favourite-f1-team-logo[alt="Mercedes constructor logo"],
+.hub-person>img.hub-constructor-logo[data-image-entity="Audi"],
+.sport-ranking-row.is-constructor .sport-ranking-image.f1-constructor-logo[alt="Audi logo"],
+.favourite-card-portrait img.favourite-f1-team-logo[alt="Audi constructor logo"],
+.favourite-profile-portrait img.favourite-f1-team-logo[alt="Audi constructor logo"],
+.hub-person>img.hub-constructor-logo[data-image-entity="Cadillac F1 Team"],
+.sport-ranking-row.is-constructor .sport-ranking-image.f1-constructor-logo[alt="Cadillac F1 Team logo"],
+.favourite-card-portrait img.favourite-f1-team-logo[alt="Cadillac F1 Team constructor logo"],
+.favourite-profile-portrait img.favourite-f1-team-logo[alt="Cadillac F1 Team constructor logo"],
+.hub-person>img.hub-constructor-logo[data-image-entity="Aston Martin"],
+.sport-ranking-row.is-constructor .sport-ranking-image.f1-constructor-logo[alt="Aston Martin logo"],
+.favourite-card-portrait img.favourite-f1-team-logo[alt="Aston Martin constructor logo"],
+.favourite-profile-portrait img.favourite-f1-team-logo[alt="Aston Martin constructor logo"]{
+  filter:brightness(0) invert(1) drop-shadow(0 0 3px rgba(255,255,255,.38))!important;
+}
