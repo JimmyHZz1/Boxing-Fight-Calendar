@@ -2142,26 +2142,26 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
 @media(max-width:699px){.games-aaa-up-next-list{grid-template-columns:1fr}.games-featured-card{padding:14px}}
 
 
-/* Games Calendar ticker mirrors the Sports ticker card structure, spacing and sizing. */
+/* Games ticker inherits the Sports ticker's animated track and exact card dimensions. */
 .games-up-next-strip{padding:12px 0 13px;border-bottom:1px solid rgba(38,133,232,.35);margin:0 0 14px}
 .games-up-next-label{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
 .games-up-next-label>span:last-child{font-size:8px;letter-spacing:.8px;color:var(--muted);font-weight:800}
-.games-up-next-ticker{display:flex;flex-wrap:nowrap;gap:8px;margin-top:9px;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scroll-behavior:auto;mask-image:linear-gradient(90deg,transparent,#000 2%,#000 98%,transparent);padding:1px 1px 4px}
-.games-up-next-ticker::-webkit-scrollbar{display:none}
-.games-up-next-item{display:flex;flex:0 0 min(255px,78vw);min-width:0;align-items:center;justify-content:space-between;gap:8px;padding:9px 10px;text-align:left;background:var(--panel);border:1px solid rgba(38,133,232,.32);border-left:2px solid #2685e8;color:var(--text);text-decoration:none;scroll-snap-align:start;cursor:pointer}
-.games-up-next-item:focus-visible{outline:2px solid #62a7ff;outline-offset:2px}
-.games-up-next-info{display:grid;gap:3px;min-width:0}
-.games-up-next-label-text{font-size:8px;letter-spacing:1px;color:#62a7ff;font-weight:800}
-.games-up-next-name{font:700 15px/1.1 'Barlow Condensed',sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-transform:uppercase}
-.games-up-next-countdown{display:block;font-size:9px;color:#9bcaff;font-weight:800;letter-spacing:.35px;font-variant-numeric:tabular-nums}
-.games-up-next-platforms{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--muted);font-size:9px}
-.games-up-next-logo{display:grid;place-items:center;flex:none;width:46px;height:46px;max-width:46px;overflow:hidden;padding:3px;border:1px solid rgba(38,133,232,.35);background:rgba(38,133,232,.10);color:#9bcaff;font:900 12px 'Barlow Condensed',sans-serif;text-align:center}
-.games-up-next-logo img{display:block;width:100%;height:100%;object-fit:contain}
-.games-up-next-logo-fallback{font-size:12px;letter-spacing:.3px}
+.games-up-next-ticker{display:block!important;position:relative;overflow:hidden!important;white-space:nowrap;touch-action:pan-x}
+.games-up-next-ticker .next-event-track{gap:12px}
+.games-up-next-ticker .next-event-group{gap:12px}
+.games-up-next-ticker .next-event-item{border-color:rgba(38,133,232,.32);border-left-color:#2685e8;flex:0 0 min(250px,78vw)!important;min-height:66px;box-sizing:border-box}
+.games-up-next-ticker .next-event-sport{color:#62a7ff}
+.games-up-next-ticker .next-event-countdown{color:#9bcaff;font-variant-numeric:tabular-nums}
+.games-up-next-ticker .next-event-detail{color:var(--muted)}
+.games-up-next-ticker .games-up-next-logo{display:grid!important;place-items:center;flex:0 0 46px!important;width:46px;height:46px;max-width:46px;overflow:hidden;padding:3px!important;border:1px solid rgba(38,133,232,.35)!important;border-radius:3px;background:rgba(38,133,232,.10)!important;color:#9bcaff!important;font:900 12px 'Barlow Condensed',sans-serif;text-align:center}
+.games-up-next-ticker .games-up-next-logo img{display:block;width:100%;height:100%;object-fit:contain}
+.games-up-next-ticker .games-up-next-logo-fallback{font-size:12px;letter-spacing:.3px}
+.games-up-next-ticker.is-auto-scrolling:hover .next-event-track,
+.games-up-next-ticker.is-auto-scrolling:focus-within .next-event-track,
+.games-up-next-ticker.is-paused .next-event-track{animation-play-state:paused}
 .games-up-next-loading{padding:8px 2px;color:var(--muted);font-size:10px}
-.games-mode .games-up-next-item{border-left-color:#2685e8}
-@media(max-width:420px){.games-up-next-strip{padding:10px 0}.games-up-next-label>span:last-child{font-size:7px}.games-up-next-item{flex-basis:min(255px,78vw);padding:9px}.games-up-next-name{font-size:15px}}
-@media(prefers-reduced-motion:reduce){.games-up-next-ticker{scroll-behavior:auto}}
+@media(max-width:420px){.games-up-next-strip{padding:10px 0}.games-up-next-label>span:last-child{font-size:7px}}
+@media(prefers-reduced-motion:reduce){.games-up-next-ticker .next-event-track{animation:none!important;transform:none!important}}
 
 /* Live Sports Centre: compact per-sport groups with optional expansion. */
 .live-upcoming-sport-group{min-width:0;padding:9px 0 10px;border-bottom:1px solid var(--line)}
@@ -2173,3 +2173,8 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
 .live-upcoming-expand{display:block;width:100%;min-height:38px;margin-top:7px;padding:8px 10px;border:1px solid var(--line);background:rgba(255,255,255,.025);color:var(--accent);font:800 9px 'DM Sans',sans-serif;letter-spacing:.8px;text-align:center;cursor:pointer}
 .live-upcoming-expand:hover,.live-upcoming-expand:focus-visible{border-color:var(--accent);background:rgba(226,180,91,.07)}
 @media(max-width:620px){.live-upcoming-sport-group{padding:7px 0}.live-upcoming-expand{min-height:42px}}
+
+/* Game marks sit at the leading/left edge, like a team badge in the Sports ticker. */
+.games-up-next-ticker .games-up-next-logo{order:0;flex:0 0 46px!important;margin-right:2px}
+.games-up-next-ticker .next-event-info{order:1;flex:1 1 auto;min-width:0}
+.games-up-next-ticker .games-up-next-logo-text{font-family:Arial,sans-serif!important;font-size:12px!important;font-weight:1000!important;letter-spacing:-.5px!important;line-height:1!important;color:#9bcaff!important;text-shadow:0 0 10px rgba(38,133,232,.25)}
