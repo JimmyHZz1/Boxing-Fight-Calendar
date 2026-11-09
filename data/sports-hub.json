@@ -4714,7 +4714,8 @@
     "enrichment_status": "baseline reset after image-source audit",
     "last_batch_at": null,
     "last_successful_batch_at": null,
-    "last_rate_limited_at": null
+    "last_rate_limited_at": null,
+    "cumulative_rejected": 4
   },
   "last_updated": "2026-11-09T06:42:43Z"
 }
