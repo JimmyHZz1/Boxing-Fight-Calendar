@@ -4663,10 +4663,10 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 0,
-    "found": 97,
-    "missing": 451,
-    "rejected": 0,
+    "attempted": 93,
+    "found": 93,
+    "missing": 455,
+    "rejected": 4,
     "by_sport": {},
     "newly_found": 0,
     "coverage": {
@@ -4687,8 +4687,8 @@
       },
       "ufc": {
         "total": 206,
-        "with_image": 13,
-        "missing": 193
+        "with_image": 9,
+        "missing": 197
       },
       "boxing": {
         "total": 81,
@@ -4696,8 +4696,16 @@
         "missing": 81
       }
     },
-    "checked_at": "2026-11-09T06:42:43Z",
-    "library_entries": 66
+    "checked_at": "2026-11-09T12:15:00Z",
+    "library_entries": 62,
+    "cumulative_attempted": 93,
+    "cumulative_found": 62,
+    "cumulative_missing": 31,
+    "batch_number": 0,
+    "enrichment_status": "baseline reset after image-source audit",
+    "last_batch_at": null,
+    "last_successful_batch_at": null,
+    "last_rate_limited_at": null
   },
   "last_updated": "2026-11-09T06:42:43Z"
 }
