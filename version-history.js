@@ -40,7 +40,7 @@
 
   function render(pullRequests, cached = false) {
     const merged = (Array.isArray(pullRequests) ? pullRequests : [])
-      .filter(pr => pr && pr.merged_at && !pr.draft)
+      .filter(pr => pr && pr.merged_at && !pr.draft && !/games/i.test(String(pr.title || "") + " " + (pr.labels || []).map(label => label.name || "").join(" ")))
       .sort((a, b) => new Date(b.merged_at) - new Date(a.merged_at))
       .slice(0, 12);
 
