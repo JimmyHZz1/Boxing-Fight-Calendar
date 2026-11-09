@@ -2820,7 +2820,7 @@
               "image_license": "CC BY 4.0",
               "image_license_url": "https://creativecommons.org/licenses/by/4.0",
               "image_source": "Wikimedia Commons",
-              "image_match_score": 1.0,
+              "image_match_score": 1,
               "image_match_method": "category:Category:Petr Yan",
               "image_verified_at": "2026-11-08T20:18:56Z",
               "image_local_path": "assets/images/ufc/petr-yan.jpg"
@@ -2834,7 +2834,7 @@
               "image_license": "Public domain",
               "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
               "image_source": "Wikimedia Commons",
-              "image_match_score": 1.0,
+              "image_match_score": 1,
               "image_match_method": "category:Category:Merab Dvalishvili",
               "image_verified_at": "2026-11-08T20:18:56Z",
               "image_local_path": "assets/images/ufc/merab-dvalishvili.jpg"
@@ -2848,7 +2848,7 @@
               "image_license": "CC BY-SA 3.0",
               "image_license_url": "https://creativecommons.org/licenses/by-sa/3.0",
               "image_source": "Wikimedia Commons",
-              "image_match_score": 1.0,
+              "image_match_score": 1,
               "image_match_method": "category:Category:Sean O'Malley",
               "image_verified_at": "2026-11-08T20:18:56Z",
               "image_local_path": "assets/images/ufc/sean-o-malley.jpg"
@@ -2880,17 +2880,7 @@
             },
             {
               "rank": 8,
-              "name": "David Martinez",
-              "image_url": "./assets/images/ufc/david-martinez.png",
-              "image_page_url": "https://commons.wikimedia.org/wiki/File:David_Garc%C3%ADa_Mart%C3%ADnez,_consultor_SEO.png",
-              "image_credit": "Wikimedia Commons · David García Martínez · CC BY-SA 4.0",
-              "image_license": "CC BY-SA 4.0",
-              "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-              "image_source": "Wikimedia Commons",
-              "image_match_score": 1.0,
-              "image_match_method": "search:David Martinez",
-              "image_verified_at": "2026-11-09T00:10:34Z",
-              "image_local_path": "assets/images/ufc/david-martinez.png"
+              "name": "David Martinez"
             },
             {
               "rank": 9,
@@ -2901,7 +2891,7 @@
               "image_license": "CC BY 3.0",
               "image_license_url": "https://creativecommons.org/licenses/by/3.0",
               "image_source": "Wikimedia Commons",
-              "image_match_score": 1.0,
+              "image_match_score": 1,
               "image_match_method": "category:Category:Aiemann Zahabi",
               "image_verified_at": "2026-11-09T00:10:34Z",
               "image_local_path": "assets/images/ufc/aiemann-zahabi.png"
@@ -2915,7 +2905,7 @@
               "image_license": "CC BY 3.0",
               "image_license_url": "https://creativecommons.org/licenses/by/3.0",
               "image_source": "Wikimedia Commons",
-              "image_match_score": 1.0,
+              "image_match_score": 1,
               "image_match_method": "category:Category:Raúl Rosas Jr.",
               "image_verified_at": "2026-11-09T00:10:34Z",
               "image_local_path": "assets/images/ufc/raul-rosas-jr.png"
@@ -2929,7 +2919,7 @@
               "image_license": "CC BY-SA 2.0",
               "image_license_url": "https://creativecommons.org/licenses/by-sa/2.0",
               "image_source": "Wikimedia Commons",
-              "image_match_score": 1.0,
+              "image_match_score": 1,
               "image_match_method": "category:Category:Marlon Vera",
               "image_verified_at": "2026-11-09T00:10:34Z",
               "image_local_path": "assets/images/ufc/marlon-vera.jpg"
@@ -2943,7 +2933,7 @@
               "image_license": "CC BY 3.0",
               "image_license_url": "https://creativecommons.org/licenses/by/3.0",
               "image_source": "Wikimedia Commons",
-              "image_match_score": 1.0,
+              "image_match_score": 1,
               "image_match_method": "category:Category:Deiveson Figueiredo",
               "image_verified_at": "2026-11-09T00:10:34Z",
               "image_local_path": "assets/images/ufc/deiveson-figueiredo.jpg"
@@ -2978,7 +2968,7 @@
               "image_license": "CC BY 3.0",
               "image_license_url": "https://creativecommons.org/licenses/by/3.0",
               "image_source": "Wikimedia Commons",
-              "image_match_score": 1.0,
+              "image_match_score": 1,
               "image_match_method": "category:Category:Alexander Volkanovski",
               "image_verified_at": "2026-11-09T00:11:07Z",
               "image_local_path": "assets/images/ufc/alexander-volkanovski.jpg"
@@ -2990,17 +2980,7 @@
             },
             {
               "rank": 2,
-              "name": "Diego Lopes",
-              "image_url": "./assets/images/ufc/diego-lopes.jpg",
-              "image_page_url": "https://commons.wikimedia.org/wiki/File:Diogo_Lopes_de_Sequeira_(Archaeological_Survey_of_India,_Goa).jpg",
-              "image_credit": "Wikimedia Commons · Sailko · CC BY 3.0",
-              "image_license": "CC BY 3.0",
-              "image_license_url": "https://creativecommons.org/licenses/by/3.0",
-              "image_source": "Wikimedia Commons",
-              "image_match_score": 1.0,
-              "image_match_method": "search:Diego Lopes",
-              "image_verified_at": "2026-11-09T06:14:52Z",
-              "image_local_path": "assets/images/ufc/diego-lopes.jpg"
+              "name": "Diego Lopes"
             },
             {
               "rank": 3,
@@ -3014,17 +2994,7 @@
             },
             {
               "rank": 5,
-              "name": "Jean Silva",
-              "image_url": "./assets/images/ufc/jean-silva.jpg",
-              "image_page_url": "https://commons.wikimedia.org/wiki/File:Fernando_de_Silva_y_Alvarez_of_Toledo,_12th_Duke_of_Alba_(1714-1776),_by_Jean-Marc_Nattier.jpg",
-              "image_credit": "Wikimedia Commons · Jean-Marc Nattier · Public domain",
-              "image_license": "Public domain",
-              "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
-              "image_source": "Wikimedia Commons",
-              "image_match_score": 1.0,
-              "image_match_method": "search:Jean Silva",
-              "image_verified_at": "2026-11-09T06:14:52Z",
-              "image_local_path": "assets/images/ufc/jean-silva.jpg"
+              "name": "Jean Silva"
             },
             {
               "rank": 6,
@@ -3035,24 +3005,14 @@
               "image_license": "CC0",
               "image_license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
               "image_source": "Wikimedia Commons",
-              "image_match_score": 1.0,
+              "image_match_score": 1,
               "image_match_method": "category:Category:Yair Rodríguez",
               "image_verified_at": "2026-11-09T06:14:52Z",
               "image_local_path": "assets/images/ufc/yair-rodriguez.jpg"
             },
             {
               "rank": 7,
-              "name": "Arnold Allen",
-              "image_url": "./assets/images/ufc/arnold-allen.jpg",
-              "image_page_url": "https://commons.wikimedia.org/wiki/File:Mrs._Allen_Gouverneur_Wellman_(Frances_Alexander)._Genthe,_Vogue_1919.jpg",
-              "image_credit": "Wikimedia Commons · Arnold Genthe · Public domain",
-              "image_license": "Public domain",
-              "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
-              "image_source": "Wikimedia Commons",
-              "image_match_score": 1.0,
-              "image_match_method": "search:Arnold Allen",
-              "image_verified_at": "2026-11-09T06:15:25Z",
-              "image_local_path": "assets/images/ufc/arnold-allen.jpg"
+              "name": "Arnold Allen"
             },
             {
               "rank": 8,
