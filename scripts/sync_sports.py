@@ -690,13 +690,16 @@ def commons_photo(name, image_kind="portrait"):
         return None
     query_names = image_aliases(name)
     if image_kind == "portrait":
-        # Commons often indexes athlete portraits under their sport or promotion,
-        # not under the athlete name alone. Keep the athlete name in every query;
-        # the strict identity-pair check below still rejects unrelated portraits.
-        for suffix in ("UFC fighter", "MMA fighter", "professional athlete"):
-            query = str(name).strip() + " " + suffix
-            if query not in query_names:
-                query_names.append(query)
+        # Search the name and common athlete descriptors in one Commons request.
+        # This broadens indexing coverage without multiplying API calls or
+        # weakening the exact adjacent-name identity check below.
+        variants = []
+        for alias in query_names:
+            for suffix in ("", "UFC", "MMA fighter", "professional athlete"):
+                phrase = ('"' + str(alias).strip() + '" ' + suffix).strip()
+                if phrase not in variants:
+                    variants.append(phrase)
+        query_names = ["(" + " OR ".join(variants) + ") portrait"]
     candidates = []
     seen_titles = set()
     rejection_counts = {}
