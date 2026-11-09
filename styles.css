@@ -2083,3 +2083,21 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
 @media(min-width:1100px){.mobile-calendar-menu{display:none!important}}
 @media(max-width:699px){.games-nav-item{display:none!important}.mobile-calendar-menu{position:sticky;bottom:84px}}
 @media(max-width:420px){.games-release-panel,.games-release-updates,.games-version-list{padding:14px}.games-section-heading{align-items:start;flex-direction:column}.games-page-footer{align-items:flex-start;flex-direction:column}}
+
+
+/* Fix mobile calendar switcher: keep the menu anchored above the bottom navigation. */
+@media(max-width:699px){
+  .mobile-calendar-menu{
+    position:fixed!important;
+    right:15px!important;
+    left:auto!important;
+    bottom:calc(env(safe-area-inset-bottom, 0px) + 82px)!important;
+    width:min(280px,calc(100vw - 30px))!important;
+    margin:0!important;
+    z-index:1000!important;
+    transform:none!important;
+  }
+  .mobile-calendar-menu[hidden]{display:none!important}
+  .mobile-calendar-menu button{min-height:46px;touch-action:manipulation}
+  .nav-item[data-calendar-switcher]{cursor:pointer;touch-action:manipulation}
+}
