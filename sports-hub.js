@@ -34,7 +34,7 @@
     const credit = (officialPdc || officialF1) ? item.image_credit : (local?.attribution || item.image_credit);
     const fallback = constructor ? constructorWordmark(item.name) : initials(item.name);
     const img = constructor
-      ? '<span class="hub-constructor-broadcast" style="--team-color:'+esc(constructorColour(item.name))+'" role="img" aria-label="'+esc(item.name)+' F1 television timing-board mark">'+constructorBadge(item.name)+'</span>'
+      ? '<span class="hub-constructor-broadcast constructor-broadcast-mark" style="--team-color:'+esc(constructorColour(item.name))+'" role="img" aria-label="'+esc(item.name)+' F1 television timing-board mark">'+constructorBadge(item.name)+'</span>'
       : source ? '<img class="hub-driver-portrait'+(officialF1?' hub-driver-portrait-official-f1':'')+'" src="'+esc(source)+'" alt="'+esc(item.name+" portrait")+'" loading="lazy" data-image-kind="driver" data-official-pdc="' + (officialPdc?"1":"0") + '" data-official-f1="'+(officialF1?"1":"0")+'" data-image-entity="'+esc(item.name||"") + '" data-image-fallback="'+esc(fallback)+'">' : '<span class="hub-avatar-fallback hub-driver-fallback">'+esc(fallback)+'</span>';
     const rank = item.rank != null ? (item.rank===0 ? "C" : "#"+item.rank) : (index+1);
     const extra = [item.team,item.prize_money?moneyLabel(item.prize_money):(item.points!=null?item.points+" pts":null),item.org,credit].filter(Boolean).join(" · ");
