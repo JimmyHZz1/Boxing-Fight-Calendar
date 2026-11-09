@@ -222,6 +222,12 @@
     const third=sport==="f1"?[String(sessionCount),"RACE SESSIONS"]:sport==="darts"?[String(matchCount),"MATCHES SCHEDULED"]:[String(totalFights),"FIGHTS / BOUTS LISTED"];
     [[String(upcoming.length),"UPCOMING EVENTS"],[String(past.length),"PAST EVENTS"],third].forEach(([n,l])=>{const c=el("div","sport-detail-stat");c.append(el("strong",null,n),el("small",null,l));stats.append(c);});
     target.append(stats);
+    if(sport==="darts"){
+      const feed=window.SportsData?.getMeta?.("darts")||{};
+      const stamp=feed.last_successful_update||feed.last_updated;
+      if(stamp){const checked=new Date(stamp).toLocaleString("en-GB",{timeZone:"Europe/London",dateStyle:"medium",timeStyle:"short"});target.append(el("p","sport-page-note","PDC calendar last successful refresh: "+checked+" UK."));}
+      if(feed.data_status==="fallback"||feed.sync_warning)target.append(el("p","sport-page-note","PDC calendar is using fallback data. "+(feed.sync_warning||"The latest provider check did not return a complete televised schedule.")));
+    }
     if(next){
       const s=section("Next up","YOUR NEXT EVENT");
       const card=renderEvent(sport,next);if(card)s.append(card);else s.append(empty(eventName(next)));
