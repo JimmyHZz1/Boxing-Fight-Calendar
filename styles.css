@@ -1386,3 +1386,11 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
 
 /* F1 constructor logos are wordmarks, not portraits: keep the full mark visible on favourite cards and profiles. */
 .favourite-card-portrait img.favourite-f1-team-logo,.favourite-profile-portrait img.favourite-f1-team-logo{object-fit:contain;object-position:center;padding:7px;background:#fff;border-radius:2px}
+
+
+/* PDC Order of Merit: ranks 1–20 down the left, 21–40 down the right. */
+@media (min-width: 760px) {
+  .hub-dropdown-list-ranking { max-height: none; overflow: visible; }
+  .hub-ranking-columns { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); column-gap: 22px; align-items: start; }
+  .hub-ranking-column { min-width: 0; }
+}
