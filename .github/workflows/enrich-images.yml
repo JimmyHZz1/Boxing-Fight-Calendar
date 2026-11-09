@@ -17,7 +17,7 @@ on:
       - "assets/images/**"
   schedule:
     # Recovery check in case a run is interrupted or Commons rate-limits us.
-    - cron: "*/10 * * * *"
+    - cron: "*/30 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -40,7 +40,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Drain image queues in consecutive five-image batches
+      - name: Process one five-image batch per scheduled run
         shell: bash
         run: |
           set -euo pipefail
@@ -64,7 +64,7 @@ jobs:
             BATCH_RATE_LIMITED="$(python -c 'import json,sys; print("true" if json.loads(sys.argv[1]).get("rate_limited") else "false")' "$summary")"
           }
 
-          MAX_BATCHES=120
+          MAX_BATCHES=1
           for batch in $(seq 1 "$MAX_BATCHES"); do
             echo "::group::Image enrichment batch $batch"
             run_batch
@@ -120,4 +120,4 @@ jobs:
             fi
           done
 
-          echo "Reached the safety cap of $MAX_BATCHES batches; the scheduled recovery run will continue the remaining queue."
+          echo "Completed the single scheduled batch; the next scheduled run will continue the remaining queue."
