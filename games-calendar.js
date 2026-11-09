@@ -81,7 +81,7 @@
     const group = document.createElement("div");
     group.className = "games-up-next-group";
     upcoming.forEach(game => {
-      const item = document.createElement(game.source_url && /^https?:\\/\\//.test(game.source_url) ? "a" : "span");
+      const item = document.createElement(game.source_url && (game.source_url.startsWith("https://") || game.source_url.startsWith("http://")) ? "a" : "span");
       item.className = "games-up-next-item";
       if (item.tagName === "A") {
         item.href = game.source_url;
