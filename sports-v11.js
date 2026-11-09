@@ -242,7 +242,7 @@
     else $("featured-event-mark").textContent=featuredIcons[sport];
     const countdown=$("featured-event-countdown");
     countdown.textContent=window.SportsCountdown?.text?.(target)||"DATE TO BE CONFIRMED";
-    countdown.dataset.countdownTarget=target?(/^\\d{4}-\\d{2}-\\d{2}$/.test(String(target))?String(target):new Date(target).toISOString()):"";
+    countdown.dataset.countdownTarget=target?(/^\d{4}-\d{2}-\d{2}$/.test(String(target))?String(target):new Date(target).toISOString()):"";
     renderFeaturedDetails(sport,event);
     $("featured-event-note").textContent=sport==="boxing"?"Headline boxing matchup":sport==="darts"?"Featured televised PDC tournament":sport==="ufc"?(event.is_title_card?"Title-card event":event.is_ppv?"Numbered pay-per-view event":"Featured UFC card"):sport==="f1"?"Next Grand Prix on the Formula 1 calendar":"Featured event across the fight calendar";
     $("featured-event-open").onclick=()=>window.SportPages?.open?.(sport);
