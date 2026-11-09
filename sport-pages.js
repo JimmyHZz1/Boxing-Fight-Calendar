@@ -116,7 +116,7 @@
     }
     return s;
   }
-  const constructorLogoPath = name => ({Mercedes:"mercedes.jpg",Ferrari:"ferrari.jpg","Red Bull":"red-bull.png",McLaren:"mclaren.jpg","RB F1 Team":"visa-rb.jpg","Alpine F1 Team":"alpine-f1-team.png","Haas F1 Team":"haas-f1-team.png",Audi:"audi.png",Williams:"williams.png","Aston Martin":"aston-martin.jpg","Cadillac F1 Team":"cadillac-f1-team.png"}[name] || "");
+  const constructorLogoPath = name => ({Mercedes:"mercedes.jpg",Ferrari:"ferrari.jpg","Red Bull":"red-bull.png",McLaren:"mclaren.jpg","Alpine F1 Team":"alpine-f1-team.png","Haas F1 Team":"haas-f1-team.png",Audi:"audi.png",Williams:"williams.png","Aston Martin":"aston-martin.jpg","Cadillac F1 Team":"cadillac-f1-team.png"}[name] || "");
   function constructorFallback(name){
     const marks={"Mercedes":"MER","Ferrari":"FER","Red Bull":"RBR","McLaren":"MCL","RB F1 Team":"RB","Alpine F1 Team":"ALP","Haas F1 Team":"HAS","Audi":"AUD","Williams":"WIL","Aston Martin":"AMR","Cadillac F1 Team":"CAD"};
     const colours={"Mercedes":"#00d2be","Ferrari":"#ef1a2d","Red Bull":"#4776d0","McLaren":"#ff8700","RB F1 Team":"#6c9bd2","Alpine F1 Team":"#168bd2","Haas F1 Team":"#c7cbd1","Audi":"#f02b32","Williams":"#39a9df","Aston Martin":"#00a58b","Cadillac F1 Team":"#e5e5e5"};
