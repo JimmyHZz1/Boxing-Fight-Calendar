@@ -3063,7 +3063,16 @@
             {
               "rank": 7,
               "name": "Arnold Allen",
-              "image_url": null
+              "image_url": "./assets/images/ufc/arnold-allen.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Mrs._Allen_Gouverneur_Wellman_(Frances_Alexander)._Genthe,_Vogue_1919.jpg",
+              "image_credit": "Wikimedia Commons · Arnold Genthe · Public domain",
+              "image_license": "Public domain",
+              "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+              "image_source": "Wikimedia Commons",
+              "image_match_score": 1.0,
+              "image_match_method": "search:Arnold Allen",
+              "image_verified_at": "2026-11-09T06:15:25Z",
+              "image_local_path": "assets/images/ufc/arnold-allen.jpg"
             },
             {
               "rank": 8,
@@ -4714,72 +4723,44 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 5,
-    "found": 100,
-    "missing": 635,
+    "attempted": 2,
+    "found": 101,
+    "missing": 634,
     "rejected": 0,
     "by_sport": {
       "ufc": {
-        "attempted": 5,
-        "found": 3,
-        "missing": 2,
+        "attempted": 2,
+        "found": 1,
+        "missing": 1,
         "rejected": 0
       }
     },
     "rejection_reasons": {
-      "given_name_not_matched": 23,
-      "not_an_image": 1,
-      "surname_not_matched": 1
+      "not_an_image": 15,
+      "surname_not_matched": 3
     },
     "search_details": [
       {
-        "name": "Diego Lopes",
+        "name": "Arnold Allen",
         "queries": 1,
         "candidate_files": 20,
-        "accepted": 1,
+        "accepted": 2,
         "rejections": {
-          "given_name_not_matched": 19
+          "not_an_image": 15,
+          "surname_not_matched": 3
         }
       },
       {
-        "name": "Lerone Murphy",
-        "queries": 2,
+        "name": "Youssef Zalal",
+        "queries": 0,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
-      },
-      {
-        "name": "Aljamain Sterling",
-        "queries": 3,
-        "candidate_files": 1,
-        "accepted": 0,
-        "rejections": {
-          "given_name_not_matched": 1
-        }
-      },
-      {
-        "name": "Jean Silva",
-        "queries": 1,
-        "candidate_files": 20,
-        "accepted": 17,
-        "rejections": {
-          "given_name_not_matched": 3
-        }
-      },
-      {
-        "name": "Yair Rodriguez",
-        "queries": 3,
-        "candidate_files": 17,
-        "accepted": 15,
-        "rejections": {
-          "not_an_image": 1,
-          "surname_not_matched": 1
-        }
       }
     ],
-    "checked_at": "2026-11-09T06:14:52Z",
-    "library_entries": 65,
-    "newly_found": 3,
+    "checked_at": "2026-11-09T06:15:25Z",
+    "library_entries": 66,
+    "newly_found": 1,
     "coverage": {
       "boxing fight card fighters": {
         "total": 187,
@@ -4803,8 +4784,8 @@
       },
       "ufc": {
         "total": 206,
-        "with_image": 12,
-        "missing": 194
+        "with_image": 13,
+        "missing": 193
       },
       "boxing": {
         "total": 81,
@@ -4812,7 +4793,7 @@
         "missing": 81
       }
     },
-    "rate_limited": false
+    "rate_limited": true
   },
   "last_updated": "2026-11-08T20:56:52Z"
 }

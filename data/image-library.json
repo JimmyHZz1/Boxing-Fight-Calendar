@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-09T06:14:52Z",
+  "updated_at": "2026-11-09T06:15:25Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -673,6 +673,17 @@
       "creator": "Wikimedia Commons · Gobierno CDMX · CC0",
       "attribution": "Wikimedia Commons · Gobierno CDMX · CC0",
       "verified_at": "2026-11-09T06:14:52Z",
+      "sport": "ufc"
+    },
+    "arnold allen": {
+      "name": "Arnold Allen",
+      "path": "assets/images/ufc/arnold-allen.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mrs._Allen_Gouverneur_Wellman_(Frances_Alexander)._Genthe,_Vogue_1919.jpg",
+      "licence": "Public domain",
+      "licence_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "creator": "Wikimedia Commons · Arnold Genthe · Public domain",
+      "attribution": "Wikimedia Commons · Arnold Genthe · Public domain",
+      "verified_at": "2026-11-09T06:15:25Z",
       "sport": "ufc"
     }
   },

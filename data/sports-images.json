@@ -871,9 +871,23 @@
       "image_match_method": "category:Category:Yair Rodríguez",
       "image_verified_at": "2026-11-09T06:14:52Z",
       "image_local_path": "assets/images/ufc/yair-rodriguez.jpg"
+    },
+    "arnold allen": {
+      "name": "Arnold Allen",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/arnold-allen.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Mrs._Allen_Gouverneur_Wellman_(Frances_Alexander)._Genthe,_Vogue_1919.jpg",
+      "image_credit": "Wikimedia Commons · Arnold Genthe · Public domain",
+      "image_license": "Public domain",
+      "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "search:Arnold Allen",
+      "image_verified_at": "2026-11-09T06:15:25Z",
+      "image_local_path": "assets/images/ufc/arnold-allen.jpg"
     }
   },
-  "updated_at": "2026-11-09T06:14:52Z",
+  "updated_at": "2026-11-09T06:15:25Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -969,6 +983,8 @@
     "lerone murphy": "2026-11-09T06:14:52Z",
     "aljamain sterling": "2026-11-09T06:14:52Z",
     "jean silva": "2026-11-09T06:14:52Z",
-    "yair rodriguez": "2026-11-09T06:14:52Z"
+    "yair rodriguez": "2026-11-09T06:14:52Z",
+    "arnold allen": "2026-11-09T06:15:25Z",
+    "youssef zalal": "2026-11-09T06:15:25Z"
   }
 }
