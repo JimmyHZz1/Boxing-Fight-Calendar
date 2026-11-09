@@ -696,6 +696,7 @@ def commons_photo(name, image_kind="portrait"):
 
     def reject(reason):
         rejection_counts[reason] = rejection_counts.get(reason, 0) + 1
+        IMAGE_DIAGNOSTICS["rejected"] = IMAGE_DIAGNOSTICS.get("rejected", 0) + 1
         IMAGE_DIAGNOSTICS.setdefault("rejection_reasons", {})[reason] = (
             IMAGE_DIAGNOSTICS.setdefault("rejection_reasons", {}).get(reason, 0) + 1
         )
@@ -1217,6 +1218,8 @@ def sync_sports_hub():
     IMAGE_DIAGNOSTICS["attempted"] = state.get("cumulative_attempted", 0)
     IMAGE_DIAGNOSTICS["cumulative_found"] = state.get("cumulative_found", 0)
     IMAGE_DIAGNOSTICS["cumulative_missing"] = state.get("cumulative_missing", 0)
+    IMAGE_DIAGNOSTICS["rejected"] = state.get("cumulative_rejected", 0)
+    IMAGE_DIAGNOSTICS["cumulative_rejected"] = state.get("cumulative_rejected", 0)
     IMAGE_DIAGNOSTICS["batch_number"] = state.get("batch_number", 0)
     IMAGE_DIAGNOSTICS["last_batch_at"] = state.get("last_batch_at")
     IMAGE_DIAGNOSTICS["last_successful_batch_at"] = state.get("last_successful_batch_at")
@@ -1317,6 +1320,7 @@ def enrich_cached_images():
     state["cumulative_attempted"] = int(state.get("cumulative_attempted", 0)) + IMAGE_DIAGNOSTICS["attempted"]
     state["cumulative_found"] = int(state.get("cumulative_found", 0)) + found_this_batch
     state["cumulative_missing"] = int(state.get("cumulative_missing", 0)) + IMAGE_DIAGNOSTICS.get("missing", 0)
+    state["cumulative_rejected"] = int(state.get("cumulative_rejected", 0)) + IMAGE_DIAGNOSTICS.get("rejected", 0)
     if IMAGE_LOOKUP_RATE_LIMITED:
         state["last_rate_limited_at"] = iso_now()
     state.setdefault("history", []).append({
@@ -1332,6 +1336,7 @@ def enrich_cached_images():
     IMAGE_DIAGNOSTICS["cumulative_attempted"] = state["cumulative_attempted"]
     IMAGE_DIAGNOSTICS["cumulative_found"] = state["cumulative_found"]
     IMAGE_DIAGNOSTICS["cumulative_missing"] = state["cumulative_missing"]
+    IMAGE_DIAGNOSTICS["cumulative_rejected"] = state["cumulative_rejected"]
     IMAGE_DIAGNOSTICS["batch_number"] = state["batch_number"]
     IMAGE_DIAGNOSTICS["last_batch_at"] = state.get("last_batch_at")
     IMAGE_DIAGNOSTICS["last_successful_batch_at"] = state.get("last_successful_batch_at")
