@@ -247,6 +247,8 @@ def sync_darts():
         key_name = re.sub(r"[^a-z0-9]+", " ", event["name"].lower()).strip()
         if event["id"] not in merged and key_name not in api_names:
             merged[event["id"]] = event
+    if key and not api_events and not warning:
+        warning = "Darts API returned no matching televised PDC events in the 60-day window; using official fallback dates."
     events = list(merged.values())
     events.sort(key=lambda e: (e.get("date") or "", e.get("name") or ""))
 
@@ -264,9 +266,20 @@ def sync_darts():
     payload = {
         "sport": "darts", "provider": "Darts API + official PDC calendar",
         "organisers_included": ["pdc"], "events": events, "notice": notice,
+        "sync_attempted_at": iso_now(),
+        "data_status": "fallback" if warning else "current",
     }
     if warning:
         payload["sync_warning"] = warning
+        try:
+            with open(os.path.join(DATA, "darts.json"), encoding="utf-8") as previous_file:
+                previous_payload = json.load(previous_file)
+            if previous_payload.get("last_successful_update"):
+                payload["last_successful_update"] = previous_payload["last_successful_update"]
+        except (FileNotFoundError, json.JSONDecodeError):
+            pass
+    else:
+        payload["last_successful_update"] = iso_now()
     save("darts.json", payload)
     print(f"Darts: saved {len(events)} televised PDC events ({len(api_events)} API, {len(fallback)} official fallback candidates from {len(api_rows)} API rows).")
 
