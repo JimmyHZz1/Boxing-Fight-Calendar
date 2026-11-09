@@ -1224,7 +1224,7 @@ def sync_sports_hub():
     IMAGE_DIAGNOSTICS["last_batch_at"] = state.get("last_batch_at")
     IMAGE_DIAGNOSTICS["last_successful_batch_at"] = state.get("last_successful_batch_at")
     IMAGE_DIAGNOSTICS["last_rate_limited_at"] = state.get("last_rate_limited_at")
-    paused = bool(state.get("last_rate_limited_at") and (not state.get("last_successful_batch_at") or state.get("last_rate_limited_at") > state.get("last_successful_batch_at")))
+    paused = bool(state.get("last_batch_rate_limited", False))
     IMAGE_DIAGNOSTICS["enrichment_status"] = "paused after rate limit" if paused else "awaiting next scheduled batch"
     IMAGE_DIAGNOSTICS["rate_limited"] = paused
     hub["image_diagnostics"] = IMAGE_DIAGNOSTICS
@@ -1321,6 +1321,7 @@ def enrich_cached_images():
     state["cumulative_found"] = int(state.get("cumulative_found", 0)) + found_this_batch
     state["cumulative_missing"] = int(state.get("cumulative_missing", 0)) + IMAGE_DIAGNOSTICS.get("missing", 0)
     state["cumulative_rejected"] = int(state.get("cumulative_rejected", 0)) + IMAGE_DIAGNOSTICS.get("rejected", 0)
+    state["last_batch_rate_limited"] = bool(IMAGE_LOOKUP_RATE_LIMITED)
     if IMAGE_LOOKUP_RATE_LIMITED:
         state["last_rate_limited_at"] = iso_now()
     state.setdefault("history", []).append({
