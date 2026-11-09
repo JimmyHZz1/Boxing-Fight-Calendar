@@ -18,9 +18,21 @@
   const today=()=>new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/London"}).format(new Date());
   const eventName=e=>e?.name||e?.title||e?.event_name||"Event details to be confirmed";
   const fights=e=>e?.fights||e?.bouts||e?.card||[];
+  function dedupeEvents(sport,items){
+    const seen=new Set();
+    return (Array.isArray(items)?items:[]).filter(event=>{
+      const name=String(eventName(event)||"").normalize("NFKD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
+      const date=dateKey(dateValue(event));
+      const id=event?.id||event?.event_id||event?.slug||"";
+      const key=name&&date?sport+"|"+date+"|"+name:(name?sport+"|name|"+name+"|"+String(event?.venue||event?.location||"").toLowerCase().trim():(id?sport+"|id|"+id:""));
+      if(!key)return true;
+      if(seen.has(key))return false;
+      seen.add(key);return true;
+    });
+  }
   function eventsFor(sport){
-    if(sport==="boxing")return window.BoxingSchedule?.getEvents?.()||[];
-    return window.SportsData?.getEvents?.(sport,true)||[];
+    const source=sport==="boxing"?(window.BoxingSchedule?.getEvents?.()||[]):(window.SportsData?.getEvents?.(sport,true)||[]);
+    return dedupeEvents(sport,source);
   }
   function renderEvent(sport,event){
     if(sport==="boxing")return window.BoxingSchedule?.renderEventCard?.(event,false)||null;
