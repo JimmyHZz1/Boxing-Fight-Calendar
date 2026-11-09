@@ -29,10 +29,10 @@
     const officialF1 = (active==="f1" && label==="Driver") || item.image_source==="Formula1.com" || item.image_match_method==="official-driver-profile";
     const officialPdc = item.image_source==="PDC Europe" || item.image_match_method==="official-pdc-tour-card-photo";
     const localPath = !officialF1 && !officialPdc && local && local.path ? "./"+String(local.path).replace(/^[/]+/,"") : (!officialF1 && !officialPdc && item.image_url && item.image_url.startsWith("./assets/") ? item.image_url : "");
-    const broadcastLogo = constructor && constructorLogoPath(item.name);
+    const constructor = label==="Constructor";
+    const broadcastLogo = constructor ? constructorLogoPath(item.name) : "";
     const source = broadcastLogo ? "https://raw.githubusercontent.com/JimmyHZz1/Boxing-Fight-Calendar/main/assets/images/f1-constructors/"+broadcastLogo : (officialF1 || officialPdc) ? item.image_url : (localPath ? "https://raw.githubusercontent.com/JimmyHZz1/Boxing-Fight-Calendar/main/"+String(local?.path || item.image_url).replace(/^\.\//,"").replace(/^\//,"") : item.image_url);
     const credit = (officialPdc || officialF1) ? item.image_credit : (local?.attribution || item.image_credit);
-    const constructor = label==="Constructor";
     const fallback = constructor ? constructorWordmark(item.name) : initials(item.name);
     const img = source ? '<img class="'+(constructor?'hub-constructor-logo':'hub-driver-portrait'+(officialF1?' hub-driver-portrait-official-f1':''))+'" src="'+esc(source)+'" alt="'+esc(item.name+(constructor?" constructor logo":" portrait"))+'" loading="lazy" data-image-kind="'+(constructor?'constructor':'driver')+'" data-official-pdc="' + (officialPdc?"1":"0") + '" data-official-f1="'+(officialF1?"1":"0")+'" data-image-entity="'+esc(item.name||"") + '" data-image-fallback="'+esc(fallback)+'">' : (constructor ? '<span class="hub-constructor-fallback">'+esc(fallback)+'</span>' : '<span class="hub-avatar-fallback hub-driver-fallback">'+esc(fallback)+'</span>');
     const rank = item.rank != null ? (item.rank===0 ? "C" : "#"+item.rank) : (index+1);
