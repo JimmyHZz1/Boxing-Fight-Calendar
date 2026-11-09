@@ -2042,13 +2042,12 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
 @media(min-width:720px){.f1-gp-overhead-photo{height:340px}}
 
 /* Independent Games Calendar and version-history styling. */
-.games-nav-item span{color:#2685e8!important}
 .topbar-nav-item.games-nav-item:hover,.topbar-nav-item.games-nav-item.active{color:#62a7ff;border-color:rgba(38,133,232,.35);background:rgba(38,133,232,.1)}
 .mobile-calendar-menu{position:sticky;bottom:84px;z-index:8;margin:0 0 -2px auto;width:min(280px,100%);padding:7px;background:#171d27;border:1px solid rgba(38,133,232,.45);box-shadow:0 12px 35px rgba(0,0,0,.4)}
 .mobile-calendar-menu[hidden]{display:none}
 .mobile-calendar-menu button{display:flex;align-items:center;gap:10px;width:100%;padding:13px 12px;border:0;background:transparent;color:var(--text);text-align:left;font:800 10px 'DM Sans',sans-serif;letter-spacing:1px;cursor:pointer}
 .mobile-calendar-menu button:hover,.mobile-calendar-menu button:focus-visible{background:rgba(38,133,232,.14);outline:1px solid rgba(38,133,232,.4)}
-.mobile-calendar-menu button span{font-size:17px;color:#62a7ff}
+.mobile-calendar-menu button span{font-size:17px;line-height:1;color:var(--accent)}
 .games-calendar-screen,.games-version-history-screen{--games-blue:#2685e8}
 .games-page-intro{padding:20px 0 24px}
 .games-eyebrow{color:#62a7ff}
