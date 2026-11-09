@@ -62,6 +62,7 @@
   const status = document.getElementById("games-recent-release-status");
   if (!list) return;
   const featuredTicker = document.getElementById("games-up-next-ticker");
+  const releaseList = document.getElementById("games-release-list");
   const platformFilter = document.getElementById("games-platform-filter");
   let allUpcomingGames = [];
   let activePlatform = "all";
@@ -94,13 +95,12 @@
     const today = new Intl.DateTimeFormat("en-CA", {timeZone:"Europe/London",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
     const upcoming = (Array.isArray(items) ? items : [])
       .filter(game => game && typeof game.release_date === "string" && game.release_date.length === 10 && game.release_date[4] === "-" && game.release_date[7] === "-" && game.release_date >= today)
-      .filter(game => activePlatform === "all" || (Array.isArray(game.platforms) && game.platforms.some(platform => String(platform).toLowerCase().includes(activePlatform))))
       .sort((a,b) => a.release_date.localeCompare(b.release_date));
     featuredTicker.replaceChildren();
     if (!upcoming.length) {
       const empty = document.createElement("span");
       empty.className = "games-up-next-loading";
-      empty.textContent = activePlatform === "all" ? "No confirmed major release dates currently listed." : "No upcoming releases currently listed for this platform.";
+      empty.textContent = "No confirmed major release dates currently listed.";
       featuredTicker.append(empty);
       return;
     }
@@ -179,6 +179,52 @@
       featuredTicker.classList.add("is-auto-scrolling");
     }
   };
+  const renderUpcomingReleases = items => {
+    if (!releaseList) return;
+    const today = new Intl.DateTimeFormat("en-CA", {timeZone:"Europe/London",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
+    const filtered = (Array.isArray(items) ? items : [])
+      .filter(game => game && typeof game.release_date === "string" && game.release_date.length === 10 && game.release_date >= today)
+      .filter(game => activePlatform === "all" || (Array.isArray(game.platforms) && game.platforms.some(platform => String(platform).toLowerCase().includes(activePlatform))))
+      .sort((a,b) => a.release_date.localeCompare(b.release_date));
+    releaseList.replaceChildren();
+    if (!filtered.length) {
+      const empty = document.createElement("div");
+      empty.className = "games-empty-state compact";
+      const title = document.createElement("h3");
+      title.textContent = "No upcoming releases found";
+      const copy = document.createElement("p");
+      copy.textContent = activePlatform === "all" ? "Verified upcoming releases will appear here as dates are confirmed." : "There are no upcoming releases currently listed for this platform.";
+      empty.append(title, copy);
+      releaseList.append(empty);
+      return;
+    }
+    filtered.forEach(game => {
+      const card = document.createElement("article");
+      card.className = "games-release-card";
+      const date = document.createElement("div");
+      date.className = "games-release-date";
+      date.textContent = new Intl.DateTimeFormat("en-GB", {day:"2-digit",month:"short",year:"numeric",timeZone:"Europe/London"}).format(new Date(game.release_date + "T12:00:00"));
+      const details = document.createElement("div");
+      details.className = "games-release-details";
+      const title = document.createElement("h3");
+      title.textContent = game.title || "Upcoming game";
+      const platforms = document.createElement("p");
+      platforms.textContent = Array.isArray(game.platforms) ? game.platforms.join(" · ") : "PC & console";
+      details.append(title, platforms);
+      card.append(date, details);
+      if (game.source_url && game.source_url.startsWith("http")) {
+        const link = document.createElement("a");
+        link.href = game.source_url;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.className = "games-release-source";
+        link.textContent = "DETAILS ↗";
+        link.setAttribute("aria-label", "Release details for " + (game.title || "upcoming game"));
+        card.append(link);
+      }
+      releaseList.append(card);
+    });
+  };
   const updateReleaseCountdowns = () => {
     featuredTicker?.querySelectorAll("[data-release-date]").forEach(node => {
       node.textContent = releaseCountdown(node.dataset.releaseDate);
@@ -190,8 +236,7 @@
       if (!button || !platformFilter.contains(button)) return;
       activePlatform = button.dataset.gamesPlatform || "all";
       platformFilter.querySelectorAll("button[data-games-platform]").forEach(option => option.setAttribute("aria-pressed", String(option === button)));
-      renderFeaturedGames(allUpcomingGames);
-      updateReleaseCountdowns();
+      renderUpcomingReleases(allUpcomingGames);
     });
   }
   if (featuredTicker) {
@@ -199,8 +244,8 @@
     featuredTicker.addEventListener("touchend", () => setTimeout(() => featuredTicker.classList.remove("is-paused"), 1200), {passive:true});
     fetch("./data/games-featured.json?t="+Date.now(), {cache:"no-store"})
       .then(response => { if (!response.ok) throw new Error("Featured game feed unavailable"); return response.json(); })
-      .then(data => { allUpcomingGames = Array.isArray(data.games) ? data.games : []; renderFeaturedGames(allUpcomingGames); updateReleaseCountdowns(); })
-      .catch(() => { allUpcomingGames = []; renderFeaturedGames([]); });
+      .then(data => { allUpcomingGames = Array.isArray(data.games) ? data.games : []; renderFeaturedGames(allUpcomingGames); renderUpcomingReleases(allUpcomingGames); updateReleaseCountdowns(); })
+      .catch(() => { allUpcomingGames = []; renderFeaturedGames([]); renderUpcomingReleases([]); });
     window.setInterval(updateReleaseCountdowns, 1000);
   }
   const API_URL = "https://api.github.com/repos/JimmyHZz1/Boxing-Fight-Calendar/pulls?state=closed&sort=updated&direction=desc&per_page=100";

@@ -2187,3 +2187,13 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
 .games-platform-filter button[aria-pressed="true"]{border-color:#2685e8;background:#2685e8;color:#fff}
 .games-platform-filter button:focus-visible{outline:2px solid #8fc1ff;outline-offset:2px}
 @media(max-width:480px){.games-platform-filter{gap:6px;padding:9px}.games-platform-filter-label{flex:1 0 100%;margin:0 0 2px}.games-platform-filter button{flex:1 1 auto;padding:8px 7px;font-size:7px}}
+
+/* Games platform filters belong to the Upcoming Releases panel. */
+.games-release-panel .games-platform-filter{margin:0 0 16px;background:rgba(38,133,232,.055)}
+.games-release-list{display:grid;gap:9px}
+.games-release-card{display:grid;grid-template-columns:100px minmax(0,1fr) auto;gap:14px;align-items:center;padding:14px;background:#171d27;border:1px solid rgba(38,133,232,.22);border-left:3px solid #2685e8}
+.games-release-date{font:800 15px 'Barlow Condensed',sans-serif;color:#8fc1ff;text-transform:uppercase;letter-spacing:.5px}
+.games-release-details h3{margin:0 0 5px;font:800 20px 'Barlow Condensed',sans-serif;text-transform:uppercase}
+.games-release-details p{margin:0;color:var(--muted);font-size:10px;line-height:1.5}
+.games-release-source{color:#8fc1ff;text-decoration:none;font-size:8px;font-weight:900;letter-spacing:.8px;white-space:nowrap}
+@media(max-width:480px){.games-release-card{grid-template-columns:1fr auto;gap:8px 12px;padding:12px}.games-release-date{grid-column:1/-1;font-size:13px}.games-release-details h3{font-size:18px}}
