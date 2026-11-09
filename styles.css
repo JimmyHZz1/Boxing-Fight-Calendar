@@ -1094,8 +1094,9 @@ body.compact-view .next-event-item{flex:0 0 min(205px,76vw)!important}
 /* Seamless right-to-left Up Next ticker and readable compact live centre. */
 .next-event-ticker{display:block!important;position:relative;overflow-x:auto!important;overflow-y:hidden!important;white-space:nowrap;touch-action:pan-x;scrollbar-width:none}
 .next-event-ticker::-webkit-scrollbar{display:none}
-.next-event-track{display:flex;width:max-content;min-width:max-content;gap:0;will-change:transform;animation:nextTickerRight var(--ticker-duration,42s) linear infinite}
-.next-event-group{display:flex;flex:0 0 auto;gap:9px;width:max-content;min-width:max-content}
+.next-event-track{display:flex;width:max-content;min-width:max-content;gap:12px;align-items:stretch;will-change:transform;animation:nextTickerRight var(--ticker-duration,42s) linear infinite}
+.next-event-group{display:flex;flex:0 0 auto;gap:12px;width:max-content;min-width:max-content;align-items:stretch}
+.next-event-group>.next-event-item{flex-shrink:0!important;min-width:0!important;box-sizing:border-box!important}
 .next-event-ticker.is-auto-scrolling:hover .next-event-track,
 .next-event-ticker.is-auto-scrolling:focus-within .next-event-track,
 .next-event-ticker.is-paused .next-event-track{animation-play-state:paused}
@@ -1378,19 +1379,39 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
   gap:10px!important;
 }
 @media(max-width:520px){
+  .next-event-ticker{width:100%;max-width:100%;min-width:0;overflow:hidden!important}
+  .next-event-ticker.is-auto-scrolling .next-event-track{align-items:stretch}
+  .next-event-ticker.is-auto-scrolling .next-event-group{gap:10px}
   .next-event-ticker.is-auto-scrolling .next-event-item{
-    flex-basis:min(320px,84vw)!important;
+    flex:0 0 min(320px,calc(100vw - 36px))!important;
+    width:min(320px,calc(100vw - 36px))!important;
+    max-width:calc(100vw - 36px)!important;
+    min-width:0!important;
     min-height:108px!important;
+    white-space:normal!important;
+    overflow:hidden;
   }
+  .next-event-ticker .next-event-info{min-width:0!important;width:100%!important}
+  .next-event-ticker .next-event-name{overflow-wrap:anywhere;word-break:normal}
+  .next-event-ticker .next-event-state{max-width:100%;white-space:nowrap;flex-shrink:0}
 }
 
 /* F1 constructor logos are wordmarks, not portraits: keep the full mark visible on favourite cards and profiles. */
 .favourite-card-portrait img.favourite-f1-team-logo,.favourite-profile-portrait img.favourite-f1-team-logo{object-fit:contain;object-position:center;padding:7px;background:#fff;border-radius:2px}
 
 
-/* PDC Order of Merit: ranks 1–20 down the left, 21–40 down the right. */
-@media (min-width: 760px) {
-  .hub-dropdown-list-ranking { max-height: none; overflow: visible; }
-  .hub-ranking-columns { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); column-gap: 22px; align-items: start; }
-  .hub-ranking-column { min-width: 0; }
+/* PDC Order of Merit: explicit side-by-side columns on desktop. */
+@media (min-width: 700px) {
+  .hub-dropdown:has(.hub-dropdown-list-ranking) { overflow: visible; }
+  .hub-dropdown-list-ranking { max-height: none !important; overflow: visible !important; }
+  .hub-ranking-columns { display: flex !important; flex-direction: row !important; align-items: flex-start; gap: 22px; width: 100%; }
+  .hub-ranking-column { display: block !important; flex: 1 1 0; width: 50%; min-width: 0; }
+  .hub-ranking-column .hub-person { width: 100%; }
 }
+@media (max-width: 699px) {
+  .hub-ranking-columns { display: block; }
+  .hub-ranking-column { width: 100%; }
+}
+.image-status-dropdown { margin-top: 14px; }
+.image-status-content { padding: 0 17px 16px; color: var(--muted); font-size: 11px; line-height: 1.65; }
+.image-status-content p { margin: 8px 0; }

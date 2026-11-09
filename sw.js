@@ -1,15 +1,15 @@
-const CACHE="sports-calendar-v90";
+const CACHE="sports-calendar-v92";
 const APP_FILES=[
   "./",
   "./index.html",
-  "./styles.css?v=20261109-01",
+  "./styles.css?v=20261109-02",
   "./app.js?v=20261108-43",
-  "./sports-data.js?v=20261108-09",
+  "./sports-data.js?v=20261109-02",
   "./sports.js?v=20261107-09",
-  "./sports-hub.js?v=20261109-01",
+  "./sports-hub.js?v=20261109-02",
   "./sports-nav.js?v=20261108-07",
-  "./sport-pages.js?v=20261109-01",
-  "./sports-v11.js?v=20261108-08",
+  "./sport-pages.js?v=20261109-02",
+  "./sports-v11.js?v=20261109-03",
   "./sports-weekend.js?v=20261108-02",
   "./favourites.js?v=20261108-04",
   "./ui-refresh.js?v=20261109-01",

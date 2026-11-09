@@ -12,7 +12,7 @@
   let hub={};
   const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;};
   const safeUrl=value=>/^https?:\/\//i.test(String(value||""));
-  const dateValue=e=>e?.start_at||e?.start_time_utc||e?.date||e?.event_date||null;
+  const dateValue=e=>e?.start_at||e?.main_card_at||e?.start_time_utc||e?.starts_at||e?.date||e?.event_date||e?.eventDate||null;
   const dateKey=value=>{if(!value)return "";const s=String(value);if(/^\d{4}-\d{2}-\d{2}$/.test(s))return s;const d=new Date(s);return Number.isNaN(d.getTime())?"":new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/London"}).format(d);};
   const dateLabel=value=>{const d=new Date(/^\d{4}-\d{2}-\d{2}$/.test(String(value||""))?String(value)+"T12:00:00Z":value);return !value||Number.isNaN(d.getTime())?"Date TBC":new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",weekday:"short",day:"numeric",month:"short",year:"numeric"}).format(d);};
   const today=()=>new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/London"}).format(new Date());
@@ -22,10 +22,11 @@
     const seen=new Set();
     return (Array.isArray(items)?items:[]).filter(event=>{
       const rawName=event?.name||event?.title||event?.event_name||"";
-      const name=String(rawName).normalize("NFKD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
+      const name=String(rawName||event?.short_title||event?.short_name||"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/&/g," and ").replace(/[^a-z0-9]+/g," ").trim();
       const date=dateKey(dateValue(event));
-      const id=event?.id||event?.event_id||event?.slug||"";
-      const key=name&&date?sport+"|"+date+"|"+name:(name?sport+"|name|"+name+"|"+String(event?.venue||event?.location||"").toLowerCase().trim():(id?sport+"|id|"+id:""));
+      const venue=String(event?.venue||event?.location||event?.circuit||"").normalize("NFKD").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
+      const id=event?.id||event?.event_id||event?.slug||event?.url||"";
+      const key=name&&date?sport+"|"+date+"|"+name:(name?sport+"|name|"+name+"|"+venue:(id?sport+"|id|"+String(id).toLowerCase():""));
       if(!key)return true;
       if(seen.has(key))return false;
       seen.add(key);return true;
@@ -199,6 +200,9 @@
     const upcoming=events.filter(e=>dateKey(dateValue(e))>=now).sort((a,b)=>dateKey(dateValue(a)).localeCompare(dateKey(dateValue(b))));
     const past=events.filter(e=>dateKey(dateValue(e))&&dateKey(dateValue(e))<now).sort((a,b)=>dateKey(dateValue(b)).localeCompare(dateKey(dateValue(a))));
     const next=upcoming[0]||null;
+    // The hero "Next up" card already presents the first upcoming event.
+    // Keep it out of the following list so every event appears only once.
+    const remainingUpcoming=next?upcoming.filter(event=>event!==next):upcoming;
     const totalFights=events.reduce((n,e)=>n+fights(e).length,0);
     const sessionCount=events.reduce((n,e)=>n+(Array.isArray(e.sessions)?e.sessions.length:0),0);
     const matchCount=events.reduce((n,e)=>n+(Number(e.matches)||0),0);
@@ -222,8 +226,8 @@
       const s=section("Next up","YOUR NEXT EVENT");s.append(empty("No upcoming "+info.name+" events are currently listed. The page will fill automatically when the next schedule sync publishes fixtures."));target.append(s);
     }
     const up=section(sport==="boxing"?"Upcoming fight nights":"Upcoming schedule",sport==="darts"?"PDC TOUR DATES":"WHAT’S COMING UP");
-    if(upcoming.length)upcoming.forEach(event=>{const card=renderEvent(sport,event);if(card)up.append(card);});
-    else up.append(empty("No upcoming events are available in the current published feed."));
+    if(remainingUpcoming.length)remainingUpcoming.forEach(event=>{const card=renderEvent(sport,event);if(card)up.append(card);});
+    else up.append(empty(next?"No further upcoming events are currently listed.":"No upcoming events are available in the current published feed."));
     target.append(up);
     if(past.length){
       const recent=section(sport==="boxing"?"Recent fight cards":"Recent events & results","LATEST RESULTS");

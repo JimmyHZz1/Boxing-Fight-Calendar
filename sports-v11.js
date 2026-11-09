@@ -85,8 +85,10 @@
     // Duplicate complete, identical groups. Measuring the whole group keeps the
     // loop distance exact, including the spacing between its cards.
     const groupWidth=group.getBoundingClientRect().width||group.scrollWidth;
-    if(!groupWidth){root.classList.remove("is-auto-scrolling");return;}
-    const targetWidth=Math.max(root.clientWidth+groupWidth*1.25,groupWidth*2.5);
+    const trackGap=parseFloat(getComputedStyle(track).columnGap||getComputedStyle(track).gap)||0;
+    const loopDistance=groupWidth+trackGap;
+    if(!groupWidth||!loopDistance){root.classList.remove("is-auto-scrolling");return;}
+    const targetWidth=Math.max(root.clientWidth+loopDistance*1.25,loopDistance*2.5);
     let copies=1;
     while(track.scrollWidth<targetWidth&&copies<20){
       const clone=group.cloneNode(true);
@@ -96,9 +98,9 @@
       track.append(clone);
       copies++;
     }
-    track.style.setProperty("--ticker-distance",groupWidth+"px");
-    track.style.setProperty("--ticker-offset","-"+groupWidth+"px");
-    track.style.setProperty("--ticker-duration",Math.max(24,groupWidth/22)+"s");
+    track.style.setProperty("--ticker-distance",loopDistance+"px");
+    track.style.setProperty("--ticker-offset","-"+loopDistance+"px");
+    track.style.setProperty("--ticker-duration",Math.max(24,loopDistance/22)+"s");
     root.classList.add("is-auto-scrolling");
   }
   let tickerResizeTimer;

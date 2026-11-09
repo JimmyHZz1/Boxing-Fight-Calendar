@@ -83,12 +83,35 @@
     if (text != null) el.textContent=text;
     return el;
   }
+  function eventIdentityDate(event) {
+    const value=event?.start_at||event?.main_card_at||event?.start_time_utc||event?.starts_at||event?.date||event?.event_date||event?.eventDate;
+    return dateKey(value);
+  }
+  function normalEventName(event) {
+    return String(event?.name||event?.title||event?.event_name||event?.short_title||event?.short_name||"")
+      .normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase()
+      .replace(/&/g," and ").replace(/\b(ufc|pdc|bkfc)\b/g,"$1")
+      .replace(/[^a-z0-9]+/g," ").trim();
+  }
+  function dedupeEvents(sport,items) {
+    const seen=new Set();
+    return (Array.isArray(items)?items:[]).filter(event=>{
+      const name=normalEventName(event);
+      const date=eventIdentityDate(event);
+      const venue=String(event?.venue||event?.location||event?.circuit||"").normalize("NFKD").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
+      const id=event?.id||event?.event_id||event?.slug||event?.url||"";
+      const key=name&&date?sport+"|"+date+"|"+name:name?sport+"|name|"+name+"|"+venue:(id?sport+"|id|"+String(id).toLowerCase():"");
+      if(!key)return true;
+      if(seen.has(key))return false;
+      seen.add(key);return true;
+    });
+  }
   async function fetchFeed(sport) {
     try {
       const response=await fetch("./data/"+sport+".json?t="+Date.now(),{cache:"no-store"});
       if (!response.ok) throw new Error("HTTP "+response.status);
       const payload=await response.json();
-      data[sport]=Array.isArray(payload.events)?payload.events:[];
+      data[sport]=dedupeEvents(sport,payload.events);
       meta[sport]=payload;
     } catch (error) {
       data[sport]=[];
@@ -96,11 +119,11 @@
     }
   }
   function allEvents() {
-    return SPORTS.flatMap(sport=>data[sport].map(event=>({...event,sport})));
+    return SPORTS.flatMap(sport=>dedupeEvents(sport,data[sport]).map(event=>({...event,sport})));
   }
   function eventDate(event) {
-    if (event.sport==="darts"||event.sport==="bkfc") return dateKey(event.start_at||event.date,!!(event.date&&/^\d{4}-\d{2}-\d{2}$/.test(event.date)&&!event.start_at));
-    return dateKey(event.start_at||event.date,!!(event.date&&/^\d{4}-\d{2}-\d{2}$/.test(event.date)&&!event.start_at));
+    const value=event.start_at||event.main_card_at||event.start_time_utc||event.starts_at||event.date||event.event_date||event.eventDate;
+    return dateKey(value,!!(event.date&&/^\d{4}-\d{2}-\d{2}$/.test(event.date)&&!event.start_at&&!event.main_card_at));
   }
   function sortedEvents(sport, includePast=false) {
     const list=data[sport].slice();
