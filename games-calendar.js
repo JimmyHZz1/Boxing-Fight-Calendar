@@ -132,7 +132,10 @@
       info.append(label, name, countdown, platforms);
       const logoWrap = document.createElement("span");
       logoWrap.className = "next-event-state games-up-next-logo";
-      if (game.logo_url && game.logo_url.startsWith("https://")) {
+      if (game.logo_text) {
+        logoWrap.textContent = game.logo_text;
+        logoWrap.classList.add("games-up-next-logo-text");
+      } else if (game.logo_url && game.logo_url.startsWith("https://")) {
         const logo = document.createElement("img");
         logo.src = game.logo_url;
         logo.alt = (game.title || "Game") + " logo";
@@ -147,7 +150,7 @@
         logoWrap.textContent = String(game.short_name || game.title || "GAME").split(" ").map(word => word[0]).join("").slice(0,3).toUpperCase();
         logoWrap.classList.add("games-up-next-logo-fallback");
       }
-      item.append(info, logoWrap);
+      item.append(logoWrap, info);
       group.append(item);
     });
     track.append(group);
