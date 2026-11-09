@@ -250,9 +250,13 @@
     if (event.source_url) {const a=make("a","event-source-link","Race details ↗");a.href=event.source_url;a.target="_blank";a.rel="noopener noreferrer";root.append(a);}
   }
   function renderDartsDetails(root,event) {
-    const bits=[event.organiser?String(event.organiser).replaceAll("_"," ").toUpperCase():null,event.tier?String(event.tier).replaceAll("_"," ").toUpperCase():null,event.venue||event.location||null,event.end_date?"UNTIL "+dateLabel(event.end_date):null,event.matches?event.matches+" matches scheduled":null].filter(Boolean);
+    const period=event.end_date?dateLabel(event.date||event.start_at)+" – "+dateLabel(event.end_date):dateLabel(event.date||event.start_at);
+    const bits=[event.tier?String(event.tier).replaceAll("_"," ").toUpperCase():null,event.venue||event.location||null,period,event.start_at?timeLabel(event.start_at):null,event.matches&&typeof event.matches==="number"?event.matches+" matches scheduled":null].filter(Boolean);
     root.append(make("p","sport-sync-note",bits.join(" · ")||"PDC tournament date"));
-    root.append(make("p","sport-sync-note","Official PDC tournament calendar entry. Match-by-match scores are not included."));
+    if(event.status)root.append(make("p","sport-sync-note","Tournament status: "+String(event.status).replaceAll("_"," ").toUpperCase()));
+    root.append(make("p","sport-sync-note","Televised PDC tournament listing. Match draws and live scores are shown only when the data provider supplies verified match-level information."));
+    const source=event.source_url||"https://www.pdc.tv/calendar";
+    if(/^https?:\\/\\//i.test(source)){const a=make("a","event-source-link","Official PDC tournament details ↗");a.href=source;a.target="_blank";a.rel="noopener noreferrer";root.append(a);}
   }
   function fighterPortrait(name, url) {
     const source=String(url||"");
