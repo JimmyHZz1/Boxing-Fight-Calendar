@@ -173,7 +173,7 @@
     if(!valid.length){s.append(empty(d.sync_warning||"The latest standings have not been published yet. They will appear after the next successful data sync."));return s;}
     valid.forEach(([title,items,limit])=>{
       const disclosure=el("details","sport-ranking-disclosure");
-      disclosure.open=sport==="darts";
+      disclosure.open=true;
       const group=el("div","sport-ranking-group");group.append(el("h3",null,title));
       items.slice(0,limit||8).forEach((item,index)=>{
         const row=rankingRow(item,item.rank!=null?(item.rank===0?"C":item.rank):index+1);
