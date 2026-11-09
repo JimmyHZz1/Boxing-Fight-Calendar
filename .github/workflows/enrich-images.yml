@@ -17,7 +17,7 @@ on:
       - "assets/images/**"
   schedule:
     # Recovery check in case a run is interrupted or Commons rate-limits us.
-    - cron: "*/15 * * * *"
+    - cron: "*/10 * * * *"
   workflow_dispatch:
 
 permissions:
