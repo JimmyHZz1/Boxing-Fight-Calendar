@@ -42,7 +42,7 @@ jobs:
         env:
           DARTS_API_KEY: ${{ secrets.DARTS_API_KEY }}
           UFCALENDAR_API_KEY: ${{ secrets.UFCALENDAR_API_KEY }}
-        run: python scripts/sync_sports.py
+        run: python scripts/sync_sports.py --skip-darts-calendar
 
       - name: Commit and publish updated schedules and boxer portraits
         env:
@@ -76,7 +76,7 @@ jobs:
             git fetch origin main
             git reset --hard origin/main
             python scripts/sync_fights.py
-            python scripts/sync_sports.py
+            python scripts/sync_sports.py --skip-darts-calendar
           done
 
           echo "Could not publish refreshed sports data after three attempts."
