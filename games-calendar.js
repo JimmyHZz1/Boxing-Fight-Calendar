@@ -65,7 +65,7 @@
         const title = document.createElement("h3");
         title.textContent = pr.title || "Games update";
         const summary = document.createElement("p");
-        const body = String(pr.body || "").replace(/<!--[\\s\\S]*?-->/g," ").replace(/https?:\\/\\/\\S+/g,"").replace(/\\s+/g," ").trim();
+        const body = String(pr.body || "").replace(/<!--[\\s\\S]*?-->/g," ").replace(/https?:\/\/\S+/g,"").replace(/\s+/g," ").trim();
         summary.textContent = body ? (body.length > 220 ? body.slice(0,217).trimEnd()+"…" : body) : "Merged Games Calendar update.";
         const link = document.createElement("a");
         link.href = pr.html_url;
