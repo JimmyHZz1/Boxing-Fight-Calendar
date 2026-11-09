@@ -928,29 +928,49 @@
     "youssef zalal": "2026-11-09T06:15:25Z"
   },
   "audit": {
-    "last_reviewed_at": "2026-11-09T12:00:00Z",
+    "last_reviewed_at": "2026-11-09T12:15:00Z",
     "notes": "Four UFC portrait entries quarantined after source-title identity mismatch. New portrait matches require an adjacent exact name pair in the same source field.",
     "quarantined": {
       "david martinez": {
         "name": "David Martinez",
-        "reason": "Source file title does not identify this athlete",
-        "quarantined_at": "2026-11-09T12:00:00Z"
+        "source_url": "https://commons.wikimedia.org/wiki/File:David_Garc%C3%ADa_Mart%C3%ADnez,_consultor_SEO.png",
+        "path": "assets/images/ufc/david-martinez.png",
+        "reason": "The Commons file title identifies a different person, not this UFC athlete.",
+        "quarantined_at": "2026-11-09T12:15:00Z"
       },
       "diego lopes": {
         "name": "Diego Lopes",
-        "reason": "Source file title does not identify this athlete",
-        "quarantined_at": "2026-11-09T12:00:00Z"
+        "source_url": "https://commons.wikimedia.org/wiki/File:Diogo_Lopes_de_Sequeira_(Archaeological_Survey_of_India,_Goa).jpg",
+        "path": "assets/images/ufc/diego-lopes.jpg",
+        "reason": "The Commons file title identifies a different person, not this UFC athlete.",
+        "quarantined_at": "2026-11-09T12:15:00Z"
       },
       "jean silva": {
         "name": "Jean Silva",
-        "reason": "Source file title does not identify this athlete",
-        "quarantined_at": "2026-11-09T12:00:00Z"
+        "source_url": "https://commons.wikimedia.org/wiki/File:Fernando_de_Silva_y_Alvarez_de_Toledo,_12th_Duke_of_Alba_(1714-1776),_by_Jean-Marc_Nattier.jpg",
+        "path": "assets/images/ufc/jean-silva.jpg",
+        "reason": "The Commons file title identifies a different person, not this UFC athlete.",
+        "quarantined_at": "2026-11-09T12:15:00Z"
       },
       "arnold allen": {
         "name": "Arnold Allen",
-        "reason": "Source file title does not identify this athlete",
-        "quarantined_at": "2026-11-09T12:00:00Z"
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mrs._Allen_Gouverneur_Wellman_(Frances_Alexander)._Genthe,_Vogue_1919.jpg",
+        "path": "assets/images/ufc/arnold-allen.jpg",
+        "reason": "The Commons file title identifies a different person, not this UFC athlete.",
+        "quarantined_at": "2026-11-09T12:15:00Z"
       }
     }
+  },
+  "enrichment": {
+    "batch_number": 0,
+    "baseline_at": "2026-11-09T12:15:00Z",
+    "cumulative_attempted": 93,
+    "cumulative_found": 62,
+    "cumulative_missing": 31,
+    "cumulative_rejected": 4,
+    "last_batch_at": null,
+    "last_successful_batch_at": null,
+    "last_rate_limited_at": null,
+    "history": []
   }
 }
