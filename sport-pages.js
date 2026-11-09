@@ -194,6 +194,49 @@
     if(d.notice)s.append(el("p","sport-page-note",d.notice));
     return s;
   }
+  function dartsResultsSection(){
+    const feed=window.SportsData?.getMeta?.("darts")||{};
+    const source=Array.isArray(feed.results)?feed.results:[];
+    const seen=new Set();
+    const results=source.filter(row=>{
+      const id=row.match_id||[row.played_on,row.event_name,row.round,row.winner?.name,row.loser?.name].join("|");
+      if(seen.has(id))return false;
+      seen.add(id);return true;
+    }).sort((a,b)=>(b.played_on||"").localeCompare(a.played_on||"")).slice(0,24);
+    const s=section("Recent PDC results","SETTLED MATCHES");
+    s.append(el("p","sport-page-note","Settled match results only. The free Darts API feed is delayed by at least seven days; these are not live scores."));
+    if(!results.length){
+      s.append(empty(feed.results_sync_warning||"No recent televised PDC results are currently available in the published feed."));
+      return s;
+    }
+    const groups=new Map();
+    results.forEach(row=>{
+      const name=row.event_name||"PDC tournament";
+      if(!groups.has(name))groups.set(name,[]);
+      groups.get(name).push(row);
+    });
+    groups.forEach((rows,name)=>{
+      const disclosure=el("details","sport-ranking-disclosure");
+      const group=el("div","sport-ranking-group");
+      rows.forEach(row=>{
+        const winner=row.winner||{},loser=row.loser||{};
+        const line=el("div","sport-session-row");
+        const score=[winner.score,loser.score].every(value=>value!==null&&value!==undefined)?String(winner.score)+"–"+String(loser.score):"Result";
+        line.append(el("strong",null,[winner.name||"Winner",score,loser.name||"Opponent"].join("  ")));
+        const detail=[row.round?String(row.round).replaceAll("_"," "):null,row.played_on?dateLabel(row.played_on):null].filter(Boolean).join(" · ");
+        if(detail)line.append(el("small",null,detail));
+        group.append(line);
+      });
+      disclosure.append(el("summary",null,name+" · "+rows.length+" RESULTS"),group);
+      s.append(disclosure);
+    });
+    if(feed.results_last_successful_update){
+      const updated=new Date(feed.results_last_successful_update).toLocaleString("en-GB",{timeZone:"Europe/London",dateStyle:"medium",timeStyle:"short"});
+      s.append(el("p","sport-page-note","Results feed last successfully checked: "+updated+" UK."));
+    }
+    if(feed.results_sync_warning)s.append(el("p","sport-page-note","Results refresh warning: "+feed.results_sync_warning));
+    return s;
+  }
   function render(sport){
     const target=root();if(!target)return;
     current=sport;
@@ -244,6 +287,7 @@
       past.slice(0,6).forEach(event=>{const card=renderEvent(sport,event);if(card)recent.append(card);});
       target.append(recent);
     }
+    if(sport==="darts")target.append(dartsResultsSection());
     target.append(breakdown(sport,events));
     const table=standings(sport);if(table)target.append(table);
     target.append(watchGuide(sport,events));
