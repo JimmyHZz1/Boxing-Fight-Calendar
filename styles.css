@@ -1581,3 +1581,70 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
   .home-next-up-item{grid-template-columns:31px minmax(0,1fr) auto;padding:9px}
   .home-next-up-info strong{font-size:13px}
 }
+
+
+/* Desktop dashboard refinement: put the five-sport Next Up snapshot in the
+   open left column and give Live Sports Centre the full right-hand column. */
+@media (min-width: 1100px) {
+  #home-screen.screen.active {
+    grid-template-columns: minmax(290px, .75fr) minmax(560px, 1.25fr);
+    grid-template-rows: auto auto;
+    align-items: start;
+  }
+  #home-screen > .hero { grid-column: 1; grid-row: 1; min-height: 0; }
+  #home-screen > .featured-event-widget { grid-column: 2; grid-row: 1; min-width: 0; }
+  #home-screen > .home-next-up-panel {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: start;
+    min-width: 0;
+    margin: 0;
+    padding: 18px;
+    border: 1px solid var(--line);
+    border-top: 2px solid var(--accent);
+    background: linear-gradient(145deg, rgba(226,180,91,.07), rgba(25,27,32,.96) 55%), var(--panel);
+  }
+  #home-screen > #live-sports-centre {
+    grid-column: 2;
+    grid-row: 2;
+    min-width: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+    margin: 0;
+  }
+  #home-screen > #live-sports-centre > .live-centre-heading { grid-column: 1 / -1; }
+  #home-screen > #live-sports-centre > .live-now-panel {
+    grid-column: 1;
+    min-width: 0;
+    margin-top: 0;
+  }
+  #home-screen > #live-sports-centre > .live-upcoming-panel {
+    grid-column: 2;
+    min-width: 0;
+    margin-top: 0;
+  }
+  #home-screen > #live-sports-centre .live-centre-list {
+    max-height: 390px;
+    overflow: auto;
+  }
+  #home-screen > .sports-carousel-section,
+  #home-screen > #sport-coming-soon,
+  #home-screen > #sports-hub-banner,
+  #home-screen > #sport-data-panel,
+  #home-screen > #boxing-home-content { grid-column: 1 / -1; }
+  .home-next-up-list { grid-template-columns: minmax(0, 1fr); }
+}
+@media (min-width: 1500px) {
+  #home-screen.screen.active {
+    grid-template-columns: minmax(390px, .72fr) minmax(700px, 1.28fr);
+    gap: 26px;
+  }
+  #home-screen > #live-sports-centre {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 20px;
+  }
+  #home-screen > .home-next-up-panel { padding: 20px; }
+  .home-next-up-list { gap: 7px; }
+  .home-next-up-item { grid-template-columns: 34px minmax(0, 1fr) auto; }
+}
