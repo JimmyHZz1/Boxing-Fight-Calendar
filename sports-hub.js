@@ -32,7 +32,7 @@
     const credit = (officialPdc || officialF1) ? item.image_credit : (local?.attribution || item.image_credit);
     const constructor = label==="Constructor";
     const fallback = constructor ? constructorWordmark(item.name) : initials(item.name);
-    const img = constructor ? '<span class="hub-constructor-fallback hub-constructor-broadcast" role="img" aria-label="'+esc(item.name+" F1 timing-board mark")+'" style="--team-color:'+constructorColour(item.name)+'">'+constructorBadge(item.name)+'</span>' : (source ? '<img class="hub-driver-portrait'+(officialF1?' hub-driver-portrait-official-f1':'')+'" src="'+esc(source)+'" alt="'+esc(item.name+" portrait")+'" loading="lazy" data-image-kind="driver" data-official-pdc="' + (officialPdc?"1":"0") + '" data-official-f1="'+(officialF1?"1":"0")+'" data-image-entity="'+esc(item.name||"") + '" data-image-fallback="'+esc(fallback)+'">': '<span class="hub-avatar-fallback hub-driver-fallback">'+esc(fallback)+'</span>');
+    const img = source ? '<img class="'+(constructor?'hub-constructor-logo':'hub-driver-portrait'+(officialF1?' hub-driver-portrait-official-f1':''))+'" src="'+esc(source)+'" alt="'+esc(item.name+(constructor?" constructor logo":" portrait"))+'" loading="lazy" data-image-kind="'+(constructor?'constructor':'driver')+'" data-official-pdc="' + (officialPdc?"1":"0") + '" data-official-f1="'+(officialF1?"1":"0")+'" data-image-entity="'+esc(item.name||"") + '" data-image-fallback="'+esc(fallback)+'">' : (constructor ? '<span class="hub-constructor-fallback">'+esc(fallback)+'</span>' : '<span class="hub-avatar-fallback hub-driver-fallback">'+esc(fallback)+'</span>');
     const rank = item.rank != null ? (item.rank===0 ? "C" : "#"+item.rank) : (index+1);
     const extra = [item.team,item.prize_money?moneyLabel(item.prize_money):(item.points!=null?item.points+" pts":null),item.org,credit].filter(Boolean).join(" · ");
     return '<div class="hub-person'+(label==="Player" && officialPdc?' hub-pdc-player':'')+'">'+img+'<span class="hub-rank">'+esc(rank)+'</span><span class="hub-person-name"><strong>'+esc(item.name||"TBC")+'</strong><small>'+esc(extra||label||"")+'</small></span></div>';
@@ -43,9 +43,10 @@
     if(isRanking)list.sort((a,b)=>Number(a.rank??Infinity)-Number(b.rank??Infinity));
     let content="";
     if(isRanking){
-      const left=list.slice(0,20).map((x,i)=>person(x,i,label)).join("");
-      const right=list.slice(20,40).map((x,i)=>person(x,i+20,label)).join("");
-      content='<div class="hub-ranking-columns"><div class="hub-ranking-column">'+left+'</div><div class="hub-ranking-column">'+right+'</div></div>';
+      const columnCount=window.matchMedia("(min-width: 1200px)").matches?3:2;
+      const perColumn=Math.ceil(list.length/columnCount);
+      const columns=Array.from({length:columnCount},(_,column)=>'<div class="hub-ranking-column">'+list.slice(column*perColumn,(column+1)*perColumn).map((x,i)=>person(x,column*perColumn+i,label)).join("")+'</div>').join("");
+      content='<div class="hub-ranking-columns">'+columns+'</div>';
     }else{
       content=list.length?list.map((x,i)=>person(x,i,label)).join(""):'<p class="hub-empty">No published data available yet.</p>';
     }
