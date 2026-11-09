@@ -33,8 +33,11 @@
     const source = constructor ? "" : (officialF1 || officialPdc) ? item.image_url : (localPath ? "https://raw.githubusercontent.com/JimmyHZz1/Boxing-Fight-Calendar/main/"+String(local?.path || item.image_url).replace(/^\.\//,"").replace(/^\//,"") : item.image_url);
     const credit = (officialPdc || officialF1) ? item.image_credit : (local?.attribution || item.image_credit);
     const fallback = constructor ? constructorWordmark(item.name) : initials(item.name);
+    const constructorPath = constructorLogoPath(item.name);
     const img = constructor
-      ? '<span class="hub-constructor-broadcast constructor-broadcast-mark" style="--team-color:'+esc(constructorColour(item.name))+'" role="img" aria-label="'+esc(item.name)+' F1 television timing-board mark">'+constructorBadge(item.name)+'</span>'
+      ? constructorPath
+        ? '<img class="hub-constructor-logo" src="https://raw.githubusercontent.com/JimmyHZz1/Boxing-Fight-Calendar/main/assets/images/f1-constructors/'+esc(constructorPath)+'" alt="'+esc(item.name+' logo')+'" loading="lazy" decoding="async" data-image-kind="constructor" data-image-entity="'+esc(item.name||'')+'" data-image-fallback="'+esc(constructorBadge(item.name))+'">'
+        : '<span class="hub-constructor-broadcast constructor-broadcast-mark" style="--team-color:'+esc(constructorColour(item.name))+'" role="img" aria-label="'+esc(item.name)+' F1 broadcast mark">'+constructorBadge(item.name)+'</span>'
       : source ? '<img class="hub-driver-portrait'+(officialF1?' hub-driver-portrait-official-f1':'')+'" src="'+esc(source)+'" alt="'+esc(item.name+" portrait")+'" loading="lazy" data-image-kind="driver" data-official-pdc="' + (officialPdc?"1":"0") + '" data-official-f1="'+(officialF1?"1":"0")+'" data-image-entity="'+esc(item.name||"") + '" data-image-fallback="'+esc(fallback)+'">' : '<span class="hub-avatar-fallback hub-driver-fallback">'+esc(fallback)+'</span>';
     const rank = item.rank != null ? (item.rank===0 ? "C" : "#"+item.rank) : (index+1);
     const extra = [item.team,item.prize_money?moneyLabel(item.prize_money):(item.points!=null?item.points+" pts":null),item.org,credit].filter(Boolean).join(" · ");
@@ -130,7 +133,14 @@
         }
         imageFailures++;
         const fallback=document.createElement("span");
-        fallback.className=img.dataset.imageKind==="constructor" ? "hub-constructor-fallback" : (img.dataset.imageKind==="driver" ? "hub-avatar-fallback hub-driver-fallback" : "hub-avatar-fallback");
+        if(img.dataset.imageKind==="constructor"){
+          fallback.className="hub-constructor-broadcast constructor-broadcast-mark";
+          fallback.style.setProperty("--team-color",constructorColour(img.dataset.imageEntity));
+          fallback.setAttribute("role","img");
+          fallback.setAttribute("aria-label",img.dataset.imageEntity+" F1 broadcast mark");
+        }else{
+          fallback.className=img.dataset.imageKind==="driver" ? "hub-avatar-fallback hub-driver-fallback" : "hub-avatar-fallback";
+        }
         fallback.textContent=img.dataset.imageFallback||"?";
         img.replaceWith(fallback);
         updateImageDiagnostics();
