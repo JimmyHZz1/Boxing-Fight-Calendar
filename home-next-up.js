@@ -17,7 +17,7 @@
     const value = eventDate(event);
     if (!value) return "";
     const raw = String(value);
-    if (/^\\d{4}-\\d{2}-\\d{2}$/.test(raw)) return raw;
+    if (/^\d{4}-\d{2}-\d{2}$/.test(raw)) return raw;
     const date = new Date(raw);
     return Number.isNaN(date.getTime()) ? raw.slice(0, 10) : new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/London" }).format(date);
   };
@@ -25,10 +25,10 @@
     const value = eventDate(event);
     if (!value) return "DATE TBC";
     const raw = String(value);
-    const date = new Date(/^\\d{4}-\\d{2}-\\d{2}$/.test(raw) ? raw + "T12:00:00Z" : raw);
+    const date = new Date(/^\d{4}-\d{2}-\d{2}$/.test(raw) ? raw + "T12:00:00Z" : raw);
     if (Number.isNaN(date.getTime())) return "DATE TBC";
     const dateText = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/London", weekday: "short", day: "numeric", month: "short" }).format(date);
-    if (/^\\d{4}-\\d{2}-\\d{2}$/.test(raw)) return dateText + " · TIME TBC";
+    if (/^\d{4}-\d{2}-\d{2}$/.test(raw)) return dateText + " · TIME TBC";
     const timeText = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/London", hour: "2-digit", minute: "2-digit" }).format(date);
     return dateText + " · " + timeText;
   };
