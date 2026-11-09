@@ -1,0 +1,32 @@
+{
+  "updated_at": "2026-11-09",
+  "games": [
+    {
+      "title": "Grand Theft Auto VI",
+      "release_date": "2026-11-19",
+      "platforms": [
+        "PlayStation 5",
+        "Xbox Series X|S"
+      ],
+      "source_url": "https://www.videogameschronicle.com/guide/upcoming-game-release-dates-schedule/"
+    },
+    {
+      "title": "Warhammer 40,000: Dawn of War IV",
+      "release_date": "2026-12-03",
+      "platforms": [
+        "PC"
+      ],
+      "source_url": "https://www.videogameschronicle.com/guide/upcoming-game-release-dates-schedule/"
+    },
+    {
+      "title": "Path of Exile II",
+      "release_date": "2026-12-11",
+      "platforms": [
+        "PC",
+        "PlayStation 5",
+        "Xbox Series X|S"
+      ],
+      "source_url": "https://www.videogameschronicle.com/guide/upcoming-game-release-dates-schedule/"
+    }
+  ]
+}
