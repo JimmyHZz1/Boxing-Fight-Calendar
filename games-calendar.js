@@ -1,11 +1,19 @@
 /* Independent Games Calendar navigation and Games-only release history. */
 (() => {
   const menu = document.getElementById("mobile-calendar-menu");
-  const trigger = document.querySelector("[data-calendar-switcher]");
+  const trigger = document.getElementById("brand-calendar-switcher");
+  const mark = document.getElementById("brand-mark-letter");
+  const title = document.getElementById("brand-title");
   const closeMenu = () => {
     if (!menu || !trigger) return;
     menu.hidden = true;
     trigger.setAttribute("aria-expanded", "false");
+  };
+  const setBrand = screenId => {
+    const games = screenId === "games-calendar-screen" || screenId === "games-version-history-screen";
+    document.body.classList.toggle("games-mode", games);
+    if (mark) mark.textContent = games ? "G" : "S";
+    if (title) title.textContent = games ? "GAMES" : "SPORTS";
   };
   if (menu && trigger) {
     trigger.addEventListener("click", event => {
@@ -17,6 +25,7 @@
     menu.querySelectorAll("button[data-screen]").forEach(button => {
       button.addEventListener("click", () => {
         closeMenu();
+        setBrand(button.dataset.screen);
         window.showScreen?.(button.dataset.screen);
       });
     });
@@ -26,7 +35,9 @@
     document.addEventListener("keydown", event => {
       if (event.key === "Escape") closeMenu();
     });
+    window.addEventListener("sports:screen-changed", event => setBrand(event.detail?.screen || ""));
   }
+
 
   document.querySelectorAll(".games-page-footer [data-screen], .games-history-link[data-screen]").forEach(button => {
     button.addEventListener("click", () => window.showScreen?.(button.dataset.screen));
