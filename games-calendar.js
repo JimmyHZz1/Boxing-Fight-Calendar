@@ -66,7 +66,7 @@
     if (!featuredList) return;
     const today = new Intl.DateTimeFormat("en-CA", {timeZone:"Europe/London",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
     const upcoming = (Array.isArray(items) ? items : [])
-      .filter(game => game && /^\\d{4}-\\d{2}-\\d{2}$/.test(game.release_date || "") && game.release_date >= today)
+      .filter(game => game && typeof game.release_date === "string" && game.release_date.length === 10 && game.release_date[4] === "-" && game.release_date[7] === "-" && game.release_date >= today)
       .sort((a,b) => a.release_date.localeCompare(b.release_date))
       .slice(0,3);
     featuredList.replaceChildren();
@@ -93,7 +93,7 @@
         platforms.append(tag);
       });
       card.append(date,title,platforms);
-      if (game.source_url && /^https?:\\/\\//i.test(game.source_url)) {
+      if (game.source_url) { try { const parsed = new URL(game.source_url); if (!["http:","https:"].includes(parsed.protocol)) throw new Error("Invalid source URL"); } catch (_) { card.append(date,title,platforms); featuredList.append(card); return; }
         const source = document.createElement("a");
         source.href = game.source_url;
         source.target = "_blank";
