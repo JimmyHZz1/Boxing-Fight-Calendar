@@ -266,6 +266,15 @@
     const third=sport==="f1"?[String(sessionCount),"RACE SESSIONS"]:sport==="darts"?[String(matchCount),"MATCHES SCHEDULED"]:[String(totalFights),"FIGHTS / BOUTS LISTED"];
     [[String(upcoming.length),"UPCOMING EVENTS"],[String(past.length),"PAST EVENTS"],third].forEach(([n,l])=>{const c=el("div","sport-detail-stat");c.append(el("strong",null,n),el("small",null,l));stats.append(c);});
     target.append(stats);
+    if(sport==="f1"){
+      const launch=el("section","f1-gp-launch");
+      launch.append(el("div","f1-gp-launch-copy","THE WEEKEND, FULLY COVERED"));
+      launch.append(el("h2",null,"Grand Prix Centre"));
+      launch.append(el("p",null,"Weekend schedule, circuit, weather, results, favourites and session reminders."));
+      const launchButton=el("button","primary-button","OPEN GRAND PRIX CENTRE →");
+      launchButton.type="button";launchButton.addEventListener("click",()=>window.F1GrandPrixCentre?.open());
+      launch.append(launchButton);target.append(launch);
+    }
     if(sport==="darts"){
       const feed=window.SportsData?.getMeta?.("darts")||{};
       const stamp=feed.last_successful_update||feed.last_updated;

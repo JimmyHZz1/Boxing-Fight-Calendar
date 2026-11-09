@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#101114">
   <meta name="description" content="Boxing, Formula 1, UFC and PDC darts schedules in one sports calendar, shown in UK local time.">
   <link rel="manifest" href="./manifest.json">
-  <link rel="stylesheet" href="./styles.css?v=20261109-08">
+  <link rel="stylesheet" href="./styles.css?v=20261109-09">
   <title>Sports Calendar</title>
 </head>
 <body>
@@ -121,6 +121,11 @@
       <section id="sport-detail-screen" class="screen" aria-labelledby="sport-detail-title">
         <div class="sport-detail-toolbar"><button type="button" class="secondary-button" id="sport-detail-back">← ALL SPORTS</button><span class="eyebrow">SPORT PROFILE &amp; EVENT CENTRE</span></div>
         <div id="sport-page-content" aria-live="polite"></div>
+      </section>
+
+      <section id="f1-grand-prix-screen" class="screen f1-grand-prix-screen" aria-labelledby="f1-gp-title">
+        <div class="f1-gp-toolbar"><button type="button" class="secondary-button" id="f1-gp-back">← F1 OVERVIEW</button><span class="eyebrow">FORMULA 1 · GRAND PRIX CENTRE</span></div>
+        <div id="f1-grand-prix-content" aria-live="polite"><div class="muted-note">Loading the Grand Prix Centre…</div></div>
       </section>
 
       <section id="calendar-screen" class="screen" aria-labelledby="calendar-title">
@@ -247,12 +252,13 @@
   <script src="./sports.js?v=20261107-09"></script>
   <script src="./sports-hub.js?v=20261109-08"></script>
   <script src="./sports-nav.js?v=20261108-07"></script>
-  <script src="./sport-pages.js?v=20261109-05"></script>
+  <script src="./sport-pages.js?v=20261109-06"></script>
   <script src="./sports-v11.js?v=20261109-04"></script>
   <script src="./sports-weekend.js?v=20261108-02"></script>
   <script src="./favourites.js?v=20261109-02"></script>
   <script src="./ui-refresh.js?v=20261109-01"></script>
   <script src="./home-next-up.js?v=20261109-01"></script>
   <script src="./version-history.js?v=20261109-01"></script>
+  <script src="./f1-grand-prix-centre.js?v=20261109-01"></script>
 </body>
 </html>

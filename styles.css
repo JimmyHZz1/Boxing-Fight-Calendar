@@ -1967,3 +1967,67 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
 .favourite-profile-portrait img.favourite-f1-team-logo[alt="Aston Martin constructor logo"]{
   filter:brightness(0) invert(1) drop-shadow(0 0 3px rgba(255,255,255,.38))!important;
 }
+
+
+/* V1.3 — F1 Grand Prix Centre */
+.f1-gp-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
+.f1-gp-launch{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:24px 0;padding:20px;border:1px solid #51413a;border-left:4px solid #e10600;background:linear-gradient(110deg,rgba(225,6,0,.14),rgba(25,27,32,.96) 58%),var(--panel)}
+.f1-gp-launch-copy{width:100%;font-size:9px;letter-spacing:1.7px;font-weight:800;color:#ff7772}
+.f1-gp-launch h2{font:800 30px 'Barlow Condensed',sans-serif;text-transform:uppercase;margin:0;flex:1 1 220px}
+.f1-gp-launch p{margin:0;color:var(--muted);font-size:12px;flex:2 1 280px}
+.f1-gp-launch .primary-button{background:#e10600;border-color:#e10600;color:#fff}
+.f1-gp-hero{position:relative;overflow:hidden;padding:25px;border:1px solid #3c3031;border-left:4px solid #e10600;background:linear-gradient(115deg,rgba(225,6,0,.16),rgba(24,25,30,.96) 58%),var(--panel)}
+.f1-gp-hero-top{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}
+.f1-gp-kicker,.f1-gp-muted-label{font-size:9px;letter-spacing:1.4px;color:var(--muted);font-weight:800}
+.f1-gp-round{font:700 11px 'DM Sans',sans-serif;color:#ff7772;letter-spacing:1px}
+.f1-gp-hero h1{font:900 clamp(38px,7vw,62px)/.95 'Barlow Condensed',sans-serif;text-transform:uppercase;margin:17px 0 8px}
+.f1-gp-meta{font-size:12px;color:#c1c1c6}
+.f1-gp-next{display:flex;justify-content:space-between;align-items:end;gap:14px;flex-wrap:wrap;margin-top:24px;padding-top:17px;border-top:1px solid #4a3435}
+.f1-gp-next strong{display:block;font:800 25px 'Barlow Condensed',sans-serif;text-transform:uppercase}
+.f1-gp-countdown{font:900 clamp(24px,5vw,38px) 'Barlow Condensed',sans-serif;color:#fff;text-align:right}
+.f1-gp-countdown small{display:block;font:700 9px 'DM Sans',sans-serif;letter-spacing:1px;color:#ff7772}
+.f1-gp-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:16px}
+.f1-gp-panel{min-width:0;padding:17px;background:var(--panel);border:1px solid var(--line)}
+.f1-gp-panel-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:13px}
+.f1-gp-panel h2{font:800 24px 'Barlow Condensed',sans-serif;text-transform:uppercase;margin:0}
+.f1-gp-panel h3{font:800 19px 'Barlow Condensed',sans-serif;text-transform:uppercase;margin:0}
+.f1-gp-status{font-size:8px;letter-spacing:1px;font-weight:800;padding:5px 7px;border:1px solid #45464d;color:#c3c4ca}
+.f1-gp-status.next{border-color:#a53b36;color:#ff8a83}
+.f1-gp-status.done{color:#9ca6a0}
+.f1-gp-session-list{display:grid;gap:7px}
+.f1-gp-session{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center;padding:11px;background:var(--panel2);border-left:2px solid #41434a}
+.f1-gp-session.is-next{border-left-color:#e10600}
+.f1-gp-session-name{font-weight:800;font-size:12px}
+.f1-gp-session-time{display:block;color:var(--muted);font-size:10px;margin-top:4px}
+.f1-gp-session-actions{display:flex;align-items:center;gap:6px}
+.f1-gp-session-actions button,.f1-gp-tabs button,.f1-gp-inline-button{border:1px solid var(--line);background:#17191e;color:var(--text);padding:7px 9px;font:700 9px 'DM Sans',sans-serif;letter-spacing:.5px;cursor:pointer}
+.f1-gp-session-actions button[aria-pressed=true]{border-color:#e10600;color:#ff8a83}
+.f1-gp-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.f1-gp-tabs button[aria-pressed=true]{background:#e10600;border-color:#e10600;color:white}
+.f1-gp-results{width:100%;border-collapse:collapse;font-size:11px}
+.f1-gp-results th{text-align:left;color:var(--muted);font-size:8px;letter-spacing:1px;padding:9px 7px;border-bottom:1px solid var(--line)}
+.f1-gp-results td{padding:9px 7px;border-bottom:1px solid #292c33;white-space:nowrap}
+.f1-gp-results tr.is-favourite td{background:rgba(225,6,0,.09)}
+.f1-gp-results-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.f1-gp-team-mark{display:inline-block;width:3px;height:18px;margin-right:7px;vertical-align:middle;background:var(--team-color,#777)}
+.f1-gp-empty{padding:15px;background:var(--panel2);color:var(--muted);font-size:11px;line-height:1.6}
+.f1-gp-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.f1-gp-fact{padding:12px;background:var(--panel2)}
+.f1-gp-fact strong{display:block;font:800 18px 'Barlow Condensed',sans-serif;text-transform:uppercase}
+.f1-gp-fact small{display:block;color:var(--muted);font-size:8px;letter-spacing:1px;margin-top:4px}
+.f1-gp-weather{display:flex;align-items:center;gap:12px;padding:13px;background:var(--panel2)}
+.f1-gp-weather-icon{font-size:28px}
+.f1-gp-weather strong{display:block;font:800 23px 'Barlow Condensed',sans-serif}
+.f1-gp-weather small{display:block;color:var(--muted);font-size:9px;line-height:1.5}
+.f1-gp-favourite{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);font-size:11px}
+.f1-gp-favourite:last-child{border-bottom:0}
+.f1-gp-favourite b{font-size:10px;color:#ff8a83}
+.f1-gp-reminder-controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:10px 0}
+.f1-gp-reminder-controls select{background:var(--panel2);color:var(--text);border:1px solid var(--line);padding:9px}
+.f1-gp-footnote{font-size:9px;line-height:1.6;color:var(--muted);margin:10px 0 0}
+.f1-gp-section-title{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:27px 0 12px}
+.f1-gp-section-title h2{font:800 26px 'Barlow Condensed',sans-serif;text-transform:uppercase;margin:0}
+.f1-gp-select{background:var(--panel2);color:var(--text);border:1px solid var(--line);padding:9px;max-width:100%}
+.f1-gp-toast{position:sticky;bottom:12px;z-index:8;padding:12px;background:#282126;border:1px solid #e10600;color:#fff;font-size:11px}
+@media(min-width:720px){.f1-gp-grid{grid-template-columns:minmax(0,1.25fr) minmax(260px,.75fr)}.f1-gp-grid .f1-gp-wide{grid-column:1/-1}.f1-gp-facts{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:480px){.f1-gp-hero{padding:18px}.f1-gp-session{grid-template-columns:minmax(0,1fr)}.f1-gp-session-actions{justify-content:space-between}.f1-gp-countdown{text-align:left}.f1-gp-launch{padding:15px}.f1-gp-toolbar .eyebrow{font-size:8px}}
