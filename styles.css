@@ -1846,3 +1846,16 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
   .hub-person:has(.hub-constructor-broadcast){grid-template-columns:66px 23px minmax(0,1fr);gap:7px;min-height:52px}
   .hub-constructor-broadcast{width:66px!important;height:42px!important;max-width:66px!important;min-width:66px!important;flex-basis:66px}
 }
+
+
+/* Compact the home PDC headshots and use the shared small F1 timing-tower marks. */
+#sports-hub-content .hub-person.hub-pdc-player{grid-template-columns:40px 26px minmax(0,1fr);min-height:50px;overflow:hidden}
+#sports-hub-content .hub-person.hub-pdc-player>img{width:36px!important;height:36px!important;max-width:36px;object-fit:cover!important;object-position:center 12%!important;transform:none!important;transform-origin:center!important;border-radius:50%}
+#sports-hub-content .hub-person .hub-constructor-broadcast{width:54px!important;height:42px!important;min-width:54px!important;max-width:54px!important;flex:0 0 54px!important;padding:0 4px!important;font-size:18px!important}
+#sports-hub-content .hub-person:has(.hub-constructor-broadcast){grid-template-columns:54px 26px minmax(0,1fr);min-height:50px;gap:8px}
+@media(max-width:699px){
+  #sports-hub-content .hub-person.hub-pdc-player{grid-template-columns:36px 23px minmax(0,1fr);min-height:46px}
+  #sports-hub-content .hub-person.hub-pdc-player>img{width:32px!important;height:32px!important;max-width:32px}
+  #sports-hub-content .hub-person:has(.hub-constructor-broadcast){grid-template-columns:48px 23px minmax(0,1fr);min-height:46px;gap:7px}
+  #sports-hub-content .hub-person .hub-constructor-broadcast{width:48px!important;height:36px!important;min-width:48px!important;max-width:48px!important;flex-basis:48px!important;font-size:16px!important}
+}
