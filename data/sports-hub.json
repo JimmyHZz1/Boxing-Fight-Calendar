@@ -4736,77 +4736,38 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 5,
+    "attempted": 1,
     "found": 101,
     "missing": 614,
-    "rejected": 38,
+    "rejected": 0,
     "by_sport": {
       "ufc": {
-        "attempted": 5,
-        "found": 2,
-        "missing": 3,
+        "attempted": 1,
+        "found": 0,
+        "missing": 1,
         "rejected": 0
       }
     },
-    "rejection_reasons": {
-      "not_an_image": 35,
-      "exact_name_pair_not_matched": 3
-    },
     "search_details": [
       {
-        "name": "Steve Garcia",
-        "queries": 1,
-        "candidate_files": 20,
-        "accepted": 6,
-        "rejections": {
-          "not_an_image": 11,
-          "exact_name_pair_not_matched": 3
-        }
-      },
-      {
-        "name": "Aaron Pico",
-        "queries": 1,
-        "candidate_files": 20,
-        "accepted": 0,
-        "rejections": {
-          "not_an_image": 20
-        }
-      },
-      {
-        "name": "Melquizael Costa",
-        "queries": 1,
-        "candidate_files": 0,
-        "accepted": 0,
-        "rejections": {}
-      },
-      {
-        "name": "Brian Ortega",
-        "queries": 1,
-        "candidate_files": 5,
-        "accepted": 1,
-        "rejections": {
-          "not_an_image": 4
-        }
-      },
-      {
-        "name": "Patricio Pitbull",
-        "queries": 1,
+        "name": "Joshua Van",
+        "queries": 0,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       }
     ],
-    "checked_at": "2026-11-09T12:52:42Z",
+    "checked_at": "2026-11-09T12:52:57Z",
     "library_entries": 66,
-    "newly_found": 2,
-    "cumulative_attempted": 103,
+    "newly_found": 0,
+    "cumulative_attempted": 104,
     "cumulative_found": 66,
-    "cumulative_missing": 37,
+    "cumulative_missing": 38,
     "cumulative_rejected": 115,
-    "batch_number": 2,
-    "last_batch_at": "2026-11-09T12:52:42Z",
-    "last_successful_batch_at": "2026-11-09T12:52:42Z",
-    "last_rate_limited_at": null,
+    "batch_number": 3,
+    "last_batch_at": "2026-11-09T12:52:57Z",
+    "last_successful_batch_at": "2026-11-09T12:52:57Z",
+    "last_rate_limited_at": "2026-11-09T12:52:57Z",
     "coverage": {
       "boxing fight card fighters": {
         "total": 167,
@@ -4839,7 +4800,7 @@
         "missing": 81
       }
     },
-    "rate_limited": false
+    "rate_limited": true
   },
   "last_updated": "2026-11-09T12:51:38Z"
 }

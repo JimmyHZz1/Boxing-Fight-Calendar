@@ -900,7 +900,7 @@
       "image_local_path": "assets/images/ufc/brian-ortega.png"
     }
   },
-  "updated_at": "2026-11-09T12:52:42Z",
+  "updated_at": "2026-11-09T12:52:57Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1041,15 +1041,15 @@
     }
   },
   "enrichment": {
-    "batch_number": 2,
+    "batch_number": 3,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 103,
+    "cumulative_attempted": 104,
     "cumulative_found": 66,
-    "cumulative_missing": 37,
+    "cumulative_missing": 38,
     "cumulative_rejected": 115,
-    "last_batch_at": "2026-11-09T12:52:42Z",
-    "last_successful_batch_at": "2026-11-09T12:52:42Z",
-    "last_rate_limited_at": null,
+    "last_batch_at": "2026-11-09T12:52:57Z",
+    "last_successful_batch_at": "2026-11-09T12:52:57Z",
+    "last_rate_limited_at": "2026-11-09T12:52:57Z",
     "history": [
       {
         "batch": 1,
@@ -1066,8 +1066,16 @@
         "found": 2,
         "missing": 3,
         "rate_limited": false
+      },
+      {
+        "batch": 3,
+        "at": "2026-11-09T12:52:57Z",
+        "attempted": 1,
+        "found": 0,
+        "missing": 1,
+        "rate_limited": true
       }
     ],
-    "last_batch_rate_limited": false
+    "last_batch_rate_limited": true
   }
 }
