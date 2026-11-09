@@ -118,7 +118,7 @@ def paged_darts_calendar(key, organiser):
     """Read the documented Darts API calendar shape and retain paging metadata."""
     all_rows, cursor = [], None
     for _ in range(8):
-        params = {"from": (TODAY - timedelta(days=7)).isoformat(), "to": (TODAY + timedelta(days=370)).isoformat(), "organiser": organiser, "limit": 200}
+        params = {"from": (TODAY - timedelta(days=7)).isoformat(), "to": (TODAY + timedelta(days=60)).isoformat(), "organiser": organiser, "limit": 200}
         if cursor:
             params["cursor"] = cursor
         url = "https://api.dartsapi.com/v1/calendar?" + urllib.parse.urlencode(params)
@@ -188,7 +188,7 @@ def pdc_official_fallback_events():
     ]
     events = []
     for item in schedule:
-        if item["date"] < TODAY.isoformat() and item["end_date"] < TODAY.isoformat():
+        if item["date"] < (TODAY - timedelta(days=7)).isoformat() or item["date"] > (TODAY + timedelta(days=60)).isoformat():
             continue
         events.append({
             **item,
@@ -221,14 +221,17 @@ def sync_darts():
                 if stable_id in seen:
                     continue
                 seen.add(stable_id)
+                if str(date)[:10] > (TODAY + timedelta(days=60)).isoformat():
+                    continue
                 api_events.append({
                     "id": stable_id, "name": event_name, "date": date,
-                    "start_at": row.get("starts_at"),
+                    "start_at": row.get("starts_at"), "end_date": row.get("end_date") or row.get("ends_at"),
                     "status": row.get("status") or "scheduled",
                     "organiser": row.get("organiser") or "pdc", "tier": row.get("tier"),
+                    "venue": row.get("venue") or row.get("location"),
                     "matches": row.get("matches"), "competition_id": row.get("competition_id"),
                     "source": "Darts API",
-                    "source_url": "https://www.pdc.tv/calendar",
+                    "source_url": row.get("url") or "https://www.pdc.tv/calendar",
                 })
         except Exception as exc:
             warning = "Darts API calendar unavailable: " + str(exc)
@@ -1099,6 +1102,8 @@ def sync_sports_hub():
                     "name": name,
                     "prize_money": row.get("prize_money") or row.get("ranking_prize_money") or row.get("amount"),
                     "points": row.get("points"),
+                    "movement": row.get("movement") or row.get("position_change") or row.get("rank_change"),
+                    "previous_rank": row.get("previous_position") or row.get("previous_rank"),
                     "image_url": row.get("image_url") or player.get("image_url") or player.get("photo_url")
                 })
         except Exception:
@@ -1207,8 +1212,16 @@ def sync_sports_hub():
     except Exception as exc:
         hub["sports"]["boxing"] = {**previous.get("boxing", {"divisions": []}), "sync_warning": str(exc)}
 
-    for sport_data in hub["sports"].values():
-        sport_data["last_updated"] = iso_now()
+    for sport_name, sport_data in hub["sports"].items():
+        if sport_name == "darts" and sport_data.get("sync_warning"):
+            # A retained ranking snapshot is not a fresh update. Keep its last
+            # successful timestamp and expose the failed attempt separately.
+            sport_data["sync_attempted_at"] = iso_now()
+        else:
+            sport_data["last_updated"] = iso_now()
+            if sport_name == "darts":
+                sport_data["last_successful_update"] = iso_now()
+                sport_data["data_status"] = "current"
     coverage = {}
     def count_rows(rows):
         rows = rows or []
@@ -1367,7 +1380,7 @@ def enrich_cached_images():
     print("IMAGE_ENRICHMENT: " + json.dumps(IMAGE_DIAGNOSTICS, ensure_ascii=False))
 
 
-def main():
+def main(skip_darts_calendar=False):
     try:
         sync_sports_hub()
     except Exception as exc:
@@ -1377,11 +1390,12 @@ def main():
     except Exception as exc:
         preserve_or_status("f1.json", "f1", "Jolpica F1", str(exc))
         print(f"F1_SYNC_WARNING: {exc}")
-    try:
-        sync_darts()
-    except Exception as exc:
-        preserve_or_status("darts.json", "darts", "Darts API", str(exc))
-        print(f"DARTS_SYNC_WARNING: {exc}")
+    if not skip_darts_calendar:
+        try:
+            sync_darts()
+        except Exception as exc:
+            preserve_or_status("darts.json", "darts", "Darts API", str(exc))
+            print(f"DARTS_SYNC_WARNING: {exc}")
     try:
         sync_ufc()
     except Exception as exc:
@@ -1395,5 +1409,12 @@ def main():
 if __name__ == "__main__":
     if "--images-only" in sys.argv:
         enrich_cached_images()
+    elif "--darts-calendar-only" in sys.argv:
+        try:
+            sync_darts()
+        except Exception as exc:
+            preserve_or_status("darts.json", "darts", "Darts API", str(exc))
+            print(f"DARTS_SYNC_WARNING: {exc}")
+            raise
     else:
-        main()
+        main(skip_darts_calendar="--skip-darts-calendar" in sys.argv)
