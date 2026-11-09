@@ -117,11 +117,12 @@
     return s;
   }
   function constructorFallback(name){
-    const marks={"Mercedes":"★","Ferrari":"SF","Red Bull":"RBR","McLaren":"MCL","RB F1 Team":"VCARB","Alpine F1 Team":"ALP","Haas F1 Team":"HAAS","Audi":"AUDI","Williams":"W","Aston Martin":"AM","Cadillac F1 Team":"CAD"};
+    const marks={"Mercedes":"MER","Ferrari":"FER","Red Bull":"RBR","McLaren":"MCL","RB F1 Team":"RB","Alpine F1 Team":"ALP","Haas F1 Team":"HAS","Audi":"AUD","Williams":"WIL","Aston Martin":"AMR","Cadillac F1 Team":"CAD"};
     const colours={"Mercedes":"#00d2be","Ferrari":"#ef1a2d","Red Bull":"#4776d0","McLaren":"#ff8700","RB F1 Team":"#6c9bd2","Alpine F1 Team":"#168bd2","Haas F1 Team":"#c7cbd1","Audi":"#f02b32","Williams":"#39a9df","Aston Martin":"#00a58b","Cadillac F1 Team":"#e5e5e5"};
-    const mark=el("span","sport-ranking-image-fallback constructor-mark",marks[name]||String(name||"F1").slice(0,4).toUpperCase());
+    const mark=el("span","sport-ranking-image-fallback constructor-mark constructor-broadcast-mark",marks[name]||String(name||"F1").slice(0,3).toUpperCase());
     mark.style.setProperty("--team-color",colours[name]||"#e2b45b");
-    mark.setAttribute("aria-label",name+" mark");
+    mark.setAttribute("role","img");
+    mark.setAttribute("aria-label",name+" F1 television timing-board mark");
     return mark;
   }
   function rankingRow(item,rank,kind="person"){
@@ -145,29 +146,23 @@
     row.append(el("strong",null,name));
     return row;
   }
-  let f1TableChoice="drivers";
   function standings(sport){
     const d=hub[sport]||{};
     const s=section(sport==="darts"?"PDC Order of Merit":sport==="boxing"?"World champions":sport==="f1"?"Championship standings":"Championships & rankings",sport==="f1"?"LIVE CHAMPIONSHIP":"CURRENT STANDINGS");
     if(sport==="f1"){
-      const tabs=el("div","f1-standings-tabs");
-      [["drivers","DRIVERS"],["constructors","CONSTRUCTORS"]].forEach(([key,label])=>{
-        const button=el("button","f1-standings-tab"+(f1TableChoice===key?" active":""),label);
-        button.type="button";button.setAttribute("aria-pressed",String(f1TableChoice===key));
-        button.addEventListener("click",()=>{f1TableChoice=key;const refreshed=standings("f1");s.replaceWith(refreshed);});
-        tabs.append(button);
+      [["Drivers’ championship",d.drivers,"person"],["Constructors’ championship",d.constructors,"constructor"]].forEach(([title,items,kind])=>{
+        const disclosure=el("details","sport-ranking-disclosure");
+        disclosure.open=true;
+        const summary=el("summary","",title+" · "+(Array.isArray(items)?items.length:0)+" ENTRIES");
+        const group=el("div","sport-ranking-group");
+        if(!Array.isArray(items)||!items.length)group.append(empty(d.sync_warning||"Live championship standings are temporarily unavailable."));
+        else items.forEach((item,index)=>{
+          const row=rankingRow(item,item.rank||index+1,kind);
+          const extra=[item.team,item.points!=null?item.points+" pts":null].filter(Boolean).join(" · ");
+          if(extra)row.append(el("small",null,extra));group.append(row);
+        });
+        disclosure.append(summary,group);s.append(disclosure);
       });
-      s.append(tabs);
-      const items=f1TableChoice==="drivers"?d.drivers:d.constructors;
-      if(!Array.isArray(items)||!items.length){s.append(empty(d.sync_warning||"Live championship standings are temporarily unavailable. The page will retry when reopened."));return s;}
-      const group=el("div","sport-ranking-group");
-      group.append(el("h3",null,f1TableChoice==="drivers"?"Drivers’ championship":"Constructors’ championship"));
-      items.forEach((item,index)=>{
-        const row=rankingRow(item,item.rank||index+1,f1TableChoice==="constructors"?"constructor":"person");
-        const extra=[item.team,item.points!=null?item.points+" pts":null].filter(Boolean).join(" · ");
-        if(extra)row.append(el("small",null,extra));group.append(row);
-      });
-      s.append(group);
       const updated=d.last_updated?new Date(d.last_updated).toLocaleString("en-GB",{timeZone:"Europe/London",dateStyle:"medium",timeStyle:"short"}):null;
       if(updated)s.append(el("p","sport-page-note","Standings refreshed "+updated+" UK · "+(d.season||new Date().getFullYear())+" season."));
       s.append(el("p","sport-page-note","Live table from Jolpica F1; refreshes when this page is opened."));
@@ -177,13 +172,15 @@
     const valid=candidates.filter(x=>Array.isArray(x[1])&&x[1].length);
     if(!valid.length){s.append(empty(d.sync_warning||"The latest standings have not been published yet. They will appear after the next successful data sync."));return s;}
     valid.forEach(([title,items,limit])=>{
+      const disclosure=el("details","sport-ranking-disclosure");
+      disclosure.open=true;
       const group=el("div","sport-ranking-group");group.append(el("h3",null,title));
       items.slice(0,limit||8).forEach((item,index)=>{
         const row=rankingRow(item,item.rank!=null?(item.rank===0?"C":item.rank):index+1);
         const extra=[item.org,item.team,item.points!=null?item.points+" pts":null,item.prize_money? "£"+item.prize_money:null].filter(Boolean).join(" · ");
         if(extra)row.append(el("small",null,extra));group.append(row);
       });
-      s.append(group);
+      disclosure.append(el("summary","",title+" · "+items.length+" ENTRIES"),group);s.append(disclosure);
     });
     const updated=d.last_updated?new Date(d.last_updated).toLocaleString("en-GB",{timeZone:"Europe/London",dateStyle:"medium",timeStyle:"short"}):null;
     if(updated)s.append(el("p","sport-page-note","Standings updated "+updated+" UK."));

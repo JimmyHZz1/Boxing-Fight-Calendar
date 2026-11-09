@@ -8,6 +8,14 @@
   const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
   const norm=v=>String(v||"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
   const make=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!=null)n.textContent=text;return n;};
+  const constructorMarks={"Mercedes":"MER","Ferrari":"FER","Red Bull":"RBR","McLaren":"MCL","RB F1 Team":"RB","Alpine F1 Team":"ALP","Haas F1 Team":"HAS","Audi":"AUD","Williams":"WIL","Aston Martin":"AMR","Cadillac F1 Team":"CAD"};
+  const constructorColours={"Mercedes":"#00d2be","Ferrari":"#ef1a2d","Red Bull":"#4776d0","McLaren":"#ff8700","RB F1 Team":"#6c9bd2","Alpine F1 Team":"#168bd2","Haas F1 Team":"#c7cbd1","Audi":"#f02b32","Williams":"#39a9df","Aston Martin":"#00a58b","Cadillac F1 Team":"#e5e5e5"};
+  function constructorBroadcastMark(name){
+    const mark=make("span","favourite-f1-team-broadcast",constructorMarks[name]||String(name||"F1").slice(0,3).toUpperCase());
+    mark.style.setProperty("--team-color",constructorColours[name]||"#e2b45b");
+    mark.setAttribute("role","img");mark.setAttribute("aria-label",name+" F1 television timing-board mark");
+    return mark;
+  }
   const save=()=>{try{localStorage.setItem(key,JSON.stringify(favourites));}catch(_){$("favourites-content").prepend(make("p","favourites-error","Could not save favourites on this device. Check browser storage settings."));}};
   function updateTypes(){
     const sport=$("favourite-sport").value,select=$("favourite-type");
@@ -108,8 +116,10 @@
     const close=make("button","favourite-profile-close","×");close.type="button";close.setAttribute("aria-label","Close profile");close.addEventListener("click",()=>modal.remove());
     const head=make("div","favourite-profile-head");
     const portrait=make("div","favourite-profile-portrait");
-    if(profile?.image_url){const img=make("img",f.sport==="f1"&&f.type==="driver"?"favourite-f1-driver-portrait":(f.sport==="f1"&&f.type==="team"?"favourite-f1-team-logo":""));img.src=profile.image_url;img.alt=displayName(f,profile)+(f.type==="team"?" logo":" portrait");img.onerror=()=>{img.remove();portrait.textContent=f.name.split(/\s+/).map(x=>x[0]).slice(0,2).join("").toUpperCase();};portrait.append(img);}else portrait.textContent=f.name.split(/\s+/).map(x=>x[0]).slice(0,2).join("").toUpperCase();
     const shownName=displayName(f,profile);const identity=make("div","favourite-profile-identity");identity.append(make("span","favourite-sport-label",labels[f.sport]),make("h2","",shownName),make("p","",f.type==="team"?"F1 CONSTRUCTOR":f.type.toUpperCase()));
+    if(f.sport==="f1"&&f.type==="team"){portrait.append(constructorBroadcastMark(shownName));}
+    else if(profile?.image_url){const img=make("img",f.sport==="f1"&&f.type==="driver"?"favourite-f1-driver-portrait":"");img.src=profile.image_url;img.alt=displayName(f,profile)+" portrait";img.onerror=()=>{img.remove();portrait.textContent=f.name.split(/\s+/).map(x=>x[0]).slice(0,2).join("").toUpperCase();};portrait.append(img);}
+    else portrait.textContent=f.name.split(/\s+/).map(x=>x[0]).slice(0,2).join("").toUpperCase();
     head.append(portrait,identity,close);panel.append(head);
     const statTitle=make("h3","favourite-profile-section-title","CURRENT PROFILE");
     panel.append(statTitle);
@@ -153,7 +163,8 @@
     const profile=lookup(f),event=nextEvent(f),article=make("article","favourite-card favourite-card-"+f.sport);
     const shownName=displayName(f,profile);const top=make("div","favourite-card-top");
     const portrait=make("div","favourite-card-portrait");
-    if(profile?.image_url){const img=make("img",f.sport==="f1"&&f.type==="driver"?"favourite-f1-driver-portrait":(f.sport==="f1"&&f.type==="team"?"favourite-f1-team-logo":""));img.src=profile.image_url;img.alt=shownName+(f.type==="team"?" logo":" portrait");img.loading="lazy";img.onerror=()=>{img.remove();portrait.textContent=f.name.split(/\s+/).slice(0,2).map(x=>x[0]).join("").toUpperCase();};portrait.append(img);}
+    if(f.sport==="f1"&&f.type==="team"){portrait.append(constructorBroadcastMark(shownName));}
+    else if(profile?.image_url){const img=make("img",f.sport==="f1"&&f.type==="driver"?"favourite-f1-driver-portrait":"");img.src=profile.image_url;img.alt=shownName+" portrait";img.loading="lazy";img.onerror=()=>{img.remove();portrait.textContent=f.name.split(/\s+/).slice(0,2).map(x=>x[0]).join("").toUpperCase();};portrait.append(img);}
     else portrait.textContent=f.name.split(/\s+/).slice(0,2).map(x=>x[0]).join("").toUpperCase();
     const identity=make("div","favourite-card-identity");identity.append(make("span","favourite-sport-label",labels[f.sport]),make("h3","",shownName),make("small","",f.type==="team"?"F1 CONSTRUCTOR":f.type.toUpperCase()));
     const remove=make("button","favourite-remove","×");remove.type="button";remove.setAttribute("aria-label","Remove "+shownName+" from favourites");remove.addEventListener("click",()=>{favourites=favourites.filter(x=>x.id!==f.id);compareIds.delete(f.id);save();render();});

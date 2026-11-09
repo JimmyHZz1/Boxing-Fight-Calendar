@@ -1725,3 +1725,42 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
 .hub-bkfc-mark{display:grid;place-items:center;width:44px;height:30px;background:#e6c85b;color:#17130d;font:1000 12px 'Barlow Condensed',sans-serif;letter-spacing:.5px;transform:skew(-5deg)}
 .hub-bkfc-bout .hub-person-name strong i{font-style:normal;color:var(--accent);padding:0 4px}
 @media(max-width:420px){.hub-sport-shortcuts{gap:4px}.hub-sport-shortcut{min-height:38px;font-size:8px;letter-spacing:.5px;padding:6px 2px}.hub-bkfc-bout{grid-template-columns:42px 20px minmax(0,1fr);gap:6px}.hub-bkfc-mark{width:38px;height:27px;font-size:10px}}
+
+
+/* Unified F1 television timing-tower constructor marks across every view. */
+.constructor-broadcast-mark,.favourite-f1-team-broadcast{
+  display:flex;align-items:center;justify-content:center;box-sizing:border-box;
+  width:54px;height:42px;min-width:54px;padding:0 4px;overflow:hidden;
+  border:1px solid color-mix(in srgb,var(--team-color,#e2b45b) 78%,#fff 8%);
+  border-left:5px solid var(--team-color,#e2b45b);
+  border-radius:3px;
+  background:linear-gradient(135deg,color-mix(in srgb,var(--team-color,#e2b45b) 23%,#17191e),#17191e 78%);
+  color:#f7f7f7;font:900 18px/1 'Barlow Condensed',sans-serif;letter-spacing:.7px;
+  text-shadow:0 1px 2px #000;
+}
+.sport-ranking-row.is-constructor .constructor-broadcast-mark{width:54px;height:42px}
+.favourite-f1-team-broadcast{width:100%;height:100%;min-width:0;font-size:clamp(17px,3vw,25px);border-radius:4px}
+.favourite-card-portrait:has(.favourite-f1-team-broadcast),
+.favourite-profile-portrait:has(.favourite-f1-team-broadcast){display:flex;align-items:center;justify-content:center;background:transparent}
+.favourite-card-portrait:has(.favourite-f1-team-broadcast){width:76px;height:58px}
+.favourite-profile-portrait:has(.favourite-f1-team-broadcast){width:100px;height:76px}
+
+/* Championship and ranking disclosures open on first view; rankings use the full available width. */
+.sport-ranking-disclosure{margin:10px 0;border:1px solid var(--line);background:rgba(12,13,16,.42);border-radius:3px;overflow:hidden}
+.sport-ranking-disclosure>summary{padding:12px 14px;cursor:pointer;list-style:none;font:800 14px 'Barlow Condensed',sans-serif;letter-spacing:.5px;text-transform:uppercase;color:var(--text)}
+.sport-ranking-disclosure>summary::-webkit-details-marker{display:none}
+.sport-ranking-disclosure[open]>summary{border-bottom:1px solid var(--line);color:var(--accent)}
+.sport-ranking-disclosure>.sport-ranking-group{width:100%;box-sizing:border-box;margin:0;border:0;background:transparent}
+.hub-dropdown-list-ranking{width:100%;max-height:none;overflow:visible;box-sizing:border-box}
+.hub-ranking-columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 20px;width:100%;align-items:start;box-sizing:border-box}
+.hub-ranking-column{display:block;width:100%;min-width:0}
+.hub-ranking-column .hub-person{width:100%;box-sizing:border-box}
+@media(max-width:699px){
+  .hub-ranking-columns{grid-template-columns:minmax(0,1fr);gap:0}
+  .sport-ranking-disclosure>.sport-ranking-group{padding:10px}
+}
+@media(max-width:520px){
+  .favourite-card-portrait:has(.favourite-f1-team-broadcast){width:66px;height:50px}
+  .favourite-profile-portrait:has(.favourite-f1-team-broadcast){width:84px;height:64px}
+  .favourite-f1-team-broadcast{font-size:19px}
+}
