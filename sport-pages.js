@@ -116,7 +116,8 @@
     }
     return s;
   }
-  const constructorLogoPath = name => ({Mercedes:"mercedes.jpg",Ferrari:"ferrari.jpg","Red Bull":"red-bull.png",McLaren:"mclaren.jpg","Alpine F1 Team":"alpine-f1-team.png","Haas F1 Team":"haas-f1-team.png",Audi:"audi.png",Williams:"williams.png","Aston Martin":"aston-martin.jpg","Cadillac F1 Team":"cadillac-f1-team.png"}[name] || "");
+  const constructorLogoSlug = name => ({Mercedes:"mercedes",Ferrari:"ferrari","Red Bull":"redbullracing","Red Bull Racing":"redbullracing",McLaren:"mclaren","Alpine F1 Team":"alpine",Alpine:"alpine","Haas F1 Team":"haas",Audi:"audi","RB F1 Team":"racingbulls","Racing Bulls":"racingbulls","Aston Martin":"astonmartin","Cadillac F1 Team":"cadillac",Cadillac:"cadillac",Williams:"williams"}[String(name||"").trim()] || "");
+  const constructorLogoUrl = name => {const slug=constructorLogoSlug(name);return slug?"https://media.formula1.com/image/upload/common/f1/2026/"+slug+"/2026"+slug+"logo.svg":"";};
   function constructorFallback(name){
     const marks={"Mercedes":"MER","Ferrari":"FER","Red Bull":"RBR","McLaren":"MCL","RB F1 Team":"RB","Alpine F1 Team":"ALP","Haas F1 Team":"HAS","Audi":"AUD","Williams":"WIL","Aston Martin":"AMR","Cadillac F1 Team":"CAD"};
     const colours={"Mercedes":"#00d2be","Ferrari":"#ef1a2d","Red Bull":"#4776d0","McLaren":"#ff8700","RB F1 Team":"#6c9bd2","Alpine F1 Team":"#168bd2","Haas F1 Team":"#c7cbd1","Audi":"#f02b32","Williams":"#39a9df","Aston Martin":"#00a58b","Cadillac F1 Team":"#e5e5e5"};
@@ -130,8 +131,8 @@
     const row=el("div","sport-ranking-row has-image"+(kind==="constructor"?" is-constructor":""));
     row.append(el("span","sport-ranking-position",rank==="C"?"C":"#"+rank));
     const name=item.name||item.driver||item.team||"TBC";
-    const constructorLogo=kind==="constructor"?constructorLogoPath(name):"";
-    const imageUrl=constructorLogo?"https://raw.githubusercontent.com/JimmyHZz1/Boxing-Fight-Calendar/main/assets/images/f1-constructors/"+constructorLogo:item.image_url;
+    const constructorUrl=kind==="constructor"?constructorLogoUrl(name):"";
+    const imageUrl=constructorUrl||item.image_url;
     if(imageUrl){
       const img=el("img","sport-ranking-image"+(kind==="constructor"?" f1-constructor-logo":(current==="f1"?" f1-driver-portrait":"")));
       const localSource=imageUrl.startsWith("./assets/")?"https://raw.githubusercontent.com/JimmyHZz1/Boxing-Fight-Calendar/main/"+imageUrl.slice(2):imageUrl;
