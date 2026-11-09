@@ -316,13 +316,16 @@ def sync_darts():
         "data_status": "fallback" if warning else "current",
     }
     try:
-        payload["results"] = paged_darts_results(key) if key else []
-        payload["results_last_successful_update"] = iso_now()
-        payload["results_window"] = {
-            "from": (TODAY - timedelta(days=30)).isoformat(),
-            "to": (TODAY - timedelta(days=7)).isoformat(),
-            "note": "Darts API free-key results are delayed by at least seven days."
-        }
+        if key:
+            payload["results"] = paged_darts_results(key)
+            payload["results_last_successful_update"] = iso_now()
+            payload["results_window"] = {
+                "from": (TODAY - timedelta(days=30)).isoformat(),
+                "to": (TODAY - timedelta(days=7)).isoformat(),
+                "note": "Darts API free-key results are delayed by at least seven days."
+            }
+        else:
+            raise RuntimeError("DARTS_API_KEY is not configured; retaining the last published results.")
     except Exception as exc:
         payload["results"] = []
         payload["results_sync_warning"] = str(exc)
