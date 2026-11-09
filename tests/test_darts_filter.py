@@ -1,5 +1,6 @@
 import importlib.util
 import unittest
+from unittest import mock
 from pathlib import Path
 
 SCRIPT = Path(__file__).resolve().parents[1] / "scripts" / "sync_sports.py"
@@ -61,7 +62,7 @@ class TelevisedPdcFilterTests(unittest.TestCase):
             ],
             "meta": {"next_cursor": None},
         }
-        with unittest.mock.patch.object(sync_sports, "request_json", return_value=payload):
+        with mock.patch.object(sync_sports, "request_json", return_value=payload):
             rows = sync_sports.paged_darts_results("test-key")
         self.assertEqual(len(rows), 1)
         self.assertEqual(rows[0]["event_name"], "Grand Slam of Darts")
