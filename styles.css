@@ -1828,3 +1828,21 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
 .recent-release-link:hover,.recent-release-link:focus-visible{color:#fff}
 .recent-release-status{margin-top:9px}
 @media(max-width:520px){.recent-release-updates{padding:13px}.recent-release-item{grid-template-columns:minmax(0,1fr)}.recent-release-link{justify-self:start}}
+
+
+/* Home Sports Hub: keep the PDC board full-width and use the same F1 timing-tower marks everywhere. */
+#sports-hub-content > .hub-sport-shortcuts{grid-column:1 / -1;min-width:0}
+#sports-hub-content[data-active-sport="darts"] > .hub-dropdown{grid-column:1 / -1;min-width:0;width:100%;box-sizing:border-box}
+#sports-hub-content[data-active-sport="darts"] .hub-dropdown-list-ranking{width:100%;max-height:none;overflow:visible;box-sizing:border-box}
+#sports-hub-content .hub-ranking-columns{display:grid!important;gap:0 18px;width:100%;align-items:start;box-sizing:border-box}
+#sports-hub-content .hub-ranking-column{display:block!important;width:auto!important;min-width:0;flex:none}
+#sports-hub-content .hub-ranking-column .hub-person{width:100%;min-width:0;box-sizing:border-box}
+.hub-person:has(.hub-constructor-broadcast){grid-template-columns:74px 26px minmax(0,1fr);min-height:58px;gap:9px}
+.hub-constructor-broadcast{width:74px!important;height:46px!important;max-width:74px!important;min-width:74px!important;flex:0 0 74px}
+@media(max-width:699px){
+  #sports-hub-content .hub-ranking-columns{grid-template-columns:minmax(0,1fr)!important;gap:0}
+}
+@media(max-width:520px){
+  .hub-person:has(.hub-constructor-broadcast){grid-template-columns:66px 23px minmax(0,1fr);gap:7px;min-height:52px}
+  .hub-constructor-broadcast{width:66px!important;height:42px!important;max-width:66px!important;min-width:66px!important;flex-basis:66px}
+}
