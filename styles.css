@@ -1789,3 +1789,9 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
 }
 .sport-ranking-row.is-constructor .sport-ranking-image.f1-constructor-logo { width:86px; height:54px; max-width:86px; object-fit:contain; background:transparent; padding:3px; border-radius:0; }
 .favourite-card-portrait img.favourite-f1-team-logo,.favourite-profile-portrait img.favourite-f1-team-logo { width:100%; height:100%; max-width:100%; object-fit:contain; object-position:center; padding:5px; background:transparent; border-radius:0; }
+
+/* Keep the full official F1 driver portrait visible in the larger image slot. */
+.hub-person>img.hub-driver-portrait-official-f1 { width:60px; height:60px; object-fit:cover!important; object-position:50% 10%!important; transform:none!important; }
+@media(max-width:699px) {
+  .hub-person>img.hub-driver-portrait-official-f1 { width:46px; height:46px; transform:none!important; }
+}
