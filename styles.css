@@ -2101,3 +2101,30 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
   .mobile-calendar-menu button{min-height:46px;touch-action:manipulation}
   .nav-item[data-calendar-switcher]{cursor:pointer;touch-action:manipulation}
 }
+
+/* Top-left calendar switcher: the brand is the mobile calendar control. */
+.topbar{position:relative}
+.brand-switcher{appearance:none;border:0;background:transparent;padding:0;cursor:pointer;text-align:left}
+.brand-switcher:focus-visible{outline:2px solid var(--accent);outline-offset:5px}
+.brand-switcher-caret{font-size:13px;color:var(--muted);margin-left:1px}
+.mobile-calendar-menu{position:absolute;top:calc(100% + 8px);left:0;bottom:auto;z-index:1002;width:min(280px,calc(100vw - 30px));margin:0;padding:7px;background:#171d27;border:1px solid rgba(38,133,232,.45);box-shadow:0 12px 35px rgba(0,0,0,.55)}
+.mobile-calendar-menu[hidden]{display:none!important}
+.mobile-calendar-menu button{display:flex;align-items:center;gap:11px;width:100%;min-height:48px;padding:10px 12px;border:0;background:transparent;color:var(--text);text-align:left;font:800 10px 'DM Sans',sans-serif;letter-spacing:1px;cursor:pointer;touch-action:manipulation}
+.brand-menu-mark{width:27px;height:27px;display:grid;place-items:center;background:var(--accent);color:#17130d;font:900 19px 'Barlow Condensed',sans-serif;transform:skew(-5deg)}
+.brand-menu-mark.games-mark{background:#2685e8;color:#fff}
+.mobile-calendar-menu button:hover,.mobile-calendar-menu button:focus-visible{background:rgba(38,133,232,.14);outline:1px solid rgba(38,133,232,.4)}
+.games-mode{--accent:#2685e8;--team-glow:#102b49}
+.games-mode .brand-mark{background:#2685e8;color:#fff}
+.games-mode .brand strong,.games-mode .brand-switcher-caret{color:#8fc1ff}
+.games-mode .topbar{border-color:rgba(38,133,232,.35)}
+.games-mode .screen.active{--accent:#2685e8}
+.games-mode .calendar-panel,.games-mode .games-release-panel,.games-mode .games-release-updates,.games-mode .games-version-list{border-color:rgba(38,133,232,.38)}
+.games-mode .games-page-intro h1,.games-mode .games-section-heading h2,.games-mode .games-empty-state h3{color:#f4f2ed}
+.games-mode .games-page-intro h1 em{color:#62a7ff}
+.games-mode .primary-button,.games-mode .icon-button,.games-mode .calendar-panel .day.today,.games-mode .calendar-panel .day.selected{border-color:#2685e8}
+.games-mode .calendar-panel .day.today{color:#8fc1ff}
+.games-mode .calendar-panel .day.selected{background:#2685e8;color:#fff}
+.games-mode .calendar-panel .day.has-event:after,.games-mode .calendar-legend i{background:#2685e8}
+.games-mode .nav-item.active,.games-mode .eyebrow,.games-mode .live-status{color:#62a7ff}
+.games-mode .brand-mark{background:#2685e8}
+@media(max-width:699px){.topbar{z-index:20}.mobile-calendar-menu{top:calc(100% + 7px);left:0}.brand{min-height:44px}.brand-switcher-caret{font-size:16px}}
