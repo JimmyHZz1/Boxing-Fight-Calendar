@@ -164,7 +164,8 @@
     const profile=lookup(f),event=nextEvent(f),article=make("article","favourite-card favourite-card-"+f.sport);
     const shownName=displayName(f,profile);const top=make("div","favourite-card-top");
     const portrait=make("div","favourite-card-portrait");
-    if(f.sport==="f1"&&f.type==="team"){portrait.append(constructorBroadcastMark(shownName));}
+    if(f.sport==="f1"&&f.type==="team"&&profile?.image_url){const img=make("img","favourite-f1-team-logo");img.src=profile.image_url.startsWith("./assets/")?"https://raw.githubusercontent.com/JimmyHZz1/Boxing-Fight-Calendar/main/"+profile.image_url.slice(2):profile.image_url;img.alt=shownName+" constructor logo";img.loading="lazy";img.onerror=()=>{img.remove();portrait.append(constructorBroadcastMark(shownName));};portrait.append(img);}
+    else if(f.sport==="f1"&&f.type==="team"){portrait.append(constructorBroadcastMark(shownName));}
     else if(profile?.image_url){const img=make("img",f.sport==="f1"&&f.type==="driver"?"favourite-f1-driver-portrait":"");img.src=profile.image_url;img.alt=shownName+" portrait";img.loading="lazy";img.onerror=()=>{img.remove();portrait.textContent=f.name.split(/\s+/).slice(0,2).map(x=>x[0]).join("").toUpperCase();};portrait.append(img);}
     else portrait.textContent=f.name.split(/\s+/).slice(0,2).map(x=>x[0]).join("").toUpperCase();
     const identity=make("div","favourite-card-identity");identity.append(make("span","favourite-sport-label",labels[f.sport]),make("h3","",shownName),make("small","",f.type==="team"?"F1 CONSTRUCTOR":f.type.toUpperCase()));
