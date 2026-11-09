@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-09T00:11:07Z",
+  "updated_at": "2026-11-09T06:14:52Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -640,6 +640,39 @@
       "creator": "Wikimedia Commons · MMAnytt · CC BY 3.0",
       "attribution": "Wikimedia Commons · MMAnytt · CC BY 3.0",
       "verified_at": "2026-11-09T00:11:07Z",
+      "sport": "ufc"
+    },
+    "diego lopes": {
+      "name": "Diego Lopes",
+      "path": "assets/images/ufc/diego-lopes.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Diogo_Lopes_de_Sequeira_(Archaeological_Survey_of_India,_Goa).jpg",
+      "licence": "CC BY 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by/3.0",
+      "creator": "Wikimedia Commons · Sailko · CC BY 3.0",
+      "attribution": "Wikimedia Commons · Sailko · CC BY 3.0",
+      "verified_at": "2026-11-09T06:14:52Z",
+      "sport": "ufc"
+    },
+    "jean silva": {
+      "name": "Jean Silva",
+      "path": "assets/images/ufc/jean-silva.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Fernando_de_Silva_y_Alvarez_of_Toledo,_12th_Duke_of_Alba_(1714-1776),_by_Jean-Marc_Nattier.jpg",
+      "licence": "Public domain",
+      "licence_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "creator": "Wikimedia Commons · Jean-Marc Nattier · Public domain",
+      "attribution": "Wikimedia Commons · Jean-Marc Nattier · Public domain",
+      "verified_at": "2026-11-09T06:14:52Z",
+      "sport": "ufc"
+    },
+    "yair rodriguez": {
+      "name": "Yair Rodriguez",
+      "path": "assets/images/ufc/yair-rodriguez.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Carrera_con_Yair_%22Pantera%22_Rodr%C3%ADguez_-i---i-_(30139082833).jpg",
+      "licence": "CC0",
+      "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "creator": "Wikimedia Commons · Gobierno CDMX · CC0",
+      "attribution": "Wikimedia Commons · Gobierno CDMX · CC0",
+      "verified_at": "2026-11-09T06:14:52Z",
       "sport": "ufc"
     }
   },

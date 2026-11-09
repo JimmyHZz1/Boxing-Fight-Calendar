@@ -3011,7 +3011,16 @@
             {
               "rank": 2,
               "name": "Diego Lopes",
-              "image_url": null
+              "image_url": "./assets/images/ufc/diego-lopes.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Diogo_Lopes_de_Sequeira_(Archaeological_Survey_of_India,_Goa).jpg",
+              "image_credit": "Wikimedia Commons · Sailko · CC BY 3.0",
+              "image_license": "CC BY 3.0",
+              "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+              "image_source": "Wikimedia Commons",
+              "image_match_score": 1.0,
+              "image_match_method": "search:Diego Lopes",
+              "image_verified_at": "2026-11-09T06:14:52Z",
+              "image_local_path": "assets/images/ufc/diego-lopes.jpg"
             },
             {
               "rank": 3,
@@ -3026,12 +3035,30 @@
             {
               "rank": 5,
               "name": "Jean Silva",
-              "image_url": null
+              "image_url": "./assets/images/ufc/jean-silva.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Fernando_de_Silva_y_Alvarez_of_Toledo,_12th_Duke_of_Alba_(1714-1776),_by_Jean-Marc_Nattier.jpg",
+              "image_credit": "Wikimedia Commons · Jean-Marc Nattier · Public domain",
+              "image_license": "Public domain",
+              "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+              "image_source": "Wikimedia Commons",
+              "image_match_score": 1.0,
+              "image_match_method": "search:Jean Silva",
+              "image_verified_at": "2026-11-09T06:14:52Z",
+              "image_local_path": "assets/images/ufc/jean-silva.jpg"
             },
             {
               "rank": 6,
               "name": "Yair Rodriguez",
-              "image_url": null
+              "image_url": "./assets/images/ufc/yair-rodriguez.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Carrera_con_Yair_%22Pantera%22_Rodr%C3%ADguez_-i---i-_(30139082833).jpg",
+              "image_credit": "Wikimedia Commons · Gobierno CDMX · CC0",
+              "image_license": "CC0",
+              "image_license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+              "image_source": "Wikimedia Commons",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Yair Rodríguez",
+              "image_verified_at": "2026-11-09T06:14:52Z",
+              "image_local_path": "assets/images/ufc/yair-rodriguez.jpg"
             },
             {
               "rank": 7,
@@ -4687,59 +4714,72 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 4,
-    "found": 97,
-    "missing": 638,
+    "attempted": 5,
+    "found": 100,
+    "missing": 635,
     "rejected": 0,
     "by_sport": {
       "ufc": {
-        "attempted": 4,
-        "found": 1,
-        "missing": 3,
+        "attempted": 5,
+        "found": 3,
+        "missing": 2,
         "rejected": 0
       }
     },
     "rejection_reasons": {
-      "not_an_image": 10,
-      "given_name_not_matched": 1
+      "given_name_not_matched": 23,
+      "not_an_image": 1,
+      "surname_not_matched": 1
     },
     "search_details": [
       {
-        "name": "Marcus McGhee",
-        "queries": 2,
-        "candidate_files": 10,
-        "accepted": 0,
+        "name": "Diego Lopes",
+        "queries": 1,
+        "candidate_files": 20,
+        "accepted": 1,
         "rejections": {
-          "not_an_image": 10
+          "given_name_not_matched": 19
         }
       },
       {
-        "name": "Raoni Barcelos",
+        "name": "Lerone Murphy",
         "queries": 2,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       },
       {
-        "name": "Alexander Volkanovski",
+        "name": "Aljamain Sterling",
         "queries": 3,
-        "candidate_files": 3,
-        "accepted": 2,
+        "candidate_files": 1,
+        "accepted": 0,
         "rejections": {
           "given_name_not_matched": 1
         }
       },
       {
-        "name": "Movsar Evloev",
-        "queries": 0,
-        "candidate_files": 0,
-        "accepted": 0,
-        "rejections": {}
+        "name": "Jean Silva",
+        "queries": 1,
+        "candidate_files": 20,
+        "accepted": 17,
+        "rejections": {
+          "given_name_not_matched": 3
+        }
+      },
+      {
+        "name": "Yair Rodriguez",
+        "queries": 3,
+        "candidate_files": 17,
+        "accepted": 15,
+        "rejections": {
+          "not_an_image": 1,
+          "surname_not_matched": 1
+        }
       }
     ],
-    "checked_at": "2026-11-09T00:11:07Z",
-    "library_entries": 62,
-    "newly_found": 1,
+    "checked_at": "2026-11-09T06:14:52Z",
+    "library_entries": 65,
+    "newly_found": 3,
     "coverage": {
       "boxing fight card fighters": {
         "total": 187,
@@ -4763,8 +4803,8 @@
       },
       "ufc": {
         "total": 206,
-        "with_image": 9,
-        "missing": 197
+        "with_image": 12,
+        "missing": 194
       },
       "boxing": {
         "total": 81,
@@ -4772,7 +4812,7 @@
         "missing": 81
       }
     },
-    "rate_limited": true
+    "rate_limited": false
   },
   "last_updated": "2026-11-08T20:56:52Z"
 }

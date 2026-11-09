@@ -829,9 +829,51 @@
       "image_match_method": "category:Category:Alexander Volkanovski",
       "image_verified_at": "2026-11-09T00:11:07Z",
       "image_local_path": "assets/images/ufc/alexander-volkanovski.jpg"
+    },
+    "diego lopes": {
+      "name": "Diego Lopes",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/diego-lopes.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Diogo_Lopes_de_Sequeira_(Archaeological_Survey_of_India,_Goa).jpg",
+      "image_credit": "Wikimedia Commons · Sailko · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "search:Diego Lopes",
+      "image_verified_at": "2026-11-09T06:14:52Z",
+      "image_local_path": "assets/images/ufc/diego-lopes.jpg"
+    },
+    "jean silva": {
+      "name": "Jean Silva",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/jean-silva.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Fernando_de_Silva_y_Alvarez_of_Toledo,_12th_Duke_of_Alba_(1714-1776),_by_Jean-Marc_Nattier.jpg",
+      "image_credit": "Wikimedia Commons · Jean-Marc Nattier · Public domain",
+      "image_license": "Public domain",
+      "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "search:Jean Silva",
+      "image_verified_at": "2026-11-09T06:14:52Z",
+      "image_local_path": "assets/images/ufc/jean-silva.jpg"
+    },
+    "yair rodriguez": {
+      "name": "Yair Rodriguez",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/yair-rodriguez.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Carrera_con_Yair_%22Pantera%22_Rodr%C3%ADguez_-i---i-_(30139082833).jpg",
+      "image_credit": "Wikimedia Commons · Gobierno CDMX · CC0",
+      "image_license": "CC0",
+      "image_license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Yair Rodríguez",
+      "image_verified_at": "2026-11-09T06:14:52Z",
+      "image_local_path": "assets/images/ufc/yair-rodriguez.jpg"
     }
   },
-  "updated_at": "2026-11-09T00:11:07Z",
+  "updated_at": "2026-11-09T06:14:52Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -922,6 +964,11 @@
     "marcus mcghee": "2026-11-09T00:11:07Z",
     "raoni barcelos": "2026-11-09T00:11:07Z",
     "alexander volkanovski": "2026-11-09T00:11:07Z",
-    "movsar evloev": "2026-11-09T00:11:07Z"
+    "movsar evloev": "2026-11-09T00:11:07Z",
+    "diego lopes": "2026-11-09T06:14:52Z",
+    "lerone murphy": "2026-11-09T06:14:52Z",
+    "aljamain sterling": "2026-11-09T06:14:52Z",
+    "jean silva": "2026-11-09T06:14:52Z",
+    "yair rodriguez": "2026-11-09T06:14:52Z"
   }
 }
