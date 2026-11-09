@@ -128,12 +128,38 @@
     $("live-now-count").textContent=compact?(live.length?live.length+" LIVE":nextUpcoming?"NEXT EVENT":"NO EVENTS"):live.length+" LIVE";
     if(centreRows.length)centreRows.forEach(x=>{const row=renderSummary(x.sport,x.event,isLive(x.event));row.tabIndex=0;row.setAttribute("role","button");row.setAttribute("aria-label","Open "+names[x.sport]+" event: "+(x.event.name||x.event.title||"Event"));const open=()=>window.SportPages?.open?.(x.sport);row.addEventListener("click",open);row.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();open();}});liveRoot.append(row);});
     else liveRoot.append(make("p","live-centre-empty",compact?"No live or upcoming events are listed in the published feeds.":"No events are currently marked live in the published feeds. Live indicators appear only when a source explicitly reports an event or session as live."));
-    const todayKey=today(),limit=new Date(Date.now()+7*86400000);const limitKey=new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/London"}).format(limit);
-    const upcoming=all.filter(x=>isUpcoming(x.event)&&dateKey(dateValue(x.event))<=limitKey&&!isLive(x.event)).sort((a,b)=>timestamp(a.event)-timestamp(b.event)).slice(0,12);
+    const limit=new Date(Date.now()+7*86400000);const limitKey=new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/London"}).format(limit);
+    const upcoming=all.filter(x=>isUpcoming(x.event)&&dateKey(dateValue(x.event))<=limitKey&&!isLive(x.event)).sort((a,b)=>timestamp(a.event)-timestamp(b.event));
     const upcomingCount=$("live-upcoming-count");if(upcomingCount)upcomingCount.textContent=upcoming.length+" UPCOMING";
     upcomingRoot.replaceChildren();
-    if(upcoming.length)upcoming.forEach(x=>{const row=renderSummary(x.sport,x.event,false);row.classList.add("live-centre-upcoming");upcomingRoot.append(row);});
-    else upcomingRoot.append(make("p","live-centre-empty","No upcoming events are listed for the next seven days in the currently loaded feeds."));
+    if(upcoming.length){
+      const groups=sports.map(sport=>({sport,items:upcoming.filter(x=>x.sport===sport)})).filter(group=>group.items.length).sort((a,b)=>timestamp(a.items[0].event)-timestamp(b.items[0].event));
+      groups.forEach(({sport,items})=>{
+        const group=make("section","live-upcoming-sport-group");group.dataset.sport=sport;
+        const heading=make("div","live-upcoming-sport-heading");
+        heading.append(make("strong",null,names[sport]),make("span",null,items.length+" EVENT"+(items.length===1?"":"S")));
+        const list=make("div","live-centre-list live-upcoming-sport-list");
+        const extra=[];
+        items.forEach((x,index)=>{
+          const row=renderSummary(x.sport,x.event,false);row.classList.add("live-centre-upcoming");
+          if(index>=2){row.hidden=true;extra.push(row);}
+          list.append(row);
+        });
+        group.append(heading,list);
+        if(items.length>2){
+          const button=make("button","live-upcoming-expand","SHOW ALL "+items.length+" "+names[sport]+" EVENTS");
+          button.type="button";button.setAttribute("aria-expanded","false");
+          button.addEventListener("click",()=>{
+            const expanded=button.getAttribute("aria-expanded")==="true";
+            extra.forEach(row=>{row.hidden=expanded;});
+            button.setAttribute("aria-expanded",String(!expanded));
+            button.textContent=expanded?"SHOW ALL "+items.length+" "+names[sport]+" EVENTS":"SHOW FEWER";
+          });
+          group.append(button);
+        }
+        upcomingRoot.append(group);
+      });
+    }else upcomingRoot.append(make("p","live-centre-empty","No upcoming events are listed for the next seven days in the currently loaded feeds."));
 }
   const featuredLabels={f1:"FORMULA 1",darts:"PDC DARTS",boxing:"BOXING",ufc:"UFC",bkfc:"BKFC"};
   const featuredIcons={f1:"🏎️",darts:"🎯",boxing:"🥊",ufc:"🥋",bkfc:"🥊"};
