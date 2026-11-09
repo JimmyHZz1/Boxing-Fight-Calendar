@@ -256,7 +256,7 @@
     if(event.status)root.append(make("p","sport-sync-note","Tournament status: "+String(event.status).replaceAll("_"," ").toUpperCase()));
     root.append(make("p","sport-sync-note","Televised PDC tournament listing. Match draws and live scores are shown only when the data provider supplies verified match-level information."));
     const source=event.source_url||"https://www.pdc.tv/calendar";
-    if(/^https?:\\/\\//i.test(source)){const a=make("a","event-source-link","Official PDC tournament details ↗");a.href=source;a.target="_blank";a.rel="noopener noreferrer";root.append(a);}
+    if(/^https?:\/\//i.test(source)){const a=make("a","event-source-link","Official PDC tournament details ↗");a.href=source;a.target="_blank";a.rel="noopener noreferrer";root.append(a);}
   }
   function fighterPortrait(name, url) {
     const source=String(url||"");
