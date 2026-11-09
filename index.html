@@ -272,10 +272,22 @@
           <p id="games-recent-release-status" class="games-history-status">Updates are sourced independently from Games-related merged pull requests.</p>
         </section>
         <section class="games-version-list" aria-label="Games Calendar version list">
+          <article class="games-version-entry games-version-current">
+            <div class="games-version-top"><span class="games-version-number">GAMES V1.1</span><span class="games-version-status">IN PROGRESS</span></div>
+            <h3>Automated release data &amp; platform filtering</h3>
+            <ul>
+              <li>Connect IGDB as the primary source for PC and console game release information.</li>
+              <li>Register and securely store the required API credentials; keep client secrets out of the public website code.</li>
+              <li>Automatically retrieve and validate game titles, platform availability and release dates, including regional dates where supplied.</li>
+              <li>Refresh and cache release data on a schedule so visitors do not need to call the API directly.</li>
+              <li>Populate the Upcoming Releases list and make All, PC, PlayStation, Xbox and Nintendo filters work against that list.</li>
+              <li>Retain source references and handle missing, delayed, cancelled and date-to-be-confirmed releases without inventing dates.</li>
+            </ul>
+          </article>
           <article class="games-version-entry">
             <div class="games-version-top"><span class="games-version-number">GAMES V1.0</span><span class="games-version-status">FOUNDATION</span></div>
             <h3>Games Calendar foundation</h3>
-            <ul><li>Separate Games Calendar navigation for desktop and mobile.</li><li>Dedicated PC and console release calendar area.</li><li>Independent Games Version History, separate from Sports Calendar releases.</li><li>Mobile games reserved for a future dedicated Mobile Games section.</li></ul>
+            <ul><li>Separate Games Calendar navigation for desktop and mobile.</li><li>Dedicated PC and console release calendar area.</li><li>Independent Games Version History, separate from Sports Calendar releases.</li><li>Independent Games release ticker and Upcoming Releases panel with platform filters.</li></ul>
           </article>
         </section>
         <div class="games-page-footer"><button type="button" class="games-history-link" data-screen="games-calendar-screen">← BACK TO GAMES CALENDAR</button><span>GAMES VERSION HISTORY · INDEPENDENT RELEASE LIST</span></div>
