@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#101114">
   <meta name="description" content="Boxing, Formula 1, UFC and PDC darts schedules in one sports calendar, shown in UK local time.">
   <link rel="manifest" href="./manifest.json">
-  <link rel="stylesheet" href="./styles.css?v=20261109-16">
+  <link rel="stylesheet" href="./styles.css?v=20261109-17">
   <title>Sports Calendar</title>
 </head>
 <body>
@@ -16,7 +16,7 @@
         <span class="brand-mark" id="brand-mark-letter">S</span>
         <span><strong id="brand-title">SPORTS</strong><small>CALENDAR</small></span><span class="brand-switcher-caret" aria-hidden="true">⌄</span>
       </button>
-      <div id="mobile-calendar-menu" class="mobile-calendar-menu" hidden aria-label="Choose calendar"><button type="button" data-screen="calendar-screen"><span class="brand-menu-mark">S</span> SPORTS CALENDAR</button><button type="button" data-screen="games-calendar-screen"><span class="brand-menu-mark games-mark">G</span> GAMES CALENDAR</button></div>
+      <div id="mobile-calendar-menu" class="mobile-calendar-menu" hidden aria-label="Choose calendar"><button type="button" data-screen="home-screen"><span class="brand-menu-mark sports-mark" aria-hidden="true">S</span> SPORTS CALENDAR</button><button type="button" data-screen="games-calendar-screen"><span class="brand-menu-mark games-mark" aria-hidden="true">G</span> GAMES CALENDAR</button></div>
       <nav class="topbar-nav" aria-label="Main navigation">
         <button type="button" class="topbar-nav-item active" data-screen="home-screen"><span aria-hidden="true">⌂</span> HOME</button>
         <button type="button" class="topbar-nav-item" data-screen="calendar-screen"><span aria-hidden="true">▦</span> SPORTS CALENDAR</button>
@@ -247,6 +247,7 @@
           <p>Upcoming PC and console releases, all in one place. Mobile games are kept separate for a dedicated section.</p>
           <div class="games-platform-tags"><span>PC</span><span>PLAYSTATION</span><span>XBOX</span><span>NINTENDO</span></div>
         </div>
+        <section class="games-release-panel games-featured-panel" aria-labelledby="games-featured-heading"><div class="games-section-heading"><div><span class="eyebrow games-eyebrow">BIG RELEASES · COMING SOON</span><h2 id="games-featured-heading">AAA+ games up next</h2></div><span class="games-version-pill">FEATURED</span></div><div id="games-aaa-up-next-list" class="games-aaa-up-next-list" aria-live="polite"><p class="games-history-status">Loading major upcoming releases…</p></div></section>
         <section class="games-release-panel" aria-labelledby="games-release-heading">
           <div class="games-section-heading"><div><span class="eyebrow games-eyebrow">PHASE 1 · RELEASES ONLY</span><h2 id="games-release-heading">Upcoming releases</h2></div><span class="games-version-pill">GAMES V1.0</span></div>
           <div id="games-release-list" class="games-release-list" aria-live="polite">
@@ -282,7 +283,7 @@
     <div id="global-search-dialog" class="global-search-dialog" hidden role="dialog" aria-modal="true" aria-labelledby="global-search-title"><div class="global-search-panel"><div class="global-search-heading"><div><span class="eyebrow">ALL FIVE SPORTS</span><h2 id="global-search-title">Find your <em>next event.</em></h2></div><button type="button" id="global-search-close" aria-label="Close search">×</button></div><label class="global-search-input-wrap"><span>⌕</span><input id="global-search-input" type="search" placeholder="Search events, fighters, drivers, teams…" autocomplete="off"><kbd>ESC</kbd></label><div class="global-search-filters" id="global-search-filters"><button type="button" data-search-sport="all" aria-pressed="true">ALL</button><button type="button" data-search-sport="f1" aria-pressed="false">F1</button><button type="button" data-search-sport="darts" aria-pressed="false">DARTS</button><button type="button" data-search-sport="boxing" aria-pressed="false">BOXING</button><button type="button" data-search-sport="ufc" aria-pressed="false">UFC</button><button type="button" data-search-sport="bkfc" aria-pressed="false">BKFC</button></div><div id="global-search-results" class="global-search-results"><p>Start typing to search across events and competitors.</p></div></div></div>
     <nav class="bottom-nav" aria-label="Main navigation">
       <button class="nav-item active" data-screen="home-screen"><span>⌂</span><small>HOME</small></button>
-      <button class="nav-item" data-screen="calendar-screen"><span aria-hidden="true">▦</span><small>CALENDAR</small></button>
+      <button id="sports-bottom-calendar-button" class="nav-item" data-screen="calendar-screen" aria-label="Open the original Sports Calendar"><span aria-hidden="true">▦</span><small>CALENDAR</small></button>
       <button class="nav-item" data-screen="weekend-screen"><span>★</span><small>FAVOURITES</small></button>
     </nav>
     <footer class="footer"><a class="version-history-link" href="#version-history" id="open-version-history">SPORTS VERSION HISTORY</a><button type="button" class="games-version-history-link" data-screen="games-version-history-screen">GAMES VERSION HISTORY</button><span>•</span> SPORTS CALENDAR <span>•</span> UK LOCAL TIME <span>•</span> PDC logo: <a href="https://commons.wikimedia.org/wiki/File:Professional_Darts_Corporation_logo.png" target="_blank" rel="noopener noreferrer">Chris Ibbotson, CC BY-SA 4.0</a> <span>•</span> BKFC SCHEDULE: <a href="https://www.bkfc.com/events" target="_blank" rel="noopener noreferrer">BKFC</a> <span>•</span> BOXING DATA: <a href="https://boxerbook.com" target="_blank" rel="noopener noreferrer">BOXERBOOK</a></footer>
@@ -300,6 +301,6 @@
   <script src="./home-next-up.js?v=20261109-01"></script>
   <script src="./version-history.js?v=20261109-01"></script>
   <script src="./f1-grand-prix-centre.js?v=20261109-03"></script>
-  <script src="./games-calendar.js?v=20261109-04"></script>
+  <script src="./games-calendar.js?v=20261109-05"></script>
 </body>
 </html>
