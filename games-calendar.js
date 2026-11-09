@@ -184,7 +184,7 @@
       .then(response => { if (!response.ok) throw new Error("Featured game feed unavailable"); return response.json(); })
       .then(data => { renderFeaturedGames(data.games); updateReleaseCountdowns(); })
       .catch(() => renderFeaturedGames([]));
-    window.setInterval(updateReleaseCountdowns, 60000);
+    window.setInterval(updateReleaseCountdowns, 1000);
   }
   const API_URL = "https://api.github.com/repos/JimmyHZz1/Boxing-Fight-Calendar/pulls?state=closed&sort=updated&direction=desc&per_page=100";
   const CACHE_KEY = "gamesCalendarMergedHistoryV1";
