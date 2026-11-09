@@ -189,7 +189,7 @@
     });
     const timestamp=d.last_successful_update||d.last_updated;
     const updated=timestamp?new Date(timestamp).toLocaleString("en-GB",{timeZone:"Europe/London",dateStyle:"medium",timeStyle:"short"}):null;
-    if(updated)s.append(el("p","sport-page-note","Last successful Order of Merit update: "+updated+" UK."));
+    if(updated)s.append(el("p","sport-page-note",(d.last_successful_update?"Last successful Order of Merit update: ":"Last published Order of Merit snapshot: ")+updated+" UK."));
     if(d.data_status==="stale"||d.sync_warning)s.append(el("p","sport-page-note","The published ranking snapshot may be out of date. "+(d.sync_warning||"The latest provider check did not complete.")));
     if(d.notice)s.append(el("p","sport-page-note",d.notice));
     return s;
