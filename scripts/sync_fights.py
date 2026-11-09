@@ -260,21 +260,54 @@ def update_fighter_images(events: list[dict]) -> dict:
 def main():
     primary = boxerbook_schedule()
     fallback = boxing_data_fallback()
-    # Publish confirmed event cards only. Unassigned individual bouts are not
-    # presented as a made-up "additional scheduled bouts" card.
-    events = primary["events"]
+
+    # Keep the provider feeds distinct: Boxerbook event cards are confirmed;
+    # Boxing Data bouts remain clearly labelled date-grouped listings.
+    events = list(primary["events"])
+    confirmed_pairs = set()
+    for event in events:
+        for bout in event.get("bouts", []):
+            bout_date = str(bout.get("date") or event.get("date", ""))[:10]
+            pair = sorted((normalise_person_name(bout.get("fighter1")), normalise_person_name(bout.get("fighter2"))))
+            if all(pair) and "tbc" not in pair:
+                confirmed_pairs.add((bout_date, *pair))
+
+    additional_events = []
+    additional_count = 0
+    for event in fallback:
+        remaining = []
+        for bout in event.get("bouts", []):
+            bout_date = str(bout.get("date") or event.get("date", ""))[:10]
+            pair = sorted((normalise_person_name(bout.get("fighter1")), normalise_person_name(bout.get("fighter2"))))
+            identity = (bout_date, *pair)
+            if all(pair) and "tbc" not in pair and identity in confirmed_pairs:
+                continue
+            remaining.append(bout)
+        if remaining:
+            event["bouts"] = remaining
+            event["source_note"] = "Additional scheduled bouts — card not confirmed. These individual matchups are listed by Boxing Data and have not been assigned to a confirmed promoter event."
+            event["data_source"] = "Boxing Data API"
+            additional_events.append(event)
+            additional_count += len(remaining)
+
+    events.extend(additional_events)
     events.sort(key=lambda e: (str(e.get("date", "")), str(e.get("name", ""))))
-    count = sum(len(e.get("bouts", [])) for e in events)
+    confirmed_count = len(primary["events"])
+    confirmed_bouts = sum(len(e.get("bouts", [])) for e in primary["events"])
+    count = confirmed_bouts + additional_count
     fighter_images = update_fighter_images(events)
     snapshot = {
-        "provider": "Boxerbook + Boxing Data API",
+        "provider": "Boxerbook confirmed cards + Boxing Data additional bouts",
         "last_updated": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
         "provider_as_of": primary.get("as_of"),
-        "attribution": "Data from Boxerbook (boxerbook.com)",
+        "attribution": "Confirmed cards from Boxerbook; additional scheduled bouts from Boxing Data API.",
         "count_events": len(events), "count_bouts": count,
+        "count_confirmed_events": confirmed_count,
+        "count_confirmed_bouts": confirmed_bouts,
+        "count_additional_bouts": additional_count,
         "count_fighter_photos": len(fighter_images),
         "events": events,
-        "notice": "Confirmed event cards and bout details are supplied by Boxerbook. Unassigned individual bouts are omitted rather than shown as unconfirmed cards. Missing times and broadcasters are not guessed."
+        "notice": "Boxerbook supplies confirmed event cards. Additional scheduled bouts from Boxing Data are shown separately by date and are not confirmed promoter cards. Missing times and broadcasters are not guessed."
     }
     path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "fights.json")
     os.makedirs(os.path.dirname(path), exist_ok=True)

@@ -481,6 +481,12 @@ function renderEventCard(event, expanded=false) {
   const panel=document.createElement("div");panel.className="fight-card-details";
   const meta=document.createElement("div");meta.className="fight-card-meta";
   const metaBits=[];
+  if(event.source_note){
+    const note=document.createElement("p");
+    note.className="muted-note";
+    note.textContent=event.source_note;
+    panel.append(note);
+  }
   if(country)metaBits.push("COUNTRY: "+country);
   if(event.promoter)metaBits.push("PROMOTER: "+event.promoter);
   if(cardStart)metaBits.push("CARD START: "+cardStart);
