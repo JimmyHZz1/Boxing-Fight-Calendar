@@ -100,7 +100,7 @@
     if (!upcoming.length) {
       const empty = document.createElement("span");
       empty.className = "games-up-next-loading";
-      empty.textContent = activePlatform === "all" ? "No confirmed major release dates currently listed." : "No upcoming releases currently listed for this platform.";
+      empty.textContent = "No confirmed major release dates currently listed.";
       featuredTicker.append(empty);
       return;
     }
