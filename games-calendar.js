@@ -22,13 +22,22 @@
       menu.hidden = !menu.hidden;
       trigger.setAttribute("aria-expanded", String(!menu.hidden));
     });
-    menu.querySelectorAll("button[data-screen]").forEach(button => {
-      button.addEventListener("click", () => {
-        closeMenu();
-        setBrand(button.dataset.screen);
-        window.showScreen?.(button.dataset.screen);
-      });
-    });
+    // Delegate menu selection so taps on the button label or icon behave identically on iOS.
+    menu.addEventListener("click", event => {
+      const button = event.target.closest("button[data-screen]");
+      if (!button || !menu.contains(button)) return;
+      event.preventDefault();
+      event.stopPropagation();
+      const destination = button.dataset.screen;
+      closeMenu();
+      setBrand(destination);
+      if (typeof window.showScreen === "function") {
+        window.showScreen(destination);
+      } else {
+        document.querySelectorAll(".screen").forEach(screen => screen.classList.toggle("active", screen.id === destination));
+        document.body.classList.toggle("games-mode", destination === "games-calendar-screen" || destination === "games-version-history-screen");
+      }
+    }, true);
     document.addEventListener("click", event => {
       if (!menu.contains(event.target) && !trigger.contains(event.target)) closeMenu();
     });
