@@ -107,12 +107,17 @@
   window.addEventListener("resize",()=>{clearTimeout(tickerResizeTimer);tickerResizeTimer=setTimeout(renderTicker,140);});
   const tickerRoot=$("next-event-ticker");
   if(tickerRoot){
+    let tickerResumeTimer;
+    const pauseTicker=()=>{clearTimeout(tickerResumeTimer);tickerRoot.classList.add("is-paused");};
+    const resumeTicker=()=>{clearTimeout(tickerResumeTimer);tickerResumeTimer=setTimeout(()=>tickerRoot.classList.remove("is-paused"),1600);};
     tickerRoot.addEventListener("click",event=>{
       const card=event.target.closest(".next-event-item");
       if(card)window.SportPages?.open?.(card.dataset.sport);
     });
-    tickerRoot.addEventListener("touchstart",()=>tickerRoot.classList.add("is-paused"),{passive:true});
-    tickerRoot.addEventListener("touchend",()=>setTimeout(()=>tickerRoot.classList.remove("is-paused"),1200),{passive:true});
+    tickerRoot.addEventListener("touchstart",pauseTicker,{passive:true});
+    tickerRoot.addEventListener("touchmove",pauseTicker,{passive:true});
+    tickerRoot.addEventListener("touchend",resumeTicker,{passive:true});
+    tickerRoot.addEventListener("touchcancel",resumeTicker,{passive:true});
   }
   function render(){
     const liveRoot=$("live-now-events"),upcomingRoot=$("live-upcoming-events");
