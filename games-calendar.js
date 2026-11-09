@@ -62,6 +62,9 @@
   const status = document.getElementById("games-recent-release-status");
   if (!list) return;
   const featuredTicker = document.getElementById("games-up-next-ticker");
+  const platformFilter = document.getElementById("games-platform-filter");
+  let allUpcomingGames = [];
+  let activePlatform = "all";
   const londonMidnight = releaseDate => {
     const [year, month, day] = releaseDate.split("-").map(Number);
     const utcGuess = Date.UTC(year, month - 1, day);
@@ -91,12 +94,13 @@
     const today = new Intl.DateTimeFormat("en-CA", {timeZone:"Europe/London",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
     const upcoming = (Array.isArray(items) ? items : [])
       .filter(game => game && typeof game.release_date === "string" && game.release_date.length === 10 && game.release_date[4] === "-" && game.release_date[7] === "-" && game.release_date >= today)
+      .filter(game => activePlatform === "all" || (Array.isArray(game.platforms) && game.platforms.some(platform => String(platform).toLowerCase().includes(activePlatform))))
       .sort((a,b) => a.release_date.localeCompare(b.release_date));
     featuredTicker.replaceChildren();
     if (!upcoming.length) {
       const empty = document.createElement("span");
       empty.className = "games-up-next-loading";
-      empty.textContent = "No confirmed major release dates currently listed.";
+      empty.textContent = activePlatform === "all" ? "No confirmed major release dates currently listed." : "No upcoming releases currently listed for this platform.";
       featuredTicker.append(empty);
       return;
     }
@@ -180,13 +184,23 @@
       node.textContent = releaseCountdown(node.dataset.releaseDate);
     });
   };
+  if (platformFilter) {
+    platformFilter.addEventListener("click", event => {
+      const button = event.target.closest("button[data-games-platform]");
+      if (!button || !platformFilter.contains(button)) return;
+      activePlatform = button.dataset.gamesPlatform || "all";
+      platformFilter.querySelectorAll("button[data-games-platform]").forEach(option => option.setAttribute("aria-pressed", String(option === button)));
+      renderFeaturedGames(allUpcomingGames);
+      updateReleaseCountdowns();
+    });
+  }
   if (featuredTicker) {
     featuredTicker.addEventListener("touchstart", () => featuredTicker.classList.add("is-paused"), {passive:true});
     featuredTicker.addEventListener("touchend", () => setTimeout(() => featuredTicker.classList.remove("is-paused"), 1200), {passive:true});
     fetch("./data/games-featured.json?t="+Date.now(), {cache:"no-store"})
       .then(response => { if (!response.ok) throw new Error("Featured game feed unavailable"); return response.json(); })
-      .then(data => { renderFeaturedGames(data.games); updateReleaseCountdowns(); })
-      .catch(() => renderFeaturedGames([]));
+      .then(data => { allUpcomingGames = Array.isArray(data.games) ? data.games : []; renderFeaturedGames(allUpcomingGames); updateReleaseCountdowns(); })
+      .catch(() => { allUpcomingGames = []; renderFeaturedGames([]); });
     window.setInterval(updateReleaseCountdowns, 1000);
   }
   const API_URL = "https://api.github.com/repos/JimmyHZz1/Boxing-Fight-Calendar/pulls?state=closed&sort=updated&direction=desc&per_page=100";

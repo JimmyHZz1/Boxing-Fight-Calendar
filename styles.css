@@ -2178,3 +2178,12 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
 .games-up-next-ticker .games-up-next-logo{order:0;flex:0 0 46px!important;margin-right:2px}
 .games-up-next-ticker .next-event-info{order:1;flex:1 1 auto;min-width:0}
 .games-up-next-ticker .games-up-next-logo-text{font-family:Arial,sans-serif!important;font-size:12px!important;font-weight:1000!important;letter-spacing:-.5px!important;line-height:1!important;color:#9bcaff!important;text-shadow:0 0 10px rgba(38,133,232,.25)}
+
+
+/* Games Calendar platform filters. */
+.games-platform-filter{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin:0 0 13px;padding:11px 12px;background:rgba(38,133,232,.055);border:1px solid rgba(38,133,232,.24)}
+.games-platform-filter-label{margin-right:5px;color:var(--muted);font-size:8px;font-weight:900;letter-spacing:1px}
+.games-platform-filter button{min-height:32px;padding:7px 10px;border:1px solid rgba(143,193,255,.24);background:#171d27;color:#b7d6ff;font:800 8px 'DM Sans',sans-serif;letter-spacing:.7px;cursor:pointer;touch-action:manipulation}
+.games-platform-filter button[aria-pressed="true"]{border-color:#2685e8;background:#2685e8;color:#fff}
+.games-platform-filter button:focus-visible{outline:2px solid #8fc1ff;outline-offset:2px}
+@media(max-width:480px){.games-platform-filter{gap:6px;padding:9px}.games-platform-filter-label{flex:1 0 100%;margin:0 0 2px}.games-platform-filter button{flex:1 1 auto;padding:8px 7px;font-size:7px}}
