@@ -8,7 +8,9 @@
         "PlayStation 5",
         "Xbox Series X|S"
       ],
-      "source_url": "https://www.videogameschronicle.com/guide/upcoming-game-release-dates-schedule/"
+      "source_url": "https://www.videogameschronicle.com/guide/upcoming-game-release-dates-schedule/",
+      "logo_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Grand%20Theft%20Auto%20VI%20logo.svg",
+      "short_name": "GTA VI"
     },
     {
       "title": "Warhammer 40,000: Dawn of War IV",
@@ -16,7 +18,9 @@
       "platforms": [
         "PC"
       ],
-      "source_url": "https://www.videogameschronicle.com/guide/upcoming-game-release-dates-schedule/"
+      "source_url": "https://www.videogameschronicle.com/guide/upcoming-game-release-dates-schedule/",
+      "logo_url": "https://www.pcgamingwiki.com/wiki/Special:FilePath/Warhammer_40000_Dawn_of_War_4_cover.jpg",
+      "short_name": "DOW IV"
     },
     {
       "title": "Path of Exile II",
@@ -26,7 +30,9 @@
         "PlayStation 5",
         "Xbox Series X|S"
       ],
-      "source_url": "https://www.videogameschronicle.com/guide/upcoming-game-release-dates-schedule/"
+      "source_url": "https://www.videogameschronicle.com/guide/upcoming-game-release-dates-schedule/",
+      "logo_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2694490/library_600x900.jpg",
+      "short_name": "POE II"
     }
   ]
 }
