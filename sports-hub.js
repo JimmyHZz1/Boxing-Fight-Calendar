@@ -49,7 +49,7 @@
       const columnCount=window.matchMedia("(min-width: 1200px)").matches?3:2;
       const perColumn=Math.ceil(list.length/columnCount);
       const columns=Array.from({length:columnCount},(_,column)=>'<div class="hub-ranking-column">'+list.slice(column*perColumn,(column+1)*perColumn).map((x,i)=>person(x,column*perColumn+i,label)).join("")+'</div>').join("");
-      content='<div class="hub-ranking-columns">'+columns+'</div>';
+      content='<div class="hub-ranking-columns" style="grid-template-columns:repeat('+columnCount+',minmax(0,1fr))">'+columns+'</div>';
     }else{
       content=list.length?list.map((x,i)=>person(x,i,label)).join(""):'<p class="hub-empty">No published data available yet.</p>';
     }
@@ -116,6 +116,7 @@
   }
   function render(sport=active) {
     active=sport;
+    root.dataset.activeSport=sport;
     root.innerHTML=panel(sport);
     root.querySelectorAll("[data-hub-sport]").forEach(button=>button.addEventListener("click",()=>render(button.dataset.hubSport)));
     root.querySelectorAll("img[data-image-entity]").forEach(img=>{
