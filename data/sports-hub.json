@@ -4711,11 +4711,12 @@
     "cumulative_found": 62,
     "cumulative_missing": 31,
     "batch_number": 0,
-    "enrichment_status": "baseline reset after image-source audit",
+    "enrichment_status": "awaiting next scheduled batch",
     "last_batch_at": null,
     "last_successful_batch_at": null,
     "last_rate_limited_at": null,
-    "cumulative_rejected": 4
+    "cumulative_rejected": 4,
+    "rate_limited": false
   },
   "last_updated": "2026-11-09T06:42:43Z"
 }
