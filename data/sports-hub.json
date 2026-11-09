@@ -4736,51 +4736,65 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 3,
+    "attempted": 5,
     "found": 101,
     "missing": 614,
     "rejected": 0,
     "by_sport": {
       "ufc": {
-        "attempted": 3,
+        "attempted": 5,
         "found": 0,
-        "missing": 3,
+        "missing": 5,
         "rejected": 0
       }
     },
     "search_details": [
       {
-        "name": "Kyoji Horiguchi",
-        "queries": 4,
-        "candidate_files": 0,
-        "accepted": 0,
-        "rejections": {}
-      },
-      {
-        "name": "Lone’er Kavanagh",
-        "queries": 4,
-        "candidate_files": 0,
-        "accepted": 0,
-        "rejections": {}
-      },
-      {
         "name": "Asu Almabayev",
-        "queries": 2,
+        "queries": 1,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Brandon Moreno",
+        "queries": 1,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Amir Albazi",
+        "queries": 1,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Ramazan Temirov",
+        "queries": 1,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Tim Elliott",
+        "queries": 1,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       }
     ],
-    "checked_at": "2026-11-09T13:33:36Z",
+    "checked_at": "2026-11-09T13:35:58Z",
     "library_entries": 66,
     "newly_found": 0,
-    "cumulative_attempted": 112,
+    "cumulative_attempted": 117,
     "cumulative_found": 66,
-    "cumulative_missing": 46,
+    "cumulative_missing": 51,
     "cumulative_rejected": 139,
-    "batch_number": 5,
-    "last_batch_at": "2026-11-09T13:33:36Z",
-    "last_successful_batch_at": "2026-11-09T13:33:36Z",
+    "batch_number": 6,
+    "last_batch_at": "2026-11-09T13:35:58Z",
+    "last_successful_batch_at": "2026-11-09T13:35:58Z",
     "last_rate_limited_at": "2026-11-09T13:33:36Z",
     "coverage": {
       "boxing fight card fighters": {
@@ -4814,7 +4828,7 @@
         "missing": 81
       }
     },
-    "rate_limited": true
+    "rate_limited": false
   },
   "last_updated": "2026-11-09T13:32:43Z"
 }
