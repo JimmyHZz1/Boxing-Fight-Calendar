@@ -4,7 +4,7 @@
 const root=document.getElementById("f1-grand-prix-content");if(!root)return;
 const FAV="sports-calendar-my-favourites-v1",REM="sports-calendar-f1-reminders-v1",WEATHER="sports-calendar-f1-weather-v1";
 const colours={"Mercedes":"#00d2be","Ferrari":"#ef1a2d","Red Bull":"#3671c6","McLaren":"#ff8700","Alpine F1 Team":"#168bd2","Haas F1 Team":"#c7cbd1","Audi":"#f02b32","RB F1 Team":"#6c9bd2","Williams":"#39a9df","Aston Martin":"#00a58b","Cadillac F1 Team":"#e5e5e5"};
-const state={events:[],event:null,session:0,weather:null,busy:false,message:""};
+const state={events:[],event:null,session:0,weather:null,busy:false,message:"",visualMode:"layout",circuitAssets:null,circuitLoading:false,circuitError:""};
 const el=(tag,cls,txt)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(txt!==undefined&&txt!==null)n.textContent=txt;return n;};
 const read=k=>{try{return JSON.parse(localStorage.getItem(k)||"null");}catch(_){return null;}};
 const save=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));return true;}catch(_){return false;}};
@@ -25,17 +25,75 @@ async function enableNotifications(){if(!("Notification"in window)){state.messag
 function checkReminders(){const d=read(REM)||{items:[]};let changed=false;(d.items||[]).forEach(x=>{const at=date(x.at);if(!at||x.sent)return;const due=at.getTime()-Number(x.lead||15)*60000;if(Date.now()>=due&&Date.now()<at.getTime()+300000){x.sent=true;changed=true;state.message=x.eventName+" · "+x.sessionName+" reminder";if("Notification"in window&&Notification.permission==="granted")try{new Notification("F1 session reminder",{body:x.eventName+" · "+x.sessionName+" starts at "+fmt(x.at)});}catch(_){}}});if(changed){save(REM,d);render();}}
 function weatherCard(w){const box=el("div","f1-gp-weather");box.append(el("span","f1-gp-weather-icon",w.icon||"🌤️"));const copy=el("div","");copy.append(el("strong","",w.temp===null?"Forecast":Math.round(w.temp)+"°C"),el("small","",w.label+" · "+(w.rain===null?"Rain chance unavailable":Math.round(w.rain)+"% rain chance")));box.append(copy);return box;}
 async function loadWeather(){const e=state.event;if(!e?.locality)return;state.busy=true;state.message="";render();try{const g=await fetch("https://geocoding-api.open-meteo.com/v1/search?name="+encodeURIComponent(e.locality)+"&count=1&language=en&format=json");if(!g.ok)throw Error("Weather location lookup failed");const place=(await g.json()).results?.[0];if(!place)throw Error("No forecast location found");const day=String(e.date||"").slice(0,10),today=new Date().toISOString().slice(0,10),delta=(new Date(day)-new Date(today))/86400000;if(!day||delta<0||delta>6)throw Error("Forecast not yet available for this race date");const url="https://api.open-meteo.com/v1/forecast?latitude="+place.latitude+"&longitude="+place.longitude+"&daily=temperature_2m_max,precipitation_probability_max,weather_code&timezone="+encodeURIComponent(place.timezone||"auto")+"&start_date="+day+"&end_date="+day;const r=await fetch(url);if(!r.ok)throw Error("Weather provider unavailable");const d=await r.json(),code=d.daily?.weather_code?.[0],icon=code===0?"☀️":code<=3?"🌤️":code<=48?"🌫️":code<=67?"🌧️":code<=77?"❄️":code<=82?"🌦️":"⛈️";state.weather={temp:d.daily?.temperature_2m_max?.[0]??null,rain:d.daily?.precipitation_probability_max?.[0]??null,label:"Forecast · "+day,icon};save(WEATHER,{eventId:e.id,weather:state.weather,at:Date.now()});}catch(err){const cached=read(WEATHER);if(cached?.eventId===e.id)state.weather=cached.weather;else state.message=err.message||"Weather unavailable";}finally{state.busy=false;render();}}
+
+function cleanMeta(value){return String(value||"").replace(/<[^>]*>/g," ").replace(/&nbsp;/g," ").replace(/&#160;/g," ").replace(/\s+/g," ").trim();}
+async function loadCircuitAssets(){
+ const e=state.event;if(!e)return;
+ if(state.circuitAssets?.eventId===e.id)return;
+ state.circuitLoading=true;state.circuitError="";state.circuitAssets=null;render();
+ try{
+  const year=String(e.date||e.start_at||"").slice(0,4)||String(new Date().getFullYear());
+  const response=await fetch("https://api.openf1.org/v1/meetings?year="+encodeURIComponent(year));
+  if(!response.ok)throw Error("Circuit map provider unavailable");
+  const meetings=await response.json();
+  const meetingName=norm(e.name),circuitName=norm(e.circuit),locality=norm(e.locality),country=norm(e.country);
+  const meeting=meetings.find(x=>norm(x.meeting_name)===meetingName)
+   ||meetings.find(x=>norm(x.circuit_short_name)===circuitName&&norm(x.country_name)===country)
+   ||meetings.find(x=>norm(x.location)===locality&&norm(x.country_name)===country);
+  const assets={eventId:e.id,map:meeting?.circuit_image||"",mapSource:"OpenF1 circuit directory",photo:null};
+  if(meeting){
+   const search=(meeting.circuit_short_name||e.circuit)+" circuit aerial view";
+   const params=new URLSearchParams({action:"query",generator:"search",gsrsearch:search,gsrnamespace:"6",gsrlimit:"10",prop:"imageinfo",iiprop:"url|extmetadata",iiurlwidth:"1600",format:"json",origin:"*"});
+   const photoResponse=await fetch("https://commons.wikimedia.org/w/api.php?"+params.toString());
+   if(photoResponse.ok){
+    const payload=await photoResponse.json(),pages=Object.values(payload.query?.pages||{});
+    const aerial=pages.find(p=>/aerial|overhead|satellite|from above|bird.?s.?eye|air view/i.test(p.title||""));
+    if(aerial?.imageinfo?.[0]){
+     const info=aerial.imageinfo[0],meta=info.extmetadata||{};
+     assets.photo={src:info.thumburl||info.url,title:String(aerial.title||"").replace(/^File:/,""),page:info.descriptionurl||"",artist:cleanMeta(meta.Artist?.value||meta.Credit?.value||""),license:cleanMeta(meta.LicenseShortName?.value||meta.UsageTerms?.value||"")};
+    }
+   }
+  }
+  state.circuitAssets=assets;
+  if(!assets.map&&!assets.photo)state.circuitError="No verified circuit visuals were returned for this Grand Prix.";
+  else if(!assets.photo)state.circuitError="No clearly labelled overhead photograph was found for this circuit yet.";
+ }catch(err){state.circuitError=err.message||"Circuit visuals are temporarily unavailable.";}
+ finally{state.circuitLoading=false;render();}
+}
+function circuitVisuals(){
+ const wrap=el("div","f1-gp-visuals"),tabs=el("div","f1-gp-tabs");
+ [["layout","TRACK LAYOUT"],["photo","OVERHEAD PHOTO"]].forEach(([mode,label])=>{
+  const b=el("button","",label);b.type="button";b.setAttribute("aria-pressed",String(state.visualMode===mode));b.addEventListener("click",()=>{state.visualMode=mode;render();});tabs.append(b);
+ });
+ wrap.append(tabs);
+ const stage=el("div","f1-gp-visual-stage");
+ const assets=state.circuitAssets?.eventId===state.event?.id?state.circuitAssets:null;
+ if(state.circuitLoading){stage.append(el("div","f1-gp-empty","Loading verified circuit visuals…"));}
+ else if(state.visualMode==="layout"){
+  if(assets?.map){const img=el("img","f1-gp-circuit-map");img.src=assets.map;img.alt=(state.event.circuit||"Grand Prix")+" circuit layout";img.loading="lazy";img.referrerPolicy="no-referrer";stage.append(img);stage.append(el("p","f1-gp-footnote","Circuit layout image supplied through the OpenF1 meeting feed."));}
+  else stage.append(el("div","f1-gp-empty",state.circuitError||"A verified track layout is not available for this event."));
+ }else if(assets?.photo){
+  const img=el("img","f1-gp-overhead-photo");img.src=assets.photo.src;img.alt=assets.photo.title||((state.event.circuit||"Circuit")+" overhead aerial photograph");img.loading="lazy";img.referrerPolicy="no-referrer";img.addEventListener("error",()=>{stage.replaceChildren(el("div","f1-gp-empty","The selected overhead image could not be loaded."));});stage.append(img);
+  const credit=el("div","f1-gp-image-credit");
+  const source=el("a","",assets.photo.title||"Image source");source.href=assets.photo.page;source.target="_blank";source.rel="noopener noreferrer";credit.append(source);
+  if(assets.photo.artist)credit.append(el("span","", " · "+assets.photo.artist));
+  if(assets.photo.license)credit.append(el("span","", " · "+assets.photo.license));
+  stage.append(credit);
+ }else stage.append(el("div","f1-gp-empty",state.circuitError||"No clearly identified overhead photograph is available for this circuit yet."));
+ wrap.append(stage);return wrap;
+}
+
 function history(e){const p=panel(root,"Circuit history");const key=norm(e.circuit),rows=state.events.filter(x=>x.id!==e.id&&norm(x.circuit)===key&&(x.results||[]).some(r=>String(r.position)==="1")).sort((a,b)=>String(b.date).localeCompare(String(a.date))).slice(0,5);if(!rows.length){p.append(el("div","f1-gp-empty","No previous winners for this circuit are included in the loaded results feed."));return;}rows.forEach(x=>{const w=x.results.find(r=>String(r.position)==="1"),line=el("div","f1-gp-favourite");line.append(el("span","",String(x.date||"").slice(0,4)+" · "+(w.driver||"Winner unavailable")),el("b","",w.team||""));p.append(line);});}
 function render(){
  const e=state.event;root.replaceChildren();if(!e){root.append(el("div","f1-gp-empty","No Grand Prix schedule is currently available. The centre will populate after the next successful F1 data sync."));return;}
  const ss=sessions(e),next=nextSession(e),f=favs(),hero=el("header","f1-gp-hero"),top=el("div","f1-gp-hero-top");
  top.append(el("span","f1-gp-kicker","FIA FORMULA ONE WORLD CHAMPIONSHIP"),el("span","f1-gp-round","ROUND "+(e.round||"—")));hero.append(top,el("h1","",e.name||"Grand Prix"),el("p","f1-gp-meta",[e.circuit,e.locality,e.country].filter(Boolean).join(" · ")));
  const nextbox=el("div","f1-gp-next"),copy=el("div","");copy.append(el("span","f1-gp-muted-label",next?"NEXT SESSION":"WEEKEND SCHEDULE"),el("strong","",next?.name||"No future session listed"),el("span","f1-gp-meta",next?fmt(next.start_at):"See published session timetable"));const cd=el("div","f1-gp-countdown",countdown(next));cd.append(el("small","","COUNTDOWN · UK TIME"));nextbox.append(copy,cd);hero.append(nextbox);root.append(hero);
- const toolbar=el("div","f1-gp-section-title");toolbar.append(el("h2","","WEEKEND CONTROL"));const picker=el("select","f1-gp-select");state.events.forEach((x,i)=>{const o=el("option","",x.name+" · "+(x.country||""));o.value=String(i);o.selected=x.id===e.id;picker.append(o);});picker.addEventListener("change",()=>{state.event=state.events[Number(picker.value)];state.session=0;state.weather=null;render();loadWeather();});toolbar.append(picker);root.append(toolbar);
+ const toolbar=el("div","f1-gp-section-title");toolbar.append(el("h2","","WEEKEND CONTROL"));const picker=el("select","f1-gp-select");state.events.forEach((x,i)=>{const o=el("option","",x.name+" · "+(x.country||""));o.value=String(i);o.selected=x.id===e.id;picker.append(o);});picker.addEventListener("change",()=>{state.event=state.events[Number(picker.value)];state.session=0;state.weather=null;state.circuitAssets=null;state.visualMode="layout";render();loadWeather();loadCircuitAssets();});toolbar.append(picker);root.append(toolbar);
  const grid=el("div","f1-gp-grid"),schedule=panel(grid,"Weekend schedule",true),list=el("div","f1-gp-session-list");
  if(!ss.length)list.append(el("div","f1-gp-empty","No session timetable is available."));
  ss.forEach((s,i)=>{const row=el("article","f1-gp-session"+(next&&s._i===next._i?" is-next":"")),info=el("div","");info.append(el("div","f1-gp-session-name",s.name),el("span","f1-gp-session-time",fmt(s.start_at||s.date)));const actions=el("div","f1-gp-session-actions"),rows=resultRows(e,s.name),status=el("span","f1-gp-status"+(rows.length?" done":next&&s._i===next._i?" next":""),rows.length?"RESULTS":s._date<Date.now()?"TIME PASSED · NO RESULT":"SCHEDULED");const view=el("button","","VIEW");view.type="button";view.addEventListener("click",()=>{state.session=i;render();document.getElementById("f1-gp-session-centre")?.scrollIntoView({behavior:"smooth"});});const rem=el("button","","＋ REMIND");rem.type="button";rem.setAttribute("aria-pressed",String(reminderSet(e,s)));rem.addEventListener("click",()=>setReminder(e,s));actions.append(status,view,rem);row.append(info,actions);list.append(row);});schedule.append(list);
- const circuit=panel(grid,"Circuit");circuit.append(el("p","f1-gp-meta",[e.circuit,e.locality,e.country].filter(Boolean).join(" · ")));const facts=el("div","f1-gp-facts");[["ROUND",e.round||"—"],["LOCATION",[e.locality,e.country].filter(Boolean).join(", ")||"—"],["LENGTH","Not supplied"],["RACE LAPS","Not supplied"],["LAP RECORD","Not supplied"],["DRS ZONES","Not supplied"]].forEach(([k,v])=>{const x=el("div","f1-gp-fact");x.append(el("strong","",String(v)),el("small","",k));facts.append(x);});circuit.append(facts,el("p","f1-gp-footnote","Circuit map and technical statistics will be added when verified circuit metadata is available."));
+ const circuit=panel(grid,"Circuit");circuit.append(el("p","f1-gp-meta",[e.circuit,e.locality,e.country].filter(Boolean).join(" · ")),circuitVisuals());const facts=el("div","f1-gp-facts");[["ROUND",e.round||"—"],["LOCATION",[e.locality,e.country].filter(Boolean).join(", ")||"—"],["LENGTH","Not supplied"],["RACE LAPS","Not supplied"],["LAP RECORD","Not supplied"],["DRS ZONES","Not supplied"]].forEach(([k,v])=>{const x=el("div","f1-gp-fact");x.append(el("strong","",String(v)),el("small","",k));facts.append(x);});circuit.append(facts,el("p","f1-gp-footnote","Technical statistics are shown only when verified metadata is available."));
  const wx=panel(grid,"Weather");if(state.busy)wx.append(el("div","f1-gp-empty","Checking forecast…"));else if(state.weather)wx.append(weatherCard(state.weather));else{wx.append(el("div","f1-gp-empty","Forecast is available only when the event date falls within the provider's forecast window."));const b=el("button","f1-gp-inline-button","CHECK WEATHER");b.type="button";b.addEventListener("click",loadWeather);wx.append(b);}wx.append(el("p","f1-gp-footnote","Open-Meteo forecast · not live track telemetry."));
  const favourite=panel(grid,"Your F1 favourites");if(f.length)f.forEach(x=>{const line=el("div","f1-gp-favourite");line.append(el("span","",x.name),el("b","",x.type==="team"?"CONSTRUCTOR":"DRIVER"));favourite.append(line);});else favourite.append(el("div","f1-gp-empty","Add drivers or constructors in the existing Favourites page. They will be highlighted in verified classifications."));
  const reminder=panel(grid,"Session reminders"),controls=el("div","f1-gp-reminder-controls"),data=read(REM)||{lead:15,items:[]},lead=el("select","");[15,30,60].forEach(n=>{const o=el("option","",n+" minutes before");o.value=String(n);o.selected=Number(data.lead||15)===n;lead.append(o);});lead.addEventListener("change",()=>{const d=read(REM)||{items:[]};d.lead=Number(lead.value);save(REM,d);});const notify=el("button","f1-gp-inline-button",("Notification"in window&&Notification.permission==="granted")?"NOTIFICATIONS ENABLED":"ENABLE BROWSER NOTIFICATIONS");notify.type="button";notify.addEventListener("click",enableNotifications);controls.append(lead,notify);reminder.append(controls);const saved=(data.items||[]).filter(x=>x.eventId===e.id);reminder.append(el("div","f1-gp-empty",saved.length?saved.length+" reminder(s) saved for this Grand Prix.":"No reminders saved for this Grand Prix."),el("p","f1-gp-footnote","In-app and browser alerts are checked while the PWA is open. iOS may not deliver scheduled alerts while the app is closed; background delivery is not guaranteed."));
@@ -43,7 +101,7 @@ function render(){
  const section=el("section","");section.id="f1-gp-session-centre";const title=el("div","f1-gp-section-title");title.append(el("h2","","Session centre"));const selector=el("select","f1-gp-select");ss.forEach((s,i)=>{const o=el("option","",s.name);o.value=String(i);o.selected=i===state.session;selector.append(o);});selector.addEventListener("change",()=>{state.session=Number(selector.value);render();document.getElementById("f1-gp-session-centre")?.scrollIntoView({behavior:"smooth"});});title.append(selector);section.append(title);
  const chosen=ss[state.session]||ss[0];if(chosen){const rows=resultRows(e,chosen.name),p=el("div","f1-gp-panel"),head=el("div","f1-gp-panel-head");head.append(el("h2","",chosen.name+" · "+(rows.length?"CLASSIFICATION":"SESSION")));p.append(head);if(rows.length){const wrap=el("div","f1-gp-results-wrap"),table=el("table","f1-gp-results"),thead=el("thead",""),tr=el("tr","");["POS","DRIVER","TEAM","TIME / STATUS","PTS"].forEach(x=>tr.append(el("th","",x)));thead.append(tr);table.append(thead);const body=el("tbody","");rows.forEach((r,i)=>{const row=el("tr",isFav(r)?"is-favourite":""),team=r.team||"—";[r.position||i+1,r.driver||"—",team,r.time||r.status||"—",r.points??"—"].forEach((v,j)=>{const td=el("td","");if(j===2){const mark=el("i","f1-gp-team-mark");mark.style.setProperty("--team-color",colours[team]||"#777");td.append(mark,document.createTextNode(String(v)));}else td.textContent=String(v);row.append(td);});body.append(row);});table.append(body);wrap.append(table);p.append(wrap,el("p","f1-gp-footnote","Published classification from the feed. Favourite drivers and constructors are highlighted."));}else p.append(el("div","f1-gp-empty","No verified classification is available for this session. Live positions, sectors and a session clock are hidden because the connected feed does not verify live timing."));section.append(p);}root.append(section);history(e);if(state.message)root.append(el("div","f1-gp-toast",state.message));
 }
-async function load(){root.replaceChildren(el("div","f1-gp-empty","Loading the published F1 calendar…"));try{const r=await fetch("./data/f1.json?gp="+Date.now(),{cache:"no-store"});if(!r.ok)throw Error("F1 schedule could not be loaded.");const d=await r.json();state.events=Array.isArray(d.events)?d.events:[];state.event=eventPick(state.events);state.session=0;state.weather=null;const cached=read(WEATHER);if(cached?.eventId===state.event?.id)state.weather=cached.weather;render();if(state.event&&!state.weather)loadWeather();}catch(err){root.replaceChildren(el("div","f1-gp-empty",err.message||"F1 schedule unavailable."));}}
+async function load(){root.replaceChildren(el("div","f1-gp-empty","Loading the published F1 calendar…"));try{const r=await fetch("./data/f1.json?gp="+Date.now(),{cache:"no-store"});if(!r.ok)throw Error("F1 schedule could not be loaded.");const d=await r.json();state.events=Array.isArray(d.events)?d.events:[];state.event=eventPick(state.events);state.session=0;state.weather=null;const cached=read(WEATHER);if(cached?.eventId===state.event?.id)state.weather=cached.weather;render();if(state.event&&!state.weather)loadWeather();if(state.event)loadCircuitAssets();}catch(err){root.replaceChildren(el("div","f1-gp-empty",err.message||"F1 schedule unavailable."));}}
 function open(){window.showScreen?.("f1-grand-prix-screen");load();}
 document.getElementById("f1-gp-back")?.addEventListener("click",()=>{window.showScreen?.("sport-detail-screen");window.SportPages?.open?.("f1");});
 window.setInterval(checkReminders,30000);
