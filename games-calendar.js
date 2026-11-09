@@ -93,7 +93,7 @@
         platforms.append(tag);
       });
       card.append(date,title,platforms);
-      if (game.source_url) { try { const parsed = new URL(game.source_url); if (!["http:","https:"].includes(parsed.protocol)) throw new Error("Invalid source URL"); } catch (_) { card.append(date,title,platforms); featuredList.append(card); return; }
+      if (game.source_url && (game.source_url.startsWith("https://") || game.source_url.startsWith("http://"))) {
         const source = document.createElement("a");
         source.href = game.source_url;
         source.target = "_blank";
