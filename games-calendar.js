@@ -62,19 +62,29 @@
   const status = document.getElementById("games-recent-release-status");
   if (!list) return;
   const featuredTicker = document.getElementById("games-up-next-ticker");
+  const londonMidnight = releaseDate => {
+    const [year, month, day] = releaseDate.split("-").map(Number);
+    const utcGuess = Date.UTC(year, month - 1, day);
+    const parts = new Intl.DateTimeFormat("en-GB", {
+      timeZone: "Europe/London", year: "numeric", month: "2-digit",
+      day: "2-digit", hour: "2-digit", minute: "2-digit", second: "2-digit",
+      hourCycle: "h23"
+    }).formatToParts(new Date(utcGuess));
+    const values = Object.fromEntries(parts.filter(part => part.type !== "literal").map(part => [part.type, Number(part.value)]));
+    const londonClockAsUtc = Date.UTC(values.year, values.month - 1, values.day, values.hour, values.minute, values.second);
+    return utcGuess - (londonClockAsUtc - utcGuess);
+  };
   const releaseCountdown = releaseDate => {
-    if (window.SportsCountdown?.text) return window.SportsCountdown.text(releaseDate);
-    const parts = releaseDate.split("-").map(Number);
-    const target = new Date(parts[0], parts[1]-1, parts[2]).getTime();
-    const remaining = target - Date.now();
+    const remaining = londonMidnight(releaseDate) - Date.now();
     if (!Number.isFinite(remaining)) return "DATE TBC";
-    if (remaining <= 0) return "RELEASE DAY";
-    const days = Math.floor(remaining / 86400000);
-    const hours = Math.floor((remaining % 86400000) / 3600000);
-    const minutes = Math.floor((remaining % 3600000) / 60000);
-    if (days > 0) return "IN " + days + "D " + hours + "H";
-    if (hours > 0) return "IN " + hours + "H " + minutes + "M";
-    return "IN " + minutes + "M";
+    if (remaining <= 0) return "RELEASED";
+    const seconds = Math.floor(remaining / 1000);
+    const days = Math.floor(seconds / 86400);
+    const hours = Math.floor((seconds % 86400) / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+    const secs = seconds % 60;
+    return "IN " + days + "D " + String(hours).padStart(2,"0") + "H " +
+      String(minutes).padStart(2,"0") + "M " + String(secs).padStart(2,"0") + "S";
   };
   const renderFeaturedGames = items => {
     if (!featuredTicker) return;
@@ -90,9 +100,13 @@
       featuredTicker.append(empty);
       return;
     }
+    const track = document.createElement("div");
+    track.className = "next-event-track";
+    const group = document.createElement("div");
+    group.className = "next-event-group";
     upcoming.forEach(game => {
       const item = document.createElement(game.source_url && (game.source_url.startsWith("https://") || game.source_url.startsWith("http://")) ? "a" : "article");
-      item.className = "games-up-next-item next-event-item";
+      item.className = "next-event-item games-up-next-item";
       item.dataset.sport = "games";
       if (item.tagName === "A") {
         item.href = game.source_url;
@@ -101,24 +115,23 @@
         item.setAttribute("aria-label", "Release details for " + (game.title || "upcoming game"));
       }
       const info = document.createElement("span");
-      info.className = "games-up-next-info next-event-info";
+      info.className = "next-event-info";
       const label = document.createElement("small");
-      label.className = "games-up-next-label-text next-event-sport";
+      label.className = "next-event-sport";
       label.textContent = "GAMES";
       const name = document.createElement("strong");
-      name.className = "games-up-next-name next-event-name";
+      name.className = "next-event-name";
       name.textContent = game.title || "Upcoming release";
       const countdown = document.createElement("small");
-      countdown.className = "games-up-next-countdown next-event-countdown";
+      countdown.className = "next-event-countdown";
       countdown.dataset.releaseDate = game.release_date;
       countdown.textContent = releaseCountdown(game.release_date);
       const platforms = document.createElement("small");
-      platforms.className = "games-up-next-platforms next-event-detail";
+      platforms.className = "next-event-detail";
       platforms.textContent = Array.isArray(game.platforms) ? game.platforms.join(" · ") : "PC & CONSOLE";
       info.append(label, name, countdown, platforms);
-
       const logoWrap = document.createElement("span");
-      logoWrap.className = "games-up-next-logo next-event-state";
+      logoWrap.className = "next-event-state games-up-next-logo";
       if (game.logo_url && game.logo_url.startsWith("https://")) {
         const logo = document.createElement("img");
         logo.src = game.logo_url;
@@ -135,8 +148,29 @@
         logoWrap.classList.add("games-up-next-logo-fallback");
       }
       item.append(info, logoWrap);
-      featuredTicker.append(item);
+      group.append(item);
     });
+    track.append(group);
+    featuredTicker.replaceChildren(track);
+    const groupWidth = group.getBoundingClientRect().width || group.scrollWidth;
+    const gap = parseFloat(getComputedStyle(group).columnGap || getComputedStyle(group).gap) || 0;
+    const loopDistance = groupWidth + gap;
+    if (groupWidth && loopDistance) {
+      const targetWidth = Math.max(featuredTicker.clientWidth + loopDistance * 1.25, loopDistance * 2.5);
+      let copies = 1;
+      while (track.scrollWidth < targetWidth && copies < 20) {
+        const clone = group.cloneNode(true);
+        clone.dataset.tickerClone = "true";
+        clone.setAttribute("aria-hidden", "true");
+        clone.querySelectorAll("a,button").forEach(node => { node.tabIndex = -1; });
+        track.append(clone);
+        copies++;
+      }
+      track.style.setProperty("--ticker-distance", loopDistance + "px");
+      track.style.setProperty("--ticker-offset", "-" + loopDistance + "px");
+      track.style.setProperty("--ticker-duration", Math.max(24, loopDistance / 22) + "s");
+      featuredTicker.classList.add("is-auto-scrolling");
+    }
   };
   const updateReleaseCountdowns = () => {
     featuredTicker?.querySelectorAll("[data-release-date]").forEach(node => {
@@ -144,6 +178,8 @@
     });
   };
   if (featuredTicker) {
+    featuredTicker.addEventListener("touchstart", () => featuredTicker.classList.add("is-paused"), {passive:true});
+    featuredTicker.addEventListener("touchend", () => setTimeout(() => featuredTicker.classList.remove("is-paused"), 1200), {passive:true});
     fetch("./data/games-featured.json?t="+Date.now(), {cache:"no-store"})
       .then(response => { if (!response.ok) throw new Error("Featured game feed unavailable"); return response.json(); })
       .then(data => { renderFeaturedGames(data.games); updateReleaseCountdowns(); })
