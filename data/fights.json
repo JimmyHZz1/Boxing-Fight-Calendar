@@ -1,61 +1,12 @@
 {
   "provider": "Boxerbook + Boxing Data API",
-  "last_updated": "2026-11-09T06:42:43Z",
-  "provider_as_of": "2026-11-09T06:42:42Z",
+  "last_updated": "2026-11-09T12:51:38Z",
+  "provider_as_of": "2026-11-09T12:51:37Z",
   "attribution": "Data from Boxerbook (boxerbook.com)",
-  "count_events": 23,
+  "count_events": 22,
   "count_bouts": 84,
   "count_fighter_photos": 14,
   "events": [
-    {
-      "id": "boxerbook-11863",
-      "source_id": 11863,
-      "name": "Arlington boxing event",
-      "date": "2026-11-08T12:00:00Z",
-      "event_url": "https://boxerbook.com/events/11863/2026-11-08-arlington",
-      "promoter": null,
-      "location": null,
-      "city": "Arlington",
-      "country": "US",
-      "country_code": null,
-      "start_time_utc": "2026-11-09T05:00Z",
-      "broadcasters": [
-        {
-          "name": "ESPN+",
-          "region": "US",
-          "url": null
-        },
-        {
-          "name": "ESPN",
-          "region": "US",
-          "url": null
-        }
-      ],
-      "bouts": [
-        {
-          "id": 192149,
-          "fighter1": "Elif Nur Turhan",
-          "fighter2": "Alycia Baumgardner",
-          "fighter1_image": null,
-          "fighter2_image": null,
-          "fighter1_nationality": null,
-          "fighter2_nationality": null,
-          "record1": "15-0-0",
-          "record2": "18-1-0",
-          "date": "2026-11-08",
-          "start_time_utc": null,
-          "start_datetime_utc": null,
-          "weight_class": "w_lig",
-          "rounds": 10,
-          "title_text": "IBF women's lightweight title",
-          "status": "scheduled",
-          "url": "https://boxerbook.com/bouts/192149/elif-nur-turhan-vs-alycia-baumgardner",
-          "broadcaster": null,
-          "data_source": "Boxerbook"
-        }
-      ],
-      "data_source": "Boxerbook"
-    },
     {
       "id": "boxerbook-5229",
       "source_id": 5229,
@@ -79,7 +30,7 @@
         {
           "id": 194097,
           "fighter1": "Somsak Nule",
-          "fighter2": "篠田 覇時",
+          "fighter2": "Haji Shinoda",
           "fighter1_image": null,
           "fighter2_image": null,
           "fighter1_nationality": null,
@@ -93,7 +44,7 @@
           "rounds": 6,
           "title_text": null,
           "status": "scheduled",
-          "url": "https://boxerbook.com/bouts/194097/somsak-nule-vs-boxer",
+          "url": "https://boxerbook.com/bouts/194097/somsak-nule-vs-haji-shinoda",
           "broadcaster": null,
           "data_source": "Boxerbook"
         },
@@ -441,7 +392,7 @@
       "city": null,
       "country": null,
       "country_code": null,
-      "start_time_utc": "2026-11-14T23:40Z",
+      "start_time_utc": "2026-11-14T23:00Z",
       "broadcasters": [],
       "bouts": [
         {
@@ -483,6 +434,27 @@
           "title_text": null,
           "status": "scheduled",
           "url": "https://boxerbook.com/bouts/204218/zaquin-moses-vs-manuel-lerma",
+          "broadcaster": null,
+          "data_source": "Boxerbook"
+        },
+        {
+          "id": 204240,
+          "fighter1": "Kyosuke Takami",
+          "fighter2": "Angel Geovanny Meza Morales",
+          "fighter1_image": null,
+          "fighter2_image": null,
+          "fighter1_nationality": null,
+          "fighter2_nationality": null,
+          "record1": "10-1-0",
+          "record2": null,
+          "date": "2026-11-14",
+          "start_time_utc": null,
+          "start_datetime_utc": null,
+          "weight_class": "fly",
+          "rounds": null,
+          "title_text": null,
+          "status": "scheduled",
+          "url": "https://boxerbook.com/bouts/204240/kyosuke-takami-vs-angel-geovanny-meza-morales",
           "broadcaster": null,
           "data_source": "Boxerbook"
         }
@@ -817,7 +789,7 @@
       "city": "Riyadh",
       "country": "SA",
       "country_code": null,
-      "start_time_utc": "2026-11-14T21:30Z",
+      "start_time_utc": "2026-11-14T19:30Z",
       "broadcasters": [
         {
           "name": "Paramount+",
@@ -1232,7 +1204,7 @@
           "date": "2026-11-15",
           "start_time_utc": null,
           "start_datetime_utc": null,
-          "weight_class": null,
+          "weight_class": "mid",
           "rounds": null,
           "title_text": null,
           "status": "scheduled",
@@ -1308,7 +1280,7 @@
         {
           "id": 204108,
           "fighter1": "Taketo Kitamura",
-          "fighter2": "豊田 法希",
+          "fighter2": "Noriki Toyoda",
           "fighter1_image": null,
           "fighter2_image": null,
           "fighter1_nationality": null,
@@ -1322,7 +1294,7 @@
           "rounds": 4,
           "title_text": null,
           "status": "scheduled",
-          "url": "https://boxerbook.com/bouts/204108/taketo-kitamura-vs-boxer",
+          "url": "https://boxerbook.com/bouts/204108/taketo-kitamura-vs-noriki-toyoda",
           "broadcaster": null,
           "data_source": "Boxerbook"
         },
@@ -1412,7 +1384,7 @@
         },
         {
           "id": 204113,
-          "fighter1": "大田 一ノ輔",
+          "fighter1": "Kazusuke Ota",
           "fighter2": "Hiroto Nakai",
           "fighter1_image": null,
           "fighter2_image": null,
@@ -1427,7 +1399,7 @@
           "rounds": 4,
           "title_text": null,
           "status": "scheduled",
-          "url": "https://boxerbook.com/bouts/204113/boxer-vs-hiroto-nakai",
+          "url": "https://boxerbook.com/bouts/204113/kazusuke-ota-vs-hiroto-nakai",
           "broadcaster": null,
           "data_source": "Boxerbook"
         },
@@ -1860,7 +1832,7 @@
           "date": "2026-11-21",
           "start_time_utc": null,
           "start_datetime_utc": null,
-          "weight_class": null,
+          "weight_class": "lig",
           "rounds": 10,
           "title_text": null,
           "status": "scheduled",
