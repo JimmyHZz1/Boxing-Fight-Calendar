@@ -71,6 +71,7 @@
   function updateImageDiagnostics() {
     const box=$("version-image-diagnostics");
     if(!box) return;
+    const wasOpen=!!box.querySelector("details")?.open;
     const d=imageDiagnostics;
     const found=Number(d.found||0), missing=Number(d.missing||0);
     const coverage=d.coverage||{};
@@ -78,7 +79,7 @@
     const pause=d.rate_limited?'<p class="hub-image-warning">Image lookup is currently rate-limited upstream. The scheduled queue will retry; no missing portraits are being substituted with guessed matches.</p>':'';
     const checked=d.checked_at?new Date(d.checked_at).toLocaleString("en-GB",{timeZone:"Europe/London",dateStyle:"medium",timeStyle:"short"}):"Not checked";
     const entries=Math.max(Number(d.library_entries||0),Object.keys(localImages).length);
-    box.innerHTML='<details class="version-entry version-dropdown image-status-dropdown"><summary class="version-entry-summary"><span class="version-entry-top"><span class="version-number">IMAGE LIBRARY</span><span class="version-status">'+found+' FOUND · '+missing+' MISSING</span></span><span class="version-entry-title">Image loading &amp; coverage information</span><span class="version-entry-toggle" aria-hidden="true"></span></summary><div class="image-status-content"><p><strong>Last automated check:</strong> '+esc(checked)+'</p><p><strong>Library entries:</strong> '+entries+' · <strong>New matches this run:</strong> '+Number(d.newly_found??d.found??0)+' · <strong>Lookup attempts:</strong> '+Number(d.attempted||0)+' · <strong>Rejected matches:</strong> '+Number(d.rejected||0)+'</p><div class="hub-image-coverage">'+coverageRows+'</div><p><strong>This browser session:</strong> '+imageLoads+' image loads successful · '+imageFailures+' image loads failed. These two counters cover images rendered in the Sports Hub during this session.</p>'+pause+'<p>Only identity-matched images with source and licence metadata are published. Missing images remain missing rather than being replaced with guessed identities.</p></div></details>';
+    box.innerHTML='<details class="version-entry version-dropdown image-status-dropdown"'+(wasOpen?' open':'')+'><summary class="version-entry-summary"><span class="version-entry-top"><span class="version-number">IMAGE LIBRARY</span><span class="version-status">'+found+' FOUND · '+missing+' MISSING</span></span><span class="version-entry-title">Image loading &amp; coverage information</span><span class="version-entry-toggle" aria-hidden="true"></span></summary><div class="image-status-content"><p><strong>Last automated check:</strong> '+esc(checked)+'</p><p><strong>Library entries:</strong> '+entries+' · <strong>New matches this run:</strong> '+Number(d.newly_found??d.found??0)+' · <strong>Lookup attempts:</strong> '+Number(d.attempted||0)+' · <strong>Rejected matches:</strong> '+Number(d.rejected||0)+'</p><div class="hub-image-coverage">'+coverageRows+'</div><p><strong>This browser session:</strong> '+imageLoads+' image loads successful · '+imageFailures+' image loads failed. These two counters cover images rendered in the Sports Hub during this session.</p>'+pause+'<p>Only identity-matched images with source and licence metadata are published. Missing images remain missing rather than being replaced with guessed identities.</p></div></details>';
   }
   function render(sport=active) {
     active=sport;
