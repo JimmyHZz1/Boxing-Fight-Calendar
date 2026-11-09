@@ -111,7 +111,7 @@
         };
         logoWrap.append(logo);
       } else {
-        logoWrap.textContent = String(game.short_name || game.title || "GAME").split(/\\s+/).map(word => word[0]).join("").slice(0,3).toUpperCase();
+        logoWrap.textContent = String(game.short_name || game.title || "GAME").split(" ").map(word => word[0]).join("").slice(0,3).toUpperCase();
         logoWrap.classList.add("games-up-next-logo-fallback");
       }
       const info = document.createElement("span");
