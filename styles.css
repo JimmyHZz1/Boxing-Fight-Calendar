@@ -1388,9 +1388,18 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
 .favourite-card-portrait img.favourite-f1-team-logo,.favourite-profile-portrait img.favourite-f1-team-logo{object-fit:contain;object-position:center;padding:7px;background:#fff;border-radius:2px}
 
 
-/* PDC Order of Merit: ranks 1–20 down the left, 21–40 down the right. */
-@media (min-width: 760px) {
-  .hub-dropdown-list-ranking { max-height: none; overflow: visible; }
-  .hub-ranking-columns { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); column-gap: 22px; align-items: start; }
-  .hub-ranking-column { min-width: 0; }
+/* PDC Order of Merit: explicit side-by-side columns on desktop. */
+@media (min-width: 700px) {
+  .hub-dropdown:has(.hub-dropdown-list-ranking) { overflow: visible; }
+  .hub-dropdown-list-ranking { max-height: none !important; overflow: visible !important; }
+  .hub-ranking-columns { display: flex !important; flex-direction: row !important; align-items: flex-start; gap: 22px; width: 100%; }
+  .hub-ranking-column { display: block !important; flex: 1 1 0; width: 50%; min-width: 0; }
+  .hub-ranking-column .hub-person { width: 100%; }
 }
+@media (max-width: 699px) {
+  .hub-ranking-columns { display: block; }
+  .hub-ranking-column { width: 100%; }
+}
+.image-status-dropdown { margin-top: 14px; }
+.image-status-content { padding: 0 17px 16px; color: var(--muted); font-size: 11px; line-height: 1.65; }
+.image-status-content p { margin: 8px 0; }
