@@ -45,24 +45,39 @@ jobs:
         run: python scripts/sync_sports.py
 
       - name: Commit and publish updated schedules and boxer portraits
+        env:
+          BOXERBOOK_API_KEY: ${{ secrets.BOXERBOOK_API_KEY }}
+          BOXING_API_KEY: ${{ secrets.BOXING_API_KEY }}
+          DARTS_API_KEY: ${{ secrets.DARTS_API_KEY }}
+          UFCALENDAR_API_KEY: ${{ secrets.UFCALENDAR_API_KEY }}
+        shell: bash
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # Stage first: git diff ignores newly-created files, including the
-          # first sports-hub.json snapshot. Compare the staged snapshot instead.
-          git add data/
-          if git diff --cached --quiet; then
-            echo "No schedule changes."
-            exit 0
-          fi
+          # A data refresh can overlap a manual merge even when scheduled
+          # workflows are serialized. Never rebase generated JSON snapshots:
+          # regenerate them against the latest main instead.
+          for attempt in 1 2 3; do
+            git add data/
+            if git diff --cached --quiet; then
+              echo "No schedule changes."
+              exit 0
+            fi
 
-          # Commit the generated file BEFORE rebasing. Pulling first fails
-          # because the sync script has already modified data/fights.json.
-          git commit -m "Refresh multi-sport schedules and boxer portraits"
+            git commit -m "Refresh multi-sport schedules and boxer portraits"
+            if git push origin HEAD:main; then
+              echo "Published refreshed sports data."
+              exit 0
+            fi
 
-          # Rebase our generated snapshot onto any changes made to main
-          # since checkout, then publish it.
-          git fetch origin main
-          git rebase origin/main
-          git push origin HEAD:main
+            echo "main moved during publication; regenerating from the latest main (attempt $attempt)."
+            git fetch origin main
+            git reset --hard origin/main
+            python scripts/sync_fights.py
+            python scripts/sync_sports.py
+          done
+
+          echo "Could not publish refreshed sports data after three attempts."
+          exit 1
