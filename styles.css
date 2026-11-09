@@ -1092,7 +1092,7 @@ body.compact-view .next-event-item{flex:0 0 min(205px,76vw)!important}
 
 
 /* Seamless right-to-left Up Next ticker and readable compact live centre. */
-.next-event-ticker{display:block!important;position:relative;overflow-x:auto!important;overflow-y:hidden!important;white-space:nowrap;touch-action:pan-x;scrollbar-width:none}
+.next-event-ticker{display:block!important;position:relative;overflow-x:auto!important;overflow-y:hidden!important;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;white-space:nowrap;touch-action:pan-x;scrollbar-width:none;cursor:grab}
 .next-event-ticker::-webkit-scrollbar{display:none}
 .next-event-track{display:flex;width:max-content;min-width:max-content;gap:12px;align-items:stretch;will-change:transform;animation:nextTickerRight var(--ticker-duration,42s) linear infinite}
 .next-event-group{display:flex;flex:0 0 auto;gap:12px;width:max-content;min-width:max-content;align-items:stretch}
@@ -1100,6 +1100,7 @@ body.compact-view .next-event-item{flex:0 0 min(205px,76vw)!important}
 .next-event-ticker.is-auto-scrolling:hover .next-event-track,
 .next-event-ticker.is-auto-scrolling:focus-within .next-event-track,
 .next-event-ticker.is-paused .next-event-track{animation-play-state:paused}
+.next-event-ticker.is-paused{cursor:grabbing;scrollbar-width:none}
 .next-event-ticker.is-auto-scrolling .next-event-item{flex:0 0 min(250px,78vw)!important;min-height:66px}
 @keyframes nextTickerRight{from{transform:translateX(0)}to{transform:translateX(var(--ticker-offset,-50%))}}
 .next-event-state{display:inline-flex!important;align-items:center;gap:5px;border-radius:3px;padding:6px 8px!important;font-size:9px!important;font-weight:900;letter-spacing:.7px;white-space:nowrap}
@@ -1379,7 +1380,7 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
   gap:10px!important;
 }
 @media(max-width:520px){
-  .next-event-ticker{width:100%;max-width:100%;min-width:0;overflow:hidden!important}
+  .next-event-ticker{width:100%;max-width:100%;min-width:0;overflow-x:auto!important;overflow-y:hidden!important;-webkit-overflow-scrolling:touch;touch-action:pan-x;overscroll-behavior-x:contain;cursor:grab}
   .next-event-ticker.is-auto-scrolling .next-event-track{align-items:stretch}
   .next-event-ticker.is-auto-scrolling .next-event-group{gap:10px}
   .next-event-ticker.is-auto-scrolling .next-event-item{
