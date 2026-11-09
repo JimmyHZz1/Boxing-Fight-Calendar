@@ -716,7 +716,8 @@
       "image_match_score": 1,
       "image_match_method": "category:Category:Petr Yan",
       "image_verified_at": "2026-11-08T20:18:56Z",
-      "image_local_path": "assets/images/ufc/petr-yan.jpg"
+      "image_local_path": "assets/images/ufc/petr-yan.jpg",
+      "image_source_class": "licensed-third-party"
     },
     "merab dvalishvili": {
       "name": "Merab Dvalishvili",
@@ -730,7 +731,8 @@
       "image_match_score": 1,
       "image_match_method": "category:Category:Merab Dvalishvili",
       "image_verified_at": "2026-11-08T20:18:56Z",
-      "image_local_path": "assets/images/ufc/merab-dvalishvili.jpg"
+      "image_local_path": "assets/images/ufc/merab-dvalishvili.jpg",
+      "image_source_class": "licensed-third-party"
     },
     "sean o malley": {
       "name": "Sean O'Malley",
@@ -744,7 +746,8 @@
       "image_match_score": 1,
       "image_match_method": "category:Category:Sean O'Malley",
       "image_verified_at": "2026-11-08T20:18:56Z",
-      "image_local_path": "assets/images/ufc/sean-o-malley.jpg"
+      "image_local_path": "assets/images/ufc/sean-o-malley.jpg",
+      "image_source_class": "licensed-third-party"
     },
     "aiemann zahabi": {
       "name": "Aiemann Zahabi",
@@ -758,7 +761,8 @@
       "image_match_score": 1,
       "image_match_method": "category:Category:Aiemann Zahabi",
       "image_verified_at": "2026-11-09T00:10:34Z",
-      "image_local_path": "assets/images/ufc/aiemann-zahabi.png"
+      "image_local_path": "assets/images/ufc/aiemann-zahabi.png",
+      "image_source_class": "licensed-third-party"
     },
     "raul rosas jr": {
       "name": "Raul Rosas Jr.",
@@ -772,7 +776,8 @@
       "image_match_score": 1,
       "image_match_method": "category:Category:Raúl Rosas Jr.",
       "image_verified_at": "2026-11-09T00:10:34Z",
-      "image_local_path": "assets/images/ufc/raul-rosas-jr.png"
+      "image_local_path": "assets/images/ufc/raul-rosas-jr.png",
+      "image_source_class": "licensed-third-party"
     },
     "marlon vera": {
       "name": "Marlon Vera",
@@ -786,7 +791,8 @@
       "image_match_score": 1,
       "image_match_method": "category:Category:Marlon Vera",
       "image_verified_at": "2026-11-09T00:10:34Z",
-      "image_local_path": "assets/images/ufc/marlon-vera.jpg"
+      "image_local_path": "assets/images/ufc/marlon-vera.jpg",
+      "image_source_class": "licensed-third-party"
     },
     "deiveson figueiredo": {
       "name": "Deiveson Figueiredo",
@@ -800,7 +806,8 @@
       "image_match_score": 1,
       "image_match_method": "category:Category:Deiveson Figueiredo",
       "image_verified_at": "2026-11-09T00:10:34Z",
-      "image_local_path": "assets/images/ufc/deiveson-figueiredo.jpg"
+      "image_local_path": "assets/images/ufc/deiveson-figueiredo.jpg",
+      "image_source_class": "licensed-third-party"
     },
     "alexander volkanovski": {
       "name": "Alexander Volkanovski",
@@ -814,7 +821,8 @@
       "image_match_score": 1,
       "image_match_method": "category:Category:Alexander Volkanovski",
       "image_verified_at": "2026-11-09T00:11:07Z",
-      "image_local_path": "assets/images/ufc/alexander-volkanovski.jpg"
+      "image_local_path": "assets/images/ufc/alexander-volkanovski.jpg",
+      "image_source_class": "licensed-third-party"
     },
     "yair rodriguez": {
       "name": "Yair Rodriguez",
@@ -828,7 +836,8 @@
       "image_match_score": 1,
       "image_match_method": "category:Category:Yair Rodríguez",
       "image_verified_at": "2026-11-09T06:14:52Z",
-      "image_local_path": "assets/images/ufc/yair-rodriguez.jpg"
+      "image_local_path": "assets/images/ufc/yair-rodriguez.jpg",
+      "image_source_class": "licensed-third-party"
     }
   },
   "updated_at": "2026-11-09T06:42:43Z",
@@ -947,7 +956,7 @@
       },
       "jean silva": {
         "name": "Jean Silva",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Fernando_de_Silva_y_Alvarez_de_Toledo,_12th_Duke_of_Alba_(1714-1776),_by_Jean-Marc_Nattier.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Fernando_de_Silva_y_Alvarez_of_Toledo,_12th_Duke_of_Alba_(1714-1776),_by_Jean-Marc_Nattier.jpg",
         "path": "assets/images/ufc/jean-silva.jpg",
         "reason": "The Commons file title identifies a different person, not this UFC athlete.",
         "quarantined_at": "2026-11-09T12:15:00Z"
