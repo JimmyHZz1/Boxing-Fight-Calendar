@@ -1537,3 +1537,47 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
     text-overflow: ellipsis;
   }
 }
+
+
+/* Home dashboard: compact next-up snapshot alongside the live event feeds. */
+.home-next-up-panel{min-width:0;margin-top:17px;padding-top:14px;border-top:1px solid var(--line)}
+.home-next-up-list{display:grid;gap:7px;margin-top:11px}
+.home-next-up-item{display:grid;grid-template-columns:34px minmax(0,1fr) auto;align-items:center;gap:9px;min-width:0;padding:9px 10px;text-align:left;background:rgba(10,11,14,.42);border:1px solid var(--line);border-left:3px solid var(--accent);color:var(--text);cursor:pointer}
+.home-next-up-item:disabled{cursor:default;opacity:.62}
+.home-next-up-item[data-sport="f1"]{border-left-color:#e33b36}
+.home-next-up-item[data-sport="darts"]{border-left-color:#a57dcf}
+.home-next-up-item[data-sport="boxing"]{border-left-color:#d4b05e}
+.home-next-up-item[data-sport="ufc"]{border-left-color:#bfc2c8}
+.home-next-up-item[data-sport="bkfc"]{border-left-color:#d3bd54}
+.home-next-up-mark{display:grid;place-items:center;width:31px;height:31px;border:1px solid var(--line);border-radius:50%;color:var(--accent);font:900 9px 'Barlow Condensed',sans-serif}
+.home-next-up-info{display:block;min-width:0}
+.home-next-up-info strong,.home-next-up-info small{display:block;min-width:0;overflow:hidden;text-overflow:ellipsis}
+.home-next-up-info strong{font:700 13px 'Barlow Condensed',sans-serif;text-transform:uppercase;white-space:normal;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2}
+.home-next-up-info small{margin-top:3px;color:var(--muted);font-size:8px;line-height:1.35;white-space:normal}
+.home-next-up-info .home-next-up-detail{color:#aaa9a4}
+.home-next-up-arrow{color:var(--accent);font-size:13px}
+@media (min-width:1100px) and (max-width:1449px){
+  #home-screen > #live-sports-centre{grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr)}
+  #home-screen > #live-sports-centre > .home-next-up-panel{grid-column:1 / -1}
+  .home-next-up-list{grid-template-columns:repeat(5,minmax(0,1fr))}
+  .home-next-up-item{grid-template-columns:28px minmax(0,1fr);align-items:start;padding:8px}
+  .home-next-up-mark{width:26px;height:26px}
+  .home-next-up-arrow{display:none}
+}
+@media (min-width:1450px){
+  #home-screen > #live-sports-centre{grid-template-columns:minmax(0,.72fr) minmax(0,1.15fr) minmax(220px,.9fr);align-items:start}
+  #home-screen > #live-sports-centre > .live-centre-heading{grid-column:1 / -1}
+  #home-screen > #live-sports-centre > .live-now-panel{grid-column:1;margin-top:0}
+  #home-screen > #live-sports-centre > .live-upcoming-panel{grid-column:2;margin-top:0}
+  #home-screen > #live-sports-centre > .home-next-up-panel{grid-column:3;margin-top:0;padding-top:14px}
+  #home-screen > #live-sports-centre .live-centre-list{max-height:390px}
+  .home-next-up-list{gap:6px}
+  .home-next-up-item{grid-template-columns:28px minmax(0,1fr) auto;gap:7px;padding:8px}
+  .home-next-up-mark{width:26px;height:26px}
+  .home-next-up-info strong{font-size:12px}
+}
+@media(max-width:620px){
+  .home-next-up-panel{margin-top:14px;padding-top:12px}
+  .home-next-up-item{grid-template-columns:31px minmax(0,1fr) auto;padding:9px}
+  .home-next-up-info strong{font-size:13px}
+}
