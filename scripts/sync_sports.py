@@ -564,6 +564,21 @@ def save_image_library():
         handle.write("\n")
 
 
+def persistent_enrichment_state():
+    """Return durable batch history stored separately from per-run diagnostics."""
+    load_image_library()
+    return IMAGE_LIBRARY.setdefault("enrichment", {
+        "batch_number": 0,
+        "cumulative_attempted": 0,
+        "cumulative_found": 0,
+        "cumulative_missing": 0,
+        "last_batch_at": None,
+        "last_successful_batch_at": None,
+        "last_rate_limited_at": None,
+        "history": []
+    })
+
+
 IMAGE_MANIFEST_PATH = os.path.join(DATA, "image-library.json")
 
 def load_image_manifest():
@@ -735,23 +750,24 @@ def commons_photo(name, image_kind="portrait"):
                     reject("identity_match_too_weak")
                     continue
             else:
-                surname = sorted(wanted, key=len)[-1]
-                given_names = wanted - {surname}
-                if surname not in all_identity_words:
-                    reject("surname_not_matched")
-                    continue
-                # For three-part names such as Andrea Kimi Antonelli, a file titled
-                # "Kimi Antonelli..." is a valid identity match; requiring all three
-                # words incorrectly rejects genuine Commons photographs.
-                if given_names and not (given_names & all_identity_words):
-                    reject("given_name_not_matched")
+                # Portraits must contain the athlete's adjacent final two name
+                # tokens in one source field. Loose surname + first-name matching
+                # accepted unrelated people with common names.
+                def token_list(value):
+                    return re.findall(r"[a-z0-9]+", unicodedata.normalize("NFKD", str(value or "")).encode("ascii", "ignore").decode().lower())
+                name_tokens = token_list(name)
+                identity_pair = name_tokens[-2:] if len(name_tokens) >= 2 else []
+                source_texts = [title, meta_value("ImageDescription"), meta_value("ObjectName"), meta_value("Credit")]
+                pair_matched = bool(identity_pair) and any(
+                    any(tokens[index:index + 2] == identity_pair for index in range(max(0, len(tokens) - 1)))
+                    for tokens in (token_list(value) for value in source_texts)
+                )
+                if not pair_matched:
+                    reject("exact_name_pair_not_matched")
                     continue
                 title_hits = wanted.intersection(title_words)
                 meta_hits = wanted.intersection(metadata_words)
                 score = len(title_hits | meta_hits) / max(1, len(wanted))
-                if score < 0.50:
-                    reject("identity_match_too_weak")
-                    continue
             candidates.append((score, {
                 "image_url": image_url,
                 "image_page_url": page_url,
@@ -759,6 +775,7 @@ def commons_photo(name, image_kind="portrait"):
                 "image_license": licence,
                 "image_license_url": licence_url,
                 "image_source": "Wikimedia Commons",
+                "image_source_class": "licensed-third-party",
                 "image_match_score": round(score, 2),
                 "image_match_method": source_label,
                 "image_verified_at": iso_now()
@@ -811,9 +828,9 @@ def commons_photo(name, image_kind="portrait"):
                 IMAGE_LOOKUP_RATE_LIMITED = True
                 break
 
-    # Search Commons categories for both people and constructor logos. This
-    # catches logo files whose names are indexed under a team category instead.
-    if not IMAGE_LOOKUP_RATE_LIMITED and not candidates:
+    # Category browsing is useful for logos, but portrait category results are
+    # noisy and can surface unrelated people sharing a surname.
+    if image_kind == "logo" and not IMAGE_LOOKUP_RATE_LIMITED and not candidates:
         for category_query in query_names:
             if IMAGE_LOOKUP_RATE_LIMITED or candidates:
                 break
@@ -908,10 +925,10 @@ def add_photos(rows, name_field="name", limit=8, sport="other", image_kind="port
         bucket = IMAGE_DIAGNOSTICS["by_sport"].setdefault(sport, {"attempted": 0, "found": 0, "missing": 0, "rejected": 0})
         bucket["attempted"] += 1
         result = commons_photo(name, image_kind=image_kind)
-        if key:
-            # Record even a rate-limited attempt so the next scheduled run can
-            # move to the next athlete instead of retrying the same first name.
-            # The 14-day backoff exceeds a full pass through the current queue.
+        if key and not IMAGE_LOOKUP_RATE_LIMITED:
+            # Only cool down a name after a completed Commons lookup. A 429
+            # means the request was not completed, so leave it eligible for the
+            # next scheduled recovery run.
             attempted[key] = iso_now()
         if result:
             result = cache_image_locally(name, result, sport)
@@ -1196,6 +1213,15 @@ def sync_sports_hub():
     IMAGE_DIAGNOSTICS["missing"] = sum(item["missing"] for item in coverage.values())
     IMAGE_DIAGNOSTICS["checked_at"] = iso_now()
     IMAGE_DIAGNOSTICS["library_entries"] = len(IMAGE_LIBRARY.get("images", {}))
+    state = persistent_enrichment_state()
+    IMAGE_DIAGNOSTICS["attempted"] = state.get("cumulative_attempted", 0)
+    IMAGE_DIAGNOSTICS["cumulative_found"] = state.get("cumulative_found", 0)
+    IMAGE_DIAGNOSTICS["cumulative_missing"] = state.get("cumulative_missing", 0)
+    IMAGE_DIAGNOSTICS["batch_number"] = state.get("batch_number", 0)
+    IMAGE_DIAGNOSTICS["last_batch_at"] = state.get("last_batch_at")
+    IMAGE_DIAGNOSTICS["last_successful_batch_at"] = state.get("last_successful_batch_at")
+    IMAGE_DIAGNOSTICS["last_rate_limited_at"] = state.get("last_rate_limited_at")
+    IMAGE_DIAGNOSTICS["enrichment_status"] = "paused after rate limit" if state.get("last_rate_limited_at") and (not state.get("last_successful_batch_at") or state.get("last_rate_limited_at") > state.get("last_successful_batch_at")) else "running / awaiting next batch"
     hub["image_diagnostics"] = IMAGE_DIAGNOSTICS
     save_image_library()
     save("sports-hub.json", hub)
@@ -1280,7 +1306,34 @@ def enrich_cached_images():
         "ufc": count_rows([r for d in ufc.get("divisions", []) for r in d.get("entries", [])]),
         "boxing": count_rows([r for d in boxing.get("divisions", []) for r in d.get("champions", [])])
     }
-    IMAGE_DIAGNOSTICS["newly_found"] = IMAGE_DIAGNOSTICS["found"]
+    found_this_batch = IMAGE_DIAGNOSTICS.get("found", 0)
+    state = persistent_enrichment_state()
+    if IMAGE_DIAGNOSTICS["attempted"] > 0:
+        state["batch_number"] = int(state.get("batch_number", 0)) + 1
+        state["last_batch_at"] = iso_now()
+        state["last_successful_batch_at"] = iso_now()
+    state["cumulative_attempted"] = int(state.get("cumulative_attempted", 0)) + IMAGE_DIAGNOSTICS["attempted"]
+    state["cumulative_found"] = int(state.get("cumulative_found", 0)) + found_this_batch
+    state["cumulative_missing"] = int(state.get("cumulative_missing", 0)) + IMAGE_DIAGNOSTICS.get("missing", 0)
+    if IMAGE_LOOKUP_RATE_LIMITED:
+        state["last_rate_limited_at"] = iso_now()
+    state.setdefault("history", []).append({
+        "batch": state.get("batch_number", 0),
+        "at": iso_now(),
+        "attempted": IMAGE_DIAGNOSTICS["attempted"],
+        "found": found_this_batch,
+        "missing": IMAGE_DIAGNOSTICS.get("missing", 0),
+        "rate_limited": IMAGE_LOOKUP_RATE_LIMITED
+    })
+    state["history"] = state["history"][-30:]
+    IMAGE_DIAGNOSTICS["newly_found"] = found_this_batch
+    IMAGE_DIAGNOSTICS["cumulative_attempted"] = state["cumulative_attempted"]
+    IMAGE_DIAGNOSTICS["cumulative_found"] = state["cumulative_found"]
+    IMAGE_DIAGNOSTICS["cumulative_missing"] = state["cumulative_missing"]
+    IMAGE_DIAGNOSTICS["batch_number"] = state["batch_number"]
+    IMAGE_DIAGNOSTICS["last_batch_at"] = state.get("last_batch_at")
+    IMAGE_DIAGNOSTICS["last_successful_batch_at"] = state.get("last_successful_batch_at")
+    IMAGE_DIAGNOSTICS["last_rate_limited_at"] = state.get("last_rate_limited_at")
     IMAGE_DIAGNOSTICS["coverage"] = coverage
     IMAGE_DIAGNOSTICS["found"] = sum(v["with_image"] for v in coverage.values())
     IMAGE_DIAGNOSTICS["missing"] = sum(v["missing"] for v in coverage.values())
