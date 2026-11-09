@@ -4750,51 +4750,51 @@
     },
     "search_details": [
       {
-        "name": "Asu Almabayev",
+        "name": "Steve Erceg",
         "queries": 1,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       },
       {
-        "name": "Brandon Moreno",
+        "name": "Sumudaerji",
         "queries": 1,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       },
       {
-        "name": "Amir Albazi",
+        "name": "Tagir Ulanbekov",
         "queries": 1,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       },
       {
-        "name": "Ramazan Temirov",
+        "name": "Ciryl Gane",
         "queries": 1,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       },
       {
-        "name": "Tim Elliott",
+        "name": "Tom Aspinall",
         "queries": 1,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       }
     ],
-    "checked_at": "2026-11-09T13:35:58Z",
+    "checked_at": "2026-11-09T13:37:46Z",
     "library_entries": 66,
     "newly_found": 0,
-    "cumulative_attempted": 117,
+    "cumulative_attempted": 122,
     "cumulative_found": 66,
-    "cumulative_missing": 51,
+    "cumulative_missing": 56,
     "cumulative_rejected": 139,
-    "batch_number": 6,
-    "last_batch_at": "2026-11-09T13:35:58Z",
-    "last_successful_batch_at": "2026-11-09T13:35:58Z",
+    "batch_number": 7,
+    "last_batch_at": "2026-11-09T13:37:46Z",
+    "last_successful_batch_at": "2026-11-09T13:37:46Z",
     "last_rate_limited_at": "2026-11-09T13:33:36Z",
     "coverage": {
       "boxing fight card fighters": {
