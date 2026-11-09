@@ -73,7 +73,7 @@ class TelevisedPdcFilterTests(unittest.TestCase):
         def fake_request(url, key=None, provider="API"):
             calls.append(url)
             return {"data": [], "meta": {"next_cursor": None}}
-        with unittest.mock.patch.object(sync_sports, "request_json", side_effect=fake_request):
+        with mock.patch.object(sync_sports, "request_json", side_effect=fake_request):
             sync_sports.paged_darts_calendar("test-key", "pdc")
         self.assertEqual(len(calls), 1)
         self.assertIn("to=" + (sync_sports.TODAY + sync_sports.timedelta(days=60)).isoformat(), calls[0])
