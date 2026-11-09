@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#101114">
   <meta name="description" content="Boxing, Formula 1, UFC and PDC darts schedules in one sports calendar, shown in UK local time.">
   <link rel="manifest" href="./manifest.json">
-  <link rel="stylesheet" href="./styles.css?v=20261109-16">
+  <link rel="stylesheet" href="./styles.css?v=20261109-17">
   <title>Sports Calendar</title>
 </head>
 <body>
@@ -16,7 +16,7 @@
         <span class="brand-mark" id="brand-mark-letter">S</span>
         <span><strong id="brand-title">SPORTS</strong><small>CALENDAR</small></span><span class="brand-switcher-caret" aria-hidden="true">⌄</span>
       </button>
-      <div id="mobile-calendar-menu" class="mobile-calendar-menu" hidden aria-label="Choose calendar"><button type="button" data-screen="calendar-screen"><span class="brand-menu-mark">S</span> SPORTS CALENDAR</button><button type="button" data-screen="games-calendar-screen"><span class="brand-menu-mark games-mark">G</span> GAMES CALENDAR</button></div>
+      <div id="mobile-calendar-menu" class="mobile-calendar-menu" hidden aria-label="Choose calendar"><button type="button" data-screen="calendar-screen"><span class="brand-menu-mark sports-mark" aria-hidden="true">S</span> SPORTS CALENDAR</button><button type="button" data-screen="games-calendar-screen"><span class="brand-menu-mark games-mark" aria-hidden="true">G</span> GAMES CALENDAR</button></div>
       <nav class="topbar-nav" aria-label="Main navigation">
         <button type="button" class="topbar-nav-item active" data-screen="home-screen"><span aria-hidden="true">⌂</span> HOME</button>
         <button type="button" class="topbar-nav-item" data-screen="calendar-screen"><span aria-hidden="true">▦</span> SPORTS CALENDAR</button>
@@ -247,6 +247,7 @@
           <p>Upcoming PC and console releases, all in one place. Mobile games are kept separate for a dedicated section.</p>
           <div class="games-platform-tags"><span>PC</span><span>PLAYSTATION</span><span>XBOX</span><span>NINTENDO</span></div>
         </div>
+        <section class="games-release-panel games-featured-panel" aria-labelledby="games-featured-heading"><div class="games-section-heading"><div><span class="eyebrow games-eyebrow">BIG RELEASES · COMING SOON</span><h2 id="games-featured-heading">AAA+ games up next</h2></div><span class="games-version-pill">FEATURED</span></div><div id="games-aaa-up-next-list" class="games-aaa-up-next-list" aria-live="polite"><p class="games-history-status">Loading major upcoming releases…</p></div></section>
         <section class="games-release-panel" aria-labelledby="games-release-heading">
           <div class="games-section-heading"><div><span class="eyebrow games-eyebrow">PHASE 1 · RELEASES ONLY</span><h2 id="games-release-heading">Upcoming releases</h2></div><span class="games-version-pill">GAMES V1.0</span></div>
           <div id="games-release-list" class="games-release-list" aria-live="polite">
@@ -300,6 +301,6 @@
   <script src="./home-next-up.js?v=20261109-01"></script>
   <script src="./version-history.js?v=20261109-01"></script>
   <script src="./f1-grand-prix-centre.js?v=20261109-03"></script>
-  <script src="./games-calendar.js?v=20261109-04"></script>
+  <script src="./games-calendar.js?v=20261109-05"></script>
 </body>
 </html>
