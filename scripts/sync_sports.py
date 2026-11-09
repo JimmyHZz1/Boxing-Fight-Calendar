@@ -134,6 +134,52 @@ def paged_darts_calendar(key, organiser):
             break
     return all_rows
 
+def paged_darts_results(key):
+    """Fetch the recent settled-match window exposed by the configured Darts API plan."""
+    all_rows, cursor = [], None
+    for _ in range(8):
+        params = {
+            "from": (TODAY - timedelta(days=30)).isoformat(),
+            "to": (TODAY - timedelta(days=7)).isoformat(),
+            "limit": 200,
+        }
+        if cursor:
+            params["cursor"] = cursor
+        payload = request_json("https://api.dartsapi.com/v1/results?" + urllib.parse.urlencode(params), key, "Darts API")
+        rows = payload.get("data") or []
+        if not isinstance(rows, list):
+            raise RuntimeError("Darts API results returned an unexpected data shape.")
+        all_rows.extend(rows)
+        cursor = (payload.get("meta") or {}).get("next_cursor")
+        if not cursor:
+            break
+    results = []
+    for row in all_rows:
+        if not isinstance(row, dict):
+            continue
+        event = row.get("event") if isinstance(row.get("event"), dict) else {}
+        event_name = event.get("name") or row.get("competition") or row.get("competition_name") or ""
+        event_tier = event.get("tier") or row.get("tier")
+        if not is_main_televised_pdc_event({"name": event_name, "organiser": "pdc", "tier": event_tier}):
+            continue
+        winner = row.get("winner") if isinstance(row.get("winner"), dict) else {}
+        loser = row.get("loser") if isinstance(row.get("loser"), dict) else {}
+        results.append({
+            "match_id": row.get("match_id") or row.get("id"),
+            "played_on": row.get("played_on") or row.get("date"),
+            "round": row.get("round"),
+            "winner": {"name": winner.get("name"), "score": winner.get("score")},
+            "loser": {"name": loser.get("name"), "score": loser.get("score")},
+            "result_status": row.get("result_status") or "final",
+            "event_id": event.get("event_id") or row.get("event_id"),
+            "competition_id": event.get("competition_id") or row.get("competition_id"),
+            "event_name": event_name,
+            "event_tier": event_tier,
+        })
+    results.sort(key=lambda item: (item.get("played_on") or "", item.get("event_name") or "", item.get("round") or ""))
+    return results
+
+
 def is_main_televised_pdc_event(row):
     name = str(row.get("name") or row.get("competition_name") or "").strip()
     organiser = str(row.get("organiser") or "").lower()
@@ -269,6 +315,24 @@ def sync_darts():
         "sync_attempted_at": iso_now(),
         "data_status": "fallback" if warning else "current",
     }
+    try:
+        payload["results"] = paged_darts_results(key) if key else []
+        payload["results_last_successful_update"] = iso_now()
+        payload["results_window"] = {
+            "from": (TODAY - timedelta(days=30)).isoformat(),
+            "to": (TODAY - timedelta(days=7)).isoformat(),
+            "note": "Darts API free-key results are delayed by at least seven days."
+        }
+    except Exception as exc:
+        payload["results"] = []
+        payload["results_sync_warning"] = str(exc)
+        try:
+            with open(os.path.join(DATA, "darts.json"), encoding="utf-8") as previous_file:
+                previous_results = json.load(previous_file)
+            payload["results"] = previous_results.get("results", [])
+            payload["results_last_successful_update"] = previous_results.get("results_last_successful_update")
+        except (FileNotFoundError, json.JSONDecodeError):
+            pass
     if warning:
         payload["sync_warning"] = warning
         try:
