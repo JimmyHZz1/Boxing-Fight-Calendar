@@ -2823,7 +2823,8 @@
               "image_match_score": 1,
               "image_match_method": "category:Category:Petr Yan",
               "image_verified_at": "2026-11-08T20:18:56Z",
-              "image_local_path": "assets/images/ufc/petr-yan.jpg"
+              "image_local_path": "assets/images/ufc/petr-yan.jpg",
+              "image_source_class": "licensed-third-party"
             },
             {
               "rank": 1,
@@ -2837,7 +2838,8 @@
               "image_match_score": 1,
               "image_match_method": "category:Category:Merab Dvalishvili",
               "image_verified_at": "2026-11-08T20:18:56Z",
-              "image_local_path": "assets/images/ufc/merab-dvalishvili.jpg"
+              "image_local_path": "assets/images/ufc/merab-dvalishvili.jpg",
+              "image_source_class": "licensed-third-party"
             },
             {
               "rank": 2,
@@ -2851,7 +2853,8 @@
               "image_match_score": 1,
               "image_match_method": "category:Category:Sean O'Malley",
               "image_verified_at": "2026-11-08T20:18:56Z",
-              "image_local_path": "assets/images/ufc/sean-o-malley.jpg"
+              "image_local_path": "assets/images/ufc/sean-o-malley.jpg",
+              "image_source_class": "licensed-third-party"
             },
             {
               "rank": 3,
@@ -2894,7 +2897,8 @@
               "image_match_score": 1,
               "image_match_method": "category:Category:Aiemann Zahabi",
               "image_verified_at": "2026-11-09T00:10:34Z",
-              "image_local_path": "assets/images/ufc/aiemann-zahabi.png"
+              "image_local_path": "assets/images/ufc/aiemann-zahabi.png",
+              "image_source_class": "licensed-third-party"
             },
             {
               "rank": 10,
@@ -2908,7 +2912,8 @@
               "image_match_score": 1,
               "image_match_method": "category:Category:Raúl Rosas Jr.",
               "image_verified_at": "2026-11-09T00:10:34Z",
-              "image_local_path": "assets/images/ufc/raul-rosas-jr.png"
+              "image_local_path": "assets/images/ufc/raul-rosas-jr.png",
+              "image_source_class": "licensed-third-party"
             },
             {
               "rank": 11,
@@ -2922,7 +2927,8 @@
               "image_match_score": 1,
               "image_match_method": "category:Category:Marlon Vera",
               "image_verified_at": "2026-11-09T00:10:34Z",
-              "image_local_path": "assets/images/ufc/marlon-vera.jpg"
+              "image_local_path": "assets/images/ufc/marlon-vera.jpg",
+              "image_source_class": "licensed-third-party"
             },
             {
               "rank": 12,
@@ -2936,7 +2942,8 @@
               "image_match_score": 1,
               "image_match_method": "category:Category:Deiveson Figueiredo",
               "image_verified_at": "2026-11-09T00:10:34Z",
-              "image_local_path": "assets/images/ufc/deiveson-figueiredo.jpg"
+              "image_local_path": "assets/images/ufc/deiveson-figueiredo.jpg",
+              "image_source_class": "licensed-third-party"
             },
             {
               "rank": 13,
@@ -2971,7 +2978,8 @@
               "image_match_score": 1,
               "image_match_method": "category:Category:Alexander Volkanovski",
               "image_verified_at": "2026-11-09T00:11:07Z",
-              "image_local_path": "assets/images/ufc/alexander-volkanovski.jpg"
+              "image_local_path": "assets/images/ufc/alexander-volkanovski.jpg",
+              "image_source_class": "licensed-third-party"
             },
             {
               "rank": 1,
@@ -3008,7 +3016,8 @@
               "image_match_score": 1,
               "image_match_method": "category:Category:Yair Rodríguez",
               "image_verified_at": "2026-11-09T06:14:52Z",
-              "image_local_path": "assets/images/ufc/yair-rodriguez.jpg"
+              "image_local_path": "assets/images/ufc/yair-rodriguez.jpg",
+              "image_source_class": "licensed-third-party"
             },
             {
               "rank": 7,
