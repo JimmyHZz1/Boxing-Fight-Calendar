@@ -82,7 +82,8 @@ function circuitVisuals(){
  }else stage.append(el("div","f1-gp-empty",state.circuitError||"No clearly identified overhead photograph is available for this circuit yet."));
  wrap.append(stage);return wrap;
 }
-\nfunction history(e){const p=panel(root,"Circuit history");const key=norm(e.circuit),rows=state.events.filter(x=>x.id!==e.id&&norm(x.circuit)===key&&(x.results||[]).some(r=>String(r.position)==="1")).sort((a,b)=>String(b.date).localeCompare(String(a.date))).slice(0,5);if(!rows.length){p.append(el("div","f1-gp-empty","No previous winners for this circuit are included in the loaded results feed."));return;}rows.forEach(x=>{const w=x.results.find(r=>String(r.position)==="1"),line=el("div","f1-gp-favourite");line.append(el("span","",String(x.date||"").slice(0,4)+" · "+(w.driver||"Winner unavailable")),el("b","",w.team||""));p.append(line);});}
+
+function history(e){const p=panel(root,"Circuit history");const key=norm(e.circuit),rows=state.events.filter(x=>x.id!==e.id&&norm(x.circuit)===key&&(x.results||[]).some(r=>String(r.position)==="1")).sort((a,b)=>String(b.date).localeCompare(String(a.date))).slice(0,5);if(!rows.length){p.append(el("div","f1-gp-empty","No previous winners for this circuit are included in the loaded results feed."));return;}rows.forEach(x=>{const w=x.results.find(r=>String(r.position)==="1"),line=el("div","f1-gp-favourite");line.append(el("span","",String(x.date||"").slice(0,4)+" · "+(w.driver||"Winner unavailable")),el("b","",w.team||""));p.append(line);});}
 function render(){
  const e=state.event;root.replaceChildren();if(!e){root.append(el("div","f1-gp-empty","No Grand Prix schedule is currently available. The centre will populate after the next successful F1 data sync."));return;}
  const ss=sessions(e),next=nextSession(e),f=favs(),hero=el("header","f1-gp-hero"),top=el("div","f1-gp-hero-top");
