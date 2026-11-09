@@ -72,7 +72,7 @@
     }).join("");
   }
   function panel(sport) {
-    const d=payload[sport]||{};
+    const d=sport==="bkfc"?bkfcPayload:(payload[sport]||{});
     let out="";
     if(sport==="f1"){
       out=dropdown("Drivers’ championship",d.drivers,"Driver",30)+dropdown("Constructors’ championship",d.constructors,"Constructor",20);
