@@ -63,8 +63,10 @@
   if (!list) return;
   const featuredTicker = document.getElementById("games-up-next-ticker");
   const releaseCountdown = releaseDate => {
-    const target = new Date(releaseDate + "T00:00:00");
-    const remaining = target.getTime() - Date.now();
+    if (window.SportsCountdown?.text) return window.SportsCountdown.text(releaseDate);
+    const parts = releaseDate.split("-").map(Number);
+    const target = new Date(parts[0], parts[1]-1, parts[2]).getTime();
+    const remaining = target - Date.now();
     if (!Number.isFinite(remaining)) return "DATE TBC";
     if (remaining <= 0) return "RELEASE DAY";
     const days = Math.floor(remaining / 86400000);
@@ -90,15 +92,33 @@
     }
     upcoming.forEach(game => {
       const item = document.createElement(game.source_url && (game.source_url.startsWith("https://") || game.source_url.startsWith("http://")) ? "a" : "article");
-      item.className = "games-up-next-item";
+      item.className = "games-up-next-item next-event-item";
+      item.dataset.sport = "games";
       if (item.tagName === "A") {
         item.href = game.source_url;
         item.target = "_blank";
         item.rel = "noopener noreferrer";
         item.setAttribute("aria-label", "Release details for " + (game.title || "upcoming game"));
       }
+      const info = document.createElement("span");
+      info.className = "games-up-next-info next-event-info";
+      const label = document.createElement("small");
+      label.className = "games-up-next-label-text next-event-sport";
+      label.textContent = "GAMES";
+      const name = document.createElement("strong");
+      name.className = "games-up-next-name next-event-name";
+      name.textContent = game.title || "Upcoming release";
+      const countdown = document.createElement("small");
+      countdown.className = "games-up-next-countdown next-event-countdown";
+      countdown.dataset.releaseDate = game.release_date;
+      countdown.textContent = releaseCountdown(game.release_date);
+      const platforms = document.createElement("small");
+      platforms.className = "games-up-next-platforms next-event-detail";
+      platforms.textContent = Array.isArray(game.platforms) ? game.platforms.join(" · ") : "PC & CONSOLE";
+      info.append(label, name, countdown, platforms);
+
       const logoWrap = document.createElement("span");
-      logoWrap.className = "games-up-next-logo";
+      logoWrap.className = "games-up-next-logo next-event-state";
       if (game.logo_url && game.logo_url.startsWith("https://")) {
         const logo = document.createElement("img");
         logo.src = game.logo_url;
@@ -114,23 +134,7 @@
         logoWrap.textContent = String(game.short_name || game.title || "GAME").split(" ").map(word => word[0]).join("").slice(0,3).toUpperCase();
         logoWrap.classList.add("games-up-next-logo-fallback");
       }
-      const info = document.createElement("span");
-      info.className = "games-up-next-info";
-      const date = document.createElement("span");
-      date.className = "games-up-next-date";
-      date.textContent = new Intl.DateTimeFormat("en-GB", {timeZone:"Europe/London",day:"numeric",month:"short",year:"numeric"}).format(new Date(game.release_date+"T12:00:00Z")).toUpperCase();
-      const name = document.createElement("strong");
-      name.className = "games-up-next-name";
-      name.textContent = game.title || "Upcoming release";
-      const countdown = document.createElement("span");
-      countdown.className = "games-up-next-countdown";
-      countdown.dataset.releaseDate = game.release_date;
-      countdown.textContent = releaseCountdown(game.release_date);
-      const platforms = document.createElement("span");
-      platforms.className = "games-up-next-platforms";
-      platforms.textContent = Array.isArray(game.platforms) ? game.platforms.join(" · ") : "";
-      info.append(date,name,countdown,platforms);
-      item.append(logoWrap,info);
+      item.append(info, logoWrap);
       featuredTicker.append(item);
     });
   };
