@@ -2,7 +2,7 @@ const CACHE="sports-calendar-v105";
 const APP_FILES=[
   "./",
   "./index.html",
-  "./styles.css?v=20261109-16",
+  "./styles.css?v=20261109-17",
   "./app.js?v=20261109-02",
   "./sports-data.js?v=20261109-02",
   "./sports.js?v=20261107-09",
@@ -17,7 +17,8 @@ const APP_FILES=[
   "./version-history.js?v=20261109-01",
   "./f1-grand-prix-centre.js?v=20261109-03",
   "./games-calendar.js?v=20261109-05",
-  "./manifest.json"
+  "./manifest.json",
+  "./data/games-featured.json"
 ];
 const DATA_PATHS=["/data/fights.json","/data/fighter-images.json","/data/event-fighter-images.json","/data/f1.json","/data/darts.json","/data/ufc.json","/data/bkfc.json","/data/sports-hub.json","/data/sports-images.json","/data/image-library.json","/data/games-featured.json"];
 self.addEventListener("install",event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(APP_FILES)).then(()=>self.skipWaiting())));
