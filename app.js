@@ -270,6 +270,7 @@ function renderHighProfileFights() {
   matchup.append(f1,vs,f2);
   const info=document.createElement("div");info.className="high-profile-info";const title=document.createElement("strong");title.textContent=eventTitle(event,eventBouts(event));info.append(title);
   const meta=document.createElement("span");meta.textContent=[ukDate(event.date),bout.weight_class||bout.division,bout.rounds?bout.rounds+" rounds":null,cardStartLabel(event)?"CARD START "+cardStartLabel(event):null].filter(Boolean).join(" · ");info.append(meta);
+  card.append(matchup,info);
   const boutPairKey=b=>fighterNames(b).map(name=>String(name||"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim()).sort().join("|");
   const featuredPair=boutPairKey(bout);
   const additionalBouts=eventBouts(event).filter(b=>boutPairKey(b)!==featuredPair);
@@ -279,7 +280,7 @@ function renderHighProfileFights() {
    const panel=document.createElement("div");panel.className="bout-list";additionalBouts.forEach(b=>panel.append(makeBoutRow(b)));
    details.append(summary,panel);card.append(details);
   }
-  card.append(matchup,info);root.append(card);
+  root.append(card);
  });
 }
 
