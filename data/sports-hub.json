@@ -2901,27 +2901,72 @@
             {
               "rank": 8,
               "name": "David Martinez",
-              "image_url": null
+              "image_url": "./assets/images/ufc/david-martinez.png",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:David_Garc%C3%ADa_Mart%C3%ADnez,_consultor_SEO.png",
+              "image_credit": "Wikimedia Commons · David García Martínez · CC BY-SA 4.0",
+              "image_license": "CC BY-SA 4.0",
+              "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+              "image_source": "Wikimedia Commons",
+              "image_match_score": 1.0,
+              "image_match_method": "search:David Martinez",
+              "image_verified_at": "2026-11-09T00:10:34Z",
+              "image_local_path": "assets/images/ufc/david-martinez.png"
             },
             {
               "rank": 9,
               "name": "Aiemann Zahabi",
-              "image_url": null
+              "image_url": "./assets/images/ufc/aiemann-zahabi.png",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Aiemann_Zahabi.png",
+              "image_credit": "Wikimedia Commons · MM-eh · CC BY 3.0",
+              "image_license": "CC BY 3.0",
+              "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+              "image_source": "Wikimedia Commons",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Aiemann Zahabi",
+              "image_verified_at": "2026-11-09T00:10:34Z",
+              "image_local_path": "assets/images/ufc/aiemann-zahabi.png"
             },
             {
               "rank": 10,
               "name": "Raul Rosas Jr.",
-              "image_url": null
+              "image_url": "./assets/images/ufc/raul-rosas-jr.png",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Ra%C3%BAl_Rosas_Jr._2024.png",
+              "image_credit": "Wikimedia Commons · Chamatkar Sandhu · CC BY 3.0",
+              "image_license": "CC BY 3.0",
+              "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+              "image_source": "Wikimedia Commons",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Raúl Rosas Jr.",
+              "image_verified_at": "2026-11-09T00:10:34Z",
+              "image_local_path": "assets/images/ufc/raul-rosas-jr.png"
             },
             {
               "rank": 11,
               "name": "Marlon Vera",
-              "image_url": null
+              "image_url": "./assets/images/ufc/marlon-vera.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Condecoraci%C3%B3n_a_Marlon_Vera.jpg",
+              "image_credit": "Wikimedia Commons · Asamblea Nacional del Ecuador · CC BY-SA 2.0",
+              "image_license": "CC BY-SA 2.0",
+              "image_license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+              "image_source": "Wikimedia Commons",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Marlon Vera",
+              "image_verified_at": "2026-11-09T00:10:34Z",
+              "image_local_path": "assets/images/ufc/marlon-vera.jpg"
             },
             {
               "rank": 12,
               "name": "Deiveson Figueiredo",
-              "image_url": null
+              "image_url": "./assets/images/ufc/deiveson-figueiredo.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Deiveson_Figueiredo_2024.jpg",
+              "image_credit": "Wikimedia Commons · Show Me The Money · CC BY 3.0",
+              "image_license": "CC BY 3.0",
+              "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+              "image_source": "Wikimedia Commons",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Deiveson Figueiredo",
+              "image_verified_at": "2026-11-09T00:10:34Z",
+              "image_local_path": "assets/images/ufc/deiveson-figueiredo.jpg"
             },
             {
               "rank": 13,
@@ -4633,35 +4678,75 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 1,
-    "found": 91,
-    "missing": 644,
+    "attempted": 5,
+    "found": 96,
+    "missing": 639,
     "rejected": 0,
     "by_sport": {
       "ufc": {
-        "attempted": 1,
-        "found": 0,
-        "missing": 1,
+        "attempted": 5,
+        "found": 5,
+        "missing": 0,
         "rejected": 0
       }
     },
     "rejection_reasons": {
-      "not_an_image": 1
+      "given_name_not_matched": 3,
+      "surname_not_matched": 14,
+      "not_an_image": 30
     },
     "search_details": [
       {
-        "name": "Payton Talbott",
+        "name": "David Martinez",
         "queries": 1,
-        "candidate_files": 1,
-        "accepted": 0,
+        "candidate_files": 20,
+        "accepted": 11,
         "rejections": {
-          "not_an_image": 1
+          "given_name_not_matched": 3,
+          "surname_not_matched": 4,
+          "not_an_image": 2
         }
+      },
+      {
+        "name": "Aiemann Zahabi",
+        "queries": 3,
+        "candidate_files": 7,
+        "accepted": 1,
+        "rejections": {
+          "surname_not_matched": 6
+        }
+      },
+      {
+        "name": "Raul Rosas Jr.",
+        "queries": 3,
+        "candidate_files": 22,
+        "accepted": 1,
+        "rejections": {
+          "not_an_image": 19,
+          "surname_not_matched": 2
+        }
+      },
+      {
+        "name": "Marlon Vera",
+        "queries": 3,
+        "candidate_files": 16,
+        "accepted": 5,
+        "rejections": {
+          "not_an_image": 9,
+          "surname_not_matched": 2
+        }
+      },
+      {
+        "name": "Deiveson Figueiredo",
+        "queries": 3,
+        "candidate_files": 1,
+        "accepted": 1,
+        "rejections": {}
       }
     ],
-    "checked_at": "2026-11-08T20:57:53Z",
-    "library_entries": 56,
-    "newly_found": 0,
+    "checked_at": "2026-11-09T00:10:34Z",
+    "library_entries": 61,
+    "newly_found": 5,
     "coverage": {
       "boxing fight card fighters": {
         "total": 187,
@@ -4685,8 +4770,8 @@
       },
       "ufc": {
         "total": 206,
-        "with_image": 3,
-        "missing": 203
+        "with_image": 8,
+        "missing": 198
       },
       "boxing": {
         "total": 81,
@@ -4694,7 +4779,7 @@
         "missing": 81
       }
     },
-    "rate_limited": true
+    "rate_limited": false
   },
   "last_updated": "2026-11-08T20:56:52Z"
 }

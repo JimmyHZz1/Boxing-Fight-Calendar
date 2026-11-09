@@ -745,9 +745,79 @@
       "image_match_method": "category:Category:Sean O'Malley",
       "image_verified_at": "2026-11-08T20:18:56Z",
       "image_local_path": "assets/images/ufc/sean-o-malley.jpg"
+    },
+    "david martinez": {
+      "name": "David Martinez",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/david-martinez.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:David_Garc%C3%ADa_Mart%C3%ADnez,_consultor_SEO.png",
+      "image_credit": "Wikimedia Commons · David García Martínez · CC BY-SA 4.0",
+      "image_license": "CC BY-SA 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "search:David Martinez",
+      "image_verified_at": "2026-11-09T00:10:34Z",
+      "image_local_path": "assets/images/ufc/david-martinez.png"
+    },
+    "aiemann zahabi": {
+      "name": "Aiemann Zahabi",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/aiemann-zahabi.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Aiemann_Zahabi.png",
+      "image_credit": "Wikimedia Commons · MM-eh · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Aiemann Zahabi",
+      "image_verified_at": "2026-11-09T00:10:34Z",
+      "image_local_path": "assets/images/ufc/aiemann-zahabi.png"
+    },
+    "raul rosas jr": {
+      "name": "Raul Rosas Jr.",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/raul-rosas-jr.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Ra%C3%BAl_Rosas_Jr._2024.png",
+      "image_credit": "Wikimedia Commons · Chamatkar Sandhu · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Raúl Rosas Jr.",
+      "image_verified_at": "2026-11-09T00:10:34Z",
+      "image_local_path": "assets/images/ufc/raul-rosas-jr.png"
+    },
+    "marlon vera": {
+      "name": "Marlon Vera",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/marlon-vera.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Condecoraci%C3%B3n_a_Marlon_Vera.jpg",
+      "image_credit": "Wikimedia Commons · Asamblea Nacional del Ecuador · CC BY-SA 2.0",
+      "image_license": "CC BY-SA 2.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Marlon Vera",
+      "image_verified_at": "2026-11-09T00:10:34Z",
+      "image_local_path": "assets/images/ufc/marlon-vera.jpg"
+    },
+    "deiveson figueiredo": {
+      "name": "Deiveson Figueiredo",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/deiveson-figueiredo.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Deiveson_Figueiredo_2024.jpg",
+      "image_credit": "Wikimedia Commons · Show Me The Money · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Deiveson Figueiredo",
+      "image_verified_at": "2026-11-09T00:10:34Z",
+      "image_local_path": "assets/images/ufc/deiveson-figueiredo.jpg"
     }
   },
-  "updated_at": "2026-11-08T20:57:53Z",
+  "updated_at": "2026-11-09T00:10:34Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -829,6 +899,11 @@
     "umar nurmagomedov": "2026-11-08T20:18:56Z",
     "mario bautista": "2026-11-08T20:19:29Z",
     "cory sandhagen": "2026-11-08T20:50:27Z",
-    "payton talbott": "2026-11-08T20:57:53Z"
+    "payton talbott": "2026-11-08T20:57:53Z",
+    "david martinez": "2026-11-09T00:10:34Z",
+    "aiemann zahabi": "2026-11-09T00:10:34Z",
+    "raul rosas jr": "2026-11-09T00:10:34Z",
+    "marlon vera": "2026-11-09T00:10:34Z",
+    "deiveson figueiredo": "2026-11-09T00:10:34Z"
   }
 }

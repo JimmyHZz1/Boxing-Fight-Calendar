@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-08T20:18:56Z",
+  "updated_at": "2026-11-09T00:10:34Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -574,6 +574,61 @@
       "creator": "Wikimedia Commons · User:Weistyguy12 · CC BY-SA 3.0",
       "attribution": "Wikimedia Commons · User:Weistyguy12 · CC BY-SA 3.0",
       "verified_at": "2026-11-08T20:18:56Z",
+      "sport": "ufc"
+    },
+    "david martinez": {
+      "name": "David Martinez",
+      "path": "assets/images/ufc/david-martinez.png",
+      "source_url": "https://commons.wikimedia.org/wiki/File:David_Garc%C3%ADa_Mart%C3%ADnez,_consultor_SEO.png",
+      "licence": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "creator": "Wikimedia Commons · David García Martínez · CC BY-SA 4.0",
+      "attribution": "Wikimedia Commons · David García Martínez · CC BY-SA 4.0",
+      "verified_at": "2026-11-09T00:10:34Z",
+      "sport": "ufc"
+    },
+    "aiemann zahabi": {
+      "name": "Aiemann Zahabi",
+      "path": "assets/images/ufc/aiemann-zahabi.png",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Aiemann_Zahabi.png",
+      "licence": "CC BY 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by/3.0",
+      "creator": "Wikimedia Commons · MM-eh · CC BY 3.0",
+      "attribution": "Wikimedia Commons · MM-eh · CC BY 3.0",
+      "verified_at": "2026-11-09T00:10:34Z",
+      "sport": "ufc"
+    },
+    "raul rosas jr": {
+      "name": "Raul Rosas Jr.",
+      "path": "assets/images/ufc/raul-rosas-jr.png",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ra%C3%BAl_Rosas_Jr._2024.png",
+      "licence": "CC BY 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by/3.0",
+      "creator": "Wikimedia Commons · Chamatkar Sandhu · CC BY 3.0",
+      "attribution": "Wikimedia Commons · Chamatkar Sandhu · CC BY 3.0",
+      "verified_at": "2026-11-09T00:10:34Z",
+      "sport": "ufc"
+    },
+    "marlon vera": {
+      "name": "Marlon Vera",
+      "path": "assets/images/ufc/marlon-vera.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Condecoraci%C3%B3n_a_Marlon_Vera.jpg",
+      "licence": "CC BY-SA 2.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "creator": "Wikimedia Commons · Asamblea Nacional del Ecuador · CC BY-SA 2.0",
+      "attribution": "Wikimedia Commons · Asamblea Nacional del Ecuador · CC BY-SA 2.0",
+      "verified_at": "2026-11-09T00:10:34Z",
+      "sport": "ufc"
+    },
+    "deiveson figueiredo": {
+      "name": "Deiveson Figueiredo",
+      "path": "assets/images/ufc/deiveson-figueiredo.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Deiveson_Figueiredo_2024.jpg",
+      "licence": "CC BY 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by/3.0",
+      "creator": "Wikimedia Commons · Show Me The Money · CC BY 3.0",
+      "attribution": "Wikimedia Commons · Show Me The Money · CC BY 3.0",
+      "verified_at": "2026-11-09T00:10:34Z",
       "sport": "ufc"
     }
   },
