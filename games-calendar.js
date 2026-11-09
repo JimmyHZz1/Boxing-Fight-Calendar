@@ -48,7 +48,7 @@
   }
 
 
-  document.querySelectorAll(".games-page-footer [data-screen], .games-history-link[data-screen]").forEach(button => {
+  document.querySelectorAll(".games-page-footer [data-screen], .games-history-link[data-screen], .games-version-history-link[data-screen]").forEach(button => {
     button.addEventListener("click", () => window.showScreen?.(button.dataset.screen));
   });
 
