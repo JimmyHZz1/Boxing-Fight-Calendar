@@ -713,10 +713,11 @@
       "image_license": "CC BY 4.0",
       "image_license_url": "https://creativecommons.org/licenses/by/4.0",
       "image_source": "Wikimedia Commons",
-      "image_match_score": 1.0,
+      "image_match_score": 1,
       "image_match_method": "category:Category:Petr Yan",
       "image_verified_at": "2026-11-08T20:18:56Z",
-      "image_local_path": "assets/images/ufc/petr-yan.jpg"
+      "image_local_path": "assets/images/ufc/petr-yan.jpg",
+      "image_source_class": "licensed-third-party"
     },
     "merab dvalishvili": {
       "name": "Merab Dvalishvili",
@@ -727,10 +728,11 @@
       "image_license": "Public domain",
       "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
       "image_source": "Wikimedia Commons",
-      "image_match_score": 1.0,
+      "image_match_score": 1,
       "image_match_method": "category:Category:Merab Dvalishvili",
       "image_verified_at": "2026-11-08T20:18:56Z",
-      "image_local_path": "assets/images/ufc/merab-dvalishvili.jpg"
+      "image_local_path": "assets/images/ufc/merab-dvalishvili.jpg",
+      "image_source_class": "licensed-third-party"
     },
     "sean o malley": {
       "name": "Sean O'Malley",
@@ -741,24 +743,11 @@
       "image_license": "CC BY-SA 3.0",
       "image_license_url": "https://creativecommons.org/licenses/by-sa/3.0",
       "image_source": "Wikimedia Commons",
-      "image_match_score": 1.0,
+      "image_match_score": 1,
       "image_match_method": "category:Category:Sean O'Malley",
       "image_verified_at": "2026-11-08T20:18:56Z",
-      "image_local_path": "assets/images/ufc/sean-o-malley.jpg"
-    },
-    "david martinez": {
-      "name": "David Martinez",
-      "sport": "ufc",
-      "image_url": "./assets/images/ufc/david-martinez.png",
-      "image_page_url": "https://commons.wikimedia.org/wiki/File:David_Garc%C3%ADa_Mart%C3%ADnez,_consultor_SEO.png",
-      "image_credit": "Wikimedia Commons · David García Martínez · CC BY-SA 4.0",
-      "image_license": "CC BY-SA 4.0",
-      "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-      "image_source": "Wikimedia Commons",
-      "image_match_score": 1.0,
-      "image_match_method": "search:David Martinez",
-      "image_verified_at": "2026-11-09T00:10:34Z",
-      "image_local_path": "assets/images/ufc/david-martinez.png"
+      "image_local_path": "assets/images/ufc/sean-o-malley.jpg",
+      "image_source_class": "licensed-third-party"
     },
     "aiemann zahabi": {
       "name": "Aiemann Zahabi",
@@ -769,10 +758,11 @@
       "image_license": "CC BY 3.0",
       "image_license_url": "https://creativecommons.org/licenses/by/3.0",
       "image_source": "Wikimedia Commons",
-      "image_match_score": 1.0,
+      "image_match_score": 1,
       "image_match_method": "category:Category:Aiemann Zahabi",
       "image_verified_at": "2026-11-09T00:10:34Z",
-      "image_local_path": "assets/images/ufc/aiemann-zahabi.png"
+      "image_local_path": "assets/images/ufc/aiemann-zahabi.png",
+      "image_source_class": "licensed-third-party"
     },
     "raul rosas jr": {
       "name": "Raul Rosas Jr.",
@@ -783,10 +773,11 @@
       "image_license": "CC BY 3.0",
       "image_license_url": "https://creativecommons.org/licenses/by/3.0",
       "image_source": "Wikimedia Commons",
-      "image_match_score": 1.0,
+      "image_match_score": 1,
       "image_match_method": "category:Category:Raúl Rosas Jr.",
       "image_verified_at": "2026-11-09T00:10:34Z",
-      "image_local_path": "assets/images/ufc/raul-rosas-jr.png"
+      "image_local_path": "assets/images/ufc/raul-rosas-jr.png",
+      "image_source_class": "licensed-third-party"
     },
     "marlon vera": {
       "name": "Marlon Vera",
@@ -797,10 +788,11 @@
       "image_license": "CC BY-SA 2.0",
       "image_license_url": "https://creativecommons.org/licenses/by-sa/2.0",
       "image_source": "Wikimedia Commons",
-      "image_match_score": 1.0,
+      "image_match_score": 1,
       "image_match_method": "category:Category:Marlon Vera",
       "image_verified_at": "2026-11-09T00:10:34Z",
-      "image_local_path": "assets/images/ufc/marlon-vera.jpg"
+      "image_local_path": "assets/images/ufc/marlon-vera.jpg",
+      "image_source_class": "licensed-third-party"
     },
     "deiveson figueiredo": {
       "name": "Deiveson Figueiredo",
@@ -811,10 +803,11 @@
       "image_license": "CC BY 3.0",
       "image_license_url": "https://creativecommons.org/licenses/by/3.0",
       "image_source": "Wikimedia Commons",
-      "image_match_score": 1.0,
+      "image_match_score": 1,
       "image_match_method": "category:Category:Deiveson Figueiredo",
       "image_verified_at": "2026-11-09T00:10:34Z",
-      "image_local_path": "assets/images/ufc/deiveson-figueiredo.jpg"
+      "image_local_path": "assets/images/ufc/deiveson-figueiredo.jpg",
+      "image_source_class": "licensed-third-party"
     },
     "alexander volkanovski": {
       "name": "Alexander Volkanovski",
@@ -825,38 +818,11 @@
       "image_license": "CC BY 3.0",
       "image_license_url": "https://creativecommons.org/licenses/by/3.0",
       "image_source": "Wikimedia Commons",
-      "image_match_score": 1.0,
+      "image_match_score": 1,
       "image_match_method": "category:Category:Alexander Volkanovski",
       "image_verified_at": "2026-11-09T00:11:07Z",
-      "image_local_path": "assets/images/ufc/alexander-volkanovski.jpg"
-    },
-    "diego lopes": {
-      "name": "Diego Lopes",
-      "sport": "ufc",
-      "image_url": "./assets/images/ufc/diego-lopes.jpg",
-      "image_page_url": "https://commons.wikimedia.org/wiki/File:Diogo_Lopes_de_Sequeira_(Archaeological_Survey_of_India,_Goa).jpg",
-      "image_credit": "Wikimedia Commons · Sailko · CC BY 3.0",
-      "image_license": "CC BY 3.0",
-      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
-      "image_source": "Wikimedia Commons",
-      "image_match_score": 1.0,
-      "image_match_method": "search:Diego Lopes",
-      "image_verified_at": "2026-11-09T06:14:52Z",
-      "image_local_path": "assets/images/ufc/diego-lopes.jpg"
-    },
-    "jean silva": {
-      "name": "Jean Silva",
-      "sport": "ufc",
-      "image_url": "./assets/images/ufc/jean-silva.jpg",
-      "image_page_url": "https://commons.wikimedia.org/wiki/File:Fernando_de_Silva_y_Alvarez_of_Toledo,_12th_Duke_of_Alba_(1714-1776),_by_Jean-Marc_Nattier.jpg",
-      "image_credit": "Wikimedia Commons · Jean-Marc Nattier · Public domain",
-      "image_license": "Public domain",
-      "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
-      "image_source": "Wikimedia Commons",
-      "image_match_score": 1.0,
-      "image_match_method": "search:Jean Silva",
-      "image_verified_at": "2026-11-09T06:14:52Z",
-      "image_local_path": "assets/images/ufc/jean-silva.jpg"
+      "image_local_path": "assets/images/ufc/alexander-volkanovski.jpg",
+      "image_source_class": "licensed-third-party"
     },
     "yair rodriguez": {
       "name": "Yair Rodriguez",
@@ -867,24 +833,11 @@
       "image_license": "CC0",
       "image_license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
       "image_source": "Wikimedia Commons",
-      "image_match_score": 1.0,
+      "image_match_score": 1,
       "image_match_method": "category:Category:Yair Rodríguez",
       "image_verified_at": "2026-11-09T06:14:52Z",
-      "image_local_path": "assets/images/ufc/yair-rodriguez.jpg"
-    },
-    "arnold allen": {
-      "name": "Arnold Allen",
-      "sport": "ufc",
-      "image_url": "./assets/images/ufc/arnold-allen.jpg",
-      "image_page_url": "https://commons.wikimedia.org/wiki/File:Mrs._Allen_Gouverneur_Wellman_(Frances_Alexander)._Genthe,_Vogue_1919.jpg",
-      "image_credit": "Wikimedia Commons · Arnold Genthe · Public domain",
-      "image_license": "Public domain",
-      "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
-      "image_source": "Wikimedia Commons",
-      "image_match_score": 1.0,
-      "image_match_method": "search:Arnold Allen",
-      "image_verified_at": "2026-11-09T06:15:25Z",
-      "image_local_path": "assets/images/ufc/arnold-allen.jpg"
+      "image_local_path": "assets/images/ufc/yair-rodriguez.jpg",
+      "image_source_class": "licensed-third-party"
     }
   },
   "updated_at": "2026-11-09T06:42:43Z",
@@ -970,7 +923,6 @@
     "mario bautista": "2026-11-08T20:19:29Z",
     "cory sandhagen": "2026-11-08T20:50:27Z",
     "payton talbott": "2026-11-08T20:57:53Z",
-    "david martinez": "2026-11-09T00:10:34Z",
     "aiemann zahabi": "2026-11-09T00:10:34Z",
     "raul rosas jr": "2026-11-09T00:10:34Z",
     "marlon vera": "2026-11-09T00:10:34Z",
@@ -979,12 +931,56 @@
     "raoni barcelos": "2026-11-09T00:11:07Z",
     "alexander volkanovski": "2026-11-09T00:11:07Z",
     "movsar evloev": "2026-11-09T00:11:07Z",
-    "diego lopes": "2026-11-09T06:14:52Z",
     "lerone murphy": "2026-11-09T06:14:52Z",
     "aljamain sterling": "2026-11-09T06:14:52Z",
-    "jean silva": "2026-11-09T06:14:52Z",
     "yair rodriguez": "2026-11-09T06:14:52Z",
-    "arnold allen": "2026-11-09T06:15:25Z",
     "youssef zalal": "2026-11-09T06:15:25Z"
+  },
+  "audit": {
+    "last_reviewed_at": "2026-11-09T12:15:00Z",
+    "notes": "Four UFC portrait entries quarantined after source-title identity mismatch. New portrait matches require an adjacent exact name pair in the same source field.",
+    "quarantined": {
+      "david martinez": {
+        "name": "David Martinez",
+        "source_url": "https://commons.wikimedia.org/wiki/File:David_Garc%C3%ADa_Mart%C3%ADnez,_consultor_SEO.png",
+        "path": "assets/images/ufc/david-martinez.png",
+        "reason": "The Commons file title identifies a different person, not this UFC athlete.",
+        "quarantined_at": "2026-11-09T12:15:00Z"
+      },
+      "diego lopes": {
+        "name": "Diego Lopes",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Diogo_Lopes_de_Sequeira_(Archaeological_Survey_of_India,_Goa).jpg",
+        "path": "assets/images/ufc/diego-lopes.jpg",
+        "reason": "The Commons file title identifies a different person, not this UFC athlete.",
+        "quarantined_at": "2026-11-09T12:15:00Z"
+      },
+      "jean silva": {
+        "name": "Jean Silva",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Fernando_de_Silva_y_Alvarez_of_Toledo,_12th_Duke_of_Alba_(1714-1776),_by_Jean-Marc_Nattier.jpg",
+        "path": "assets/images/ufc/jean-silva.jpg",
+        "reason": "The Commons file title identifies a different person, not this UFC athlete.",
+        "quarantined_at": "2026-11-09T12:15:00Z"
+      },
+      "arnold allen": {
+        "name": "Arnold Allen",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mrs._Allen_Gouverneur_Wellman_(Frances_Alexander)._Genthe,_Vogue_1919.jpg",
+        "path": "assets/images/ufc/arnold-allen.jpg",
+        "reason": "The Commons file title identifies a different person, not this UFC athlete.",
+        "quarantined_at": "2026-11-09T12:15:00Z"
+      }
+    }
+  },
+  "enrichment": {
+    "batch_number": 0,
+    "baseline_at": "2026-11-09T12:15:00Z",
+    "cumulative_attempted": 93,
+    "cumulative_found": 62,
+    "cumulative_missing": 31,
+    "cumulative_rejected": 4,
+    "last_batch_at": null,
+    "last_successful_batch_at": null,
+    "last_rate_limited_at": null,
+    "history": [],
+    "last_batch_rate_limited": false
   }
 }

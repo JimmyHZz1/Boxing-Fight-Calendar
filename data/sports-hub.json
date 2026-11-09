@@ -2820,10 +2820,11 @@
               "image_license": "CC BY 4.0",
               "image_license_url": "https://creativecommons.org/licenses/by/4.0",
               "image_source": "Wikimedia Commons",
-              "image_match_score": 1.0,
+              "image_match_score": 1,
               "image_match_method": "category:Category:Petr Yan",
               "image_verified_at": "2026-11-08T20:18:56Z",
-              "image_local_path": "assets/images/ufc/petr-yan.jpg"
+              "image_local_path": "assets/images/ufc/petr-yan.jpg",
+              "image_source_class": "licensed-third-party"
             },
             {
               "rank": 1,
@@ -2834,10 +2835,11 @@
               "image_license": "Public domain",
               "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
               "image_source": "Wikimedia Commons",
-              "image_match_score": 1.0,
+              "image_match_score": 1,
               "image_match_method": "category:Category:Merab Dvalishvili",
               "image_verified_at": "2026-11-08T20:18:56Z",
-              "image_local_path": "assets/images/ufc/merab-dvalishvili.jpg"
+              "image_local_path": "assets/images/ufc/merab-dvalishvili.jpg",
+              "image_source_class": "licensed-third-party"
             },
             {
               "rank": 2,
@@ -2848,10 +2850,11 @@
               "image_license": "CC BY-SA 3.0",
               "image_license_url": "https://creativecommons.org/licenses/by-sa/3.0",
               "image_source": "Wikimedia Commons",
-              "image_match_score": 1.0,
+              "image_match_score": 1,
               "image_match_method": "category:Category:Sean O'Malley",
               "image_verified_at": "2026-11-08T20:18:56Z",
-              "image_local_path": "assets/images/ufc/sean-o-malley.jpg"
+              "image_local_path": "assets/images/ufc/sean-o-malley.jpg",
+              "image_source_class": "licensed-third-party"
             },
             {
               "rank": 3,
@@ -2880,17 +2883,7 @@
             },
             {
               "rank": 8,
-              "name": "David Martinez",
-              "image_url": "./assets/images/ufc/david-martinez.png",
-              "image_page_url": "https://commons.wikimedia.org/wiki/File:David_Garc%C3%ADa_Mart%C3%ADnez,_consultor_SEO.png",
-              "image_credit": "Wikimedia Commons · David García Martínez · CC BY-SA 4.0",
-              "image_license": "CC BY-SA 4.0",
-              "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-              "image_source": "Wikimedia Commons",
-              "image_match_score": 1.0,
-              "image_match_method": "search:David Martinez",
-              "image_verified_at": "2026-11-09T00:10:34Z",
-              "image_local_path": "assets/images/ufc/david-martinez.png"
+              "name": "David Martinez"
             },
             {
               "rank": 9,
@@ -2901,10 +2894,11 @@
               "image_license": "CC BY 3.0",
               "image_license_url": "https://creativecommons.org/licenses/by/3.0",
               "image_source": "Wikimedia Commons",
-              "image_match_score": 1.0,
+              "image_match_score": 1,
               "image_match_method": "category:Category:Aiemann Zahabi",
               "image_verified_at": "2026-11-09T00:10:34Z",
-              "image_local_path": "assets/images/ufc/aiemann-zahabi.png"
+              "image_local_path": "assets/images/ufc/aiemann-zahabi.png",
+              "image_source_class": "licensed-third-party"
             },
             {
               "rank": 10,
@@ -2915,10 +2909,11 @@
               "image_license": "CC BY 3.0",
               "image_license_url": "https://creativecommons.org/licenses/by/3.0",
               "image_source": "Wikimedia Commons",
-              "image_match_score": 1.0,
+              "image_match_score": 1,
               "image_match_method": "category:Category:Raúl Rosas Jr.",
               "image_verified_at": "2026-11-09T00:10:34Z",
-              "image_local_path": "assets/images/ufc/raul-rosas-jr.png"
+              "image_local_path": "assets/images/ufc/raul-rosas-jr.png",
+              "image_source_class": "licensed-third-party"
             },
             {
               "rank": 11,
@@ -2929,10 +2924,11 @@
               "image_license": "CC BY-SA 2.0",
               "image_license_url": "https://creativecommons.org/licenses/by-sa/2.0",
               "image_source": "Wikimedia Commons",
-              "image_match_score": 1.0,
+              "image_match_score": 1,
               "image_match_method": "category:Category:Marlon Vera",
               "image_verified_at": "2026-11-09T00:10:34Z",
-              "image_local_path": "assets/images/ufc/marlon-vera.jpg"
+              "image_local_path": "assets/images/ufc/marlon-vera.jpg",
+              "image_source_class": "licensed-third-party"
             },
             {
               "rank": 12,
@@ -2943,10 +2939,11 @@
               "image_license": "CC BY 3.0",
               "image_license_url": "https://creativecommons.org/licenses/by/3.0",
               "image_source": "Wikimedia Commons",
-              "image_match_score": 1.0,
+              "image_match_score": 1,
               "image_match_method": "category:Category:Deiveson Figueiredo",
               "image_verified_at": "2026-11-09T00:10:34Z",
-              "image_local_path": "assets/images/ufc/deiveson-figueiredo.jpg"
+              "image_local_path": "assets/images/ufc/deiveson-figueiredo.jpg",
+              "image_source_class": "licensed-third-party"
             },
             {
               "rank": 13,
@@ -2978,10 +2975,11 @@
               "image_license": "CC BY 3.0",
               "image_license_url": "https://creativecommons.org/licenses/by/3.0",
               "image_source": "Wikimedia Commons",
-              "image_match_score": 1.0,
+              "image_match_score": 1,
               "image_match_method": "category:Category:Alexander Volkanovski",
               "image_verified_at": "2026-11-09T00:11:07Z",
-              "image_local_path": "assets/images/ufc/alexander-volkanovski.jpg"
+              "image_local_path": "assets/images/ufc/alexander-volkanovski.jpg",
+              "image_source_class": "licensed-third-party"
             },
             {
               "rank": 1,
@@ -2990,17 +2988,7 @@
             },
             {
               "rank": 2,
-              "name": "Diego Lopes",
-              "image_url": "./assets/images/ufc/diego-lopes.jpg",
-              "image_page_url": "https://commons.wikimedia.org/wiki/File:Diogo_Lopes_de_Sequeira_(Archaeological_Survey_of_India,_Goa).jpg",
-              "image_credit": "Wikimedia Commons · Sailko · CC BY 3.0",
-              "image_license": "CC BY 3.0",
-              "image_license_url": "https://creativecommons.org/licenses/by/3.0",
-              "image_source": "Wikimedia Commons",
-              "image_match_score": 1.0,
-              "image_match_method": "search:Diego Lopes",
-              "image_verified_at": "2026-11-09T06:14:52Z",
-              "image_local_path": "assets/images/ufc/diego-lopes.jpg"
+              "name": "Diego Lopes"
             },
             {
               "rank": 3,
@@ -3014,17 +3002,7 @@
             },
             {
               "rank": 5,
-              "name": "Jean Silva",
-              "image_url": "./assets/images/ufc/jean-silva.jpg",
-              "image_page_url": "https://commons.wikimedia.org/wiki/File:Fernando_de_Silva_y_Alvarez_of_Toledo,_12th_Duke_of_Alba_(1714-1776),_by_Jean-Marc_Nattier.jpg",
-              "image_credit": "Wikimedia Commons · Jean-Marc Nattier · Public domain",
-              "image_license": "Public domain",
-              "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
-              "image_source": "Wikimedia Commons",
-              "image_match_score": 1.0,
-              "image_match_method": "search:Jean Silva",
-              "image_verified_at": "2026-11-09T06:14:52Z",
-              "image_local_path": "assets/images/ufc/jean-silva.jpg"
+              "name": "Jean Silva"
             },
             {
               "rank": 6,
@@ -3035,24 +3013,15 @@
               "image_license": "CC0",
               "image_license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
               "image_source": "Wikimedia Commons",
-              "image_match_score": 1.0,
+              "image_match_score": 1,
               "image_match_method": "category:Category:Yair Rodríguez",
               "image_verified_at": "2026-11-09T06:14:52Z",
-              "image_local_path": "assets/images/ufc/yair-rodriguez.jpg"
+              "image_local_path": "assets/images/ufc/yair-rodriguez.jpg",
+              "image_source_class": "licensed-third-party"
             },
             {
               "rank": 7,
-              "name": "Arnold Allen",
-              "image_url": "./assets/images/ufc/arnold-allen.jpg",
-              "image_page_url": "https://commons.wikimedia.org/wiki/File:Mrs._Allen_Gouverneur_Wellman_(Frances_Alexander)._Genthe,_Vogue_1919.jpg",
-              "image_credit": "Wikimedia Commons · Arnold Genthe · Public domain",
-              "image_license": "Public domain",
-              "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
-              "image_source": "Wikimedia Commons",
-              "image_match_score": 1.0,
-              "image_match_method": "search:Arnold Allen",
-              "image_verified_at": "2026-11-09T06:15:25Z",
-              "image_local_path": "assets/images/ufc/arnold-allen.jpg"
+              "name": "Arnold Allen"
             },
             {
               "rank": 8,
@@ -4703,10 +4672,10 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 0,
-    "found": 97,
-    "missing": 451,
-    "rejected": 0,
+    "attempted": 93,
+    "found": 93,
+    "missing": 455,
+    "rejected": 4,
     "by_sport": {},
     "newly_found": 0,
     "coverage": {
@@ -4727,8 +4696,8 @@
       },
       "ufc": {
         "total": 206,
-        "with_image": 13,
-        "missing": 193
+        "with_image": 9,
+        "missing": 197
       },
       "boxing": {
         "total": 81,
@@ -4736,8 +4705,18 @@
         "missing": 81
       }
     },
-    "checked_at": "2026-11-09T06:42:43Z",
-    "library_entries": 66
+    "checked_at": "2026-11-09T12:15:00Z",
+    "library_entries": 62,
+    "cumulative_attempted": 93,
+    "cumulative_found": 62,
+    "cumulative_missing": 31,
+    "batch_number": 0,
+    "enrichment_status": "awaiting next scheduled batch",
+    "last_batch_at": null,
+    "last_successful_batch_at": null,
+    "last_rate_limited_at": null,
+    "cumulative_rejected": 4,
+    "rate_limited": false
   },
   "last_updated": "2026-11-09T06:42:43Z"
 }
