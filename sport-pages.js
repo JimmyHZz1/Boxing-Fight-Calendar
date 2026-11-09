@@ -204,7 +204,7 @@
       seen.add(id);return true;
     }).sort((a,b)=>(b.played_on||"").localeCompare(a.played_on||"")).slice(0,24);
     const s=section("Recent PDC results","SETTLED MATCHES");
-    s.append(el("p","sport-page-note","Settled match results only. The free Darts API feed is delayed by at least seven days; these are not live scores."));
+    s.append(el("p","sport-page-note","Settled match results from the weekly data refresh. These are not live scores."));
     if(!results.length){
       s.append(empty(feed.results_sync_warning||"No recent televised PDC results are currently available in the published feed."));
       return s;
