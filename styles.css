@@ -1859,3 +1859,14 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
   #sports-hub-content .hub-person:has(.hub-constructor-broadcast){grid-template-columns:48px 23px minmax(0,1fr);min-height:46px;gap:7px}
   #sports-hub-content .hub-person .hub-constructor-broadcast{width:48px!important;height:36px!important;min-width:48px!important;max-width:48px!important;flex-basis:48px!important;font-size:16px!important}
 }
+
+
+/* 2026 Formula 1 timing-tower team emblems. */
+#sports-hub-content .hub-person:has(.hub-constructor-logo){grid-template-columns:34px 26px minmax(0,1fr);min-height:46px;gap:8px}
+#sports-hub-content .hub-person>img.hub-constructor-logo{width:28px!important;height:28px!important;max-width:28px!important;min-width:28px!important;object-fit:contain!important;object-position:center!important;background:transparent!important;border:0!important;border-radius:0!important;padding:0!important;flex:0 0 28px!important}
+.sport-ranking-row.is-constructor .sport-ranking-image.f1-constructor-logo{width:28px!important;height:28px!important;max-width:28px!important;object-fit:contain!important;background:transparent!important;padding:0!important;border:0!important;border-radius:0!important}
+.favourite-card-portrait img.favourite-f1-team-logo,.favourite-profile-portrait img.favourite-f1-team-logo{width:30px!important;height:30px!important;max-width:30px!important;object-fit:contain!important;object-position:center!important;padding:0!important;background:transparent!important;border:0!important;border-radius:0!important}
+@media(max-width:699px){
+  #sports-hub-content .hub-person:has(.hub-constructor-logo){grid-template-columns:32px 23px minmax(0,1fr);min-height:42px;gap:7px}
+  #sports-hub-content .hub-person>img.hub-constructor-logo{width:26px!important;height:26px!important;max-width:26px!important;min-width:26px!important;flex-basis:26px!important}
+}

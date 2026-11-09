@@ -8,7 +8,9 @@
   const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
   const norm=v=>String(v||"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
   const make=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!=null)n.textContent=text;return n;};
-  const constructorMarks={"Mercedes":"MER","Ferrari":"FER","Red Bull":"RBR","McLaren":"MCL","RB F1 Team":"RB","Alpine F1 Team":"ALP","Haas F1 Team":"HAS","Audi":"AUD","Williams":"WIL","Aston Martin":"AMR","Cadillac F1 Team":"CAD"};
+  const constructorLogoSlug = name => ({Mercedes:"mercedes",Ferrari:"ferrari","Red Bull":"redbullracing","Red Bull Racing":"redbullracing",McLaren:"mclaren","Alpine F1 Team":"alpine",Alpine:"alpine","Haas F1 Team":"haas",Audi:"audi","RB F1 Team":"racingbulls","Racing Bulls":"racingbulls","Aston Martin":"astonmartin","Cadillac F1 Team":"cadillac",Cadillac:"cadillac",Williams:"williams"}[String(name||"").trim()] || "");
+  const constructorLogoUrl = name => {const slug=constructorLogoSlug(name);return slug?"https://media.formula1.com/image/upload/common/f1/2026/"+slug+"/2026"+slug+"logo.svg":"";};
+  const constructorMarks={"Mercedes":"MER","Ferrari":"FER","Red Bull":"RBR","McLaren":"MCL","RB F1 Team":"RB","Racing Bulls":"RB","Alpine F1 Team":"ALP","Haas F1 Team":"HAS","Audi":"AUD","Williams":"WIL","Aston Martin":"AMR","Cadillac F1 Team":"CAD"};
   const constructorColours={"Mercedes":"#00d2be","Ferrari":"#ef1a2d","Red Bull":"#4776d0","McLaren":"#ff8700","RB F1 Team":"#6c9bd2","Alpine F1 Team":"#168bd2","Haas F1 Team":"#c7cbd1","Audi":"#f02b32","Williams":"#39a9df","Aston Martin":"#00a58b","Cadillac F1 Team":"#e5e5e5"};
   function constructorBroadcastMark(name){
     const mark=make("span","favourite-f1-team-broadcast",constructorMarks[name]||String(name||"F1").slice(0,3).toUpperCase());
@@ -36,7 +38,7 @@
     const unique=[...new Set(items.filter(Boolean))].sort((a,b)=>a.localeCompare(b));
     $("favourite-suggestions").replaceChildren(...unique.slice(0,250).map(name=>{const o=make("option");o.value=name;return o;}));
   }
-  const teamAliases={"red bull racing":"Red Bull","oracle red bull racing":"Red Bull","visa cash app rb":"RB F1 Team","racing bulls":"RB F1 Team","rb":"RB F1 Team","alpine":"Alpine F1 Team","haas":"Haas F1 Team","audi f1 team":"Audi","cadillac":"Cadillac F1 Team"};
+  const teamAliases={"red bull racing":"Red Bull","oracle red bull racing":"Red Bull","visa cash app rb":"RB F1 Team","racing bulls":"RB F1 Team","visa cash app racing bulls":"RB F1 Team","rb":"RB F1 Team","alpine":"Alpine F1 Team","haas":"Haas F1 Team","audi f1 team":"Audi","cadillac":"Cadillac F1 Team"};
   function lookup(f){
     const d=hub[f.sport]||{},raw=norm(f.name),n=f.sport==="f1"&&f.type==="team"?norm(teamAliases[raw]||f.name):raw;
     const find=(arr,field="name")=>(arr||[]).find(x=>norm(x[field])===n);
@@ -117,7 +119,7 @@
     const head=make("div","favourite-profile-head");
     const portrait=make("div","favourite-profile-portrait");
     const shownName=displayName(f,profile);const identity=make("div","favourite-profile-identity");identity.append(make("span","favourite-sport-label",labels[f.sport]),make("h2","",shownName),make("p","",f.type==="team"?"F1 CONSTRUCTOR":f.type.toUpperCase()));
-    if(f.sport==="f1"&&f.type==="team"&&constructorLogoPath(shownName)){const img=make("img","favourite-f1-team-logo");img.src="https://raw.githubusercontent.com/JimmyHZz1/Boxing-Fight-Calendar/main/assets/images/f1-constructors/"+constructorLogoPath(shownName);img.alt=shownName+" constructor logo";img.loading="lazy";img.onerror=()=>{img.remove();portrait.append(constructorBroadcastMark(shownName));};portrait.append(img);}
+    if(f.sport==="f1"&&f.type==="team"&&constructorLogoUrl(shownName)){const img=make("img","favourite-f1-team-logo");img.src=constructorLogoUrl(shownName);img.alt=shownName+" constructor logo";img.loading="lazy";img.onerror=()=>{img.remove();portrait.append(constructorBroadcastMark(shownName));};portrait.append(img);}
     else if(f.sport==="f1"&&f.type==="team"){portrait.append(constructorBroadcastMark(shownName));}
     else if(profile?.image_url){const img=make("img",f.sport==="f1"&&f.type==="driver"?"favourite-f1-driver-portrait":"");img.src=profile.image_url;img.alt=displayName(f,profile)+" portrait";img.onerror=()=>{img.remove();portrait.textContent=f.name.split(/\s+/).map(x=>x[0]).slice(0,2).join("").toUpperCase();};portrait.append(img);}
     else portrait.textContent=f.name.split(/\s+/).map(x=>x[0]).slice(0,2).join("").toUpperCase();
@@ -164,7 +166,7 @@
     const profile=lookup(f),event=nextEvent(f),article=make("article","favourite-card favourite-card-"+f.sport);
     const shownName=displayName(f,profile);const top=make("div","favourite-card-top");
     const portrait=make("div","favourite-card-portrait");
-    if(f.sport==="f1"&&f.type==="team"&&profile?.image_url){const img=make("img","favourite-f1-team-logo");img.src=profile.image_url.startsWith("./assets/")?"https://raw.githubusercontent.com/JimmyHZz1/Boxing-Fight-Calendar/main/"+profile.image_url.slice(2):profile.image_url;img.alt=shownName+" constructor logo";img.loading="lazy";img.onerror=()=>{img.remove();portrait.append(constructorBroadcastMark(shownName));};portrait.append(img);}
+    if(f.sport==="f1"&&f.type==="team"&&constructorLogoUrl(shownName)){const img=make("img","favourite-f1-team-logo");img.src=constructorLogoUrl(shownName);img.alt=shownName+" constructor logo";img.loading="lazy";img.onerror=()=>{img.remove();portrait.append(constructorBroadcastMark(shownName));};portrait.append(img);}
     else if(f.sport==="f1"&&f.type==="team"){portrait.append(constructorBroadcastMark(shownName));}
     else if(profile?.image_url){const img=make("img",f.sport==="f1"&&f.type==="driver"?"favourite-f1-driver-portrait":"");img.src=profile.image_url;img.alt=shownName+" portrait";img.loading="lazy";img.onerror=()=>{img.remove();portrait.textContent=f.name.split(/\s+/).slice(0,2).map(x=>x[0]).join("").toUpperCase();};portrait.append(img);}
     else portrait.textContent=f.name.split(/\s+/).slice(0,2).map(x=>x[0]).join("").toUpperCase();
