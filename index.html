@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#101114">
   <meta name="description" content="Boxing, Formula 1, UFC and PDC darts schedules in one sports calendar, shown in UK local time.">
   <link rel="manifest" href="./manifest.json">
-  <link rel="stylesheet" href="./styles.css?v=20261109-23">
+  <link rel="stylesheet" href="./styles.css?v=20261109-24">
   <title>Sports Calendar</title>
 </head>
 <body>
@@ -27,7 +27,7 @@
     </header>
     <nav class="top-sport-selector" aria-label="Switch sport">
       <button type="button" class="top-sport-button" data-top-sport="f1" aria-label="Formula 1"><img src="https://www.formula1.com/assets/home/_next/static/media/f1-logo.43a01c6b.svg" alt=""><span>F1</span></button>
-      <button type="button" class="top-sport-button" data-top-sport="darts" aria-label="PDC Darts"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Professional%20Darts%20Corporation%20logo.png" alt=""><span>DARTS</span></button>
+      <button type="button" class="top-sport-button" data-top-sport="darts" aria-label="PDC Darts"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Professional_Darts_Corporation_logo.png" alt="PDC logo" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'top-sport-wordmark top-sport-pdc-fallback',textContent:'PDC'}))"><span>DARTS</span></button>
       <button type="button" class="top-sport-button" data-top-sport="boxing" aria-label="Boxing"><span class="top-sport-wordmark boxing-mark">BOX</span><span>BOXING</span></button>
       <button type="button" class="top-sport-button" data-top-sport="ufc" aria-label="UFC"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/UFC%20Logo.svg" alt=""><span>UFC</span></button>
       <button type="button" class="top-sport-button" data-top-sport="bkfc" aria-label="BKFC"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bkfc-logo.png" alt=""><span>BKFC</span></button>
@@ -70,7 +70,7 @@
                 <span class="sport-slide-kicker">MOTORSPORT</span><img class="sport-slide-logo" src="https://www.formula1.com/assets/home/_next/static/media/f1-logo.43a01c6b.svg" alt="Formula 1 official logo" loading="eager"><strong>FORMULA 1</strong><small>RACES · QUALIFYING · RESULTS</small><span class="sport-slide-open">OPEN F1 →</span>
               </button>
               <button class="sport-slide sport-darts" type="button" data-sport="darts" aria-pressed="false">
-                <span class="sport-slide-kicker">PDC TOUR</span><img class="sport-slide-logo sport-logo-darts" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Professional%20Darts%20Corporation%20logo.png" alt="Professional Darts Corporation logo" loading="eager" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'sport-slide-logo sport-logo-darts-fallback',textContent:'PDC'}))"><strong>DARTS</strong><small>TOURNAMENT CALENDAR</small><span class="sport-slide-open">OPEN DARTS →</span>
+                <span class="sport-slide-kicker">PDC TOUR</span><img class="sport-slide-logo sport-logo-darts" src="https://commons.wikimedia.org/wiki/Special:FilePath/Professional_Darts_Corporation_logo.png" alt="Professional Darts Corporation logo" loading="eager" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'sport-slide-logo sport-logo-darts-fallback',textContent:'PDC'}))"><strong>DARTS</strong><small>TOURNAMENT CALENDAR</small><span class="sport-slide-open">OPEN DARTS →</span>
               </button>
               <button class="sport-slide sport-boxing" type="button" data-sport="boxing" aria-pressed="false">
                 <span class="sport-slide-kicker">THE FIGHT GAME</span><span class="sport-slide-logo sport-logo-boxing" role="img" aria-label="Boxing">BOXING</span><strong>BOXING</strong><small>FIGHT NIGHTS · FULL CARDS</small><span class="sport-slide-open">OPEN BOXING →</span>
@@ -262,34 +262,43 @@
       <section id="games-version-history-screen" class="screen games-version-history-screen" aria-labelledby="games-version-history-title">
         <div class="games-page-intro">
           <span class="eyebrow games-eyebrow">GAMES CALENDAR · RELEASE NOTES</span>
-          <h1 id="games-version-history-title">Games version <em>history.</em></h1>
+          <h1 id="games-version-history-title">Games Calendar version <em>history.</em></h1>
           <p>An independent record of Games Calendar features, improvements and fixes. Sports Calendar releases are tracked separately.</p>
         </div>
-        <section class="games-release-updates" aria-labelledby="games-recent-release-title">
-          <div class="games-section-heading"><div><span class="eyebrow games-eyebrow">GAMES RELEASE NOTES</span><h2 id="games-recent-release-title">Latest merged updates</h2></div></div>
-          <p class="games-history-intro">Only changes specifically made to the Games Calendar are listed here.</p>
-          <div id="games-recent-release-list" class="games-recent-release-list" aria-live="polite"><p class="games-history-status">Loading Games updates…</p></div>
-          <p id="games-recent-release-status" class="games-history-status">Updates are sourced independently from Games-related merged pull requests.</p>
-        </section>
+
         <section class="games-version-list" aria-label="Games Calendar version list">
-          <article class="games-version-entry games-version-current">
-            <div class="games-version-top"><span class="games-version-number">GAMES V1.1</span><span class="games-version-status">IN PROGRESS</span></div>
+          <article class="games-version-entry games-version-current games-v11-progress">
+            <div class="games-version-top"><span class="games-version-number">GAMES CALENDAR V1.1</span><span class="games-version-status">IN PROGRESS</span></div>
             <h3>Automated release data &amp; platform filtering</h3>
-            <ul>
-              <li>Connect IGDB as the primary source for PC and console game release information.</li>
-              <li>Register and securely store the required API credentials; keep client secrets out of the public website code.</li>
-              <li>Automatically retrieve and validate game titles, platform availability and release dates, including regional dates where supplied.</li>
-              <li>Refresh and cache release data on a schedule so visitors do not need to call the API directly.</li>
-              <li>Populate the Upcoming Releases list and make All, PC, PlayStation, Xbox and Nintendo filters work against that list.</li>
-              <li>Retain source references and handle missing, delayed, cancelled and date-to-be-confirmed releases without inventing dates.</li>
-            </ul>
+            <p class="games-v11-intro">Track each part of the Games Calendar V1.1 work separately. Progress reflects what has actually been completed in the Games Calendar.</p>
+            <div class="games-v11-overall" aria-label="Games Calendar V1.1 overall progress">
+              <div><strong>OVERALL PROGRESS</strong><span>1 OF 7 TASKS COMPLETE · 14%</span></div>
+              <div class="games-v11-progress-track"><span style="width:14%"></span></div>
+            </div>
+            <div class="games-v11-task-list">
+              <article class="games-v11-task is-pending"><div class="games-v11-task-heading"><h4>IGDB data connection</h4><span class="games-v11-task-status">NOT STARTED</span></div><p>Connect IGDB as the primary source for PC and console game release information.</p><div class="games-v11-task-track"><span style="width:0%"></span></div></article>
+              <article class="games-v11-task is-pending"><div class="games-v11-task-heading"><h4>Secure API credentials</h4><span class="games-v11-task-status">NOT STARTED</span></div><p>Register and securely store the required API credentials, keeping client secrets out of public Games Calendar code.</p><div class="games-v11-task-track"><span style="width:0%"></span></div></article>
+              <article class="games-v11-task is-pending"><div class="games-v11-task-heading"><h4>Automatic release retrieval</h4><span class="games-v11-task-status">NOT STARTED</span></div><p>Retrieve game titles, supported platforms and confirmed release dates from the Games Calendar data source.</p><div class="games-v11-task-track"><span style="width:0%"></span></div></article>
+              <article class="games-v11-task is-pending"><div class="games-v11-task-heading"><h4>Scheduled refresh &amp; caching</h4><span class="games-v11-task-status">NOT STARTED</span></div><p>Refresh and cache Games Calendar release data on a schedule so visitors do not call the external API directly.</p><div class="games-v11-task-track"><span style="width:0%"></span></div></article>
+              <article class="games-v11-task is-pending"><div class="games-v11-task-heading"><h4>Connect the Upcoming Releases list</h4><span class="games-v11-task-status">NOT STARTED</span></div><p>Populate the Games Calendar Upcoming Releases list with the verified feed and retain source references for each release.</p><div class="games-v11-task-track"><span style="width:0%"></span></div></article>
+              <article class="games-v11-task is-complete"><div class="games-v11-task-heading"><h4>Platform filters</h4><span class="games-v11-task-status">COMPLETE</span></div><p>The Games Calendar Upcoming Releases panel has working All, PC, PlayStation, Xbox and Nintendo filters.</p><div class="games-v11-task-track"><span style="width:100%"></span></div></article>
+              <article class="games-v11-task is-pending"><div class="games-v11-task-heading"><h4>Release-date validation</h4><span class="games-v11-task-status">NOT STARTED</span></div><p>Handle regional dates, missing dates, delays, cancellations and TBC releases without inventing information.</p><div class="games-v11-task-track"><span style="width:0%"></span></div></article>
+            </div>
           </article>
           <article class="games-version-entry">
-            <div class="games-version-top"><span class="games-version-number">GAMES V1.0</span><span class="games-version-status">FOUNDATION</span></div>
+            <div class="games-version-top"><span class="games-version-number">GAMES CALENDAR V1.0</span><span class="games-version-status">FOUNDATION</span></div>
             <h3>Games Calendar foundation</h3>
             <ul><li>Separate Games Calendar navigation for desktop and mobile.</li><li>Dedicated PC and console release calendar area.</li><li>Independent Games Version History, separate from Sports Calendar releases.</li><li>Independent Games release ticker and Upcoming Releases panel with platform filters.</li></ul>
           </article>
         </section>
+        <details class="games-release-updates games-pr-history">
+          <summary class="games-pr-history-summary"><span><span class="eyebrow games-eyebrow">GAMES CALENDAR CHANGE LOG</span><strong>Games Calendar merged pull requests</strong><small>Open to see extra information about completed Games Calendar updates.</small></span><span class="games-pr-history-chevron" aria-hidden="true">＋</span></summary>
+          <div class="games-pr-history-content">
+            <p class="games-history-intro">A record of Games Calendar changes merged into the project. Each entry links to its original GitHub pull request.</p>
+            <div id="games-recent-release-list" class="games-recent-release-list" aria-live="polite"><p class="games-history-status">Loading Games Calendar updates…</p></div>
+            <p id="games-recent-release-status" class="games-history-status">Updates are sourced independently from Games Calendar-related merged pull requests.</p>
+          </div>
+        </details>
         <div class="games-page-footer"><button type="button" class="games-history-link" data-screen="games-calendar-screen">← BACK TO GAMES CALENDAR</button><span>GAMES VERSION HISTORY · INDEPENDENT RELEASE LIST</span></div>
       </section>
     </main>
@@ -315,6 +324,6 @@
   <script src="./home-next-up.js?v=20261109-01"></script>
   <script src="./version-history.js?v=20261109-01"></script>
   <script src="./f1-grand-prix-centre.js?v=20261109-03"></script>
-  <script src="./games-calendar.js?v=20261109-11"></script>
+  <script src="./games-calendar.js?v=20261109-12"></script>
 </body>
 </html>

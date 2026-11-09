@@ -2197,3 +2197,34 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
 .games-release-details p{margin:0;color:var(--muted);font-size:10px;line-height:1.5}
 .games-release-source{color:#8fc1ff;text-decoration:none;font-size:8px;font-weight:900;letter-spacing:.8px;white-space:nowrap}
 @media(max-width:480px){.games-release-card{grid-template-columns:1fr auto;gap:8px 12px;padding:12px}.games-release-date{grid-column:1/-1;font-size:13px}.games-release-details h3{font-size:18px}}
+
+
+/* Games Calendar V1.1 progress trackers and expandable merged pull-request history. */
+.games-v11-intro{margin:7px 0 17px;color:var(--muted);font-size:11px;line-height:1.65}
+.games-v11-overall{padding:13px;background:rgba(38,133,232,.08);border:1px solid rgba(38,133,232,.28);margin:0 0 12px}
+.games-v11-overall>div:first-child,.games-v11-task-heading{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.games-v11-overall strong,.games-v11-overall span{font-size:8px;font-weight:900;letter-spacing:.8px;color:#9bcaff}
+.games-v11-progress-track,.games-v11-task-track{height:6px;background:#0d1118;border-radius:10px;overflow:hidden;margin-top:9px}
+.games-v11-progress-track span,.games-v11-task-track span{display:block;height:100%;background:#2685e8;border-radius:10px}
+.games-v11-task-list{display:grid;gap:9px}
+.games-v11-task{padding:13px;background:#121923;border:1px solid rgba(143,193,255,.15);border-left:3px solid #647080}
+.games-v11-task.is-complete{border-left-color:#58b887}
+.games-v11-task-heading h4{margin:0;font:800 17px 'Barlow Condensed',sans-serif;text-transform:uppercase}
+.games-v11-task-status{flex:0 0 auto;padding:5px 7px;border:1px solid rgba(143,193,255,.25);color:#aeb9c8;font-size:7px;font-weight:900;letter-spacing:.8px}
+.games-v11-task.is-complete .games-v11-task-status{color:#80d5a8;border-color:rgba(88,184,135,.4)}
+.games-v11-task p{margin:7px 0 0;color:var(--muted);font-size:10px;line-height:1.6}
+.games-v11-task.is-complete .games-v11-task-track span{background:#58b887}
+.games-v11-task-track{height:4px;margin-top:10px}
+.games-pr-history{padding:0!important;overflow:hidden}
+.games-pr-history-summary{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:17px 20px;cursor:pointer;list-style:none}
+.games-pr-history-summary::-webkit-details-marker{display:none}
+.games-pr-history-summary>span:first-child{display:grid;gap:5px}
+.games-pr-history-summary strong{font:800 21px 'Barlow Condensed',sans-serif;text-transform:uppercase;color:var(--text)}
+.games-pr-history-summary small{font-size:10px;line-height:1.5;color:var(--muted)}
+.games-pr-history-chevron{display:grid;place-items:center;flex:0 0 30px;height:30px;border:1px solid rgba(38,133,232,.4);color:#8fc1ff;font-size:18px}
+.games-pr-history[open] .games-pr-history-chevron{transform:rotate(45deg)}
+.games-pr-history-content{padding:0 20px 18px;border-top:1px solid var(--line)}
+.games-pr-history-content .games-history-intro{margin:12px 0}
+.top-sport-pdc-fallback{display:grid;place-items:center;width:34px;height:25px;background:#f5f5f5;color:#111;border:1px solid #d7d7d7;font:900 13px 'Barlow Condensed',sans-serif;letter-spacing:-.4px}
+.sport-logo-darts-fallback{display:grid;place-items:center;width:82px;height:48px;background:#f5f5f5;color:#111;border:1px solid #d7d7d7;font:900 27px 'Barlow Condensed',sans-serif;letter-spacing:-1px}
+@media(max-width:699px){.games-pr-history-summary{padding:15px}.games-pr-history-content{padding:0 15px 15px}.games-v11-task-heading{align-items:flex-start}.games-v11-task-status{font-size:6px}}
