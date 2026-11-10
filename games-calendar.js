@@ -215,7 +215,17 @@
         weekday.textContent = new Intl.DateTimeFormat("en-GB",{weekday:"long",timeZone:"Europe/London"}).format(dateValue);
         const dateText = document.createElement("span");
         dateText.textContent = new Intl.DateTimeFormat("en-GB",{day:"numeric",month:"long",year:"numeric",timeZone:"Europe/London"}).format(dateValue);
+        weekday.className = "games-timeline-weekday";
+        dateText.className = "games-timeline-date";
         heading.append(weekday,dateText);
+        const today = new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/London",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
+        if (day === today) {
+          const todayBadge = document.createElement("span");
+          todayBadge.className = "games-releasing-today";
+          todayBadge.textContent = "● OUT TODAY";
+          todayBadge.setAttribute("aria-label","A game is releasing today");
+          heading.append(todayBadge);
+        }
         dayGroup.append(heading);
         target.append(dayGroup);
       }
@@ -264,10 +274,14 @@
         chip.append(image,text);
         platforms.append(chip);
       });
+      const countdown = document.createElement("small");
+      countdown.className = "games-release-countdown";
+      countdown.dataset.releaseDate = game.release_date;
+      countdown.textContent = releaseCountdown(game.release_date);
       const verification = document.createElement("small");
       verification.className = "games-release-meta";
       verification.textContent = game.verification_status === "verified" ? "VERIFIED RELEASE DATE" : "ESTIMATED DATE · CHECK PUBLISHER";
-      details.append(title, platforms, verification);
+      details.append(title, platforms, countdown, verification);
       card.append(artwork, date, details);
       if (game.source_url && game.source_url.startsWith("http")) {
         const link = document.createElement("a");
@@ -346,7 +360,7 @@
     }
   };
   const updateReleaseCountdowns = () => {
-    featuredTicker?.querySelectorAll("[data-release-date]").forEach(node => {
+    document.querySelectorAll("#games-release-list [data-release-date], #games-up-next-ticker [data-release-date]").forEach(node => {
       node.textContent = releaseCountdown(node.dataset.releaseDate);
     });
   };
