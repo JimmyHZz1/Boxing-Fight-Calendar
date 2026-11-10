@@ -48,12 +48,16 @@
 
   const applyArtworkFallbacks = () => {
     const addImage = (container, title, asset, isTicker) => {
-      if (!container || container.querySelector("img")) return;
-      const url = isTicker ? (asset.logo_url || asset.artwork_url) : (asset.artwork_url || asset.logo_url);
-      if (!url || !url.startsWith("https://")) return;
-      const fallbackText = container.textContent;
+      if (!container) return;
+      const candidates = [...new Set((isTicker
+        ? [asset.logo_url,asset.artwork_url]
+        : [asset.artwork_url,asset.logo_url]).filter(url=>typeof url==="string"&&url.startsWith("https://")))];
+      if (!candidates.length) return;
+      const current = container.querySelector("img");
+      if (current && current.complete && current.naturalWidth > 0) return;
+      const fallbackText = container.dataset.fallbackText || container.textContent || title.slice(0,3).toUpperCase();
+      container.dataset.fallbackText = fallbackText;
       const image = document.createElement("img");
-      image.src = url;
       image.alt = title + (isTicker ? " logo" : " artwork");
       image.loading = "lazy";
       if (isTicker) image.className = "games-up-next-logo-image";
@@ -61,10 +65,16 @@
         image.className = "games-release-artwork-image";
         image.dataset.imageType = asset.artwork_url ? "artwork" : "logo";
       }
+      let candidateIndex = 0;
       image.onerror = () => {
-        image.remove();
-        if (!container.querySelector("img")) container.textContent = fallbackText;
+        candidateIndex++;
+        if (candidateIndex < candidates.length) image.src = candidates[candidateIndex];
+        else {
+          image.remove();
+          if (!container.querySelector("img")) container.textContent = fallbackText;
+        }
       };
+      image.src = candidates[candidateIndex];
       container.replaceChildren(image);
     };
     releaseList?.querySelectorAll(".games-release-card").forEach(card => {
