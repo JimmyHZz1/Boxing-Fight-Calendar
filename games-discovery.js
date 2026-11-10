@@ -69,9 +69,9 @@
   };
   const platformAsset=platform=>{
     const value=String(platform||"").toLowerCase();
-    if(value.includes("playstation")||value.includes("ps5")||value.includes("ps4"))return ["playstation","PLAYSTATION 5"];
+    if(value.includes("playstation")||value.includes("ps5")||value.includes("ps4"))return ["playstation",value.includes("ps4")?"PS4":"PS5"];
     if(value.includes("xbox"))return ["xbox","XBOX"];
-    if(value.includes("nintendo")||value.includes("switch"))return ["nintendo","NINTENDO SWITCH"];
+    if(value.includes("nintendo")||value.includes("switch"))return ["nintendo",value.includes("switch 2")?"SWITCH 2":"SWITCH"];
     if(value.includes("steam"))return ["steam","STEAM"];
     if(value==="pc"||value.startsWith("pc "))return ["windows","PC"];
     return ["windows","PC"];
@@ -80,6 +80,7 @@
     const row=el("div","games-stage-platforms");
     (platforms||[]).forEach(name=>{
       const [slug,label]=platformAsset(name),item=el("span","games-stage-platform");
+      item.title=name;item.setAttribute("aria-label",name);
       const img=document.createElement("img");img.src="./assets/platform-"+slug+".svg";img.alt="";img.loading="eager";img.decoding="async";img.onerror=()=>{img.replaceWith(el("b","games-stage-platform-fallback",slug.toUpperCase()));};
       item.append(img,el("small","",label));row.append(item);
     });
@@ -118,10 +119,20 @@
     },{passive:true});
     selectFeatured(0,false);
   };
-  let stageTouchX=0;
-  stage.addEventListener("touchstart",event=>{stageTouchX=event.changedTouches[0]?.clientX||0;},{passive:true});
-  stage.addEventListener("touchend",event=>{const endX=event.changedTouches[0]?.clientX||0,delta=endX-stageTouchX;if(Math.abs(delta)>55)selectFeatured(activeIndex+(delta<0?1:-1),true);},{passive:true});
-  stage.addEventListener("keydown",event=>{if(event.key==="ArrowRight")selectFeatured(activeIndex+1,true);if(event.key==="ArrowLeft")selectFeatured(activeIndex-1,true);});
+  const featuredPanel=stage.closest(".games-discovery-featured")||stage;
+  let swipeStartX=0,swipeStartY=0,swipeActive=false;
+  featuredPanel.setAttribute("tabindex","0");
+  featuredPanel.setAttribute("aria-label","Featured games. Swipe anywhere across this section to change game.");
+  featuredPanel.addEventListener("touchstart",event=>{
+    if(event.target.closest("button,a,[role=button]")){swipeActive=false;return;}
+    const touch=event.changedTouches[0];swipeStartX=touch?.clientX||0;swipeStartY=touch?.clientY||0;swipeActive=true;
+  },{passive:true});
+  featuredPanel.addEventListener("touchend",event=>{
+    if(!swipeActive)return;swipeActive=false;
+    const touch=event.changedTouches[0],dx=(touch?.clientX||0)-swipeStartX,dy=(touch?.clientY||0)-swipeStartY;
+    if(Math.abs(dx)>55&&Math.abs(dx)>Math.abs(dy)*1.2)selectFeatured(activeIndex+(dx<0?1:-1),true);
+  },{passive:true});
+  featuredPanel.addEventListener("keydown",event=>{if(event.key==="ArrowRight")selectFeatured(activeIndex+1,true);if(event.key==="ArrowLeft")selectFeatured(activeIndex-1,true);});
   const renderTbc=()=>{
     const games=catalogue.featured.filter(g=>!g.release_date);tbcList.replaceChildren();
     const count=document.getElementById("games-tbc-count");if(count)count.textContent=games.length+" GAMES";
