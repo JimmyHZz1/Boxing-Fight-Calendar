@@ -1,38 +1,151 @@
 {
-  "updated_at": "2026-11-09",
+  "schema_version": 1,
+  "updated_at": "2026-11-10",
+  "region_default": "GB",
   "games": [
     {
+      "id": "grand-theft-auto-vi",
       "title": "Grand Theft Auto VI",
-      "release_date": "2026-11-19",
+      "short_name": "GTA VI",
+      "developer": null,
+      "publisher": "Rockstar Games",
       "platforms": [
         "PlayStation 5",
         "Xbox Series X|S"
       ],
-      "source_url": "https://www.videogameschronicle.com/guide/upcoming-game-release-dates-schedule/",
+      "release_date": "2026-11-19",
+      "release_date_precision": "day",
+      "release_dates": [
+        {
+          "platform": "PlayStation 5",
+          "region": "GB",
+          "date": "2026-11-19",
+          "precision": "day",
+          "status": "estimated"
+        },
+        {
+          "platform": "Xbox Series X|S",
+          "region": "GB",
+          "date": "2026-11-19",
+          "precision": "day",
+          "status": "estimated"
+        }
+      ],
+      "region": "GB",
+      "release_status": "estimated",
+      "release_type": "full_release",
+      "artwork_url": null,
       "logo_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Grand%20Theft%20Auto%20VI%20logo.svg",
-      "short_name": "GTA VI"
+      "source_url": "https://www.videogameschronicle.com/guide/upcoming-game-release-dates-schedule/",
+      "sources": [
+        {
+          "name": "Video Games Chronicle – upcoming release schedule",
+          "url": "https://www.videogameschronicle.com/guide/upcoming-game-release-dates-schedule/",
+          "source_type": "secondary",
+          "checked_at": null,
+          "notes": "Existing feed source; requires confirmation against the publisher's official announcement."
+        }
+      ],
+      "verification_status": "needs_review",
+      "last_verified": null,
+      "first_seen": null,
+      "last_updated": "2026-11-10T00:00:00Z"
     },
     {
+      "id": "warhammer-40000-dawn-of-war-iv",
       "title": "Warhammer 40,000: Dawn of War IV",
-      "release_date": "2026-12-03",
+      "short_name": "WH40K",
+      "developer": null,
+      "publisher": null,
       "platforms": [
         "PC"
       ],
+      "release_date": "2026-12-03",
+      "release_date_precision": "day",
+      "release_dates": [
+        {
+          "platform": "PC",
+          "region": "GB",
+          "date": "2026-12-03",
+          "precision": "day",
+          "status": "estimated"
+        }
+      ],
+      "region": "GB",
+      "release_status": "estimated",
+      "release_type": "full_release",
+      "artwork_url": null,
+      "logo_url": null,
       "source_url": "https://www.videogameschronicle.com/guide/upcoming-game-release-dates-schedule/",
-      "short_name": "WH40K",
-      "logo_text": "WH40K"
+      "sources": [
+        {
+          "name": "Video Games Chronicle – upcoming release schedule",
+          "url": "https://www.videogameschronicle.com/guide/upcoming-game-release-dates-schedule/",
+          "source_type": "secondary",
+          "checked_at": null,
+          "notes": "Existing feed source; requires confirmation against the publisher's official announcement."
+        }
+      ],
+      "verification_status": "needs_review",
+      "last_verified": null,
+      "first_seen": null,
+      "last_updated": "2026-11-10T00:00:00Z"
     },
     {
+      "id": "path-of-exile-ii",
       "title": "Path of Exile II",
-      "release_date": "2026-12-11",
+      "short_name": "POE II",
+      "developer": "Grinding Gear Games",
+      "publisher": "Grinding Gear Games",
       "platforms": [
         "PC",
         "PlayStation 5",
         "Xbox Series X|S"
       ],
+      "release_date": "2026-12-11",
+      "release_date_precision": "day",
+      "release_dates": [
+        {
+          "platform": "PC",
+          "region": "GB",
+          "date": "2026-12-11",
+          "precision": "day",
+          "status": "estimated"
+        },
+        {
+          "platform": "PlayStation 5",
+          "region": "GB",
+          "date": "2026-12-11",
+          "precision": "day",
+          "status": "estimated"
+        },
+        {
+          "platform": "Xbox Series X|S",
+          "region": "GB",
+          "date": "2026-12-11",
+          "precision": "day",
+          "status": "estimated"
+        }
+      ],
+      "region": "GB",
+      "release_status": "estimated",
+      "release_type": "early_access",
+      "artwork_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2694490/library_600x900.jpg",
+      "logo_url": null,
       "source_url": "https://www.videogameschronicle.com/guide/upcoming-game-release-dates-schedule/",
-      "logo_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2694490/library_600x900.jpg",
-      "short_name": "POE II"
+      "sources": [
+        {
+          "name": "Video Games Chronicle – upcoming release schedule",
+          "url": "https://www.videogameschronicle.com/guide/upcoming-game-release-dates-schedule/",
+          "source_type": "secondary",
+          "checked_at": null,
+          "notes": "Existing feed source; requires confirmation against the publisher's official announcement."
+        }
+      ],
+      "verification_status": "needs_review",
+      "last_verified": null,
+      "first_seen": null,
+      "last_updated": "2026-11-10T00:00:00Z"
     }
   ]
 }
