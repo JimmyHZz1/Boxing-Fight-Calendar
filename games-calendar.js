@@ -122,7 +122,7 @@
       info.className = "next-event-info";
       const label = document.createElement("small");
       label.className = "next-event-sport";
-      label.textContent = "GAMES";
+      label.textContent = game.verification_status === "verified" ? "GAMES · VERIFIED" : "GAMES · ESTIMATED";
       const name = document.createElement("strong");
       name.className = "next-event-name";
       name.textContent = game.title || "Upcoming release";
@@ -210,7 +210,10 @@
       title.textContent = game.title || "Upcoming game";
       const platforms = document.createElement("p");
       platforms.textContent = Array.isArray(game.platforms) ? game.platforms.join(" · ") : "PC & console";
-      details.append(title, platforms);
+      const verification = document.createElement("small");
+      verification.className = "games-release-meta";
+      verification.textContent = game.verification_status === "verified" ? "VERIFIED RELEASE DATE" : "ESTIMATED DATE · AWAITING SOURCE CHECK";
+      details.append(title, platforms, verification);
       card.append(date, details);
       if (game.source_url && game.source_url.startsWith("http")) {
         const link = document.createElement("a");
@@ -242,10 +245,61 @@
   if (featuredTicker) {
     featuredTicker.addEventListener("touchstart", () => featuredTicker.classList.add("is-paused"), {passive:true});
     featuredTicker.addEventListener("touchend", () => setTimeout(() => featuredTicker.classList.remove("is-paused"), 1200), {passive:true});
-    fetch("./data/games-featured.json?t="+Date.now(), {cache:"no-store"})
-      .then(response => { if (!response.ok) throw new Error("Featured game feed unavailable"); return response.json(); })
-      .then(data => { allUpcomingGames = Array.isArray(data.games) ? data.games : []; renderFeaturedGames(allUpcomingGames); renderUpcomingReleases(allUpcomingGames); updateReleaseCountdowns(); })
-      .catch(() => { allUpcomingGames = []; renderFeaturedGames([]); renderUpcomingReleases([]); });
+    const SUPABASE_URL = "https://dyulhgfpbnyotxjstwcq.supabase.co";
+    const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_8oB9tn7Y86fsAIzLvi1aYg_jHjhlq_8";
+    const gamesDataStatus = document.getElementById("games-data-status");
+    const setGamesDataStatus = message => { if (gamesDataStatus) gamesDataStatus.textContent = message; };
+    const mapDatabaseReleases = rows => {
+      const games = new Map();
+      rows.forEach(row => {
+        if (!row.game || !row.game_id || !row.platform?.name || !row.release_date) return;
+        let game = games.get(row.game_id);
+        if (!game) {
+          game = {id:row.game.slug,title:row.game.title,developer:row.game.developer,publisher:row.game.publisher,
+            artwork_url:row.game.artwork_url,logo_url:row.game.logo_url,platforms:[],release_dates:[],
+            release_date:row.release_date,release_date_precision:row.date_precision === "exact" ? "day" : row.date_precision,
+            release_status:row.is_estimated || row.verification_status !== "verified" ? "estimated" : "confirmed",
+            verification_status:row.verification_status,source_url:row.source_url || "",short_name:row.game.title};
+          games.set(row.game_id,game);
+        }
+        if (!game.platforms.includes(row.platform.name)) game.platforms.push(row.platform.name);
+        game.release_dates.push({platform:row.platform.name,region:row.region_code,date:row.release_date,
+          precision:row.date_precision === "exact" ? "day" : row.date_precision,status:row.release_status,
+          verification_status:row.verification_status});
+        if (row.release_date < game.release_date) game.release_date = row.release_date;
+        if (!game.source_url && row.source_url) game.source_url = row.source_url;
+      });
+      return [...games.values()].sort((a,b)=>a.release_date.localeCompare(b.release_date));
+    };
+    const loadGamesFromSupabase = async () => {
+      const query = "game_releases?select=game_id,region_code,release_date,date_precision,release_status,is_estimated,verification_status,source_url,game:games!inner(title,slug,developer,publisher,artwork_url,logo_url),platform:platforms!inner(name)&region_code=in.(GB,WW)&release_date=not.is.null&release_status=in.(announced,early_access,delayed)&order=release_date.asc";
+      const response = await fetch(SUPABASE_URL + "/rest/v1/" + query,{headers:{apikey:SUPABASE_PUBLISHABLE_KEY,
+        Authorization:"Bearer "+SUPABASE_PUBLISHABLE_KEY,Accept:"application/json"},cache:"no-store"});
+      if (!response.ok) { const detail=await response.text(); throw new Error("Supabase returned "+response.status+(detail?": "+detail.slice(0,160):"")); }
+      const rows=await response.json();
+      if (!Array.isArray(rows)) throw new Error("Supabase returned an unexpected release-data response");
+      return mapDatabaseReleases(rows);
+    };
+    const loadGamesFallback = async () => {
+      const response=await fetch("./data/games-featured.json?t="+Date.now(),{cache:"no-store"});
+      if (!response.ok) throw new Error("Saved release feed unavailable");
+      const data=await response.json();
+      return Array.isArray(data.games)?data.games:[];
+    };
+    loadGamesFromSupabase().then(games=>{
+      allUpcomingGames=games; renderFeaturedGames(allUpcomingGames); renderUpcomingReleases(allUpcomingGames);
+      updateReleaseCountdowns(); setGamesDataStatus("LIVE DATABASE · Connected to the Games Calendar release database.");
+    }).catch(async error=>{
+      console.warn("Games Calendar database connection failed; using saved feed.",error);
+      try {
+        allUpcomingGames=await loadGamesFallback(); renderFeaturedGames(allUpcomingGames); renderUpcomingReleases(allUpcomingGames);
+        updateReleaseCountdowns(); setGamesDataStatus("DATABASE OFFLINE · Showing the saved release list until the live connection is restored.");
+      } catch(fallbackError) {
+        allUpcomingGames=[]; renderFeaturedGames([]); renderUpcomingReleases([]);
+        setGamesDataStatus("RELEASE DATA UNAVAILABLE · The database and saved release feed could not be reached.");
+        console.error("Games Calendar release feeds unavailable.",fallbackError);
+      }
+    });
     window.setInterval(updateReleaseCountdowns, 1000);
   }
   const API_URL = "https://api.github.com/repos/JimmyHZz1/Boxing-Fight-Calendar/pulls?state=closed&sort=updated&direction=desc&per_page=100";
