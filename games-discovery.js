@@ -69,7 +69,7 @@
   };
   const platformAsset=platform=>{
     const value=String(platform||"").toLowerCase();
-    if(value.includes("playstation")||value.includes("ps5")||value.includes("ps4"))return ["playstation","PLAYSTATION"];
+    if(value.includes("playstation")||value.includes("ps5")||value.includes("ps4"))return ["playstation","PLAYSTATION 5"];
     if(value.includes("xbox"))return ["xbox","XBOX"];
     if(value.includes("nintendo")||value.includes("switch"))return ["nintendo","NINTENDO SWITCH"];
     if(value.includes("steam"))return ["steam","STEAM"];
@@ -80,7 +80,7 @@
     const row=el("div","games-stage-platforms");
     (platforms||[]).forEach(name=>{
       const [slug,label]=platformAsset(name),item=el("span","games-stage-platform");
-      const img=document.createElement("img");img.src="./assets/platform-"+slug+".svg";img.alt="";img.loading="eager";img.decoding="async";img.onerror=()=>{img.replaceWith(el("b","games-stage-platform-fallback",label==="PLAYSTATION"?"PS":label==="NINTENDO"?"N":label==="XBOX"?"X":label==="STEAM"?"S":"PC"));};
+      const img=document.createElement("img");img.src="./assets/platform-"+slug+".svg";img.alt="";img.loading="eager";img.decoding="async";img.onerror=()=>{img.replaceWith(el("b","games-stage-platform-fallback",slug.toUpperCase()));};
       item.append(img,el("small","",label));row.append(item);
     });
     return row;
