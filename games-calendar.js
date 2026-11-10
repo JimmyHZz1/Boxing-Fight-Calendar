@@ -122,7 +122,7 @@
       info.className = "next-event-info";
       const label = document.createElement("small");
       label.className = "next-event-sport";
-      label.textContent = "GAMES";
+      label.textContent = game.verification_status === "verified" ? "GAMES · VERIFIED" : "GAMES · ESTIMATED";
       const name = document.createElement("strong");
       name.className = "next-event-name";
       name.textContent = game.title || "Upcoming release";
@@ -210,7 +210,12 @@
       title.textContent = game.title || "Upcoming game";
       const platforms = document.createElement("p");
       platforms.textContent = Array.isArray(game.platforms) ? game.platforms.join(" · ") : "PC & console";
-      details.append(title, platforms);
+      const verification = document.createElement("small");
+      verification.className = "games-release-meta";
+      verification.textContent = game.verification_status === "verified"
+        ? "VERIFIED RELEASE DATE"
+        : "ESTIMATED DATE · AWAITING SOURCE CHECK";
+      details.append(title, platforms, verification);
       card.append(date, details);
       if (game.source_url && game.source_url.startsWith("http")) {
         const link = document.createElement("a");
