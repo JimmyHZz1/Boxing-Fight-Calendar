@@ -2484,3 +2484,6 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
 .games-discovery-slide:focus-visible,.games-discovery-controls>button:focus-visible,.games-discovery-dots button:focus-visible{outline:2px solid #8fc1ff;outline-offset:3px}
 .games-featured-video iframe{display:block}
 @media(max-width:650px){.games-featured-video{min-height:0}}
+
+.games-stage-platform svg{display:block;width:17px;height:17px;flex:0 0 17px;fill:currentColor}
+.games-stage-platform{display:inline-flex;align-items:center;gap:6px}
