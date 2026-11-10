@@ -2330,3 +2330,43 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
 .games-coming-soon-month{border-color:rgba(239,68,68,.55);background:rgba(220,38,38,.16);color:#ff7777}
 .games-coming-soon-week{border-color:rgba(249,115,22,.6);background:rgba(234,88,12,.17);color:#ffad70}
 @media(max-width:620px){.games-coming-soon{font-size:8px;padding:5px 6px}}
+
+
+/* Games Calendar refresh: grouped month accordions, stable manual ticker, robust marks and featured trailer. */
+.games-month-groups{display:grid;gap:11px}
+.games-month-group{border:1px solid rgba(143,193,255,.24);background:rgba(13,18,27,.72)}
+.games-month-summary{display:flex;align-items:center;gap:12px;min-height:54px;padding:13px 15px;list-style:none;cursor:pointer;color:#f2f6fc}
+.games-month-summary::-webkit-details-marker{display:none}
+.games-month-summary strong{font:800 21px 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.5px}
+.games-month-summary small{margin-left:auto;color:#9bc1ed;font-size:9px;font-weight:900;letter-spacing:.8px}
+.games-month-toggle{width:22px;height:22px;display:grid;place-items:center;border:1px solid rgba(143,193,255,.4);color:#9bcaff}
+.games-month-toggle:before{content:"＋";font-size:16px}
+.games-month-group[open] .games-month-toggle:before{content:"−"}
+.games-month-timeline{padding:0 12px 12px;scroll-margin-top:78px}
+.games-month-group[open]>.games-month-summary{border-bottom:1px solid rgba(143,193,255,.2)}
+.games-month-timeline .games-timeline-day:first-child{margin-top:13px}
+.games-platform-mark{display:inline-grid;place-items:center;flex:0 0 auto;min-width:20px;height:17px;padding:0 3px;border:1px solid currentColor;border-radius:3px;font:900 8px Arial,sans-serif;line-height:1;letter-spacing:-.2px}
+.games-platform-mark-pc{color:#9bcaff}
+.games-platform-mark-ps{color:#a9baff}
+.games-platform-mark-xbox{color:#8bd9a7;font-size:7px}
+.games-platform-mark-n{color:#ff8585;font-size:12px}
+.games-platform-mark-steam{color:#c4d8ef;font-size:6px;letter-spacing:-.4px}
+.games-platform-chip{gap:6px}
+.games-platform-chip .games-platform-mark{min-width:18px;height:15px;font-size:7px}
+.games-platform-chip .games-platform-mark-steam{font-size:5px}
+.games-platform-filter button .games-platform-mark{width:auto;min-width:20px;height:16px}
+.games-platform-tags img,.games-platform-filter button img{display:none!important}
+.games-featured-release{display:grid;grid-template-columns:minmax(210px,.8fr) minmax(0,1.5fr);gap:15px;margin:0 0 20px;padding:15px;background:linear-gradient(115deg,#1a2636,#101720);border:1px solid rgba(143,193,255,.3);border-left:3px solid #2685e8}
+.games-featured-copy{align-self:center;min-width:0}
+.games-featured-copy h2{margin:7px 0;font:900 clamp(25px,4vw,38px) 'Barlow Condensed',sans-serif;text-transform:uppercase;line-height:1}
+.games-featured-copy p{margin:9px 0 13px;color:#b5c2d3;font-size:11px;line-height:1.6}
+.games-featured-copy>a{color:#9bcaff;text-decoration:none;font-size:9px;font-weight:900;letter-spacing:.8px}
+.games-featured-video{position:relative;overflow:hidden;aspect-ratio:16/9;background:#05080d}
+.games-featured-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.games-featured-footnote{grid-column:1/-1;color:#8e9caf;font-size:8px;font-weight:900;letter-spacing:1px}
+.games-up-next-ticker.is-manually-scrolling{display:block!important;overflow-x:auto!important;overflow-y:hidden!important;white-space:nowrap;touch-action:pan-x;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scroll-behavior:auto;scrollbar-width:none;cursor:grab}
+.games-up-next-ticker.is-manually-scrolling::-webkit-scrollbar{display:none}
+.games-up-next-ticker.is-manually-scrolling .next-event-track{display:flex!important;width:max-content!important;min-width:max-content!important;animation:none!important;transform:none!important;will-change:auto!important}
+.games-up-next-ticker.is-manually-scrolling .next-event-group{display:flex!important;flex:0 0 auto!important;width:max-content!important;min-width:max-content!important}
+.games-up-next-ticker.is-manually-scrolling .next-event-item{scroll-snap-align:start!important}
+@media(max-width:650px){.games-featured-release{grid-template-columns:1fr;gap:11px;padding:12px}.games-featured-copy h2{font-size:29px}.games-featured-footnote{grid-column:1}.games-month-summary{padding:12px}.games-month-summary strong{font-size:19px}.games-month-timeline{padding:0 8px 10px}}
