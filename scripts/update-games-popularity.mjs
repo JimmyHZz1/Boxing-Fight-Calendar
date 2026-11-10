@@ -3,7 +3,7 @@
  * IGDB PopScore IGDB-native signals + Twitch only; Steam-only primitives are excluded.
  */
 const SUPABASE_URL = "https://dyulhgfpbnyotxjstwcq.supabase.co";
-const SUPABASE_KEY = process.env.SUPABASE_PUBLISHABLE_KEY;
+const SUPABASE_KEY = process.env.SUPABASE_PUBLISHABLE_KEY || "sb_publishable_8oB9tn7Y86fsAIzLvi1aYg_jHjhlq_8";
 const IGDB_CLIENT_ID = process.env.IGDB_CLIENT_ID;
 const IGDB_CLIENT_SECRET = process.env.IGDB_CLIENT_SECRET;
 const OUTPUT = "data/games-popularity.json";
