@@ -48,7 +48,7 @@
 
   const applyArtworkFallbacks = () => {
     const addImage = (container, title, asset, isTicker) => {
-      if (!container) return;
+      if (!container || container.dataset.imageFallbackFailed === "true") return;
       const candidates = [...new Set((isTicker
         ? [asset.logo_url,asset.artwork_url]
         : [asset.artwork_url,asset.logo_url]).filter(url=>typeof url==="string"&&url.startsWith("https://")))];
@@ -71,6 +71,7 @@
         if (candidateIndex < candidates.length) image.src = candidates[candidateIndex];
         else {
           image.remove();
+          container.dataset.imageFallbackFailed = "true";
           if (!container.querySelector("img")) container.textContent = fallbackText;
         }
       };
