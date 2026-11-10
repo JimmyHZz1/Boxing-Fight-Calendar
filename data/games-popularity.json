@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "provider": "IGDB PopScore",
+  "updated_at": null,
+  "status": "awaiting-credentials",
+  "methodology": "Cross-platform IGDB interest and Twitch signals. Steam-only metrics are excluded.",
+  "games": []
+}
