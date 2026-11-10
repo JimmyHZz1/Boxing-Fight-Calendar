@@ -139,9 +139,9 @@
       if (game.logo_text) {
         logoWrap.textContent = game.logo_text;
         logoWrap.classList.add("games-up-next-logo-text");
-      } else if (game.logo_url && game.logo_url.startsWith("https://")) {
+      } else if ((game.logo_url || game.artwork_url) && (game.logo_url || game.artwork_url).startsWith("https://")) {
         const logo = document.createElement("img");
-        logo.src = game.logo_url;
+        logo.src = game.logo_url || game.artwork_url;
         logo.alt = (game.title || "Game") + " logo";
         logo.loading = "lazy";
         logo.onerror = () => {
@@ -201,6 +201,26 @@
     filtered.forEach(game => {
       const card = document.createElement("article");
       card.className = "games-release-card";
+      const artwork = document.createElement("div");
+      artwork.className = "games-release-artwork";
+      const artworkUrl = game.artwork_url || game.logo_url || "";
+      if (artworkUrl.startsWith("https://")) {
+        const image = document.createElement("img");
+        image.className = "games-release-artwork-image";
+        image.src = artworkUrl;
+        image.alt = (game.title || "Game") + (game.artwork_url ? " artwork" : " logo");
+        image.dataset.imageType = game.artwork_url ? "artwork" : "logo";
+        image.loading = "lazy";
+        image.onerror = () => {
+          image.remove();
+          artwork.textContent = String(game.short_name || game.title || "GAME").split(" ").map(word => word[0]).join("").slice(0,3).toUpperCase();
+          artwork.classList.add("games-release-artwork-fallback");
+        };
+        artwork.append(image);
+      } else {
+        artwork.textContent = String(game.short_name || game.title || "GAME").split(" ").map(word => word[0]).join("").slice(0,3).toUpperCase();
+        artwork.classList.add("games-release-artwork-fallback");
+      }
       const date = document.createElement("div");
       date.className = "games-release-date";
       date.textContent = new Intl.DateTimeFormat("en-GB", {day:"2-digit",month:"short",year:"numeric",timeZone:"Europe/London"}).format(new Date(game.release_date + "T12:00:00"));
@@ -214,7 +234,7 @@
       verification.className = "games-release-meta";
       verification.textContent = game.verification_status === "verified" ? "VERIFIED RELEASE DATE" : "ESTIMATED DATE · AWAITING SOURCE CHECK";
       details.append(title, platforms, verification);
-      card.append(date, details);
+      card.append(artwork, date, details);
       if (game.source_url && game.source_url.startsWith("http")) {
         const link = document.createElement("a");
         link.href = game.source_url;

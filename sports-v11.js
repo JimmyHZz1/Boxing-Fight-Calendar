@@ -54,62 +54,63 @@
   function allEvents(){
     return sports.flatMap(sport=>eventsFor(sport).map(event=>({sport,event}))).filter(x=>dateKey(dateValue(x.event)));
   }
+  let tickerSignature = "";
+  let tickerLoopDistance = 0;
   function renderTicker(){
     const root=$("next-event-ticker");if(!root)return;
-    root.classList.remove("is-auto-scrolling","is-paused");
-    root.replaceChildren();
-    const track=make("div","next-event-track");
-    const group=make("div","next-event-group");
-    const originals=[];
+    const selected=[];
     sports.forEach(sport=>{
       const rows=allEvents().filter(x=>x.sport===sport);
       const live=rows.filter(x=>isLive(x.event)).sort((a,b)=>timestamp(a.event)-timestamp(b.event))[0];
       const next=rows.filter(x=>!isLive(x.event)&&isUpcoming(x.event)).sort((a,b)=>timestamp(a.event)-timestamp(b.event))[0];
-      const chosen=live||next;if(!chosen)return;
-      const event=chosen.event,button=make("button","next-event-item");
+      const chosen=live||next;
+      if(chosen)selected.push({sport,event:chosen.event,live:!!live});
+    });
+    const signature=selected.map(x=>x.sport+":"+String(x.event.id||x.event.event_id||x.event.name||x.event.title||"") + ":" + String(x.event.start_at||x.event.main_card_at||x.event.start_time_utc||x.event.date||x.event.event_date||"") + ":" + x.live).join("|");
+    // Feeds refresh periodically. Keep the current scroll position when the
+    // actual set of ticker cards has not changed.
+    if(signature===tickerSignature && root.querySelector(".next-event-track"))return;
+    tickerSignature=signature;
+    root.classList.remove("is-auto-scrolling","is-paused");
+    root.replaceChildren();
+    const track=make("div","next-event-track");
+    const group=make("div","next-event-group");
+    selected.forEach(({sport,event,live})=>{
+      const button=make("button","next-event-item");
       button.type="button";button.dataset.sport=sport;
       const info=make("span","next-event-info");
       info.append(make("small","next-event-sport",names[sport]),make("strong","next-event-name",event.name||event.title||"Event"));
       const target=event.start_at||event.main_card_at||event.start_time_utc||event.date||event.event_date;
       if(!live&&target){
         const timer=make("small","next-event-countdown",window.SportsCountdown?.text?.(target)||"DATE TBC");
-        timer.dataset.countdownTarget=/^\d{4}-\d{2}-\d{2}$/.test(String(target))?String(target):new Date(target).toISOString();
+        timer.dataset.countdownTarget=/^\\d{4}-\\d{2}-\\d{2}$/.test(String(target))?String(target):new Date(target).toISOString();
         info.append(timer);
       }
       const badge=make("span","next-event-state "+(live?"is-live":"is-upcoming"));
       badge.append(make("i","next-event-state-icon",live?"●":"▣"),make("b",null,live?"LIVE":"UPCOMING"));
-      button.append(info,badge);group.append(button);originals.push(button);
+      button.append(info,badge);group.append(button);
     });
-    if(!originals.length){root.append(make("span","next-event-loading","No live or upcoming events currently listed."));return;}
-    track.append(group);root.append(track);
-    // Duplicate complete, identical groups. Measuring the whole group keeps the
-    // loop distance exact, including the spacing between its cards.
-    const groupWidth=group.getBoundingClientRect().width||group.scrollWidth;
-    const trackGap=parseFloat(getComputedStyle(track).columnGap||getComputedStyle(track).gap)||0;
-    const loopDistance=groupWidth+trackGap;
-    if(!groupWidth||!loopDistance){root.classList.remove("is-auto-scrolling");return;}
-    const targetWidth=Math.max(root.clientWidth+loopDistance*1.25,loopDistance*2.5);
-    let copies=1;
-    while(track.scrollWidth<targetWidth&&copies<20){
-      const clone=group.cloneNode(true);
-      clone.dataset.tickerClone="true";
-      clone.setAttribute("aria-hidden","true");
-      clone.querySelectorAll("button").forEach(button=>{button.tabIndex=-1;});
-      track.append(clone);
-      copies++;
-    }
-    track.style.setProperty("--ticker-distance",loopDistance+"px");
-    track.style.setProperty("--ticker-offset","-"+loopDistance+"px");
-    track.style.setProperty("--ticker-duration",Math.max(24,loopDistance/22)+"s");
-    root.classList.add("is-auto-scrolling");
+    if(!selected.length){root.append(make("span","next-event-loading","No live or upcoming events currently listed."));return;}
+    track.append(group);
+    // Exactly two identical groups create a true wrap point. The ticker uses
+    // native horizontal scrolling so a finger swipe can move it directly.
+    const clone=group.cloneNode(true);
+    clone.dataset.tickerClone="true";clone.setAttribute("aria-hidden","true");
+    clone.querySelectorAll("button").forEach(button=>{button.tabIndex=-1;});
+    track.append(clone);root.append(track);
+    requestAnimationFrame(()=>{
+      tickerLoopDistance=group.getBoundingClientRect().width+12;
+      if(tickerLoopDistance>12)root.classList.add("is-auto-scrolling");
+    });
   }
   let tickerResizeTimer;
   window.addEventListener("resize",()=>{clearTimeout(tickerResizeTimer);tickerResizeTimer=setTimeout(renderTicker,140);});
   const tickerRoot=$("next-event-ticker");
   if(tickerRoot){
-    let tickerResumeTimer;
+    let tickerResumeTimer, tickerFrame=0, tickerLast=0;
+    const reducedMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const pauseTicker=()=>{clearTimeout(tickerResumeTimer);tickerRoot.classList.add("is-paused");};
-    const resumeTicker=()=>{clearTimeout(tickerResumeTimer);tickerResumeTimer=setTimeout(()=>tickerRoot.classList.remove("is-paused"),1600);};
+    const resumeTicker=()=>{clearTimeout(tickerResumeTimer);tickerResumeTimer=setTimeout(()=>tickerRoot.classList.remove("is-paused"),1400);};
     tickerRoot.addEventListener("click",event=>{
       const card=event.target.closest(".next-event-item");
       if(card)window.SportPages?.open?.(card.dataset.sport);
@@ -118,6 +119,21 @@
     tickerRoot.addEventListener("touchmove",pauseTicker,{passive:true});
     tickerRoot.addEventListener("touchend",resumeTicker,{passive:true});
     tickerRoot.addEventListener("touchcancel",resumeTicker,{passive:true});
+    tickerRoot.addEventListener("pointerdown",pauseTicker,{passive:true});
+    tickerRoot.addEventListener("pointerup",resumeTicker,{passive:true});
+    tickerRoot.addEventListener("pointercancel",resumeTicker,{passive:true});
+    const animateTicker=now=>{
+      if(tickerLast&&!reducedMotion&&!tickerRoot.classList.contains("is-paused")&&!document.hidden){
+        tickerRoot.scrollLeft+=Math.min(50,now-tickerLast)*0.024;
+      }
+      tickerLast=now;
+      if(tickerLoopDistance>0&&tickerRoot.scrollLeft>=tickerLoopDistance){
+        tickerRoot.scrollLeft-=tickerLoopDistance;
+      }
+      tickerFrame=requestAnimationFrame(animateTicker);
+    };
+    cancelAnimationFrame(tickerFrame);
+    tickerFrame=requestAnimationFrame(animateTicker);
   }
   function render(){
     const liveRoot=$("live-now-events"),upcomingRoot=$("live-upcoming-events");
