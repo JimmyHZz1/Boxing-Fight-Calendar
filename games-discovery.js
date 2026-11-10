@@ -42,7 +42,7 @@
     const media=makeTrailer(game,"games-featured-video");
     const copy=el("div","games-featured-stage-copy");
     copy.append(el("small","games-discovery-badge",game.date_status||"COMING SOON · DATE TBC"),el("h3","",game.title),el("p","",game.synopsis||"Officially announced game."));
-    copy.append(el("div","games-stage-meta",(game.studio||"Developer TBC")+" · "+(game.publisher||"Publisher TBC")+"\n"+(game.platforms||[]).join(" · ")+"\n"+(game.date_label||"Release date TBC")));
+    copy.append(el("div","games-stage-meta",(game.studio||"Developer TBC")+" · "+(game.publisher||"Publisher TBC")+"\n"+(game.date_label||"Release date TBC")),platformMarks(game.platforms));
     const actions=el("div","games-dialog-actions"),details=el("button","games-stage-details","GAME DETAILS + COMPANY INFO");details.type="button";details.addEventListener("click",()=>showGame(game));actions.append(details);
     if(safeUrl(game.official_url)){const a=el("a","","OFFICIAL PAGE ↗");a.href=game.official_url;a.target="_blank";a.rel="noopener noreferrer";actions.append(a);}
     copy.append(actions);stage.append(media,copy);
