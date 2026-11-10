@@ -5202,51 +5202,51 @@
     },
     "search_details": [
       {
-        "name": "Tyrell Fortune",
+        "name": "Jiří Procházka",
         "queries": 1,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       },
       {
-        "name": "Derrick Lewis",
+        "name": "Alex Pereira",
         "queries": 1,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       },
       {
-        "name": "Aleksandar Rakić",
+        "name": "Khalil Rountree Jr.",
         "queries": 1,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       },
       {
-        "name": "Carlos Ulberg",
+        "name": "Navajo Stirling",
         "queries": 1,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       },
       {
-        "name": "Magomed Ankalaev",
+        "name": "Paulo Costa",
         "queries": 1,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       }
     ],
-    "checked_at": "2026-11-10T13:10:28Z",
+    "checked_at": "2026-11-10T20:31:18Z",
     "library_entries": 66,
     "newly_found": 0,
-    "cumulative_attempted": 137,
+    "cumulative_attempted": 142,
     "cumulative_found": 66,
-    "cumulative_missing": 71,
+    "cumulative_missing": 76,
     "cumulative_rejected": 139,
-    "batch_number": 10,
-    "last_batch_at": "2026-11-10T13:10:28Z",
-    "last_successful_batch_at": "2026-11-10T13:10:28Z",
+    "batch_number": 11,
+    "last_batch_at": "2026-11-10T20:31:18Z",
+    "last_successful_batch_at": "2026-11-10T20:31:18Z",
     "last_rate_limited_at": "2026-11-09T13:33:36Z",
     "coverage": {
       "boxing fight card fighters": {
