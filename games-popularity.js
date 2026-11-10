@@ -80,6 +80,14 @@
       }
       if (score && name) name.title = "Cross-platform popularity score " + score.score + "/100 · " + (score.signals || []).join(", ");
     });
+    const groupWidth = group.getBoundingClientRect().width || group.scrollWidth;
+    const groupGap = parseFloat(getComputedStyle(group).columnGap || getComputedStyle(group).gap) || 0;
+    const loopDistance = groupWidth + groupGap;
+    if (loopDistance) {
+      track.style.setProperty("--ticker-distance", loopDistance + "px");
+      track.style.setProperty("--ticker-offset", "-" + loopDistance + "px");
+      track.style.setProperty("--ticker-duration", Math.max(14, loopDistance / 38) + "s");
+    }
     if (topFour.length) {
       const clone = group.cloneNode(true);
       clone.dataset.tickerClone = "true";
