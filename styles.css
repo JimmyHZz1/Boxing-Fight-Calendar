@@ -2292,3 +2292,25 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
 .games-timeline-day .games-release-artwork{height:84px!important;min-height:84px!important}
 @media(min-width:760px){.games-timeline-day{padding-left:24px}.games-timeline-day .games-release-card{max-width:900px}.games-timeline-day .games-release-artwork{width:76px!important;height:94px!important;min-height:94px!important}.games-timeline-day .games-release-card{grid-template-columns:76px minmax(0,1fr)!important;gap:0 17px!important;padding:13px 16px}}
 @media(max-width:620px){.games-timeline-month-heading{font-size:22px}.games-timeline-day{padding-left:12px;margin-bottom:16px}.games-timeline-date-heading strong{font-size:14px}.games-timeline-day .games-release-card{width:100%}}
+
+/* Expanded Games Calendar release browser and recognisable platform marks. */
+.games-platform-tags span{display:inline-flex;align-items:center;gap:6px}
+.games-platform-tags img,.games-platform-filter button img{width:14px;height:14px;object-fit:contain;vertical-align:middle}
+.games-platform-filter button{display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.games-platform-filter button img{width:13px;height:13px}
+.games-platform-badges{display:flex;flex-wrap:wrap;gap:5px;margin:6px 0 2px}
+.games-platform-chip{display:inline-flex;align-items:center;gap:5px;padding:4px 6px;border:1px solid rgba(143,193,255,.2);background:rgba(38,133,232,.07);color:#b7d6ff;font-size:8px;font-weight:800;letter-spacing:.45px}
+.games-platform-chip img{width:12px;height:12px;object-fit:contain}
+.games-platform-chip.is-text-only{padding-left:7px}
+.games-more-releases{margin-top:16px;border:1px solid rgba(38,133,232,.32);background:rgba(38,133,232,.045)}
+.games-more-releases>summary{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:52px;padding:12px 15px;list-style:none;cursor:pointer;color:#9bcaff;font-size:10px;font-weight:900;letter-spacing:1px}
+.games-more-releases>summary::-webkit-details-marker{display:none}
+.games-more-releases>summary:after{content:"＋";font-size:19px;color:#62a7ff}
+.games-more-releases[open]>summary:after{content:"−"}
+.games-more-releases>summary small{margin-left:auto;color:var(--muted);font-size:8px;letter-spacing:.7px}
+.games-more-release-timeline{padding:0 12px 12px}
+.games-more-releases[open]>summary{border-bottom:1px solid rgba(38,133,232,.22)}
+.games-up-next-ticker.is-manually-scrolling .next-event-track{animation:none!important;transform:none!important}
+.games-up-next-ticker.is-manually-scrolling{scroll-snap-type:x proximity}
+.games-up-next-ticker.is-manually-scrolling .next-event-item{scroll-snap-align:start}
+@media(max-width:480px){.games-platform-chip{font-size:7px;padding:4px 5px}.games-platform-chip img{width:11px;height:11px}.games-more-releases>summary{padding:12px 10px}}
