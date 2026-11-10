@@ -277,10 +277,16 @@
         const [icon,label] = platformIcon(platform);
         const chip = document.createElement("span");
         chip.className = "games-platform-chip";
-        const mark = document.createElement("b");
-        mark.className = "games-platform-mark games-platform-mark-" + icon.toLowerCase();
-        mark.textContent = icon;
+        const mark = document.createElement("img");
+        const logoSlug = icon === "PS" ? "playstation" : icon === "XBOX" ? "xbox" : icon === "N" ? "nintendo" : icon === "STEAM" ? "steam" : icon === "PC" ? "windows" : "";
+        mark.className = "games-platform-mark-image";
+        mark.alt = "";
         mark.setAttribute("aria-hidden","true");
+        if (logoSlug) {
+          mark.src = "https://cdn.simpleicons.org/" + logoSlug + "/ffffff";
+          mark.loading = "eager";
+          mark.onerror = () => { const fallback = document.createElement("b"); fallback.className = "games-platform-mark games-platform-mark-" + icon.toLowerCase(); fallback.textContent = icon; fallback.setAttribute("aria-hidden","true"); mark.replaceWith(fallback); };
+        } else { mark.replaceWith(Object.assign(document.createElement("b"),{className:"games-platform-mark",textContent:icon})); }
         const text = document.createElement("span");
         text.textContent = label;
         chip.append(mark,text);
