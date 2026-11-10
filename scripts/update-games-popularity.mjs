@@ -89,7 +89,7 @@ async function main() {
   for (const game of games) {
     if (!game.igdb_game_id) {
       const safeTitle = game.title.replace(/\\/g, "\\\\").replace(/"/g, '\\"');
-      const matches = await igdbPost("games", token, `search "${safeTitle}"; fields id,name,cover.url,artworks.url,logo.url; limit 10;`);
+      const matches = await igdbPost("games", token, `search "${safeTitle}"; fields id,name,cover.url,artworks.url; limit 10;`);
       const ranked = matches.map(match => ({match, score:normalise(match.name) === normalise(game.title) ? 1 : tokenSimilarity(match.name, game.title)}))
         .sort((a,b)=>b.score-a.score);
       if (ranked[0] && ranked[0].score >= 0.65) {
