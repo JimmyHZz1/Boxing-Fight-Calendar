@@ -208,7 +208,8 @@
         const image = document.createElement("img");
         image.className = "games-release-artwork-image";
         image.src = artworkUrl;
-        image.alt = (game.title || "Game") + " artwork";
+        image.alt = (game.title || "Game") + (game.artwork_url ? " artwork" : " logo");
+        image.dataset.imageType = game.artwork_url ? "artwork" : "logo";
         image.loading = "lazy";
         image.onerror = () => {
           image.remove();
