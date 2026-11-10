@@ -181,12 +181,12 @@
   };
   const platformIcon = platform => {
     const value = String(platform || "").toLowerCase();
-    if (value.includes("steam")) return ["steam","STEAM"];
-    if (value.includes("playstation") || value.includes("ps4") || value.includes("ps5")) return ["playstation","PLAYSTATION"];
-    if (value.includes("xbox")) return ["xbox","XBOX"];
-    if (value.includes("nintendo") || value.includes("switch")) return ["nintendo","NINTENDO"];
-    if (value === "pc" || value.startsWith("pc ")) return ["windows","PC"];
-    return ["gamepad","PLATFORM"];
+    if (value.includes("steam")) return ["STEAM","STEAM"];
+    if (value.includes("playstation") || value.includes("ps4") || value.includes("ps5")) return ["PS","PLAYSTATION"];
+    if (value.includes("xbox")) return ["XBOX","XBOX"];
+    if (value.includes("nintendo") || value.includes("switch")) return ["N","NINTENDO"];
+    if (value === "pc" || value.startsWith("pc ")) return ["PC","PC"];
+    return ["GAME","PLATFORM"];
   };
   const comingSoonStatus = releaseDate => {
     const today = new Intl.DateTimeFormat("en-CA", {timeZone:"Europe/London",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
@@ -199,7 +199,7 @@
     if (releaseDate.slice(0,7) === today.slice(0,7)) return "month";
     return "";
   };
-  const renderTimeline = (games, target, prefix) => {
+  const renderTimeline = (games, target, prefix, showMonthHeading = true) => {
     let activeMonth = "";
     let activeDay = "";
     let dayGroup = null;
@@ -208,11 +208,13 @@
       const day = game.release_date;
       if (month !== activeMonth) {
         activeMonth = month;
-        const monthHeading = document.createElement("h3");
-        monthHeading.className = "games-timeline-month-heading";
-        monthHeading.id = prefix + "games-month-" + month;
-        monthHeading.textContent = new Intl.DateTimeFormat("en-GB",{month:"long",year:"numeric",timeZone:"Europe/London"}).format(new Date(day+"T12:00:00"));
-        target.append(monthHeading);
+        if (showMonthHeading) {
+          const monthHeading = document.createElement("h3");
+          monthHeading.className = "games-timeline-month-heading";
+          monthHeading.id = prefix + "games-month-" + month;
+          monthHeading.textContent = new Intl.DateTimeFormat("en-GB",{month:"long",year:"numeric",timeZone:"Europe/London"}).format(new Date(day+"T12:00:00"));
+          target.append(monthHeading);
+        }
         activeDay = "";
       }
       if (day !== activeDay) {
@@ -275,14 +277,13 @@
         const [icon,label] = platformIcon(platform);
         const chip = document.createElement("span");
         chip.className = "games-platform-chip";
-        const image = document.createElement("img");
-        image.src = "https://cdn.simpleicons.org/" + icon + "/FFFFFF";
-        image.alt = "";
-        image.loading = "lazy";
-        image.onerror = () => { image.remove(); chip.classList.add("is-text-only"); };
+        const mark = document.createElement("b");
+        mark.className = "games-platform-mark games-platform-mark-" + icon.toLowerCase();
+        mark.textContent = icon;
+        mark.setAttribute("aria-hidden","true");
         const text = document.createElement("span");
         text.textContent = label;
-        chip.append(image,text);
+        chip.append(mark,text);
         platforms.append(chip);
       });
       const comingSoon = comingSoonStatus(game.release_date);
@@ -319,14 +320,14 @@
     if (!releaseList) return;
     const today = new Intl.DateTimeFormat("en-CA", {timeZone:"Europe/London",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
     const filtered = (Array.isArray(items) ? items : [])
-      .filter(game => game && typeof game.release_date === "string" && game.release_date.length === 10 && game.release_date >= today)
+      .filter(game => game && typeof game.release_date === "string" && /^\d{4}-\d{2}-\d{2}$/.test(game.release_date) && game.release_date >= today)
       .filter(game => activePlatform === "all" || (Array.isArray(game.platforms) && game.platforms.some(platform => {
         const value = String(platform).toLowerCase();
         if (activePlatform === "steam") return value.includes("steam");
         if (activePlatform === "pc") return value === "pc" || value.startsWith("pc ");
         return value.includes(activePlatform);
       })))
-      .sort((a,b) => a.release_date.localeCompare(b.release_date));
+      .sort((a,b) => a.release_date.localeCompare(b.release_date) || String(a.title).localeCompare(String(b.title)));
     releaseList.replaceChildren();
     if (!filtered.length) {
       const empty = document.createElement("div");
@@ -339,46 +340,55 @@
       releaseList.append(empty);
       return;
     }
-    const primaryCount = Math.min(8, filtered.length);
-    const primary = filtered.slice(0, primaryCount);
-    const additional = filtered.slice(primaryCount);
+    const grouped = new Map();
+    filtered.forEach(game => {
+      const month = game.release_date.slice(0,7);
+      if (!grouped.has(month)) grouped.set(month,[]);
+      grouped.get(month).push(game);
+    });
     const timelineNav = document.createElement("nav");
     timelineNav.className = "games-timeline-month-nav";
     timelineNav.setAttribute("aria-label","Jump to release month");
-    const months = [...new Set(filtered.map(game => game.release_date.slice(0,7)))];
-    months.forEach(month => {
-      const button = document.createElement("button");
-      button.type = "button";
-      button.textContent = new Intl.DateTimeFormat("en-GB",{month:"short",year:"numeric",timeZone:"Europe/London"}).format(new Date(month+"-15T12:00:00"));
-      button.addEventListener("click",()=>{
-        const primaryTarget = document.getElementById("primary-games-month-"+month);
-        if (primaryTarget) primaryTarget.scrollIntoView({behavior:"smooth",block:"start"});
-        else {
-          const details = releaseList.querySelector(".games-more-releases");
-          if (details) details.open = true;
-          document.getElementById("more-games-month-"+month)?.scrollIntoView({behavior:"smooth",block:"start"});
-        }
+    const monthGroups = [];
+    [...grouped.entries()].forEach(([month,games],index) => {
+      const monthDate = new Date(month + "-15T12:00:00");
+      const monthLabel = new Intl.DateTimeFormat("en-GB",{month:"long",year:"numeric",timeZone:"Europe/London"}).format(monthDate);
+      const navButton = document.createElement("button");
+      navButton.type = "button";
+      navButton.textContent = new Intl.DateTimeFormat("en-GB",{month:"short",year:"numeric",timeZone:"Europe/London"}).format(monthDate);
+      timelineNav.append(navButton);
+
+      const monthDetails = document.createElement("details");
+      monthDetails.className = "games-month-group";
+      monthDetails.open = index === 0;
+      const summary = document.createElement("summary");
+      summary.className = "games-month-summary";
+      const monthName = document.createElement("strong");
+      monthName.textContent = monthLabel;
+      const count = document.createElement("small");
+      count.textContent = games.length + (games.length === 1 ? " RELEASE" : " RELEASES");
+      const toggle = document.createElement("span");
+      toggle.className = "games-month-toggle";
+      toggle.setAttribute("aria-hidden","true");
+      summary.append(monthName,count,toggle);
+      const monthTimeline = document.createElement("div");
+      monthTimeline.className = "games-month-timeline";
+      monthTimeline.id = "primary-games-month-" + month;
+      renderTimeline(games,monthTimeline,"month-"+month+"-",false);
+      monthDetails.append(summary,monthTimeline);
+      monthGroups.push({month,navButton,monthDetails,monthTimeline});
+      navButton.addEventListener("click",()=>{
+        monthDetails.open = true;
+        monthTimeline.scrollIntoView({behavior:"smooth",block:"start"});
       });
-      timelineNav.append(button);
     });
     releaseList.append(timelineNav);
-    const primaryTimeline = document.createElement("div");
-    primaryTimeline.className = "games-primary-timeline";
-    renderTimeline(primary, primaryTimeline, "primary-");
-    releaseList.append(primaryTimeline);
-    if (additional.length) {
-      const more = document.createElement("details");
-      more.className = "games-more-releases";
-      const summary = document.createElement("summary");
-      summary.innerHTML = "<span>MORE UPCOMING RELEASES</span><small>" + additional.length + " MORE GAMES</small>";
-      const moreTimeline = document.createElement("div");
-      moreTimeline.className = "games-more-release-timeline";
-      renderTimeline(additional, moreTimeline, "more-");
-      more.append(summary,moreTimeline);
-      releaseList.append(more);
-    }
+    const monthsContainer = document.createElement("div");
+    monthsContainer.className = "games-month-groups";
+    monthGroups.forEach(group=>monthsContainer.append(group.monthDetails));
+    releaseList.append(monthsContainer);
   };
-  const updateReleaseCountdowns = () => {
+    const updateReleaseCountdowns = () => {
     document.querySelectorAll("#games-release-list [data-release-date], #games-up-next-ticker [data-release-date]").forEach(node => {
       node.textContent = releaseCountdown(node.dataset.releaseDate);
     });
@@ -393,15 +403,24 @@
     });
   }
   if (featuredTicker) {
-    let tickerInteractionTimer = null;
     const pauseTickerForManualScroll = () => {
+      if (featuredTicker.classList.contains("is-manually-scrolling")) return;
+      const track = featuredTicker.querySelector(".next-event-track");
+      if (track) {
+        const transform = getComputedStyle(track).transform;
+        const match = transform && transform.match(/matrix(?:3d)?\(([^)]+)\)/);
+        if (match) {
+          const values = match[1].split(",").map(Number);
+          const translateX = values.length === 6 ? values[4] : values[12];
+          if (Number.isFinite(translateX)) featuredTicker.scrollLeft = Math.max(0,-translateX);
+        }
+        track.style.animation = "none";
+        track.style.transform = "none";
+      }
       featuredTicker.classList.add("is-paused","is-manually-scrolling");
-      clearTimeout(tickerInteractionTimer);
-      tickerInteractionTimer = setTimeout(() => featuredTicker.classList.remove("is-paused","is-manually-scrolling"), 2400);
     };
     featuredTicker.addEventListener("pointerdown",pauseTickerForManualScroll,{passive:true});
     featuredTicker.addEventListener("touchstart",pauseTickerForManualScroll,{passive:true});
-    featuredTicker.addEventListener("scroll",pauseTickerForManualScroll,{passive:true});
     const SUPABASE_URL = "https://dyulhgfpbnyotxjstwcq.supabase.co";
     const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_8oB9tn7Y86fsAIzLvi1aYg_jHjhlq_8";
     const gamesDataStatus = document.getElementById("games-data-status");
