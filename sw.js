@@ -1,4 +1,4 @@
-const CACHE="sports-calendar-v115";
+const CACHE="sports-calendar-v116";
 const APP_FILES=[
   "./",
   "./index.html",
@@ -16,7 +16,7 @@ const APP_FILES=[
   "./home-next-up.js?v=20261109-01",
   "./version-history.js?v=20261109-01",
   "./f1-grand-prix-centre.js?v=20261109-03",
-  "./games-calendar.js?v=20261109-12",
+  "./games-calendar.js?v=20261109-13",
   "./manifest.json",
   "./data/games-featured.json"
 ];
