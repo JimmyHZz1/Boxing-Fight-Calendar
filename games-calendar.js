@@ -188,6 +188,17 @@
     if (value === "pc" || value.startsWith("pc ")) return ["windows","PC"];
     return ["gamepad","PLATFORM"];
   };
+  const comingSoonStatus = releaseDate => {
+    const today = new Intl.DateTimeFormat("en-CA", {timeZone:"Europe/London",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
+    if (releaseDate < today) return "";
+    const todayUtc = new Date(today + "T00:00:00Z");
+    const mondayOffset = (todayUtc.getUTCDay() + 6) % 7;
+    const weekStart = new Date(todayUtc.getTime() - mondayOffset * 86400000).toISOString().slice(0,10);
+    const weekEnd = new Date(todayUtc.getTime() + (6 - mondayOffset) * 86400000).toISOString().slice(0,10);
+    if (releaseDate >= weekStart && releaseDate <= weekEnd) return "week";
+    if (releaseDate.slice(0,7) === today.slice(0,7)) return "month";
+    return "";
+  };
   const renderTimeline = (games, target, prefix) => {
     let activeMonth = "";
     let activeDay = "";
@@ -274,6 +285,14 @@
         chip.append(image,text);
         platforms.append(chip);
       });
+      const comingSoon = comingSoonStatus(game.release_date);
+      if (comingSoon) {
+        const badge = document.createElement("small");
+        badge.className = "games-coming-soon games-coming-soon-" + comingSoon;
+        badge.textContent = comingSoon === "week" ? "COMING SOON · THIS WEEK" : "COMING SOON · THIS MONTH";
+        badge.setAttribute("aria-label", comingSoon === "week" ? "Releasing this week" : "Releasing this month");
+        details.append(badge);
+      }
       const countdown = document.createElement("small");
       countdown.className = "games-release-countdown";
       countdown.dataset.releaseDate = game.release_date;
