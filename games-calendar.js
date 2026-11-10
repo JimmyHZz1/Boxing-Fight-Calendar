@@ -431,9 +431,6 @@
       allUpcomingGames=mergeReleaseFeeds(games,supplemental); renderFeaturedGames(allUpcomingGames); renderUpcomingReleases(allUpcomingGames);
       updateReleaseCountdowns(); setGamesDataStatus("LIVE DATABASE + EXPANDED RELEASE FEED · Showing tracked releases and additional announced games.");
     }).catch(async error=>{
-      allUpcomingGames=games; renderFeaturedGames(allUpcomingGames); renderUpcomingReleases(allUpcomingGames);
-      updateReleaseCountdowns(); setGamesDataStatus("LIVE DATABASE · Connected to the Games Calendar release database.");
-    }).catch(async error=>{
       console.warn("Games Calendar database connection failed; using saved feed.",error);
       try {
         allUpcomingGames=await loadGamesFallback(); renderFeaturedGames(allUpcomingGames); renderUpcomingReleases(allUpcomingGames);
