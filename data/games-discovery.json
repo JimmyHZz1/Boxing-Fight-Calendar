@@ -83,11 +83,11 @@
       "date_status": "COMING SOON · DATE TBC",
       "synopsis": "An action-adventure, multiple-character branching narrative game set in the High Republic era. Quantic Dream describes the project as being in early development; its official site features the cinematic teaser trailer.",
       "artwork_url": "https://www.starwarseclipse.com/assets/images/og-image.jpg",
-      "trailer_id": null,
-      "trailer_url": "https://www.starwarseclipse.com/",
-      "trailer_label": "Official Cinematic Teaser",
+      "trailer_id": "4cJpiOPKH14",
+      "trailer_url": "https://www.youtube.com/watch?v=4cJpiOPKH14",
+      "trailer_label": "Official Cinematic Reveal Trailer",
       "official_url": "https://www.starwarseclipse.com/",
-      "source_url": "https://www.starwarseclipse.com/",
+      "source_url": "https://www.starwars.com/video/star-wars-eclipse",
       "company_ids": [
         "quantic-dream",
         "lucasfilm-games"
@@ -106,11 +106,11 @@
       "date_status": "COMING SOON · DATE TBC",
       "synopsis": "A ground-up remake of the classic RPG. It is separate from Fate of the Old Republic. Saber Interactive confirmed the remake remained in development in 2026; no release date has been announced.",
       "artwork_url": "https://img.youtube.com/vi/lL-RfE-ioJ8/hqdefault.jpg",
-      "trailer_id": null,
-      "trailer_url": "https://blog.playstation.com/2021/09/09/star-wars-knights-of-the-old-republic-remake-is-the-legendary-tale-remade-on-playstation-5/",
+      "trailer_id": "lL-RfE-ioJ8",
+      "trailer_url": "https://www.youtube.com/watch?v=lL-RfE-ioJ8",
       "trailer_label": "Official Reveal Trailer",
       "official_url": "https://blog.playstation.com/2021/09/09/star-wars-knights-of-the-old-republic-remake-is-the-legendary-tale-remade-on-playstation-5/",
-      "source_url": "https://www.techradar.com/gaming/saber-interactive-confirms-its-star-wars-knights-of-the-old-republic-remake-is-still-in-development",
+      "source_url": "https://www.starwars.com/video/playstation-showcase-2021-trailer-star-wars-knights-of-the-old-republic-remake",
       "company_ids": [
         "saber-interactive",
         "lucasfilm-games"

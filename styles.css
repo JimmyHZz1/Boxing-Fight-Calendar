@@ -2485,3 +2485,26 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
 .games-discovery-art img,.games-tbc-art img,.games-dialog-art img{display:block;object-fit:cover}
 .games-featured-stage:focus-visible{outline:2px solid #8fc1ff;outline-offset:4px}
 @media(max-width:650px){.games-featured-stage{grid-template-columns:minmax(0,1fr)!important;gap:12px!important}.games-featured-video{aspect-ratio:16/9!important;min-height:0!important}.games-featured-stage-copy{padding:7px 3px!important}.games-stage-platform img{max-width:78px!important;height:17px!important}}
+
+
+/* Featured games: restore the original video-first GTA VI hero treatment for every swipe selection. */
+.games-featured-stage{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:0!important;margin:14px 0 18px!important}
+.games-featured-video{width:100%!important;min-height:0!important;aspect-ratio:16/9!important;background:#05080d!important}
+.games-featured-stage-copy{display:flex!important;align-items:flex-start!important;justify-content:flex-start!important;padding:17px 3px 5px!important;gap:10px!important}
+.games-featured-stage-copy h3{font-size:clamp(30px,5vw,48px)!important}
+.games-featured-stage-copy p{max-width:780px!important;font-size:13px!important}
+.games-stage-meta{font-size:11px!important}
+.games-discovery-slide{grid-template-columns:minmax(0,1fr)!important;min-height:120px!important}
+.games-discovery-slide .games-discovery-copy{grid-column:1/-1!important}
+.games-discovery-slide{flex-basis:min(78%,340px)!important}
+.games-discovery-track{scroll-snap-type:x mandatory!important;overflow-x:auto!important;overscroll-behavior-x:contain!important;-webkit-overflow-scrolling:touch!important}
+.games-stage-platform img{width:22px!important;height:22px!important;max-width:22px!important;object-fit:contain!important}
+.games-platform-tags img{width:22px!important;height:22px!important;max-width:22px!important;object-fit:contain!important}
+.games-platform-filter button img{width:18px!important;height:18px!important;max-width:18px!important;object-fit:contain!important}
+.games-platform-chip .games-platform-mark-image{width:18px!important;height:18px!important;max-width:18px!important;object-fit:contain!important}
+@media(max-width:650px){
+ .games-featured-stage{grid-template-columns:minmax(0,1fr)!important;gap:0!important}
+ .games-featured-video{aspect-ratio:16/9!important;min-height:0!important}
+ .games-featured-stage-copy{padding:13px 2px 4px!important}
+ .games-discovery-slide{flex-basis:84%!important;min-height:112px!important}
+}
