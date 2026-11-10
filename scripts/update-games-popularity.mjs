@@ -95,8 +95,10 @@ async function main() {
       if (ranked[0] && ranked[0].score >= 0.65) {
         const match = ranked[0].match;
         game.igdb_game_id = Number(match.id);
-        const imageUrl = value => value?.url ? ("https:" + value.url).replace("/t_thumb/","/t_720p/") : null;
-        game.igdb_logo_url = imageUrl(match.logo);
+        const imageUrl = value => value?.url ? (value.url.startsWith("//") ? "https:" + value.url : value.url).replace("/t_thumb/","/t_720p/") : null;
+        // Game logos are separate IGDB entities; they are not a field on /games.
+        const logos = await igdbPost("logos", token, `fields url; where game = ${match.id}; limit 1;`);
+        game.igdb_logo_url = imageUrl(logos[0]);
         game.igdb_artwork_url = imageUrl(match.artworks?.[0]) || imageUrl(match.cover);
       }
       await sleep(275);
