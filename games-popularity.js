@@ -6,6 +6,7 @@
 
   const normalise = value => String(value || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
   let popularity = new Map();
+  let popularityReady = false;
   let isApplyingTicker = false;
   let applyQueued = false;
   let tickerObserver = null;
@@ -45,7 +46,7 @@
   };
 
   const applyTicker = () => {
-    if (!ticker || isApplyingTicker) return;
+    if (!ticker || isApplyingTicker || !popularityReady) return;
     const track = ticker.querySelector(".next-event-track");
     const group = track?.querySelector(".next-event-group:not([data-ticker-clone])");
     if (!track || !group || !group.children.length) return;
@@ -143,10 +144,12 @@
           signals:Array.isArray(game.popularity_signals)?game.popularity_signals:[]
         });
       });
+      popularityReady = true;
       queueApply();
     })
     .catch(error => {
       console.info("Games Calendar popularity data is not ready yet.",error);
+      popularityReady = true;
       queueApply();
     });
 })();
