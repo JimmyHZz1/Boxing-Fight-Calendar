@@ -89,10 +89,16 @@ async function main() {
   for (const game of games) {
     if (!game.igdb_game_id) {
       const safeTitle = game.title.replace(/\\/g, "\\\\").replace(/"/g, '\\"');
-      const matches = await igdbPost("games", token, `search "${safeTitle}"; fields id,name; limit 10;`);
+      const matches = await igdbPost("games", token, `search "${safeTitle}"; fields id,name,cover.url,artworks.url,logo.url; limit 10;`);
       const ranked = matches.map(match => ({match, score:normalise(match.name) === normalise(game.title) ? 1 : tokenSimilarity(match.name, game.title)}))
         .sort((a,b)=>b.score-a.score);
-      if (ranked[0] && ranked[0].score >= 0.65) game.igdb_game_id = Number(ranked[0].match.id);
+      if (ranked[0] && ranked[0].score >= 0.65) {
+        const match = ranked[0].match;
+        game.igdb_game_id = Number(match.id);
+        const imageUrl = value => value?.url ? ("https:" + value.url).replace("/t_thumb/","/t_720p/") : null;
+        game.igdb_logo_url = imageUrl(match.logo);
+        game.igdb_artwork_url = imageUrl(match.artworks?.[0]) || imageUrl(match.cover);
+      }
       await sleep(275);
     }
   }
@@ -126,7 +132,7 @@ async function main() {
       totalWeight += weight;
       signals.push(metric);
     }
-    return {...game, popularity_score:totalWeight ? Math.round(weighted / totalWeight) : null,
+    return {...game, logo_url:game.igdb_logo_url, artwork_url:game.igdb_artwork_url, popularity_score:totalWeight ? Math.round(weighted / totalWeight) : null,
       popularity_signals:signals, popularity_coverage:signals.length};
   }).sort((a,b)=>(b.popularity_score ?? -1)-(a.popularity_score ?? -1) || a.release_date.localeCompare(b.release_date));
   scored.forEach((game,index)=>{game.popularity_rank=game.popularity_score===null?null:index+1;});
