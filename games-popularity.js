@@ -25,7 +25,13 @@
       .games-release-copy .games-release-details p{line-height:1.45}
       .games-release-copy .games-release-source{align-self:flex-start!important}
       .games-up-next-label .games-popularity-caption{color:#8fc1ff;font-size:8px;font-weight:900;letter-spacing:.8px;text-align:right}
-      .games-up-next-ticker .games-up-next-logo-image{display:block;width:100%;height:100%;object-fit:contain;padding:4px}.games-up-next-ticker .games-trending-rank{display:inline-block;margin-left:5px;padding:2px 4px;border:1px solid rgba(38,133,232,.35);color:#9bcaff;font-size:7px;letter-spacing:.5px;vertical-align:middle}
+      .next-event-ticker.is-auto-scrolling.games-up-next-ticker .games-up-next-item{display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:flex-start!important;gap:10px!important;min-height:82px!important;padding:10px 12px!important;white-space:normal!important}
+      .games-up-next-ticker .games-up-next-logo{order:0!important;flex:0 0 52px!important;width:52px!important;height:52px!important;min-width:52px!important;max-width:52px!important;display:flex!important;align-items:center!important;justify-content:center!important;padding:0!important;margin:0!important;border:0!important;background:transparent!important;overflow:hidden}
+      .games-up-next-ticker .games-up-next-logo img,.games-up-next-ticker .games-up-next-logo-image{display:block!important;width:100%!important;height:100%!important;max-width:100%!important;max-height:100%!important;object-fit:contain!important;padding:2px!important}
+      .games-up-next-ticker .games-up-next-logo-text,.games-up-next-ticker .games-up-next-logo-fallback{font-size:12px!important;font-weight:900!important;color:#9bcaff!important;text-align:center}
+      .games-up-next-ticker .next-event-info{order:1!important;flex:1 1 auto!important;width:auto!important;min-width:0!important;display:grid!important;gap:4px!important}
+      .games-up-next-ticker .next-event-name{display:block!important;white-space:normal!important;overflow-wrap:anywhere!important}
+      .games-up-next-ticker .games-trending-rank{display:inline-block;margin-left:5px;padding:2px 4px;border:1px solid rgba(38,133,232,.35);color:#9bcaff;font-size:7px;letter-spacing:.5px;vertical-align:middle}
       @media(max-width:620px){.games-release-card{grid-template-columns:54px minmax(0,1fr)!important;gap:0 10px!important;padding:11px!important}.games-release-artwork{width:54px!important;min-height:76px!important}.games-release-copy .games-release-details h3{font-size:16px!important}.games-release-copy .games-release-date{font-size:11px!important}}
     `;
     document.head.append(style);
@@ -60,7 +66,8 @@
       const image = document.createElement("img");
       image.alt = title + (isTicker ? " logo" : " artwork");
       image.referrerPolicy = "no-referrer";
-      image.loading = "lazy";
+      image.loading = "eager";
+      image.decoding = "async";
       if (isTicker) image.className = "games-up-next-logo-image";
       else {
         image.className = "games-release-artwork-image";
