@@ -32,6 +32,56 @@
       "verification_status": "verified"
     },
     {
+      "id": "pikmin-4-switch-2-edition",
+      "title": "Pikmin 4: Nintendo Switch 2 Edition + Dandori Academy",
+      "short_name": "PIKMIN 4",
+      "platforms": [
+        "Nintendo Switch 2"
+      ],
+      "release_date": "2026-11-12",
+      "release_date_precision": "day",
+      "region": "GB",
+      "release_status": "announced",
+      "release_type": "platform_release",
+      "source_url": "https://www.videogameschronicle.com/guide/upcoming-game-release-dates-schedule/",
+      "verification_status": "estimated"
+    },
+    {
+      "id": "sonic-pico-park",
+      "title": "Sonic Pico Park",
+      "short_name": "SONIC PICO PARK",
+      "platforms": [
+        "PC",
+        "PlayStation 5",
+        "Xbox Series X|S",
+        "Nintendo Switch 2",
+        "Nintendo Switch"
+      ],
+      "release_date": "2026-11-12",
+      "release_date_precision": "day",
+      "region": "GB",
+      "release_status": "announced",
+      "release_type": "full_release",
+      "source_url": "https://www.videogameschronicle.com/guide/upcoming-game-release-dates-schedule/",
+      "verification_status": "estimated"
+    },
+    {
+      "id": "trees-hate-you",
+      "title": "Trees Hate You",
+      "short_name": "TREES HATE YOU",
+      "platforms": [
+        "PC",
+        "Steam"
+      ],
+      "release_date": "2026-11-16",
+      "release_date_precision": "day",
+      "region": "GB",
+      "release_status": "announced",
+      "release_type": "full_release",
+      "source_url": "https://store.steampowered.com/app/4171850/Trees_Hate_You/",
+      "verification_status": "verified"
+    },
+    {
       "id": "grand-theft-auto-vi",
       "title": "Grand Theft Auto VI",
       "short_name": "GTA VI",
@@ -66,6 +116,38 @@
       "logo_url": null,
       "source_url": "https://www.rockstargames.com/VI",
       "verification_status": "verified"
+    },
+    {
+      "id": "warhammer-boltgun-2",
+      "title": "Warhammer 40,000: Boltgun 2",
+      "short_name": "BOLTGUN 2",
+      "platforms": [
+        "Nintendo Switch 2"
+      ],
+      "release_date": "2026-11-19",
+      "release_date_precision": "day",
+      "region": "GB",
+      "release_status": "announced",
+      "release_type": "full_release",
+      "source_url": "https://www.onepercentlows.com/upcoming",
+      "verification_status": "estimated"
+    },
+    {
+      "id": "arkheron",
+      "title": "Arkheron",
+      "short_name": "ARKHERON",
+      "platforms": [
+        "PC",
+        "Steam",
+        "Xbox Series X|S"
+      ],
+      "release_date": "2026-11-27",
+      "release_date_precision": "day",
+      "region": "GB",
+      "release_status": "announced",
+      "release_type": "early_access",
+      "source_url": "https://www.onepercentlows.com/upcoming",
+      "verification_status": "estimated"
     },
     {
       "id": "hela-of-mice-and-magic",
@@ -236,6 +318,55 @@
       "verification_status": "verified"
     },
     {
+      "id": "aeterna-lucis",
+      "title": "Aeterna Lucis",
+      "short_name": "AETERNA LUCIS",
+      "platforms": [
+        "PC",
+        "Steam",
+        "PlayStation 5",
+        "Xbox Series X|S",
+        "Nintendo Switch"
+      ],
+      "release_date": "2026-12-03",
+      "release_date_precision": "day",
+      "region": "GB",
+      "release_status": "announced",
+      "release_type": "full_release",
+      "source_url": "https://store.steampowered.com/app/2710920/Aeterna_Lucis/",
+      "verification_status": "verified"
+    },
+    {
+      "id": "xenoblade-chronicles-3-switch-2",
+      "title": "Xenoblade Chronicles 3: Switch 2 Edition",
+      "short_name": "XENOBLADE 3",
+      "platforms": [
+        "Nintendo Switch 2"
+      ],
+      "release_date": "2026-12-03",
+      "release_date_precision": "day",
+      "region": "GB",
+      "release_status": "announced",
+      "release_type": "platform_release",
+      "source_url": "https://www.videogameschronicle.com/guide/upcoming-game-release-dates-schedule/",
+      "verification_status": "estimated"
+    },
+    {
+      "id": "monster-hunter-wilds-switch-2",
+      "title": "Monster Hunter Wilds",
+      "short_name": "MONSTER HUNTER",
+      "platforms": [
+        "Nintendo Switch 2"
+      ],
+      "release_date": "2026-12-04",
+      "release_date_precision": "day",
+      "region": "GB",
+      "release_status": "announced",
+      "release_type": "platform_release",
+      "source_url": "https://www.videogameschronicle.com/guide/upcoming-game-release-dates-schedule/",
+      "verification_status": "estimated"
+    },
+    {
       "id": "attack-on-titan-3",
       "title": "A.O.T. 3",
       "short_name": "A.O.T. 3",
@@ -286,6 +417,75 @@
       "logo_url": null,
       "source_url": "https://www.koeitecmoeurope.com/news/feel-the-power-of-the-final-titan-showdown-in-koei-tecmos-a-o-t-3-coming-10th-december-2026/",
       "verification_status": "verified"
+    },
+    {
+      "id": "professor-layton-new-world-steam",
+      "title": "Professor Layton and the New World of Steam",
+      "short_name": "PROFESSOR LAYTON",
+      "platforms": [
+        "PC",
+        "PlayStation 5",
+        "Nintendo Switch",
+        "Nintendo Switch 2"
+      ],
+      "release_date": "2026-12-10",
+      "release_date_precision": "day",
+      "region": "GB",
+      "release_status": "announced",
+      "release_type": "full_release",
+      "source_url": "https://www.videogameschronicle.com/guide/upcoming-game-release-dates-schedule/",
+      "verification_status": "estimated"
+    },
+    {
+      "id": "stage-tour",
+      "title": "Stage Tour",
+      "short_name": "STAGE TOUR",
+      "platforms": [
+        "PC",
+        "Steam",
+        "PlayStation 5",
+        "Xbox Series X|S",
+        "Nintendo Switch 2"
+      ],
+      "release_date": "2026-12-10",
+      "release_date_precision": "day",
+      "region": "GB",
+      "release_status": "announced",
+      "release_type": "full_release",
+      "source_url": "https://store.steampowered.com/app/4452700/STAGE_TOUR/",
+      "verification_status": "verified"
+    },
+    {
+      "id": "silver-palace",
+      "title": "Silver Palace",
+      "short_name": "SILVER PALACE",
+      "platforms": [
+        "PC",
+        "PlayStation 5"
+      ],
+      "release_date": "2026-12-14",
+      "release_date_precision": "day",
+      "region": "GB",
+      "release_status": "announced",
+      "release_type": "full_release",
+      "source_url": "https://www.onepercentlows.com/upcoming",
+      "verification_status": "estimated"
+    },
+    {
+      "id": "there-are-no-ghosts",
+      "title": "There Are No Ghosts at the Grand",
+      "short_name": "NO GHOSTS",
+      "platforms": [
+        "PC",
+        "Steam"
+      ],
+      "release_date": "2026-12-16",
+      "release_date_precision": "day",
+      "region": "GB",
+      "release_status": "announced",
+      "release_type": "early_access",
+      "source_url": "https://www.onepercentlows.com/upcoming",
+      "verification_status": "estimated"
     },
     {
       "id": "romancing-saga-3-destinies-united",

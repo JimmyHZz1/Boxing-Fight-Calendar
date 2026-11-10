@@ -2292,3 +2292,35 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
 .games-timeline-day .games-release-artwork{height:84px!important;min-height:84px!important}
 @media(min-width:760px){.games-timeline-day{padding-left:24px}.games-timeline-day .games-release-card{max-width:900px}.games-timeline-day .games-release-artwork{width:76px!important;height:94px!important;min-height:94px!important}.games-timeline-day .games-release-card{grid-template-columns:76px minmax(0,1fr)!important;gap:0 17px!important;padding:13px 16px}}
 @media(max-width:620px){.games-timeline-month-heading{font-size:22px}.games-timeline-day{padding-left:12px;margin-bottom:16px}.games-timeline-date-heading strong{font-size:14px}.games-timeline-day .games-release-card{width:100%}}
+
+/* Expanded Games Calendar release browser and recognisable platform marks. */
+.games-platform-tags span{display:inline-flex;align-items:center;gap:6px}
+.games-platform-tags img,.games-platform-filter button img{width:14px;height:14px;object-fit:contain;vertical-align:middle}
+.games-platform-filter button{display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.games-platform-filter button img{width:13px;height:13px}
+.games-platform-badges{display:flex;flex-wrap:wrap;gap:5px;margin:6px 0 2px}
+.games-platform-chip{display:inline-flex;align-items:center;gap:5px;padding:4px 6px;border:1px solid rgba(143,193,255,.2);background:rgba(38,133,232,.07);color:#b7d6ff;font-size:8px;font-weight:800;letter-spacing:.45px}
+.games-platform-chip img{width:12px;height:12px;object-fit:contain}
+.games-platform-chip.is-text-only{padding-left:7px}
+.games-more-releases{margin-top:16px;border:1px solid rgba(38,133,232,.32);background:rgba(38,133,232,.045)}
+.games-more-releases>summary{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:52px;padding:12px 15px;list-style:none;cursor:pointer;color:#9bcaff;font-size:10px;font-weight:900;letter-spacing:1px}
+.games-more-releases>summary::-webkit-details-marker{display:none}
+.games-more-releases>summary:after{content:"＋";font-size:19px;color:#62a7ff}
+.games-more-releases[open]>summary:after{content:"−"}
+.games-more-releases>summary small{margin-left:auto;color:var(--muted);font-size:8px;letter-spacing:.7px}
+.games-more-release-timeline{padding:0 12px 12px}
+.games-more-releases[open]>summary{border-bottom:1px solid rgba(38,133,232,.22)}
+.games-up-next-ticker.is-manually-scrolling .next-event-track{animation:none!important;transform:none!important}
+.games-up-next-ticker.is-manually-scrolling{scroll-snap-type:x proximity}
+.games-up-next-ticker.is-manually-scrolling .next-event-item{scroll-snap-align:start}
+@media(max-width:480px){.games-platform-chip{font-size:7px;padding:4px 5px}.games-platform-chip img{width:11px;height:11px}.games-more-releases>summary{padding:12px 10px}}
+
+/* Release timeline: live countdowns, same-size date labels and out-today marker. */
+.games-release-countdown{display:inline-flex;align-items:center;width:max-content;max-width:100%;margin:5px 0 2px;padding:5px 7px;border:1px solid rgba(38,133,232,.35);background:rgba(38,133,232,.1);color:#9bcaff;font-size:10px;font-weight:900;letter-spacing:.45px;font-variant-numeric:tabular-nums}
+.games-release-countdown:where(:not(:empty)){white-space:nowrap}
+.games-timeline-date-heading{display:flex;align-items:center;flex-wrap:wrap;gap:7px 10px}
+.games-timeline-date-heading .games-timeline-weekday,.games-timeline-date-heading .games-timeline-date{font:800 15px 'Barlow Condensed',sans-serif;letter-spacing:.35px;text-transform:uppercase;color:#8fc1ff}
+.games-timeline-date-heading .games-timeline-date{color:#aab6c7}
+.games-releasing-today{display:inline-flex;align-items:center;gap:5px;padding:4px 7px;border:1px solid rgba(91,197,139,.55);background:rgba(38,150,91,.16);color:#80e2aa!important;font:900 9px 'DM Sans',sans-serif!important;letter-spacing:.7px;white-space:nowrap}
+.games-releasing-today::before{content:"";width:6px;height:6px;border-radius:50%;background:#65d995;box-shadow:0 0 8px rgba(101,217,149,.8)}
+@media(max-width:620px){.games-timeline-date-heading .games-timeline-weekday,.games-timeline-date-heading .games-timeline-date{font-size:14px}.games-release-countdown{font-size:9px;padding:5px 6px}}
