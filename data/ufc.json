@@ -1484,6 +1484,22 @@
       "source": "UFCalendar"
     },
     {
+      "id": 3591,
+      "slug": "ufc-fight-night-2026-12-05",
+      "name": "UFC Fight Night: Adesanya vs Magomedov",
+      "date": "2026-12-05",
+      "start_at": "2026-12-05T15:00:00.000Z",
+      "status": "announced",
+      "number": null,
+      "is_ppv": false,
+      "is_title_card": false,
+      "main_card_at": "2026-12-05T18:00:00.000Z",
+      "prelims_at": "2026-12-05T15:00:00.000Z",
+      "early_prelims_at": null,
+      "fights": [],
+      "source": "UFCalendar"
+    },
+    {
       "id": 2562,
       "slug": "ufc-335-2026-12-13",
       "name": "UFC 335: Oliveira vs Lopes",
@@ -1549,5 +1565,5 @@
     }
   ],
   "notice": "All upcoming UFC events returned by UFCalendar, with detailed fight cards for the next two events and the latest completed card. Free API allowance: 1,000 requests per month.",
-  "last_updated": "2026-11-09T18:51:09Z"
+  "last_updated": "2026-11-10T02:45:33Z"
 }

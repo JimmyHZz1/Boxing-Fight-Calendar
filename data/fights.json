@@ -1,84 +1,15 @@
 {
   "provider": "Boxerbook confirmed cards + Boxing Data additional bouts",
-  "last_updated": "2026-11-09T18:51:09Z",
-  "provider_as_of": "2026-11-09T18:51:08Z",
+  "last_updated": "2026-11-10T02:45:33Z",
+  "provider_as_of": "2026-11-10T02:45:32Z",
   "attribution": "Confirmed cards from Boxerbook; additional scheduled bouts from Boxing Data API.",
-  "count_events": 33,
-  "count_bouts": 114,
+  "count_events": 32,
+  "count_bouts": 109,
   "count_confirmed_events": 22,
   "count_confirmed_bouts": 84,
-  "count_additional_bouts": 30,
+  "count_additional_bouts": 25,
   "count_fighter_photos": 14,
   "events": [
-    {
-      "id": "boxingdata-2026-11-09",
-      "name": "Additional scheduled bouts — Mon 9 Nov",
-      "date": "2026-11-09T12:00:00Z",
-      "bouts": [
-        {
-          "id": "fx_tgzrvnqa",
-          "fighter1": "Albina Moldazhanova",
-          "fighter2": "Kirstie Bavington",
-          "date": "2026-11-09",
-          "start_time_utc": "01:35",
-          "start_datetime_utc": "2026-11-09T01:35:00Z",
-          "weight_class": null,
-          "rounds": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API"
-        },
-        {
-          "id": "fx_z902x6dn",
-          "fighter1": "Irma Garcia",
-          "fighter2": "Nataly Delgado",
-          "date": "2026-11-09",
-          "start_time_utc": "01:55",
-          "start_datetime_utc": "2026-11-09T01:55:00Z",
-          "weight_class": null,
-          "rounds": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API"
-        },
-        {
-          "id": "fx_mfd2by66",
-          "fighter1": "Miyo Yoshida",
-          "fighter2": "Skye Nicolson",
-          "date": "2026-11-09",
-          "start_time_utc": "02:37",
-          "start_datetime_utc": "2026-11-09T02:37:00Z",
-          "weight_class": null,
-          "rounds": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API"
-        },
-        {
-          "id": "fx_v5r1sy08",
-          "fighter1": "Mikiah Kreps",
-          "fighter2": "Ramla Ali",
-          "date": "2026-11-09",
-          "start_time_utc": "03:20",
-          "start_datetime_utc": "2026-11-09T03:20:00Z",
-          "weight_class": null,
-          "rounds": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API"
-        },
-        {
-          "id": "fx_yejwv7wy",
-          "fighter1": "Alycia Baumgardner",
-          "fighter2": "Elif Nur Turhan",
-          "date": "2026-11-09",
-          "start_time_utc": "04:10",
-          "start_datetime_utc": "2026-11-09T04:10:00Z",
-          "weight_class": null,
-          "rounds": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API"
-        }
-      ],
-      "data_source": "Boxing Data API",
-      "source_note": "Additional scheduled bouts — card not confirmed. These individual matchups are listed by Boxing Data and have not been assigned to a confirmed promoter event."
-    },
     {
       "id": "boxerbook-5229",
       "source_id": 5229,
