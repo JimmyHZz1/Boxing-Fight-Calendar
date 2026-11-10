@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#101114">
   <meta name="description" content="Boxing, Formula 1, UFC and PDC darts schedules in one sports calendar, shown in UK local time.">
   <link rel="manifest" href="./manifest.json">
-  <link rel="stylesheet" href="./styles.css?v=20261110-03">
+  <link rel="stylesheet" href="./styles.css?v=20261110-04">
   <title>Sports Calendar</title>
 </head>
 <body>
@@ -245,13 +245,25 @@
           <span class="eyebrow games-eyebrow">GAMES · RELEASE CALENDAR</span>
           <h1 id="games-calendar-title">Games <em>calendar.</em></h1>
           <p>Discover upcoming PC and console releases, organised day by day in a Steam-inspired timeline.</p>
-          <div class="games-platform-tags"><span><img src="https://cdn.simpleicons.org/windows/FFFFFF" alt=""> PC</span><span><img src="https://cdn.simpleicons.org/playstation/FFFFFF" alt=""> PLAYSTATION</span><span><img src="https://cdn.simpleicons.org/xbox/FFFFFF" alt=""> XBOX</span><span><img src="https://cdn.simpleicons.org/nintendo/FFFFFF" alt=""> NINTENDO</span><span><img src="https://cdn.simpleicons.org/steam/FFFFFF" alt=""> STEAM</span></div>
+          <div class="games-platform-tags"><span><b class="games-platform-mark games-platform-mark-pc">PC</b> PC</span><span><b class="games-platform-mark games-platform-mark-ps">PS</b> PLAYSTATION</span><span><b class="games-platform-mark games-platform-mark-xbox">XBOX</b> XBOX</span><span><b class="games-platform-mark games-platform-mark-n">N</b> NINTENDO</span><span><b class="games-platform-mark games-platform-mark-steam">STEAM</b> STEAM</span></div>
         </div>
         
         <section class="games-up-next-strip" aria-label="Major upcoming PC and console game releases"><div class="games-up-next-label"><span class="eyebrow games-eyebrow">UP NEXT</span><span>MAJOR PC &amp; CONSOLE RELEASES</span></div><div id="games-up-next-ticker" class="games-up-next-ticker next-event-ticker" aria-live="polite"><span class="games-up-next-loading">Loading upcoming releases…</span></div></section>
+        <section class="games-featured-release" aria-labelledby="games-featured-title">
+          <div class="games-featured-copy">
+            <span class="eyebrow games-eyebrow">FEATURED HIGH-PROFILE RELEASE</span>
+            <h2 id="games-featured-title">Grand Theft Auto VI</h2>
+            <p>Rockstar Games · 19 November 2026 · PlayStation 5 &amp; Xbox Series X|S</p>
+            <a href="https://www.rockstargames.com/VI" target="_blank" rel="noopener noreferrer">OFFICIAL GAME PAGE ↗</a>
+          </div>
+          <div class="games-featured-video">
+            <iframe src="https://www.youtube-nocookie.com/embed/VQRLujxTm3c?rel=0" title="Grand Theft Auto VI Trailer 2 — Rockstar Games" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="games-featured-footnote">OFFICIAL ROCKSTAR GAMES TRAILER · TRAILER 2</div>
+        </section>
         <section class="games-release-panel" aria-labelledby="games-release-heading">
           <div class="games-section-heading"><div><span class="eyebrow games-eyebrow">RELEASE TIMELINE</span><h2 id="games-release-heading">Upcoming releases</h2></div><span class="games-version-pill">GAMES V1.0</span></div>
-          <div class="games-platform-filter" id="games-platform-filter" role="group" aria-label="Filter upcoming releases by platform"><span class="games-platform-filter-label">FILTER BY PLATFORM</span><button type="button" data-games-platform="all" aria-pressed="true">ALL</button><button type="button" data-games-platform="pc" aria-pressed="false"><img src="https://cdn.simpleicons.org/windows/FFFFFF" alt=""> PC</button><button type="button" data-games-platform="steam" aria-pressed="false"><img src="https://cdn.simpleicons.org/steam/FFFFFF" alt=""> STEAM</button><button type="button" data-games-platform="playstation" aria-pressed="false"><img src="https://cdn.simpleicons.org/playstation/FFFFFF" alt=""> PLAYSTATION</button><button type="button" data-games-platform="xbox" aria-pressed="false"><img src="https://cdn.simpleicons.org/xbox/FFFFFF" alt=""> XBOX</button><button type="button" data-games-platform="nintendo" aria-pressed="false"><img src="https://cdn.simpleicons.org/nintendo/FFFFFF" alt=""> NINTENDO</button></div>
+          <div class="games-platform-filter" id="games-platform-filter" role="group" aria-label="Filter upcoming releases by platform"><span class="games-platform-filter-label">FILTER BY PLATFORM</span><button type="button" data-games-platform="all" aria-pressed="true">ALL</button><button type="button" data-games-platform="pc" aria-pressed="false"><b class="games-platform-mark games-platform-mark-pc">PC</b> PC</button><button type="button" data-games-platform="steam" aria-pressed="false"><b class="games-platform-mark games-platform-mark-steam">STEAM</b> STEAM</button><button type="button" data-games-platform="playstation" aria-pressed="false"><b class="games-platform-mark games-platform-mark-ps">PS</b> PLAYSTATION</button><button type="button" data-games-platform="xbox" aria-pressed="false"><b class="games-platform-mark games-platform-mark-xbox">XBOX</b> XBOX</button><button type="button" data-games-platform="nintendo" aria-pressed="false"><b class="games-platform-mark games-platform-mark-n">N</b> NINTENDO</button></div>
           <div id="games-release-list" class="games-release-list" aria-live="polite">
             <div class="games-empty-state"><span class="games-empty-icon">🎮</span><h3>Release calendar foundation</h3><p>The Games Calendar is set up for PC and console releases. Verified release dates will be added as the release schedule is reviewed.</p></div>
           </div>
@@ -325,7 +337,7 @@
   <script src="./home-next-up.js?v=20261109-01"></script>
   <script src="./version-history.js?v=20261109-01"></script>
   <script src="./f1-grand-prix-centre.js?v=20261109-03"></script>
-  <script src="./games-calendar.js?v=20261110-03"></script>
-  <script src="./games-popularity.js?v=20261110-05"></script>
+  <script src="./games-calendar.js?v=20261110-04"></script>
+  <script src="./games-popularity.js?v=20261110-06"></script>
 </body>
 </html>
