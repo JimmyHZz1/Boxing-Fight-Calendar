@@ -68,15 +68,18 @@
     if(value.includes("xbox"))return ["xbox","XBOX"];
     if(value.includes("nintendo")||value.includes("switch"))return ["nintendo","NINTENDO"];
     if(value.includes("steam"))return ["steam","STEAM"];
-    if(value==="pc"||value.startsWith("pc "))return ["windows","PC"];
-    return ["game-controller","PC & CONSOLE"];
+    if(value==="pc"||value.startsWith("pc "))return ["pc","PC"];
+    return ["pc","PC"];
   };
   const platformMarks=platforms=>{
     const row=el("div","games-stage-platforms");
     (platforms||[]).forEach(name=>{
       const [slug,label]=platformAsset(name),item=el("span","games-stage-platform");
-      const img=document.createElement("img");img.src="https://cdn.simpleicons.org/"+slug+"/ffffff";img.alt="";img.loading="eager";img.onerror=()=>{img.replaceWith(el("b","games-stage-platform-fallback",label==="PLAYSTATION"?"PS":label==="NINTENDO"?"N":label==="XBOX"?"X":label==="STEAM"?"S":"PC"));};
-      item.append(img,el("small","",label));row.append(item);
+      const svg=document.createElementNS("http://www.w3.org/2000/svg","svg");
+      svg.setAttribute("viewBox","0 0 64 64");svg.setAttribute("aria-hidden","true");svg.setAttribute("focusable","false");
+      const use=document.createElementNS("http://www.w3.org/2000/svg","use");
+      use.setAttribute("href","./assets/platform-logos.svg#"+slug);svg.append(use);
+      item.append(svg,el("small","",label));row.append(item);
     });
     return row;
   };
@@ -127,7 +130,7 @@
   document.getElementById("games-featured-prev")?.addEventListener("click",()=>selectFeatured(activeIndex-1,true));
   document.getElementById("games-featured-next")?.addEventListener("click",()=>selectFeatured(activeIndex+1,true));
   Promise.all([
-    fetch("./data/games-discovery.json?v=20261110-03",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("Featured catalogue unavailable");return r.json();}),
+    fetch("./data/games-discovery.json?v=20261110-04",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("Featured catalogue unavailable");return r.json();}),
     fetch("./data/games-popularity.json?v=20261110-03",{cache:"no-store"}).then(r=>r.ok?r.json():{games:[]}).catch(()=>({games:[]}))
   ]).then(([data,pop])=>{
     (pop.games||[]).forEach(g=>{if(g.title)assetMap.set(norm(g.title),{artwork_url:g.artwork_url||null,logo_url:g.logo_url||null});});
