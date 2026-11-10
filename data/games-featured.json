@@ -52,7 +52,6 @@
       "short_name": "SONIC PICO PARK",
       "platforms": [
         "PC",
-        "Steam",
         "PlayStation 5",
         "Xbox Series X|S",
         "Nintendo Switch 2",
@@ -79,8 +78,8 @@
       "region": "GB",
       "release_status": "announced",
       "release_type": "full_release",
-      "source_url": "https://www.onepercentlows.com/upcoming",
-      "verification_status": "estimated"
+      "source_url": "https://store.steampowered.com/app/4171850/Trees_Hate_You/",
+      "verification_status": "verified"
     },
     {
       "id": "grand-theft-auto-vi",
@@ -334,8 +333,8 @@
       "region": "GB",
       "release_status": "announced",
       "release_type": "full_release",
-      "source_url": "https://www.videogameschronicle.com/guide/upcoming-game-release-dates-schedule/",
-      "verification_status": "estimated"
+      "source_url": "https://store.steampowered.com/app/2710920/Aeterna_Lucis/",
+      "verification_status": "verified"
     },
     {
       "id": "xenoblade-chronicles-3-switch-2",
@@ -425,7 +424,6 @@
       "short_name": "PROFESSOR LAYTON",
       "platforms": [
         "PC",
-        "Steam",
         "PlayStation 5",
         "Nintendo Switch",
         "Nintendo Switch 2"
@@ -454,8 +452,8 @@
       "region": "GB",
       "release_status": "announced",
       "release_type": "full_release",
-      "source_url": "https://www.videogameschronicle.com/guide/upcoming-game-release-dates-schedule/",
-      "verification_status": "estimated"
+      "source_url": "https://store.steampowered.com/app/4452700/STAGE_TOUR/",
+      "verification_status": "verified"
     },
     {
       "id": "silver-palace",
@@ -463,7 +461,6 @@
       "short_name": "SILVER PALACE",
       "platforms": [
         "PC",
-        "Steam",
         "PlayStation 5"
       ],
       "release_date": "2026-12-14",
