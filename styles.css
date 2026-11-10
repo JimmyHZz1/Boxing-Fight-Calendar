@@ -2473,3 +2473,15 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
 .games-featured-stage{touch-action:pan-y}
 .games-featured-video iframe{pointer-events:auto}
 @media(max-width:650px){.games-stage-platforms{gap:6px}.games-stage-platform{padding:4px 5px}.games-stage-platform img{width:16px;height:16px}}
+
+/* Games Calendar: bundled platform wordmarks and robust featured stage */
+.games-platform-tags img{width:auto!important;max-width:94px!important;height:22px!important;object-fit:contain!important}
+.games-platform-filter button img{width:auto!important;max-width:30px!important;height:18px!important;object-fit:contain!important}
+.games-platform-chip .games-platform-mark-image{width:auto!important;max-width:84px!important;height:17px!important;object-fit:contain!important}
+.games-stage-platform img{width:auto!important;max-width:92px!important;height:19px!important;object-fit:contain!important}
+.games-featured-stage{grid-template-columns:minmax(0,1.7fr) minmax(230px,.8fr)!important;min-height:0!important;align-items:stretch!important}
+.games-featured-video{width:100%;min-height:0!important;aspect-ratio:16/9!important}
+.games-featured-video iframe{display:block!important}
+.games-discovery-art img,.games-tbc-art img,.games-dialog-art img{display:block;object-fit:cover}
+.games-featured-stage:focus-visible{outline:2px solid #8fc1ff;outline-offset:4px}
+@media(max-width:650px){.games-featured-stage{grid-template-columns:minmax(0,1fr)!important;gap:12px!important}.games-featured-video{aspect-ratio:16/9!important;min-height:0!important}.games-featured-stage-copy{padding:7px 3px!important}.games-stage-platform img{max-width:78px!important;height:17px!important}}
