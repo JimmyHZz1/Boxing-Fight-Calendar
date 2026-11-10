@@ -2324,3 +2324,9 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
 .games-releasing-today{display:inline-flex;align-items:center;gap:5px;padding:4px 7px;border:1px solid rgba(91,197,139,.55);background:rgba(38,150,91,.16);color:#80e2aa!important;font:900 9px 'DM Sans',sans-serif!important;letter-spacing:.7px;white-space:nowrap}
 .games-releasing-today::before{content:"";width:6px;height:6px;border-radius:50%;background:#65d995;box-shadow:0 0 8px rgba(101,217,149,.8)}
 @media(max-width:620px){.games-timeline-date-heading .games-timeline-weekday,.games-timeline-date-heading .games-timeline-date{font-size:14px}.games-release-countdown{font-size:9px;padding:5px 6px}}
+
+/* Near-term release labels: this week takes priority over this month. */
+.games-coming-soon{display:inline-flex;align-items:center;width:max-content;max-width:100%;margin:5px 0 1px;padding:5px 8px;border:1px solid;font-size:9px;font-weight:900;letter-spacing:.65px;line-height:1.2}
+.games-coming-soon-month{border-color:rgba(239,68,68,.55);background:rgba(220,38,38,.16);color:#ff7777}
+.games-coming-soon-week{border-color:rgba(249,115,22,.6);background:rgba(234,88,12,.17);color:#ffad70}
+@media(max-width:620px){.games-coming-soon{font-size:8px;padding:5px 6px}}
