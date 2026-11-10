@@ -95,7 +95,7 @@
       }
     }
     const caption = document.querySelector(".games-up-next-label>span:last-child");
-    if (caption) caption.textContent = popularity.size ? "TOP 4 · CROSS-PLATFORM TRENDING" : "TOP 4 UPCOMING · POPULARITY DATA PENDING";
+    if (caption) { caption.textContent = popularity.size ? "TOP 4 · IGDB CROSS-PLATFORM TRENDING" : "TOP 4 UPCOMING · POPULARITY DATA PENDING"; caption.title = "Popularity source: IGDB PopScore. Steam-only signals are excluded; the score ranks games in this upcoming release list, not the entire games market."; }
     ticker.classList.add("is-auto-scrolling");
     isApplyingTicker = false;
     tickerObserver?.observe(ticker,{childList:true,subtree:true});
