@@ -71,7 +71,29 @@ async function main() {
     if (!item.platforms.includes(platform)) item.platforms.push(platform);
     if (row.release_date && (!item.release_date || row.release_date < item.release_date)) item.release_date = row.release_date;
   }
-  const games = [...candidates.values()];
+  const byTitle = new Map([...candidates.values()].map(game=>[normalise(game.title),game]));
+  const supplemental = await Bun.file("data/games-featured.json").json().catch(()=>({games:[]}));
+  for (const entry of (Array.isArray(supplemental.games)?supplemental.games:[])) {
+    if (!entry || !entry.title || !entry.release_date || entry.release_date < today) continue;
+    const platforms = Array.isArray(entry.platforms) ? entry.platforms.filter(platform=>PLATFORM_ALLOW.test(String(platform))) : [];
+    if (!platforms.length) continue;
+    const key = normalise(entry.title);
+    const existing = byTitle.get(key);
+    if (existing) {
+      existing.platforms = [...new Set([...(existing.platforms||[]),...platforms])];
+      if (!existing.igdb_game_id && entry.igdb_game_id) existing.igdb_game_id = Number(entry.igdb_game_id);
+      continue;
+    }
+    byTitle.set(key,{
+      slug:entry.id || key.replace(/\s+/g,"-"),
+      title:entry.title,
+      release_date:entry.release_date,
+      platforms,
+      verification_status:entry.verification_status || "estimated",
+      igdb_game_id:entry.igdb_game_id ? Number(entry.igdb_game_id) : null
+    });
+  }
+  const games = [...byTitle.values()];
   if (!games.length) {
     await Bun.write(OUTPUT, JSON.stringify({schema_version:1,provider:"IGDB PopScore",updated_at:new Date().toISOString(),status:"empty",methodology:"Cross-platform IGDB interest and Twitch signals; Steam-only signals excluded.",games:[]}, null, 2)+"\n");
     return;
@@ -86,22 +108,27 @@ async function main() {
   const types = await igdbPost("popularity_types", token, "fields id,name,popularity_source; limit 100;");
   const wantedTypes = types.filter(type => WEIGHTS.has(normalise(type.name)));
   const typeById = new Map(wantedTypes.map(type => [Number(type.id), normalise(type.name)]));
+  const imageUrl = value => value?.url ? (value.url.startsWith("//") ? "https:" + value.url : value.url).replace("/t_thumb/","/t_720p/") : null;
   for (const game of games) {
     if (!game.igdb_game_id) {
       const safeTitle = game.title.replace(/\\/g, "\\\\").replace(/"/g, '\\"');
       const matches = await igdbPost("games", token, `search "${safeTitle}"; fields id,name,cover.url,artworks.url; limit 10;`);
       const ranked = matches.map(match => ({match, score:normalise(match.name) === normalise(game.title) ? 1 : tokenSimilarity(match.name, game.title)}))
         .sort((a,b)=>b.score-a.score);
-      if (ranked[0] && ranked[0].score >= 0.65) {
-        const match = ranked[0].match;
-        game.igdb_game_id = Number(match.id);
-        const imageUrl = value => value?.url ? (value.url.startsWith("//") ? "https:" + value.url : value.url).replace("/t_thumb/","/t_720p/") : null;
-        // Game logos are separate IGDB entities; they are not a field on /games.
-        const logos = await igdbPost("logos", token, `fields url; where game = ${match.id}; limit 1;`);
-        game.igdb_logo_url = imageUrl(logos[0]);
-        game.igdb_artwork_url = imageUrl(match.artworks?.[0]) || imageUrl(match.cover);
-      }
+      if (ranked[0] && ranked[0].score >= 0.65) game.igdb_game_id = Number(ranked[0].match.id);
       await sleep(275);
+    }
+    if (game.igdb_game_id && (!game.igdb_artwork_url || !game.igdb_logo_url)) {
+      const matches = await igdbPost("games", token, `fields id,name,cover.url,artworks.url; where id = ${Number(game.igdb_game_id)}; limit 1;`);
+      const match = matches[0];
+      if (match) {
+        game.igdb_artwork_url = game.igdb_artwork_url || imageUrl(match.artworks?.[0]) || imageUrl(match.cover);
+        if (!game.igdb_logo_url) {
+          const logos = await igdbPost("logos", token, `fields url; where game = ${Number(game.igdb_game_id)}; limit 1;`);
+          game.igdb_logo_url = imageUrl(logos[0]);
+        }
+      }
+      await sleep(150);
     }
   }
   const ids = [...new Set(games.filter(game=>game.igdb_game_id !== null && game.igdb_game_id !== undefined).map(game=>Number(game.igdb_game_id)).filter(Number.isFinite))];
