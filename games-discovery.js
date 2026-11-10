@@ -12,13 +12,13 @@
   const el=(tag,cls,txt)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(txt!==undefined)n.textContent=txt;return n;};
   const safeUrl=u=>typeof u==="string"&&/^https:\/\//i.test(u);
   const norm=s=>String(s||"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
-  const imageCandidates=game=>[assetMap.get(norm(game.title))?.artwork_url,assetMap.get(norm(game.title))?.logo_url,game.artwork_url,game.logo_url,game.trailer_id?"https://img.youtube.com/vi/"+game.trailer_id+"/hqdefault.jpg":null].filter((u,i,a)=>safeUrl(u)&&a.indexOf(u)===i);
+  const imageCandidates=game=>[game.trailer_id?"https://img.youtube.com/vi/"+game.trailer_id+"/maxresdefault.jpg":null,game.trailer_id?"https://img.youtube.com/vi/"+game.trailer_id+"/hqdefault.jpg":null,assetMap.get(norm(game.title))?.artwork_url,assetMap.get(norm(game.title))?.logo_url,game.artwork_url,game.logo_url].filter((u,i,a)=>safeUrl(u)&&a.indexOf(u)===i);
   const addImage=(wrap,game,mode="cover")=>{
     wrap.replaceChildren();wrap.classList.add("has-artwork");
     const fallback=el("span","games-artwork-fallback",(game.title||"GAME").split(/\s+/).map(w=>w[0]).join("").slice(0,3).toUpperCase());
     wrap.append(fallback);
     const candidates=imageCandidates(game);if(!candidates.length)return;
-    const img=document.createElement("img");img.alt=game.title+" artwork";img.loading="lazy";img.referrerPolicy="no-referrer";if(mode==="cover")img.className="games-stage-art-image";
+    const img=document.createElement("img");img.alt=game.title+" artwork";img.loading="eager";img.decoding="async";img.referrerPolicy="no-referrer";if(mode==="cover")img.className="games-stage-art-image";
     let i=0;img.onerror=()=>{i++;if(i<candidates.length)img.src=candidates[i];else img.remove();};img.onload=()=>fallback.hidden=true;img.src=candidates[i];wrap.append(img);
   };
   const openDialog=()=>{dialog.hidden=false;document.body.classList.add("games-dialog-open");dialog.querySelector(".games-discovery-close")?.focus();};
@@ -38,6 +38,7 @@
     return box;
   };
   const renderStage=game=>{
+    stage.setAttribute("tabindex","0");stage.setAttribute("role","group");stage.setAttribute("aria-label","Featured game: "+game.title+". Swipe left or right to change game.");
     stage.replaceChildren();
     const media=makeTrailer(game,"games-featured-video");
     const copy=el("div","games-featured-stage-copy");
@@ -75,7 +76,7 @@
     const row=el("div","games-stage-platforms");
     (platforms||[]).forEach(name=>{
       const [slug,label]=platformAsset(name),item=el("span","games-stage-platform");
-      const img=document.createElement("img");img.src="https://cdn.simpleicons.org/"+slug+"/ffffff";img.alt="";img.loading="eager";img.onerror=()=>{img.replaceWith(el("b","games-stage-platform-fallback",label==="PLAYSTATION"?"PS":label==="NINTENDO"?"N":label==="XBOX"?"X":label==="STEAM"?"S":"PC"));};
+      const img=document.createElement("img");img.src="./assets/platform-"+slug+".svg";img.alt="";img.loading="eager";img.decoding="async";img.onerror=()=>{img.replaceWith(el("b","games-stage-platform-fallback",label==="PLAYSTATION"?"PS":label==="NINTENDO"?"N":label==="XBOX"?"X":label==="STEAM"?"S":"PC"));};
       item.append(img,el("small","",label));row.append(item);
     });
     return row;
