@@ -62,28 +62,70 @@
     const head=el("section","games-dialog-section");head.append(el("small","games-discovery-badge","DEVELOPER / PUBLISHER"),el("h2","games-dialog-title",c.name),el("p","games-dialog-meta","Explore games associated with this company, including past releases and announced projects."));const link=el("a","","OFFICIAL COMPANY WEBSITE ↗");link.href=c.website;link.target="_blank";link.rel="noopener noreferrer";link.style.color="#9bcaff";head.append(link);dialogContent.append(head);
     const section=el("section","games-dialog-section");section.append(el("h3","","Games & releases"));const list=el("div","games-company-games");(c.games||[]).forEach(title=>{const game=catalogue.featured.find(g=>g.title===title);if(game){const b=el("button","games-company-game",title);b.type="button";b.addEventListener("click",()=>showGame(game));list.append(b);}else list.append(el("span","games-company-game",title));});section.append(list);dialogContent.append(section);const back=el("button","games-company-game","← BACK TO FEATURED GAMES");back.type="button";back.addEventListener("click",closeDialog);dialogContent.append(back);openDialog();
   };
+  const platformAsset=platform=>{
+    const value=String(platform||"").toLowerCase();
+    if(value.includes("playstation")||value.includes("ps5")||value.includes("ps4"))return ["playstation","PLAYSTATION"];
+    if(value.includes("xbox"))return ["xbox","XBOX"];
+    if(value.includes("nintendo")||value.includes("switch"))return ["nintendo","NINTENDO"];
+    if(value.includes("steam"))return ["steam","STEAM"];
+    if(value==="pc"||value.startsWith("pc "))return ["windows","PC"];
+    return ["game-controller","PC & CONSOLE"];
+  };
+  const platformMarks=platforms=>{
+    const row=el("div","games-stage-platforms");
+    (platforms||[]).forEach(name=>{
+      const [slug,label]=platformAsset(name),item=el("span","games-stage-platform");
+      const img=document.createElement("img");img.src="https://cdn.simpleicons.org/"+slug+"/ffffff";img.alt="";img.loading="eager";img.onerror=()=>{img.replaceWith(el("b","games-stage-platform-fallback",label==="PLAYSTATION"?"PS":label==="NINTENDO"?"N":label==="XBOX"?"X":label==="STEAM"?"S":"PC"));};
+      item.append(img,el("small","",label));row.append(item);
+    });
+    return row;
+  };
+  const updatePosition=()=>{
+    if(counter)counter.textContent=String(activeIndex+1).padStart(2,"0")+" / "+String(Math.min(5,catalogue.featured.length)).padStart(2,"0");
+    [...dots.children].forEach((dot,i)=>dot.setAttribute("aria-current",String(i===activeIndex)));
+    [...track.children].forEach((card,i)=>card.setAttribute("aria-pressed",String(i===activeIndex)));
+  };
+  const selectFeatured=(index,scroll=true)=>{
+    const games=catalogue.featured.slice(0,5);if(!games.length)return;
+    activeIndex=(index+games.length)%games.length;
+    if(scroll){const card=track.children[activeIndex];if(card)track.scrollTo({left:card.offsetLeft-track.offsetLeft,behavior:"smooth"});}
+    renderStage(games[activeIndex]);updatePosition();
+  };
   const renderFeatured=()=>{
     track.replaceChildren();dots.replaceChildren();
     catalogue.featured.slice(0,5).forEach((game,index)=>{
-      const card=el("button","games-discovery-slide");card.type="button";card.setAttribute("aria-label","Show "+game.title);
+      const card=el("button","games-discovery-slide");card.type="button";card.setAttribute("aria-label","Show "+game.title);card.setAttribute("aria-pressed",String(index===activeIndex));
       const art=el("span","games-discovery-art");addImage(art,game,"thumb");
       const copy=el("span","games-discovery-copy");copy.append(el("small","",game.studio+" · "+game.publisher),el("strong","",game.title),el("span","",game.date_label||"Release date TBC"),el("span","games-discovery-badge",game.date_status||"COMING SOON · DATE TBC"));card.append(art,copy);
-      card.addEventListener("click",()=>{activeIndex=index;renderStage(game);updatePosition();});track.append(card);
-      const dot=el("button");dot.type="button";dot.setAttribute("aria-label","Show featured game "+(index+1));dot.addEventListener("click",()=>{activeIndex=index;renderStage(game);track.scrollTo({left:card.offsetLeft-track.offsetLeft,behavior:"smooth"});updatePosition();});dots.append(dot);
+      card.addEventListener("click",()=>selectFeatured(index,false));track.append(card);
+      const dot=el("button");dot.type="button";dot.setAttribute("aria-label","Show featured game "+(index+1));dot.addEventListener("click",()=>selectFeatured(index,true));dots.append(dot);
     });
-    const update=()=>{const cards=[...track.children];if(!cards.length)return;let best=0,delta=Infinity;cards.forEach((c,i)=>{const d=Math.abs(c.offsetLeft-track.offsetLeft-track.scrollLeft);if(d<delta){delta=d;best=i;}});activeIndex=best;renderStage(catalogue.featured[best]);updatePosition();};
-    const updatePosition=()=>{if(counter)counter.textContent=String(activeIndex+1).padStart(2,"0")+" / "+String(Math.min(5,catalogue.featured.length)).padStart(2,"0");[...dots.children].forEach((d,i)=>d.setAttribute("aria-current",String(i===activeIndex)));};
-    track.addEventListener("scroll",()=>{if(track._scrollTimer)clearTimeout(track._scrollTimer);track._scrollTimer=setTimeout(update,90);},{passive:true});
-    renderStage(catalogue.featured[0]);updatePosition();
+    let scrollTimer=0;
+    track.addEventListener("scroll",()=>{
+      clearTimeout(scrollTimer);
+      scrollTimer=setTimeout(()=>{
+        const cards=[...track.children];if(!cards.length)return;
+        const center=track.getBoundingClientRect().left+track.clientWidth/2;
+        let best=0,delta=Infinity;
+        cards.forEach((card,i)=>{const rect=card.getBoundingClientRect(),distance=Math.abs(rect.left+rect.width/2-center);if(distance<delta){delta=distance;best=i;}});
+        if(best!==activeIndex){activeIndex=best;renderStage(catalogue.featured[best]);}
+        updatePosition();
+      },110);
+    },{passive:true});
+    selectFeatured(0,false);
   };
+  let stageTouchX=0;
+  stage.addEventListener("touchstart",event=>{stageTouchX=event.changedTouches[0]?.clientX||0;},{passive:true});
+  stage.addEventListener("touchend",event=>{const endX=event.changedTouches[0]?.clientX||0,delta=endX-stageTouchX;if(Math.abs(delta)>55)selectFeatured(activeIndex+(delta<0?1:-1),true);},{passive:true});
+  stage.addEventListener("keydown",event=>{if(event.key==="ArrowRight")selectFeatured(activeIndex+1,true);if(event.key==="ArrowLeft")selectFeatured(activeIndex-1,true);});
   const renderTbc=()=>{
     const games=catalogue.featured.filter(g=>!g.release_date);tbcList.replaceChildren();
     const count=document.getElementById("games-tbc-count");if(count)count.textContent=games.length+" GAMES";
     if(!games.length){tbcList.append(el("p","games-discovery-loading","No qualifying announced games currently meet the official trailer requirement."));return;}
     games.forEach(game=>{const card=el("button","games-tbc-card");card.type="button";const art=el("span","games-tbc-art");addImage(art,game,"thumb");const copy=el("span","games-tbc-card-copy");copy.append(el("small","games-tbc-label","TBC · NO CONFIRMED DATE"),el("strong","",game.title),el("small","",game.studio+" · "+game.publisher),el("small","",game.trailer_label||"Official teaser available"));card.append(art,copy);card.addEventListener("click",()=>showGame(game));tbcList.append(card);});
   };
-  document.getElementById("games-featured-prev")?.addEventListener("click",()=>{activeIndex=Math.max(0,activeIndex-1);const card=track.children[activeIndex];card?.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"});renderStage(catalogue.featured[activeIndex]);});
-  document.getElementById("games-featured-next")?.addEventListener("click",()=>{activeIndex=Math.min(track.children.length-1,activeIndex+1);const card=track.children[activeIndex];card?.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"});renderStage(catalogue.featured[activeIndex]);});
+  document.getElementById("games-featured-prev")?.addEventListener("click",()=>selectFeatured(activeIndex-1,true));
+  document.getElementById("games-featured-next")?.addEventListener("click",()=>selectFeatured(activeIndex+1,true));
   Promise.all([
     fetch("./data/games-discovery.json?v=20261110-02",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("Featured catalogue unavailable");return r.json();}),
     fetch("./data/games-popularity.json?v=20261110-02",{cache:"no-store"}).then(r=>r.ok?r.json():{games:[]}).catch(()=>({games:[]}))
