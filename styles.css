@@ -2272,3 +2272,6 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
   .games-release-details h3{font-size:15px}
   .games-release-source{grid-column:3;justify-self:start}
 }
+
+.games-release-artwork-image[data-image-type="logo"]{object-fit:contain;padding:6px}
+.games-release-artwork-image[data-image-type="artwork"]{object-fit:cover}
