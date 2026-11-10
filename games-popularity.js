@@ -6,6 +6,7 @@
 
   const normalise = value => String(value || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
   let popularity = new Map();
+  let imageAssets = new Map();
   let popularityReady = false;
   let isApplyingTicker = false;
   let applyQueued = false;
@@ -24,7 +25,7 @@
       .games-release-copy .games-release-details p{line-height:1.45}
       .games-release-copy .games-release-source{align-self:flex-start!important}
       .games-up-next-label .games-popularity-caption{color:#8fc1ff;font-size:8px;font-weight:900;letter-spacing:.8px;text-align:right}
-      .games-up-next-ticker .games-trending-rank{display:inline-block;margin-left:5px;padding:2px 4px;border:1px solid rgba(38,133,232,.35);color:#9bcaff;font-size:7px;letter-spacing:.5px;vertical-align:middle}
+      .games-up-next-ticker .games-up-next-logo-image{display:block;width:100%;height:100%;object-fit:contain;padding:4px}.games-up-next-ticker .games-trending-rank{display:inline-block;margin-left:5px;padding:2px 4px;border:1px solid rgba(38,133,232,.35);color:#9bcaff;font-size:7px;letter-spacing:.5px;vertical-align:middle}
       @media(max-width:620px){.games-release-card{grid-template-columns:54px minmax(0,1fr)!important;gap:0 10px!important;padding:11px!important}.games-release-artwork{width:54px!important;min-height:76px!important}.games-release-copy .games-release-details h3{font-size:16px!important}.games-release-copy .games-release-date{font-size:11px!important}}
     `;
     document.head.append(style);
@@ -42,6 +43,39 @@
         if (child !== artwork) copy.append(child);
       });
       card.replaceChildren(artwork, copy);
+    });
+  };
+
+  const applyArtworkFallbacks = () => {
+    const addImage = (container, title, asset, isTicker) => {
+      if (!container || container.querySelector("img")) return;
+      const url = isTicker ? (asset.logo_url || asset.artwork_url) : (asset.artwork_url || asset.logo_url);
+      if (!url || !url.startsWith("https://")) return;
+      const fallbackText = container.textContent;
+      const image = document.createElement("img");
+      image.src = url;
+      image.alt = title + (isTicker ? " logo" : " artwork");
+      image.loading = "lazy";
+      if (isTicker) image.className = "games-up-next-logo-image";
+      else {
+        image.className = "games-release-artwork-image";
+        image.dataset.imageType = asset.artwork_url ? "artwork" : "logo";
+      }
+      image.onerror = () => {
+        image.remove();
+        if (!container.querySelector("img")) container.textContent = fallbackText;
+      };
+      container.replaceChildren(image);
+    };
+    releaseList?.querySelectorAll(".games-release-card").forEach(card => {
+      const title = card.querySelector(".games-release-details h3")?.textContent || "";
+      const asset = imageAssets.get(normalise(title));
+      if (asset) addImage(card.querySelector(".games-release-artwork"),title,asset,false);
+    });
+    ticker?.querySelectorAll(".games-up-next-item").forEach(item => {
+      const title = item.querySelector(".next-event-name")?.textContent || "";
+      const asset = imageAssets.get(normalise(title));
+      if (asset) addImage(item.querySelector(".games-up-next-logo"),title,asset,true);
     });
   };
 
@@ -117,6 +151,7 @@
       applyQueued = false;
       injectLayoutStyles();
       enhanceReleaseCards();
+      applyArtworkFallbacks();
       applyTicker();
     });
   };
@@ -137,7 +172,9 @@
     .then(response => {if(!response.ok)throw new Error("Popularity snapshot unavailable");return response.json();})
     .then(data => {
       (Array.isArray(data.games)?data.games:[]).forEach(game => {
-        if (!game.title || game.popularity_score === null || game.popularity_score === undefined || !Number.isFinite(Number(game.popularity_score))) return;
+        if (!game.title) return;
+        if (game.artwork_url || game.logo_url) imageAssets.set(normalise(game.title),{artwork_url:game.artwork_url||null,logo_url:game.logo_url||null});
+        if (game.popularity_score === null || game.popularity_score === undefined || !Number.isFinite(Number(game.popularity_score))) return;
         popularity.set(normalise(game.title),{
           score:Number(game.popularity_score),
           rank:Number(game.popularity_rank)||null,
