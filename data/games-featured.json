@@ -62,8 +62,8 @@
       "region": "GB",
       "release_status": "announced",
       "release_type": "full_release",
-      "artwork_url": null,
-      "logo_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Grand%20Theft%20Auto%20VI%20logo.svg",
+      "artwork_url": "https://www.rockstargames.com/VI/_next/static/media/vi.0hxa9~pf214xe.png?akim=1&imdensity=1&imwidth=3840",
+      "logo_url": null,
       "source_url": "https://www.rockstargames.com/VI",
       "verification_status": "verified"
     },
@@ -343,7 +343,7 @@
       "release_status": "announced",
       "release_type": "remaster",
       "artwork_url": null,
-      "logo_url": null,
+      "logo_url": "https://www.square-enix.com/saga/assets/images/games/romancing-saga-3-destinies-united/title-logo.webp",
       "source_url": "https://press.uk.square-enix.com/Items/Schedule?period=ComingSoon",
       "verification_status": "verified"
     },
