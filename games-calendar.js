@@ -198,7 +198,48 @@
       releaseList.append(empty);
       return;
     }
+    const timelineNav = document.createElement("nav");
+    timelineNav.className = "games-timeline-month-nav";
+    timelineNav.setAttribute("aria-label","Jump to release month");
+    const months = [...new Set(filtered.map(game => game.release_date.slice(0,7)))];
+    months.forEach(month => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = new Intl.DateTimeFormat("en-GB",{month:"short",year:"numeric",timeZone:"Europe/London"}).format(new Date(month+"-15T12:00:00"));
+      button.addEventListener("click",()=>document.getElementById("games-month-"+month)?.scrollIntoView({behavior:"smooth",block:"start"}));
+      timelineNav.append(button);
+    });
+    releaseList.append(timelineNav);
+    let activeMonth = "";
+    let activeDay = "";
+    let dayGroup = null;
     filtered.forEach(game => {
+      const month = game.release_date.slice(0,7);
+      const day = game.release_date;
+      if (month !== activeMonth) {
+        activeMonth = month;
+        const monthHeading = document.createElement("h3");
+        monthHeading.className = "games-timeline-month-heading";
+        monthHeading.id = "games-month-"+month;
+        monthHeading.textContent = new Intl.DateTimeFormat("en-GB",{month:"long",year:"numeric",timeZone:"Europe/London"}).format(new Date(day+"T12:00:00"));
+        releaseList.append(monthHeading);
+        activeDay = "";
+      }
+      if (day !== activeDay) {
+        activeDay = day;
+        dayGroup = document.createElement("section");
+        dayGroup.className = "games-timeline-day";
+        const heading = document.createElement("div");
+        heading.className = "games-timeline-date-heading";
+        const dateValue = new Date(day+"T12:00:00");
+        const weekday = document.createElement("strong");
+        weekday.textContent = new Intl.DateTimeFormat("en-GB",{weekday:"long",timeZone:"Europe/London"}).format(dateValue);
+        const dateText = document.createElement("span");
+        dateText.textContent = new Intl.DateTimeFormat("en-GB",{day:"numeric",month:"long",year:"numeric",timeZone:"Europe/London"}).format(dateValue);
+        heading.append(weekday,dateText);
+        dayGroup.append(heading);
+        releaseList.append(dayGroup);
+      }
       const card = document.createElement("article");
       card.className = "games-release-card";
       const artwork = document.createElement("div");
@@ -245,7 +286,7 @@
         link.setAttribute("aria-label", "Release details for " + (game.title || "upcoming game"));
         card.append(link);
       }
-      releaseList.append(card);
+      dayGroup.append(card);
     });
   };
   const updateReleaseCountdowns = () => {
