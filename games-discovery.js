@@ -29,9 +29,9 @@
   const makeTrailer=(game,cls)=>{
     const box=el("div",cls);
     if(game.trailer_id){
-      const frame=document.createElement("iframe");frame.src="https://www.youtube-nocookie.com/embed/"+encodeURIComponent(game.trailer_id)+"?autoplay=1&mute=1&playsinline=1&rel=0";frame.title=game.title+" — "+(game.trailer_label||"official trailer");frame.loading="lazy";frame.referrerPolicy="strict-origin-when-cross-origin";frame.allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";frame.allowFullscreen=true;box.append(frame);
+      const frame=document.createElement("iframe");frame.src="https://www.youtube-nocookie.com/embed/"+encodeURIComponent(game.trailer_id)+"?autoplay=1&mute=1&playsinline=1&rel=0";frame.title=game.title+" — "+(game.trailer_label||"official trailer");frame.loading="eager";frame.referrerPolicy="strict-origin-when-cross-origin";frame.allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";frame.allowFullscreen=true;box.append(frame);
     }else{
-      const poster=el("div","games-stage-poster");addImage(poster,game);
+      const poster=el("div","games-stage-poster");poster.append(el("strong","games-no-video","OFFICIAL VIDEO NOT AVAILABLE"));
       if(safeUrl(game.trailer_url)){const a=el("a","games-stage-watch","WATCH OFFICIAL TEASER ↗");a.href=game.trailer_url;a.target="_blank";a.rel="noopener noreferrer";poster.append(a);}
       box.append(poster);
     }
@@ -50,13 +50,17 @@
   };
   const showGame=game=>{
     dialogContent.replaceChildren();
-    const hero=el("div","games-dialog-hero"),art=el("div","games-dialog-art");addImage(art,game);
-    const copy=el("div");copy.append(el("small","games-discovery-badge",game.date_status||"COMING SOON · DATE TBC"),el("h2","games-dialog-title",game.title),el("div","games-dialog-meta",(game.studio||"Developer TBC")+" · "+(game.publisher||"Publisher TBC")+"\n"+(game.platforms||[]).join(" · ")+"\n"+(game.date_label||"Release date TBC")));
-    const actions=el("div","games-dialog-actions");if(safeUrl(game.official_url)){const a=el("a","","OFFICIAL GAME PAGE ↗");a.href=game.official_url;a.target="_blank";a.rel="noopener noreferrer";actions.append(a);}if(game.trailer_id||safeUrl(game.trailer_url)){const a=el("a","","WATCH OFFICIAL TRAILER ↗");a.href=game.trailer_id?"https://www.youtube.com/watch?v="+game.trailer_id:game.trailer_url;a.target="_blank";a.rel="noopener noreferrer";actions.append(a);}copy.append(actions);hero.append(art,copy);dialogContent.append(hero);
+    const copy=el("section","games-dialog-section");
+    copy.append(el("small","games-discovery-badge",game.date_status||"COMING SOON · DATE TBC"),el("h2","games-dialog-title",game.title),el("p","games-dialog-meta",(game.studio||"Developer TBC")+" · "+(game.publisher||"Publisher TBC")),el("p","games-dialog-meta",game.date_label||"Release date TBC"));
+    const actions=el("div","games-dialog-actions");
+    if(safeUrl(game.official_url)){const link=el("a","","OFFICIAL GAME PAGE ↗");link.href=game.official_url;link.target="_blank";link.rel="noopener noreferrer";actions.append(link);}
+    if(game.trailer_id||safeUrl(game.trailer_url)){const link=el("a","","WATCH OFFICIAL TRAILER ↗");link.href=game.trailer_id?"https://www.youtube.com/watch?v="+game.trailer_id:game.trailer_url;link.target="_blank";link.rel="noopener noreferrer";actions.append(link);}
+    copy.append(actions);dialogContent.append(copy);
     if(game.trailer_id)dialogContent.append(makeTrailer(game,"games-dialog-trailer"));
-    const info=el("section","games-dialog-section");info.append(el("h3","","About this game"),el("p","",game.synopsis||"Officially announced game. Release date has not been confirmed."));dialogContent.append(info);
-    const companies=el("section","games-dialog-section");companies.append(el("h3","","Developer & publisher"));const buttons=el("div","games-company-games");(game.company_ids||[]).forEach(id=>{const c=catalogue.companies.find(x=>x.id===id);if(c)buttons.append(companyButton(id,c.name));});companies.append(buttons);dialogContent.append(companies);
-    const source=el("section","games-dialog-section");source.append(el("h3","","Announcement & status"),el("p","","Release status and trailer information are taken from official announcements. Dates remain TBC until the publisher confirms them."));if(safeUrl(game.source_url)){const a=el("a","","VIEW SOURCE ↗");a.href=game.source_url;a.target="_blank";a.rel="noopener noreferrer";a.style.color="#9bcaff";source.append(a);}dialogContent.append(source);openDialog();
+    const about=el("section","games-dialog-section");about.append(el("h3","","About this game"),el("p","",game.synopsis||"Officially announced game. Release date has not been confirmed."));dialogContent.append(about);
+    const platforms=el("section","games-dialog-section");platforms.append(el("h3","","Platforms"),platformMarks(game.platforms));dialogContent.append(platforms);
+    const companies=el("section","games-dialog-section");companies.append(el("h3","","Developer & publisher"));const buttons=el("div","games-company-games");(game.company_ids||[]).forEach(id=>{const company=catalogue.companies.find(x=>x.id===id);if(company)buttons.append(companyButton(id,company.name));});companies.append(buttons);dialogContent.append(companies);
+    const status=el("section","games-dialog-section");status.append(el("h3","","Announcement & release status"),el("p","","Release date: "+(game.date_label||"TBC")+". Status: "+(game.date_status||"COMING SOON · DATE TBC")+". Dates are only shown as confirmed when supported by an official announcement."));if(safeUrl(game.source_url)){const link=el("a","","VIEW OFFICIAL ANNOUNCEMENT ↗");link.href=game.source_url;link.target="_blank";link.rel="noopener noreferrer";link.style.color="#9bcaff";status.append(link);}dialogContent.append(status);openDialog();
   };
   const showCompany=id=>{
     const c=catalogue.companies.find(x=>x.id===id);if(!c)return;dialogContent.replaceChildren();
@@ -67,10 +71,10 @@
     const value=String(platform||"").toLowerCase();
     if(value.includes("playstation")||value.includes("ps5")||value.includes("ps4"))return ["playstation","PLAYSTATION"];
     if(value.includes("xbox"))return ["xbox","XBOX"];
-    if(value.includes("nintendo")||value.includes("switch"))return ["nintendo","NINTENDO"];
+    if(value.includes("nintendo")||value.includes("switch"))return ["nintendo","NINTENDO SWITCH"];
     if(value.includes("steam"))return ["steam","STEAM"];
     if(value==="pc"||value.startsWith("pc "))return ["windows","PC"];
-    return ["game-controller","PC & CONSOLE"];
+    return ["windows","PC"];
   };
   const platformMarks=platforms=>{
     const row=el("div","games-stage-platforms");
@@ -96,8 +100,7 @@
     track.replaceChildren();dots.replaceChildren();
     catalogue.featured.slice(0,5).forEach((game,index)=>{
       const card=el("button","games-discovery-slide");card.type="button";card.setAttribute("aria-label","Show "+game.title);card.setAttribute("aria-pressed",String(index===activeIndex));
-      const art=el("span","games-discovery-art");addImage(art,game,"thumb");
-      const copy=el("span","games-discovery-copy");copy.append(el("small","",game.studio+" · "+game.publisher),el("strong","",game.title),el("span","",game.date_label||"Release date TBC"),el("span","games-discovery-badge",game.date_status||"COMING SOON · DATE TBC"));card.append(art,copy);
+      const copy=el("span","games-discovery-copy");copy.append(el("small","",game.studio+" · "+game.publisher),el("strong","",game.title),el("span","",game.date_label||"Release date TBC"),el("span","games-discovery-badge",game.date_status||"COMING SOON · DATE TBC"));card.append(copy);
       card.addEventListener("click",()=>selectFeatured(index,false));track.append(card);
       const dot=el("button");dot.type="button";dot.setAttribute("aria-label","Show featured game "+(index+1));dot.addEventListener("click",()=>selectFeatured(index,true));dots.append(dot);
     });
