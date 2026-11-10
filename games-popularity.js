@@ -8,6 +8,7 @@
   let popularity = new Map();
   let isApplyingTicker = false;
   let applyQueued = false;
+  let tickerObserver = null;
 
   const injectLayoutStyles = () => {
     if (document.getElementById("games-popularity-layout-styles")) return;
@@ -49,6 +50,7 @@
     const group = track?.querySelector(".next-event-group:not([data-ticker-clone])");
     if (!track || !group || !group.children.length) return;
     isApplyingTicker = true;
+    tickerObserver?.disconnect();
     track.querySelectorAll("[data-ticker-clone]").forEach(clone => clone.remove());
     const items = [...group.children];
     items.sort((a,b) => {
@@ -76,13 +78,7 @@
           label.textContent.includes("ESTIMATED") ? "GAMES · ESTIMATED" : "GAMES";
         label.textContent = score ? original + " · TRENDING #" + (score.rank || index+1) : original + " · POPULARITY PENDING";
       }
-      if (score && name) {
-        name.title = "Cross-platform popularity score " + score.score + "/100 · " + (score.signals || []).join(", ");
-        const badge = document.createElement("span");
-        badge.className = "games-trending-rank";
-        badge.textContent = "TRENDING";
-        name.append(badge);
-      }
+      if (score && name) name.title = "Cross-platform popularity score " + score.score + "/100 · " + (score.signals || []).join(", ");
     });
     if (topFour.length) {
       const clone = group.cloneNode(true);
@@ -102,6 +98,7 @@
     if (caption) caption.textContent = popularity.size ? "TOP 4 · CROSS-PLATFORM TRENDING" : "TOP 4 UPCOMING · POPULARITY DATA PENDING";
     ticker.classList.add("is-auto-scrolling");
     isApplyingTicker = false;
+    tickerObserver?.observe(ticker,{childList:true,subtree:true});
   };
 
   const queueApply = () => {
@@ -118,8 +115,8 @@
   injectLayoutStyles();
   enhanceReleaseCards();
   if (ticker) {
-    const observer = new MutationObserver(queueApply);
-    observer.observe(ticker,{childList:true,subtree:true});
+    tickerObserver = new MutationObserver(queueApply);
+    tickerObserver.observe(ticker,{childList:true,subtree:true});
     ticker.addEventListener("load",queueApply,true);
   }
   if (releaseList) {
@@ -131,7 +128,7 @@
     .then(response => {if(!response.ok)throw new Error("Popularity snapshot unavailable");return response.json();})
     .then(data => {
       (Array.isArray(data.games)?data.games:[]).forEach(game => {
-        if (!game.title || !Number.isFinite(Number(game.popularity_score))) return;
+        if (!game.title || game.popularity_score === null || game.popularity_score === undefined || !Number.isFinite(Number(game.popularity_score))) return;
         popularity.set(normalise(game.title),{
           score:Number(game.popularity_score),
           rank:Number(game.popularity_rank)||null,
