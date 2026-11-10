@@ -900,7 +900,7 @@
       "image_local_path": "assets/images/ufc/brian-ortega.png"
     }
   },
-  "updated_at": "2026-11-10T12:42:44Z",
+  "updated_at": "2026-11-10T13:10:28Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1031,7 +1031,12 @@
     "vitor petrino": "2026-11-10T04:42:54Z",
     "serghei spivac": "2026-11-10T04:42:54Z",
     "ante delija": "2026-11-10T04:42:54Z",
-    "valter walker": "2026-11-10T04:42:54Z"
+    "valter walker": "2026-11-10T04:42:54Z",
+    "tyrell fortune": "2026-11-10T13:10:28Z",
+    "derrick lewis": "2026-11-10T13:10:28Z",
+    "aleksandar rakic": "2026-11-10T13:10:28Z",
+    "carlos ulberg": "2026-11-10T13:10:28Z",
+    "magomed ankalaev": "2026-11-10T13:10:28Z"
   },
   "audit": {
     "last_reviewed_at": "2026-11-09T12:15:00Z",
@@ -1068,14 +1073,14 @@
     }
   },
   "enrichment": {
-    "batch_number": 9,
+    "batch_number": 10,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 132,
+    "cumulative_attempted": 137,
     "cumulative_found": 66,
-    "cumulative_missing": 66,
+    "cumulative_missing": 71,
     "cumulative_rejected": 139,
-    "last_batch_at": "2026-11-10T04:42:54Z",
-    "last_successful_batch_at": "2026-11-10T04:42:54Z",
+    "last_batch_at": "2026-11-10T13:10:28Z",
+    "last_successful_batch_at": "2026-11-10T13:10:28Z",
     "last_rate_limited_at": "2026-11-09T13:33:36Z",
     "history": [
       {
@@ -1145,6 +1150,14 @@
       {
         "batch": 9,
         "at": "2026-11-10T04:42:54Z",
+        "attempted": 5,
+        "found": 0,
+        "missing": 5,
+        "rate_limited": false
+      },
+      {
+        "batch": 10,
+        "at": "2026-11-10T13:10:28Z",
         "attempted": 5,
         "found": 0,
         "missing": 5,
