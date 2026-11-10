@@ -18,7 +18,6 @@ jobs:
         uses: oven-sh/setup-bun@v2
       - name: Refresh cross-platform popularity data
         env:
-          SUPABASE_PUBLISHABLE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
           IGDB_CLIENT_ID: ${{ secrets.IGDB_CLIENT_ID }}
           IGDB_CLIENT_SECRET: ${{ secrets.IGDB_CLIENT_SECRET }}
         run: bun run scripts/update-games-popularity.mjs
