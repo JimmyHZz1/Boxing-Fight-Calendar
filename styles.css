@@ -2426,3 +2426,35 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
 .games-company-games{display:flex;flex-wrap:wrap;gap:7px}
 @media(max-width:650px){.games-discovery-featured{padding:13px}.games-discovery-controls{grid-template-columns:28px minmax(0,1fr) 28px;gap:5px}.games-discovery-controls>button{height:34px}.games-discovery-slide{grid-template-columns:112px minmax(0,1fr);gap:10px;min-height:154px;padding:8px}.games-discovery-art{min-height:136px}.games-discovery-copy strong{font-size:19px}.games-tbc-panel{padding:14px}.games-tbc-list{grid-template-columns:1fr}.games-tbc-card{grid-template-columns:76px minmax(0,1fr)}.games-tbc-art{width:76px;height:78px}.games-dialog-hero{grid-template-columns:105px minmax(0,1fr);gap:11px}.games-dialog-art{height:115px}.games-discovery-dialog-panel{padding:14px}}
 @media(prefers-reduced-motion:reduce){.games-discovery-track{scroll-behavior:auto}}
+
+/* Games featured video-led hero and resilient artwork fallbacks */
+.games-discovery-featured{display:block!important;padding:20px!important;margin:18px 0!important;min-height:0;background:linear-gradient(125deg,rgba(38,133,232,.16),transparent 58%),var(--panel)!important}
+.games-featured-stage{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(220px,.9fr);gap:18px;align-items:stretch;margin:14px 0 18px}
+.games-featured-video{position:relative;aspect-ratio:16/9;min-height:220px;background:#05080d;overflow:hidden;border:1px solid rgba(143,193,255,.25)}
+.games-featured-video iframe,.games-dialog-trailer iframe{width:100%;height:100%;position:absolute;inset:0;border:0}
+.games-featured-stage-copy{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:10px;min-width:0;padding:12px 4px}
+.games-featured-stage-copy h3{font:900 clamp(25px,4vw,38px)/.98 'Barlow Condensed',sans-serif;text-transform:uppercase;margin:0}
+.games-featured-stage-copy p{font-size:12px;line-height:1.6;color:#c1cbd8;margin:0}
+.games-stage-meta{white-space:pre-line;font-size:10px;line-height:1.7;color:#9fb0c4}
+.games-stage-details{padding:8px 10px;border:1px solid rgba(143,193,255,.3);background:#19283a;color:#a9d0ff;font:800 9px 'DM Sans',sans-serif;letter-spacing:.5px}
+.games-stage-poster{position:relative;width:100%;height:100%;min-height:220px;display:grid;place-items:center;background:#0b121d;overflow:hidden}
+.games-stage-art-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.games-stage-watch{position:absolute;bottom:14px;left:14px;padding:9px 12px;background:rgba(4,10,18,.9);color:#fff;text-decoration:none;font-weight:900;font-size:10px}
+.games-artwork-fallback{display:grid;place-items:center;width:100%;height:100%;min-height:70px;color:#a9d0ff;font:900 25px 'Barlow Condensed',sans-serif;letter-spacing:1px;background:linear-gradient(145deg,#203750,#0b121d)}
+.games-discovery-art,.games-tbc-art,.games-dialog-art{position:relative;overflow:hidden}
+.games-discovery-art img,.games-tbc-art img,.games-dialog-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.games-discovery-art .games-artwork-fallback,.games-tbc-art .games-artwork-fallback,.games-dialog-art .games-artwork-fallback{position:absolute;inset:0}
+.games-discovery-track{gap:10px}
+.games-discovery-slide{flex-basis:min(78%,360px);min-height:118px;grid-template-columns:86px minmax(0,1fr);padding:8px}
+.games-discovery-art{min-height:100px}
+.games-discovery-copy{gap:5px}
+.games-discovery-copy strong{font-size:18px}
+.games-tbc-art .games-artwork-fallback{font-size:20px}
+@media(max-width:650px){
+ .games-discovery-featured{padding:13px!important}
+ .games-featured-stage{grid-template-columns:1fr;gap:10px;margin:10px 0 14px}
+ .games-featured-video,.games-stage-poster{min-height:0;aspect-ratio:16/9}
+ .games-featured-stage-copy{padding:5px 2px}
+ .games-discovery-slide{flex-basis:82%;grid-template-columns:76px minmax(0,1fr);min-height:104px}
+ .games-discovery-art{min-height:86px}
+}
