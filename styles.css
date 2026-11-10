@@ -2473,3 +2473,17 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
 .games-featured-stage{touch-action:pan-y}
 .games-featured-video iframe{pointer-events:auto}
 @media(max-width:650px){.games-stage-platforms{gap:6px}.games-stage-platform{padding:4px 5px}.games-stage-platform img{width:16px;height:16px}}
+
+/* Bundled platform marks: no third-party image host or placeholder squares. */
+.games-platform-mark{width:24px;min-width:24px;height:22px;padding:0;border:0;border-radius:0;background:transparent;display:inline-grid;place-items:center;vertical-align:middle}
+.games-platform-mark svg{display:block;width:100%;height:100%;fill:currentColor}
+.games-platform-mark-pc{color:#a9d0ff}.games-platform-mark-ps{color:#c4c9ff}.games-platform-mark-xbox{color:#8bd9a7}.games-platform-mark-n{color:#ff7777}.games-platform-mark-steam{color:#d8e5f5}
+.games-platform-chip .games-platform-mark{width:19px;min-width:19px;height:18px}
+.games-platform-filter button .games-platform-mark{width:22px;min-width:22px;height:20px}
+.games-platform-tags .games-platform-mark{width:25px;min-width:25px;height:23px}
+.games-discovery-slide:focus-visible,.games-discovery-controls>button:focus-visible,.games-discovery-dots button:focus-visible{outline:2px solid #8fc1ff;outline-offset:3px}
+.games-featured-video iframe{display:block}
+@media(max-width:650px){.games-featured-video{min-height:0}}
+
+.games-stage-platform svg{display:block;width:17px;height:17px;flex:0 0 17px;fill:currentColor}
+.games-stage-platform{display:inline-flex;align-items:center;gap:6px}

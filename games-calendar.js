@@ -277,16 +277,17 @@
         const [icon,label] = platformIcon(platform);
         const chip = document.createElement("span");
         chip.className = "games-platform-chip";
-        const mark = document.createElement("img");
-        const logoSlug = icon === "PS" ? "playstation" : icon === "XBOX" ? "xbox" : icon === "N" ? "nintendo" : icon === "STEAM" ? "steam" : icon === "PC" ? "windows" : "";
-        mark.className = "games-platform-mark-image";
-        mark.alt = "";
+        const mark = document.createElement("b");
+        mark.className = "games-platform-mark games-platform-mark-" + icon.toLowerCase();
         mark.setAttribute("aria-hidden","true");
-        if (logoSlug) {
-          mark.src = "https://cdn.simpleicons.org/" + logoSlug + "/ffffff";
-          mark.loading = "eager";
-          mark.onerror = () => { const fallback = document.createElement("b"); fallback.className = "games-platform-mark games-platform-mark-" + icon.toLowerCase(); fallback.textContent = icon; fallback.setAttribute("aria-hidden","true"); mark.replaceWith(fallback); };
-        } else { mark.replaceWith(Object.assign(document.createElement("b"),{className:"games-platform-mark",textContent:icon})); }
+        const svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
+        svg.setAttribute("viewBox","0 0 64 64");
+        svg.setAttribute("focusable","false");
+        const use = document.createElementNS("http://www.w3.org/2000/svg","use");
+        const logoId = ({STEAM:"steam",PS:"playstation",XBOX:"xbox",N:"nintendo",PC:"pc"})[icon] || "pc";
+        use.setAttribute("href","./assets/platform-logos.svg#"+logoId);
+        svg.append(use);
+        mark.append(svg);
         const text = document.createElement("span");
         text.textContent = label;
         chip.append(mark,text);
