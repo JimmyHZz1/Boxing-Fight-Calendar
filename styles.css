@@ -2508,3 +2508,20 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
  .games-featured-stage-copy{padding:13px 2px 4px!important}
  .games-discovery-slide{flex-basis:84%!important;min-height:112px!important}
 }
+
+
+/* Featured Games: swipe the full hero, keep platform marks compact and on one line. */
+.games-discovery-featured{position:relative;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.games-discovery-featured .games-featured-video iframe{pointer-events:none}
+.games-discovery-featured .games-discovery-track{display:none!important}
+.games-discovery-featured .games-discovery-controls{display:flex!important;justify-content:flex-end;gap:8px;margin:8px 0 0}
+.games-discovery-featured .games-discovery-controls>button{flex:0 0 34px;width:34px;height:34px}
+.games-discovery-featured .games-discovery-dots{display:flex;justify-content:flex-end;gap:6px;margin-top:7px}
+.games-discovery-featured:focus-visible{outline:2px solid #8fc1ff;outline-offset:4px}
+.games-stage-platforms{display:flex!important;flex-wrap:nowrap!important;align-items:center!important;gap:5px!important;max-width:100%;overflow-x:auto;overflow-y:hidden;scrollbar-width:none}
+.games-stage-platforms::-webkit-scrollbar{display:none}
+.games-stage-platform{flex:0 0 auto!important;display:inline-flex!important;align-items:center!important;gap:4px!important;padding:3px 5px!important;min-height:24px}
+.games-stage-platform img{width:14px!important;height:14px!important;max-width:14px!important;min-width:14px!important;object-fit:contain!important}
+.games-stage-platform small{font-size:7px!important;letter-spacing:.25px!important;white-space:nowrap}
+.games-stage-platform-fallback{font-size:8px!important}
+@media(max-width:650px){.games-discovery-featured{padding:12px!important}.games-featured-stage-copy{gap:7px!important}.games-stage-platforms{gap:4px!important}.games-stage-platform{padding:3px 4px!important}.games-stage-platform img{width:13px!important;height:13px!important;min-width:13px!important}.games-stage-platform small{font-size:6.5px!important}}
