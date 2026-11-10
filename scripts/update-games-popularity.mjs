@@ -16,6 +16,7 @@ const WEIGHTS = new Map([
   ["twitch hours watched", 0.10]
 ]);
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+let lastIgdbRequestAt = 0;
 const normalise = value => String(value || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 const tokenSimilarity = (a, b) => {
   const aa = new Set(normalise(a).split(" ").filter(Boolean));
@@ -30,6 +31,9 @@ async function checkedFetch(url, options = {}) {
   return response;
 }
 async function igdbPost(endpoint, token, body) {
+  const wait = Math.max(0, 275 - (Date.now() - lastIgdbRequestAt));
+  if (wait) await sleep(wait);
+  lastIgdbRequestAt = Date.now();
   const response = await checkedFetch(`https://api.igdb.com/v4/${endpoint}`, {
     method: "POST",
     headers: {
