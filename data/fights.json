@@ -1,13 +1,13 @@
 {
   "provider": "Boxerbook confirmed cards + Boxing Data additional bouts",
-  "last_updated": "2026-11-10T12:42:44Z",
-  "provider_as_of": "2026-11-10T12:42:44Z",
+  "last_updated": "2026-11-10T21:49:49Z",
+  "provider_as_of": "2026-11-10T21:49:49Z",
   "attribution": "Confirmed cards from Boxerbook; additional scheduled bouts from Boxing Data API.",
-  "count_events": 33,
-  "count_bouts": 120,
-  "count_confirmed_events": 23,
-  "count_confirmed_bouts": 94,
-  "count_additional_bouts": 26,
+  "count_events": 35,
+  "count_bouts": 126,
+  "count_confirmed_events": 24,
+  "count_confirmed_bouts": 96,
+  "count_additional_bouts": 30,
   "count_fighter_photos": 14,
   "events": [
     {
@@ -271,7 +271,7 @@
       "city": "Montreal",
       "country": "CA",
       "country_code": null,
-      "start_time_utc": "2026-11-13T01:40Z",
+      "start_time_utc": "2026-11-13T02:30Z",
       "broadcasters": [
         {
           "name": "DAZN",
@@ -332,11 +332,11 @@
       "bouts": [
         {
           "id": "fx_ag7sm5y4",
-          "fighter1": "Erik Bazinyan",
-          "fighter2": "Steven Butler",
+          "fighter1": "Gabriel Jimenez Gomez",
+          "fighter2": "Wyatt Sanford",
           "date": "2026-11-13",
-          "start_time_utc": "02:30",
-          "start_datetime_utc": "2026-11-13T02:30:00Z",
+          "start_time_utc": "01:00",
+          "start_datetime_utc": "2026-11-13T01:00:00Z",
           "weight_class": null,
           "rounds": null,
           "status": "scheduled",
@@ -344,11 +344,23 @@
         },
         {
           "id": "fx_j6n7vys9",
-          "fighter1": "Hendri Cedeno",
-          "fighter2": "Jhon Orobio",
+          "fighter1": "Erik Bazinyan",
+          "fighter2": "Steven Butler",
           "date": "2026-11-13",
-          "start_time_utc": "03:30",
-          "start_datetime_utc": "2026-11-13T03:30:00Z",
+          "start_time_utc": "01:40",
+          "start_datetime_utc": "2026-11-13T01:40:00Z",
+          "weight_class": null,
+          "rounds": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_yte9a5y6",
+          "fighter1": "Avery Martin Duval",
+          "fighter2": "Damian Wrzesinski",
+          "date": "2026-11-13",
+          "start_time_utc": "01:40",
+          "start_datetime_utc": "2026-11-13T01:40:00Z",
           "weight_class": null,
           "rounds": null,
           "status": "scheduled",
@@ -437,6 +449,99 @@
         }
       ],
       "data_source": "Boxerbook"
+    },
+    {
+      "id": "boxingdata-2026-11-14",
+      "name": "Additional scheduled bouts — Sat 14 Nov",
+      "date": "2026-11-14T12:00:00Z",
+      "bouts": [
+        {
+          "id": "fx_fvparts1",
+          "fighter1": "Manuel Valentine Lerma",
+          "fighter2": "Zaquin Moses",
+          "date": "2026-11-14",
+          "start_time_utc": "00:20",
+          "start_datetime_utc": "2026-11-14T00:20:00Z",
+          "weight_class": null,
+          "rounds": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_jqp6kbsp",
+          "fighter1": "Moro Kanla Inusah",
+          "fighter2": "Rakhmatullo Boymatov",
+          "date": "2026-11-14",
+          "start_time_utc": "16:00",
+          "start_datetime_utc": "2026-11-14T16:00:00Z",
+          "weight_class": null,
+          "rounds": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_exxgpdaq",
+          "fighter1": "Cesar Ivan Ortiz",
+          "fighter2": "Darial Kuchmenov",
+          "date": "2026-11-14",
+          "start_time_utc": "16:00",
+          "start_datetime_utc": "2026-11-14T16:00:00Z",
+          "weight_class": null,
+          "rounds": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_2rga8112",
+          "fighter1": "Brandon Colantonio",
+          "fighter2": "Jakhongir Zokirov",
+          "date": "2026-11-14",
+          "start_time_utc": "16:00",
+          "start_datetime_utc": "2026-11-14T16:00:00Z",
+          "weight_class": null,
+          "rounds": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_hw4aqh4z",
+          "fighter1": "Jason Moloney",
+          "fighter2": "Jose Andres Teran",
+          "date": "2026-11-14",
+          "start_time_utc": "21:00",
+          "start_datetime_utc": "2026-11-14T21:00:00Z",
+          "weight_class": null,
+          "rounds": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_9rm1b31h",
+          "fighter1": "Federico Pacheco Jr.",
+          "fighter2": "Jack May",
+          "date": "2026-11-14",
+          "start_time_utc": "22:00",
+          "start_datetime_utc": "2026-11-14T22:00:00Z",
+          "weight_class": null,
+          "rounds": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_nwc1mq9z",
+          "fighter1": "Abisai Torres",
+          "fighter2": "Frank Espinoza",
+          "date": "2026-11-14",
+          "start_time_utc": "22:00",
+          "start_datetime_utc": "2026-11-14T22:00:00Z",
+          "weight_class": null,
+          "rounds": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        }
+      ],
+      "data_source": "Boxing Data API",
+      "source_note": "Additional scheduled bouts — card not confirmed. These individual matchups are listed by Boxing Data and have not been assigned to a confirmed promoter event."
     },
     {
       "id": "boxerbook-None",
@@ -1468,20 +1573,8 @@
       "bouts": [
         {
           "id": "fx_1cf1tkst",
-          "fighter1": "Manuel Valentine Lerma",
-          "fighter2": "Zaquin Moses",
-          "date": "2026-11-15",
-          "start_time_utc": "00:20",
-          "start_datetime_utc": "2026-11-15T00:20:00Z",
-          "weight_class": null,
-          "rounds": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API"
-        },
-        {
-          "id": "fx_jyw1d01x",
-          "fighter1": "Alexander Flores",
-          "fighter2": "David Adeleye",
+          "fighter1": "Charlie Sheehy",
+          "fighter2": "Gabriel Flores Jr",
           "date": "2026-11-15",
           "start_time_utc": "02:00",
           "start_datetime_utc": "2026-11-15T02:00:00Z",
@@ -1495,44 +1588,8 @@
           "fighter1": "Charlie Sheehy",
           "fighter2": "Jose Matias Romero",
           "date": "2026-11-15",
-          "start_time_utc": "03:00",
-          "start_datetime_utc": "2026-11-15T03:00:00Z",
-          "weight_class": null,
-          "rounds": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API"
-        },
-        {
-          "id": "fx_fbrcegzg",
-          "fighter1": "Charlie Sheehy",
-          "fighter2": "Gabriel Flores Jr",
-          "date": "2026-11-15",
-          "start_time_utc": "03:00",
-          "start_datetime_utc": "2026-11-15T03:00:00Z",
-          "weight_class": null,
-          "rounds": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API"
-        },
-        {
-          "id": "fx_88w87135",
-          "fighter1": "Anthony Olascuaga",
-          "fighter2": "Yuberjen Martinez",
-          "date": "2026-11-15",
-          "start_time_utc": "03:00",
-          "start_datetime_utc": "2026-11-15T03:00:00Z",
-          "weight_class": null,
-          "rounds": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API"
-        },
-        {
-          "id": "fx_9sfn616q",
-          "fighter1": "Darius Fulghum",
-          "fighter2": "Diego Pacheco",
-          "date": "2026-11-15",
-          "start_time_utc": "05:00",
-          "start_datetime_utc": "2026-11-15T05:00:00Z",
+          "start_time_utc": "02:00",
+          "start_datetime_utc": "2026-11-15T02:00:00Z",
           "weight_class": null,
           "rounds": null,
           "status": "scheduled",
@@ -2128,7 +2185,7 @@
       "city": "Indio",
       "country": "US",
       "country_code": null,
-      "start_time_utc": null,
+      "start_time_utc": "2026-11-21T03:00Z",
       "broadcasters": [
         {
           "name": "DAZN",
@@ -2572,7 +2629,7 @@
       "city": "London",
       "country": "GB",
       "country_code": null,
-      "start_time_utc": null,
+      "start_time_utc": "2026-12-04T22:00Z",
       "broadcasters": [
         {
           "name": "DAZN",
@@ -2700,6 +2757,65 @@
       ],
       "data_source": "Boxing Data API",
       "source_note": "Additional scheduled bouts — card not confirmed. These individual matchups are listed by Boxing Data and have not been assigned to a confirmed promoter event."
+    },
+    {
+      "id": "boxerbook-None",
+      "source_id": null,
+      "name": "Boxing event",
+      "date": "2026-12-05T12:00:00Z",
+      "event_url": null,
+      "promoter": null,
+      "location": null,
+      "city": null,
+      "country": null,
+      "country_code": null,
+      "start_time_utc": "2026-12-06T01:00Z",
+      "broadcasters": [],
+      "bouts": [
+        {
+          "id": 204289,
+          "fighter1": "Nik Tszyu",
+          "fighter2": "Roberto Valenzuela Jr",
+          "fighter1_image": null,
+          "fighter2_image": null,
+          "fighter1_nationality": null,
+          "fighter2_nationality": null,
+          "record1": "12-0-1",
+          "record2": null,
+          "date": "2026-12-05",
+          "start_time_utc": null,
+          "start_datetime_utc": null,
+          "weight_class": "swel",
+          "rounds": null,
+          "title_text": null,
+          "status": "scheduled",
+          "url": "https://boxerbook.com/bouts/204289/nik-tszyu-vs-roberto-valenzuela-jr",
+          "broadcaster": null,
+          "data_source": "Boxerbook"
+        },
+        {
+          "id": 204290,
+          "fighter1": "Emiliano Vargas",
+          "fighter2": "Omar Juarez",
+          "fighter1_image": null,
+          "fighter2_image": null,
+          "fighter1_nationality": null,
+          "fighter2_nationality": null,
+          "record1": "18-0-0",
+          "record2": "11-1-0",
+          "date": "2026-12-05",
+          "start_time_utc": null,
+          "start_datetime_utc": null,
+          "weight_class": "slig",
+          "rounds": null,
+          "title_text": null,
+          "status": "scheduled",
+          "url": "https://boxerbook.com/bouts/204290/emiliano-vargas-vs-omar-juarez",
+          "broadcaster": null,
+          "data_source": "Boxerbook"
+        }
+      ],
+      "data_source": "Boxerbook"
     },
     {
       "id": "boxerbook-11923",
