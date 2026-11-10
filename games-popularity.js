@@ -59,6 +59,7 @@
       container.dataset.fallbackText = fallbackText;
       const image = document.createElement("img");
       image.alt = title + (isTicker ? " logo" : " artwork");
+      image.referrerPolicy = "no-referrer";
       image.loading = "lazy";
       if (isTicker) image.className = "games-up-next-logo-image";
       else {
