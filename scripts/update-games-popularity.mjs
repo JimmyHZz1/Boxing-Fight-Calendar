@@ -96,12 +96,12 @@ async function main() {
       await sleep(275);
     }
   }
-  const ids = [...new Set(games.map(game=>Number(game.igdb_game_id)).filter(Number.isFinite))];
+  const ids = [...new Set(games.filter(game=>game.igdb_game_id !== null && game.igdb_game_id !== undefined).map(game=>Number(game.igdb_game_id)).filter(Number.isFinite))];
   const typeIds = [...typeById.keys()];
   const primitives = ids.length && typeIds.length
     ? await igdbPost("popularity_primitives", token, `fields game_id,popularity_type,value; where game_id = (${ids.join(",")}) & popularity_type = (${typeIds.join(",")}); limit 500;`)
     : [];
-  const valuesByGame = new Map(games.map(game=>[Number(game.igdb_game_id), new Map()]));
+  const valuesByGame = new Map(games.filter(game=>game.igdb_game_id !== null && game.igdb_game_id !== undefined).map(game=>[Number(game.igdb_game_id), new Map()]));
   for (const primitive of primitives) {
     const metric = typeById.get(Number(primitive.popularity_type));
     const value = Number(primitive.value);
