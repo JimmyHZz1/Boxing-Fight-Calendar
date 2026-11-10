@@ -1,4 +1,4 @@
-const CACHE="sports-calendar-v117";
+const CACHE="sports-calendar-v118";
 const APP_FILES=[
   "./",
   "./index.html",
@@ -17,10 +17,12 @@ const APP_FILES=[
   "./version-history.js?v=20261109-01",
   "./f1-grand-prix-centre.js?v=20261109-03",
   "./games-calendar.js?v=20261110-01",
+  "./games-popularity.js?v=20261110-02",
   "./manifest.json",
-  "./data/games-featured.json"
+  "./data/games-featured.json",
+  "./data/games-popularity.json"
 ];
-const DATA_PATHS=["/data/fights.json","/data/fighter-images.json","/data/event-fighter-images.json","/data/f1.json","/data/darts.json","/data/ufc.json","/data/bkfc.json","/data/sports-hub.json","/data/sports-images.json","/data/image-library.json","/data/games-featured.json"];
+const DATA_PATHS=["/data/fights.json","/data/fighter-images.json","/data/event-fighter-images.json","/data/f1.json","/data/darts.json","/data/ufc.json","/data/bkfc.json","/data/sports-hub.json","/data/sports-images.json","/data/image-library.json","/data/games-featured.json","/data/games-popularity.json"];
 self.addEventListener("install",event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(APP_FILES)).then(()=>self.skipWaiting())));
 self.addEventListener("activate",event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
 self.addEventListener("fetch",event=>{
