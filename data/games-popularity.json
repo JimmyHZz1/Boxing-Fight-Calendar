@@ -1,8 +1,213 @@
 {
   "schema_version": 1,
   "provider": "IGDB PopScore",
-  "updated_at": null,
-  "status": "awaiting-credentials",
-  "methodology": "Cross-platform IGDB interest and Twitch signals. Steam-only metrics are excluded.",
-  "games": []
+  "updated_at": "2026-11-10T19:48:59.408Z",
+  "status": "ok",
+  "methodology": "Daily relative ranking across the upcoming PC and console release list. Weighted IGDB Visits (30%), Want to Play (40%), Playing (15%), Played (5%) and Twitch Hours Watched (10%). Steam-only player, review and sales signals are deliberately excluded so console-only games are not penalised. Missing metrics are omitted and remaining weights are renormalised.",
+  "games": [
+    {
+      "slug": "metaphor-refantazio",
+      "title": "Metaphor: ReFantazio",
+      "release_date": "2026-11-12",
+      "platforms": [
+        "Nintendo Switch 2"
+      ],
+      "verification_status": "verified",
+      "igdb_game_id": 26602,
+      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar3moy.jpg",
+      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar3moq.jpg",
+      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar3moy.jpg",
+      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar3moq.jpg",
+      "popularity_score": 89,
+      "popularity_signals": [
+        "want to play",
+        "visits",
+        "playing",
+        "played"
+      ],
+      "popularity_coverage": 4,
+      "popularity_rank": 1
+    },
+    {
+      "slug": "grand-theft-auto-vi",
+      "title": "Grand Theft Auto VI",
+      "release_date": "2026-11-19",
+      "platforms": [
+        "PlayStation 5",
+        "Xbox Series X|S"
+      ],
+      "verification_status": "verified",
+      "igdb_game_id": 52189,
+      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar64ek.jpg",
+      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6w51.jpg",
+      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar64ek.jpg",
+      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6w51.jpg",
+      "popularity_score": 78,
+      "popularity_signals": [
+        "want to play",
+        "visits",
+        "playing",
+        "played"
+      ],
+      "popularity_coverage": 4,
+      "popularity_rank": 2
+    },
+    {
+      "slug": "final-fantasy-vii-revelation",
+      "title": "FINAL FANTASY VII REVELATION",
+      "release_date": "2027-04-08",
+      "platforms": [
+        "PC",
+        "PlayStation 5",
+        "Xbox Series X|S",
+        "Nintendo Switch 2"
+      ],
+      "verification_status": "verified",
+      "igdb_game_id": 404721,
+      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar62ze.jpg",
+      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar62e8.jpg",
+      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar62ze.jpg",
+      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar62e8.jpg",
+      "popularity_score": 53,
+      "popularity_signals": [
+        "want to play",
+        "visits"
+      ],
+      "popularity_coverage": 2,
+      "popularity_rank": 3
+    },
+    {
+      "slug": "rayman-legends-retold",
+      "title": "Rayman Legends Retold",
+      "release_date": "2026-12-03",
+      "platforms": [
+        "PlayStation 5"
+      ],
+      "verification_status": "verified",
+      "igdb_game_id": 404044,
+      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5zbq.jpg",
+      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5zbq.jpg",
+      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5zbq.jpg",
+      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5zbq.jpg",
+      "popularity_score": 51,
+      "popularity_signals": [
+        "want to play",
+        "visits"
+      ],
+      "popularity_coverage": 2,
+      "popularity_rank": 4
+    },
+    {
+      "slug": "hela-of-mice-and-magic",
+      "title": "Hela: of Mice & Magic",
+      "release_date": "2026-12-01",
+      "platforms": [
+        "PC",
+        "PlayStation 5",
+        "Xbox Series X|S",
+        "Nintendo Switch 2"
+      ],
+      "verification_status": "verified",
+      "igdb_game_id": 314449,
+      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo11ng.jpg",
+      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6r3h.jpg",
+      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo11ng.jpg",
+      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6r3h.jpg",
+      "popularity_score": 49,
+      "popularity_signals": [
+        "want to play",
+        "visits"
+      ],
+      "popularity_coverage": 2,
+      "popularity_rank": 5
+    },
+    {
+      "slug": "warhammer-40000-dawn-of-war-iv",
+      "title": "Warhammer 40,000: Dawn of War IV",
+      "release_date": "2026-12-03",
+      "platforms": [
+        "PC"
+      ],
+      "verification_status": "verified",
+      "igdb_game_id": 361859,
+      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar41cc.jpg",
+      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6ox1.jpg",
+      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar41cc.jpg",
+      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6ox1.jpg",
+      "popularity_score": 47,
+      "popularity_signals": [
+        "want to play",
+        "visits"
+      ],
+      "popularity_coverage": 2,
+      "popularity_rank": 6
+    },
+    {
+      "slug": "dragon-quest-monsters-the-withered-world",
+      "title": "DRAGON QUEST MONSTERS: The Withered World",
+      "release_date": "2026-12-03",
+      "platforms": [
+        "PC",
+        "PlayStation 5",
+        "Xbox Series X|S",
+        "Nintendo Switch 2",
+        "Nintendo Switch"
+      ],
+      "verification_status": "verified",
+      "igdb_game_id": 403174,
+      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5xzb.jpg",
+      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5xzb.jpg",
+      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5xzb.jpg",
+      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5xzb.jpg",
+      "popularity_score": 14,
+      "popularity_signals": [
+        "want to play",
+        "visits"
+      ],
+      "popularity_coverage": 2,
+      "popularity_rank": 7
+    },
+    {
+      "slug": "romancing-saga-3-destinies-united",
+      "title": "Romancing SaGa 3: Destinies United",
+      "release_date": "2027-02-16",
+      "platforms": [
+        "PC",
+        "PlayStation 5",
+        "Xbox Series X|S",
+        "Nintendo Switch 2",
+        "Nintendo Switch"
+      ],
+      "verification_status": "verified",
+      "igdb_game_id": 415836,
+      "igdb_logo_url": null,
+      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6keu.jpg",
+      "logo_url": null,
+      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6keu.jpg",
+      "popularity_score": 0,
+      "popularity_signals": [
+        "want to play",
+        "visits"
+      ],
+      "popularity_coverage": 2,
+      "popularity_rank": 8
+    },
+    {
+      "slug": "attack-on-titan-3",
+      "title": "A.O.T. 3",
+      "release_date": "2026-12-10",
+      "platforms": [
+        "PC",
+        "PlayStation 5",
+        "Xbox Series X|S",
+        "Nintendo Switch 2"
+      ],
+      "verification_status": "verified",
+      "igdb_game_id": null,
+      "popularity_score": null,
+      "popularity_signals": [],
+      "popularity_coverage": 0,
+      "popularity_rank": null
+    }
+  ]
 }
