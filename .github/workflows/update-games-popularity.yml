@@ -1,0 +1,35 @@
+name: Refresh Games Calendar popularity
+on:
+  schedule:
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: games-calendar-popularity
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+      - name: Refresh cross-platform popularity data
+        env:
+          SUPABASE_PUBLISHABLE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
+          IGDB_CLIENT_ID: ${{ secrets.IGDB_CLIENT_ID }}
+          IGDB_CLIENT_SECRET: ${{ secrets.IGDB_CLIENT_SECRET }}
+        run: bun run scripts/update-games-popularity.mjs
+      - name: Commit updated popularity snapshot
+        run: |
+          if git diff --quiet -- data/games-popularity.json; then
+            echo "Popularity data has not changed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/games-popularity.json
+          git commit -m "chore: refresh cross-platform games popularity"
+          git push
