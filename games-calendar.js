@@ -283,7 +283,7 @@
         mark.alt = "";
         mark.setAttribute("aria-hidden","true");
         if (logoSlug) {
-          mark.src = "https://cdn.simpleicons.org/" + logoSlug + "/ffffff";
+          mark.src = "./assets/platform-" + logoSlug + ".svg";
           mark.loading = "eager";
           mark.onerror = () => { const fallback = document.createElement("b"); fallback.className = "games-platform-mark games-platform-mark-" + icon.toLowerCase(); fallback.textContent = icon; fallback.setAttribute("aria-hidden","true"); mark.replaceWith(fallback); };
         } else { mark.replaceWith(Object.assign(document.createElement("b"),{className:"games-platform-mark",textContent:icon})); }
