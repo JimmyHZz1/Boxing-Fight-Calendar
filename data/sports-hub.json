@@ -5232,51 +5232,51 @@
     },
     "search_details": [
       {
-        "name": "Islam Makhachev",
+        "name": "Brendan Allen",
         "queries": 1,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       },
       {
-        "name": "Sean Strickland",
+        "name": "Caio Borralho",
         "queries": 1,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       },
       {
-        "name": "Khamzat Chimaev",
+        "name": "Joe Pyfer",
         "queries": 1,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       },
       {
-        "name": "Dricus Du Plessis",
+        "name": "Gregory Rodrigues",
         "queries": 1,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       },
       {
-        "name": "Nassourdine Imavov",
+        "name": "Anthony Hernandez",
         "queries": 1,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       }
     ],
-    "checked_at": "2026-11-11T15:30:44Z",
+    "checked_at": "2026-11-11T15:44:36Z",
     "library_entries": 66,
     "newly_found": 0,
-    "cumulative_attempted": 172,
+    "cumulative_attempted": 177,
     "cumulative_found": 66,
-    "cumulative_missing": 106,
+    "cumulative_missing": 111,
     "cumulative_rejected": 139,
-    "batch_number": 17,
-    "last_batch_at": "2026-11-11T15:30:44Z",
-    "last_successful_batch_at": "2026-11-11T15:30:44Z",
+    "batch_number": 18,
+    "last_batch_at": "2026-11-11T15:44:36Z",
+    "last_successful_batch_at": "2026-11-11T15:44:36Z",
     "last_rate_limited_at": "2026-11-09T13:33:36Z",
     "coverage": {
       "boxing fight card fighters": {
