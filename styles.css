@@ -3537,73 +3537,41 @@ body.games-platform-page .games-platform-hub{display:none}
 .mobile-calendar-menu button .calendar-menu-label{display:block;flex:1;min-width:0;font-size:10px!important;line-height:1.2;color:var(--text)!important;font-weight:800;letter-spacing:1px;white-space:nowrap}
 
 
-/* Keep Next Up Across Sport directly alongside Live Sports Centre. */
-@media (min-width: 900px) {
-  #home-screen > #live-sports-centre {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(230px, .82fr);
-    gap: 16px;
-    align-items: start;
-  }
-  #home-screen > #live-sports-centre > .live-centre-heading { grid-column: 1 / -1; }
-  #home-screen > #live-sports-centre > .live-now-panel { grid-column: 1; min-width: 0; margin-top: 0; }
-  #home-screen > #live-sports-centre > .live-upcoming-panel { grid-column: 2; min-width: 0; margin-top: 0; }
-  #home-screen > #live-sports-centre > .home-next-up-panel {
-    grid-column: 3;
+
+
+/* Final home layout: Next Up occupies the dedicated left-hand card slot;
+   Live Sports Centre remains a separate, unchanged two-panel card on the right. */
+@media (min-width: 1100px) {
+  #home-screen > .home-next-up-panel {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: stretch;
     min-width: 0;
     margin: 0;
-    padding: 14px;
+    padding: 18px;
     border: 1px solid var(--line);
     border-top: 2px solid var(--accent);
     background: linear-gradient(145deg, rgba(226,180,91,.07), rgba(25,27,32,.96) 55%), var(--panel);
   }
-  #home-screen > #live-sports-centre > .home-next-up-panel .home-next-up-list { grid-template-columns: minmax(0,1fr); }
-}
-@media (min-width: 900px) and (max-width: 1199px) {
-  #home-screen > #live-sports-centre { grid-template-columns: minmax(0,1fr) minmax(0,1fr); }
-  #home-screen > #live-sports-centre > .home-next-up-panel { grid-column: 1 / -1; }
-  #home-screen > #live-sports-centre > .home-next-up-panel .home-next-up-list { grid-template-columns: repeat(2,minmax(0,1fr)); }
-}
-@media (max-width: 899px) {
-  #home-screen > #live-sports-centre > .home-next-up-panel { margin-top: 16px; }
-}
-
-@media (min-width: 1100px) {
-  #home-screen > #live-sports-centre { grid-column: 1 / -1; grid-row: 2; }
-}
-
-
-/* Requested home ordering: Next Up on the left, Live Now on the right. */
-@media (min-width: 900px) {
-  #home-screen > #live-sports-centre > .home-next-up-panel {
-    grid-column: 1;
-    grid-row: 2;
-  }
-  #home-screen > #live-sports-centre > .live-upcoming-panel {
+  #home-screen > #live-sports-centre {
     grid-column: 2;
     grid-row: 2;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    min-width: 0;
+    margin: 0;
   }
-  #home-screen > #live-sports-centre > .live-now-panel {
-    grid-column: 3;
-    grid-row: 2;
-  }
+  #home-screen > #live-sports-centre > .live-centre-heading { grid-column: 1 / -1; }
+  #home-screen > #live-sports-centre > .live-now-panel { grid-column: 1; grid-row: 2; min-width: 0; margin-top: 0; }
+  #home-screen > #live-sports-centre > .live-upcoming-panel { grid-column: 2; grid-row: 2; min-width: 0; margin-top: 0; }
+  #home-screen > #live-sports-centre .live-centre-list { max-height: 390px; overflow: auto; }
+  #home-screen > .home-next-up-panel .home-next-up-list { grid-template-columns: minmax(0, 1fr); }
 }
-@media (min-width: 900px) and (max-width: 1199px) {
-  #home-screen > #live-sports-centre > .home-next-up-panel {
-    grid-column: 1;
-    grid-row: 2;
-  }
-  #home-screen > #live-sports-centre > .live-now-panel {
-    grid-column: 2;
-    grid-row: 2;
-  }
-  #home-screen > #live-sports-centre > .live-upcoming-panel {
-    grid-column: 1 / -1;
-    grid-row: 3;
-  }
+@media (min-width: 1500px) {
+  #home-screen > #live-sports-centre { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
-@media (max-width: 899px) {
-  #home-screen > #live-sports-centre > .home-next-up-panel { order: 1; }
-  #home-screen > #live-sports-centre > .live-now-panel { order: 2; }
-  #home-screen > #live-sports-centre > .live-upcoming-panel { order: 3; }
+@media (max-width: 1099px) {
+  #home-screen > .home-next-up-panel { grid-column: 1 / -1; min-width: 0; margin: 16px 0; }
+  #home-screen > #live-sports-centre { grid-column: 1 / -1; }
 }
