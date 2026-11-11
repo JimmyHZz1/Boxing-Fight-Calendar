@@ -411,24 +411,14 @@
     });
   });
   if (featuredTicker) {
-    const pauseTickerForManualScroll = () => {
-      if (featuredTicker.classList.contains("is-manually-scrolling")) return;
-      const track = featuredTicker.querySelector(".next-event-track");
-      if (track) {
-        const transform = getComputedStyle(track).transform;
-        const match = transform && transform.match(/matrix(?:3d)?\(([^)]+)\)/);
-        if (match) {
-          const values = match[1].split(",").map(Number);
-          const translateX = values.length === 6 ? values[4] : values[12];
-          if (Number.isFinite(translateX)) featuredTicker.scrollLeft = Math.max(0,-translateX);
-        }
-        track.style.animation = "none";
-        track.style.transform = "none";
-      }
-      featuredTicker.classList.add("is-paused","is-manually-scrolling");
-    };
+    const pauseTickerForManualScroll = () => featuredTicker.classList.add("is-paused");
+    const resumeTickerAfterManualScroll = () => featuredTicker.classList.remove("is-paused");
     featuredTicker.addEventListener("pointerdown",pauseTickerForManualScroll,{passive:true});
+    featuredTicker.addEventListener("pointerup",resumeTickerAfterManualScroll,{passive:true});
+    featuredTicker.addEventListener("pointercancel",resumeTickerAfterManualScroll,{passive:true});
     featuredTicker.addEventListener("touchstart",pauseTickerForManualScroll,{passive:true});
+    featuredTicker.addEventListener("touchend",resumeTickerAfterManualScroll,{passive:true});
+    featuredTicker.addEventListener("touchcancel",resumeTickerAfterManualScroll,{passive:true});
     const SUPABASE_URL = "https://dyulhgfpbnyotxjstwcq.supabase.co";
     const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_8oB9tn7Y86fsAIzLvi1aYg_jHjhlq_8";
     const gamesDataStatus = document.getElementById("games-data-status");
@@ -489,10 +479,38 @@
       const data=await response.json();
       return Array.isArray(data.games)?data.games:[];
     };
-    const mergeReleaseFeeds = (live, supplemental) => {
+    const loadCompanyUpcomingReleases = async () => {
+      const response=await fetch("./data/company-profiles.json?t="+Date.now(),{cache:"no-store"});
+      if (!response.ok) return [];
+      const data=await response.json();
+      const today=new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/London",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
+      const byGame=new Map();
+      (Array.isArray(data.companies)?data.companies:[]).forEach(company=>{
+        (Array.isArray(company.releases)?company.releases:[]).forEach(release=>{
+          if(!release.title||!/^\d{4}-\d{2}-\d{2}$/.test(String(release.release_date||""))||release.release_date<today)return;
+          const key=String(release.title).toLowerCase();
+          const existing=byGame.get(key)||{
+            id:"igdb-"+(release.igdb_id||key.replace(/[^a-z0-9]+/g,"-")),
+            title:release.title,developer:release.developer?company.name:"",publisher:release.publisher?company.name:"",
+            release_date:release.release_date,release_date_precision:/^\d{4}$/.test(String(release.release_label||""))?"year":"day",
+            platforms:[],release_dates:[],artwork_url:release.artwork_url||null,logo_url:release.logo_url||null,
+            release_status:"announced",verification_status:"estimated",is_estimated:true,source_url:"",short_name:release.title
+          };
+          existing.platforms=[...new Set([...(existing.platforms||[]),...(release.platforms||[])])];
+          (release.platforms||[]).forEach(platform=>existing.release_dates.push({
+            platform,region:"WW",date:release.release_date,precision:existing.release_date_precision,
+            status:"announced",verification_status:"estimated"
+          }));
+          if(!existing.artwork_url)existing.artwork_url=release.artwork_url||null;
+          byGame.set(key,existing);
+        });
+      });
+      return [...byGame.values()];
+    };
+    const mergeReleaseFeeds = (live, supplemental, companyUpcoming = []) => {
       const byTitle = new Map();
       (Array.isArray(live) ? live : []).forEach(game => byTitle.set(String(game.title || "").toLowerCase(),{...game}));
-      (Array.isArray(supplemental) ? supplemental : []).forEach(game => {
+      [...(Array.isArray(supplemental) ? supplemental : []),...(Array.isArray(companyUpcoming) ? companyUpcoming : [])].forEach(game => {
         const key = String(game.title || "").toLowerCase();
         if (!key) return;
         const existing = byTitle.get(key);
@@ -508,18 +526,22 @@
       return [...byTitle.values()].sort((a,b)=>String(a.release_date || "").localeCompare(String(b.release_date || "")));
     };
     loadGamesFromSupabase().then(async games=>{
-      const [supplemental,popularity] = await Promise.all([
+      const [supplemental,popularity,companyUpcoming] = await Promise.all([
         loadGamesFallback().catch(()=>[]),
-        loadGamesPopularity().catch(()=>[])
+        loadGamesPopularity().catch(()=>[]),
+        loadCompanyUpcomingReleases().catch(error=>{console.warn("Company release catalogue unavailable",error);return [];})
       ]);
-      allUpcomingGames=enrichGameArtwork(mergeReleaseFeeds(games,supplemental),popularity); renderFeaturedGames(allUpcomingGames); renderUpcomingReleases(allUpcomingGames);
-      updateReleaseCountdowns(); setGamesDataStatus("LIVE DATABASE + EXPANDED RELEASE FEED · Showing tracked releases and additional announced games.");
+      allUpcomingGames=enrichGameArtwork(mergeReleaseFeeds(games,supplemental,companyUpcoming),popularity); renderFeaturedGames(allUpcomingGames); renderUpcomingReleases(allUpcomingGames);
+      updateReleaseCountdowns(); setGamesDataStatus("LIVE DATABASE + IGDB COMPANY CATALOGUE · Showing tracked and additional announced releases.");
     }).catch(async error=>{
       console.warn("Games Calendar database connection failed; using saved feed.",error);
       try {
-        const [saved,popularity] = await Promise.all([loadGamesFallback(),loadGamesPopularity().catch(()=>[])]);
-        allUpcomingGames=enrichGameArtwork(saved,popularity); renderFeaturedGames(allUpcomingGames); renderUpcomingReleases(allUpcomingGames);
-        updateReleaseCountdowns(); setGamesDataStatus("DATABASE OFFLINE · Showing the saved release list until the live connection is restored.");
+        const [saved,popularity,companyUpcoming] = await Promise.all([
+          loadGamesFallback(),loadGamesPopularity().catch(()=>[]),
+          loadCompanyUpcomingReleases().catch(error=>{console.warn("Company release catalogue unavailable",error);return [];})
+        ]);
+        allUpcomingGames=enrichGameArtwork(mergeReleaseFeeds([],saved,companyUpcoming),popularity); renderFeaturedGames(allUpcomingGames); renderUpcomingReleases(allUpcomingGames);
+        updateReleaseCountdowns(); setGamesDataStatus("DATABASE OFFLINE · Showing saved releases and the IGDB company catalogue.");
       } catch(fallbackError) {
         allUpcomingGames=[]; renderFeaturedGames([]); renderUpcomingReleases([]);
         setGamesDataStatus("RELEASE DATA UNAVAILABLE · The database and saved release feed could not be reached.");
