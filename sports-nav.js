@@ -1,6 +1,7 @@
 (() => {
-  const order=["f1","darts","boxing","ufc","bkfc"];
+  const order=["f1","darts","boxing","ufc","speedway","bkfc"];
   function openSport(sport){
+    if(sport==="speedway"&&window.SpeedwayPage?.open){window.SpeedwayPage.open();return;}
     if(window.SportPages?.open){window.SportPages.open(sport);return;}
     window.showScreen?.("home-screen");
     window.SportsSelector?.goToSport(sport);
