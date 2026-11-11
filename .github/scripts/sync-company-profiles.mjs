@@ -62,7 +62,7 @@ for(const company of companies){
   const entities=[...roots];
   // Include directly owned studios/labels so parent-company profiles reflect their catalogue too.
   for(const root of roots){
-    const children=await api("companies","fields name,description,start_date,parent,logo.image_id,developed,published; where parent = "+root.id+"; limit 100;");
+    const children=await api("companies","fields name,description,start_date,parent,logo.image_id,developed,published; where parent = "+root.id+"; limit 12;");
     for(const child of children) if(!entities.some(item=>item.id===child.id)) entities.push(child);
   }
   const gameCredits=new Map();
