@@ -40,7 +40,7 @@
     return box;
   };
   const featuredLondonMidnight=date=>{
-    if(!/^\\d{4}-\\d{2}-\\d{2}$/.test(String(date||"")))return NaN;
+    if(!/^\d{4}-\d{2}-\d{2}$/.test(String(date||"")))return NaN;
     const [year,month,day]=date.split("-").map(Number),utcGuess=Date.UTC(year,month-1,day);
     const parts=new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",second:"2-digit",hourCycle:"h23"}).formatToParts(new Date(utcGuess));
     const values=Object.fromEntries(parts.filter(part=>part.type!=="literal").map(part=>[part.type,Number(part.value)]));
@@ -67,7 +67,7 @@
     const releaseCountdown = el("div","games-featured-info-countdown");
     releaseCountdown.append(el("span","games-featured-info-label","RELEASE COUNTDOWN"));
     const countdownValue=el("strong","",featuredCountdownText(game.release_date));
-    if(/^\\d{4}-\\d{2}-\\d{2}$/.test(String(game.release_date||"")))countdownValue.dataset.featuredReleaseDate=game.release_date;
+    if(/^\d{4}-\d{2}-\d{2}$/.test(String(game.release_date||"")))countdownValue.dataset.featuredReleaseDate=game.release_date;
     releaseCountdown.append(countdownValue);
     panel.append(releaseCountdown);
     const credits=el("div","games-featured-info-row");
