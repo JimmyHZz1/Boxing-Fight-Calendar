@@ -132,14 +132,15 @@ public sealed class NotificationService : IDisposable
         {
             var raw = ReadString(item, field);
             if (string.IsNullOrWhiteSpace(raw)) continue;
+            if (DateOnly.TryParseExact(raw, "yyyy-MM-dd", out var date))
+            {
+                var localStart = date.ToDateTime(new TimeOnly(9, 0));
+                startsAt = new DateTimeOffset(localStart, TimeZoneInfo.Local.GetUtcOffset(localStart));
+                break;
+            }
             if (DateTimeOffset.TryParse(raw, out var parsed))
             {
                 startsAt = parsed;
-                break;
-            }
-            if (DateOnly.TryParse(raw, out var date))
-            {
-                startsAt = new DateTimeOffset(date.ToDateTime(new TimeOnly(9, 0)), TimeZoneInfo.Local.GetUtcOffset(DateTime.Now));
                 break;
             }
         }
