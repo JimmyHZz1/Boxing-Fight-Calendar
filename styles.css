@@ -3001,3 +3001,12 @@ body.games-platform-page .games-platform-hub{display:none}
 .desktop-shell .topbar{display:none!important}
 .desktop-shell .app-shell{padding-top:0}
 .desktop-shell .footer{padding-bottom:14px}
+
+.notification-preferences{padding:10px 13px;border-bottom:1px solid var(--line);background:var(--panel2)}
+.notification-preferences>summary{cursor:pointer;color:var(--accent);font-size:9px;font-weight:800;letter-spacing:1px;list-style:none}
+.notification-preferences>summary::-webkit-details-marker{display:none}
+.notification-preference-lead{display:flex;align-items:center;gap:6px;margin:10px 0;color:var(--muted);font-size:10px}
+.notification-preference-lead select{background:var(--panel);border:1px solid var(--line);color:var(--text);padding:5px}
+.notification-preference-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.notification-preference-grid label{display:flex;align-items:center;gap:6px;color:var(--text);font-size:9px}
+.notification-preference-grid input{accent-color:var(--accent)}
