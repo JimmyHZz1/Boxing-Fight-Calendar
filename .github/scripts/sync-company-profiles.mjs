@@ -18,7 +18,6 @@ const companies=[
 ["cd-projekt","CD Projekt",["CD Projekt Red","CD Projekt"],"https://www.cdprojekt.com/"],
 ["kojima-productions","Kojima Productions",["Kojima Productions"],"https://www.kojimaproductions.jp/en/"],
 ["fromsoftware","FromSoftware",["FromSoftware"],"https://www.fromsoftware.jp/"],
-["2k","2K",["2K Games"],"https://2k.com/"]
 ].map(([id,name,aliases,website])=>({id,name,aliases,website}));
 const clientId=process.env.IGDB_CLIENT_ID,secret=process.env.IGDB_CLIENT_SECRET;if(!clientId||!secret)throw Error("Missing IGDB_CLIENT_ID or IGDB_CLIENT_SECRET.");
 const auth=await fetch("https://id.twitch.tv/oauth2/token",{method:"POST",headers:{"content-type":"application/x-www-form-urlencoded"},body:new URLSearchParams({client_id:clientId,client_secret:secret,grant_type:"client_credentials"})});if(!auth.ok)throw Error("IGDB auth failed: "+auth.status);const token=(await auth.json()).access_token;
