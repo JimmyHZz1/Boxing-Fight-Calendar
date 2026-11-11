@@ -21,7 +21,7 @@ public partial class App : System.Windows.Application
 
         _trayIcon = new NotifyIcon
         {
-            Icon = SystemIcons.Application,
+            Icon = GetApplicationIcon(),
             Text = "Sports & Games Calendar",
             ContextMenuStrip = menu,
             Visible = true
@@ -40,6 +40,18 @@ public partial class App : System.Windows.Application
             arg.Equals("--background", StringComparison.OrdinalIgnoreCase));
 
         if (!startInBackground) ShowMainWindow();
+    }
+
+    private static Icon GetApplicationIcon()
+    {
+        try
+        {
+            var executablePath = Environment.ProcessPath;
+            if (!string.IsNullOrWhiteSpace(executablePath))
+                return Icon.ExtractAssociatedIcon(executablePath) ?? SystemIcons.Application;
+        }
+        catch { }
+        return SystemIcons.Application;
     }
 
     public void ShowMainWindow()
