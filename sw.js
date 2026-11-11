@@ -1,4 +1,4 @@
-const CACHE="sports-calendar-v135";
+const CACHE="sports-calendar-v137";
 const APP_FILES=[
   "./",
   "./index.html",
@@ -18,7 +18,8 @@ const APP_FILES=[
   "./f1-grand-prix-centre.js?v=20261109-03",
   "./games-calendar.js?v=20261111-03",
   "./games-popularity.js?v=20261110-07",
-  "./games-discovery.js?v=20261111-03",
+  "./games-discovery.js?v=20261111-04",
+  "./data/company-profiles.json",
   "./assets/platform-playstation.svg",
   "./assets/platform-xbox.svg",
   "./assets/platform-nintendo.svg",
@@ -29,7 +30,7 @@ const APP_FILES=[
   "./data/games-featured.json",
   "./data/games-popularity.json"
 ];
-const DATA_PATHS=["/data/fights.json","/data/fighter-images.json","/data/event-fighter-images.json","/data/f1.json","/data/darts.json","/data/ufc.json","/data/bkfc.json","/data/sports-hub.json","/data/sports-images.json","/data/image-library.json","/data/games-featured.json","/data/games-popularity.json","/data/games-discovery.json"];
+const DATA_PATHS=["/data/fights.json","/data/fighter-images.json","/data/event-fighter-images.json","/data/f1.json","/data/darts.json","/data/ufc.json","/data/bkfc.json","/data/sports-hub.json","/data/sports-images.json","/data/image-library.json","/data/games-featured.json","/data/games-popularity.json","/data/games-discovery.json","/data/company-profiles.json"];
 self.addEventListener("install",event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(APP_FILES)).then(()=>self.skipWaiting())));
 self.addEventListener("activate",event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
 self.addEventListener("fetch",event=>{
