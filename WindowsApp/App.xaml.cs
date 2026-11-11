@@ -15,7 +15,7 @@ public partial class App : System.Windows.Application
     {
         var menu = new ContextMenuStrip();
         menu.Items.Add("Open Sports & Games Calendar", null, (_, _) => ShowMainWindow());
-        menu.Items.Add("Check for event reminders now", null, async (_, _) => await _notifications?.CheckNowAsync()!);
+        menu.Items.Add("Check for event reminders now", null, async (_, _) => { if (_notifications is not null) await _notifications.CheckNowAsync(); });
         menu.Items.Add(new ToolStripSeparator());
         menu.Items.Add("Exit completely", null, (_, _) => ExitCompletely());
 
