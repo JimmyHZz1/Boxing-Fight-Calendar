@@ -85,7 +85,7 @@ public partial class MainWindow : Window
                 var executablePath = Environment.ProcessPath;
                 if (string.IsNullOrWhiteSpace(executablePath))
                     throw new InvalidOperationException("Windows could not determine the application path.");
-                runKey.SetValue(StartupValueName, $"\\"{executablePath}\\" --startup");
+                runKey.SetValue(StartupValueName, "\"" + executablePath + "\" --startup");
             }
             else
             {
