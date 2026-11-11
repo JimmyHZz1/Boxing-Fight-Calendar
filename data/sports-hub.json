@@ -234,13 +234,33 @@
           "rank": 20,
           "name": "Yuki Tsunoda",
           "team": "RB F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/yuki-tsunoda.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Yuki_Tsunoda_Macau_2019.jpg",
+          "image_credit": "Wikimedia Commons · Smith007 · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "category:Category:Yuki Tsunoda in 2019",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/yuki-tsunoda.jpg"
         },
         {
           "rank": 21,
           "name": "Ryo Hirakawa",
           "team": "Haas F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/ryo-hirakawa.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Ryo_Hirakawa_2024_WEC_Fuji_1.jpg",
+          "image_credit": "Wikimedia Commons · Morio · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "search:Ryo Hirakawa",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/ryo-hirakawa.jpg"
         },
         {
           "rank": 22,
@@ -5168,17 +5188,76 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 162,
-    "found": 97,
-    "missing": 451,
-    "rejected": 139,
-    "by_sport": {},
+    "attempted": 5,
+    "found": 99,
+    "missing": 690,
+    "rejected": 0,
+    "by_sport": {
+      "ufc": {
+        "attempted": 5,
+        "found": 0,
+        "missing": 5,
+        "rejected": 0
+      }
+    },
+    "search_details": [
+      {
+        "name": "Mateusz Gamrot",
+        "queries": 1,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Rafael Fiziev",
+        "queries": 1,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Tom Nolan",
+        "queries": 1,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Renato Moicano",
+        "queries": 1,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Dan Hooker",
+        "queries": 1,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      }
+    ],
+    "checked_at": "2026-11-11T15:17:19Z",
+    "library_entries": 66,
     "newly_found": 0,
+    "cumulative_attempted": 167,
+    "cumulative_found": 66,
+    "cumulative_missing": 101,
+    "cumulative_rejected": 139,
+    "batch_number": 16,
+    "last_batch_at": "2026-11-11T15:17:19Z",
+    "last_successful_batch_at": "2026-11-11T15:17:19Z",
+    "last_rate_limited_at": "2026-11-09T13:33:36Z",
     "coverage": {
+      "boxing fight card fighters": {
+        "total": 241,
+        "with_image": 0,
+        "missing": 241
+      },
       "f1 drivers": {
         "total": 25,
-        "with_image": 23,
-        "missing": 2
+        "with_image": 25,
+        "missing": 0
       },
       "f1 constructors": {
         "total": 11,
@@ -5201,16 +5280,6 @@
         "missing": 81
       }
     },
-    "checked_at": "2026-11-11T15:12:33Z",
-    "library_entries": 66,
-    "cumulative_found": 66,
-    "cumulative_missing": 96,
-    "cumulative_rejected": 139,
-    "batch_number": 15,
-    "last_batch_at": "2026-11-11T14:44:21Z",
-    "last_successful_batch_at": "2026-11-11T14:44:21Z",
-    "last_rate_limited_at": "2026-11-09T13:33:36Z",
-    "enrichment_status": "awaiting next scheduled batch",
     "rate_limited": false
   },
   "last_updated": "2026-11-11T15:12:33Z"
