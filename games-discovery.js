@@ -12,7 +12,7 @@
   const el=(tag,cls,txt)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(txt!==undefined)n.textContent=txt;return n;};
   const safeUrl=u=>typeof u==="string"&&/^https:\/\//i.test(u);
   const companyLogoUrl=company=>{try{return "https://www.google.com/s2/favicons?domain="+encodeURIComponent(new URL(company.website).hostname)+"&sz=128";}catch{return "";}};
-  const addCompanyMark=(parent,company)=>{const url=companyLogoUrl(company);if(!url)return;const img=document.createElement("img");img.className="games-company-logo";img.src=url;img.alt=company.name+" logo";img.loading="lazy";img.onerror=()=>img.remove();parent.append(img);};
+  const addCompanyMark=(parent,company)=>{const url=company.logo_url||companyLogoUrl(company);if(!url)return;const img=document.createElement("img");img.className="games-company-logo";img.src=url;img.alt=company.name+" logo";img.loading="lazy";img.onerror=()=>img.remove();parent.append(img);};
   const norm=s=>String(s||"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
   const imageCandidates=game=>{const id=game.trailer_id;const asset=assetMap.get(norm(game.title))||{};return [asset.artwork_url,game.artwork_url,asset.logo_url,game.logo_url,id?"https://i.ytimg.com/vi/"+id+"/hqdefault.jpg":null,id?"https://img.youtube.com/vi/"+id+"/hqdefault.jpg":null,id?"https://i.ytimg.com/vi/"+id+"/sddefault.jpg":null,id?"https://img.youtube.com/vi/"+id+"/0.jpg":null,id?"https://i.ytimg.com/vi/"+id+"/0.jpg":null].filter((u,i,a)=>safeUrl(u)&&a.indexOf(u)===i);};
   const addImage=(wrap,game,mode="cover")=>{
