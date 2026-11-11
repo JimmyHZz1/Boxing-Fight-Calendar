@@ -20,6 +20,9 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: "10.0.x"
+      - name: Create branded application icon
+        shell: pwsh
+        run: .\WindowsApp\Create-AppIcon.ps1
       - name: Publish self-contained Windows x64 executable
         run: >-
           dotnet publish .\WindowsApp\SportsGamesCalendar.csproj
