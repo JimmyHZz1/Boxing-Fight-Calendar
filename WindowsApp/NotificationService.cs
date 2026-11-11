@@ -183,7 +183,6 @@ public sealed class NotificationService : IDisposable
     public void Dispose()
     {
         _timer.Dispose();
-        _gate.Dispose();
     }
 
     private sealed record CalendarReminder(string Id, string Category, string Title, DateTimeOffset StartsAt, bool IsDateOnly);
