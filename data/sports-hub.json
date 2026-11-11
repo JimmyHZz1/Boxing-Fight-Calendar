@@ -3937,12 +3937,32 @@
             {
               "rank": 2,
               "name": "Alexander Volkanovski",
-              "image_url": null
+              "image_url": "./assets/images/ufc/alexander-volkanovski.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Alexander_Volkanovski_at_UFC_232.jpg",
+              "image_credit": "Wikimedia Commons · MMAnytt · CC BY 3.0",
+              "image_license": "CC BY 3.0",
+              "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+              "image_source": "Wikimedia Commons",
+              "image_match_score": 1,
+              "image_match_method": "category:Category:Alexander Volkanovski",
+              "image_verified_at": "2026-11-09T00:11:07Z",
+              "image_local_path": "assets/images/ufc/alexander-volkanovski.jpg",
+              "image_source_class": "licensed-third-party"
             },
             {
               "rank": 3,
               "name": "Petr Yan",
-              "image_url": null
+              "image_url": "./assets/images/ufc/petr-yan.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Petr_Yan_at_Kremlin_award_ceremonies_with_president_Putin.jpg",
+              "image_credit": "Wikimedia Commons · kremlin.ru · CC BY 4.0",
+              "image_license": "CC BY 4.0",
+              "image_license_url": "https://creativecommons.org/licenses/by/4.0",
+              "image_source": "Wikimedia Commons",
+              "image_match_score": 1,
+              "image_match_method": "category:Category:Petr Yan",
+              "image_verified_at": "2026-11-08T20:18:56Z",
+              "image_local_path": "assets/images/ufc/petr-yan.jpg",
+              "image_source_class": "licensed-third-party"
             },
             {
               "rank": 4,
@@ -3972,7 +3992,17 @@
             {
               "rank": 9,
               "name": "Merab Dvalishvili",
-              "image_url": null
+              "image_url": "./assets/images/ufc/merab-dvalishvili.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Donald_Trump_and_Merab_Dvalishvili_at_UFC_316.jpg",
+              "image_credit": "Wikimedia Commons · Margo Martin · Public domain",
+              "image_license": "Public domain",
+              "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+              "image_source": "Wikimedia Commons",
+              "image_match_score": 1,
+              "image_match_method": "category:Category:Merab Dvalishvili",
+              "image_verified_at": "2026-11-08T20:18:56Z",
+              "image_local_path": "assets/images/ufc/merab-dvalishvili.jpg",
+              "image_source_class": "licensed-third-party"
             },
             {
               "rank": 10,
@@ -5189,8 +5219,8 @@
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
     "attempted": 5,
-    "found": 99,
-    "missing": 690,
+    "found": 102,
+    "missing": 687,
     "rejected": 0,
     "by_sport": {
       "ufc": {
@@ -5202,51 +5232,51 @@
     },
     "search_details": [
       {
-        "name": "Mateusz Gamrot",
+        "name": "Islam Makhachev",
         "queries": 1,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       },
       {
-        "name": "Rafael Fiziev",
+        "name": "Sean Strickland",
         "queries": 1,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       },
       {
-        "name": "Tom Nolan",
+        "name": "Khamzat Chimaev",
         "queries": 1,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       },
       {
-        "name": "Renato Moicano",
+        "name": "Dricus Du Plessis",
         "queries": 1,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       },
       {
-        "name": "Dan Hooker",
+        "name": "Nassourdine Imavov",
         "queries": 1,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       }
     ],
-    "checked_at": "2026-11-11T15:17:19Z",
+    "checked_at": "2026-11-11T15:30:44Z",
     "library_entries": 66,
     "newly_found": 0,
-    "cumulative_attempted": 167,
+    "cumulative_attempted": 172,
     "cumulative_found": 66,
-    "cumulative_missing": 101,
+    "cumulative_missing": 106,
     "cumulative_rejected": 139,
-    "batch_number": 16,
-    "last_batch_at": "2026-11-11T15:17:19Z",
-    "last_successful_batch_at": "2026-11-11T15:17:19Z",
+    "batch_number": 17,
+    "last_batch_at": "2026-11-11T15:30:44Z",
+    "last_successful_batch_at": "2026-11-11T15:30:44Z",
     "last_rate_limited_at": "2026-11-09T13:33:36Z",
     "coverage": {
       "boxing fight card fighters": {
@@ -5271,8 +5301,8 @@
       },
       "ufc": {
         "total": 206,
-        "with_image": 13,
-        "missing": 193
+        "with_image": 16,
+        "missing": 190
       },
       "boxing": {
         "total": 81,
