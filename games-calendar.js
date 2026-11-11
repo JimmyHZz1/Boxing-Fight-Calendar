@@ -1,7 +1,7 @@
 /* Independent Games Calendar navigation and Games-only release history. */
 (() => {
   const menu = document.getElementById("mobile-calendar-menu");
-  const trigger = document.getElementById("brand-calendar-switcher");
+  const trigger = document.getElementById("calendar-menu-trigger");
   const mark = document.getElementById("brand-mark-letter");
   const title = document.getElementById("brand-title");
   const closeMenu = () => {
@@ -20,7 +20,7 @@
     // of the brand and prevents other header listeners swallowing iOS clicks.
     document.addEventListener("click", event => {
       const target = event.target instanceof Element ? event.target : event.target?.parentElement;
-      const triggerHit = target?.closest("#brand-calendar-switcher");
+      const triggerHit = target?.closest("#calendar-menu-trigger");
       if (triggerHit) {
         event.preventDefault();
         event.stopPropagation();
