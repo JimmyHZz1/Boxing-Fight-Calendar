@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using System.Windows;
+using Microsoft.Win32;
 using Microsoft.Web.WebView2.Core;
 
 namespace SportsGamesCalendar;
@@ -8,13 +9,69 @@ public partial class MainWindow : Window
 {
     private static readonly Uri HomeUri =
         new("https://jimmyhzz1.github.io/Boxing-Fight-Calendar/");
+    private const string StartupRunKey = @"Software\Microsoft\Windows\CurrentVersion\Run";
+    private const string StartupValueName = "SportsGamesCalendar";
 
     private bool _browserReady;
+    private bool _loadingStartupSetting;
 
     public MainWindow()
     {
         InitializeComponent();
+        LoadStartupSetting();
         Loaded += MainWindow_Loaded;
+    }
+
+    private void LoadStartupSetting()
+    {
+        _loadingStartupSetting = true;
+        try
+        {
+            using var runKey = Registry.CurrentUser.OpenSubKey(StartupRunKey, writable: false);
+            StartupCheckBox.IsChecked = runKey?.GetValue(StartupValueName) is string;
+        }
+        catch
+        {
+            StartupCheckBox.IsChecked = false;
+        }
+        finally
+        {
+            _loadingStartupSetting = false;
+        }
+    }
+
+    private void StartupCheckBox_Changed(object sender, RoutedEventArgs e)
+    {
+        if (_loadingStartupSetting) return;
+
+        try
+        {
+            using var runKey = Registry.CurrentUser.CreateSubKey(StartupRunKey, writable: true);
+            if (StartupCheckBox.IsChecked == true)
+            {
+                var executablePath = Environment.ProcessPath;
+                if (string.IsNullOrWhiteSpace(executablePath))
+                    throw new InvalidOperationException("Windows could not determine the application path.");
+
+                runKey.SetValue(StartupValueName, $"\\"{executablePath}\\" --startup");
+            }
+            else
+            {
+                runKey.DeleteValue(StartupValueName, throwOnMissingValue: false);
+            }
+        }
+        catch (Exception ex)
+        {
+            _loadingStartupSetting = true;
+            StartupCheckBox.IsChecked = !StartupCheckBox.IsChecked;
+            _loadingStartupSetting = false;
+
+            MessageBox.Show(
+                $"Windows couldn't update the startup setting.\n\n{ex.Message}",
+                "Startup setting unavailable",
+                MessageBoxButton.OK,
+                MessageBoxImage.Warning);
+        }
     }
 
     private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
