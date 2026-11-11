@@ -56,6 +56,24 @@
   }
   let tickerSignature = "";
   let tickerLoopDistance = 0;
+  function measureTicker(){
+    const root=$("next-event-ticker"),track=root?.querySelector(".next-event-track");
+    const group=track?.querySelector(".next-event-group");
+    if(!root||!track||!group)return;
+    const rootWidth=root.clientWidth,groupWidth=group.getBoundingClientRect().width;
+    if(!rootWidth||!groupWidth)return;
+    const trackGap=parseFloat(getComputedStyle(track).columnGap||getComputedStyle(track).gap)||12;
+    tickerLoopDistance=groupWidth+trackGap;
+    track.querySelectorAll("[data-ticker-clone]").forEach(node=>node.remove());
+    let copies=1;
+    while(track.scrollWidth<rootWidth+tickerLoopDistance+2&&copies<12){
+      const clone=group.cloneNode(true);
+      clone.dataset.tickerClone="true";clone.setAttribute("aria-hidden","true");
+      clone.querySelectorAll("button").forEach(button=>{button.tabIndex=-1;});
+      track.append(clone);copies++;
+    }
+    root.classList.toggle("is-auto-scrolling",track.scrollWidth>rootWidth+2&&tickerLoopDistance>12);
+  }
   function renderTicker(){
     const root=$("next-event-ticker");if(!root)return;
     const selected=[];
@@ -63,50 +81,36 @@
       const rows=allEvents().filter(x=>x.sport===sport&&!(sport==="boxing"&&(x.event.data_source==="Boxing Data API"||/^Additional scheduled bouts\\b/i.test(String(x.event.name||x.event.title||"")))));
       const live=rows.filter(x=>isLive(x.event)).sort((a,b)=>timestamp(a.event)-timestamp(b.event))[0];
       const next=rows.filter(x=>!isLive(x.event)&&isUpcoming(x.event)).sort((a,b)=>timestamp(a.event)-timestamp(b.event))[0];
-      const chosen=live||next;
-      if(chosen)selected.push({sport,event:chosen.event,live:!!live});
+      const chosen=live||next;if(chosen)selected.push({sport,event:chosen.event,live:!!live});
     });
-    const signature=selected.map(x=>x.sport+":"+String(x.event.id||x.event.event_id||x.event.name||x.event.title||"") + ":" + String(x.event.start_at||x.event.main_card_at||x.event.start_time_utc||x.event.date||x.event.event_date||"") + ":" + x.live).join("|");
-    // Feeds refresh periodically. Keep the current scroll position when the
-    // actual set of ticker cards has not changed.
-    if(signature===tickerSignature && root.querySelector(".next-event-track"))return;
-    tickerSignature=signature;
-    root.classList.remove("is-auto-scrolling","is-paused");
-    root.replaceChildren();
-    const track=make("div","next-event-track");
-    const group=make("div","next-event-group");
+    const signature=selected.map(x=>x.sport+":"+String(x.event.id||x.event.event_id||x.event.name||x.event.title||"")+":"+String(x.event.start_at||x.event.main_card_at||x.event.start_time_utc||x.event.date||x.event.event_date||"")+":"+x.live).join("|");
+    if(signature===tickerSignature&&root.querySelector(".next-event-track")){requestAnimationFrame(measureTicker);return;}
+    tickerSignature=signature;root.classList.remove("is-auto-scrolling","is-paused");root.scrollLeft=0;root.replaceChildren();
+    if(!selected.length){tickerLoopDistance=0;root.append(make("span","next-event-loading","No live or upcoming events currently listed."));return;}
+    const track=make("div","next-event-track"),group=make("div","next-event-group");
     selected.forEach(({sport,event,live})=>{
-      const button=make("button","next-event-item");
-      button.type="button";button.dataset.sport=sport;
+      const button=make("button","next-event-item");button.type="button";button.dataset.sport=sport;
       const info=make("span","next-event-info");
       info.append(make("small","next-event-sport",names[sport]),make("strong","next-event-name",event.name||event.title||"Event"));
       const target=event.start_at||event.main_card_at||event.start_time_utc||event.date||event.event_date;
       if(!live&&target){
         const timer=make("small","next-event-countdown",window.SportsCountdown?.text?.(target)||"DATE TBC");
-        timer.dataset.countdownTarget=/^\\d{4}-\\d{2}-\\d{2}$/.test(String(target))?String(target):new Date(target).toISOString();
-        info.append(timer);
+        timer.dataset.countdownTarget=/^\\d{4}-\\d{2}-\\d{2}$/.test(String(target))?String(target):new Date(target).toISOString();info.append(timer);
       }
       const badge=make("span","next-event-state "+(live?"is-live":"is-upcoming"));
       badge.append(make("i","next-event-state-icon",live?"●":"▣"),make("b",null,live?"LIVE":"UPCOMING"));
       button.append(info,badge);group.append(button);
     });
-    if(!selected.length){root.append(make("span","next-event-loading","No live or upcoming events currently listed."));return;}
-    track.append(group);
-    // Exactly two identical groups create a true wrap point. The ticker uses
-    // native horizontal scrolling so a finger swipe can move it directly.
-    const clone=group.cloneNode(true);
-    clone.dataset.tickerClone="true";clone.setAttribute("aria-hidden","true");
-    clone.querySelectorAll("button").forEach(button=>{button.tabIndex=-1;});
-    track.append(clone);root.append(track);
-    requestAnimationFrame(()=>{
-      tickerLoopDistance=group.getBoundingClientRect().width+12;
-      if(tickerLoopDistance>12)root.classList.add("is-auto-scrolling");
-    });
+    track.append(group);root.append(track);requestAnimationFrame(measureTicker);
   }
   let tickerResizeTimer;
-  window.addEventListener("resize",()=>{clearTimeout(tickerResizeTimer);tickerResizeTimer=setTimeout(renderTicker,140);});
+  window.addEventListener("resize",()=>{clearTimeout(tickerResizeTimer);tickerResizeTimer=setTimeout(measureTicker,140);});
   const tickerRoot=$("next-event-ticker");
   if(tickerRoot){
+    if("ResizeObserver" in window){
+      const tickerObserver=new ResizeObserver(()=>requestAnimationFrame(measureTicker));
+      tickerObserver.observe(tickerRoot);
+    }
     let tickerResumeTimer, tickerFrame=0, tickerLast=0;
     const reducedMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const pauseTicker=()=>{clearTimeout(tickerResumeTimer);tickerRoot.classList.add("is-paused");};
@@ -123,12 +127,12 @@
     tickerRoot.addEventListener("pointerup",resumeTicker,{passive:true});
     tickerRoot.addEventListener("pointercancel",resumeTicker,{passive:true});
     const animateTicker=now=>{
-      if(tickerLast&&!reducedMotion&&!tickerRoot.classList.contains("is-paused")&&!document.hidden){
-        tickerRoot.scrollLeft+=Math.min(50,now-tickerLast)*0.024;
+      if(tickerLast&&!reducedMotion&&!tickerRoot.classList.contains("is-paused")&&!document.hidden&&tickerRoot.classList.contains("is-auto-scrolling")){
+        tickerRoot.scrollLeft+=Math.min(50,now-tickerLast)*0.035;
       }
       tickerLast=now;
       if(tickerLoopDistance>0&&tickerRoot.scrollLeft>=tickerLoopDistance){
-        tickerRoot.scrollLeft-=tickerLoopDistance;
+        tickerRoot.scrollLeft=tickerRoot.scrollLeft%tickerLoopDistance;
       }
       tickerFrame=requestAnimationFrame(animateTicker);
     };
