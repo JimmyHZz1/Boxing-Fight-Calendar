@@ -3528,3 +3528,22 @@ body.games-platform-page .games-platform-hub{display:none}
   .home-snapshot-panels>.home-next-up-panel,
   .home-snapshot-panels>.home-latest-results-panel{padding:14px}
 }
+
+
+/* Restore the Next Up snapshot to the left of Live Sports Centre on desktop. */
+@media (min-width: 1100px) {
+  #home-screen > .home-snapshot-panels {
+    grid-column: 1;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-self: start;
+    min-width: 0;
+    margin: 0;
+    gap: 14px;
+  }
+  #home-screen > #live-sports-centre {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}
