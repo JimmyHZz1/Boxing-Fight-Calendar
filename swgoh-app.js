@@ -2,7 +2,7 @@
 const KEY='swgoh-tracker-v052', APP_VERSION='0.5.2';
 const defaults={allyCode:'',profile:null,roster:[],lastSync:'',syncHistory:[],crystals:null,tab:'dashboard',pins:[],priorityOverrides:{},resources:{},events:[],savedTeams:[],conquest:{active:false,progress:0,tickets:0,nextTickets:2000,sector:'—',featsDone:0,featsTotal:0,nextStart:''}};
 let state=load(),tab=state.tab||'dashboard';
-const nav=[['dashboard','▦','Dashboard'],['gl','★','GL'],['conquest','🎯','Conquest'],['gac','⚔','GAC'],['settings','⚙','Settings']];
+const nav=[['dashboard','▦','Dashboard'],['gl','★','GL'],['solo','🚀','Solo'],['characters','👤','Characters'],['resources','◇','Resources'],['events','▣','Events'],['teams','♟','Teams'],['conquest','🎯','Conquest'],['gac','⚔','GAC'],['priorities','☷','Priorities'],['settings','⚙','Settings']];
 const journeys=[
 {id:'slkr',name:'Supreme Leader Kylo Ren',type:'GL'},{id:'rey',name:'Rey',type:'GL'},{id:'jml',name:'Jedi Master Luke Skywalker',type:'GL'},{id:'jmk',name:'Jedi Master Kenobi',type:'GL'},{id:'lv',name:'Lord Vader',type:'GL'},{id:'jabba',name:'Jabba the Hutt',type:'GL'},{id:'leia',name:'Leia Organa',type:'GL'},{id:'ph',name:'Pirate King Hondo Ohnaka',type:'GL'},
 {id:'aphra',name:'Doctor Aphra',type:'Solo'},{id:'executor',name:'Executor',type:'Solo'},{id:'profundity',name:'Profundity',type:'Solo'},{id:'raddus',name:'Raddus',type:'Solo'}
@@ -20,7 +20,7 @@ function sorted(type){return journeyItems(type).sort((a,b)=>{let ao=a.override??
 function pageNav(p){tab=p;save();render()}
 function render(){
 document.getElementById('app').innerHTML=pages[tab]();
-document.getElementById('nav').innerHTML=nav.map(x=>`<button class="${tab===x[0]?'active':''}" data-tab="${x[0]}"><span>${x[1]}</span>${x[2]}</button>`).join('');
+const navEl=document.getElementById('nav');navEl.innerHTML=nav.map(x=>`<button class="${tab===x[0]?'active':''}" data-tab="${x[0]}" aria-label="${x[2]}" title="${x[2]}"><span>${x[1]}</span><small>${x[2]}</small></button>`).join('');navEl.classList.toggle('dashboard-hidden',tab==='dashboard');
 document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>pageNav(b.dataset.tab));
 document.querySelectorAll('[data-page]').forEach(b=>b.onclick=()=>pageNav(b.dataset.page));bind();
 document.getElementById('gp').textContent=fmt(state.profile?.gp??state.profile?.galacticPower);
