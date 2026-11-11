@@ -85,7 +85,7 @@ public partial class MainWindow : Window
                 var executablePath = Environment.ProcessPath;
                 if (string.IsNullOrWhiteSpace(executablePath))
                     throw new InvalidOperationException("Windows could not determine the application path.");
-                runKey.SetValue(StartupValueName, $"\\\"{executablePath}\\\" --startup");
+                runKey.SetValue(StartupValueName, $"\"{executablePath}\" --startup");
             }
             else
             {
@@ -96,7 +96,7 @@ public partial class MainWindow : Window
         catch (Exception ex)
         {
             System.Windows.MessageBox.Show(
-                $"Windows couldn't update the startup setting.\\n\\n{ex.Message}",
+                $"Windows couldn't update the startup setting.\n\n{ex.Message}",
                 "Startup setting unavailable",
                 System.Windows.MessageBoxButton.OK,
                 System.Windows.MessageBoxImage.Warning);
@@ -128,8 +128,8 @@ public partial class MainWindow : Window
         {
             ConnectionLabel.Text = "Browser setup required";
             var result = System.Windows.MessageBox.Show(
-                "The Microsoft Edge WebView2 Runtime is required to run this application.\\n\\n" +
-                "Would you like to open Microsoft's official download page?\\n\\n" +
+                "The Microsoft Edge WebView2 Runtime is required to run this application.\n\n" +
+                "Would you like to open Microsoft's official download page?\n\n" +
                 $"Details: {ex.Message}",
                 "WebView2 Runtime required",
                 System.Windows.MessageBoxButton.YesNo,
@@ -182,7 +182,7 @@ public partial class MainWindow : Window
         }
         catch (Exception ex)
         {
-            System.Windows.MessageBox.Show($"Windows couldn't open this link.\\n\\n{ex.Message}",
+            System.Windows.MessageBox.Show($"Windows couldn't open this link.\n\n{ex.Message}",
                 "Unable to open link", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Warning);
         }
     }
