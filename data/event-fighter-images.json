@@ -14,8 +14,23 @@
       "image_match_method": "search:Brian Ortega",
       "image_verified_at": "2026-11-09T12:52:42Z",
       "image_local_path": "assets/images/ufc/brian-ortega.png"
+    },
+    "jared cannonier": {
+      "name": "Jared Cannonier",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/jared-cannonier.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Jared_Cannonier_2024.png",
+      "image_credit": "Wikimedia Commons · Chamatkar Sandhu · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Jared Cannonier",
+      "image_verified_at": "2026-11-11T17:57:00Z",
+      "image_local_path": "assets/images/ufc/jared-cannonier.png"
     }
   },
   "attempted": {},
-  "updated_at": "2026-11-11T16:14:49Z"
+  "updated_at": "2026-11-11T17:57:25Z"
 }

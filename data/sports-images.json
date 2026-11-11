@@ -898,9 +898,39 @@
       "image_match_method": "search:Brian Ortega",
       "image_verified_at": "2026-11-09T12:52:42Z",
       "image_local_path": "assets/images/ufc/brian-ortega.png"
+    },
+    "israel adesanya": {
+      "name": "Israel Adesanya",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/israel-adesanya.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Israel_Adesanya_2014.jpg",
+      "image_credit": "Wikimedia Commons · Ewornod · CC BY-SA 4.0",
+      "image_license": "CC BY-SA 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Israel Adesanya",
+      "image_verified_at": "2026-11-11T17:57:00Z",
+      "image_local_path": "assets/images/ufc/israel-adesanya.jpg"
+    },
+    "jared cannonier": {
+      "name": "Jared Cannonier",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/jared-cannonier.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Jared_Cannonier_2024.png",
+      "image_credit": "Wikimedia Commons · Chamatkar Sandhu · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Jared Cannonier",
+      "image_verified_at": "2026-11-11T17:57:00Z",
+      "image_local_path": "assets/images/ufc/jared-cannonier.png"
     }
   },
-  "updated_at": "2026-11-11T16:14:24Z",
+  "updated_at": "2026-11-11T17:57:00Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1076,7 +1106,11 @@
     "caio borralho": "2026-11-11T15:44:36Z",
     "joe pyfer": "2026-11-11T15:44:36Z",
     "gregory rodrigues": "2026-11-11T15:44:36Z",
-    "anthony hernandez": "2026-11-11T15:44:36Z"
+    "anthony hernandez": "2026-11-11T15:44:36Z",
+    "israel adesanya": "2026-11-11T17:57:00Z",
+    "christian leroy duncan": "2026-11-11T17:57:00Z",
+    "abus magomedov": "2026-11-11T17:57:00Z",
+    "jared cannonier": "2026-11-11T17:57:00Z"
   },
   "audit": {
     "last_reviewed_at": "2026-11-09T12:15:00Z",
@@ -1113,15 +1147,15 @@
     }
   },
   "enrichment": {
-    "batch_number": 19,
+    "batch_number": 20,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 178,
-    "cumulative_found": 66,
-    "cumulative_missing": 112,
+    "cumulative_attempted": 183,
+    "cumulative_found": 68,
+    "cumulative_missing": 115,
     "cumulative_rejected": 139,
-    "last_batch_at": "2026-11-11T15:59:25Z",
-    "last_successful_batch_at": "2026-11-11T15:59:25Z",
-    "last_rate_limited_at": "2026-11-11T15:59:25Z",
+    "last_batch_at": "2026-11-11T17:57:00Z",
+    "last_successful_batch_at": "2026-11-11T17:57:00Z",
+    "last_rate_limited_at": "2026-11-11T17:57:00Z",
     "history": [
       {
         "batch": 1,
@@ -1273,6 +1307,14 @@
         "attempted": 1,
         "found": 0,
         "missing": 1,
+        "rate_limited": true
+      },
+      {
+        "batch": 20,
+        "at": "2026-11-11T17:57:00Z",
+        "attempted": 5,
+        "found": 2,
+        "missing": 3,
         "rate_limited": true
       }
     ],

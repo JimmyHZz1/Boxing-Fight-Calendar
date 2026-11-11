@@ -234,13 +234,33 @@
           "rank": 20,
           "name": "Yuki Tsunoda",
           "team": "RB F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/yuki-tsunoda.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Yuki_Tsunoda_Macau_2019.jpg",
+          "image_credit": "Wikimedia Commons · Smith007 · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "category:Category:Yuki Tsunoda in 2019",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/yuki-tsunoda.jpg"
         },
         {
           "rank": 21,
           "name": "Ryo Hirakawa",
           "team": "Haas F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/ryo-hirakawa.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Ryo_Hirakawa_2024_WEC_Fuji_1.jpg",
+          "image_credit": "Wikimedia Commons · Morio · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "search:Ryo Hirakawa",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/ryo-hirakawa.jpg"
         },
         {
           "rank": 22,
@@ -4068,7 +4088,17 @@
             {
               "rank": 9,
               "name": "Israel Adesanya",
-              "image_url": null
+              "image_url": "./assets/images/ufc/israel-adesanya.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Israel_Adesanya_2014.jpg",
+              "image_credit": "Wikimedia Commons · Ewornod · CC BY-SA 4.0",
+              "image_license": "CC BY-SA 4.0",
+              "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Israel Adesanya",
+              "image_verified_at": "2026-11-11T17:57:00Z",
+              "image_local_path": "assets/images/ufc/israel-adesanya.jpg"
             },
             {
               "rank": 10,
@@ -4083,7 +4113,17 @@
             {
               "rank": 12,
               "name": "Jared Cannonier",
-              "image_url": null
+              "image_url": "./assets/images/ufc/jared-cannonier.png",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Jared_Cannonier_2024.png",
+              "image_credit": "Wikimedia Commons · Chamatkar Sandhu · CC BY 3.0",
+              "image_license": "CC BY 3.0",
+              "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Jared Cannonier",
+              "image_verified_at": "2026-11-11T17:57:00Z",
+              "image_local_path": "assets/images/ufc/jared-cannonier.png"
             },
             {
               "rank": 13,
@@ -5198,17 +5238,76 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 178,
-    "found": 100,
-    "missing": 448,
-    "rejected": 139,
-    "by_sport": {},
-    "newly_found": 0,
+    "attempted": 5,
+    "found": 104,
+    "missing": 685,
+    "rejected": 0,
+    "by_sport": {
+      "ufc": {
+        "attempted": 5,
+        "found": 2,
+        "missing": 3,
+        "rejected": 0
+      }
+    },
+    "search_details": [
+      {
+        "name": "Israel Adesanya",
+        "queries": 3,
+        "candidate_files": 4,
+        "accepted": 4,
+        "rejections": {}
+      },
+      {
+        "name": "Christian Leroy Duncan",
+        "queries": 2,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Abus Magomedov",
+        "queries": 2,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Jared Cannonier",
+        "queries": 3,
+        "candidate_files": 2,
+        "accepted": 2,
+        "rejections": {}
+      },
+      {
+        "name": "Ikram Aliskerov",
+        "queries": 0,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      }
+    ],
+    "checked_at": "2026-11-11T17:57:00Z",
+    "library_entries": 68,
+    "newly_found": 2,
+    "cumulative_attempted": 183,
+    "cumulative_found": 68,
+    "cumulative_missing": 115,
+    "cumulative_rejected": 139,
+    "batch_number": 20,
+    "last_batch_at": "2026-11-11T17:57:00Z",
+    "last_successful_batch_at": "2026-11-11T17:57:00Z",
+    "last_rate_limited_at": "2026-11-11T17:57:00Z",
     "coverage": {
+      "boxing fight card fighters": {
+        "total": 241,
+        "with_image": 0,
+        "missing": 241
+      },
       "f1 drivers": {
         "total": 25,
-        "with_image": 23,
-        "missing": 2
+        "with_image": 25,
+        "missing": 0
       },
       "f1 constructors": {
         "total": 11,
@@ -5222,8 +5321,8 @@
       },
       "ufc": {
         "total": 206,
-        "with_image": 16,
-        "missing": 190
+        "with_image": 18,
+        "missing": 188
       },
       "boxing": {
         "total": 81,
@@ -5231,16 +5330,6 @@
         "missing": 81
       }
     },
-    "checked_at": "2026-11-11T16:14:24Z",
-    "library_entries": 66,
-    "cumulative_found": 66,
-    "cumulative_missing": 112,
-    "cumulative_rejected": 139,
-    "batch_number": 19,
-    "last_batch_at": "2026-11-11T15:59:25Z",
-    "last_successful_batch_at": "2026-11-11T15:59:25Z",
-    "last_rate_limited_at": "2026-11-11T15:59:25Z",
-    "enrichment_status": "paused after rate limit",
     "rate_limited": true
   },
   "last_updated": "2026-11-11T16:14:24Z"

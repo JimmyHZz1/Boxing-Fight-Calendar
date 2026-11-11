@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-09T12:52:42Z",
+  "updated_at": "2026-11-11T17:57:00Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -684,6 +684,28 @@
       "creator": "Wikimedia Commons · Manad2030 · CC BY-SA 3.0",
       "attribution": "Wikimedia Commons · Manad2030 · CC BY-SA 3.0",
       "verified_at": "2026-11-09T12:52:42Z",
+      "sport": "ufc"
+    },
+    "israel adesanya": {
+      "name": "Israel Adesanya",
+      "path": "assets/images/ufc/israel-adesanya.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Israel_Adesanya_2014.jpg",
+      "licence": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "creator": "Wikimedia Commons · Ewornod · CC BY-SA 4.0",
+      "attribution": "Wikimedia Commons · Ewornod · CC BY-SA 4.0",
+      "verified_at": "2026-11-11T17:57:00Z",
+      "sport": "ufc"
+    },
+    "jared cannonier": {
+      "name": "Jared Cannonier",
+      "path": "assets/images/ufc/jared-cannonier.png",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Jared_Cannonier_2024.png",
+      "licence": "CC BY 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by/3.0",
+      "creator": "Wikimedia Commons · Chamatkar Sandhu · CC BY 3.0",
+      "attribution": "Wikimedia Commons · Chamatkar Sandhu · CC BY 3.0",
+      "verified_at": "2026-11-11T17:57:00Z",
       "sport": "ufc"
     }
   },

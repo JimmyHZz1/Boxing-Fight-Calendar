@@ -1385,7 +1385,9 @@
           },
           "result": null,
           "referee": null,
-          "bonus": null
+          "bonus": null,
+          "fighter1_image": "./assets/images/ufc/jared-cannonier.png",
+          "fighter1_image_credit": "Wikimedia Commons · Chamatkar Sandhu · CC BY 3.0"
         },
         {
           "id": 93257,
