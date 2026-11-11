@@ -47,6 +47,112 @@
     }
     return window.SportsData?.getNextEvent?.(sport) || null;
   }
+
+  const resultsRoot = () => document.getElementById("home-latest-results-list");
+  const resultSport = [
+    {key:"f1",label:"FORMULA 1",mark:"F1"},
+    {key:"darts",label:"PDC DARTS",mark:"PDC"},
+    {key:"ufc",label:"UFC",mark:"UFC"},
+    {key:"bkfc",label:"BKFC",mark:"BKFC"}
+  ];
+  const resultWinner = fight => {
+    const result = fight?.result || {};
+    const a = fight?.fighter_a || fight?.fighter1 || fight?.fighterA || {};
+    const b = fight?.fighter_b || fight?.fighter2 || fight?.fighterB || {};
+    const winner = fight?.winner || result.winner || result.winner_name || "";
+    if (typeof winner === "string" && winner) return winner;
+    const id = result.winner_fighter_id || result.winner_id || fight?.winner_fighter_id;
+    if (id != null) return String(a.id) === String(id) ? (a.name || fight.fighter1 || "Winner") : String(b.id) === String(id) ? (b.name || fight.fighter2 || "Winner") : "";
+    return "";
+  };
+  const hasConfirmedResult = event => {
+    if (Array.isArray(event.results) && event.results.length) return true;
+    const fights = event.fights || event.bouts || [];
+    return Array.isArray(fights) && fights.some(f => f.result || f.winner || f.status === "completed");
+  };
+  const resultSummary = (sport,event) => {
+    if (Array.isArray(event.results) && event.results.length) {
+      return event.results.slice(0,3).map((r,i) => {
+        const position = r.position || (i+1);
+        const name = r.driver || r.name || r.player || r.competitor || "";
+        return name ? "P"+position+" "+name : "";
+      }).filter(Boolean).join(" · ");
+    }
+    const fights = (event.fights || event.bouts || []).filter(f => f.result || f.winner || f.status === "completed");
+    const winners = fights.map(f => {
+      const name = resultWinner(f) || f.winner || "";
+      const method = f.result?.method || f.method || "";
+      return name ? name+(method ? " · "+method : "") : "";
+    }).filter(Boolean).slice(0,2);
+    if (winners.length) return winners.join(" · ");
+    return event.winner || event.result_summary || event.result || "";
+  };
+  function collectLatestResults() {
+    const today = londonToday();
+    const records = [];
+    resultSport.forEach(sport => {
+      const events = window.SportsData?.getEvents?.(sport.key,true) || [];
+      events.forEach(event => {
+        const date = dateKey(event);
+        if (date && date <= today && hasConfirmedResult(event)) {
+          records.push({sport:sport.key,mark:sport.mark,name:eventName(event),date,summary:resultSummary(sport.key,event),event});
+        }
+      });
+    });
+    boxingEvents.forEach(event => {
+      const bouts = Array.isArray(event.bouts) ? event.bouts : [];
+      const completed = bouts.filter(b => b.result || b.winner || b.status === "completed");
+      if (!completed.length) return;
+      const date = dateKey(event);
+      if (!date || date > today) return;
+      const winners = completed.map(b => {
+        const winner = b.winner || b.result?.winner || b.result?.winner_name || "";
+        return typeof winner === "string" ? winner : "";
+      }).filter(Boolean).slice(0,2);
+      records.push({sport:"boxing",mark:"BOX",name:eventName(event),date,summary:winners.join(" · ") || completed.length+" bout results confirmed",event});
+    });
+    return records.sort((a,b)=>b.date.localeCompare(a.date)).slice(0,4);
+  }
+  function renderLatestResults() {
+    const target = resultsRoot();
+    if (!target || !feedsReady) return;
+    target.replaceChildren();
+    const records = collectLatestResults();
+    if (!records.length) {
+      const empty = document.createElement("p");
+      empty.className = "live-centre-empty";
+      empty.textContent = "No confirmed results are available in the latest published feeds yet.";
+      target.append(empty);
+      return;
+    }
+    records.forEach(record => {
+      const card = document.createElement("button");
+      card.type = "button";
+      card.className = "home-latest-result-item";
+      card.dataset.sport = record.sport;
+      const mark = document.createElement("span");
+      mark.className = "home-latest-result-mark";
+      mark.textContent = record.mark;
+      const copy = document.createElement("span");
+      copy.className = "home-latest-result-copy";
+      const title = document.createElement("strong");
+      title.textContent = record.name;
+      const date = document.createElement("small");
+      date.textContent = new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",day:"numeric",month:"short"}).format(new Date(record.date+"T12:00:00Z"))+" · "+record.sport.toUpperCase();
+      const summary = document.createElement("small");
+      summary.className = "home-latest-result-summary";
+      summary.textContent = record.summary || "Result confirmed";
+      copy.append(title,date,summary);
+      card.append(mark,copy);
+      card.addEventListener("click",()=>{
+        if(record.sport==="boxing"){
+          document.getElementById("boxing-home-content")?.scrollIntoView({behavior:"smooth",block:"start"});
+        } else if(window.SportPages?.open) window.SportPages.open(record.sport);
+      });
+      target.append(card);
+    });
+    target.setAttribute("aria-label",records.length+" latest confirmed sports results");
+  }
   function render() {
     const target = root();
     if (!target || !feedsReady) return;
@@ -91,6 +197,7 @@
       if (event) count++;
     });
     target.setAttribute("aria-label", "Next events across five sports; " + count + " confirmed");
+    renderLatestResults();
   }
   async function loadBoxing() {
     try {
@@ -107,8 +214,8 @@
     feedsReady = true;
     render();
   }
-  document.addEventListener("sports:feeds-updated", render);
+  document.addEventListener("sports:feeds-updated", () => { render(); renderLatestResults(); });
   if (window.SportsData) refresh();
   else document.addEventListener("DOMContentLoaded", refresh, { once: true });
-  setInterval(render, 60000);
+  setInterval(() => { render(); renderLatestResults(); }, 60000);
 })();
