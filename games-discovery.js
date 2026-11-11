@@ -200,7 +200,7 @@
   Promise.all([
     fetch("./data/games-discovery.json?v=20261111-04",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("Featured catalogue unavailable");return r.json();}),
     fetch("./data/games-popularity.json?v=20261110-07",{cache:"no-store"}).then(r=>r.ok?r.json():{games:[]}).catch(()=>({games:[]})),
-    fetch("./data/company-profiles.json?v=20261111-01",{cache:"no-store"}).then(r=>r.ok?r.json():{companies:[]}).catch(()=>({companies:[]}))
+    fetch("./data/company-profiles.json?v=20261111-02",{cache:"no-store"}).then(r=>r.ok?r.json():{companies:[]}).catch(()=>({companies:[]}))
   ]).then(([data,pop,profiles])=>{
     (pop.games||[]).forEach(g=>{if(g.title)assetMap.set(norm(g.title),{artwork_url:g.artwork_url||null,logo_url:g.logo_url||null});});
     catalogue=data;profileData=profiles;catalogue.companies=profiles.companies?.length?profiles.companies:catalogue.companies;renderFeatured();renderTbc();
