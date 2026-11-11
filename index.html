@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#101114">
   <meta name="description" content="Boxing, Formula 1, UFC and PDC darts schedules in one sports calendar, shown in UK local time.">
   <link rel="manifest" href="./manifest.json">
-  <link rel="stylesheet" href="./styles.css?v=20261111-07">
+  <link rel="stylesheet" href="./styles.css?v=20261111-08">
   <title>Sports Calendar</title>
 </head>
 <body>
@@ -33,6 +33,16 @@
       <button type="button" class="top-sport-button" data-top-sport="boxing" aria-label="Boxing"><span class="top-sport-wordmark boxing-mark">BOX</span><span>BOXING</span></button>
       <button type="button" class="top-sport-button" data-top-sport="ufc" aria-label="UFC"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/UFC%20Logo.svg" alt=""><span>UFC</span></button>
       <button type="button" class="top-sport-button" data-top-sport="bkfc" aria-label="BKFC"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bkfc-logo.png" alt=""><span>BKFC</span></button>
+    </nav>
+    <nav class="games-platform-hub" id="games-platform-hub" aria-label="Browse game releases by platform">
+      <div class="games-platform-hub-heading"><span class="eyebrow games-eyebrow">EXPLORE BY PLATFORM</span><span>CHOOSE A PLATFORM TO SEE ITS UPCOMING RELEASES</span></div>
+      <div class="games-platform-hub-grid">
+        <button type="button" data-games-platform="all" aria-pressed="true"><span class="games-platform-hub-mark">ALL</span><strong>All platforms</strong><small>Every PC &amp; console release</small></button>
+        <button type="button" data-games-platform="pc" aria-pressed="false"><img src="./assets/platform-windows.svg" alt=""><strong>PC</strong><small>Windows &amp; PC releases</small></button>
+        <button type="button" data-games-platform="playstation" aria-pressed="false"><img src="./assets/platform-playstation.svg" alt=""><strong>PlayStation</strong><small>PS5 &amp; PS4 releases</small></button>
+        <button type="button" data-games-platform="xbox" aria-pressed="false"><img src="./assets/platform-xbox.svg" alt=""><strong>Xbox</strong><small>Xbox console releases</small></button>
+        <button type="button" data-games-platform="nintendo" aria-pressed="false"><img src="./assets/platform-nintendo.svg" alt=""><strong>Nintendo</strong><small>Switch family releases</small></button>
+      </div>
     </nav>
     <div class="home-display-tools" aria-label="Home page display options"><button type="button" id="home-customise-toggle" aria-expanded="false">⚙ PERSONALISE HOME</button><button type="button" id="compact-view-toggle" aria-pressed="false">▤ COMPACT VIEW</button></div>
     <section class="next-event-strip" aria-label="Next upcoming event in each sport">
@@ -349,8 +359,8 @@
   <script src="./home-next-up.js?v=20261109-01"></script>
   <script src="./version-history.js?v=20261109-01"></script>
   <script src="./f1-grand-prix-centre.js?v=20261109-03"></script>
-  <script src="./games-calendar.js?v=20261111-02"></script>
+  <script src="./games-calendar.js?v=20261111-03"></script>
   <script src="./games-popularity.js?v=20261110-07"></script>
-  <script src="./games-discovery.js?v=20261111-02"></script>
+  <script src="./games-discovery.js?v=20261111-03"></script>
 </body>
 </html>

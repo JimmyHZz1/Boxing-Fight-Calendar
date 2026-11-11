@@ -48,6 +48,16 @@
     intro.append(el("small","games-discovery-badge",game.date_status||"COMING SOON · DATE TBC"),el("h3","",game.title),el("p","",game.synopsis||"Officially announced game."));
     const panel=el("aside","games-featured-info");
     panel.append(el("div","games-featured-info-status",game.date_label||"Release date TBC"));
+    const releaseCountdown = el("div","games-featured-info-countdown");
+    releaseCountdown.append(el("span","games-featured-info-label","RELEASE COUNTDOWN"));
+    let countdownText = "AWAITING A CONFIRMED DATE";
+    if (/^\\d{4}-\\d{2}-\\d{2}$/.test(String(game.release_date||""))) {
+      const today = new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/London",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
+      const days = Math.ceil((Date.parse(game.release_date+"T00:00:00Z")-Date.parse(today+"T00:00:00Z"))/86400000);
+      countdownText = days < 0 ? "RELEASED" : days === 0 ? "OUT TODAY" : days+" DAYS TO GO";
+    }
+    releaseCountdown.append(el("strong","",countdownText));
+    panel.append(releaseCountdown);
     const credits=el("div","games-featured-info-row");
     credits.append(el("span","games-featured-info-label","DEVELOPER / PUBLISHER"));
     const companyLinks=el("div","games-featured-company-links");
