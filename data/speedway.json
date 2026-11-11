@@ -310,5 +310,117 @@
     "season": 2026,
     "grandPrixSource": "https://fimspeedway.com/sgp/results",
     "worldCupSource": "https://fimspeedway.com/swc/results"
+  },
+  "championship2027": {
+    "season": 2027,
+    "status": "official_permanent_rider_lineup",
+    "source_url": "https://fimspeedway.com/sgp/riders",
+    "riders": [
+      {
+        "rank": 1,
+        "name": "Robert Lambert",
+        "number": 505,
+        "nationality": "Great Britain",
+        "status": "confirmed"
+      },
+      {
+        "rank": 2,
+        "name": "Bartosz Zmarzlik",
+        "number": 95,
+        "nationality": "Poland",
+        "status": "confirmed"
+      },
+      {
+        "rank": 3,
+        "name": "Brady Kurtz",
+        "number": 101,
+        "nationality": "Australia",
+        "status": "confirmed"
+      },
+      {
+        "rank": 4,
+        "name": "Michael Jepsen Jensen",
+        "number": 52,
+        "nationality": "Denmark",
+        "status": "confirmed"
+      },
+      {
+        "rank": 5,
+        "name": "Patryk Dudek",
+        "number": 692,
+        "nationality": "Poland",
+        "status": "confirmed"
+      },
+      {
+        "rank": 6,
+        "name": "Leon Madsen",
+        "number": 30,
+        "nationality": "Denmark",
+        "status": "confirmed"
+      },
+      {
+        "rank": 7,
+        "name": "Max Fricke",
+        "number": 46,
+        "nationality": "Australia",
+        "status": "confirmed"
+      },
+      {
+        "rank": 8,
+        "name": "Kacper Woryna",
+        "number": 223,
+        "nationality": "Poland",
+        "status": "confirmed"
+      },
+      {
+        "rank": 9,
+        "name": "Andzejs Lebedevs",
+        "number": 29,
+        "nationality": "Latvia",
+        "status": "confirmed"
+      },
+      {
+        "rank": 10,
+        "name": "Jack Holder",
+        "number": 25,
+        "nationality": "Australia",
+        "status": "confirmed"
+      },
+      {
+        "rank": 11,
+        "name": "Fredrik Lindgren",
+        "number": 66,
+        "nationality": "Sweden",
+        "status": "confirmed"
+      },
+      {
+        "rank": 12,
+        "name": "Dan Bewley",
+        "number": 99,
+        "nationality": "Great Britain",
+        "status": "confirmed"
+      },
+      {
+        "rank": 13,
+        "name": "Maciej Janowski",
+        "number": 71,
+        "nationality": "Poland",
+        "status": "confirmed"
+      },
+      {
+        "rank": 14,
+        "name": "Kim Nilsson",
+        "number": 233,
+        "nationality": "Sweden",
+        "status": "confirmed"
+      },
+      {
+        "rank": 15,
+        "name": "Rohan Tungate",
+        "number": 27,
+        "nationality": "Australia",
+        "status": "confirmed"
+      }
+    ]
   }
 }

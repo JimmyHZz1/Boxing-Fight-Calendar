@@ -50,18 +50,24 @@
     summary.append(el("span","eyebrow","2026 FINAL · WARSAW"),el("h3","",p.champion+" — World Cup winners"),el("p","", "Silver: "+p.runner_up+" · Bronze: "+p.third+" · "+p.fourth+" finished fourth"));
     s.append(summary,link("2026 official World Cup results",p.source_url),link("FIM Speedway World Cup",state.data.sources.worldCup));target.append(s);
   }
-  function riderRow(r){
+  function riderRow(r,seasonLabel,showPoints=true){
     const b=el("button","speedway-rider-row");b.type="button";b.setAttribute("aria-label","View rider profile: "+r.name);
-    b.append(el("span","speedway-rider-rank",String(r.rank).padStart(2,"0")),el("span","speedway-rider-number","#"+r.number),el("span","speedway-rider-name",r.name),el("span","speedway-rider-country",r.nationality),el("strong","speedway-rider-points",r.points+" pts"));
-    b.addEventListener("click",()=>{state.selectedRider=r;render();});return b;
+    b.append(el("span","speedway-rider-rank",String(r.rank||"—").padStart(2,"0")),el("span","speedway-rider-number","#"+r.number),el("span","speedway-rider-name",r.name),el("span","speedway-rider-country",r.nationality),el("strong","speedway-rider-points",showPoints?(r.points+" pts"):"CONFIRMED"));
+    b.addEventListener("click",()=>{state.selectedRider={...r,seasonLabel,points:r.points??null};render();});return b;
   }
   function renderRiders(target){
-    const s=panel("2026 rider standings","FINAL WORLD CHAMPIONSHIP TABLE");
-    s.append(el("p","speedway-section-intro","The 2026 final standings are shown until the 2027 rider line-up and championship table are officially published. Select a rider for their profile summary."));
-    const list=el("div","speedway-rider-list");state.data.riderStandings.riders.forEach(r=>list.append(riderRow(r)));s.append(list,link("Official FIM rider standings",state.data.riderStandings.source_url));target.append(s);
+    const lineup=state.data.championship2027;
+    if(lineup?.riders?.length){
+      const current=panel("2027 permanent rider line-up","ALL "+lineup.riders.length+" CONFIRMED SGP RIDERS");
+      current.append(el("p","speedway-section-intro","The complete permanent rider line-up published by FIM for the 2027 Speedway Grand Prix World Championship. Championship points and final grid positions will populate when the season begins."));
+      const currentList=el("div","speedway-rider-list");lineup.riders.forEach(r=>currentList.append(riderRow(r,"2027 Speedway GP",false)));current.append(currentList,link("Official FIM 2027 rider line-up",lineup.source_url));target.append(current);
+    }
+    const s=panel("2026 final rider standings","PREVIOUS SEASON · WORLD CHAMPIONSHIP TABLE");
+    s.append(el("p","speedway-section-intro","The previous season’s final standings remain available as an archive. Select any rider for their profile summary."));
+    const list=el("div","speedway-rider-list");state.data.riderStandings.riders.forEach(r=>list.append(riderRow(r,"2026 Speedway GP",true)));s.append(list,link("Official FIM 2026 rider standings",state.data.riderStandings.source_url));target.append(s);
     if(state.selectedRider){
       const r=state.selectedRider,profile=panel(r.name,"RIDER PROFILE");
-      profile.append(el("div","speedway-rider-profile-number","#"+r.number),el("p","speedway-section-intro",r.nationality+" · 2026 Speedway GP world championship"),el("div","speedway-profile-stats",[[String(r.rank),"FINAL RANK"],[String(r.points),"CHAMPIONSHIP POINTS"],[String(r.number),"RACE NUMBER"]].map(([n,l])=>{const x=el("div","speedway-profile-stat");x.append(el("strong","",n),el("small","",l));return x;})));
+      profile.append(el("div","speedway-rider-profile-number","#"+r.number),el("p","speedway-section-intro",r.nationality+" · "+(r.seasonLabel||"Speedway GP")),el("div","speedway-profile-stats",[[String(r.rank||"—"),"FINAL RANK"],[String(r.points??"TBC"),"CHAMPIONSHIP POINTS"],[String(r.number),"RACE NUMBER"]].map(([n,l])=>{const x=el("div","speedway-profile-stat");x.append(el("strong","",n),el("small","",l));return x;})));
       profile.append(el("p","speedway-section-note","Team and club affiliations, career records and rider photographs will be added only when verified against an official rider profile. This profile currently uses the official FIM championship standings and rider number."));
       profile.append(link("View official FIM rider standings",state.data.riderStandings.source_url));
       const close=el("button","secondary-button","CLOSE RIDER PROFILE");close.type="button";close.addEventListener("click",()=>{state.selectedRider=null;render();});profile.append(close);target.append(profile);

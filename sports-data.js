@@ -264,11 +264,13 @@
     if(/^https?:\/\//i.test(source)){const a=make("a","event-source-link","Official PDC tournament details ↗");a.href=source;a.target="_blank";a.rel="noopener noreferrer";root.append(a);}
   }
   function fighterPortrait(name, url) {
+    const initials=String(name||"?").trim().split(/\\s+/).filter(Boolean).slice(0,2).map(part=>part[0]).join("").toUpperCase()||"?";
+    const fallback=()=>make("span","sport-fight-portrait sport-fight-portrait-fallback",initials);
     const source=String(url||"");
-    if (!(source.indexOf("https://")===0 || source.indexOf("http://")===0 || source.indexOf("./assets/images/")===0)) return null;
+    if (!(source.indexOf("https://")===0 || source.indexOf("http://")===0 || source.indexOf("./assets/images/")===0)) return fallback();
     const img=make("img","sport-fight-portrait");
     img.src=source;img.alt=name+" portrait";img.loading="lazy";
-    img.referrerPolicy="no-referrer";img.onerror=()=>img.remove();
+    img.referrerPolicy="no-referrer";img.onerror=()=>img.replaceWith(fallback());
     return img;
   }
   function fighterName(value) {
