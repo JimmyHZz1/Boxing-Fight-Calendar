@@ -2652,3 +2652,39 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
 #next-event-ticker .next-event-item{flex:0 0 min(250px,78vw)!important;scroll-snap-align:none!important}
 #next-event-ticker.is-auto-scrolling .next-event-track{animation:none!important;transform:none!important}
 .games-featured-info{justify-content:flex-start!important;align-self:start!important}
+
+
+/* Games Calendar polish: clear month controls, aligned release cards and company identity. */
+.games-month-group{overflow:hidden;border-radius:5px;background:linear-gradient(110deg,rgba(20,31,46,.94),rgba(13,18,27,.88))}
+.games-month-summary{min-height:62px;padding:14px 17px;gap:12px;transition:background .16s ease,color .16s ease}
+.games-month-summary:hover{background:rgba(38,133,232,.10)}
+.games-month-summary:focus-visible{outline:2px solid #8fc1ff;outline-offset:-3px}
+.games-month-summary strong{font-size:22px;letter-spacing:.65px}
+.games-month-summary small{margin-left:auto;padding:5px 8px;border:1px solid rgba(143,193,255,.24);background:rgba(38,133,232,.08);border-radius:3px;white-space:nowrap}
+.games-month-toggle{flex:0 0 25px;width:25px;height:25px;border-radius:3px}
+.games-timeline-month-nav button{border-radius:3px;transition:background .15s,border-color .15s,color .15s}
+.games-timeline-month-nav button[aria-current="true"]{border-color:#2685e8;background:#2685e8;color:#fff}
+.games-timeline-month-nav button:hover{border-color:#62a7ff;background:#203b59}
+.games-timeline-day .games-release-card{grid-template-columns:76px minmax(0,1fr)!important;align-items:start!important;gap:0 16px!important}
+.games-timeline-day .games-release-artwork{grid-column:1;grid-row:1;height:96px!important;min-height:96px!important;width:76px!important}
+.games-timeline-day .games-release-details{grid-column:2;grid-row:1;min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:4px}
+.games-timeline-day .games-release-source{grid-column:2;grid-row:2;justify-self:start;margin-top:7px}
+.games-release-date{font-size:12px!important;letter-spacing:.7px}
+.games-release-details h3{line-height:1.08}
+.games-release-companies{display:flex;flex-wrap:wrap;gap:6px;margin:3px 0}
+.games-release-company{display:inline-flex;align-items:center;gap:5px;min-height:22px;padding:3px 6px;border:1px solid rgba(143,193,255,.17);background:rgba(38,133,232,.055);color:#aebfd3}
+.games-release-company img,.games-company-logo{width:18px;height:18px;object-fit:contain;flex:0 0 18px;border-radius:2px}
+.games-release-company small{font-size:8px;font-weight:800;letter-spacing:.2px}
+.games-featured-company-links a{display:inline-flex;align-items:center;gap:6px}
+.games-company-identity{display:flex;align-items:center;gap:12px;margin:8px 0}
+.games-company-identity .games-company-logo{width:42px;height:42px;flex-basis:42px;padding:5px;border:1px solid rgba(143,193,255,.25);background:rgba(38,133,232,.08)}
+.games-company-identity .games-dialog-title{margin:0}
+.games-featured-info{justify-content:flex-start!important;align-self:start!important}
+@media(max-width:620px){
+ .games-month-summary{min-height:56px;padding:12px 10px;gap:8px}
+ .games-month-summary strong{font-size:19px}
+ .games-month-summary small{font-size:7px;padding:4px 5px}
+ .games-timeline-day .games-release-card{grid-template-columns:54px minmax(0,1fr)!important;gap:0 10px!important;padding:9px!important}
+ .games-timeline-day .games-release-artwork{width:54px!important;height:72px!important;min-height:72px!important}
+ .games-release-company small{font-size:7px}
+}
