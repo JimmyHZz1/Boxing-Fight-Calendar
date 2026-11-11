@@ -24,6 +24,8 @@ public sealed class NotificationService : IDisposable
             TimeSpan.FromSeconds(20), TimeSpan.FromMinutes(15));
     }
 
+    public void Start() => _ = CheckNowAsync();
+
     public async Task CheckNowAsync()
     {
         if (!await _gate.WaitAsync(0)) return;
