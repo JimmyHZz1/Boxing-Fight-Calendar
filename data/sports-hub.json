@@ -5202,51 +5202,51 @@
     },
     "search_details": [
       {
-        "name": "Justin Gaethje",
+        "name": "Paddy Pimblett",
         "queries": 1,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       },
       {
-        "name": "Ilia Topuria",
+        "name": "Benoît Saint Denis",
         "queries": 1,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       },
       {
-        "name": "Arman Tsarukyan",
+        "name": "Quillan Salkilld",
         "queries": 1,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       },
       {
-        "name": "Charles Oliveira",
+        "name": "Mauricio Ruffy",
         "queries": 1,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       },
       {
-        "name": "Max Holloway",
+        "name": "Salahdine Parnasse",
         "queries": 1,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       }
     ],
-    "checked_at": "2026-11-11T12:13:51Z",
+    "checked_at": "2026-11-11T14:44:21Z",
     "library_entries": 66,
     "newly_found": 0,
-    "cumulative_attempted": 157,
+    "cumulative_attempted": 162,
     "cumulative_found": 66,
-    "cumulative_missing": 91,
+    "cumulative_missing": 96,
     "cumulative_rejected": 139,
-    "batch_number": 14,
-    "last_batch_at": "2026-11-11T12:13:51Z",
-    "last_successful_batch_at": "2026-11-11T12:13:51Z",
+    "batch_number": 15,
+    "last_batch_at": "2026-11-11T14:44:21Z",
+    "last_successful_batch_at": "2026-11-11T14:44:21Z",
     "last_rate_limited_at": "2026-11-09T13:33:36Z",
     "coverage": {
       "boxing fight card fighters": {
