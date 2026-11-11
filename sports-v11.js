@@ -4,7 +4,7 @@
   const logos={f1:"https://www.formula1.com/assets/home/_next/static/media/f1-logo.43a01c6b.svg",darts:"https://commons.wikimedia.org/wiki/Special:FilePath/Professional%20Darts%20Corporation%20logo.png",ufc:"https://commons.wikimedia.org/wiki/Special:FilePath/UFC%20Logo.svg",bkfc:"https://commons.wikimedia.org/wiki/Special:FilePath/Bkfc-logo.png"};
   const $=id=>document.getElementById(id);
   const today=()=>new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/London"}).format(new Date());
-  const dateValue=e=>e?.start_at||e?.start_time_utc||e?.date||e?.event_date||null;
+  const dateValue=e=>e?.start_at||e?.start_time_utc||e?.starts_at||e?.date||e?.event_date||e?.eventDate||null;
   const dateKey=value=>{
     if(!value)return "";
     const s=String(value);
