@@ -11,6 +11,8 @@
   let catalogue={featured:[],companies:[]},activeIndex=0,assetMap=new Map();
   const el=(tag,cls,txt)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(txt!==undefined)n.textContent=txt;return n;};
   const safeUrl=u=>typeof u==="string"&&/^https:\/\//i.test(u);
+  const companyLogoUrl=company=>{try{return "https://www.google.com/s2/favicons?domain="+encodeURIComponent(new URL(company.website).hostname)+"&sz=128";}catch{return "";}};
+  const addCompanyMark=(parent,company)=>{const url=companyLogoUrl(company);if(!url)return;const img=document.createElement("img");img.className="games-company-logo";img.src=url;img.alt=company.name+" logo";img.loading="lazy";img.onerror=()=>img.remove();parent.append(img);};
   const norm=s=>String(s||"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
   const imageCandidates=game=>{const id=game.trailer_id;const asset=assetMap.get(norm(game.title))||{};return [asset.artwork_url,game.artwork_url,asset.logo_url,game.logo_url,id?"https://i.ytimg.com/vi/"+id+"/hqdefault.jpg":null,id?"https://img.youtube.com/vi/"+id+"/hqdefault.jpg":null,id?"https://i.ytimg.com/vi/"+id+"/sddefault.jpg":null,id?"https://img.youtube.com/vi/"+id+"/0.jpg":null,id?"https://i.ytimg.com/vi/"+id+"/0.jpg":null].filter((u,i,a)=>safeUrl(u)&&a.indexOf(u)===i);};
   const addImage=(wrap,game,mode="cover")=>{
@@ -53,7 +55,7 @@
       const company=catalogue.companies.find(x=>x.id===id);
       if(!company)return;
       if(index)companyLinks.append(el("span","games-featured-company-separator","·"));
-      const link=document.createElement("a");link.href=company.website;link.target="_blank";link.rel="noopener noreferrer";link.textContent=company.name;link.title="Visit "+company.name+" website";companyLinks.append(link);
+      const link=document.createElement("a");link.href=company.website;link.target="_blank";link.rel="noopener noreferrer";addCompanyMark(link,company);link.append(document.createTextNode(company.name));link.title="Visit "+company.name+" website";companyLinks.append(link);
     });
     credits.append(companyLinks);panel.append(credits);
     const platforms=el("div","games-featured-info-row");
@@ -82,7 +84,7 @@
   };
   const showCompany=id=>{
     const c=catalogue.companies.find(x=>x.id===id);if(!c)return;dialogContent.replaceChildren();
-    const head=el("section","games-dialog-section");head.append(el("small","games-discovery-badge","DEVELOPER / PUBLISHER"),el("h2","games-dialog-title",c.name),el("p","games-dialog-meta","Explore games associated with this company, including past releases and announced projects."));const link=el("a","","OFFICIAL COMPANY WEBSITE ↗");link.href=c.website;link.target="_blank";link.rel="noopener noreferrer";link.style.color="#9bcaff";head.append(link);dialogContent.append(head);
+    const head=el("section","games-dialog-section");head.append(el("small","games-discovery-badge","DEVELOPER / PUBLISHER"));const identity=el("div","games-company-identity");addCompanyMark(identity,c);identity.append(el("h2","games-dialog-title",c.name));head.append(identity,el("p","games-dialog-meta","Explore games associated with this company, including past releases and announced projects."));const link=el("a","","OFFICIAL COMPANY WEBSITE ↗");link.href=c.website;link.target="_blank";link.rel="noopener noreferrer";link.style.color="#9bcaff";head.append(link);dialogContent.append(head);
     const section=el("section","games-dialog-section");section.append(el("h3","","Games & releases"));const list=el("div","games-company-games");(c.games||[]).forEach(title=>{const game=catalogue.featured.find(g=>g.title===title);if(game){const b=el("button","games-company-game",title);b.type="button";b.addEventListener("click",()=>showGame(game));list.append(b);}else list.append(el("span","games-company-game",title));});section.append(list);dialogContent.append(section);const back=el("button","games-company-game","← BACK TO FEATURED GAMES");back.type="button";back.addEventListener("click",closeDialog);dialogContent.append(back);openDialog();
   };
   const platformAsset=platform=>{
