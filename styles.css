@@ -3528,3 +3528,16 @@ body.games-platform-page .games-platform-hub{display:none}
   .home-snapshot-panels>.home-next-up-panel,
   .home-snapshot-panels>.home-latest-results-panel{padding:14px}
 }
+
+
+/* SWGOH selector identity and in-app integration landing screen. */
+.mobile-calendar-menu .brand-menu-mark.swgoh-mark,
+.mobile-calendar-menu button .brand-menu-mark.swgoh-mark{background:#7b5bd6!important;color:#fff!important;font-size:12px;letter-spacing:-1px}
+.swgoh-screen .swgoh-intro h1{margin-bottom:14px}
+.swgoh-integration-panel{display:grid;grid-template-columns:92px minmax(0,1fr);gap:22px;align-items:center;margin:20px 0;padding:26px;background:linear-gradient(125deg,rgba(123,91,214,.15),rgba(25,27,32,.96) 58%),var(--panel);border:1px solid rgba(123,91,214,.42)}
+.swgoh-integration-mark{width:82px;height:82px;display:grid;place-items:center;border:1px solid rgba(177,151,255,.55);background:rgba(123,91,214,.18);color:#c5b4ff;font:900 28px 'Barlow Condensed',sans-serif;letter-spacing:-2px}
+.swgoh-integration-panel h2{margin:7px 0 8px;font:700 28px 'Barlow Condensed',sans-serif;text-transform:uppercase}
+.swgoh-integration-panel p{max-width:680px;color:var(--muted);font-size:13px;line-height:1.7}
+.swgoh-repository-link{display:inline-flex;margin-top:8px;color:#c5b4ff;font-size:10px;font-weight:800;letter-spacing:1px;text-decoration:none}
+.swgoh-repository-link:hover{text-decoration:underline}
+@media(max-width:520px){.swgoh-integration-panel{grid-template-columns:1fr;padding:18px;gap:14px}.swgoh-integration-mark{width:62px;height:62px;font-size:23px}.swgoh-integration-panel h2{font-size:24px}}
