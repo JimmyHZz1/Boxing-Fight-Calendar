@@ -42,11 +42,29 @@
     stage.replaceChildren();
     const media=makeTrailer(game,"games-featured-video");
     const copy=el("div","games-featured-stage-copy");
-    copy.append(el("small","games-discovery-badge",game.date_status||"COMING SOON · DATE TBC"),el("h3","",game.title),el("p","",game.synopsis||"Officially announced game."));
-    copy.append(el("div","games-stage-meta",(game.studio||"Developer TBC")+" · "+(game.publisher||"Publisher TBC")+"\n"+(game.date_label||"Release date TBC")),platformMarks(game.platforms));
-    const actions=el("div","games-dialog-actions"),details=el("button","games-stage-details","GAME DETAILS + COMPANY INFO");details.type="button";details.addEventListener("click",()=>showGame(game));actions.append(details);
-    if(safeUrl(game.official_url)){const a=el("a","","OFFICIAL PAGE ↗");a.href=game.official_url;a.target="_blank";a.rel="noopener noreferrer";actions.append(a);}
-    copy.append(actions);stage.append(media,copy);
+    const intro=el("div","games-featured-intro");
+    intro.append(el("small","games-discovery-badge",game.date_status||"COMING SOON · DATE TBC"),el("h3","",game.title),el("p","",game.synopsis||"Officially announced game."));
+    const panel=el("aside","games-featured-info");
+    panel.append(el("div","games-featured-info-status",game.date_label||"Release date TBC"));
+    const credits=el("div","games-featured-info-row");
+    credits.append(el("span","games-featured-info-label","DEVELOPER / PUBLISHER"));
+    const companyLinks=el("div","games-featured-company-links");
+    (game.company_ids||[]).forEach((id,index)=>{
+      const company=catalogue.companies.find(x=>x.id===id);
+      if(!company)return;
+      if(index)companyLinks.append(el("span","games-featured-company-separator","·"));
+      const link=document.createElement("a");link.href=company.website;link.target="_blank";link.rel="noopener noreferrer";link.textContent=company.name;link.title="Visit "+company.name+" website";companyLinks.append(link);
+    });
+    credits.append(companyLinks);panel.append(credits);
+    const platforms=el("div","games-featured-info-row");
+    platforms.append(el("span","games-featured-info-label","AVAILABLE PLATFORMS"),platformMarks(game.platforms,true));
+    panel.append(platforms);
+    const links=el("div","games-featured-info-links");
+    if(safeUrl(game.official_url)){const a=el("a","","OFFICIAL GAME WEBSITE ↗");a.href=game.official_url;a.target="_blank";a.rel="noopener noreferrer";links.append(a);}
+    if(safeUrl(game.source_url)&&game.source_url!==game.official_url){const a=el("a","","OFFICIAL ANNOUNCEMENT ↗");a.href=game.source_url;a.target="_blank";a.rel="noopener noreferrer";links.append(a);}
+    const details=el("button","games-stage-details","MORE GAME DETAILS");details.type="button";details.addEventListener("click",()=>showGame(game));links.append(details);
+    panel.append(links);
+    copy.append(intro,panel);stage.append(media,copy);
   };
   const showGame=game=>{
     dialogContent.replaceChildren();
@@ -76,11 +94,22 @@
     if(value==="pc"||value.startsWith("pc "))return ["windows","PC"];
     return ["windows","PC"];
   };
-  const platformMarks=platforms=>{
+  const platformUrl=name=>{
+    const value=String(name||"").toLowerCase();
+    if(value.includes("playstation")||value.includes("ps5")||value.includes("ps4"))return "https://www.playstation.com/";
+    if(value.includes("xbox"))return "https://www.xbox.com/";
+    if(value.includes("nintendo")||value.includes("switch"))return "https://www.nintendo.com/";
+    if(value.includes("steam"))return "https://store.steampowered.com/";
+    if(value==="pc"||value.startsWith("pc "))return "https://www.microsoft.com/windows/";
+    return null;
+  };
+  const platformMarks=(platforms,clickable=false)=>{
     const row=el("div","games-stage-platforms");
     (platforms||[]).forEach(name=>{
-      const [slug,label]=platformAsset(name),item=el("span","games-stage-platform");
-      item.title=name;item.setAttribute("aria-label",name);
+      const [slug,label]=platformAsset(name),url=platformUrl(name);
+      const item=clickable&&url?document.createElement("a"):el("span");
+      item.className="games-stage-platform";item.title="Visit "+name+" official website";item.setAttribute("aria-label",name);
+      if(clickable&&url){item.href=url;item.target="_blank";item.rel="noopener noreferrer";}
       const img=document.createElement("img");img.src="./assets/platform-"+slug+".svg";img.alt="";img.loading="eager";img.decoding="async";img.onerror=()=>{img.replaceWith(el("b","games-stage-platform-fallback",slug.toUpperCase()));};
       item.append(img,el("small","",label));row.append(item);
     });
