@@ -1,0 +1,55 @@
+<Window x:Class="SportsGamesCalendar.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+        Title="Sports &amp; Games Calendar"
+        Width="1440" Height="900"
+        MinWidth="900" MinHeight="600"
+        WindowStartupLocation="CenterScreen"
+        Background="{StaticResource AppBackground}"
+        Foreground="#F5F5F5">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="54" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="25" />
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="{StaticResource ToolbarBackground}"
+                BorderBrush="#343434" BorderThickness="0,0,0,1">
+            <DockPanel LastChildFill="True" Margin="12,0">
+                <StackPanel DockPanel.Dock="Left" Orientation="Horizontal"
+                            VerticalAlignment="Center">
+                    <TextBlock Text="SPORTS &amp; GAMES"
+                               Foreground="{StaticResource AccentGold}"
+                               FontWeight="Bold" FontSize="13"
+                               VerticalAlignment="Center" Margin="0,0,18,0" />
+                    <Button x:Name="BackButton" Content="←" ToolTip="Back"
+                            Click="BackButton_Click" IsEnabled="False" />
+                    <Button x:Name="ForwardButton" Content="→" ToolTip="Forward"
+                            Click="ForwardButton_Click" IsEnabled="False" />
+                    <Button Content="Home" Click="HomeButton_Click" />
+                    <Button Content="Refresh" Click="RefreshButton_Click" />
+                </StackPanel>
+                <TextBlock x:Name="ConnectionLabel" Text="Connecting…"
+                           Foreground="#B8B8B8" FontSize="12"
+                           VerticalAlignment="Center" HorizontalAlignment="Right" />
+            </DockPanel>
+        </Border>
+
+        <wv2:WebView2 x:Name="CalendarBrowser" Grid.Row="1"
+                      DefaultBackgroundColor="#151515" />
+
+        <Border Grid.Row="2" Background="#202020"
+                BorderBrush="#343434" BorderThickness="0,1,0,0">
+            <DockPanel Margin="12,0">
+                <TextBlock Text="Live website · Internet connection required"
+                           Foreground="#9B9B9B" FontSize="10"
+                           VerticalAlignment="Center" />
+                <TextBlock Text="Windows desktop"
+                           Foreground="#9B9B9B" FontSize="10"
+                           VerticalAlignment="Center" HorizontalAlignment="Right" />
+            </DockPanel>
+        </Border>
+    </Grid>
+</Window>
