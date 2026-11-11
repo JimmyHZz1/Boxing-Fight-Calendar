@@ -124,6 +124,6 @@ const output={schema_version:2,source:"IGDB",updated_at:new Date().toISOString()
 const serialized=JSON.stringify(output);
 const bytes=Buffer.byteLength(serialized,"utf8");
 if(bytes>1_500_000) throw Error("Company profile catalogue exceeds the 1.5 MB browser payload limit ("+bytes+" bytes); refusing to publish it.");
-await fs.writeFile("data/company-profiles.json",serialized+"\\n");
+await fs.writeFile("data/company-profiles.json",serialized+"\n");
 const total=result.reduce((sum,company)=>sum+company.releases.length,0);
 console.log("Updated "+result.length+" major company profiles with "+total+" company/game entries.");
