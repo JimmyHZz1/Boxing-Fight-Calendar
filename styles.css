@@ -3172,3 +3172,63 @@ body.games-platform-page .games-platform-hub{display:none}
   #sports-selected-date-events .sport-event-date{width:42px;min-height:48px}
   #sports-selected-date-events .sport-event-badge{justify-self:start;align-self:start;text-align:left}
 }
+
+
+/* Homepage sport chooser now sits directly beneath the Live Sports Centre. */
+.home-sport-picker-section{
+  display:block;
+  width:100%;
+  min-width:0;
+  margin:20px 0 28px;
+}
+.home-sport-picker-section > .sports-carousel-section{
+  width:100%;
+  min-width:0;
+  margin:0;
+}
+.home-sport-picker-section .sports-carousel-heading{min-height:35px}
+.home-sport-picker-section .sports-carousel-controls{display:block;margin-top:9px}
+.home-sport-picker-section .sports-carousel-controls > .carousel-arrow{display:none!important}
+.home-sport-picker-section .sports-carousel{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:8px;
+  width:100%;
+  min-width:0;
+  overflow:visible!important;
+  padding:2px 0 0;
+  scroll-snap-type:none;
+}
+.home-sport-picker-section .sport-slide{
+  display:flex;
+  flex:initial!important;
+  width:auto!important;
+  min-width:0!important;
+  min-height:145px;
+  padding:10px 9px;
+  gap:4px;
+  justify-content:flex-end;
+  scroll-snap-align:none;
+}
+.home-sport-picker-section .sport-slide-logo{
+  width:auto;
+  max-width:76%;
+  height:34px;
+  margin:5px auto 4px;
+  align-self:center;
+}
+.home-sport-picker-section .sport-logo-darts{height:38px;max-width:76%}
+.home-sport-picker-section .sport-logo-ufc{width:76%;height:34px}
+.home-sport-picker-section .sport-logo-boxing{width:76%;height:34px;margin:5px auto 4px;font-size:21px}
+.home-sport-picker-section .sport-slide-kicker{font-size:6px;letter-spacing:.55px;line-height:1.25}
+.home-sport-picker-section .sport-slide strong{font-size:22px;line-height:1}
+.home-sport-picker-section .sport-slide small{font-size:6px;line-height:1.25;letter-spacing:.35px}
+.home-sport-picker-section .sport-slide-open{font-size:7px;margin-top:3px;letter-spacing:.5px}
+.home-sport-picker-section .sports-carousel-footer{display:none!important}
+.home-sport-picker-section .sport-slide[aria-pressed="true"]{box-shadow:inset 0 0 0 1px rgba(226,180,91,.16)}
+@media(max-width:760px){
+  .home-sport-picker-section{margin:16px 0 22px}
+  .home-sport-picker-section .sport-slide{min-height:132px;padding:8px 6px}
+  .home-sport-picker-section .sport-slide strong{font-size:19px}
+  .home-sport-picker-section .sport-slide small{font-size:5.5px}
+}

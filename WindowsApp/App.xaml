@@ -38,5 +38,34 @@
                 </Setter.Value>
             </Setter>
         </Style>
+    <Style x:Key="WindowCaptionButton" TargetType="Button">
+            <Setter Property="Foreground" Value="#F5F5F5" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True"><Setter Property="Background" Value="#3B3B3B" /></Trigger>
+                <Trigger Property="IsPressed" Value="True"><Setter Property="Background" Value="#505050" /></Trigger>
+                <Trigger Property="IsEnabled" Value="False"><Setter Property="Opacity" Value="0.45" /></Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="WindowCloseCaptionButton" TargetType="Button" BasedOn="{StaticResource WindowCaptionButton}">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True"><Setter Property="Background" Value="#C42B1C" /></Trigger>
+                <Trigger Property="IsPressed" Value="True"><Setter Property="Background" Value="#8F1F15" /></Trigger>
+            </Style.Triggers>
+        </Style>
     </Application.Resources>
 </Application>

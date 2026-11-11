@@ -18,26 +18,41 @@
             <RowDefinition Height="25" />
         </Grid.RowDefinitions>
         <Border x:Name="TitleBar" Grid.Row="0" Background="{StaticResource ToolbarBackground}"
-                BorderBrush="#343434" BorderThickness="0,0,0,1" MouseLeftButtonDown="TitleBar_MouseLeftButtonDown">
-            <DockPanel LastChildFill="True" Margin="8,0">
-                <StackPanel DockPanel.Dock="Left" Orientation="Horizontal" VerticalAlignment="Center">
+                BorderBrush="#343434" BorderThickness="0,0,0,1"
+                MouseLeftButtonDown="TitleBar_MouseLeftButtonDown">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="8,0">
                     <Button x:Name="MenuButton" Content="☰" FontSize="17" Padding="10,3"
                             Margin="0,0,10,0" ToolTip="Open app menu" Click="MenuButton_Click"
                             shell:WindowChrome.IsHitTestVisibleInChrome="True" />
                     <TextBlock Text="SPORTS &amp; GAMES" Foreground="{StaticResource AccentGold}"
                                FontWeight="Bold" FontSize="12" VerticalAlignment="Center" />
                 </StackPanel>
-                <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" VerticalAlignment="Center">
+                <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Stretch">
                     <TextBlock x:Name="ConnectionLabel" Text="Connecting…" Foreground="#B8B8B8"
-                               FontSize="10" VerticalAlignment="Center" Margin="0,0,14,0" />
-                    <Button Content="—" Width="38" Height="30" Padding="0" Click="MinimiseButton_Click" ToolTip="Minimise"
+                               FontSize="10" VerticalAlignment="Center" Margin="0,0,12,0" />
+                    <Button Content="&#xE921;" FontFamily="Segoe MDL2 Assets" FontSize="10"
+                            Width="46" Height="42" Padding="0" Margin="0"
+                            Style="{StaticResource WindowCaptionButton}"
+                            Click="MinimiseButton_Click" ToolTip="Minimise"
                             shell:WindowChrome.IsHitTestVisibleInChrome="True" />
-                    <Button x:Name="MaximiseButton" Content="□" Width="38" Height="30" Padding="0" Click="MaximiseButton_Click" ToolTip="Maximise"
+                    <Button x:Name="MaximiseButton" Content="&#xE922;" FontFamily="Segoe MDL2 Assets" FontSize="10"
+                            Width="46" Height="42" Padding="0" Margin="0"
+                            Style="{StaticResource WindowCaptionButton}"
+                            Click="MaximiseButton_Click" ToolTip="Maximise or restore"
                             shell:WindowChrome.IsHitTestVisibleInChrome="True" />
-                    <Button Content="×" Width="38" Height="30" Padding="0" Click="CloseButton_Click" ToolTip="Close to system tray"
+                    <Button Content="&#xE8BB;" FontFamily="Segoe MDL2 Assets" FontSize="10"
+                            Width="46" Height="42" Padding="0" Margin="0"
+                            Style="{StaticResource WindowCloseCaptionButton}"
+                            Click="CloseButton_Click" ToolTip="Close to system tray"
                             shell:WindowChrome.IsHitTestVisibleInChrome="True" />
                 </StackPanel>
-            </DockPanel>
+            </Grid>
         </Border>
         <wv2:WebView2 x:Name="CalendarBrowser" Grid.Row="1" DefaultBackgroundColor="#151515" />
         <Border Grid.Row="2" Background="#202020" BorderBrush="#343434" BorderThickness="0,1,0,0">

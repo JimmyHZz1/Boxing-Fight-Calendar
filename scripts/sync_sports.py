@@ -923,7 +923,10 @@ def commons_photo(name, image_kind="portrait"):
             break
         params = {
             "action": "query", "format": "json", "generator": "search",
-            "gsrsearch": query_name + (" logo" if image_kind == "logo" else " portrait"),
+            # Do not require the word "portrait": Commons file titles and
+            # descriptions usually identify the athlete by name, not by asset type.
+            # Identity is checked against the file metadata below.
+            "gsrsearch": query_name + (" logo" if image_kind == "logo" else ""),
             "gsrnamespace": 6, "gsrlimit": 30,
             "prop": "imageinfo", "iiprop": "url|extmetadata|mime", "iiurlwidth": 480,
             "iiextmetadatafilter": "Artist|Credit|LicenseShortName|LicenseUrl|UsageTerms"
@@ -938,16 +941,18 @@ def commons_photo(name, image_kind="portrait"):
                 IMAGE_LOOKUP_RATE_LIMITED = True
                 break
 
-    # Category browsing is useful for logos, but portrait category results are
-    # noisy and can surface unrelated people sharing a surname.
-    if image_kind == "logo" and not IMAGE_LOOKUP_RATE_LIMITED and not candidates:
-        for category_query in query_names:
+    # Fall back to exact-name Commons categories for both logos and portraits.
+    # Portrait category names must match the athlete's full name (or an explicit
+    # alias); the same adjacent-name metadata check still filters every file.
+    if image_kind in {"logo", "portrait"} and not IMAGE_LOOKUP_RATE_LIMITED and not candidates:
+        category_queries = image_aliases(name) if image_kind == "portrait" else query_names
+        for category_query in category_queries:
             if IMAGE_LOOKUP_RATE_LIMITED or candidates:
                 break
             params = {
                 "action": "query", "format": "json", "list": "search",
-                "srsearch": "intitle:\"" + category_query + "\"",
-                "srnamespace": 14, "srlimit": 3
+                "srsearch": 'intitle:"' + category_query + '"',
+                "srnamespace": 14, "srlimit": 5
             }
             try:
                 payload = request_json("https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode(params), provider="Wikimedia Commons")
@@ -959,6 +964,11 @@ def commons_photo(name, image_kind="portrait"):
                     category_title = category.get("title", "")
                     if not category_title.startswith("Category:"):
                         continue
+                    if image_kind == "portrait":
+                        # Do not browse surname-only or loosely related categories.
+                        category_name = image_key(category_title.removeprefix("Category:"))
+                        if category_name != image_key(category_query):
+                            continue
                     category_params = {
                         "action": "query", "format": "json", "generator": "categorymembers",
                         "gcmtitle": category_title, "gcmtype": "file", "gcmlimit": 30,

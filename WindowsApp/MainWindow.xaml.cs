@@ -24,7 +24,7 @@ public partial class MainWindow : Window
         LoadStartupSetting();
         Loaded += MainWindow_Loaded;
         Closing += MainWindow_Closing;
-        StateChanged += (_, _) => MaximiseButton.Content = WindowState == WindowState.Maximized ? "❐" : "□";
+        StateChanged += (_, _) => UpdateWindowStateGlyph();
     }
 
     private void MainWindow_Closing(object? sender, System.ComponentModel.CancelEventArgs e)
@@ -42,6 +42,8 @@ public partial class MainWindow : Window
         if (e.ClickCount == 2) ToggleMaximise();
         else DragMove();
     }
+
+    private void UpdateWindowStateGlyph() => MaximiseButton.Content = WindowState == WindowState.Maximized ? "\uE923" : "\uE922";
 
     private void MinimiseButton_Click(object sender, RoutedEventArgs e) => WindowState = WindowState.Minimized;
     private void MaximiseButton_Click(object sender, RoutedEventArgs e) => ToggleMaximise();
