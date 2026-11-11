@@ -111,11 +111,16 @@
       const response=await fetch("./data/"+sport+".json?t="+Date.now(),{cache:"no-store"});
       if (!response.ok) throw new Error("HTTP "+response.status);
       const payload=await response.json();
-      data[sport]=dedupeEvents(sport,payload.events);
+      if (!payload || !Array.isArray(payload.events)) throw new Error("Invalid feed: events list is missing.");
+      const incoming=dedupeEvents(sport,payload.events);
+      const valid=incoming.filter(event=>(event?.name||event?.title) && (event?.start_at||event?.main_card_at||event?.start_time_utc||event?.starts_at||event?.date||event?.event_date));
+      if (!valid.length) throw new Error("Feed contained no usable dated events; retaining the previous snapshot.");
+      data[sport]=valid;
       meta[sport]=payload;
     } catch (error) {
-      data[sport]=[];
-      meta[sport]={sync_warning:"Could not load "+sport.toUpperCase()+" data ("+error.message+")."};
+      // A transient network or malformed-file response must never erase a
+      // previously loaded schedule. Keep the last good snapshot visible.
+      meta[sport]={...meta[sport],sync_warning:"Could not refresh "+sport.toUpperCase()+" data ("+error.message+")."+(data[sport].length?" Showing the last successfully loaded schedule.":"")};
     }
   }
   function allEvents() {
@@ -329,7 +334,17 @@
     left.append(make("h2",null,title+" calendar"));
     heading.append(left,make("small",null,(data[sport].length||0)+" EVENTS"));
     panel.append(heading);
-    if (meta[sport]?.sync_warning) panel.append(make("p","sport-sync-note",meta[sport].sync_warning));
+    const successfulUpdate=meta[sport]?.last_successful_update||meta[sport]?.last_updated;
+    if(successfulUpdate){
+      const updated=new Date(successfulUpdate);
+      if(!Number.isNaN(updated.getTime())){
+        const ageHours=(Date.now()-updated.getTime())/3600000;
+        const staleAfter={f1:30,darts:8*24,ufc:30,bkfc:72}[sport]||48;
+        const label="Last successful update: "+new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"}).format(updated)+" UK"+(ageHours>staleAfter?" · CHECK FRESHNESS":"");
+        panel.append(make("p",ageHours>staleAfter?"sport-sync-note sport-sync-warning":"sport-sync-note",label));
+      }
+    }
+    if (meta[sport]?.sync_warning) panel.append(make("p","sport-sync-note sport-sync-warning",meta[sport].sync_warning));
     if (meta[sport]?.notice) panel.append(make("p","sport-sync-note",meta[sport].notice));
     const list=make("div","sport-event-list");
     const events=sortedEvents(sport);
