@@ -53,3 +53,10 @@ Serve the repository root with any static HTTP server. Opening `index.html` dire
 - Live data, standings, rankings and results improvements across all five sports.
 - Event countdowns, championship trackers and results archive.
 - Expanded F1 race-weekend and PDC tournament views, plus richer event details.
+
+
+## Administrator update panel
+- The Data Health Centre includes a sign-in-only administrator panel for dispatching the existing sports, PDC, image-enrichment, games-popularity and company-profile workflows.
+- Authentication uses Supabase Auth. The Edge Function checks the authenticated email against the server-side `ADMIN_EMAILS` allow-list before it can dispatch a workflow.
+- GitHub credentials are stored only as Supabase Edge Function secrets. Never add a GitHub token or Supabase secret key to this repository or browser code.
+- One-time setup is documented in the pull request: create the administrator Auth user, set `ADMIN_EMAILS` and `GITHUB_ACTIONS_TOKEN` as Edge Function secrets, then deploy the `admin-updates` Edge Function.

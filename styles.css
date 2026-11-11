@@ -3021,3 +3021,30 @@ body.games-platform-page .games-platform-hub{display:none}
   .data-health-feeds,.data-health-images{grid-template-columns:1fr}
   .data-health-summary{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
+
+/* Secure administrator update panel */
+.admin-updates-panel .data-health-panel-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.admin-auth-state{padding:6px 9px;border:1px solid var(--line);font-size:8px;font-weight:800;letter-spacing:.8px;color:var(--muted);white-space:nowrap}
+.admin-auth-state.is-authenticated{color:#83d59a;border-color:#326c45}
+.admin-login-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:680px}
+.admin-login-form>label,.admin-image-batch{display:grid;gap:6px;color:var(--muted);font-size:10px}
+.admin-login-form input,.admin-image-batch select{width:100%;padding:10px 11px;border:1px solid var(--line);background:var(--panel2);color:var(--text);font:inherit;min-width:0}
+.admin-login-actions{grid-column:1/-1;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.admin-login-actions button:disabled,.admin-update-grid button:disabled{opacity:.55;cursor:wait}
+#admin-login-status{font-size:10px;color:var(--muted)}
+#admin-login-status.is-error,.admin-update-status.is-error{color:#ef9b91}
+.admin-controls[hidden],.admin-login-form[hidden]{display:none}
+.admin-controls-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:4px 0 13px}
+.admin-controls-heading strong,.admin-controls-heading small{display:block}
+.admin-controls-heading strong{font-size:10px;letter-spacing:.8px}
+.admin-controls-heading small{margin-top:4px;color:var(--muted);font-size:9px}
+.admin-update-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.admin-update-grid button{display:block;text-align:left;padding:13px;background:var(--panel2);border:1px solid var(--line);color:var(--text);font-size:11px;font-weight:700;cursor:pointer}
+.admin-update-grid button:hover{border-color:var(--accent);color:var(--accent)}
+.admin-update-grid button small{display:block;margin-top:5px;color:var(--muted);font-size:9px;font-weight:400}
+.admin-image-batch{max-width:260px;margin-top:12px}
+.admin-update-status{margin-top:13px;padding:11px;background:var(--panel2);border:1px solid var(--line);font-size:10px;line-height:1.5;color:var(--muted)}
+.admin-update-status.is-success{color:#83d59a;border-color:#326c45}
+.admin-update-status.is-error{color:#ef9b91;border-color:#87443c}
+.admin-actions-link{display:inline-block;margin-top:12px;color:var(--accent);font-size:9px;font-weight:800;letter-spacing:.7px;text-decoration:none}
+@media(max-width:520px){.admin-login-form{grid-template-columns:1fr}.admin-update-grid{grid-template-columns:1fr}.admin-login-actions{grid-column:auto}.admin-controls-heading{align-items:flex-start}}
