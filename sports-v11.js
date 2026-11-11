@@ -78,7 +78,7 @@
     const root=$("next-event-ticker");if(!root)return;
     const selected=[];
     sports.forEach(sport=>{
-      const rows=allEvents().filter(x=>x.sport===sport&&!(sport==="boxing"&&(x.event.data_source==="Boxing Data API"||/^Additional scheduled bouts\\b/i.test(String(x.event.name||x.event.title||"")))));
+      const rows=allEvents().filter(x=>x.sport===sport&&!(sport==="boxing"&&(x.event.data_source==="Boxing Data API"||/^Additional scheduled bouts\b/i.test(String(x.event.name||x.event.title||"")))));
       const live=rows.filter(x=>isLive(x.event)).sort((a,b)=>timestamp(a.event)-timestamp(b.event))[0];
       const next=rows.filter(x=>!isLive(x.event)&&isUpcoming(x.event)).sort((a,b)=>timestamp(a.event)-timestamp(b.event))[0];
       const chosen=live||next;if(chosen)selected.push({sport,event:chosen.event,live:!!live});
