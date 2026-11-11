@@ -2525,3 +2525,10 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
 .games-stage-platform small{font-size:7px!important;letter-spacing:.25px!important;white-space:nowrap}
 .games-stage-platform-fallback{font-size:8px!important}
 @media(max-width:650px){.games-discovery-featured{padding:12px!important}.games-featured-stage-copy{gap:7px!important}.games-stage-platforms{gap:4px!important}.games-stage-platform{padding:3px 4px!important}.games-stage-platform img{width:13px!important;height:13px!important;min-width:13px!important}.games-stage-platform small{font-size:6.5px!important}}
+
+/* Calendar switcher is the single entry point on desktop and mobile. */
+@media(min-width:1100px){.mobile-calendar-menu:not([hidden]){display:block!important}}
+
+/* Keep the switcher menu anchored to the brand on desktop and mobile. */
+.topbar{position:relative;overflow:visible}
+.mobile-calendar-menu{position:absolute;top:calc(100% + 7px);left:0;right:auto;bottom:auto;z-index:1004;width:min(280px,calc(100vw - 30px));margin:0}
