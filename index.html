@@ -6,18 +6,20 @@
   <meta name="theme-color" content="#101114">
   <meta name="description" content="Boxing, Formula 1, UFC and PDC darts schedules in one sports calendar, shown in UK local time.">
   <link rel="manifest" href="./manifest.json">
-  <link rel="stylesheet" href="./styles.css?v=20261111-01">
+  <link rel="stylesheet" href="./styles.css?v=20261111-02">
   <title>Sports Calendar</title>
 </head>
 <body>
   <div class="app-shell">
     <header class="topbar">
-      <div class="brand" aria-label="Sports and Games Calendar">
-        <span class="brand-mark" id="brand-mark-letter">S</span>
-        <span><strong id="brand-title">SPORTS</strong><small>CALENDAR</small></span>
+      <div class="brand-calendar-switcher">
+        <button class="brand brand-calendar-trigger" id="calendar-menu-trigger" type="button" aria-label="Switch calendar" aria-haspopup="true" aria-expanded="false" aria-controls="mobile-calendar-menu">
+          <span class="brand-mark" id="brand-mark-letter">S</span>
+          <span><strong id="brand-title">SPORTS</strong><small>CALENDAR</small></span>
+          <span class="brand-switcher-caret" aria-hidden="true">⌄</span>
+        </button>
+        <div id="mobile-calendar-menu" class="mobile-calendar-menu" hidden aria-label="Choose calendar"><button type="button" data-screen="home-screen"><span class="brand-menu-mark sports-mark" aria-hidden="true">S</span> SPORTS CALENDAR</button><button type="button" data-screen="games-calendar-screen"><span class="brand-menu-mark games-mark" aria-hidden="true">G</span> GAMES CALENDAR</button></div>
       </div>
-      <button class="calendar-menu-trigger" id="calendar-menu-trigger" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="mobile-calendar-menu">CALENDARS <span aria-hidden="true">⌄</span></button>
-      <div id="mobile-calendar-menu" class="mobile-calendar-menu" hidden aria-label="Choose calendar"><button type="button" data-screen="home-screen"><span class="brand-menu-mark sports-mark" aria-hidden="true">S</span> SPORTS CALENDAR</button><button type="button" data-screen="games-calendar-screen"><span class="brand-menu-mark games-mark" aria-hidden="true">G</span> GAMES CALENDAR</button></div>
       <nav class="topbar-nav" aria-label="Main navigation">
         <button type="button" class="topbar-nav-item active" data-screen="home-screen"><span aria-hidden="true">⌂</span> HOME</button>
         <button type="button" class="topbar-nav-item" data-screen="weekend-screen"><span aria-hidden="true">★</span> FAVOURITES</button>
