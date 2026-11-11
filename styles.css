@@ -2605,3 +2605,27 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
 #next-event-ticker.is-paused .next-event-track{
   animation:none!important;
 }
+
+
+/* Compact featured-game details: synopsis beside a clickable information panel. */
+.games-featured-stage-copy{display:grid!important;grid-template-columns:minmax(0,1.35fr) minmax(245px,.8fr)!important;align-items:stretch!important;gap:18px!important;padding:16px 2px 4px!important}
+.games-featured-intro{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:9px;min-width:0}
+.games-featured-intro h3{margin:0!important}
+.games-featured-intro p{max-width:720px!important;margin:0!important}
+.games-featured-info{display:flex;flex-direction:column;justify-content:center;gap:10px;min-width:0;padding:13px 15px;background:rgba(17,29,44,.88);border:1px solid rgba(143,193,255,.27);border-left:2px solid #2685e8}
+.games-featured-info-status{font:900 12px 'DM Sans',sans-serif;letter-spacing:.5px;color:#f0c078}
+.games-featured-info-row{display:grid;gap:5px;min-width:0}
+.games-featured-info-label{font:900 8px 'DM Sans',sans-serif;letter-spacing:1px;color:#849bb5}
+.games-featured-company-links{display:flex;flex-wrap:wrap;align-items:center;gap:5px;font-size:10px;line-height:1.5}
+.games-featured-company-links a{color:#d6e8ff;text-decoration:underline;text-decoration-color:rgba(143,193,255,.45);text-underline-offset:3px}
+.games-featured-company-separator{color:#71849b}
+.games-featured-info .games-stage-platforms{flex-wrap:wrap!important;overflow:visible!important;gap:6px!important}
+.games-featured-info .games-stage-platform{padding:5px 7px!important;min-height:29px;border-color:rgba(143,193,255,.28);background:#1a2b40;text-decoration:none;transition:background .15s,border-color .15s}
+.games-featured-info .games-stage-platform:hover{background:#263e5a;border-color:#62a7ff}
+.games-featured-info .games-stage-platform img{width:16px!important;height:16px!important;min-width:16px!important;max-width:16px!important}
+.games-featured-info .games-stage-platform small{font-size:8px!important;letter-spacing:.3px!important}
+.games-featured-info-links{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+.games-featured-info-links a,.games-featured-info-links button{display:inline-flex;align-items:center;justify-content:center;min-height:28px;padding:6px 8px;border:1px solid rgba(143,193,255,.3);background:#19283a;color:#a9d0ff;text-decoration:none;font:800 8px 'DM Sans',sans-serif;letter-spacing:.35px;cursor:pointer}
+.games-featured-info-links a:hover,.games-featured-info-links button:hover{background:#263e5a;border-color:#62a7ff}
+@media(max-width:760px){.games-featured-stage-copy{grid-template-columns:minmax(0,1fr)!important;gap:12px!important}.games-featured-info{padding:12px}.games-featured-intro p{max-width:none!important}}
+@media(max-width:520px){.games-featured-stage-copy{padding:11px 1px 2px!important}.games-featured-info{gap:8px}.games-featured-info-links a,.games-featured-info-links button{font-size:7px;padding:6px}}
