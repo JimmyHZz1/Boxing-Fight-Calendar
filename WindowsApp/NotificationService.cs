@@ -42,7 +42,7 @@ public sealed class NotificationService : IDisposable
 
             var now = DateTimeOffset.Now;
             var due = candidates
-                .Where(item => item.StartsAt > now && item.StartsAt <= now.AddHours(24))
+                .Where(item => (item.StartsAt > now && item.StartsAt <= now.AddHours(24)) || (item.IsDateOnly && item.StartsAt.Date == now.Date))
                 .OrderBy(item => item.StartsAt)
                 .ToList();
 
@@ -128,6 +128,7 @@ public sealed class NotificationService : IDisposable
         if (string.IsNullOrWhiteSpace(title)) return;
 
         DateTimeOffset? startsAt = null;
+        var isDateOnly = false;
         foreach (var field in dateFields)
         {
             var raw = ReadString(item, field);
@@ -136,6 +137,7 @@ public sealed class NotificationService : IDisposable
             {
                 var localStart = date.ToDateTime(new TimeOnly(9, 0));
                 startsAt = new DateTimeOffset(localStart, TimeZoneInfo.Local.GetUtcOffset(localStart));
+                isDateOnly = true;
                 break;
             }
             if (DateTimeOffset.TryParse(raw, out var parsed))
@@ -147,7 +149,7 @@ public sealed class NotificationService : IDisposable
 
         if (startsAt is null) return;
         var id = ReadString(item, "id") ?? $"{category}|{title}|{startsAt:O}";
-        output.Add(new CalendarReminder(id, category, title, startsAt.Value));
+        output.Add(new CalendarReminder(id, category, title, startsAt.Value, isDateOnly));
     }
 
     private static string? ReadString(JsonElement item, string property)
@@ -184,5 +186,5 @@ public sealed class NotificationService : IDisposable
         _gate.Dispose();
     }
 
-    private sealed record CalendarReminder(string Id, string Category, string Title, DateTimeOffset StartsAt);
+    private sealed record CalendarReminder(string Id, string Category, string Title, DateTimeOffset StartsAt, bool IsDateOnly);
 }
