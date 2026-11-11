@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using System.Windows;
+using System.Windows.Controls;
 using Microsoft.Win32;
 using Microsoft.Web.WebView2.Core;
 
@@ -13,7 +14,7 @@ public partial class MainWindow : Window
     private const string StartupValueName = "SportsGamesCalendar";
 
     private bool _browserReady;
-    private bool _loadingStartupSetting;
+    private bool _startupEnabled;
 
     public MainWindow()
     {
@@ -34,50 +35,68 @@ public partial class MainWindow : Window
 
     private void LoadStartupSetting()
     {
-        _loadingStartupSetting = true;
         try
         {
             using var runKey = Registry.CurrentUser.OpenSubKey(StartupRunKey, writable: false);
-            StartupCheckBox.IsChecked = runKey?.GetValue(StartupValueName) is string;
+            _startupEnabled = runKey?.GetValue(StartupValueName) is string;
         }
         catch
         {
-            StartupCheckBox.IsChecked = false;
-        }
-        finally
-        {
-            _loadingStartupSetting = false;
+            _startupEnabled = false;
         }
     }
 
-    private void StartupCheckBox_Changed(object sender, RoutedEventArgs e)
+    private void MenuButton_Click(object sender, RoutedEventArgs e)
     {
-        if (_loadingStartupSetting) return;
+        var menu = new ContextMenu
+        {
+            PlacementTarget = MenuButton,
+            Placement = System.Windows.Controls.Primitives.PlacementMode.Bottom
+        };
 
+        var back = new MenuItem { Header = "Back", IsEnabled = _browserReady && CalendarBrowser.CanGoBack };
+        back.Click += (_, _) => { if (_browserReady && CalendarBrowser.CanGoBack) CalendarBrowser.GoBack(); };
+        var forward = new MenuItem { Header = "Forward", IsEnabled = _browserReady && CalendarBrowser.CanGoForward };
+        forward.Click += (_, _) => { if (_browserReady && CalendarBrowser.CanGoForward) CalendarBrowser.GoForward(); };
+        var home = new MenuItem { Header = "Home" };
+        home.Click += (_, _) => { if (_browserReady) CalendarBrowser.Source = HomeUri; };
+        var refresh = new MenuItem { Header = "Refresh" };
+        refresh.Click += (_, _) => { if (_browserReady) CalendarBrowser.Reload(); };
+        var startup = new MenuItem { Header = "Launch on Windows startup", IsCheckable = true, IsChecked = _startupEnabled };
+        startup.Click += (_, _) => UpdateStartupSetting(startup.IsChecked);
+
+        menu.Items.Add(back);
+        menu.Items.Add(forward);
+        menu.Items.Add(new Separator());
+        menu.Items.Add(home);
+        menu.Items.Add(refresh);
+        menu.Items.Add(new Separator());
+        menu.Items.Add(startup);
+        menu.IsOpen = true;
+    }
+
+    private void UpdateStartupSetting(bool enabled)
+    {
         try
         {
             using var runKey = Registry.CurrentUser.CreateSubKey(StartupRunKey, writable: true);
-            if (StartupCheckBox.IsChecked == true)
+            if (enabled)
             {
                 var executablePath = Environment.ProcessPath;
                 if (string.IsNullOrWhiteSpace(executablePath))
                     throw new InvalidOperationException("Windows could not determine the application path.");
-
-                runKey.SetValue(StartupValueName, $"\"{executablePath}\" --startup");
+                runKey.SetValue(StartupValueName, $"\\\"{executablePath}\\\" --startup");
             }
             else
             {
                 runKey.DeleteValue(StartupValueName, throwOnMissingValue: false);
             }
+            _startupEnabled = enabled;
         }
         catch (Exception ex)
         {
-            _loadingStartupSetting = true;
-            StartupCheckBox.IsChecked = !StartupCheckBox.IsChecked;
-            _loadingStartupSetting = false;
-
             System.Windows.MessageBox.Show(
-                $"Windows couldn't update the startup setting.\n\n{ex.Message}",
+                $"Windows couldn't update the startup setting.\\n\\n{ex.Message}",
                 "Startup setting unavailable",
                 System.Windows.MessageBoxButton.OK,
                 System.Windows.MessageBoxImage.Warning);
@@ -109,8 +128,8 @@ public partial class MainWindow : Window
         {
             ConnectionLabel.Text = "Browser setup required";
             var result = System.Windows.MessageBox.Show(
-                "The Microsoft Edge WebView2 Runtime is required to run this application.\n\n" +
-                "Would you like to open Microsoft's official download page?\n\n" +
+                "The Microsoft Edge WebView2 Runtime is required to run this application.\\n\\n" +
+                "Would you like to open Microsoft's official download page?\\n\\n" +
                 $"Details: {ex.Message}",
                 "WebView2 Runtime required",
                 System.Windows.MessageBoxButton.YesNo,
@@ -141,8 +160,6 @@ public partial class MainWindow : Window
 
     private void CoreWebView2_NavigationCompleted(object? sender, CoreWebView2NavigationCompletedEventArgs e)
     {
-        BackButton.IsEnabled = CalendarBrowser.CanGoBack;
-        ForwardButton.IsEnabled = CalendarBrowser.CanGoForward;
         ConnectionLabel.Text = e.IsSuccess ? "Connected" : "Connection problem";
     }
 
@@ -165,28 +182,8 @@ public partial class MainWindow : Window
         }
         catch (Exception ex)
         {
-            System.Windows.MessageBox.Show($"Windows couldn't open this link.\n\n{ex.Message}",
+            System.Windows.MessageBox.Show($"Windows couldn't open this link.\\n\\n{ex.Message}",
                 "Unable to open link", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Warning);
         }
-    }
-
-    private void BackButton_Click(object sender, RoutedEventArgs e)
-    {
-        if (_browserReady && CalendarBrowser.CanGoBack) CalendarBrowser.GoBack();
-    }
-
-    private void ForwardButton_Click(object sender, RoutedEventArgs e)
-    {
-        if (_browserReady && CalendarBrowser.CanGoForward) CalendarBrowser.GoForward();
-    }
-
-    private void HomeButton_Click(object sender, RoutedEventArgs e)
-    {
-        if (_browserReady) CalendarBrowser.Source = HomeUri;
-    }
-
-    private void RefreshButton_Click(object sender, RoutedEventArgs e)
-    {
-        if (_browserReady) CalendarBrowser.Reload();
     }
 }
