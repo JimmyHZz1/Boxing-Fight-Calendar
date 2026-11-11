@@ -26,6 +26,10 @@ The GitHub Actions workflow **Build Windows desktop app** builds the x64 executa
 
 - The .NET runtime is bundled into the published executable.
 - WebView2 Runtime is a separate Microsoft prerequisite and is not bundled.
+- Closing the main window hides the app in the Windows system tray; reminders continue while it runs in the background. Use the tray menu and choose **Exit completely** to stop reminders.
+- The app checks published sports, Speedway and verified featured-game feeds every 15 minutes and shows a Windows notification for an event within the next 24 hours. Sent reminders are recorded locally to avoid duplicates.
+- Right-click the tray icon to reopen the calendar or check reminders immediately.
+- The shared bell in the website header lists upcoming events and releases for the next 14 days; read state is stored in that browser profile.
 - The app opens links outside the calendar website in your default browser.
 - The toolbar checkbox **Launch on Windows startup** adds or removes a per-user Windows Run registry entry. It is off by default and can be changed at any time; no administrator access is required.
 - The app requires internet access because the live website is its content source.
