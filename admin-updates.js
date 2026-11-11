@@ -5,6 +5,8 @@
   const PUBLIC_KEY = "sb_publishable_8oB9tn7Y86fsAIzLvi1aYg_jHjhlq_8";
   const FUNCTION_URL = PROJECT_URL + "/functions/v1/admin-updates";
   const SESSION_KEY = "sports-calendar-admin-session-v1";
+  const REMEMBER_KEY = "sports-calendar-admin-remember-v1";
+  let rememberSession = localStorage.getItem(REMEMBER_KEY) === "true";
   const $ = id => document.getElementById(id);
   const form = $("admin-login-form");
   const controls = $("admin-controls");
@@ -17,8 +19,27 @@
     games: { label: "Games popularity", workflow: "update-games-popularity.yml" },
     companies: { label: "Game company profiles", workflow: "sync-company-profiles.yml" }
   };
-  function readSession() { try { return JSON.parse(sessionStorage.getItem(SESSION_KEY) || "null"); } catch (_) { return null; } }
-  function saveSession(value) { session = value; if (value) sessionStorage.setItem(SESSION_KEY, JSON.stringify(value)); else sessionStorage.removeItem(SESSION_KEY); }
+  function readSession() {
+    try {
+      const primary = rememberSession ? localStorage : sessionStorage;
+      const secondary = rememberSession ? sessionStorage : localStorage;
+      return JSON.parse(primary.getItem(SESSION_KEY) || secondary.getItem(SESSION_KEY) || "null");
+    } catch (_) { return null; }
+  }
+  function saveSession(value, persist = rememberSession) {
+    session = value;
+    if (!value) {
+      localStorage.removeItem(SESSION_KEY);
+      sessionStorage.removeItem(SESSION_KEY);
+      return;
+    }
+    const destination = persist ? localStorage : sessionStorage;
+    const other = persist ? sessionStorage : localStorage;
+    destination.setItem(SESSION_KEY, JSON.stringify(value));
+    other.removeItem(SESSION_KEY);
+    rememberSession = persist;
+    localStorage.setItem(REMEMBER_KEY, String(persist));
+  }
   function setStatus(message, kind = "") {
     const node = $("admin-update-status");
     if (!node) return;
@@ -79,7 +100,8 @@
         method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: $("admin-email").value.trim(), password: $("admin-password").value })
       });
-      saveSession({ ...result, expires_at: Math.floor(Date.now() / 1000) + Number(result.expires_in || 3600) });
+      rememberSession = $("admin-remember-login")?.checked === true;
+      saveSession({ ...result, expires_at: Math.floor(Date.now() / 1000) + Number(result.expires_in || 3600) }, rememberSession);
       const user = await authFetch("/auth/v1/user", {}, session.access_token);
       showSignedIn(user.email);
       $("admin-password").value = "";
