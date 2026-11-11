@@ -3048,3 +3048,8 @@ body.games-platform-page .games-platform-hub{display:none}
 .admin-update-status.is-error{color:#ef9b91;border-color:#87443c}
 .admin-actions-link{display:inline-block;margin-top:12px;color:var(--accent);font-size:9px;font-weight:800;letter-spacing:.7px;text-decoration:none}
 @media(max-width:520px){.admin-login-form{grid-template-columns:1fr}.admin-update-grid{grid-template-columns:1fr}.admin-login-actions{grid-column:auto}.admin-controls-heading{align-items:flex-start}}
+
+
+/* Admin remember-me control */
+.admin-login-form>.admin-remember-login{display:flex;grid-column:1/-1;grid-template-columns:auto 1fr;align-items:center;justify-content:flex-start;gap:8px;color:var(--muted);font-size:11px;cursor:pointer}
+.admin-login-form>.admin-remember-login input{width:16px;height:16px;margin:0;accent-color:var(--accent,#d6a64b)}
