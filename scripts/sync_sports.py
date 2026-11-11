@@ -499,6 +499,20 @@ def sync_ufc():
     print(f"UFC: saved {len(events)} events; detailed cards fetched for the next two upcoming events and latest completed event.")
 
 
+def bkfc_visible_event_records(page: str, url: str) -> list[dict]:
+    """Parse the official BKFC page's visible date/title fallback when JSON-LD is absent."""
+    import html
+    import re
+
+    visible = html.unescape(re.sub(r"<[^>]+>", " ", page))
+    visible = re.sub(r"\s+", " ", visible)
+    pattern = r"((?:January|February|March|April|May|June|July|August|September|October|November|December) \d{1,2}, \d{4}) \1 \d{1,2}:\d{2}\s*[AP]M\s*#?\s*(BKFC[^#]{3,100}?)\s*Buy tickets"
+    return [
+        {"@type": "Event", "name": match.group(2).strip(), "startDate": match.group(1), "url": url, "eventStatus": "EventScheduled"}
+        for match in re.finditer(pattern, visible, re.I)
+    ]
+
+
 def sync_bkfc():
     """Read BKFC's public event listings and publish structured event metadata."""
     import html
@@ -543,11 +557,7 @@ def sync_bkfc():
     # BKFC's current Webflow event list also renders a plain-text card feed.
     # Use its published dates and names as a safe fallback; do not guess time zones.
     if not records:
-        visible = html.unescape(re.sub(r"<[^>]+>", " ", page))
-        visible = re.sub(r"\s+", " ", visible)
-        pattern = r"((?:January|February|March|April|May|June|July|August|September|October|November|December) \d{1,2}, \d{4}) \1 \d{1,2}:\d{2} \s*[AP]M \s*#? \s*(BKFC[^#]{3,100}?) \s*Buy tickets"
-        for match in re.finditer(pattern, visible, re.I):
-            records.append({"@type":"Event","name":match.group(2).strip(),"startDate":match.group(1),"url":url,"eventStatus":"EventScheduled"})
+        records.extend(bkfc_visible_event_records(page, url))
     events, seen = [], set()
     for row in records:
         name = html.unescape(str(row.get("name") or row.get("headline") or "")).strip()
