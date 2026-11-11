@@ -12,6 +12,8 @@
   const controls = $("admin-controls");
   if (!form || !controls) return;
   let session = readSession();
+  const rememberControl = $("admin-remember-login");
+  if (rememberControl) rememberControl.checked = rememberSession;
   const workflows = {
     sports: { label: "Sports schedules", workflow: "sync-fights.yml" },
     darts: { label: "PDC calendar", workflow: "sync-pdc-calendar.yml" },
