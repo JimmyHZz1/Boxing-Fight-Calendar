@@ -29,7 +29,7 @@ public partial class MainWindow : Window
 
     private void MainWindow_Closing(object? sender, System.ComponentModel.CancelEventArgs e)
     {
-        if (System.Windows.Application.Current is System.Windows.Application app && !app.AllowExit)
+        if (System.Windows.Application.Current is App app && !app.AllowExit)
         {
             e.Cancel = true;
             Hide();
