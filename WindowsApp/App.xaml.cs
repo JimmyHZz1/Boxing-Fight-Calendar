@@ -30,7 +30,8 @@ public partial class App : System.Windows.Application
 
         _notifications = new NotificationService((title, message) =>
         {
-            _trayIcon?.ShowBalloonTip(10000, title, message, ToolTipIcon.Info);
+            Dispatcher.BeginInvoke(new Action(() =>
+                _trayIcon?.ShowBalloonTip(10000, title, message, ToolTipIcon.Info)));
         });
         _notifications.Start();
 
@@ -58,6 +59,7 @@ public partial class App : System.Windows.Application
     {
         _allowExit = true;
         _notifications?.Dispose();
+        _notifications = null;
         if (_trayIcon is not null)
         {
             _trayIcon.Visible = false;
