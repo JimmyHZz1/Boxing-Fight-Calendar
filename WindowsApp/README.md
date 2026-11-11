@@ -10,7 +10,7 @@ A lightweight Windows desktop shell for the live Sports & Games Calendar website
 
 ## Build locally
 
-Install the .NET 8 SDK, then run from the repository root:
+Install the .NET 10 SDK, then run from the repository root:
 
 ```powershell
 dotnet publish .\WindowsApp\SportsGamesCalendar.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:EnableCompressionInSingleFile=true -o .\publish
