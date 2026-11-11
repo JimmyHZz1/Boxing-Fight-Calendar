@@ -2925,3 +2925,5 @@ body.games-platform-page .games-platform-hub{display:none}
   .sport-fight-portrait { width:42px; height:42px; flex-basis:42px; }
   .speedway-rider-row { grid-template-columns:20px 27px minmax(0,1fr); gap:5px; }
 }
+
+.sport-fight-portrait-fallback{display:grid;place-items:center;color:#e2b45b;font:900 13px 'Barlow Condensed',sans-serif;letter-spacing:.5px;background:linear-gradient(145deg,#343740,#17191e);border:1px solid #62656e}
