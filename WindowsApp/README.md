@@ -27,4 +27,5 @@ The GitHub Actions workflow **Build Windows desktop app** builds the x64 executa
 - The .NET runtime is bundled into the published executable.
 - WebView2 Runtime is a separate Microsoft prerequisite and is not bundled.
 - The app opens links outside the calendar website in your default browser.
+- The toolbar checkbox **Launch on Windows startup** adds or removes a per-user Windows Run registry entry. It is off by default and can be changed at any time; no administrator access is required.
 - The app requires internet access because the live website is its content source.
