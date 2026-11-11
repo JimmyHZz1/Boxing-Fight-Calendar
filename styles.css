@@ -2983,6 +2983,11 @@ body.games-platform-page .games-platform-hub{display:none}
 .data-health-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:20px 0;color:var(--muted);font-size:9px}
 .data-health-link{border:0;background:transparent;color:var(--accent);font:700 9px 'DM Sans',sans-serif;letter-spacing:.7px;cursor:pointer;padding:4px}
 @media(max-width:520px){.data-health-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.data-health-panel{padding:13px}.data-health-row{align-items:flex-start}.data-health-toolbar{align-items:flex-start;flex-direction:column}}
+/* Notification test feedback in the Data Health Centre. */
+.notification-test-panel .data-health-toolbar{justify-content:flex-start}
+#data-health-notification-status{max-width:100%;line-height:1.5}
+#data-health-notification-test:disabled{opacity:.55;cursor:wait}
+
 /* Keep the full website banner visible inside the Windows desktop shell. */
 .desktop-shell .topbar{display:flex!important}
 .desktop-shell .app-shell{padding-top:0}

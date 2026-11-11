@@ -203,6 +203,11 @@ public sealed class NotificationService : IDisposable
         catch { }
     }
 
+    public void SendTestNotification()
+    {
+        _notify("Sports & Games Calendar test", "Windows notifications are connected. Event reminders can be delivered by this app.");
+    }
+
     public void Dispose()
     {
         _timer.Dispose();

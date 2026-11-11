@@ -162,7 +162,23 @@ public partial class MainWindow : Window
         try
         {
             using var message = JsonDocument.Parse(e.WebMessageAsJson);
-            if (!message.RootElement.TryGetProperty("type", out var type) || type.GetString() != "notification-preferences" ||
+            if (!message.RootElement.TryGetProperty("type", out var type)) return;
+            var messageType = type.GetString();
+            if (messageType == "notification-test")
+            {
+                var success = System.Windows.Application.Current is App app && app.SendTestNotification();
+                var result = new
+                {
+                    type = "notification-test-result",
+                    success,
+                    message = success
+                        ? "Windows accepted the test notification request. Check your notification area."
+                        : "The Windows notification service is not available."
+                };
+                CalendarBrowser.CoreWebView2.PostWebMessageAsJson(JsonSerializer.Serialize(result));
+                return;
+            }
+            if (messageType != "notification-preferences" ||
                 !message.RootElement.TryGetProperty("preferences", out var preferences)) return;
             var directory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "SportsGamesCalendar");
             Directory.CreateDirectory(directory);

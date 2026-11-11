@@ -69,6 +69,33 @@
     overall.className="data-health-status "+(issues?"is-warning":"is-healthy");
     $("data-health-checked").textContent="Last checked "+fmt(new Date().toISOString());
   }
+  const notificationTestButton=$("data-health-notification-test");
+  const notificationTestStatus=$("data-health-notification-status");
+  const desktopWebView=window.chrome?.webview;
+  desktopWebView?.addEventListener?.("message",event=>{
+    const result=event.data;
+    if(result?.type!=="notification-test-result")return;
+    if(notificationTestButton)notificationTestButton.disabled=false;
+    if(notificationTestStatus){
+      notificationTestStatus.textContent=result.message|| (result.success?"TEST REQUEST SENT":"TEST FAILED");
+      notificationTestStatus.className="data-health-status "+(result.success?"is-healthy":"is-warning");
+    }
+  });
+  notificationTestButton?.addEventListener("click",()=>{
+    if(!desktopWebView?.postMessage){
+      if(notificationTestStatus){
+        notificationTestStatus.textContent="OPEN THE WINDOWS DESKTOP APP TO TEST NOTIFICATIONS";
+        notificationTestStatus.className="data-health-status is-warning";
+      }
+      return;
+    }
+    notificationTestButton.disabled=true;
+    if(notificationTestStatus){
+      notificationTestStatus.textContent="SENDING TEST TO WINDOWS…";
+      notificationTestStatus.className="data-health-status";
+    }
+    desktopWebView.postMessage({type:"notification-test"});
+  });
   const openHealth=()=>{window.showScreen?.("data-health-screen");runHealth();};
   $("open-data-health")?.addEventListener("click",openHealth);
   $("data-health-recheck")?.addEventListener("click",runHealth);
