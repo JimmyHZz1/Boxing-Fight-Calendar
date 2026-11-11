@@ -31,9 +31,20 @@
                     <Button Content="Home" Click="HomeButton_Click" />
                     <Button Content="Refresh" Click="RefreshButton_Click" />
                 </StackPanel>
-                <TextBlock x:Name="ConnectionLabel" Text="Connecting…"
-                           Foreground="#B8B8B8" FontSize="12"
-                           VerticalAlignment="Center" HorizontalAlignment="Right" />
+                <StackPanel DockPanel.Dock="Right" Orientation="Horizontal"
+                            VerticalAlignment="Center">
+                    <CheckBox x:Name="StartupCheckBox"
+                              Content="Launch on Windows startup"
+                              Foreground="#D8D8D8"
+                              VerticalAlignment="Center"
+                              Margin="0,0,18,0"
+                              ToolTip="Open Sports &amp; Games Calendar automatically when you sign in to Windows"
+                              Checked="StartupCheckBox_Changed"
+                              Unchecked="StartupCheckBox_Changed" />
+                    <TextBlock x:Name="ConnectionLabel" Text="Connecting…"
+                               Foreground="#B8B8B8" FontSize="12"
+                               VerticalAlignment="Center" />
+                </StackPanel>
             </DockPanel>
         </Border>
 
