@@ -11,8 +11,6 @@ $dark = [System.Drawing.Color]::FromArgb(25, 25, 25)
 $goldBrush = New-Object System.Drawing.SolidBrush($gold)
 $whiteBrush = New-Object System.Drawing.SolidBrush($white)
 $darkBrush = New-Object System.Drawing.SolidBrush($dark)
-$pen = New-Object System.Drawing.Pen($gold, 16)
-$graphics.DrawRoundedRectangle = $null
 $graphics.FillRectangle($goldBrush, 20, 20, 216, 216)
 $graphics.FillRectangle($darkBrush, 38, 38, 180, 180)
 $graphics.FillRectangle($goldBrush, 55, 82, 146, 17)
