@@ -2781,3 +2781,19 @@ body.games-mode #home-customise-toggle{display:none!important}
   .topbar-display-tools button{padding:6px 5px;font-size:7px;letter-spacing:0}
 }
 @media(max-width:520px){.topbar-display-tools button{min-height:29px;padding:5px 4px;font-size:6px}}
+
+
+/* Dedicated platform calendar pages and secondary release types. */
+body.games-platform-page .games-platform-hub{display:none}
+.games-platform-back{margin-top:4px}
+.games-platform-page-intro{margin-bottom:18px}
+.games-additional-releases{margin-top:16px;border:1px solid rgba(143,193,255,.22);background:rgba(20,30,44,.78)}
+.games-additional-releases>summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 15px;cursor:pointer;list-style:none}
+.games-additional-releases>summary::-webkit-details-marker{display:none}
+.games-additional-releases>summary>span{display:grid;gap:4px}
+.games-additional-releases>summary strong{font:900 13px 'Barlow Condensed',sans-serif;letter-spacing:.7px;color:#dcecff}
+.games-additional-releases>summary small{font-size:9px;color:#91a6bf}
+.games-additional-releases>summary>b{font-size:8px;letter-spacing:.6px;color:#8fc1ff;white-space:nowrap}
+.games-additional-releases[open]>summary{border-bottom:1px solid rgba(143,193,255,.18)}
+.games-additional-releases .games-release-list{padding:12px}
+@media(max-width:480px){.games-additional-releases>summary{align-items:flex-start;flex-direction:column}.games-additional-releases>summary>b{align-self:flex-end}}
