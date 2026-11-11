@@ -7,6 +7,7 @@
 body.swgoh-mode .next-event-strip,
 body.swgoh-mode .top-sport-selector,
 body.swgoh-mode .games-platform-hub,
-body.swgoh-mode #open-settings{display:none!important}
+body.swgoh-mode #open-settings,
+body.swgoh-mode .bottom-nav{display:none!important}
 .home-snapshot-panels{grid-template-columns:minmax(0,1fr)!important}
 @media(max-width:760px){.swgoh-native{border-radius:10px}.swgoh-native .main{padding-left:10px;padding-right:10px}}

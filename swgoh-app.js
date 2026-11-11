@@ -61,7 +61,6 @@ let sc=document.querySelector('[data-save-conquest]');if(sc)sc.onclick=()=>{let 
 let ar=document.querySelector('[data-add-resource]');if(ar)ar.onclick=()=>{let n=document.getElementById('resourceName').value.trim(),q=Number(document.getElementById('resourceQty').value)||0;if(n){state.resources[n]=q;save();render()}};
 let ae=document.querySelector('[data-add-event]');if(ae)ae.onclick=()=>{let n=document.getElementById('eventName').value.trim();if(n){state.events.push({name:n,watch:document.getElementById('eventWatch').checked,date:new Date().toLocaleDateString()});save();render()}};
 document.querySelectorAll('[data-del-event]').forEach(b=>b.onclick=()=>{state.events.splice(+b.dataset.delEvent,1);save();render()});
-save();render()});
 let ex=document.querySelector('[data-export]');if(ex)ex.onclick=()=>{let a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(state,null,2)],{type:'application/json'}));a.download='swgoh-tracker-backup.json';a.click()};
 let re=document.querySelector('[data-reset]');if(re)re.onclick=()=>{if(confirm('Reset local data?')){state={...defaults};save();render()}};
 }
