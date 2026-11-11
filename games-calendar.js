@@ -179,6 +179,15 @@
       featuredTicker.classList.add("is-auto-scrolling");
     }
   };
+  const companyDomains={"rockstar games":"rockstargames.com","rockstar north":"rockstargames.com","ubisoft":"ubisoft.com","electronic arts":"ea.com","ea":"ea.com","nintendo":"nintendo.com","sony interactive entertainment":"sony.com","playstation studios":"playstation.com","microsoft":"microsoft.com","xbox game studios":"xbox.com","sega":"sega.com","atlus":"atlus.com","capcom":"capcom.com","bandai namco":"bandainamcoent.com","bandai namco entertainment":"bandainamcoent.com","kojima productions":"kojimaproductions.jp","lucasfilm games":"lucasfilm.com","quantic dream":"quanticdream.com","saber interactive":"saber.games","square enix":"square-enix-games.com","deep silver":"deepsilver.com","king art games":"kingart-games.com","warner bros. games":"wbgames.com","warner bros games":"wbgames.com","activision":"activision.com","blizzard entertainment":"blizzard.com","bethesda":"bethesda.net","bethesda softworks":"bethesda.net","insomniac games":"insomniac.games","fromsoftware":"fromsoftware.jp","konami":"konami.com","take-two interactive":"take2games.com","2k":"2k.com","focus entertainment":"focus-entmt.com","thq nordic":"thqnordic.com","atari":"atari.com","amazon games":"amazon.com"};
+  const companyLogoUrl=name=>{const domain=companyDomains[String(name||"").toLowerCase().trim()];return domain?"https://www.google.com/s2/favicons?domain="+encodeURIComponent(domain)+"&sz=96":"";};
+  const addCompanyMarks=(parent,game)=>{
+    const names=[game.developer,game.publisher].filter((name,index,array)=>name&&array.findIndex(x=>String(x).toLowerCase()===String(name).toLowerCase())===index);
+    if(!names.length)return;
+    const row=document.createElement("div");row.className="games-release-companies";
+    names.forEach(name=>{const mark=document.createElement("span");mark.className="games-release-company";const url=companyLogoUrl(name);if(url){const img=document.createElement("img");img.src=url;img.alt="";img.loading="lazy";img.onerror=()=>img.remove();mark.append(img);}const label=document.createElement("small");label.textContent=name;mark.append(label);row.append(mark);});
+    parent.append(row);
+  };
   const platformIcon = platform => {
     const value = String(platform || "").toLowerCase();
     if (value.includes("steam")) return ["STEAM","STEAM"];
@@ -246,7 +255,8 @@
       card.className = "games-release-card";
       const artwork = document.createElement("div");
       artwork.className = "games-release-artwork";
-      const artworkUrl = game.artwork_url || game.logo_url || "";
+      const steamMatch=String(game.source_url||"").match(/store\.steampowered\.com\/app\/(\d+)/i);
+      const artworkUrl = game.artwork_url || game.logo_url || (steamMatch?"https://cdn.akamai.steamstatic.com/steam/apps/"+steamMatch[1]+"/header.jpg":"");
       if (artworkUrl.startsWith("https://")) {
         const image = document.createElement("img");
         image.className = "games-release-artwork-image";
@@ -362,6 +372,8 @@
       const navButton = document.createElement("button");
       navButton.type = "button";
       navButton.textContent = new Intl.DateTimeFormat("en-GB",{month:"short",year:"numeric",timeZone:"Europe/London"}).format(monthDate);
+      navButton.setAttribute("aria-controls","primary-games-month-"+month);
+      navButton.setAttribute("aria-current",index===0?"true":"false");
       timelineNav.append(navButton);
 
       const monthDetails = document.createElement("details");
