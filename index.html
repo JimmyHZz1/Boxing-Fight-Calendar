@@ -12,14 +12,16 @@
 <body>
   <div class="app-shell">
     <header class="topbar">
-      <button class="brand brand-switcher" id="brand-calendar-switcher" type="button" aria-label="Choose calendar" aria-haspopup="true" aria-expanded="false" aria-controls="mobile-calendar-menu">
+      <div class="brand" aria-label="Sports and Games Calendar">
         <span class="brand-mark" id="brand-mark-letter">S</span>
-        <span><strong id="brand-title">SPORTS</strong><small>CALENDAR</small></span><span class="brand-switcher-caret" aria-hidden="true">⌄</span>
-      </button>
+        <span><strong id="brand-title">SPORTS</strong><small>CALENDAR</small></span>
+      </div>
+      <button class="calendar-menu-trigger" id="calendar-menu-trigger" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="mobile-calendar-menu">CALENDARS <span aria-hidden="true">⌄</span></button>
       <div id="mobile-calendar-menu" class="mobile-calendar-menu" hidden aria-label="Choose calendar"><button type="button" data-screen="home-screen"><span class="brand-menu-mark sports-mark" aria-hidden="true">S</span> SPORTS CALENDAR</button><button type="button" data-screen="games-calendar-screen"><span class="brand-menu-mark games-mark" aria-hidden="true">G</span> GAMES CALENDAR</button></div>
       <nav class="topbar-nav" aria-label="Main navigation">
         <button type="button" class="topbar-nav-item active" data-screen="home-screen"><span aria-hidden="true">⌂</span> HOME</button>
         <button type="button" class="topbar-nav-item" data-screen="weekend-screen"><span aria-hidden="true">★</span> FAVOURITES</button>
+        <button type="button" class="topbar-nav-item sports-only-nav-item" data-screen="calendar-screen"><span aria-hidden="true">▦</span> CALENDAR</button>
       </nav>
       <div class="topbar-actions"><button id="global-search-open" class="secondary-button global-search-open" type="button" aria-label="Search all sports">⌕ <span>SEARCH</span></button><button id="open-settings" class="secondary-button settings-open" type="button" aria-label="Choose your favourite F1 team"><img src="https://www.formula1.com/assets/home/_next/static/media/f1-logo.43a01c6b.svg" alt="" aria-hidden="true"><span id="settings-team-label">TEAM</span></button><span class="live-status"><i></i> SCHEDULE</span><button id="manual-refresh" class="primary-button topbar-refresh" type="button" aria-label="Check for newly published sports data">CHECKING…</button></div>
     </header>
