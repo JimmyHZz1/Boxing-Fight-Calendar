@@ -24,7 +24,7 @@
     let i=0;img.onerror=()=>{i++;if(i<candidates.length)img.src=candidates[i];else img.remove();};img.onload=()=>fallback.hidden=true;img.src=candidates[i];wrap.append(img);
   };
   const openDialog=()=>{dialog.hidden=false;document.body.classList.add("games-dialog-open");dialog.querySelector(".games-discovery-close")?.focus();};
-  const closeDialog=()=>{dialog.hidden=true;dialogContent.replaceChildren();document.body.classList.remove("games-dialog-open");};
+  const closeDialog=()=>{dialog.hidden=true;dialogContent.replaceChildren();document.body.classList.remove("games-dialog-open","games-company-profile-open");};
   dialog.addEventListener("click",e=>{if(e.target.closest("[data-games-dialog-close]"))closeDialog();});
   document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!dialog.hidden)closeDialog();});
   const companyButton=(id,label)=>{const c=catalogue.companies.find(x=>x.id===id),b=el("button","games-company-game",label||(c?.name||"Company"));b.type="button";b.addEventListener("click",()=>showCompany(id));return b;};
@@ -94,7 +94,7 @@
   const profileDate=value=>{if(!value)return "Date not listed";const d=new Date(value);return Number.isNaN(d.getTime())?String(value):new Intl.DateTimeFormat("en-GB",{day:"numeric",month:"short",year:"numeric",timeZone:"UTC"}).format(d);};
   const showCompany=id=>{
     const c=profileData.companies.find(x=>x.id===id)||catalogue.companies.find(x=>x.id===id);if(!c)return;
-    dialogContent.replaceChildren();
+    dialogContent.replaceChildren();document.body.classList.add("games-company-profile-open");
     const back=el("button","games-profile-back","← BACK TO GAMES");back.type="button";back.addEventListener("click",closeDialog);dialogContent.append(back);
     const head=el("section","games-dialog-section games-company-profile-head"),identity=el("div","games-company-identity");
     addCompanyMark(identity,c);identity.append(el("h2","games-dialog-title",c.name));head.append(identity);
