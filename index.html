@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#101114">
-  <meta name="description" content="Boxing, Formula 1, UFC and PDC darts schedules in one sports calendar, shown in UK local time.">
+  <meta name="description" content="Formula 1, PDC darts, boxing, UFC, BKFC and FIM Speedway calendars in one place.">
   <link rel="manifest" href="./manifest.json">
-  <link rel="stylesheet" href="./styles.css?v=20261111-11">
+  <link rel="stylesheet" href="./styles.css?v=20261111-13">
   <title>Sports Calendar</title>
 </head>
 <body>
@@ -32,7 +32,7 @@
       <button type="button" class="top-sport-button" data-top-sport="darts" aria-label="PDC Darts"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Professional_Darts_Corporation_logo.png" alt="PDC logo" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'top-sport-wordmark top-sport-pdc-fallback',textContent:'PDC'}))"><span>DARTS</span></button>
       <button type="button" class="top-sport-button" data-top-sport="boxing" aria-label="Boxing"><span class="top-sport-wordmark boxing-mark">BOX</span><span>BOXING</span></button>
       <button type="button" class="top-sport-button" data-top-sport="ufc" aria-label="UFC"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/UFC%20Logo.svg" alt=""><span>UFC</span></button>
-      <button type="button" class="top-sport-button" data-top-sport="bkfc" aria-label="BKFC"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bkfc-logo.png" alt=""><span>BKFC</span></button>
+      <button type="button" class="top-sport-button" data-top-sport="speedway" aria-label="FIM Speedway"><span class="top-sport-wordmark speedway-top-mark">FIM</span><span>SPEEDWAY</span></button>
     </nav>
     <nav class="games-platform-hub" id="games-platform-hub" aria-label="Browse game releases by platform">
       <div class="games-platform-hub-heading"><span class="eyebrow games-eyebrow">EXPLORE BY PLATFORM</span><span>CHOOSE A PLATFORM TO SEE ITS UPCOMING RELEASES</span></div>
@@ -55,7 +55,7 @@
         <div class="hero">
           <div class="eyebrow">FIVE SPORTS · ONE PLACE</div>
           <h1 id="home-title">Every sport.<br><em>One calendar.</em></h1>
-          <p>Formula 1, PDC darts, boxing, UFC and BKFC — all in one place.</p>
+          <p>Formula 1, PDC darts, boxing, UFC, FIM Speedway and BKFC — all in one place.</p>
           <div class="hero-meta"><span>🇬🇧 UK LOCAL TIME</span><span id="home-updated">WAITING FOR FIRST SYNC</span></div>
           <p id="refresh-help" class="refresh-help" role="status" aria-live="polite">Data syncs automatically every 4 hours. Tap to check for the latest published schedules.</p>
         </div>
@@ -68,7 +68,7 @@
           <div class="featured-event-footer"><span id="featured-event-note">A headline event across your sports</span><button id="featured-event-open" class="featured-event-button" type="button">VIEW EVENT →</button></div>
         </section>
         <section id="live-sports-centre" class="live-centre" aria-labelledby="live-centre-title">
-          <div class="live-centre-heading"><div><span class="eyebrow">ACROSS ALL FIVE SPORTS</span><h2 id="live-centre-title">Live Sports Centre</h2></div><span class="live-centre-clock">UK LOCAL TIME</span></div>
+          <div class="live-centre-heading"><div><span class="eyebrow">ACROSS YOUR SPORTS</span><h2 id="live-centre-title">Live Sports Centre</h2></div><span class="live-centre-clock">UK LOCAL TIME</span></div>
           <section class="live-now-panel" aria-labelledby="live-now-title"><div class="live-centre-subheading"><h3 id="live-now-title">LIVE NOW</h3><span id="live-now-count">CHECKING FEEDS</span></div><div id="live-now-events" class="live-centre-list"><p class="live-centre-empty">Checking current event feeds…</p></div></section>
           <section class="live-upcoming-panel" aria-labelledby="live-upcoming-title"><div class="live-centre-subheading"><h3 id="live-upcoming-title">COMING UP · NEXT 7 DAYS</h3><span id="live-upcoming-count" class="live-upcoming-count">CHECKING</span><button type="button" class="text-link" id="live-centre-calendar">FULL CALENDAR ↗</button></div><div id="live-upcoming-events" class="live-centre-list"><p class="live-centre-empty">Upcoming events will appear here when feeds load.</p></div></section>
         </section>
@@ -90,6 +90,7 @@
               <button class="sport-slide sport-ufc" type="button" data-sport="ufc" aria-pressed="false">
                 <span class="sport-slide-kicker">MIXED MARTIAL ARTS</span><img class="sport-slide-logo sport-logo-ufc" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/UFC%20Logo.svg" alt="UFC logo" loading="eager"><strong>UFC</strong><small>EVENTS · FIGHT CARDS · RESULTS</small><span class="sport-slide-open">OPEN UFC →</span>
               </button>
+              <button class="sport-slide sport-speedway" type="button" data-sport="speedway" aria-pressed="false"><span class="sport-slide-kicker">FIM WORLD CHAMPIONSHIPS</span><span class="sport-slide-logo sport-logo-speedway" role="img" aria-label="FIM Speedway">FIM</span><strong>SPEEDWAY</strong><small>GRAND PRIX · NATIONS · WORLD CUP</small><span class="sport-slide-open">OPEN SPEEDWAY →</span></button>
               <button class="sport-slide sport-bkfc" type="button" data-sport="bkfc" aria-pressed="false"><span class="sport-slide-kicker">BARE-KNUCKLE BOXING</span><img class="sport-slide-logo sport-logo-bkfc" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bkfc-logo.png" alt="BKFC logo" loading="lazy"><strong>BKFC</strong><small>EVENTS · FIGHT CARDS · RESULTS</small><span class="sport-slide-open">OPEN BKFC →</span></button>
             </div>
             <button class="carousel-arrow" id="sport-next" type="button" aria-label="Next sport">›</button>
@@ -140,6 +141,11 @@
       <section id="f1-grand-prix-screen" class="screen f1-grand-prix-screen" aria-labelledby="f1-gp-title">
         <div class="f1-gp-toolbar"><button type="button" class="secondary-button" id="f1-gp-back">← F1 OVERVIEW</button><span class="eyebrow">FORMULA 1 · GRAND PRIX CENTRE</span></div>
         <div id="f1-grand-prix-content" aria-live="polite"><div class="muted-note">Loading the Grand Prix Centre…</div></div>
+      </section>
+
+      <section id="speedway-screen" class="screen speedway-screen" aria-labelledby="speedway-title">
+        <div class="speedway-toolbar"><button type="button" class="secondary-button" id="speedway-back">← ALL SPORTS</button><span class="eyebrow">FIM SPEEDWAY · WORLD CHAMPIONSHIPS</span></div>
+        <div id="speedway-page-content" aria-live="polite"><p class="speedway-loading">Loading the Speedway Centre…</p></div>
       </section>
 
       <section id="calendar-screen" class="screen" aria-labelledby="calendar-title">
@@ -197,7 +203,7 @@
             <div class="preview-site-topbar"><div class="preview-site-brand"><b>S</b><span><strong>SPORTS</strong><small>CALENDAR</small></span></div><span class="preview-site-status"><i></i> SCHEDULE</span></div>
             <div class="preview-site-sports"><span class="selected preview-site-f1"><b>F1</b><i id="theme-preview-team-mark">F1</i><small id="theme-preview-team-name">TEAM THEME PREVIEW</small></span><span>DARTS</span><span>BOXING</span><span>UFC</span><span>BKFC</span></div>
             <div class="preview-site-ticker"><b>UP NEXT</b><span>FORMULA 1&nbsp; · &nbsp;RACE WEEKEND</span><span>→</span></div>
-            <section class="preview-site-hero"><span class="eyebrow">FIVE SPORTS · ONE PLACE</span><h3>Every sport.<br><em>One calendar.</em></h3><p>Formula 1, PDC darts, boxing, UFC and BKFC — all in one place.</p><span class="theme-preview-cta">EXPLORE CALENDAR&nbsp; →</span><div class="preview-site-meta">🇬🇧 UK LOCAL TIME <span>LIVE SPORTS CENTRE</span></div></section>
+            <section class="preview-site-hero"><span class="eyebrow">SIX SPORTS · ONE PLACE</span><h3>Every sport.<br><em>One calendar.</em></h3><p>Formula 1, PDC darts, boxing, UFC and BKFC — all in one place.</p><span class="theme-preview-cta">EXPLORE CALENDAR&nbsp; →</span><div class="preview-site-meta">🇬🇧 UK LOCAL TIME <span>LIVE SPORTS CENTRE</span></div></section>
             <section class="preview-site-section"><div class="preview-site-heading"><span class="eyebrow">ACROSS ALL FIVE SPORTS</span><b>Live Sports Centre</b></div><div class="preview-site-live"><i></i><span><small>LIVE NOW</small><strong>Race weekend coverage</strong></span><b>LIVE</b></div><div class="preview-site-live"><i></i><span><small>COMING UP</small><strong>Next events across your sports</strong></span><b>→</b></div></section>
             <section class="preview-site-section"><div class="preview-site-heading"><span class="eyebrow">CHOOSE YOUR SPORT</span><b>Explore the calendar</b></div><div class="preview-site-sportcards"><div><small>MOTORSPORT</small><b>FORMULA 1</b><span>RACES · RESULTS</span></div><div><small>PDC TOUR</small><b>DARTS</b><span>TOURNAMENTS</span></div><div><small>THE FIGHT GAME</small><b>BOXING</b><span>FIGHT NIGHTS</span></div></div></section>
             <section class="preview-site-section"><div class="preview-site-heading"><span class="eyebrow">CHAMPIONSHIP</span><b>Driver standings</b></div><div class="preview-site-standing"><b>01</b><span>Driver championship</span><strong>2026</strong></div><div class="preview-site-standing"><b>02</b><span>Constructor championship</span><strong>2026</strong></div></section>
@@ -362,10 +368,11 @@
   </div>
   <script src="./app.js?v=20261109-03"></script>
   <script src="./sports-data.js?v=20261109-02"></script>
-  <script src="./sports.js?v=20261107-09"></script>
+  <script src="./sports.js?v=20261111-04"></script>
   <script src="./sports-hub.js?v=20261109-08"></script>
-  <script src="./sports-nav.js?v=20261108-07"></script>
+  <script src="./sports-nav.js?v=20261111-03"></script>
   <script src="./sport-pages.js?v=20261109-06"></script>
+  <script src="./speedway.js?v=20261111-01"></script>
   <script src="./sports-v11.js?v=20261111-02"></script>
   <script src="./sports-weekend.js?v=20261108-02"></script>
   <script src="./favourites.js?v=20261109-02"></script>
