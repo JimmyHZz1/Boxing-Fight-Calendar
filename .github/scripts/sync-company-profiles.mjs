@@ -60,11 +60,8 @@ for(const company of companies){
     for(const row of rows) if(!roots.some(item=>item.id===row.id)) roots.push(row);
   }
   const entities=[...roots];
-  // Include directly owned studios/labels so parent-company profiles reflect their catalogue too.
-  for(const root of roots){
-    const children=await api("companies","fields name,description,start_date,parent,logo.image_id,developed,published; where parent = "+root.id+"; limit 12;");
-    for(const child of children) if(!entities.some(item=>item.id===child.id)) entities.push(child);
-  }
+  // Only import explicitly matched company records. Broad parent-child expansion
+  // pulled unrelated subsidiaries into profiles and made the browser payload enormous.
   const gameCredits=new Map();
   for(const entity of entities){
     for(const [role,ids] of [["developer",entity.developed||[]],["publisher",entity.published||[]]]){
@@ -106,8 +103,13 @@ for(const company of companies){
   }
   const primary=roots[0];
   const founded=primary?.start_date?new Date(primary.start_date*1000).getUTCFullYear():null;
-  const uniqueGames=[...new Map(games.map(game=>[game.igdb_id,game])).values()]
-    .sort((a,b)=>(b.release_date||"").localeCompare(a.release_date||"")||a.title.localeCompare(b.title));
+  const allUniqueGames=[...new Map(games.map(game=>[game.igdb_id,game])).values()];
+  const today=new Date().toISOString().slice(0,10);
+  const upcomingGames=allUniqueGames.filter(game=>game.release_date&&game.release_date>=today)
+    .sort((a,b)=>a.release_date.localeCompare(b.release_date)||a.title.localeCompare(b.title));
+  const previousGames=allUniqueGames.filter(game=>!game.release_date||game.release_date<today)
+    .sort((a,b)=>(b.release_date||"").localeCompare(a.release_date||"")||a.title.localeCompare(b.title)).slice(0,100);
+  const uniqueGames=[...upcomingGames,...previousGames];
   result.push({
     id:company.id,name:company.name,aliases:company.aliases,website:company.website,
     igdb_company_ids:entities.map(item=>item.id),description:primary?.description||"",
@@ -119,6 +121,9 @@ for(const company of companies){
 }
 if(result.every(company=>!company.releases.length)) throw Error("IGDB returned no PC/console releases; refusing to overwrite the existing catalogue with empty data.");
 const output={schema_version:2,source:"IGDB",updated_at:new Date().toISOString(),companies:result};
-await fs.writeFile("data/company-profiles.json",JSON.stringify(output,null,2)+"\n");
+const serialized=JSON.stringify(output);
+const bytes=Buffer.byteLength(serialized,"utf8");
+if(bytes>1_500_000) throw Error("Company profile catalogue exceeds the 1.5 MB browser payload limit ("+bytes+" bytes); refusing to publish it.");
+await fs.writeFile("data/company-profiles.json",serialized+"\\n");
 const total=result.reduce((sum,company)=>sum+company.releases.length,0);
 console.log("Updated "+result.length+" major company profiles with "+total+" company/game entries.");
