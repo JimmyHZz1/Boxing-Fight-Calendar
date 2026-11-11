@@ -1,5 +1,10 @@
 name: Sync major game company profiles
 on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/scripts/sync-company-profiles.mjs"
+      - ".github/workflows/sync-company-profiles.yml"
   workflow_dispatch:
   schedule:
     - cron: "17 5 * * 2"
