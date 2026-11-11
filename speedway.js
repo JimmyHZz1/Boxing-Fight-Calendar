@@ -3,7 +3,8 @@
   const root=()=>document.getElementById("speedway-page-content");
   const state={data:null,tab:"sgp",selectedRider:null,loading:false,error:""};
   const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined&&text!==null)n.textContent=text;return n;};
-  const dateKey=v=>/^\\d{4}-\\d{2}-\\d{2}$/.test(String(v||""))?String(v):"";
+  const todayKey=()=>new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/London"}).format(new Date());
+  const dateKey=v=>/^\d{4}-\d{2}-\d{2}$/.test(String(v||""))?String(v):"";
   const dateLabel=v=>{if(!dateKey(v))return "Date TBC";const d=new Date(v+"T12:00:00Z");return new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",weekday:"short",day:"numeric",month:"short",year:"numeric"}).format(d);};
   const link=(label,url)=>{const a=el("a","speedway-source-link",label+" ↗");a.href=url;a.target="_blank";a.rel="noopener noreferrer";return a;};
   function panel(title,kicker){const s=el("section","speedway-panel");const h=el("div","speedway-panel-heading");const copy=el("div");if(kicker)copy.append(el("span","eyebrow",kicker));copy.append(el("h2","",title));h.append(copy);s.append(h);return s;}
@@ -17,14 +18,14 @@
   }
   function tabs(){
     const nav=el("div","speedway-tabs");nav.setAttribute("role","tablist");nav.setAttribute("aria-label","Speedway competitions");
-    [["sgp","GRAND PRIX"],["son","SPEEDWAY OF NATIONS"],["swc","WORLD CUP"],["riders","RIDERS"]].forEach(([id,label])=>{const b=el("button","speedway-tab"+(state.tab===id?" is-active":""),label);b.type="button";b.setAttribute("role","tab");b.setAttribute("aria-selected",String(state.tab===id));b.addEventListener("click",()=>{state.tab=id;state.selectedRider=null;render();});nav.append(b);});
+    [["sgp","GRAND PRIX"],["son","SPEEDWAY OF NATIONS"],["swc","WORLD CUP"],["riders","RIDERS"]].forEach(([id,label])=>{const b=el("button","speedway-tab"+(state.tab===id?" is-active":""),label);b.type="button";b.setAttribute("role","tab");b.setAttribute("aria-selected",String(state.tab===id));b.setAttribute("aria-controls","speedway-tab-content");b.addEventListener("click",()=>{state.tab=id;state.selectedRider=null;render();});nav.append(b);});
     return nav;
   }
   function renderSgp(target){
     const c=state.data.competitions.sgp,events=c.events||[];
     const hero=panel("2027 Speedway Grand Prix","INDIVIDUAL WORLD CHAMPIONSHIP");
     hero.append(el("p","speedway-section-intro","The main individual world championship, with every published round, results archive and the current world-title standings."));
-    const next=events.filter(e=>dateKey(e.date)&&e.date>=new Date().toISOString().slice(0,10)).sort((a,b)=>a.date.localeCompare(b.date))[0];
+    const next=events.filter(e=>dateKey(e.date)&&e.date>=todayKey()).sort((a,b)=>a.date.localeCompare(b.date))[0];
     const nextCard=el("div","speedway-next-card");nextCard.append(el("small","eyebrow","NEXT PUBLISHED ROUND"),el("strong","",next?next.name:"2027 season"),el("span","",next?dateLabel(next.date)+" · "+next.venue:"The 2027 calendar is published; event dates are listed below."));hero.append(nextCard);
     target.append(hero);
     const british=events.find(e=>e.british_gp);
@@ -71,10 +72,10 @@
     if(state.loading){target.append(el("p","speedway-loading","Loading official Speedway data…"));return;}
     if(state.error){target.append(el("p","speedway-loading",state.error));return;}
     const hero=el("section","speedway-hero");
-    hero.append(el("span","speedway-wordmark","FIM SPEEDWAY"),el("span","eyebrow","WORLD CHAMPIONSHIPS · UK LOCAL TIME"),el("h1","","Speedway")); 
+    const pageTitle=el("h1","","Speedway");pageTitle.id="speedway-title";hero.append(el("span","speedway-wordmark","FIM SPEEDWAY"),el("span","eyebrow","WORLD CHAMPIONSHIPS · UK LOCAL TIME"),pageTitle); 
     hero.append(el("p","","The Speedway Grand Prix, Speedway of Nations and Speedway World Cup — with a dedicated British Grand Prix feature and rider directory."));
     const meta=el("div","speedway-hero-meta");meta.append(el("span","","2027 CALENDAR"),el("span","","2026 RESULTS & STANDINGS"),el("span","","OFFICIAL FIM SOURCES"));hero.append(meta);target.append(hero,tabs());
-    const body=el("div","speedway-tab-content");
+    const body=el("div","speedway-tab-content");body.id="speedway-tab-content";
     if(state.tab==="sgp")renderSgp(body);else if(state.tab==="son")renderSon(body);else if(state.tab==="swc")renderSwc(body);else renderRiders(body);
     target.append(body);
     const footer=el("div","speedway-footer");footer.append(el("span","","DATA FROM FIM SPEEDWAY"),link("FIM SPEEDWAY OFFICIAL WEBSITE","https://fimspeedway.com/"));target.append(footer);
