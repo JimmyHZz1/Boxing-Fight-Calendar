@@ -1,4 +1,6 @@
 using System.Diagnostics;
+using System.IO;
+using System.Text.Json;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -118,6 +120,7 @@ public partial class MainWindow : Window
             CalendarBrowser.CoreWebView2.NavigationStarting += CoreWebView2_NavigationStarting;
             CalendarBrowser.CoreWebView2.NavigationCompleted += CoreWebView2_NavigationCompleted;
             CalendarBrowser.CoreWebView2.NewWindowRequested += CoreWebView2_NewWindowRequested;
+            CalendarBrowser.CoreWebView2.WebMessageReceived += CoreWebView2_WebMessageReceived;
             CalendarBrowser.CoreWebView2.Settings.IsStatusBarEnabled = false;
             CalendarBrowser.CoreWebView2.Settings.AreDefaultContextMenusEnabled = true;
             _browserReady = true;
@@ -150,6 +153,20 @@ public partial class MainWindow : Window
             try { await CalendarBrowser.ExecuteScriptAsync("document.body.classList.add('desktop-shell')"); }
             catch { }
         }
+    }
+
+    private void CoreWebView2_WebMessageReceived(object? sender, CoreWebView2WebMessageReceivedEventArgs e)
+    {
+        try
+        {
+            using var message = JsonDocument.Parse(e.WebMessageAsJson);
+            if (!message.RootElement.TryGetProperty("type", out var type) || type.GetString() != "notification-preferences" ||
+                !message.RootElement.TryGetProperty("preferences", out var preferences)) return;
+            var directory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "SportsGamesCalendar");
+            Directory.CreateDirectory(directory);
+            File.WriteAllText(Path.Combine(directory, "notification-preferences.json"), preferences.GetRawText());
+        }
+        catch { }
     }
 
     private void CoreWebView2_NewWindowRequested(object? sender, CoreWebView2NewWindowRequestedEventArgs e)
