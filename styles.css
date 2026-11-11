@@ -2807,3 +2807,56 @@ body.games-platform-page .games-platform-hub{display:none}
 .games-month-timeline .games-release-artwork{width:clamp(62px,7vw,88px)!important;height:auto!important;aspect-ratio:3/4;min-height:0!important;}
 @media(max-width:620px){.games-release-artwork{width:64px!important;height:auto!important;aspect-ratio:3/4;}.games-month-timeline .games-release-artwork{width:64px!important;height:auto!important;aspect-ratio:3/4;}}
 @media(max-width:420px){.games-release-artwork{width:56px!important;height:auto!important;aspect-ratio:3/4;}.games-month-timeline .games-release-artwork{width:56px!important;height:auto!important;aspect-ratio:3/4;}}
+
+/* FIM Speedway Centre */
+.top-sport-wordmark.speedway-top-mark{font-size:12px;letter-spacing:-.5px;font-style:italic}
+.sport-speedway{border-color:rgba(226,180,91,.25);background:linear-gradient(145deg,rgba(226,180,91,.11),rgba(25,27,32,.96))}
+.sport-logo-speedway{display:grid;place-items:center;font:900 36px 'Barlow Condensed',sans-serif;font-style:italic;letter-spacing:-2px;color:#e2b45b}
+.speedway-screen{padding-top:22px}
+.speedway-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+.speedway-hero{position:relative;overflow:hidden;padding:clamp(22px,4vw,38px);border:1px solid rgba(226,180,91,.32);background:linear-gradient(115deg,rgba(226,180,91,.13),rgba(25,27,32,.97) 62%),var(--panel)}
+.speedway-wordmark{display:inline-block;padding:5px 9px;border:1px solid rgba(226,180,91,.45);color:#e2b45b;font:900 14px 'Barlow Condensed',sans-serif;letter-spacing:2px;font-style:italic}
+.speedway-hero h1{margin:14px 0 8px;font:900 clamp(48px,8vw,76px)/.9 'Barlow Condensed',sans-serif;text-transform:uppercase}
+.speedway-hero>p,.speedway-section-intro,.speedway-section-note{max-width:760px;color:#b8bac1;font-size:12px;line-height:1.7}
+.speedway-hero-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.speedway-hero-meta span,.speedway-status-note{padding:6px 8px;border:1px solid var(--line);color:var(--muted);font-size:8px;font-weight:800;letter-spacing:.7px}
+.speedway-tabs{display:flex;gap:6px;overflow-x:auto;padding:14px 0;border-bottom:1px solid var(--line)}
+.speedway-tab{flex:0 0 auto;min-height:36px;padding:8px 12px;border:1px solid var(--line);background:#191b20;color:var(--muted);font:800 9px 'DM Sans',sans-serif;letter-spacing:.7px;cursor:pointer}
+.speedway-tab.is-active{border-color:var(--accent);background:rgba(226,180,91,.1);color:var(--accent)}
+.speedway-tab-content{display:grid;gap:14px;padding-top:14px}
+.speedway-panel{min-width:0;padding:17px;background:var(--panel);border:1px solid var(--line)}
+.speedway-panel-heading{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:12px}
+.speedway-panel-heading h2{margin:5px 0 0;font:800 27px 'Barlow Condensed',sans-serif;text-transform:uppercase}
+.speedway-next-card,.speedway-champion-summary,.speedway-worldcup-result{display:grid;gap:6px;margin-top:13px;padding:14px;border:1px solid rgba(226,180,91,.24);background:rgba(226,180,91,.06)}
+.speedway-next-card strong,.speedway-worldcup-result h3{font:800 20px 'Barlow Condensed',sans-serif;text-transform:uppercase}
+.speedway-next-card span,.speedway-worldcup-result p,.speedway-champion-summary small{color:var(--muted);font-size:10px;line-height:1.5}
+.speedway-event-card{display:grid;grid-template-columns:58px minmax(0,1fr) auto;gap:12px;align-items:center;padding:12px 0;border-top:1px solid var(--line)}
+.speedway-event-date{display:grid;place-items:center;align-content:center;min-height:56px;background:var(--panel2);border:1px solid var(--line)}
+.speedway-event-date strong{font:900 25px 'Barlow Condensed',sans-serif}
+.speedway-event-date small{color:var(--accent);font-size:8px;font-weight:900}
+.speedway-event-copy{min-width:0;display:grid;gap:3px}
+.speedway-event-kicker,.speedway-event-full-date{color:var(--accent);font-size:8px;font-weight:800;letter-spacing:.6px}
+.speedway-event-copy h3{margin:0;font:800 17px 'Barlow Condensed',sans-serif;text-transform:uppercase}
+.speedway-event-copy p{margin:0;color:var(--muted);font-size:9px}
+.speedway-event-card.is-british-gp{margin:8px 0;padding:12px;border:1px solid rgba(226,180,91,.4);background:rgba(226,180,91,.055)}
+.speedway-feature-label{color:#e2b45b;font-size:8px;font-weight:900;letter-spacing:1px}
+.speedway-source-link{display:inline-flex;align-items:center;color:#e2b45b;font-size:8px;font-weight:800;text-decoration:none;white-space:nowrap}
+.speedway-source-link:hover{text-decoration:underline}
+.speedway-champion-summary strong{font:900 24px 'Barlow Condensed',sans-serif}
+.speedway-champion-summary span{color:var(--accent);font-size:10px;font-weight:800}
+.speedway-worldcup-result h3{margin:3px 0;font:900 23px 'Barlow Condensed',sans-serif}
+.speedway-rider-list{display:grid;gap:4px;margin-top:12px}
+.speedway-rider-row{display:grid;grid-template-columns:32px 42px minmax(0,1.5fr) minmax(0,1fr) 58px;gap:8px;align-items:center;width:100%;padding:10px 8px;border:1px solid rgba(255,255,255,.06);background:#202229;color:var(--text);text-align:left;cursor:pointer}
+.speedway-rider-row:hover{border-color:var(--accent);background:rgba(226,180,91,.06)}
+.speedway-rider-rank,.speedway-rider-number,.speedway-rider-country{color:var(--muted);font-size:9px}
+.speedway-rider-number{color:var(--accent);font-weight:900}
+.speedway-rider-name{font-size:11px;font-weight:800}
+.speedway-rider-points{text-align:right;color:var(--accent);font-size:10px}
+.speedway-rider-profile-number{display:inline-grid;place-items:center;width:54px;height:54px;border:1px solid var(--accent);color:var(--accent);font:900 23px 'Barlow Condensed',sans-serif}
+.speedway-profile-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:12px 0}
+.speedway-profile-stat{display:grid;gap:4px;padding:10px;background:var(--panel2);border:1px solid var(--line)}
+.speedway-profile-stat strong{font:900 22px 'Barlow Condensed',sans-serif;color:var(--accent)}
+.speedway-profile-stat small{font-size:8px;color:var(--muted);font-weight:800}
+.speedway-loading{padding:20px;border:1px dashed var(--line);color:var(--muted);font-size:11px}
+.speedway-footer{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:15px 0;color:var(--muted);font-size:8px;letter-spacing:.8px}
+@media(max-width:620px){.speedway-toolbar{align-items:flex-start;flex-direction:column}.speedway-event-card{grid-template-columns:48px minmax(0,1fr);gap:9px}.speedway-event-card>.speedway-source-link{grid-column:2}.speedway-rider-row{grid-template-columns:25px 32px minmax(0,1fr) 52px;gap:6px}.speedway-rider-country{display:none}.speedway-rider-name{font-size:10px}.speedway-profile-stats{gap:5px}.speedway-profile-stat{padding:8px 6px}}
