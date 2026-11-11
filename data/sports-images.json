@@ -928,9 +928,39 @@
       "image_match_method": "category:Category:Jared Cannonier",
       "image_verified_at": "2026-11-11T17:57:00Z",
       "image_local_path": "assets/images/ufc/jared-cannonier.png"
+    },
+    "ikram aliskerov": {
+      "name": "Ikram Aliskerov",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/ikram-aliskerov.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Ikram_Aliskerov_2024.png",
+      "image_credit": "Wikimedia Commons · Sexto Round · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Ikram Aliskerov",
+      "image_verified_at": "2026-11-11T18:26:27Z",
+      "image_local_path": "assets/images/ufc/ikram-aliskerov.png"
+    },
+    "bo nickal": {
+      "name": "Bo Nickal",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/bo-nickal.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Bo_Nickal_(52791819473)_(cropped).jpg",
+      "image_credit": "Wikimedia Commons · Noah Riffe · Public domain",
+      "image_license": "Public domain",
+      "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Bo Nickal",
+      "image_verified_at": "2026-11-11T18:26:27Z",
+      "image_local_path": "assets/images/ufc/bo-nickal.jpg"
     }
   },
-  "updated_at": "2026-11-11T17:57:00Z",
+  "updated_at": "2026-11-11T18:26:27Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1110,7 +1140,10 @@
     "israel adesanya": "2026-11-11T17:57:00Z",
     "christian leroy duncan": "2026-11-11T17:57:00Z",
     "abus magomedov": "2026-11-11T17:57:00Z",
-    "jared cannonier": "2026-11-11T17:57:00Z"
+    "jared cannonier": "2026-11-11T17:57:00Z",
+    "ikram aliskerov": "2026-11-11T18:26:27Z",
+    "bo nickal": "2026-11-11T18:26:27Z",
+    "ian machado garry": "2026-11-11T18:26:27Z"
   },
   "audit": {
     "last_reviewed_at": "2026-11-09T12:15:00Z",
@@ -1147,15 +1180,15 @@
     }
   },
   "enrichment": {
-    "batch_number": 20,
+    "batch_number": 21,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 183,
-    "cumulative_found": 68,
-    "cumulative_missing": 115,
-    "cumulative_rejected": 139,
-    "last_batch_at": "2026-11-11T17:57:00Z",
-    "last_successful_batch_at": "2026-11-11T17:57:00Z",
-    "last_rate_limited_at": "2026-11-11T17:57:00Z",
+    "cumulative_attempted": 187,
+    "cumulative_found": 70,
+    "cumulative_missing": 117,
+    "cumulative_rejected": 140,
+    "last_batch_at": "2026-11-11T18:26:27Z",
+    "last_successful_batch_at": "2026-11-11T18:26:27Z",
+    "last_rate_limited_at": "2026-11-11T18:26:27Z",
     "history": [
       {
         "batch": 1,
@@ -1315,6 +1348,14 @@
         "attempted": 5,
         "found": 2,
         "missing": 3,
+        "rate_limited": true
+      },
+      {
+        "batch": 21,
+        "at": "2026-11-11T18:26:27Z",
+        "attempted": 4,
+        "found": 2,
+        "missing": 2,
         "rate_limited": true
       }
     ],

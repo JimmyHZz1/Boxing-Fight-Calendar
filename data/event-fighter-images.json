@@ -29,8 +29,23 @@
       "image_match_method": "category:Category:Jared Cannonier",
       "image_verified_at": "2026-11-11T17:57:00Z",
       "image_local_path": "assets/images/ufc/jared-cannonier.png"
+    },
+    "ikram aliskerov": {
+      "name": "Ikram Aliskerov",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/ikram-aliskerov.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Ikram_Aliskerov_2024.png",
+      "image_credit": "Wikimedia Commons · Sexto Round · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Ikram Aliskerov",
+      "image_verified_at": "2026-11-11T18:26:27Z",
+      "image_local_path": "assets/images/ufc/ikram-aliskerov.png"
     }
   },
   "attempted": {},
-  "updated_at": "2026-11-11T17:57:25Z"
+  "updated_at": "2026-11-11T18:26:54Z"
 }

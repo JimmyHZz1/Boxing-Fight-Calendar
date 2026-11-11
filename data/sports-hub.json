@@ -4128,12 +4128,32 @@
             {
               "rank": 13,
               "name": "Ikram Aliskerov",
-              "image_url": null
+              "image_url": "./assets/images/ufc/ikram-aliskerov.png",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Ikram_Aliskerov_2024.png",
+              "image_credit": "Wikimedia Commons · Sexto Round · CC BY 3.0",
+              "image_license": "CC BY 3.0",
+              "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Ikram Aliskerov",
+              "image_verified_at": "2026-11-11T18:26:27Z",
+              "image_local_path": "assets/images/ufc/ikram-aliskerov.png"
             },
             {
               "rank": 14,
               "name": "Bo Nickal",
-              "image_url": null
+              "image_url": "./assets/images/ufc/bo-nickal.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Bo_Nickal_(52791819473)_(cropped).jpg",
+              "image_credit": "Wikimedia Commons · Noah Riffe · Public domain",
+              "image_license": "Public domain",
+              "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Bo Nickal",
+              "image_verified_at": "2026-11-11T18:26:27Z",
+              "image_local_path": "assets/images/ufc/bo-nickal.jpg"
             },
             {
               "rank": 15,
@@ -5238,66 +5258,64 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 5,
-    "found": 104,
-    "missing": 685,
-    "rejected": 0,
+    "attempted": 4,
+    "found": 106,
+    "missing": 683,
+    "rejected": 1,
     "by_sport": {
       "ufc": {
-        "attempted": 5,
+        "attempted": 4,
         "found": 2,
-        "missing": 3,
+        "missing": 2,
         "rejected": 0
       }
     },
     "search_details": [
       {
-        "name": "Israel Adesanya",
+        "name": "Ikram Aliskerov",
         "queries": 3,
         "candidate_files": 4,
         "accepted": 4,
         "rejections": {}
       },
       {
-        "name": "Christian Leroy Duncan",
-        "queries": 2,
-        "candidate_files": 0,
-        "accepted": 0,
-        "rejections": {}
-      },
-      {
-        "name": "Abus Magomedov",
-        "queries": 2,
-        "candidate_files": 0,
-        "accepted": 0,
-        "rejections": {}
-      },
-      {
-        "name": "Jared Cannonier",
+        "name": "Bo Nickal",
         "queries": 3,
-        "candidate_files": 2,
-        "accepted": 2,
+        "candidate_files": 5,
+        "accepted": 4,
+        "rejections": {
+          "exact_name_pair_not_matched": 1
+        }
+      },
+      {
+        "name": "Ian Machado Garry",
+        "queries": 2,
+        "candidate_files": 0,
+        "accepted": 0,
         "rejections": {}
       },
       {
-        "name": "Ikram Aliskerov",
-        "queries": 0,
+        "name": "Carlos Prates",
+        "queries": 2,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       }
     ],
-    "checked_at": "2026-11-11T17:57:00Z",
-    "library_entries": 68,
+    "rejection_reasons": {
+      "exact_name_pair_not_matched": 1
+    },
+    "checked_at": "2026-11-11T18:26:27Z",
+    "library_entries": 70,
     "newly_found": 2,
-    "cumulative_attempted": 183,
-    "cumulative_found": 68,
-    "cumulative_missing": 115,
-    "cumulative_rejected": 139,
-    "batch_number": 20,
-    "last_batch_at": "2026-11-11T17:57:00Z",
-    "last_successful_batch_at": "2026-11-11T17:57:00Z",
-    "last_rate_limited_at": "2026-11-11T17:57:00Z",
+    "cumulative_attempted": 187,
+    "cumulative_found": 70,
+    "cumulative_missing": 117,
+    "cumulative_rejected": 140,
+    "batch_number": 21,
+    "last_batch_at": "2026-11-11T18:26:27Z",
+    "last_successful_batch_at": "2026-11-11T18:26:27Z",
+    "last_rate_limited_at": "2026-11-11T18:26:27Z",
     "coverage": {
       "boxing fight card fighters": {
         "total": 241,
@@ -5321,8 +5339,8 @@
       },
       "ufc": {
         "total": 206,
-        "with_image": 18,
-        "missing": 188
+        "with_image": 20,
+        "missing": 186
       },
       "boxing": {
         "total": 81,

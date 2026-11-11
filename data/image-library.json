@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-11T17:57:00Z",
+  "updated_at": "2026-11-11T18:26:27Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -706,6 +706,28 @@
       "creator": "Wikimedia Commons · Chamatkar Sandhu · CC BY 3.0",
       "attribution": "Wikimedia Commons · Chamatkar Sandhu · CC BY 3.0",
       "verified_at": "2026-11-11T17:57:00Z",
+      "sport": "ufc"
+    },
+    "ikram aliskerov": {
+      "name": "Ikram Aliskerov",
+      "path": "assets/images/ufc/ikram-aliskerov.png",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ikram_Aliskerov_2024.png",
+      "licence": "CC BY 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by/3.0",
+      "creator": "Wikimedia Commons · Sexto Round · CC BY 3.0",
+      "attribution": "Wikimedia Commons · Sexto Round · CC BY 3.0",
+      "verified_at": "2026-11-11T18:26:27Z",
+      "sport": "ufc"
+    },
+    "bo nickal": {
+      "name": "Bo Nickal",
+      "path": "assets/images/ufc/bo-nickal.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Bo_Nickal_(52791819473)_(cropped).jpg",
+      "licence": "Public domain",
+      "licence_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "creator": "Wikimedia Commons · Noah Riffe · Public domain",
+      "attribution": "Wikimedia Commons · Noah Riffe · Public domain",
+      "verified_at": "2026-11-11T18:26:27Z",
       "sport": "ufc"
     }
   },
