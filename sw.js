@@ -1,8 +1,8 @@
-const CACHE="sports-calendar-v155";
+const CACHE="sports-calendar-v156";
 const APP_FILES=[
   "./",
   "./index.html",
-  "./styles.css?v=20261111-24",
+  "./styles.css?v=20261111-27",
   "./app.js?v=20261109-03",
   "./sports-data.js?v=20261111-04",
   "./sports.js?v=20261111-04",
@@ -17,7 +17,7 @@ const APP_FILES=[
   "./home-next-up.js?v=20261109-01",
   "./version-history.js?v=20261109-01",
   "./f1-grand-prix-centre.js?v=20261109-03",
-  "./games-calendar.js?v=20261111-07",
+  "./games-calendar.js?v=20261111-08",
   "./games-popularity.js?v=20261110-07",
   "./games-discovery.js?v=20261111-07",
   "./notifications.js?v=20261111-02",
