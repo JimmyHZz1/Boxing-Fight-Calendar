@@ -2544,3 +2544,14 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
 .games-mode .sports-only-nav-item{display:none!important}
 @media(min-width:1100px){.mobile-calendar-menu:not([hidden]){display:block!important}}
 @media(max-width:699px){.calendar-menu-trigger{min-height:34px;padding:7px 8px;font-size:8px;letter-spacing:.45px}.mobile-calendar-menu{left:0;top:calc(100% + 7px)}.topbar{gap:8px}.brand{gap:7px}.brand-mark{width:32px;height:32px}.brand strong{font-size:11px}.brand small{font-size:8px}}
+
+
+/* Calendar switching is attached to the brand itself. */
+.brand-calendar-switcher{position:relative;display:flex;align-items:center;flex:0 0 auto;z-index:1005}
+.brand-calendar-trigger{appearance:none;-webkit-appearance:none;border:0;background:transparent;padding:0;margin:0;cursor:pointer;text-align:left;touch-action:manipulation}
+.brand-calendar-trigger:hover .brand-mark,.brand-calendar-trigger:focus-visible .brand-mark{filter:brightness(1.12)}
+.brand-calendar-trigger:focus-visible{outline:2px solid var(--accent);outline-offset:5px;border-radius:3px}
+.brand-calendar-trigger .brand-switcher-caret{display:inline-block;margin-left:2px;color:var(--muted);font-size:15px;line-height:1;transition:transform .16s ease}
+.brand-calendar-trigger[aria-expanded="true"] .brand-switcher-caret{transform:rotate(180deg)}
+.brand-calendar-switcher .mobile-calendar-menu{position:absolute;top:calc(100% + 10px);left:0;right:auto;bottom:auto;z-index:1010;width:min(280px,calc(100vw - 30px));margin:0}
+@media(max-width:699px){.brand-calendar-trigger{min-height:44px}.brand-calendar-trigger .brand-mark{width:32px;height:32px}.brand-calendar-switcher .mobile-calendar-menu{top:calc(100% + 8px);left:0}}
