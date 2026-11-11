@@ -3010,3 +3010,14 @@ body.games-platform-page .games-platform-hub{display:none}
 .notification-preference-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
 .notification-preference-grid label{display:flex;align-items:center;gap:6px;color:var(--text);font-size:9px}
 .notification-preference-grid input{accent-color:var(--accent)}
+
+/* Data Health Centre: compact two-column layout on desktop and tablet. */
+.data-health-summary{grid-template-columns:repeat(2,minmax(0,1fr))}
+.data-health-feeds,.data-health-images{grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch}
+.data-health-row{min-width:0;min-height:68px}
+.data-health-row>div{min-width:0}
+.data-health-row small{overflow-wrap:anywhere}
+@media(max-width:640px){
+  .data-health-feeds,.data-health-images{grid-template-columns:1fr}
+  .data-health-summary{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
