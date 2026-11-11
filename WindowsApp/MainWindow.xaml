@@ -2,51 +2,45 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+        xmlns:shell="clr-namespace:System.Windows.Shell;assembly=PresentationFramework"
         Title="Sports &amp; Games Calendar"
-        Width="1440" Height="900"
-        MinWidth="900" MinHeight="600"
-        WindowStartupLocation="CenterScreen"
-        Background="{StaticResource AppBackground}"
-        Foreground="#F5F5F5"
-        Icon="app-icon.ico">
+        Width="1440" Height="900" MinWidth="900" MinHeight="600"
+        WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="CanResize"
+        Background="{StaticResource AppBackground}" Foreground="#F5F5F5" Icon="app-icon.ico">
+    <shell:WindowChrome.WindowChrome>
+        <shell:WindowChrome CaptionHeight="42" ResizeBorderThickness="6" GlassFrameThickness="0"
+                            CornerRadius="0" UseAeroCaptionButtons="False" />
+    </shell:WindowChrome.WindowChrome>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="54" />
+            <RowDefinition Height="42" />
             <RowDefinition Height="*" />
             <RowDefinition Height="25" />
         </Grid.RowDefinitions>
-
-        <Border Grid.Row="0" Background="{StaticResource ToolbarBackground}"
-                BorderBrush="#343434" BorderThickness="0,0,0,1">
-            <DockPanel LastChildFill="True" Margin="12,0">
-                <StackPanel DockPanel.Dock="Left" Orientation="Horizontal"
-                            VerticalAlignment="Center">
-                    <Button x:Name="MenuButton" Content="☰" FontSize="19"
-                            Padding="11,4" Margin="0,0,12,0"
-                            ToolTip="Open app menu" Click="MenuButton_Click" />
-                    <TextBlock Text="SPORTS &amp; GAMES"
-                               Foreground="{StaticResource AccentGold}"
-                               FontWeight="Bold" FontSize="13"
-                               VerticalAlignment="Center" />
+        <Border x:Name="TitleBar" Grid.Row="0" Background="{StaticResource ToolbarBackground}"
+                BorderBrush="#343434" BorderThickness="0,0,0,1" MouseLeftButtonDown="TitleBar_MouseLeftButtonDown">
+            <DockPanel LastChildFill="True" Margin="8,0">
+                <StackPanel DockPanel.Dock="Left" Orientation="Horizontal" VerticalAlignment="Center">
+                    <Button x:Name="MenuButton" Content="☰" FontSize="17" Padding="10,3"
+                            Margin="0,0,10,0" ToolTip="Open app menu" Click="MenuButton_Click" />
+                    <TextBlock Text="SPORTS &amp; GAMES" Foreground="{StaticResource AccentGold}"
+                               FontWeight="Bold" FontSize="12" VerticalAlignment="Center" />
                 </StackPanel>
-                <TextBlock x:Name="ConnectionLabel" Text="Connecting…"
-                           Foreground="#B8B8B8" FontSize="12"
-                           VerticalAlignment="Center"
-                           HorizontalAlignment="Right" />
+                <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBlock x:Name="ConnectionLabel" Text="Connecting…" Foreground="#B8B8B8"
+                               FontSize="10" VerticalAlignment="Center" Margin="0,0,14,0" />
+                    <Button Content="—" Width="38" Height="30" Padding="0" Click="MinimiseButton_Click" ToolTip="Minimise" />
+                    <Button x:Name="MaximiseButton" Content="□" Width="38" Height="30" Padding="0" Click="MaximiseButton_Click" ToolTip="Maximise" />
+                    <Button Content="×" Width="38" Height="30" Padding="0" Click="CloseButton_Click" ToolTip="Close to system tray" />
+                </StackPanel>
             </DockPanel>
         </Border>
-
-        <wv2:WebView2 x:Name="CalendarBrowser" Grid.Row="1"
-                      DefaultBackgroundColor="#151515" />
-
-        <Border Grid.Row="2" Background="#202020"
-                BorderBrush="#343434" BorderThickness="0,1,0,0">
+        <wv2:WebView2 x:Name="CalendarBrowser" Grid.Row="1" DefaultBackgroundColor="#151515" />
+        <Border Grid.Row="2" Background="#202020" BorderBrush="#343434" BorderThickness="0,1,0,0">
             <DockPanel Margin="12,0">
                 <TextBlock Text="Close window to keep event alerts running in the system tray"
-                           Foreground="#9B9B9B" FontSize="10"
-                           VerticalAlignment="Center" />
-                <TextBlock Text="Windows desktop"
-                           Foreground="#9B9B9B" FontSize="10"
+                           Foreground="#9B9B9B" FontSize="10" VerticalAlignment="Center" />
+                <TextBlock Text="Windows desktop" Foreground="#9B9B9B" FontSize="10"
                            VerticalAlignment="Center" HorizontalAlignment="Right" />
             </DockPanel>
         </Border>

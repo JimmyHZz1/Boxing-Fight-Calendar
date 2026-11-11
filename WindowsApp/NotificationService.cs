@@ -15,6 +15,7 @@ public sealed class NotificationService : IDisposable
         Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
         "SportsGamesCalendar", "sent-notifications.json");
     private readonly SemaphoreSlim _gate = new(1, 1);
+    private readonly string _preferencesPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "SportsGamesCalendar", "notification-preferences.json");
 
     public NotificationService(Action<string, string> notify)
     {
@@ -40,9 +41,10 @@ public sealed class NotificationService : IDisposable
             await ReadSpeedwayAsync(candidates);
             await ReadGamesAsync(candidates);
 
+            var preferences = LoadPreferences();
             var now = DateTimeOffset.Now;
             var due = candidates
-                .Where(item => (item.StartsAt > now && item.StartsAt <= now.AddHours(24)) || (item.IsDateOnly && item.StartsAt.Date == now.Date))
+                .Where(item => IsCategoryEnabled(item.Category, preferences) && ((item.StartsAt > now && item.StartsAt <= now.AddDays(preferences.LeadDays)) || (item.IsDateOnly && item.StartsAt.Date == now.Date)))
                 .OrderBy(item => item.StartsAt)
                 .ToList();
 
@@ -159,6 +161,27 @@ public sealed class NotificationService : IDisposable
             value.ValueKind == JsonValueKind.Number ? value.ToString() : null;
     }
 
+    private NotificationPreferences LoadPreferences()
+    {
+        try
+        {
+            if (!File.Exists(_preferencesPath)) return new NotificationPreferences();
+            return JsonSerializer.Deserialize<NotificationPreferences>(File.ReadAllText(_preferencesPath), new JsonSerializerOptions { PropertyNameCaseInsensitive = true }) ?? new NotificationPreferences();
+        }
+        catch { return new NotificationPreferences(); }
+    }
+
+    private static bool IsCategoryEnabled(string category, NotificationPreferences preferences)
+    {
+        var key = category switch
+        {
+            "Formula 1" => "FORMULA 1", "PDC Darts" => "PDC DARTS", "Boxing" => "BOXING",
+            "UFC" => "UFC", "BKFC" => "BKFC", "FIM Speedway" => "FIM SPEEDWAY",
+            "Game release" => "GAME RELEASE", _ => category.ToUpperInvariant()
+        };
+        return !preferences.Categories.TryGetValue(key, out var enabled) || enabled;
+    }
+
     private void LoadSentState()
     {
         try
@@ -183,6 +206,12 @@ public sealed class NotificationService : IDisposable
     public void Dispose()
     {
         _timer.Dispose();
+    }
+
+    private sealed class NotificationPreferences
+    {
+        public int LeadDays { get; set; } = 14;
+        public Dictionary<string, bool> Categories { get; set; } = new(StringComparer.OrdinalIgnoreCase);
     }
 
     private sealed record CalendarReminder(string Id, string Category, string Title, DateTimeOffset StartsAt, bool IsDateOnly);

@@ -90,10 +90,10 @@
     state.loading=true;state.error="";render();
     try{const r=await fetch("./data/speedway.json?t="+Date.now(),{cache:"no-store"});if(!r.ok)throw new Error("HTTP "+r.status);const d=await r.json();if(!d.competitions?.sgp?.events?.length||!d.riderStandings?.riders?.length)throw new Error("The published Speedway data is incomplete.");state.data=d;}
     catch(e){state.error="Speedway data could not be loaded. Please try again later. ("+(e.message||"feed unavailable")+")";}
-    finally{state.loading=false;render();}
+    finally{state.loading=false;render();document.dispatchEvent(new CustomEvent("sports:feeds-updated"));}
   }
   function open(){window.SportsSelector?.setActive?.("speedway");window.showScreen?.("speedway-screen");state.tab="sgp";state.selectedRider=null;render();document.dispatchEvent(new CustomEvent("sports:page-opened",{detail:{sport:"speedway"}}));}
   document.getElementById("speedway-back")?.addEventListener("click",()=>window.showScreen?.("home-screen"));
-  window.SpeedwayPage={open,refresh:load};
+  window.SpeedwayPage={open,refresh:load,getEvents:()=>Object.values(state.data?.competitions||{}).flatMap(competition=>(competition.events||[]).map(event=>({...event,sport:"speedway"})))};
   load();
 })();

@@ -9,9 +9,13 @@
   if (!root || !bell || !panel || !list || !count) return;
 
   const STORAGE_KEY = "sports-calendar-read-notifications-v1";
+  const PREF_KEY = "sports-calendar-notification-preferences-v1";
+  const categories = ["FORMULA 1","PDC DARTS","BOXING","UFC","BKFC","FIM SPEEDWAY","GAME RELEASE"];
+  const defaults = { leadDays: 14, categories: Object.fromEntries(categories.map(name => [name, true])) };
+  let preferences = (() => { try { return {...defaults, ...JSON.parse(localStorage.getItem(PREF_KEY) || "{}"), categories:{...defaults.categories,...(JSON.parse(localStorage.getItem(PREF_KEY) || "{}").categories||{})}}; } catch (_) { return defaults; } })();
   const readIds = new Set(JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]"));
   const now = () => Date.now();
-  const horizon = () => now() + 14 * 24 * 60 * 60 * 1000;
+  const horizon = () => now() + Math.max(1, Math.min(14, Number(preferences.leadDays)||14)) * 24 * 60 * 60 * 1000;
   let notifications = [];
 
   const parseDate = value => {
@@ -26,7 +30,7 @@
     const rawDate = item[dateField] || item.start_at || item.start_time_utc || item.release_date;
     const date = parseDate(rawDate);
     const todayStart = new Date(); todayStart.setHours(0, 0, 0, 0);
-    if (!title || !date || date.getTime() < todayStart.getTime() || date.getTime() > horizon()) return;
+    if (!title || !date || date.getTime() < todayStart.getTime() || date.getTime() > horizon() || preferences.categories[category] === false) return;
     if (item.source_note) return;
     const id = String(item.id || [category, title, date.toISOString()].join("|"));
     notifications.push({ id, category, title, date, screen: category === "GAME RELEASE" ? "games-calendar-screen" : "calendar-screen" });
@@ -70,6 +74,24 @@
     render();
   };
 
+  function savePreferences() {
+    localStorage.setItem(PREF_KEY, JSON.stringify(preferences));
+    if (window.chrome?.webview) window.chrome.webview.postMessage({type:"notification-preferences", preferences});
+    notifications = [];
+    refresh();
+  }
+  function addPreferences() {
+    if (panel.querySelector(".notification-preferences")) return;
+    const section = document.createElement("details"); section.className = "notification-preferences";
+    const summary = document.createElement("summary"); summary.textContent = "PERSONALISE ALERTS"; section.append(summary);
+    const leadLabel = document.createElement("label"); leadLabel.className = "notification-preference-lead"; leadLabel.textContent = "Show events within ";
+    const select = document.createElement("select");
+    [1,3,7,14].forEach(days=>{const option=document.createElement("option");option.value=String(days);option.textContent=days+" days";select.append(option);});
+    select.value=String(preferences.leadDays||14); select.addEventListener("change",()=>{preferences.leadDays=Number(select.value);savePreferences();}); leadLabel.append(select);section.append(leadLabel);
+    const grid=document.createElement("div");grid.className="notification-preference-grid";
+    categories.forEach(category=>{const label=document.createElement("label"),input=document.createElement("input"),text=document.createElement("span");input.type="checkbox";input.checked=preferences.categories[category]!==false;input.addEventListener("change",()=>{preferences.categories[category]=input.checked;savePreferences();});text.textContent=category;label.append(input,text);grid.append(label);});
+    section.append(grid); const heading=panel.querySelector(".notification-popover-heading"); heading?.after(section);
+  }
   const saveRead = () => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify([...readIds].slice(-500)));
   };
@@ -139,6 +161,7 @@
     }
   });
 
+  addPreferences();
   refresh();
   window.addEventListener("focus", refresh);
   document.addEventListener("visibilitychange", () => {

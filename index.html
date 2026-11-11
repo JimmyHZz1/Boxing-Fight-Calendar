@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#101114">
   <meta name="description" content="Formula 1, PDC darts, boxing, UFC, BKFC and FIM Speedway calendars in one place.">
   <link rel="manifest" href="./manifest.json">
-  <link rel="stylesheet" href="./styles.css?v=20261111-15">
+  <link rel="stylesheet" href="./styles.css?v=20261111-16">
   <title>Sports Calendar</title>
 </head>
 <body>
@@ -73,6 +73,10 @@
           <section class="live-upcoming-panel" aria-labelledby="live-upcoming-title"><div class="live-centre-subheading"><h3 id="live-upcoming-title">COMING UP · NEXT 7 DAYS</h3><span id="live-upcoming-count" class="live-upcoming-count">CHECKING</span><button type="button" class="text-link" id="live-centre-calendar">FULL CALENDAR ↗</button></div><div id="live-upcoming-events" class="live-centre-list"><p class="live-centre-empty">Upcoming events will appear here when feeds load.</p></div></section>
         </section>
           <section class="home-next-up-panel" aria-labelledby="home-next-up-title"><div class="live-centre-subheading"><h3 id="home-next-up-title">NEXT UP ACROSS SPORT</h3><span>ONE EVENT PER SPORT</span></div><div id="home-next-up-list" class="home-next-up-list"><p class="live-centre-empty">Loading the next event in each sport…</p></div></section>
+        <section id="home-speedway-calendar" class="home-speedway-calendar" aria-labelledby="home-speedway-title">
+          <div class="live-centre-subheading"><div><span class="eyebrow">FIM SPEEDWAY · 2027 SEASON</span><h3 id="home-speedway-title">Speedway calendar</h3></div><button type="button" class="text-link" id="home-speedway-open">FULL SPEEDWAY CENTRE ↗</button></div>
+          <div id="home-speedway-events" class="home-speedway-events"><p class="live-centre-empty">Loading the Speedway calendar…</p></div>
+        </section>
         <section id="sports-carousel-section" class="sports-carousel-section" aria-label="Choose a sport">
           <div class="sports-carousel-heading"><span class="eyebrow">CHOOSE YOUR SPORT</span><span class="carousel-hint">SWIPE TO EXPLORE</span></div>
           <div class="sports-carousel-controls">
@@ -356,6 +360,21 @@
         </details>
         <div class="games-page-footer"><button type="button" class="games-history-link" data-screen="games-calendar-screen">← BACK TO GAMES CALENDAR</button><span>GAMES VERSION HISTORY · INDEPENDENT RELEASE LIST</span></div>
       </section>
+      <section id="data-health-screen" class="screen data-health-screen" aria-labelledby="data-health-title">
+        <div class="page-intro"><span class="eyebrow">SYSTEM MONITORING</span><h1 id="data-health-title">Data health <em>centre.</em></h1><p>Check published feeds, image coverage, asset integrity and the latest data refresh times.</p></div>
+        <div class="data-health-toolbar"><span id="data-health-overall" class="data-health-status">CHECKING DATA SOURCES…</span><button type="button" class="primary-button" id="data-health-recheck">RUN HEALTH CHECK</button></div>
+        <div id="data-health-summary" class="data-health-summary"></div>
+        <section class="data-health-panel"><div class="data-health-panel-heading"><div><span class="eyebrow">PUBLISHED FEEDS</span><h2>Schedule &amp; game data</h2></div></div><div id="data-health-feeds" class="data-health-table"><p>Checking published feeds…</p></div></section>
+        <section class="data-health-panel"><div class="data-health-panel-heading"><div><span class="eyebrow">IMAGE LIBRARY</span><h2>Image database audit</h2></div></div><div id="data-health-images" class="data-health-table"><p>Checking image manifests and local files…</p></div></section>
+        <section class="data-health-panel"><div class="data-health-panel-heading"><div><span class="eyebrow">MANUAL OPERATIONS</span><h2>Request a data refresh</h2></div></div><p class="data-health-note">Choose the data pipeline you want to run. GitHub will open the authenticated workflow page; select <strong>Run workflow</strong> there. No access token is stored in this public website.</p><div class="data-health-refresh-grid">
+          <a href="https://github.com/JimmyHZz1/Boxing-Fight-Calendar/actions/workflows/sync-fights.yml" target="_blank" rel="noopener noreferrer">Sports schedules <small>F1 · Boxing · UFC · BKFC</small></a>
+          <a href="https://github.com/JimmyHZz1/Boxing-Fight-Calendar/actions/workflows/sync-pdc-calendar.yml" target="_blank" rel="noopener noreferrer">PDC calendar <small>Televised darts schedule</small></a>
+          <a href="https://github.com/JimmyHZz1/Boxing-Fight-Calendar/actions/workflows/enrich-images.yml" target="_blank" rel="noopener noreferrer">Image enrichment <small>Find and add licensed images</small></a>
+          <a href="https://github.com/JimmyHZz1/Boxing-Fight-Calendar/actions/workflows/update-games-popularity.yml" target="_blank" rel="noopener noreferrer">Games data <small>Refresh popularity snapshot</small></a>
+          <a href="https://github.com/JimmyHZz1/Boxing-Fight-Calendar/actions/workflows/sync-company-profiles.yml" target="_blank" rel="noopener noreferrer">Game companies <small>Refresh company profiles</small></a>
+        </div></section>
+        <div class="data-health-footer"><button type="button" class="secondary-button" data-screen="home-screen">← BACK TO HOME</button><span id="data-health-checked">Health check not yet run</span></div>
+      </section>
     </main>
 
     <div id="global-search-dialog" class="global-search-dialog" hidden role="dialog" aria-modal="true" aria-labelledby="global-search-title"><div class="global-search-panel"><div class="global-search-heading"><div><span class="eyebrow">ALL FIVE SPORTS</span><h2 id="global-search-title">Find your <em>next event.</em></h2></div><button type="button" id="global-search-close" aria-label="Close search">×</button></div><label class="global-search-input-wrap"><span>⌕</span><input id="global-search-input" type="search" placeholder="Search events, fighters, drivers, teams…" autocomplete="off"><kbd>ESC</kbd></label><div class="global-search-filters" id="global-search-filters"><button type="button" data-search-sport="all" aria-pressed="true">ALL</button><button type="button" data-search-sport="f1" aria-pressed="false">F1</button><button type="button" data-search-sport="darts" aria-pressed="false">DARTS</button><button type="button" data-search-sport="boxing" aria-pressed="false">BOXING</button><button type="button" data-search-sport="ufc" aria-pressed="false">UFC</button><button type="button" data-search-sport="bkfc" aria-pressed="false">BKFC</button></div><div id="global-search-results" class="global-search-results"><p>Start typing to search across events and competitors.</p></div></div></div>
@@ -364,7 +383,7 @@
       <button id="sports-bottom-calendar-button" class="nav-item" data-screen="calendar-screen" aria-label="Open the original Sports Calendar"><span aria-hidden="true">▦</span><small>CALENDAR</small></button>
       <button class="nav-item" data-screen="weekend-screen"><span>★</span><small>FAVOURITES</small></button>
     </nav>
-    <footer class="footer"><a class="version-history-link" href="#version-history" id="open-version-history">SPORTS VERSION HISTORY</a><button type="button" class="games-version-history-link" data-screen="games-version-history-screen">GAMES VERSION HISTORY</button><span>•</span> SPORTS CALENDAR <span>•</span> UK LOCAL TIME <span>•</span> PDC logo: <a href="https://commons.wikimedia.org/wiki/File:Professional_Darts_Corporation_logo.png" target="_blank" rel="noopener noreferrer">Chris Ibbotson, CC BY-SA 4.0</a> <span>•</span> BKFC SCHEDULE: <a href="https://www.bkfc.com/events" target="_blank" rel="noopener noreferrer">BKFC</a> <span>•</span> BOXING DATA: <a href="https://boxerbook.com" target="_blank" rel="noopener noreferrer">BOXERBOOK</a></footer>
+    <footer class="footer"><button type="button" class="data-health-link" id="open-data-health">DATA HEALTH CENTRE</button><span>•</span> <a class="version-history-link" href="#version-history" id="open-version-history">SPORTS VERSION HISTORY</a><button type="button" class="games-version-history-link" data-screen="games-version-history-screen">GAMES VERSION HISTORY</button><span>•</span> SPORTS CALENDAR <span>•</span> UK LOCAL TIME <span>•</span> PDC logo: <a href="https://commons.wikimedia.org/wiki/File:Professional_Darts_Corporation_logo.png" target="_blank" rel="noopener noreferrer">Chris Ibbotson, CC BY-SA 4.0</a> <span>•</span> BKFC SCHEDULE: <a href="https://www.bkfc.com/events" target="_blank" rel="noopener noreferrer">BKFC</a> <span>•</span> BOXING DATA: <a href="https://boxerbook.com" target="_blank" rel="noopener noreferrer">BOXERBOOK</a></footer>
   </div>
   <script src="./app.js?v=20261109-03"></script>
   <script src="./sports-data.js?v=20261111-03"></script>
@@ -372,8 +391,8 @@
   <script src="./sports-hub.js?v=20261109-08"></script>
   <script src="./sports-nav.js?v=20261111-03"></script>
   <script src="./sport-pages.js?v=20261109-06"></script>
-  <script src="./speedway.js?v=20261111-01"></script>
-  <script src="./sports-v11.js?v=20261111-02"></script>
+  <script src="./speedway.js?v=20261111-02"></script>
+  <script src="./sports-v11.js?v=20261111-03"></script>
   <script src="./sports-weekend.js?v=20261108-02"></script>
   <script src="./favourites.js?v=20261109-02"></script>
   <script src="./ui-refresh.js?v=20261109-01"></script>
@@ -383,6 +402,7 @@
   <script src="./games-calendar.js?v=20261111-07"></script>
   <script src="./games-popularity.js?v=20261110-07"></script>
   <script src="./games-discovery.js?v=20261111-07"></script>
-  <script src="./notifications.js?v=20261111-01"></script>
+  <script src="./notifications.js?v=20261111-02"></script>
+  <script src="./data-health.js?v=20261111-01"></script>
 </body>
 </html>
