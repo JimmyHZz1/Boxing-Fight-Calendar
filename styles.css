@@ -2593,19 +2593,6 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
 }
 
 
-/* Sports Up Next uses native horizontal scrolling driven by sports-v11.js.
-   Disable the older CSS transform animation so it cannot fight scrollLeft. */
-#next-event-ticker .next-event-track{
-  animation:none!important;
-  will-change:auto;
-}
-#next-event-ticker.is-auto-scrolling:hover .next-event-track,
-#next-event-ticker.is-auto-scrolling:focus-within .next-event-track,
-#next-event-ticker.is-paused .next-event-track{
-  animation:none!important;
-}
-
-
 /* Compact featured-game details: synopsis beside a clickable information panel. */
 .games-featured-stage-copy{display:grid!important;grid-template-columns:minmax(0,1.35fr) minmax(245px,.8fr)!important;align-items:stretch!important;gap:18px!important;padding:16px 2px 4px!important}
 .games-featured-intro{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:9px;min-width:0}
@@ -2649,7 +2636,7 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
   width:max-content!important;min-width:max-content!important;gap:12px!important;
 }
 #next-event-ticker .next-event-item{flex:0 0 min(250px,78vw)!important;scroll-snap-align:none!important}
-#next-event-ticker.is-auto-scrolling .next-event-track{animation:none!important}
+
 .games-featured-info{justify-content:flex-start!important;align-self:start!important}
 
 
