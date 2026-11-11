@@ -1,6 +1,6 @@
 (() => {
-  const sports=["f1","darts","boxing","ufc","bkfc"];
-  const names={f1:"FORMULA 1",darts:"PDC DARTS",boxing:"BOXING",ufc:"UFC",bkfc:"BKFC"};
+  const sports=["f1","darts","boxing","ufc","speedway","bkfc"];
+  const names={f1:"FORMULA 1",darts:"PDC DARTS",boxing:"BOXING",ufc:"UFC",speedway:"FIM SPEEDWAY",bkfc:"BKFC"};
   const logos={f1:"https://www.formula1.com/assets/home/_next/static/media/f1-logo.43a01c6b.svg",darts:"https://commons.wikimedia.org/wiki/Special:FilePath/Professional%20Darts%20Corporation%20logo.png",ufc:"https://commons.wikimedia.org/wiki/Special:FilePath/UFC%20Logo.svg",bkfc:"https://commons.wikimedia.org/wiki/Special:FilePath/Bkfc-logo.png"};
   const $=id=>document.getElementById(id);
   const today=()=>new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/London"}).format(new Date());
@@ -33,12 +33,13 @@
   const make=(tag,cls,text)=>{const el=document.createElement(tag);if(cls)el.className=cls;if(text!=null)el.textContent=text;return el;};
   function eventsFor(sport){
     if(sport==="boxing")return window.BoxingSchedule?.getEvents?.()||[];
+    if(sport==="speedway")return window.SpeedwayPage?.getEvents?.()||[];
     return window.SportsData?.getEvents?.(sport,true)||[];
   }
   function renderSummary(sport,event,live=false){
     const row=make("article","live-centre-event");row.dataset.sport=sport;
     const mark=make("span","live-centre-logo");
-    if(logos[sport]){const img=make("img");img.src=logos[sport];img.alt="";img.loading="lazy";img.onerror=()=>{mark.textContent=sport==="darts"?"PDC":sport.toUpperCase();};mark.append(img);}else mark.textContent="BOX";
+    if(logos[sport]){const img=make("img");img.src=logos[sport];img.alt="";img.loading="lazy";img.onerror=()=>{mark.textContent=sport==="darts"?"PDC":sport.toUpperCase();};mark.append(img);}else mark.textContent=sport==="speedway"?"FIM":"BOX";
     const info=make("span","live-centre-info");
     info.append(make("strong",null,event.name||event.title||"Event"));
     const meta=[names[sport],formatDate(event),formatTime(event),event.location||event.venue||event.circuit].filter(Boolean);
@@ -186,8 +187,8 @@
       });
     }else upcomingRoot.append(make("p","live-centre-empty","No upcoming events are listed for the next seven days in the currently loaded feeds."));
 }
-  const featuredLabels={f1:"FORMULA 1",darts:"PDC DARTS",boxing:"BOXING",ufc:"UFC",bkfc:"BKFC"};
-  const featuredIcons={f1:"🏎️",darts:"🎯",boxing:"🥊",ufc:"🥋",bkfc:"🥊"};
+  const featuredLabels={f1:"FORMULA 1",darts:"PDC DARTS",boxing:"BOXING",ufc:"UFC",speedway:"FIM SPEEDWAY",bkfc:"BKFC"};
+  const featuredIcons={f1:"🏎️",darts:"🎯",boxing:"🥊",ufc:"🥋",speedway:"🏁",bkfc:"🥊"};
   const headlineNames=["anthony joshua","tyson fury","oleksandr usyk","canelo alvarez","terence crawford","naoya inoue","gervonta davis","dmitry bivol","artur beterbiev","shakur stevenson","devin haney","ryan garcia","jake paul","daniel dubois","fabio wardley","moses itauma","katie taylor","claressa shields","david benavidez"];
   const eventBouts=e=>e?.bouts||e?.fights||e?.card||[];
   const boxerName=f=>typeof f==="string"?f:(f?.name||f?.full_name||"");
@@ -295,7 +296,7 @@
     countdown.textContent=window.SportsCountdown?.text?.(target)||"DATE TO BE CONFIRMED";
     countdown.dataset.countdownTarget=target?(/^\d{4}-\d{2}-\d{2}$/.test(String(target))?String(target):new Date(target).toISOString()):"";
     renderFeaturedDetails(sport,event);
-    $("featured-event-note").textContent=sport==="boxing"?"Headline boxing matchup":sport==="darts"?"Featured televised PDC tournament":sport==="ufc"?(event.is_title_card?"Title-card event":event.is_ppv?"Numbered pay-per-view event":"Featured UFC card"):sport==="f1"?"Next Grand Prix on the Formula 1 calendar":"Featured event across the fight calendar";
+    $("featured-event-note").textContent=sport==="boxing"?"Headline boxing matchup":sport==="darts"?"Featured televised PDC tournament":sport==="ufc"?(event.is_title_card?"Title-card event":event.is_ppv?"Numbered pay-per-view event":"Featured UFC card"):sport==="f1"?"Next Grand Prix on the Formula 1 calendar":sport==="speedway"?"Next FIM Speedway championship round":"Featured event across the fight calendar";
     $("featured-event-open").onclick=()=>window.SportPages?.open?.(sport);
     root.hidden=false;
   }
