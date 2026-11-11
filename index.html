@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#101114">
   <meta name="description" content="Boxing, Formula 1, UFC and PDC darts schedules in one sports calendar, shown in UK local time.">
   <link rel="manifest" href="./manifest.json">
-  <link rel="stylesheet" href="./styles.css?v=20261111-08">
+  <link rel="stylesheet" href="./styles.css?v=20261111-10">
   <title>Sports Calendar</title>
 </head>
 <body>
@@ -25,7 +25,7 @@
         <button type="button" class="topbar-nav-item" data-screen="weekend-screen"><span aria-hidden="true">★</span> FAVOURITES</button>
         <button type="button" class="topbar-nav-item sports-only-nav-item" data-screen="calendar-screen"><span aria-hidden="true">▦</span> CALENDAR</button>
       </nav>
-      <div class="topbar-actions"><button id="global-search-open" class="secondary-button global-search-open" type="button" aria-label="Search all sports">⌕ <span>SEARCH</span></button><button id="open-settings" class="secondary-button settings-open" type="button" aria-label="Choose your favourite F1 team"><img src="https://www.formula1.com/assets/home/_next/static/media/f1-logo.43a01c6b.svg" alt="" aria-hidden="true"><span id="settings-team-label">TEAM</span></button><span class="live-status"><i></i> SCHEDULE</span><button id="manual-refresh" class="primary-button topbar-refresh" type="button" aria-label="Check for newly published sports data">CHECKING…</button></div>
+      <div class="topbar-actions"><button id="global-search-open" class="secondary-button global-search-open" type="button" aria-label="Search all sports">⌕ <span>SEARCH</span></button><button id="open-settings" class="secondary-button settings-open" type="button" aria-label="Choose your favourite F1 team"><img src="https://www.formula1.com/assets/home/_next/static/media/f1-logo.43a01c6b.svg" alt="" aria-hidden="true"><span id="settings-team-label">TEAM</span></button><div class="topbar-display-tools" aria-label="Display options"><button type="button" id="home-customise-toggle" aria-expanded="false">⚙ PERSONALISE HOME</button><button type="button" id="compact-view-toggle" aria-pressed="false">▤ COMPACT VIEW</button></div><span class="live-status"><i></i> SCHEDULE</span><button id="manual-refresh" class="primary-button topbar-refresh" type="button" aria-label="Check for newly published sports data">CHECKING…</button></div>
     </header>
     <nav class="top-sport-selector" aria-label="Switch sport">
       <button type="button" class="top-sport-button" data-top-sport="f1" aria-label="Formula 1"><img src="https://www.formula1.com/assets/home/_next/static/media/f1-logo.43a01c6b.svg" alt=""><span>F1</span></button>
@@ -44,7 +44,7 @@
         <button type="button" data-games-platform="nintendo" aria-pressed="false"><img src="./assets/platform-nintendo.svg" alt=""><strong>Nintendo</strong><small>Switch family releases</small></button>
       </div>
     </nav>
-    <div class="home-display-tools" aria-label="Home page display options"><button type="button" id="home-customise-toggle" aria-expanded="false">⚙ PERSONALISE HOME</button><button type="button" id="compact-view-toggle" aria-pressed="false">▤ COMPACT VIEW</button></div>
+    
     <section class="next-event-strip" aria-label="Next upcoming event in each sport">
       <div class="next-event-strip-heading"><span class="eyebrow">UP NEXT</span><span>SELECT AN EVENT TO OPEN ITS SPORT</span></div>
       <div id="next-event-ticker" class="next-event-ticker" aria-live="polite"><span class="next-event-loading">Loading the next events…</span></div>
@@ -361,6 +361,6 @@
   <script src="./f1-grand-prix-centre.js?v=20261109-03"></script>
   <script src="./games-calendar.js?v=20261111-03"></script>
   <script src="./games-popularity.js?v=20261110-07"></script>
-  <script src="./games-discovery.js?v=20261111-03"></script>
+  <script src="./games-discovery.js?v=20261111-06"></script>
 </body>
 </html>
