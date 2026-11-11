@@ -54,7 +54,7 @@
         <Border Grid.Row="2" Background="#202020"
                 BorderBrush="#343434" BorderThickness="0,1,0,0">
             <DockPanel Margin="12,0">
-                <TextBlock Text="Live website · Internet connection required"
+                <TextBlock Text="Close window to keep event alerts running in the system tray"
                            Foreground="#9B9B9B" FontSize="10"
                            VerticalAlignment="Center" />
                 <TextBlock Text="Windows desktop"
