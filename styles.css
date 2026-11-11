@@ -3314,3 +3314,155 @@ body.games-platform-page .games-platform-hub{display:none}
   #sports-hub-content { grid-template-columns: minmax(0, 1fr); }
   #sports-hub-content > .hub-dropdown:only-of-type { grid-column: 1; }
 }
+
+
+/* Games Calendar layout correction: keep artwork and all release copy in two
+   predictable columns, regardless of legacy card rules or injected helpers. */
+.games-calendar-screen .games-month-timeline .games-release-card,
+.games-platform-calendar-screen .games-month-timeline .games-release-card{
+  display:grid!important;
+  grid-template-columns:clamp(76px,8vw,96px) minmax(0,1fr)!important;
+  grid-template-rows:auto!important;
+  align-items:center!important;
+  gap:0 16px!important;
+  min-width:0!important;
+  min-height:0!important;
+  padding:14px!important;
+}
+.games-calendar-screen .games-month-timeline .games-release-artwork,
+.games-platform-calendar-screen .games-month-timeline .games-release-artwork{
+  grid-column:1!important;
+  grid-row:1!important;
+  align-self:center!important;
+  width:100%!important;
+  height:auto!important;
+  min-height:0!important;
+  aspect-ratio:3/4!important;
+  margin:0!important;
+  padding:3px!important;
+}
+.games-calendar-screen .games-month-timeline .games-release-copy,
+.games-platform-calendar-screen .games-month-timeline .games-release-copy{
+  grid-column:2!important;
+  grid-row:1!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:flex-start!important;
+  justify-content:center!important;
+  gap:7px!important;
+  min-width:0!important;
+  width:100%!important;
+  margin:0!important;
+}
+.games-calendar-screen .games-month-timeline .games-release-copy>*,
+.games-platform-calendar-screen .games-month-timeline .games-release-copy>*{
+  position:static!important;
+  float:none!important;
+  min-width:0!important;
+  max-width:100%!important;
+  margin-top:0!important;
+  margin-bottom:0!important;
+}
+.games-calendar-screen .games-month-timeline .games-release-details,
+.games-platform-calendar-screen .games-month-timeline .games-release-details{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:flex-start!important;
+  gap:6px!important;
+  width:100%!important;
+  min-width:0!important;
+}
+.games-calendar-screen .games-month-timeline .games-release-details h3,
+.games-platform-calendar-screen .games-month-timeline .games-release-details h3{
+  margin:0!important;
+  line-height:1.15!important;
+  overflow-wrap:anywhere!important;
+}
+.games-calendar-screen .games-month-timeline .games-release-details p,
+.games-platform-calendar-screen .games-month-timeline .games-release-details p{
+  margin:0!important;
+  line-height:1.45!important;
+}
+.games-calendar-screen .games-month-timeline .games-platform-badges,
+.games-platform-calendar-screen .games-month-timeline .games-platform-badges{
+  display:flex!important;
+  flex-wrap:wrap!important;
+  align-items:center!important;
+  gap:6px!important;
+  width:100%!important;
+  margin:0!important;
+}
+.games-calendar-screen .games-month-timeline .games-release-source,
+.games-platform-calendar-screen .games-month-timeline .games-release-source{
+  display:inline-flex!important;
+  align-self:flex-start!important;
+  margin:2px 0 0!important;
+  white-space:normal!important;
+}
+.games-calendar-screen .games-platform-chip,
+.games-platform-calendar-screen .games-platform-chip{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:5px!important;
+  min-height:23px!important;
+  padding:3px 7px!important;
+  line-height:1!important;
+  white-space:nowrap!important;
+}
+.games-calendar-screen .games-platform-mark-image,
+.games-platform-calendar-screen .games-platform-mark-image{
+  display:block!important;
+  flex:0 0 17px!important;
+  width:17px!important;
+  height:17px!important;
+  max-width:17px!important;
+  max-height:17px!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  padding:0!important;
+  margin:0!important;
+}
+.games-platform-hub-grid button img{
+  flex:0 0 auto!important;
+  width:30px!important;
+  height:30px!important;
+  max-width:30px!important;
+  max-height:30px!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  padding:0!important;
+  margin:0!important;
+}
+.games-platform-hub-grid button[data-games-platform="all"] .games-platform-hub-mark{
+  width:30px!important;height:30px!important;min-width:30px!important;
+  display:grid!important;place-items:center!important;
+  border:1px solid rgba(143,193,255,.25)!important;
+  font-size:9px!important;letter-spacing:.2px!important;
+}
+@media(max-width:760px){
+  .games-calendar-screen .games-month-timeline .games-release-card,
+  .games-platform-calendar-screen .games-month-timeline .games-release-card{
+    grid-template-columns:64px minmax(0,1fr)!important;
+    gap:0 11px!important;
+    padding:11px!important;
+  }
+  .games-calendar-screen .games-month-timeline .games-release-copy,
+  .games-platform-calendar-screen .games-month-timeline .games-release-copy{gap:6px!important}
+  .games-calendar-screen .games-month-timeline .games-release-details h3,
+  .games-platform-calendar-screen .games-month-timeline .games-release-details h3{font-size:17px!important}
+}
+@media(max-width:420px){
+  .games-calendar-screen .games-month-timeline .games-release-card,
+  .games-platform-calendar-screen .games-month-timeline .games-release-card{
+    grid-template-columns:54px minmax(0,1fr)!important;
+    gap:0 9px!important;
+    padding:9px!important;
+  }
+  .games-calendar-screen .games-month-timeline .games-release-artwork,
+  .games-platform-calendar-screen .games-month-timeline .games-release-artwork{width:54px!important}
+  .games-calendar-screen .games-month-timeline .games-platform-chip,
+  .games-platform-calendar-screen .games-month-timeline .games-platform-chip{min-height:21px!important;padding:3px 5px!important;font-size:7px!important}
+  .games-calendar-screen .games-platform-mark-image,
+  .games-platform-calendar-screen .games-platform-mark-image{width:15px!important;height:15px!important;flex-basis:15px!important}
+}
