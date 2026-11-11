@@ -5,7 +5,7 @@
     ["Formula 1","data/f1.json","events"],["PDC Darts","data/darts.json","events"],
     ["Boxing","data/fights.json","events"],["UFC","data/ufc.json","events"],
     ["BKFC","data/bkfc.json","events"],["FIM Speedway","data/speedway.json","competitions"],
-    ["Featured games","data/games-featured.json","games"],["Game popularity","data/games-popularity.json","games"]
+    ["Featured games","data/games-featured.json","games"],["Game popularity","data/games-popularity.json","games"],["Games discovery","data/games-discovery.json","featured"],["Company profiles","data/company-profiles.json","companies"]
   ];
   const fmt=value=>{if(!value)return "Not supplied";const d=new Date(value);return Number.isNaN(d.getTime())?String(value):new Intl.DateTimeFormat("en-GB",{dateStyle:"medium",timeStyle:"short",timeZone:"Europe/London"}).format(d)+" UK";};
   const today=()=>new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/London"}).format(new Date());
