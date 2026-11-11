@@ -26,6 +26,70 @@ const json = (body: unknown, status: number, origin: string) =>
     headers: { ...corsHeaders(origin), "Content-Type": "application/json" }
   });
 
+async function githubJson(path: string, token: string) {
+  const response = await fetch("https://api.github.com/repos/" + REPO + path, {
+    headers: {
+      "Accept": "application/vnd.github+json",
+      "Authorization": "Bearer " + token,
+      "X-GitHub-Api-Version": "2022-11-28"
+    }
+  });
+  const body = await response.text();
+  if (!response.ok) throw new Error("GitHub status lookup failed (HTTP " + response.status + ").");
+  return JSON.parse(body);
+}
+
+async function findDispatchedRun(workflow: string, since: string, token: string) {
+  const data = await githubJson(
+    "/actions/workflows/" + encodeURIComponent(workflow) + "/runs?event=workflow_dispatch&per_page=10",
+    token
+  );
+  const cutoff = Date.parse(since) - 20000;
+  return (data.workflow_runs ?? [])
+    .filter((run: any) => run.event === "workflow_dispatch" &&
+      run.head_branch === "main" && Date.parse(run.created_at) >= cutoff)
+    .sort((a: any, b: any) => Date.parse(b.created_at) - Date.parse(a.created_at))[0] ?? null;
+}
+
+async function imageBatchMetrics(run: any) {
+  try {
+    const response = await fetch(
+      "https://raw.githubusercontent.com/" + REPO + "/main/data/sports-images.json?status_run=" + run.id,
+      { headers: { "Cache-Control": "no-cache" } }
+    );
+    if (!response.ok) return null;
+    const payload = await response.json();
+    const enrichment = payload.enrichment ?? {};
+    const cutoff = Date.parse(run.created_at) - 5000;
+    const batches = (enrichment.history ?? []).filter((batch: any) =>
+      Date.parse(batch.at) >= cutoff
+    );
+    if (!batches.length) return {
+      batches: [],
+      batch_count: 0,
+      attempted: 0,
+      found: 0,
+      missing: 0,
+      rate_limited: false,
+      cumulative_found: enrichment.cumulative_found ?? null
+    };
+    return {
+      batches,
+      batch_count: batches.length,
+      attempted: batches.reduce((sum: number, batch: any) => sum + Number(batch.attempted || 0), 0),
+      found: batches.reduce((sum: number, batch: any) => sum + Number(batch.found || 0), 0),
+      missing: batches.reduce((sum: number, batch: any) => sum + Number(batch.missing || 0), 0),
+      rate_limited: batches.some((batch: any) => batch.rate_limited === true),
+      cumulative_found: enrichment.cumulative_found ?? null,
+      cumulative_attempted: enrichment.cumulative_attempted ?? null,
+      batch_number: enrichment.batch_number ?? null
+    };
+  } catch (error) {
+    console.warn("Could not read image enrichment metrics", error);
+    return null;
+  }
+}
+
 const authenticatedHandler = withSupabase({ auth: "user" }, async (req, ctx) => {
   const origin = req.headers.get("origin") ?? "";
   if (!ALLOWED_ORIGINS.has(origin)) return json({ error: "Origin not allowed." }, 403, origin);
@@ -43,7 +107,7 @@ const authenticatedHandler = withSupabase({ auth: "user" }, async (req, ctx) => 
     return json({ error: "The server is missing its GitHub Actions credential. Contact the site administrator." }, 503, origin);
   }
 
-  let body: { workflow?: string; inputs?: Record<string, unknown> };
+  let body: { action?: string; workflow?: string; inputs?: Record<string, unknown>; since?: string };
   try {
     body = await req.json();
   } catch {
@@ -53,6 +117,37 @@ const authenticatedHandler = withSupabase({ auth: "user" }, async (req, ctx) => 
   const workflow = String(body.workflow ?? "");
   if (!Object.hasOwn(WORKFLOWS, workflow)) {
     return json({ error: "That update workflow is not permitted." }, 400, origin);
+  }
+
+  if (body.action === "status") {
+    const since = String(body.since ?? "");
+    const sinceMs = Date.parse(since);
+    if (!Number.isFinite(sinceMs) || sinceMs > Date.now() + 60000 || Date.now() - sinceMs > 30 * 60 * 1000) {
+      return json({ error: "The update tracking window has expired. Open the workflow runs for the latest result." }, 400, origin);
+    }
+    try {
+      const run = await findDispatchedRun(workflow, since, githubToken);
+      if (!run) return json({ ok: true, workflow, status: "starting", run: null }, 200, origin);
+      const metrics = workflow === "enrich-images.yml" && run.status === "completed"
+        ? await imageBatchMetrics(run) : null;
+      return json({
+        ok: true,
+        workflow,
+        status: run.status,
+        conclusion: run.conclusion,
+        run: {
+          id: run.id,
+          number: run.run_number,
+          url: run.html_url,
+          created_at: run.created_at,
+          updated_at: run.updated_at
+        },
+        metrics
+      }, 200, origin);
+    } catch (error) {
+      console.error("GitHub workflow status lookup failed", error);
+      return json({ error: error instanceof Error ? error.message : "Could not retrieve workflow status." }, 502, origin);
+    }
   }
 
   const inputs: Record<string, string> = {};
@@ -66,13 +161,14 @@ const authenticatedHandler = withSupabase({ auth: "user" }, async (req, ctx) => 
     return json({ error: "This workflow does not accept custom inputs." }, 400, origin);
   }
 
+  const requestedAt = new Date().toISOString();
   const response = await fetch(
-    `https://api.github.com/repos/${REPO}/actions/workflows/${workflow}/dispatches`,
+    "https://api.github.com/repos/" + REPO + "/actions/workflows/" + encodeURIComponent(workflow) + "/dispatches",
     {
       method: "POST",
       headers: {
         "Accept": "application/vnd.github+json",
-        "Authorization": `Bearer ${githubToken}`,
+        "Authorization": "Bearer " + githubToken,
         "X-GitHub-Api-Version": "2022-11-28",
         "Content-Type": "application/json"
       },
@@ -88,7 +184,17 @@ const authenticatedHandler = withSupabase({ auth: "user" }, async (req, ctx) => 
     }, 502, origin);
   }
 
-  return json({ ok: true, workflow, category: WORKFLOWS[workflow], queued: true }, 200, origin);
+  let run = null;
+  try { run = await findDispatchedRun(workflow, requestedAt, githubToken); }
+  catch (error) { console.warn("Update queued, but the run ID is not available yet", error); }
+  return json({
+    ok: true,
+    workflow,
+    category: WORKFLOWS[workflow],
+    queued: true,
+    requested_at: requestedAt,
+    run: run ? { id: run.id, number: run.run_number, url: run.html_url, status: run.status } : null
+  }, 200, origin);
 });
 
 Deno.serve((req: Request) => {

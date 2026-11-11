@@ -3172,3 +3172,14 @@ body.games-platform-page .games-platform-hub{display:none}
   #sports-selected-date-events .sport-event-date{width:42px;min-height:48px}
   #sports-selected-date-events .sport-event-badge{justify-self:start;align-self:start;text-align:left}
 }
+
+
+/* Admin workflow result and enrichment metrics feedback. */
+.admin-update-result{margin-top:9px;padding:12px;background:var(--panel2);border:1px solid var(--line);font-size:10px;line-height:1.6}
+.admin-update-result[hidden]{display:none}
+.admin-update-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px 12px;color:var(--text)}
+.admin-update-metrics>div{min-width:0}
+.admin-update-metrics .admin-update-warning{grid-column:1/-1;color:#e4b66e}
+.admin-update-status.is-warning{color:#e4b66e;border-color:#80642f}
+.admin-update-result .admin-actions-link{margin-top:9px}
+@media(max-width:520px){.admin-update-metrics{grid-template-columns:1fr}}
