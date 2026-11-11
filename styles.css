@@ -2747,3 +2747,10 @@ body.games-mode .games-platform-hub{display:block}
 .games-company-release-copy .games-company-credit{color:#8fc1ff;font-weight:800;text-transform:uppercase}
 .games-company-attribution{padding:12px 0;border-top:1px solid rgba(143,193,255,.16)}
 @media(max-width:650px){.games-company-release-list{grid-template-columns:minmax(0,1fr)}.games-company-release{grid-template-columns:55px minmax(0,1fr)}.games-company-release>img{width:55px;height:70px}}
+
+/* Company profiles use a full-screen in-app detail view on desktop and mobile. */
+.games-company-profile-open .games-discovery-dialog{padding:0!important}
+.games-company-profile-open .games-discovery-dialog-panel{width:100%!important;height:100%!important;max-height:100%!important;max-width:none!important;padding:clamp(16px,3vw,34px)!important;border:0!important;border-radius:0!important;box-shadow:none!important}
+.games-company-profile-open .games-discovery-close{position:fixed;top:12px;right:14px}
+.games-company-profile-open .games-discovery-dialog-content{max-width:1180px;margin:0 auto}
+.games-company-profile-open .games-profile-back{position:sticky;top:0;z-index:4}
