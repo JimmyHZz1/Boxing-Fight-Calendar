@@ -48,6 +48,41 @@
     node.textContent = message;
     node.className = "admin-update-status" + (kind ? " is-" + kind : "");
   }
+  function showRunResult(url, metrics, workflow, conclusion) {
+    const panel = $("admin-update-result");
+    const details = $("admin-update-metrics");
+    const link = $("admin-update-run-link");
+    if (!panel || !details || !link) return;
+    panel.hidden = false;
+    link.href = url || "https://github.com/JimmyHZz1/Boxing-Fight-Calendar/actions";
+    details.replaceChildren();
+    if (workflow === "enrich-images.yml" && metrics) {
+      const lines = metrics.batch_count
+        ? [
+            metrics.batch_count + " batch(es) completed",
+            metrics.attempted + " image lookups attempted",
+            metrics.found + " new images found",
+            metrics.missing + " no-match lookups",
+            metrics.cumulative_found == null ? "" : metrics.cumulative_found + " images in the library overall"
+          ].filter(Boolean)
+        : ["No new batch record was published; the queue may already be empty."];
+      lines.forEach(line => {
+        const item = document.createElement("div");
+        item.textContent = line;
+        details.append(item);
+      });
+      if (metrics.rate_limited) {
+        const note = document.createElement("div");
+        note.className = "admin-update-warning";
+        note.textContent = "Wikimedia Commons rate limit detected. The next scheduled run will retry later.";
+        details.append(note);
+      }
+    } else if (conclusion && conclusion !== "success") {
+      const item = document.createElement("div");
+      item.textContent = "Workflow result: " + conclusion.replace(/_/g, " ");
+      details.append(item);
+    }
+  }
   function setLoginStatus(message, kind = "") {
     const node = $("admin-login-status");
     if (node) { node.textContent = message; node.className = kind ? "is-" + kind : ""; }
@@ -70,6 +105,17 @@
     });
     saveSession({ ...refreshed, expires_at: Math.floor(Date.now() / 1000) + Number(refreshed.expires_in || 3600) });
     return session.access_token;
+  }
+  async function adminRequest(body) {
+    const token = await freshAccessToken();
+    const response = await fetch(FUNCTION_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", apikey: PUBLIC_KEY, Authorization: "Bearer " + token },
+      body: JSON.stringify(body)
+    });
+    const payload = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(payload.error || payload.message || "Update request failed (" + response.status + ").");
+    return payload;
   }
   function showSignedIn(email) {
     form.hidden = true;
@@ -120,13 +166,54 @@
     showSignedOut();
     setStatus("You have signed out.");
   });
-  $("admin-image-batches")?.addEventListener("change", () => setStatus("Image enrichment will process " + (Number($("admin-image-batches").value) * 5) + " lookups at most."));
+  $("admin-image-batches")?.addEventListener("change", () => setStatus("Image enrichment will process up to " + (Number($("admin-image-batches").value) * 5) + " lookups."));
+  function delay(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
+  async function trackWorkflow(config, requestedAt) {
+    const deadline = Date.now() + 15 * 60 * 1000;
+    let runUrl = null;
+    let lastStatus = "";
+    while (Date.now() < deadline) {
+      await delay(runUrl ? 7000 : 3500);
+      const payload = await adminRequest({ action: "status", workflow: config.workflow, since: requestedAt });
+      if (!payload.run) {
+        setStatus(config.label + " has been queued. Waiting for GitHub to start the run…");
+        continue;
+      }
+      runUrl = payload.run.url;
+      if (payload.status !== lastStatus) {
+        lastStatus = payload.status;
+        setStatus(config.label + (payload.status === "queued" ? " is queued…" : payload.status === "in_progress" ? " is running…" : " has finished checking."));
+      }
+      if (payload.status === "completed") {
+        if (payload.conclusion === "success") {
+          if (config.workflow === "enrich-images.yml" && payload.metrics) {
+            const m = payload.metrics;
+            if (m.batch_count && m.found > 0) {
+              setStatus("Image enrichment completed successfully. " + m.found + " new image(s) were added.", "success");
+            } else if (m.batch_count) {
+              setStatus("Image enrichment completed successfully, but this batch found no new matching images.", "success");
+            } else {
+              setStatus("Image enrichment completed successfully. No eligible lookups remained in the queue.", "success");
+            }
+          } else {
+            setStatus(config.label + " completed successfully.", "success");
+          }
+        } else {
+          setStatus(config.label + " finished with status: " + (payload.conclusion || "unknown") + ". Open the run for details.", "error");
+        }
+        showRunResult(runUrl, payload.metrics, config.workflow, payload.conclusion);
+        return;
+      }
+    }
+    setStatus(config.label + " is taking longer than expected. You can follow its live progress in GitHub Actions.", "warning");
+    showRunResult(runUrl, null, config.workflow, null);
+  }
   document.querySelectorAll("[data-admin-workflow]").forEach(button => button.addEventListener("click", async () => {
     const config = workflows[button.dataset.adminWorkflow];
     if (!config) return;
     const imageMode = config.workflow === "enrich-images.yml";
     if (imageMode && !$("admin-image-batch-wrap").hidden) {
-      // Selection is intentional; the button click below starts the chosen batch count.
+      // The chosen batch count is sent with the next click.
     } else if (imageMode) {
       $("admin-image-batch-wrap").hidden = false;
       setStatus("Choose the image batch size, then select Image enrichment again.");
@@ -135,21 +222,21 @@
     const inputs = imageMode ? { batches: $("admin-image-batches").value } : {};
     const previous = button.textContent;
     button.disabled = true;
-    setStatus("Requesting " + config.label + " update…");
+    document.querySelectorAll("[data-admin-workflow]").forEach(item => { item.disabled = true; });
+    $("admin-update-result")?.setAttribute("hidden", "");
+    setStatus("Sending " + config.label + " request…");
     try {
-      const token = await freshAccessToken();
-      const response = await fetch(FUNCTION_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", apikey: PUBLIC_KEY, Authorization: "Bearer " + token },
-        body: JSON.stringify({ workflow: config.workflow, inputs })
-      });
-      const payload = await response.json().catch(() => ({}));
-      if (!response.ok) throw new Error(payload.error || payload.message || "Update request failed (" + response.status + ").");
-      setStatus(config.label + " has been queued successfully. It may take a few minutes to finish; check the workflow runs for its progress.", "success");
+      const payload = await adminRequest({ workflow: config.workflow, inputs });
+      if (!payload.queued) throw new Error("GitHub did not confirm that the update was queued.");
+      setStatus(config.label + " has been accepted by GitHub. Waiting for its result…", "success");
+      await trackWorkflow(config, payload.requested_at);
     } catch (error) {
       if (/sign in again|session/i.test(error.message)) { saveSession(null); showSignedOut(); }
       setStatus(error.message, "error");
-    } finally { button.disabled = false; button.textContent = previous; }
+    } finally {
+      button.textContent = previous;
+      document.querySelectorAll("[data-admin-workflow]").forEach(item => { item.disabled = false; });
+    }
   }));
   $("admin-image-batch-wrap").hidden = true;
   validateSession();
