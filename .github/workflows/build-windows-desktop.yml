@@ -1,12 +1,6 @@
 name: Build Windows desktop app
 
 on:
-  push:
-    branches:
-      - feature/windows-webview2-desktop-app
-    paths:
-      - "WindowsApp/**"
-      - ".github/workflows/build-windows-desktop.yml"
   pull_request:
     paths:
       - "WindowsApp/**"
