@@ -65,6 +65,8 @@
     if(!rootWidth||!groupWidth)return;
     const trackGap=parseFloat(getComputedStyle(track).columnGap||getComputedStyle(track).gap)||12;
     tickerLoopDistance=groupWidth+trackGap;
+    track.style.setProperty("--ticker-offset",`-${tickerLoopDistance}px`);
+    track.style.setProperty("--ticker-duration",`${Math.max(24,tickerLoopDistance/35)}s`);
     track.querySelectorAll("[data-ticker-clone]").forEach(node=>node.remove());
     let copies=1;
     while(track.scrollWidth<rootWidth+tickerLoopDistance+2&&copies<12){
@@ -112,8 +114,7 @@
       const tickerObserver=new ResizeObserver(()=>requestAnimationFrame(measureTicker));
       tickerObserver.observe(tickerRoot);
     }
-    let tickerResumeTimer, tickerFrame=0, tickerLast=0;
-    const reducedMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let tickerResumeTimer;
     const pauseTicker=()=>{clearTimeout(tickerResumeTimer);tickerRoot.classList.add("is-paused");};
     const resumeTicker=()=>{clearTimeout(tickerResumeTimer);tickerResumeTimer=setTimeout(()=>tickerRoot.classList.remove("is-paused"),1400);};
     tickerRoot.addEventListener("click",event=>{
@@ -127,18 +128,8 @@
     tickerRoot.addEventListener("pointerdown",pauseTicker,{passive:true});
     tickerRoot.addEventListener("pointerup",resumeTicker,{passive:true});
     tickerRoot.addEventListener("pointercancel",resumeTicker,{passive:true});
-    const animateTicker=now=>{
-      if(tickerLast&&!reducedMotion&&!tickerRoot.classList.contains("is-paused")&&!document.hidden&&tickerRoot.classList.contains("is-auto-scrolling")){
-        tickerRoot.scrollLeft+=Math.min(50,now-tickerLast)*0.035;
-      }
-      tickerLast=now;
-      if(tickerLoopDistance>0&&tickerRoot.scrollLeft>=tickerLoopDistance){
-        tickerRoot.scrollLeft=tickerRoot.scrollLeft%tickerLoopDistance;
-      }
-      tickerFrame=requestAnimationFrame(animateTicker);
-    };
-    cancelAnimationFrame(tickerFrame);
-    tickerFrame=requestAnimationFrame(animateTicker);
+    // Continuous movement is handled by the CSS transform animation. Keeping
+    // scrollLeft out of the loop prevents competing scroll and transform motion.
   }
   function render(){
     const liveRoot=$("live-now-events"),upcomingRoot=$("live-upcoming-events");
