@@ -12,7 +12,7 @@
   const el=(tag,cls,txt)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(txt!==undefined)n.textContent=txt;return n;};
   const safeUrl=u=>typeof u==="string"&&/^https:\/\//i.test(u);
   const norm=s=>String(s||"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
-  const imageCandidates=game=>[game.trailer_id?"https://img.youtube.com/vi/"+game.trailer_id+"/maxresdefault.jpg":null,game.trailer_id?"https://img.youtube.com/vi/"+game.trailer_id+"/hqdefault.jpg":null,assetMap.get(norm(game.title))?.artwork_url,assetMap.get(norm(game.title))?.logo_url,game.artwork_url,game.logo_url].filter((u,i,a)=>safeUrl(u)&&a.indexOf(u)===i);
+  const imageCandidates=game=>{const id=game.trailer_id;const asset=assetMap.get(norm(game.title))||{};return [asset.artwork_url,game.artwork_url,asset.logo_url,game.logo_url,id?"https://i.ytimg.com/vi/"+id+"/hqdefault.jpg":null,id?"https://img.youtube.com/vi/"+id+"/hqdefault.jpg":null,id?"https://i.ytimg.com/vi/"+id+"/sddefault.jpg":null,id?"https://img.youtube.com/vi/"+id+"/0.jpg":null,id?"https://i.ytimg.com/vi/"+id+"/0.jpg":null].filter((u,i,a)=>safeUrl(u)&&a.indexOf(u)===i);};
   const addImage=(wrap,game,mode="cover")=>{
     wrap.replaceChildren();wrap.classList.add("has-artwork");
     const fallback=el("span","games-artwork-fallback",(game.title||"GAME").split(/\s+/).map(w=>w[0]).join("").slice(0,3).toUpperCase());
