@@ -78,7 +78,7 @@
     const body=el("div","speedway-tab-content");body.id="speedway-tab-content";
     if(state.tab==="sgp")renderSgp(body);else if(state.tab==="son")renderSon(body);else if(state.tab==="swc")renderSwc(body);else renderRiders(body);
     target.append(body);
-    const footer=el("div","speedway-footer");footer.append(el("span","","DATA FROM FIM SPEEDWAY"),link("FIM SPEEDWAY OFFICIAL WEBSITE","https://fimspeedway.com/"));target.append(footer);
+    const footer=el("div","speedway-footer");footer.append(el("span","","FIM DATA SNAPSHOT · UPDATED "+(state.data.last_updated||"DATE NOT PUBLISHED")),link("FIM SPEEDWAY OFFICIAL WEBSITE","https://fimspeedway.com/"));target.append(footer);
   }
   async function load(){
     state.loading=true;state.error="";render();
