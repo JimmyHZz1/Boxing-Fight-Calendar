@@ -10,8 +10,8 @@
 
   const STORAGE_KEY = "sports-calendar-read-notifications-v1";
   const readIds = new Set(JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]"));
-  const now = Date.now();
-  const horizon = now + 14 * 24 * 60 * 60 * 1000;
+  const now = () => Date.now();
+  const horizon = () => now() + 14 * 24 * 60 * 60 * 1000;
   let notifications = [];
 
   const parseDate = value => {
@@ -23,8 +23,10 @@
   };
   const add = (item, category, dateField = "date") => {
     const title = item.name || item.title || item.short_name;
-    const date = parseDate(item[dateField] || item.start_at || item.start_time_utc || item.release_date);
-    if (!title || !date || date.getTime() < now || date.getTime() > horizon) return;
+    const rawDate = item[dateField] || item.start_at || item.start_time_utc || item.release_date;
+    const date = parseDate(rawDate);
+    const todayStart = new Date(); todayStart.setHours(0, 0, 0, 0);
+    if (!title || !date || date.getTime() < todayStart.getTime() || date.getTime() > horizon()) return;
     if (item.source_note) return;
     const id = String(item.id || [category, title, date.toISOString()].join("|"));
     notifications.push({ id, category, title, date, screen: category === "GAME RELEASE" ? "games-calendar-screen" : "calendar-screen" });
