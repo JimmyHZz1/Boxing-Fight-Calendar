@@ -25,7 +25,7 @@ public partial class MainWindow : Window
 
     private void MainWindow_Closing(object? sender, System.ComponentModel.CancelEventArgs e)
     {
-        if (Application.Current is App app && !app.AllowExit)
+        if (System.Windows.Application.Current is App app && !app.AllowExit)
         {
             e.Cancel = true;
             Hide();
@@ -76,11 +76,11 @@ public partial class MainWindow : Window
             StartupCheckBox.IsChecked = !StartupCheckBox.IsChecked;
             _loadingStartupSetting = false;
 
-            MessageBox.Show(
+            System.Windows.MessageBox.Show(
                 $"Windows couldn't update the startup setting.\n\n{ex.Message}",
                 "Startup setting unavailable",
-                MessageBoxButton.OK,
-                MessageBoxImage.Warning);
+                System.Windows.MessageBoxButton.OK,
+                System.Windows.MessageBoxImage.Warning);
         }
     }
 
@@ -108,15 +108,15 @@ public partial class MainWindow : Window
         catch (Exception ex)
         {
             ConnectionLabel.Text = "Browser setup required";
-            var result = MessageBox.Show(
+            var result = System.Windows.MessageBox.Show(
                 "The Microsoft Edge WebView2 Runtime is required to run this application.\n\n" +
                 "Would you like to open Microsoft's official download page?\n\n" +
                 $"Details: {ex.Message}",
                 "WebView2 Runtime required",
-                MessageBoxButton.YesNo,
-                MessageBoxImage.Information);
+                System.Windows.MessageBoxButton.YesNo,
+                System.Windows.MessageBoxImage.Information);
 
-            if (result == MessageBoxResult.Yes)
+            if (result == System.Windows.MessageBoxResult.Yes)
                 OpenExternal("https://developer.microsoft.com/microsoft-edge/webview2/");
         }
     }
@@ -165,8 +165,8 @@ public partial class MainWindow : Window
         }
         catch (Exception ex)
         {
-            MessageBox.Show($"Windows couldn't open this link.\n\n{ex.Message}",
-                "Unable to open link", MessageBoxButton.OK, MessageBoxImage.Warning);
+            System.Windows.MessageBox.Show($"Windows couldn't open this link.\n\n{ex.Message}",
+                "Unable to open link", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Warning);
         }
     }
 
