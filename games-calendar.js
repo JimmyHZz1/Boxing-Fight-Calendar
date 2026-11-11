@@ -334,6 +334,9 @@
   const renderUpcomingReleases = (items,options={}) => {
     const {target=releaseList,platform="all",additionalTarget=null,additionalDetails=null,additionalCount=null,fullCount=null}=options;
     if(!target)return;activePlatform=platform;
+    const extraTarget=additionalTarget||(target===releaseList?document.getElementById("games-additional-release-list"):null);
+    const extraDetails=additionalDetails||(target===releaseList?document.getElementById("games-additional-releases-details"):null);
+    const extraCount=additionalCount||(target===releaseList?document.getElementById("games-additional-releases-count"):null);
     const today=new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/London",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
     const matchesPlatform=game=>platform==="all"||(Array.isArray(game.platforms)&&game.platforms.some(value=>{
       const name=String(value).toLowerCase();
@@ -348,7 +351,7 @@
     const full=dated.filter(game=>!isAdditionalRelease(game)),additional=dated.filter(isAdditionalRelease);
     renderReleaseGroups(full,target,platform==="all"?"Upcoming full PC and console game releases will appear here as dates are added.":"There are no upcoming full game releases listed for this platform.","full-"+platform+"-");
     if(fullCount)fullCount.textContent=full.length+(full.length===1?" RELEASE":" RELEASES");
-    if(additionalDetails&&additionalTarget){additionalDetails.hidden=additional.length===0;if(additionalCount)additionalCount.textContent=additional.length+(additional.length===1?" RELEASE":" RELEASES");if(additional.length)renderReleaseGroups(additional,additionalTarget,"No DLC or alternate versions are currently listed.","additional-"+platform+"-");else additionalTarget.replaceChildren();}
+    if(extraDetails&&extraTarget){extraDetails.hidden=additional.length===0;if(extraCount)extraCount.textContent=additional.length+(additional.length===1?" RELEASE":" RELEASES");if(additional.length)renderReleaseGroups(additional,extraTarget,"No DLC or alternate versions are currently listed.","additional-"+platform+"-");else extraTarget.replaceChildren();}
   };
     const updateReleaseCountdowns = () => {
     document.querySelectorAll("#games-release-list [data-release-date], #games-up-next-ticker [data-release-date]").forEach(node => {
