@@ -76,7 +76,7 @@ for(const company of companies){
   const ids=[...gameCredits.keys()],games=[];
   for(let offset=0;offset<ids.length;offset+=100){
     const batch=ids.slice(offset,offset+100);
-    const rows=await api("games",'fields name,first_release_date,cover.image_id,platforms.name,release_dates.date,release_dates.human; where id = ('+batch.join(",")+'); limit 100;');
+    const rows=await api("games",'fields name,first_release_date,cover.image_id,platforms.name,release_dates.date,release_dates.human,category,version_parent; where id = ('+batch.join(",")+'); limit 100;');
     for(const game of rows){
       const platforms=[...new Set((game.platforms||[]).map(item=>item.name).filter(name=>name&&pcConsole.test(name)))];
       if(!platforms.length) continue;
@@ -86,6 +86,10 @@ for(const company of companies){
       const credit=gameCredits.get(game.id)||{};
       games.push({
         igdb_id:game.id,title:game.name,
+        igdb_category:Number.isInteger(game.category)?game.category:0,
+        category_name:({0:"main_game",1:"dlc",2:"expansion",3:"bundle",4:"standalone_expansion",8:"remake",9:"remaster",10:"expanded_game",11:"port",13:"pack",14:"update"}[game.category]||"main_game"),
+        release_type:game.category===0||game.category==null?"full_release":"additional_content",
+        version_parent:game.version_parent||null,
         release_date:date?date.toISOString().slice(0,10):null,
         release_label:dates[0]?.human||(date?String(date.getUTCFullYear()):"Date not listed"),
         platforms,

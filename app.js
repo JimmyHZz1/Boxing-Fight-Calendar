@@ -54,7 +54,8 @@ function showScreen(id) {
     });
   }
   document.querySelectorAll(".screen").forEach(s => s.classList.toggle("active",s.id===id));
-  document.body.classList.toggle("games-mode",id==="games-calendar-screen"||id==="games-version-history-screen");
+  document.body.classList.toggle("games-mode",id==="games-calendar-screen"||id==="games-platform-calendar-screen"||id==="games-version-history-screen");
+  document.body.classList.toggle("games-platform-page",id==="games-platform-calendar-screen");
   document.dispatchEvent(new CustomEvent("sports:screen-changed",{detail:{screen:id}}));
   document.querySelectorAll(".nav-item,.topbar-nav-item").forEach(b => b.classList.toggle("active",b.dataset.screen===id || (id==="sport-detail-screen"&&b.dataset.screen==="home-screen")));
   window.scrollTo({top:0,behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
