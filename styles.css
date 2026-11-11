@@ -3053,3 +3053,23 @@ body.games-platform-page .games-platform-hub{display:none}
 /* Admin remember-me control */
 .admin-login-form>.admin-remember-login{display:flex;grid-column:1/-1;grid-template-columns:auto 1fr;align-items:center;justify-content:flex-start;gap:8px;color:var(--muted);font-size:11px;cursor:pointer}
 .admin-login-form>.admin-remember-login input{width:16px;height:16px;margin:0;accent-color:var(--accent,#d6a64b)}
+
+
+/* Sports Up Next ticker: force the automatic loop on after legacy layout overrides. */
+@keyframes sportsUpNextLoop {
+  from { transform: translate3d(0,0,0); }
+  to { transform: translate3d(var(--ticker-offset),0,0); }
+}
+#next-event-ticker.is-auto-scrolling .next-event-track {
+  animation: sportsUpNextLoop var(--ticker-duration,42s) linear infinite !important;
+  transform: translate3d(0,0,0);
+  will-change: transform;
+}
+#next-event-ticker.is-auto-scrolling:hover .next-event-track,
+#next-event-ticker.is-auto-scrolling:focus-within .next-event-track,
+#next-event-ticker.is-paused .next-event-track {
+  animation-play-state: paused !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  #next-event-ticker .next-event-track { animation: none !important; transform: none !important; }
+}
