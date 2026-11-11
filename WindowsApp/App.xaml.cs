@@ -35,8 +35,9 @@ public partial class App : System.Windows.Application
         });
         _notifications.Start();
 
+        // Windows "Launch on startup" should open the app normally.
+        // Only an explicit --background argument starts silently in the tray.
         var startInBackground = e.Args.Any(arg =>
-            arg.Equals("--startup", StringComparison.OrdinalIgnoreCase) ||
             arg.Equals("--background", StringComparison.OrdinalIgnoreCase));
 
         if (!startInBackground) ShowMainWindow();
