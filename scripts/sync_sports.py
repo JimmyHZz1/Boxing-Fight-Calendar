@@ -81,6 +81,8 @@ def sync_f1():
     year = NOW.year
     base = f"https://api.jolpi.ca/ergast/f1/{year}"
     schedule = races_from(request_json(f"{base}/races.json?limit=100", provider="Jolpica F1"))
+    if not schedule or not all(race.get("date") and race.get("round") for race in schedule):
+        raise RuntimeError("Jolpica F1 returned an empty or incomplete race schedule; keeping the last published snapshot.")
     results = f1_results_map(request_json(f"{base}/results.json?limit=1000", provider="Jolpica F1"), "Results")
     qualifying = f1_results_map(request_json(f"{base}/qualifying.json?limit=1000", provider="Jolpica F1"), "QualifyingResults")
     sprint = f1_results_map(request_json(f"{base}/sprint.json?limit=1000", provider="Jolpica F1"), "SprintResults")
@@ -463,6 +465,8 @@ def sync_ufc():
     completed = api_data(request_json(recent_url, key, "UFCalendar"))
     upcoming.sort(key=lambda e: e.get("starts_at") or e.get("start_at") or "")
     completed.sort(key=lambda e: e.get("starts_at") or e.get("start_at") or "", reverse=True)
+    if not upcoming and not completed:
+        raise RuntimeError("UFCalendar returned no upcoming or recent completed UFC events; keeping the last published snapshot.")
 
     # Keep every upcoming event in the calendar, but only make detail calls for
     # the next two cards (plus the latest completed card) to protect API quota.
