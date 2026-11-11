@@ -2958,3 +2958,46 @@ body.games-platform-page .games-platform-hub{display:none}
   .notification-bell-label{display:none}
   .notification-popover{position:fixed;top:76px;right:10px;width:min(390px,calc(100vw - 20px));max-height:70vh}
 }
+
+
+/* Home Speedway calendar and Data Health Centre */
+.home-speedway-calendar,.data-health-panel{margin:26px 0;padding:18px;background:var(--panel);border:1px solid var(--line)}
+.home-speedway-calendar .live-centre-subheading{margin-bottom:12px}
+.home-speedway-calendar h3{font:700 26px 'Barlow Condensed',sans-serif;text-transform:uppercase;margin:4px 0}
+.home-speedway-events{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:9px}
+.home-speedway-event{display:flex;align-items:center;gap:12px;min-width:0;text-align:left;padding:12px;background:var(--panel2);border:1px solid var(--line);color:var(--text);cursor:pointer}
+.home-speedway-event:hover{border-color:var(--accent)}
+.home-speedway-date{flex:none;min-width:50px;color:var(--accent);font:700 17px 'Barlow Condensed',sans-serif;text-transform:uppercase}
+.home-speedway-event strong,.home-speedway-event small{display:block}
+.home-speedway-event strong{font-size:11px;line-height:1.4}
+.home-speedway-event small{margin-top:4px;color:var(--muted);font-size:9px}
+.data-health-screen .page-intro{padding-bottom:18px}
+.data-health-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:8px 0 18px}
+.data-health-status{font-size:10px;font-weight:800;letter-spacing:1px;padding:9px 12px;border:1px solid var(--line);background:var(--panel)}
+.data-health-status.is-healthy,.data-health-badge.is-healthy{color:#83d59a;border-color:#326c45}
+.data-health-status.is-warning,.data-health-badge.is-warning{color:#efc16c;border-color:#80612d}
+.data-health-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:14px 0 24px}
+.data-health-metric{padding:15px;background:var(--panel);border:1px solid var(--line);min-width:0}
+.data-health-metric strong,.data-health-metric small{display:block}
+.data-health-metric strong{font:700 27px 'Barlow Condensed',sans-serif;color:var(--accent)}
+.data-health-metric small{font-size:9px;letter-spacing:.8px;color:var(--muted);margin-top:4px}
+.data-health-panel{margin:18px 0}
+.data-health-panel-heading h2{font:700 27px 'Barlow Condensed',sans-serif;text-transform:uppercase;margin:5px 0 14px}
+.data-health-table{display:grid;gap:7px}
+.data-health-row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px;background:var(--panel2);border:1px solid var(--line)}
+.data-health-row strong,.data-health-row small{display:block}
+.data-health-row strong{font-size:11px}
+.data-health-row small{font-size:9px;color:var(--muted);margin-top:4px;line-height:1.5}
+.data-health-badge{flex:none;padding:5px 8px;border:1px solid var(--line);font-size:8px;font-weight:800;letter-spacing:.8px}
+.data-health-note{font-size:11px;line-height:1.6;color:var(--muted);margin:0 0 14px}
+.data-health-refresh-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:9px}
+.data-health-refresh-grid a{display:block;padding:13px;background:var(--panel2);border:1px solid var(--line);color:var(--text);font-size:11px;font-weight:700;text-decoration:none}
+.data-health-refresh-grid a:hover{border-color:var(--accent);color:var(--accent)}
+.data-health-refresh-grid small{display:block;margin-top:5px;color:var(--muted);font-size:9px;font-weight:400}
+.data-health-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:20px 0;color:var(--muted);font-size:9px}
+.data-health-link{border:0;background:transparent;color:var(--accent);font:700 9px 'DM Sans',sans-serif;letter-spacing:.7px;cursor:pointer;padding:4px}
+@media(max-width:520px){.data-health-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.data-health-panel{padding:13px}.data-health-row{align-items:flex-start}.data-health-toolbar{align-items:flex-start;flex-direction:column}}
+/* The Windows host supplies its own native title bar and menu. */
+.desktop-shell .topbar{display:none!important}
+.desktop-shell .app-shell{padding-top:0}
+.desktop-shell .footer{padding-bottom:14px}
