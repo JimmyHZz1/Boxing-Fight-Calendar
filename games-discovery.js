@@ -61,11 +61,9 @@
     const credits=el("div","games-featured-info-row");
     credits.append(el("span","games-featured-info-label","DEVELOPER / PUBLISHER"));
     const companyLinks=el("div","games-featured-company-links");
-    (game.company_ids||[]).forEach((id,index)=>{
-      const company=catalogue.companies.find(x=>x.id===id);
-      if(!company)return;
+    (game.company_ids||[]).map(id=>catalogue.companies.find(x=>x.id===id)).filter(Boolean).forEach((company,index)=>{
       if(index)companyLinks.append(el("span","games-featured-company-separator","·"));
-      const link=document.createElement("a");link.href=company.website;link.target="_blank";link.rel="noopener noreferrer";addCompanyMark(link,company);link.append(document.createTextNode(company.name));link.title="Visit "+company.name+" website";companyLinks.append(link);
+      const link=el("button","games-profile-link");link.type="button";addCompanyMark(link,company);link.append(document.createTextNode(company.name));link.title="View "+company.name+" profile";link.addEventListener("click",()=>showCompany(company.id));companyLinks.append(link);
     });
     credits.append(companyLinks);panel.append(credits);
     const platforms=el("div","games-featured-info-row");
@@ -92,11 +90,27 @@
     const companies=el("section","games-dialog-section");companies.append(el("h3","","Developer & publisher"));const buttons=el("div","games-company-games");(game.company_ids||[]).forEach(id=>{const company=catalogue.companies.find(x=>x.id===id);if(company)buttons.append(companyButton(id,company.name));});companies.append(buttons);dialogContent.append(companies);
     const status=el("section","games-dialog-section");status.append(el("h3","","Announcement & release status"),el("p","","Release date: "+(game.date_label||"TBC")+". Status: "+(game.date_status||"COMING SOON · DATE TBC")+". Dates are only shown as confirmed when supported by an official announcement."));if(safeUrl(game.source_url)){const link=el("a","","VIEW OFFICIAL ANNOUNCEMENT ↗");link.href=game.source_url;link.target="_blank";link.rel="noopener noreferrer";link.style.color="#9bcaff";status.append(link);}dialogContent.append(status);openDialog();
   };
+  let profileData={companies:[]};
+  const profileDate=value=>{if(!value)return "Date not listed";const d=new Date(value);return Number.isNaN(d.getTime())?String(value):new Intl.DateTimeFormat("en-GB",{day:"numeric",month:"short",year:"numeric",timeZone:"UTC"}).format(d);};
   const showCompany=id=>{
-    const c=catalogue.companies.find(x=>x.id===id);if(!c)return;dialogContent.replaceChildren();
-    const head=el("section","games-dialog-section");head.append(el("small","games-discovery-badge","DEVELOPER / PUBLISHER"));const identity=el("div","games-company-identity");addCompanyMark(identity,c);identity.append(el("h2","games-dialog-title",c.name));head.append(identity,el("p","games-dialog-meta","Explore games associated with this company, including past releases and announced projects."));const link=el("a","","OFFICIAL COMPANY WEBSITE ↗");link.href=c.website;link.target="_blank";link.rel="noopener noreferrer";link.style.color="#9bcaff";head.append(link);dialogContent.append(head);
-    const section=el("section","games-dialog-section");section.append(el("h3","","Games & releases"));const list=el("div","games-company-games");(c.games||[]).forEach(title=>{const game=catalogue.featured.find(g=>g.title===title);if(game){const b=el("button","games-company-game",title);b.type="button";b.addEventListener("click",()=>showGame(game));list.append(b);}else list.append(el("span","games-company-game",title));});section.append(list);dialogContent.append(section);const back=el("button","games-company-game","← BACK TO FEATURED GAMES");back.type="button";back.addEventListener("click",closeDialog);dialogContent.append(back);openDialog();
+    const c=profileData.companies.find(x=>x.id===id)||catalogue.companies.find(x=>x.id===id);if(!c)return;
+    dialogContent.replaceChildren();
+    const back=el("button","games-profile-back","← BACK TO GAMES");back.type="button";back.addEventListener("click",closeDialog);dialogContent.append(back);
+    const head=el("section","games-dialog-section games-company-profile-head"),identity=el("div","games-company-identity");
+    addCompanyMark(identity,c);identity.append(el("h2","games-dialog-title",c.name));head.append(identity);
+    if(c.description)head.append(el("p","games-dialog-meta",c.description));
+    const facts=el("div","games-company-facts");if(c.founded)facts.append(el("span","","FOUNDED "+c.founded));if(c.parent_name)facts.append(el("span","","PART OF "+c.parent_name));head.append(facts);
+    if(safeUrl(c.website)){const link=el("a","games-company-official","OFFICIAL COMPANY WEBSITE ↗");link.href=c.website;link.target="_blank";link.rel="noopener noreferrer";head.append(link);}dialogContent.append(head);
+    const releases=c.releases||[],today=new Date().toISOString().slice(0,10);
+    const upcoming=releases.filter(g=>g.release_date&&g.release_date>=today).sort((x,y)=>x.release_date.localeCompare(y.release_date));
+    const previous=releases.filter(g=>!g.release_date||g.release_date<today).sort((x,y)=>(y.release_date||"").localeCompare(x.release_date||""));
+    const section=(title,items,empty)=>{const box=el("section","games-dialog-section games-company-release-section");box.append(el("h3","",title+" · "+items.length));if(!items.length)box.append(el("p","games-company-empty",empty));const list=el("div","games-company-release-list");items.forEach(g=>{const row=el("article","games-company-release");if(g.artwork_url){const img=document.createElement("img");img.src=g.artwork_url;img.alt="";img.loading="lazy";img.onerror=()=>img.remove();row.append(img);}const copy=el("div","games-company-release-copy");copy.append(el("strong","",g.title),el("small","",g.release_label||profileDate(g.release_date)));if(g.platforms?.length)copy.append(el("small","games-company-platforms",g.platforms.join(" · ")));const roles=[g.developer?"Developer":"",g.publisher?"Publisher":""].filter(Boolean);if(roles.length)copy.append(el("small","games-company-credit",roles.join(" / ")));row.append(copy);list.append(row);});box.append(list);dialogContent.append(box);};
+    section("Upcoming releases",upcoming,"No upcoming releases are currently listed for this company.");
+    section("Previous releases",previous,"Historical releases will appear after the first IGDB catalogue sync.");
+    const attribution=el("p","games-company-attribution"),source=document.createElement("a");source.href="https://www.igdb.com/";source.target="_blank";source.rel="noopener noreferrer";source.textContent="Game data powered by IGDB";attribution.append(source);dialogContent.append(attribution);openDialog();
   };
+  document.addEventListener("open-games-company-profile",event=>showCompany(event.detail?.companyId));
+
   const platformAsset=platform=>{
     const value=String(platform||"").toLowerCase();
     if(value.includes("playstation")||value.includes("ps5")||value.includes("ps4"))return ["playstation",value.includes("ps4")?"PS4":"PS5"];
@@ -183,10 +197,11 @@
   document.getElementById("games-featured-prev")?.addEventListener("click",()=>selectFeatured(activeIndex-1,true));
   document.getElementById("games-featured-next")?.addEventListener("click",()=>selectFeatured(activeIndex+1,true));
   Promise.all([
-    fetch("./data/games-discovery.json?v=20261110-02",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("Featured catalogue unavailable");return r.json();}),
-    fetch("./data/games-popularity.json?v=20261110-02",{cache:"no-store"}).then(r=>r.ok?r.json():{games:[]}).catch(()=>({games:[]}))
-  ]).then(([data,pop])=>{
+    fetch("./data/games-discovery.json?v=20261111-04",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("Featured catalogue unavailable");return r.json();}),
+    fetch("./data/games-popularity.json?v=20261110-07",{cache:"no-store"}).then(r=>r.ok?r.json():{games:[]}).catch(()=>({games:[]})),
+    fetch("./data/company-profiles.json?v=20261111-01",{cache:"no-store"}).then(r=>r.ok?r.json():{companies:[]}).catch(()=>({companies:[]}))
+  ]).then(([data,pop,profiles])=>{
     (pop.games||[]).forEach(g=>{if(g.title)assetMap.set(norm(g.title),{artwork_url:g.artwork_url||null,logo_url:g.logo_url||null});});
-    catalogue=data;renderFeatured();renderTbc();
+    catalogue=data;profileData=profiles;catalogue.companies=profiles.companies?.length?profiles.companies:catalogue.companies;renderFeatured();renderTbc();
   }).catch(error=>{console.warn("Games discovery catalogue unavailable",error);track.replaceChildren(el("p","games-discovery-loading","Featured games are temporarily unavailable."));tbcList.replaceChildren(el("p","games-discovery-loading","The TBC list is temporarily unavailable."));});
 })();
