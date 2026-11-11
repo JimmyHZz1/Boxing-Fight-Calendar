@@ -48,13 +48,13 @@ public partial class MainWindow : Window
 
     private void MenuButton_Click(object sender, RoutedEventArgs e)
     {
-        var menu = new ContextMenu
+        var menu = new System.Windows.Controls.ContextMenu
         {
             PlacementTarget = MenuButton,
             Placement = System.Windows.Controls.Primitives.PlacementMode.Bottom
         };
 
-        var back = new MenuItem { Header = "Back", IsEnabled = _browserReady && CalendarBrowser.CanGoBack };
+        var back = new System.Windows.Controls.MenuItem { Header = "Back", IsEnabled = _browserReady && CalendarBrowser.CanGoBack };
         back.Click += (_, _) => { if (_browserReady && CalendarBrowser.CanGoBack) CalendarBrowser.GoBack(); };
         var forward = new MenuItem { Header = "Forward", IsEnabled = _browserReady && CalendarBrowser.CanGoForward };
         forward.Click += (_, _) => { if (_browserReady && CalendarBrowser.CanGoForward) CalendarBrowser.GoForward(); };
