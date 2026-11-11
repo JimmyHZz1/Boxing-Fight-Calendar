@@ -3232,3 +3232,85 @@ body.games-platform-page .games-platform-hub{display:none}
   .home-sport-picker-section .sport-slide strong{font-size:19px}
   .home-sport-picker-section .sport-slide small{font-size:5.5px}
 }
+
+
+/* Balanced two-column home layout: Speedway on the left, sport chooser on the right. */
+#home-screen > .home-speedway-sport-picker,
+#home-screen > .home-next-up-panel { grid-column: 1 / -1; min-width: 0; }
+.home-speedway-sport-picker {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  align-items: stretch;
+  gap: 18px;
+  width: 100%;
+  min-width: 0;
+  margin: 20px 0 22px;
+}
+.home-speedway-sport-picker > .home-speedway-calendar,
+.home-speedway-sport-picker > .home-sport-picker-section {
+  min-width: 0;
+  min-height: 100%;
+  margin: 0;
+}
+.home-speedway-sport-picker > .home-speedway-calendar {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.home-speedway-sport-picker > .home-sport-picker-section {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+.home-speedway-sport-picker .sports-carousel-section {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+.home-speedway-sport-picker .sports-carousel-heading { margin-bottom: 8px; }
+.home-speedway-sport-picker .sports-carousel-controls { flex: 1; }
+.home-speedway-sport-picker .sports-carousel {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-content: space-between;
+  grid-auto-rows: minmax(132px, 1fr);
+  gap: 10px;
+}
+.home-speedway-sport-picker .sport-slide { min-height: 132px; }
+.home-speedway-sport-picker .home-speedway-events {
+  flex: 1;
+  align-content: space-between;
+  grid-auto-rows: minmax(68px, 1fr);
+}
+.home-speedway-sport-picker .home-speedway-event { min-height: 68px; }
+@media (max-width: 760px) {
+  .home-speedway-sport-picker { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .home-speedway-sport-picker > .home-speedway-calendar,
+  .home-speedway-sport-picker > .home-sport-picker-section { min-height: 0; }
+  .home-speedway-sport-picker .sports-carousel { grid-auto-rows: minmax(126px, auto); }
+}
+@media (max-width: 420px) {
+  .home-speedway-sport-picker > .home-speedway-calendar,
+  .home-speedway-sport-picker > .home-sport-picker-section { padding: 13px; }
+  .home-speedway-sport-picker .sports-carousel { gap: 7px; }
+}
+
+/* Keep Sports Hub panels balanced and centre single-panel views instead of leaving a vacant column. */
+#sports-hub-content {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  align-content: start;
+  justify-content: center;
+  gap: 14px;
+}
+#sports-hub-content > .hub-dropdown:only-of-type {
+  grid-column: 1 / -1;
+  width: min(100%, 960px);
+  justify-self: center;
+}
+@media (max-width: 699px) {
+  #sports-hub-content { grid-template-columns: minmax(0, 1fr); }
+  #sports-hub-content > .hub-dropdown:only-of-type { grid-column: 1; }
+}
