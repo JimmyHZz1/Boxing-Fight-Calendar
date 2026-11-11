@@ -90,12 +90,13 @@
     const companies=el("section","games-dialog-section");companies.append(el("h3","","Developer & publisher"));const buttons=el("div","games-company-games");(game.company_ids||[]).forEach(id=>{const company=catalogue.companies.find(x=>x.id===id);if(company)buttons.append(companyButton(id,company.name));});companies.append(buttons);dialogContent.append(companies);
     const status=el("section","games-dialog-section");status.append(el("h3","","Announcement & release status"),el("p","","Release date: "+(game.date_label||"TBC")+". Status: "+(game.date_status||"COMING SOON · DATE TBC")+". Dates are only shown as confirmed when supported by an official announcement."));if(safeUrl(game.source_url)){const link=el("a","","VIEW OFFICIAL ANNOUNCEMENT ↗");link.href=game.source_url;link.target="_blank";link.rel="noopener noreferrer";link.style.color="#9bcaff";status.append(link);}dialogContent.append(status);openDialog();
   };
-  let profileData={companies:[]};
+  let profileData={companies:[]},companyPreviousNodes=null;
   const profileDate=value=>{if(!value)return "Date not listed";const d=new Date(value);return Number.isNaN(d.getTime())?String(value):new Intl.DateTimeFormat("en-GB",{day:"numeric",month:"short",year:"numeric",timeZone:"UTC"}).format(d);};
   const showCompany=id=>{
     const c=profileData.companies.find(x=>x.id===id)||catalogue.companies.find(x=>x.id===id);if(!c)return;
+    companyPreviousNodes=null;if(!dialog.hidden){companyPreviousNodes=document.createDocumentFragment();while(dialogContent.firstChild)companyPreviousNodes.append(dialogContent.firstChild);}
     dialogContent.replaceChildren();document.body.classList.add("games-company-profile-open");
-    const back=el("button","games-profile-back","← BACK TO GAMES");back.type="button";back.addEventListener("click",closeDialog);dialogContent.append(back);
+    const back=el("button","games-profile-back","← BACK");back.type="button";back.addEventListener("click",()=>{document.body.classList.remove("games-company-profile-open");if(companyPreviousNodes){dialogContent.replaceChildren(companyPreviousNodes);companyPreviousNodes=null;openDialog();}else closeDialog();});dialogContent.append(back);
     const head=el("section","games-dialog-section games-company-profile-head"),identity=el("div","games-company-identity");
     addCompanyMark(identity,c);identity.append(el("h2","games-dialog-title",c.name));head.append(identity);
     if(c.description)head.append(el("p","games-dialog-meta",c.description));
