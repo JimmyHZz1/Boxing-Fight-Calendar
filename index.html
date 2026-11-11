@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#101114">
   <meta name="description" content="Formula 1, PDC darts, boxing, UFC, BKFC and FIM Speedway calendars in one place.">
   <link rel="manifest" href="./manifest.json">
-  <link rel="stylesheet" href="./styles.css?v=20261111-26">
+  <link rel="stylesheet" href="./styles.css?v=20261111-27">
   <title>Sports Calendar</title>
 </head>
 <body>
@@ -15,10 +15,10 @@
       <div class="brand-calendar-switcher">
         <button class="brand brand-calendar-trigger" id="calendar-menu-trigger" type="button" aria-label="Switch calendar" aria-haspopup="true" aria-expanded="false" aria-controls="mobile-calendar-menu">
           <span class="brand-mark" id="brand-mark-letter">S</span>
-          <span><strong id="brand-title">SPORTS</strong><small>CALENDAR</small></span>
+          <span><strong id="brand-title">SPORTS</strong><small id="brand-subtitle">CALENDAR</small></span>
           <span class="brand-switcher-caret" aria-hidden="true">⌄</span>
         </button>
-        <div id="mobile-calendar-menu" class="mobile-calendar-menu" hidden aria-label="Choose calendar"><button type="button" data-screen="home-screen"><span class="brand-menu-mark sports-mark" aria-hidden="true">S</span> SPORTS CALENDAR</button><button type="button" data-screen="games-calendar-screen"><span class="brand-menu-mark games-mark" aria-hidden="true">G</span> GAMES CALENDAR</button></div>
+        <div id="mobile-calendar-menu" class="mobile-calendar-menu" hidden aria-label="Choose calendar"><button type="button" data-screen="home-screen"><span class="brand-menu-mark sports-mark" aria-hidden="true">S</span> SPORTS CALENDAR</button><button type="button" data-screen="games-calendar-screen"><span class="brand-menu-mark games-mark" aria-hidden="true">G</span> GAMES CALENDAR</button><button type="button" data-screen="swgoh-screen"><span class="brand-menu-mark swgoh-mark" aria-hidden="true">SW</span> SWGOH TRACKER</button></div>
       </div>
       <nav class="topbar-nav" aria-label="Main navigation">
         <button type="button" class="topbar-nav-item active" data-screen="home-screen"><span aria-hidden="true">⌂</span> HOME</button>
@@ -364,6 +364,8 @@
         </details>
         <div class="games-page-footer"><button type="button" class="games-history-link" data-screen="games-calendar-screen">← BACK TO GAMES CALENDAR</button><span>GAMES VERSION HISTORY · INDEPENDENT RELEASE LIST</span></div>
       </section>
+      <section id="swgoh-screen" class="screen swgoh-screen" aria-labelledby="swgoh-title"><div class="page-intro swgoh-intro"><span class="eyebrow">STAR WARS · GALAXY OF HEROES</span><h1 id="swgoh-title">SWGOH <em>Tracker.</em></h1><p>Your roster, Galactic Legend journeys, Conquest planning, GAC counters and resource priorities will live here as the standalone tracker is integrated into the hub.</p></div><section class="swgoh-integration-panel"><div class="swgoh-integration-mark" aria-hidden="true">SW</div><div><span class="eyebrow">INTEGRATION IN PROGRESS</span><h2>Your SWGOH Hub is being connected.</h2><p>The original SWGOH Tracker repository remains independent. This in-app section will use a separate copy of its frontend and connect to its existing sync service.</p><a class="swgoh-repository-link" href="https://github.com/JimmyHZz1/SWGOH-Tracker" target="_blank" rel="noopener noreferrer">VIEW STANDALONE SWGOH REPOSITORY ↗</a></div></section></section>
+
       <section id="data-health-screen" class="screen data-health-screen" aria-labelledby="data-health-title">
         <div class="page-intro"><span class="eyebrow">SYSTEM MONITORING</span><h1 id="data-health-title">Data health <em>centre.</em></h1><p>Check published feeds, image coverage, asset integrity and the latest data refresh times.</p></div>
         <div class="data-health-toolbar"><span id="data-health-overall" class="data-health-status">CHECKING DATA SOURCES…</span><button type="button" class="primary-button" id="data-health-recheck">RUN HEALTH CHECK</button></div>
@@ -426,7 +428,7 @@
   <script src="./home-next-up.js?v=20261111-02"></script>
   <script src="./version-history.js?v=20261109-01"></script>
   <script src="./f1-grand-prix-centre.js?v=20261109-03"></script>
-  <script src="./games-calendar.js?v=20261111-07"></script>
+  <script src="./games-calendar.js?v=20261111-08"></script>
   <script src="./games-popularity.js?v=20261110-07"></script>
   <script src="./games-discovery.js?v=20261111-07"></script>
   <script src="./notifications.js?v=20261111-02"></script>
