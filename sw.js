@@ -1,4 +1,4 @@
-const CACHE="sports-calendar-v146";
+const CACHE="sports-calendar-v147";
 const APP_FILES=[
   "./",
   "./index.html",
@@ -21,6 +21,7 @@ const APP_FILES=[
   "./games-popularity.js?v=20261110-07",
   "./games-discovery.js?v=20261111-07",
   "./notifications.js?v=20261111-01",
+  "./data-health.js?v=20261111-01",
   "./assets/platform-playstation.svg",
   "./assets/platform-xbox.svg",
   "./assets/platform-nintendo.svg",
