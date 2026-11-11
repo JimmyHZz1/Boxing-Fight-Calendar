@@ -2864,3 +2864,64 @@ body.games-platform-page .games-platform-hub{display:none}
 .speedway-loading{padding:20px;border:1px dashed var(--line);color:var(--muted);font-size:11px}
 .speedway-footer{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:15px 0;color:var(--muted);font-size:8px;letter-spacing:.8px}
 @media(max-width:620px){.speedway-toolbar{align-items:flex-start;flex-direction:column}.speedway-event-card{grid-template-columns:48px minmax(0,1fr);gap:9px}.speedway-event-card>.speedway-source-link{grid-column:2}.speedway-rider-row{grid-template-columns:25px 32px minmax(0,1fr) 52px;gap:6px}.speedway-rider-country{display:none}.speedway-rider-name{font-size:10px}.speedway-profile-stats{gap:5px}.speedway-profile-stat{padding:8px 6px}}
+
+
+/* Mobile layout repair: constrain every major rail/card to the viewport. */
+@media (max-width: 620px) {
+  html, body { width:100%; max-width:100%; overflow-x:hidden; }
+  .app-shell { width:100%; max-width:100%; padding-left:12px; padding-right:12px; }
+  main, .screen, #home-screen, #sport-detail-screen, #speedway-screen { min-width:0; max-width:100%; }
+  .topbar { height:auto; min-height:64px; flex-wrap:wrap; gap:8px; padding:9px 0; }
+  .topbar-nav { order:3; width:100%; justify-content:flex-start; }
+  .topbar-actions { min-width:0; max-width:100%; flex-wrap:wrap; gap:6px; }
+  .topbar-display-tools { display:none; }
+  .top-sport-selector { min-width:0; }
+  .sports-carousel-controls { grid-template-columns:24px minmax(0,1fr) 24px; gap:5px; }
+  .sports-carousel { min-width:0; width:100%; gap:8px; padding-bottom:10px; scroll-padding-inline:0; }
+  .sport-slide { flex:0 0 100%; width:100%; min-width:0; min-height:164px; padding:14px; }
+  .sport-slide-logo { max-width:58%; height:42px; margin:8px auto; }
+  .sport-logo-ufc { width:min(150px,55%); height:42px; }
+  .carousel-arrow { width:24px; min-width:24px; height:32px; padding:0; }
+  .sports-carousel-footer { margin-left:30px; margin-right:30px; }
+  .sport-event-card, .sport-event-card > summary { min-width:0; }
+  .sport-event-card > summary { grid-template-columns:36px 42px minmax(0,1fr)!important; gap:7px!important; padding:11px 9px!important; }
+  .sport-event-main { min-width:0; }
+  .sport-event-main strong { font-size:14px; line-height:1.2; overflow-wrap:anywhere; }
+  .sport-event-main small { white-space:normal; overflow-wrap:anywhere; }
+  .sport-event-badge { grid-column:3; justify-self:start; max-width:100%; white-space:normal; }
+  .sport-session-list { min-width:0; }
+  .sport-fight-row { display:grid; grid-template-columns:minmax(0,1fr) 22px minmax(0,1fr); gap:7px; align-items:center; min-width:0; padding:10px 8px; }
+  .sport-fight-side { display:flex; flex-direction:column; justify-content:center; align-items:center; flex:initial; min-width:0; gap:5px; text-align:center; }
+  .sport-fight-side strong { max-width:100%; font-size:10px; line-height:1.2; overflow-wrap:anywhere; }
+  .sport-fight-portrait { width:48px; height:48px; flex:0 0 48px; object-fit:cover; object-position:center 15%; }
+  .sport-fight-versus { justify-self:center; }
+  .sport-fight-row small { grid-column:1/-1; text-align:center; line-height:1.35; }
+  .speedway-screen { padding-top:12px; }
+  .speedway-toolbar { align-items:flex-start; flex-direction:column; gap:8px; }
+  .speedway-hero { padding:18px 14px; }
+  .speedway-hero h1 { font-size:clamp(42px,14vw,64px); }
+  .speedway-hero-meta { gap:5px; }
+  .speedway-hero-meta span { font-size:7px; }
+  .speedway-tabs { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:6px; overflow:visible; }
+  .speedway-tab { min-width:0; width:100%; padding:10px 6px; white-space:normal; line-height:1.2; text-align:center; }
+  .speedway-panel { padding:12px; min-width:0; }
+  .speedway-panel-heading { align-items:flex-start; }
+  .speedway-panel-heading h2 { font-size:23px; overflow-wrap:anywhere; }
+  .speedway-event-card { grid-template-columns:44px minmax(0,1fr); gap:8px; }
+  .speedway-event-card>.speedway-source-link { grid-column:2; justify-self:start; }
+  .speedway-event-copy h3 { font-size:15px; overflow-wrap:anywhere; }
+  .speedway-rider-row { grid-template-columns:22px 30px minmax(0,1fr); gap:6px; padding:9px 6px; }
+  .speedway-rider-country { grid-column:3; display:block; font-size:8px; }
+  .speedway-rider-points { grid-column:3; justify-self:start; text-align:left; }
+  .speedway-rider-name { min-width:0; overflow-wrap:anywhere; font-size:11px; }
+  .speedway-profile-stats { grid-template-columns:repeat(3,minmax(0,1fr)); }
+  .speedway-profile-stat strong { font-size:18px; }
+  .speedway-footer { flex-wrap:wrap; gap:8px; }
+}
+@media (max-width:380px) {
+  .app-shell { padding-left:9px; padding-right:9px; }
+  .sport-slide { min-height:150px; }
+  .sport-slide strong { font-size:27px; }
+  .sport-fight-portrait { width:42px; height:42px; flex-basis:42px; }
+  .speedway-rider-row { grid-template-columns:20px 27px minmax(0,1fr); gap:5px; }
+}
