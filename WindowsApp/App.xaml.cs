@@ -55,6 +55,13 @@ public partial class App : System.Windows.Application
         return SystemIcons.Application;
     }
 
+    public bool SendTestNotification()
+    {
+        if (_notifications is null) return false;
+        _notifications.SendTestNotification();
+        return true;
+    }
+
     public void ShowMainWindow()
     {
         if (_mainWindow is null)
