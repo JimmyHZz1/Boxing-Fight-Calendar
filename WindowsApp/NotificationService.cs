@@ -44,7 +44,7 @@ public sealed class NotificationService : IDisposable
             var preferences = LoadPreferences();
             var now = DateTimeOffset.Now;
             var due = candidates
-                .Where(item => IsCategoryEnabled(item.Category, preferences) && item.StartsAt > now.AddMinutes(-1) && item.StartsAt <= now.AddDays(preferences.LeadDays))
+                .Where(item => IsCategoryEnabled(item.Category, preferences) && ((item.StartsAt > now && item.StartsAt <= now.AddDays(preferences.LeadDays)) || (item.IsDateOnly && item.StartsAt.Date == now.Date)))
                 .OrderBy(item => item.StartsAt)
                 .ToList();
 
