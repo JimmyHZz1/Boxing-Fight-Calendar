@@ -43,7 +43,7 @@ public partial class MainWindow : Window
         else DragMove();
     }
 
-    private void UpdateWindowStateGlyph() => MaximiseButton.Content = WindowState == WindowState.Maximized ? "\\uE923" : "\\uE922";
+    private void UpdateWindowStateGlyph() => MaximiseButton.Content = WindowState == WindowState.Maximized ? "\uE923" : "\uE922";
 
     private void MinimiseButton_Click(object sender, RoutedEventArgs e) => WindowState = WindowState.Minimized;
     private void MaximiseButton_Click(object sender, RoutedEventArgs e) => ToggleMaximise();
