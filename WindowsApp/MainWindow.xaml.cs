@@ -20,6 +20,16 @@ public partial class MainWindow : Window
         InitializeComponent();
         LoadStartupSetting();
         Loaded += MainWindow_Loaded;
+        Closing += MainWindow_Closing;
+    }
+
+    private void MainWindow_Closing(object? sender, System.ComponentModel.CancelEventArgs e)
+    {
+        if (Application.Current is App app && !app.AllowExit)
+        {
+            e.Cancel = true;
+            Hide();
+        }
     }
 
     private void LoadStartupSetting()
@@ -82,12 +92,9 @@ public partial class MainWindow : Window
         {
             var runtimeVersion = CoreWebView2Environment.GetAvailableBrowserVersionString();
             if (string.IsNullOrWhiteSpace(runtimeVersion))
-            {
                 throw new InvalidOperationException("The Microsoft Edge WebView2 Runtime is not installed.");
-            }
 
             await CalendarBrowser.EnsureCoreWebView2Async();
-
             CalendarBrowser.CoreWebView2.NavigationStarting += CoreWebView2_NavigationStarting;
             CalendarBrowser.CoreWebView2.NavigationCompleted += CoreWebView2_NavigationCompleted;
             CalendarBrowser.CoreWebView2.NewWindowRequested += CoreWebView2_NewWindowRequested;
@@ -110,9 +117,7 @@ public partial class MainWindow : Window
                 MessageBoxImage.Information);
 
             if (result == MessageBoxResult.Yes)
-            {
                 OpenExternal("https://developer.microsoft.com/microsoft-edge/webview2/");
-            }
         }
     }
 
@@ -145,9 +150,7 @@ public partial class MainWindow : Window
     {
         e.Handled = true;
         if (Uri.TryCreate(e.Uri, UriKind.Absolute, out var target))
-        {
             OpenExternal(target.AbsoluteUri);
-        }
     }
 
     private static bool IsCalendarHost(Uri uri) =>
