@@ -56,21 +56,21 @@ public partial class MainWindow : Window
 
         var back = new System.Windows.Controls.MenuItem { Header = "Back", IsEnabled = _browserReady && CalendarBrowser.CanGoBack };
         back.Click += (_, _) => { if (_browserReady && CalendarBrowser.CanGoBack) CalendarBrowser.GoBack(); };
-        var forward = new MenuItem { Header = "Forward", IsEnabled = _browserReady && CalendarBrowser.CanGoForward };
+        var forward = new System.Windows.Controls.MenuItem { Header = "Forward", IsEnabled = _browserReady && CalendarBrowser.CanGoForward };
         forward.Click += (_, _) => { if (_browserReady && CalendarBrowser.CanGoForward) CalendarBrowser.GoForward(); };
-        var home = new MenuItem { Header = "Home" };
+        var home = new System.Windows.Controls.MenuItem { Header = "Home" };
         home.Click += (_, _) => { if (_browserReady) CalendarBrowser.Source = HomeUri; };
-        var refresh = new MenuItem { Header = "Refresh" };
+        var refresh = new System.Windows.Controls.MenuItem { Header = "Refresh" };
         refresh.Click += (_, _) => { if (_browserReady) CalendarBrowser.Reload(); };
-        var startup = new MenuItem { Header = "Launch on Windows startup", IsCheckable = true, IsChecked = _startupEnabled };
+        var startup = new System.Windows.Controls.MenuItem { Header = "Launch on Windows startup", IsCheckable = true, IsChecked = _startupEnabled };
         startup.Click += (_, _) => UpdateStartupSetting(startup.IsChecked);
 
         menu.Items.Add(back);
         menu.Items.Add(forward);
-        menu.Items.Add(new Separator());
+        menu.Items.Add(new System.Windows.Controls.Separator());
         menu.Items.Add(home);
         menu.Items.Add(refresh);
-        menu.Items.Add(new Separator());
+        menu.Items.Add(new System.Windows.Controls.Separator());
         menu.Items.Add(startup);
         menu.IsOpen = true;
     }
@@ -85,7 +85,7 @@ public partial class MainWindow : Window
                 var executablePath = Environment.ProcessPath;
                 if (string.IsNullOrWhiteSpace(executablePath))
                     throw new InvalidOperationException("Windows could not determine the application path.");
-                runKey.SetValue(StartupValueName, $"\"{executablePath}\" --startup");
+                runKey.SetValue(StartupValueName, $"\\"{executablePath}\\" --startup");
             }
             else
             {
