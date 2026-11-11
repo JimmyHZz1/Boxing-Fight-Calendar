@@ -3571,3 +3571,39 @@ body.games-platform-page .games-platform-hub{display:none}
 @media (min-width: 1100px) {
   #home-screen > #live-sports-centre { grid-column: 1 / -1; grid-row: 2; }
 }
+
+
+/* Requested home ordering: Next Up on the left, Live Now on the right. */
+@media (min-width: 900px) {
+  #home-screen > #live-sports-centre > .home-next-up-panel {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  #home-screen > #live-sports-centre > .live-upcoming-panel {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  #home-screen > #live-sports-centre > .live-now-panel {
+    grid-column: 3;
+    grid-row: 2;
+  }
+}
+@media (min-width: 900px) and (max-width: 1199px) {
+  #home-screen > #live-sports-centre > .home-next-up-panel {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  #home-screen > #live-sports-centre > .live-now-panel {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  #home-screen > #live-sports-centre > .live-upcoming-panel {
+    grid-column: 1 / -1;
+    grid-row: 3;
+  }
+}
+@media (max-width: 899px) {
+  #home-screen > #live-sports-centre > .home-next-up-panel { order: 1; }
+  #home-screen > #live-sports-centre > .live-now-panel { order: 2; }
+  #home-screen > #live-sports-centre > .live-upcoming-panel { order: 3; }
+}
