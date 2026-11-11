@@ -65,6 +65,7 @@
   const openHealth=()=>{window.showScreen?.("data-health-screen");runHealth();};
   $("open-data-health")?.addEventListener("click",openHealth);
   $("data-health-recheck")?.addEventListener("click",runHealth);
+  document.querySelectorAll(".data-health-footer [data-screen]").forEach(button=>button.addEventListener("click",()=>window.showScreen?.(button.dataset.screen)));
   $("home-speedway-open")?.addEventListener("click",()=>window.SpeedwayPage?.open?.());
   document.addEventListener("sports:screen-changed",e=>{if(e.detail?.screen==="data-health-screen")runHealth();});
   document.addEventListener("sports:feeds-updated",renderSpeedway);
