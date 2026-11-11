@@ -487,12 +487,12 @@
       const byGame=new Map();
       (Array.isArray(data.companies)?data.companies:[]).forEach(company=>{
         (Array.isArray(company.releases)?company.releases:[]).forEach(release=>{
-          if(!release.title||!/^\\d{4}-\\d{2}-\\d{2}$/.test(String(release.release_date||""))||release.release_date<today)return;
+          if(!release.title||!/^\d{4}-\d{2}-\d{2}$/.test(String(release.release_date||""))||release.release_date<today)return;
           const key=String(release.title).toLowerCase();
           const existing=byGame.get(key)||{
             id:"igdb-"+(release.igdb_id||key.replace(/[^a-z0-9]+/g,"-")),
             title:release.title,developer:release.developer?company.name:"",publisher:release.publisher?company.name:"",
-            release_date:release.release_date,release_date_precision:/^\\d{4}$/.test(String(release.release_label||""))?"year":"day",
+            release_date:release.release_date,release_date_precision:/^\d{4}$/.test(String(release.release_label||""))?"year":"day",
             platforms:[],release_dates:[],artwork_url:release.artwork_url||null,logo_url:release.logo_url||null,
             release_status:"announced",verification_status:"estimated",is_estimated:true,source_url:"",short_name:release.title
           };
