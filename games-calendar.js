@@ -11,9 +11,11 @@
   };
   const setBrand = screenId => {
     const games = screenId === "games-calendar-screen" || screenId === "games-platform-calendar-screen" || screenId === "games-version-history-screen";
+    const swgoh = screenId === "swgoh-hub-screen";
     document.body.classList.toggle("games-mode", games);
-    if (mark) mark.textContent = games ? "G" : "S";
-    if (title) title.textContent = games ? "GAMES" : "SPORTS";
+    document.body.classList.toggle("swgoh-mode", swgoh);
+    if (mark) mark.textContent = games ? "G" : swgoh ? "✦" : "S";
+    if (title) title.textContent = swgoh ? "SWGOH HUB" : games ? "GAMES" : "SPORTS";
   };
   if (menu && trigger) {
     // A single document-level capture handler handles taps on every nested part
