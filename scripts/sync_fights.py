@@ -291,6 +291,8 @@ def main():
             additional_count += len(remaining)
 
     events.extend(additional_events)
+    if not events:
+        raise RuntimeError("Boxerbook and Boxing Data returned no usable fight events; keeping the last published snapshot.")
     events.sort(key=lambda e: (str(e.get("date", "")), str(e.get("name", ""))))
     confirmed_count = len(primary["events"])
     confirmed_bouts = sum(len(e.get("bouts", [])) for e in primary["events"])

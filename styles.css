@@ -2807,3 +2807,7 @@ body.games-platform-page .games-platform-hub{display:none}
 .games-month-timeline .games-release-artwork{width:clamp(62px,7vw,88px)!important;height:auto!important;aspect-ratio:3/4;min-height:0!important;}
 @media(max-width:620px){.games-release-artwork{width:64px!important;height:auto!important;aspect-ratio:3/4;}.games-month-timeline .games-release-artwork{width:64px!important;height:auto!important;aspect-ratio:3/4;}}
 @media(max-width:420px){.games-release-artwork{width:56px!important;height:auto!important;aspect-ratio:3/4;}.games-month-timeline .games-release-artwork{width:56px!important;height:auto!important;aspect-ratio:3/4;}}
+
+
+/* Surface stale sports snapshots and source-refresh warnings clearly. */
+.sport-sync-warning{color:#f0c27a;border-left:2px solid #c78d36;padding:8px 10px;background:rgba(199,141,54,.08);}

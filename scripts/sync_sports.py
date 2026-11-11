@@ -81,6 +81,8 @@ def sync_f1():
     year = NOW.year
     base = f"https://api.jolpi.ca/ergast/f1/{year}"
     schedule = races_from(request_json(f"{base}/races.json?limit=100", provider="Jolpica F1"))
+    if not schedule or not all(race.get("date") and race.get("round") for race in schedule):
+        raise RuntimeError("Jolpica F1 returned an empty or incomplete race schedule; keeping the last published snapshot.")
     results = f1_results_map(request_json(f"{base}/results.json?limit=1000", provider="Jolpica F1"), "Results")
     qualifying = f1_results_map(request_json(f"{base}/qualifying.json?limit=1000", provider="Jolpica F1"), "QualifyingResults")
     sprint = f1_results_map(request_json(f"{base}/sprint.json?limit=1000", provider="Jolpica F1"), "SprintResults")
@@ -463,6 +465,8 @@ def sync_ufc():
     completed = api_data(request_json(recent_url, key, "UFCalendar"))
     upcoming.sort(key=lambda e: e.get("starts_at") or e.get("start_at") or "")
     completed.sort(key=lambda e: e.get("starts_at") or e.get("start_at") or "", reverse=True)
+    if not upcoming and not completed:
+        raise RuntimeError("UFCalendar returned no upcoming or recent completed UFC events; keeping the last published snapshot.")
 
     # Keep every upcoming event in the calendar, but only make detail calls for
     # the next two cards (plus the latest completed card) to protect API quota.
@@ -497,6 +501,20 @@ def sync_ufc():
     enrich_event_fighter_images(events)
     save("ufc.json", {"sport": "ufc", "provider": "UFCalendar", "events": events, "notice": "All upcoming UFC events returned by UFCalendar, with detailed fight cards for the next two events and the latest completed card. Free API allowance: 1,000 requests per month."})
     print(f"UFC: saved {len(events)} events; detailed cards fetched for the next two upcoming events and latest completed event.")
+
+
+def bkfc_visible_event_records(page: str, url: str) -> list[dict]:
+    """Parse the official BKFC page's visible date/title fallback when JSON-LD is absent."""
+    import html
+    import re
+
+    visible = html.unescape(re.sub(r"<[^>]+>", " ", page))
+    visible = re.sub(r"\s+", " ", visible)
+    pattern = r"((?:January|February|March|April|May|June|July|August|September|October|November|December) \d{1,2}, \d{4}) \1 \d{1,2}:\d{2}\s*[AP]M\s*#?\s*(BKFC[^#]{3,100}?)\s*Buy tickets"
+    return [
+        {"@type": "Event", "name": match.group(2).strip(), "startDate": match.group(1), "url": url, "eventStatus": "EventScheduled"}
+        for match in re.finditer(pattern, visible, re.I)
+    ]
 
 
 def sync_bkfc():
@@ -543,11 +561,7 @@ def sync_bkfc():
     # BKFC's current Webflow event list also renders a plain-text card feed.
     # Use its published dates and names as a safe fallback; do not guess time zones.
     if not records:
-        visible = html.unescape(re.sub(r"<[^>]+>", " ", page))
-        visible = re.sub(r"\\s+", " ", visible)
-        pattern = r"((?:January|February|March|April|May|June|July|August|September|October|November|December) \\d{1,2}, \\d{4}) \\1 \\d{1,2}:\\d{2} \\s*[AP]M \\s*#? \\s*(BKFC[^#]{3,100}?) \\s*Buy tickets"
-        for match in re.finditer(pattern, visible, re.I):
-            records.append({"@type":"Event","name":match.group(2).strip(),"startDate":match.group(1),"url":url,"eventStatus":"EventScheduled"})
+        records.extend(bkfc_visible_event_records(page, url))
     events, seen = [], set()
     for row in records:
         name = html.unescape(str(row.get("name") or row.get("headline") or "")).strip()
