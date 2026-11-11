@@ -462,6 +462,25 @@
       if (!Array.isArray(rows)) throw new Error("Supabase returned an unexpected release-data response");
       return mapDatabaseReleases(rows);
     };
+    const loadGamesPopularity = async () => {
+      const response = await fetch("./data/games-popularity.json?t=" + Date.now(), {cache:"no-store"});
+      if (!response.ok) return [];
+      const data = await response.json();
+      return Array.isArray(data.games) ? data.games : [];
+    };
+    const enrichGameArtwork = (games, popularity) => {
+      const norm = value => String(value || "").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
+      const assets = new Map((Array.isArray(popularity) ? popularity : []).map(game => [norm(game.title),game]));
+      return (Array.isArray(games) ? games : []).map(game => {
+        const asset = assets.get(norm(game.title));
+        if (!asset) return game;
+        return {
+          ...game,
+          artwork_url: game.artwork_url || asset.artwork_url || asset.igdb_artwork_url || null,
+          logo_url: game.logo_url || asset.logo_url || asset.igdb_logo_url || null
+        };
+      });
+    };
     const loadGamesFallback = async () => {
       const response=await fetch("./data/games-featured.json?t="+Date.now(),{cache:"no-store"});
       if (!response.ok) throw new Error("Saved release feed unavailable");
@@ -485,13 +504,17 @@
       return [...byTitle.values()].sort((a,b)=>String(a.release_date || "").localeCompare(String(b.release_date || "")));
     };
     loadGamesFromSupabase().then(async games=>{
-      const supplemental = await loadGamesFallback().catch(()=>[]);
-      allUpcomingGames=mergeReleaseFeeds(games,supplemental); renderFeaturedGames(allUpcomingGames); renderUpcomingReleases(allUpcomingGames);
+      const [supplemental,popularity] = await Promise.all([
+        loadGamesFallback().catch(()=>[]),
+        loadGamesPopularity().catch(()=>[])
+      ]);
+      allUpcomingGames=enrichGameArtwork(mergeReleaseFeeds(games,supplemental),popularity); renderFeaturedGames(allUpcomingGames); renderUpcomingReleases(allUpcomingGames);
       updateReleaseCountdowns(); setGamesDataStatus("LIVE DATABASE + EXPANDED RELEASE FEED · Showing tracked releases and additional announced games.");
     }).catch(async error=>{
       console.warn("Games Calendar database connection failed; using saved feed.",error);
       try {
-        allUpcomingGames=await loadGamesFallback(); renderFeaturedGames(allUpcomingGames); renderUpcomingReleases(allUpcomingGames);
+        const [saved,popularity] = await Promise.all([loadGamesFallback(),loadGamesPopularity().catch(()=>[])]);
+        allUpcomingGames=enrichGameArtwork(saved,popularity); renderFeaturedGames(allUpcomingGames); renderUpcomingReleases(allUpcomingGames);
         updateReleaseCountdowns(); setGamesDataStatus("DATABASE OFFLINE · Showing the saved release list until the live connection is restored.");
       } catch(fallbackError) {
         allUpcomingGames=[]; renderFeaturedGames([]); renderUpcomingReleases([]);
