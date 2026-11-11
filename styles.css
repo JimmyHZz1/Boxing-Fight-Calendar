@@ -2754,3 +2754,30 @@ body.games-mode .games-platform-hub{display:block}
 .games-company-profile-open .games-discovery-close{position:fixed;top:12px;right:14px}
 .games-company-profile-open .games-discovery-dialog-content{max-width:1180px;margin:0 auto}
 .games-company-profile-open .games-profile-back{position:sticky;top:0;z-index:4}
+
+
+/* Games platform tabs mirror the sports icon selector; display controls live in the desktop banner. */
+.games-platform-hub{padding:10px 0 9px;margin:0 0 12px;background:transparent;border:0;border-bottom:1px solid var(--line);max-width:none}
+.games-platform-hub-heading{display:none}
+.games-platform-hub-grid{display:flex;flex-wrap:nowrap;gap:7px}
+.games-platform-hub-grid button{flex:1 1 0;min-width:0;min-height:54px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:6px 3px;border:1px solid var(--line);border-radius:4px;background:rgba(25,27,32,.82);color:var(--muted);text-align:center;transition:border-color .16s,background .16s}
+.games-platform-hub-grid button:hover{border-color:var(--accent);background:rgba(226,180,91,.05);transform:none}
+.games-platform-hub-grid button[aria-pressed=true]{border-color:var(--accent);color:var(--accent);background:rgba(226,180,91,.09);box-shadow:none}
+.games-platform-hub-grid button img,.games-platform-hub-mark{width:auto;height:22px;max-width:68px;min-width:25px;display:block;object-fit:contain;padding:0;border:0;background:transparent;color:var(--text);font:900 14px 'Barlow Condensed',sans-serif}
+.games-platform-hub-grid button strong{font:800 9px 'DM Sans',sans-serif;letter-spacing:.65px;text-transform:uppercase;color:inherit;line-height:1.15}
+.games-platform-hub-grid button small{display:none}
+.games-platform-hub-grid button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.topbar-display-tools{display:flex;align-items:center;gap:5px;flex:none}
+.topbar-display-tools button{min-height:32px;padding:7px 8px;border:1px solid var(--line);border-radius:3px;background:rgba(255,255,255,.025);color:var(--muted);font:800 8px 'DM Sans',sans-serif;letter-spacing:.45px;white-space:nowrap;cursor:pointer}
+.topbar-display-tools button:hover,.topbar-display-tools button[aria-pressed=true],.topbar-display-tools button[aria-expanded=true]{border-color:var(--accent);color:var(--accent);background:rgba(226,180,91,.07)}
+body.games-mode #home-customise-toggle{display:none!important}
+@media(max-width:760px){
+  .games-platform-hub{margin:0 0 10px;padding:8px 0}
+  .games-platform-hub-grid{gap:4px}
+  .games-platform-hub-grid button{min-height:49px;padding:5px 1px;gap:4px}
+  .games-platform-hub-grid button img,.games-platform-hub-mark{height:19px;max-width:90%}
+  .games-platform-hub-grid button strong{font-size:7px;letter-spacing:.2px}
+  .topbar-display-tools{gap:3px}
+  .topbar-display-tools button{padding:6px 5px;font-size:7px;letter-spacing:0}
+}
+@media(max-width:520px){.topbar-display-tools button{min-height:29px;padding:5px 4px;font-size:6px}}
