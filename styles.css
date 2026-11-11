@@ -3530,3 +3530,8 @@ body.games-platform-page .games-platform-hub{display:none}
 }
 
 /* SWGOH native hub styles are maintained in swgoh.css. */
+
+
+/* Keep the SWGOH Hub selector icon contained and its label readable. */
+.mobile-calendar-menu button .brand-menu-logo.swgoh-menu-logo{display:block;width:28px;height:28px;min-width:28px;max-width:28px;flex:0 0 28px;object-fit:contain;object-position:center;border-radius:5px;background:#080e1d;padding:2px}
+.mobile-calendar-menu button .calendar-menu-label{display:block;flex:1;min-width:0;font-size:10px!important;line-height:1.2;color:var(--text)!important;font-weight:800;letter-spacing:1px;white-space:nowrap}

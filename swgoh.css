@@ -11,3 +11,13 @@ body.swgoh-mode #open-settings,
 body.swgoh-mode .bottom-nav{display:none!important}
 .home-snapshot-panels{grid-template-columns:minmax(0,1fr)!important}
 @media(max-width:760px){.swgoh-native{border-radius:10px}.swgoh-native .main{padding-left:10px;padding-right:10px}}
+
+
+/* Full native tracker navigation: every tracker area remains directly reachable. */
+.swgoh-native .nav{display:flex;gap:2px;overflow-x:auto;overflow-y:hidden;justify-content:flex-start;scrollbar-width:thin;scrollbar-color:#365778 #091326;padding:5px 8px calc(5px + env(safe-area-inset-bottom));}
+.swgoh-native .nav.dashboard-hidden{display:none!important}
+.swgoh-native .nav button{display:flex;flex:0 0 auto;min-width:76px;min-height:48px;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:5px 8px;white-space:nowrap;border-radius:8px;}
+.swgoh-native .nav button span{display:block;font-size:16px;line-height:1.1;margin:0}
+.swgoh-native .nav button small{font-size:9px;line-height:1.1;letter-spacing:.2px;color:inherit}
+.swgoh-native .nav button.active{background:#183252;color:#8acbff}
+.swgoh-native .main{padding-bottom:28px}
