@@ -544,8 +544,8 @@ def sync_bkfc():
     # Use its published dates and names as a safe fallback; do not guess time zones.
     if not records:
         visible = html.unescape(re.sub(r"<[^>]+>", " ", page))
-        visible = re.sub(r"\\s+", " ", visible)
-        pattern = r"((?:January|February|March|April|May|June|July|August|September|October|November|December) \\d{1,2}, \\d{4}) \\1 \\d{1,2}:\\d{2} \\s*[AP]M \\s*#? \\s*(BKFC[^#]{3,100}?) \\s*Buy tickets"
+        visible = re.sub(r"\s+", " ", visible)
+        pattern = r"((?:January|February|March|April|May|June|July|August|September|October|November|December) \d{1,2}, \d{4}) \1 \d{1,2}:\d{2} \s*[AP]M \s*#? \s*(BKFC[^#]{3,100}?) \s*Buy tickets"
         for match in re.finditer(pattern, visible, re.I):
             records.append({"@type":"Event","name":match.group(2).strip(),"startDate":match.group(1),"url":url,"eventStatus":"EventScheduled"})
     events, seen = [], set()
