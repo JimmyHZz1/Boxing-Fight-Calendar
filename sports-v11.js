@@ -80,13 +80,20 @@
   function renderTicker(){
     const root=$("next-event-ticker");if(!root)return;
     const selected=[];
-    sports.forEach(sport=>{
-      const rows=allEvents().filter(x=>x.sport===sport&&!(sport==="boxing"&&(x.event.data_source==="Boxing Data API"||/^Additional scheduled bouts\b/i.test(String(x.event.name||x.event.title||"")))));
+    sports.filter(sport=>sport!=="speedway").forEach(sport=>{
+      const rows=allEvents().filter(x=>x.sport===sport&&!(sport==="boxing"&&(x.event.data_source==="Boxing Data API"||/^Additional scheduled bouts\\b/i.test(String(x.event.name||x.event.title||"")))));
       const live=rows.filter(x=>isLive(x.event)).sort((a,b)=>timestamp(a.event)-timestamp(b.event))[0];
       const next=rows.filter(x=>!isLive(x.event)&&isUpcoming(x.event)).sort((a,b)=>timestamp(a.event)-timestamp(b.event))[0];
       const chosen=live||next;if(chosen)selected.push({sport,event:chosen.event,live:!!live});
     });
-    const signature=selected.map(x=>x.sport+":"+String(x.event.id||x.event.event_id||x.event.name||x.event.title||"")+":"+String(x.event.start_at||x.event.main_card_at||x.event.start_time_utc||x.event.date||x.event.event_date||"")+":"+x.live).join("|");
+    // Keep FIM Speedway as an explicit ticker entry, sourced from the same
+    // published Speedway calendar used by the dedicated Speedway page.
+    const speedwayRows=allEvents().filter(x=>x.sport==="speedway");
+    const speedwayLive=speedwayRows.filter(x=>isLive(x.event)).sort((a,b)=>timestamp(a.event)-timestamp(b.event))[0];
+    const speedwayNext=speedwayRows.filter(x=>!isLive(x.event)&&isUpcoming(x.event)).sort((a,b)=>timestamp(a.event)-timestamp(b.event))[0];
+    const nextSpeedway=speedwayLive||speedwayNext;
+    if(nextSpeedway)selected.push({sport:"speedway",event:nextSpeedway.event,live:!!speedwayLive});
+    const signature=selected.map(x=>x.sport+":"+String(x.event.id||x.event.event_id||x.event.name||x.event.title||"")+":"+String(x.event.start_at||x.event.main_card_at||x.event.start_time_utc||x.event.starts_at||x.event.date||x.event.event_date||x.event.eventDate||"")+":"+x.live).join("|");
     if(signature===tickerSignature&&root.querySelector(".next-event-track")){requestAnimationFrame(measureTicker);return;}
     tickerSignature=signature;root.classList.remove("is-auto-scrolling","is-paused");root.scrollLeft=0;root.replaceChildren();
     if(!selected.length){tickerLoopDistance=0;root.append(make("span","next-event-loading","No live or upcoming events currently listed."));return;}
@@ -95,7 +102,7 @@
       const button=make("button","next-event-item");button.type="button";button.dataset.sport=sport;
       const info=make("span","next-event-info");
       info.append(make("small","next-event-sport",names[sport]),make("strong","next-event-name",event.name||event.title||"Event"));
-      const target=event.start_at||event.main_card_at||event.start_time_utc||event.date||event.event_date;
+      const target=event.start_at||event.main_card_at||event.start_time_utc||event.starts_at||event.date||event.event_date||event.eventDate;
       if(!live&&target){
         const timer=make("small","next-event-countdown",window.SportsCountdown?.text?.(target)||"DATE TBC");
         timer.dataset.countdownTarget=/^\d{4}-\d{2}-\d{2}$/.test(String(target))?String(target):new Date(target).toISOString();info.append(timer);
