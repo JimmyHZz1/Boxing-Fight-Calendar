@@ -44,7 +44,7 @@
     info.append(make("strong",null,event.name||event.title||"Event"));
     const meta=[names[sport],formatDate(event),formatTime(event),event.location||event.venue||event.circuit].filter(Boolean);
     info.append(make("small",null,meta.join(" · ")));
-    const target=event.start_at||event.main_card_at||event.start_time_utc||event.date||event.event_date;
+    const target=event.start_at||event.main_card_at||event.start_time_utc||event.starts_at||event.date||event.event_date||event.eventDate;
     const dateOnly=typeof target==="string"&&/^\d{4}-\d{2}-\d{2}$/.test(target);
     if(!live&&target&&(dateOnly||new Date(target).getTime()>Date.now())){
       const timer=make("small","live-centre-countdown",window.SportsCountdown?.text?.(target)||"COUNTDOWN");timer.dataset.countdownTarget=dateOnly?target:new Date(target).toISOString();info.append(timer);
@@ -96,7 +96,7 @@
       const target=event.start_at||event.main_card_at||event.start_time_utc||event.date||event.event_date;
       if(!live&&target){
         const timer=make("small","next-event-countdown",window.SportsCountdown?.text?.(target)||"DATE TBC");
-        timer.dataset.countdownTarget=/^\\d{4}-\\d{2}-\\d{2}$/.test(String(target))?String(target):new Date(target).toISOString();info.append(timer);
+        timer.dataset.countdownTarget=/^\d{4}-\d{2}-\d{2}$/.test(String(target))?String(target):new Date(target).toISOString();info.append(timer);
       }
       const badge=make("span","next-event-state "+(live?"is-live":"is-upcoming"));
       badge.append(make("i","next-event-state-icon",live?"●":"▣"),make("b",null,live?"LIVE":"UPCOMING"));
