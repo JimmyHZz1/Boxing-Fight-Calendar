@@ -4179,7 +4179,17 @@
             {
               "rank": 2,
               "name": "Carlos Prates",
-              "image_url": null
+              "image_url": "./assets/images/ufc/carlos-prates.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Carlos_Prates_2025.jpg",
+              "image_credit": "Wikimedia Commons · Sexto Round · CC BY 3.0",
+              "image_license": "CC BY 3.0",
+              "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Carlos Prates",
+              "image_verified_at": "2026-11-11T22:24:19Z",
+              "image_local_path": "assets/images/ufc/carlos-prates.jpg"
             },
             {
               "rank": 3,
@@ -5258,64 +5268,66 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 4,
-    "found": 106,
-    "missing": 683,
-    "rejected": 1,
+    "attempted": 5,
+    "found": 107,
+    "missing": 682,
+    "rejected": 0,
     "by_sport": {
       "ufc": {
-        "attempted": 4,
-        "found": 2,
-        "missing": 2,
+        "attempted": 5,
+        "found": 1,
+        "missing": 4,
         "rejected": 0
       }
     },
     "search_details": [
       {
-        "name": "Ikram Aliskerov",
+        "name": "Carlos Prates",
         "queries": 3,
-        "candidate_files": 4,
-        "accepted": 4,
+        "candidate_files": 2,
+        "accepted": 2,
         "rejections": {}
       },
       {
-        "name": "Bo Nickal",
-        "queries": 3,
-        "candidate_files": 5,
-        "accepted": 4,
-        "rejections": {
-          "exact_name_pair_not_matched": 1
-        }
-      },
-      {
-        "name": "Ian Machado Garry",
+        "name": "Michael Morales",
         "queries": 2,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       },
       {
-        "name": "Carlos Prates",
+        "name": "Jack Della Maddalena",
         "queries": 2,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Gabriel Bonfim",
+        "queries": 2,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Sean Brady",
+        "queries": 1,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       }
     ],
-    "rejection_reasons": {
-      "exact_name_pair_not_matched": 1
-    },
-    "checked_at": "2026-11-11T18:26:27Z",
-    "library_entries": 70,
-    "newly_found": 2,
-    "cumulative_attempted": 187,
-    "cumulative_found": 70,
-    "cumulative_missing": 117,
+    "checked_at": "2026-11-11T22:24:19Z",
+    "library_entries": 71,
+    "newly_found": 1,
+    "cumulative_attempted": 192,
+    "cumulative_found": 71,
+    "cumulative_missing": 121,
     "cumulative_rejected": 140,
-    "batch_number": 21,
-    "last_batch_at": "2026-11-11T18:26:27Z",
-    "last_successful_batch_at": "2026-11-11T18:26:27Z",
-    "last_rate_limited_at": "2026-11-11T18:26:27Z",
+    "batch_number": 22,
+    "last_batch_at": "2026-11-11T22:24:19Z",
+    "last_successful_batch_at": "2026-11-11T22:24:19Z",
+    "last_rate_limited_at": "2026-11-11T22:24:19Z",
     "coverage": {
       "boxing fight card fighters": {
         "total": 241,
@@ -5339,8 +5351,8 @@
       },
       "ufc": {
         "total": 206,
-        "with_image": 20,
-        "missing": 186
+        "with_image": 21,
+        "missing": 185
       },
       "boxing": {
         "total": 81,

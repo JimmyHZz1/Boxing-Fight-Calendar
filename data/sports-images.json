@@ -958,9 +958,24 @@
       "image_match_method": "category:Category:Bo Nickal",
       "image_verified_at": "2026-11-11T18:26:27Z",
       "image_local_path": "assets/images/ufc/bo-nickal.jpg"
+    },
+    "carlos prates": {
+      "name": "Carlos Prates",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/carlos-prates.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Carlos_Prates_2025.jpg",
+      "image_credit": "Wikimedia Commons · Sexto Round · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Carlos Prates",
+      "image_verified_at": "2026-11-11T22:24:19Z",
+      "image_local_path": "assets/images/ufc/carlos-prates.jpg"
     }
   },
-  "updated_at": "2026-11-11T18:26:27Z",
+  "updated_at": "2026-11-11T22:24:19Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1143,7 +1158,11 @@
     "jared cannonier": "2026-11-11T17:57:00Z",
     "ikram aliskerov": "2026-11-11T18:26:27Z",
     "bo nickal": "2026-11-11T18:26:27Z",
-    "ian machado garry": "2026-11-11T18:26:27Z"
+    "ian machado garry": "2026-11-11T18:26:27Z",
+    "carlos prates": "2026-11-11T22:24:19Z",
+    "michael morales": "2026-11-11T22:24:19Z",
+    "jack della maddalena": "2026-11-11T22:24:19Z",
+    "gabriel bonfim": "2026-11-11T22:24:19Z"
   },
   "audit": {
     "last_reviewed_at": "2026-11-09T12:15:00Z",
@@ -1180,15 +1199,15 @@
     }
   },
   "enrichment": {
-    "batch_number": 21,
+    "batch_number": 22,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 187,
-    "cumulative_found": 70,
-    "cumulative_missing": 117,
+    "cumulative_attempted": 192,
+    "cumulative_found": 71,
+    "cumulative_missing": 121,
     "cumulative_rejected": 140,
-    "last_batch_at": "2026-11-11T18:26:27Z",
-    "last_successful_batch_at": "2026-11-11T18:26:27Z",
-    "last_rate_limited_at": "2026-11-11T18:26:27Z",
+    "last_batch_at": "2026-11-11T22:24:19Z",
+    "last_successful_batch_at": "2026-11-11T22:24:19Z",
+    "last_rate_limited_at": "2026-11-11T22:24:19Z",
     "history": [
       {
         "batch": 1,
@@ -1356,6 +1375,14 @@
         "attempted": 4,
         "found": 2,
         "missing": 2,
+        "rate_limited": true
+      },
+      {
+        "batch": 22,
+        "at": "2026-11-11T22:24:19Z",
+        "attempted": 5,
+        "found": 1,
+        "missing": 4,
         "rate_limited": true
       }
     ],

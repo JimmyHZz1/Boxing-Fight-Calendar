@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-11T18:26:27Z",
+  "updated_at": "2026-11-11T22:24:19Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -728,6 +728,17 @@
       "creator": "Wikimedia Commons · Noah Riffe · Public domain",
       "attribution": "Wikimedia Commons · Noah Riffe · Public domain",
       "verified_at": "2026-11-11T18:26:27Z",
+      "sport": "ufc"
+    },
+    "carlos prates": {
+      "name": "Carlos Prates",
+      "path": "assets/images/ufc/carlos-prates.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Carlos_Prates_2025.jpg",
+      "licence": "CC BY 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by/3.0",
+      "creator": "Wikimedia Commons · Sexto Round · CC BY 3.0",
+      "attribution": "Wikimedia Commons · Sexto Round · CC BY 3.0",
+      "verified_at": "2026-11-11T22:24:19Z",
       "sport": "ufc"
     }
   },
