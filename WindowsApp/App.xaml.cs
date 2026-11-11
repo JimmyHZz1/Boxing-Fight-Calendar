@@ -13,12 +13,9 @@ public partial class App : System.Windows.Application
 
     private void OnStartup(object sender, StartupEventArgs e)
     {
-        _notifications = new NotificationService();
-        _notifications.Start();
-
         var menu = new ContextMenuStrip();
         menu.Items.Add("Open Sports & Games Calendar", null, (_, _) => ShowMainWindow());
-        menu.Items.Add("Check for event reminders now", null, async (_, _) => await _notifications.CheckNowAsync());
+        menu.Items.Add("Check for event reminders now", null, async (_, _) => await _notifications?.CheckNowAsync()!);
         menu.Items.Add(new ToolStripSeparator());
         menu.Items.Add("Exit completely", null, (_, _) => ExitCompletely());
 
@@ -30,6 +27,12 @@ public partial class App : System.Windows.Application
             Visible = true
         };
         _trayIcon.DoubleClick += (_, _) => ShowMainWindow();
+
+        _notifications = new NotificationService((title, message) =>
+        {
+            _trayIcon?.ShowBalloonTip(10000, title, message, ToolTipIcon.Info);
+        });
+        _notifications.Start();
 
         var startInBackground = e.Args.Any(arg =>
             arg.Equals("--startup", StringComparison.OrdinalIgnoreCase) ||
