@@ -7,7 +7,8 @@
         MinWidth="900" MinHeight="600"
         WindowStartupLocation="CenterScreen"
         Background="{StaticResource AppBackground}"
-        Foreground="#F5F5F5">
+        Foreground="#F5F5F5"
+        Icon="app-icon.ico">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="54" />
@@ -20,31 +21,18 @@
             <DockPanel LastChildFill="True" Margin="12,0">
                 <StackPanel DockPanel.Dock="Left" Orientation="Horizontal"
                             VerticalAlignment="Center">
+                    <Button x:Name="MenuButton" Content="☰" FontSize="19"
+                            Padding="11,4" Margin="0,0,12,0"
+                            ToolTip="Open app menu" Click="MenuButton_Click" />
                     <TextBlock Text="SPORTS &amp; GAMES"
                                Foreground="{StaticResource AccentGold}"
                                FontWeight="Bold" FontSize="13"
-                               VerticalAlignment="Center" Margin="0,0,18,0" />
-                    <Button x:Name="BackButton" Content="←" ToolTip="Back"
-                            Click="BackButton_Click" IsEnabled="False" />
-                    <Button x:Name="ForwardButton" Content="→" ToolTip="Forward"
-                            Click="ForwardButton_Click" IsEnabled="False" />
-                    <Button Content="Home" Click="HomeButton_Click" />
-                    <Button Content="Refresh" Click="RefreshButton_Click" />
-                </StackPanel>
-                <StackPanel DockPanel.Dock="Right" Orientation="Horizontal"
-                            VerticalAlignment="Center">
-                    <CheckBox x:Name="StartupCheckBox"
-                              Content="Launch on Windows startup"
-                              Foreground="#D8D8D8"
-                              VerticalAlignment="Center"
-                              Margin="0,0,18,0"
-                              ToolTip="Open Sports &amp; Games Calendar automatically when you sign in to Windows"
-                              Checked="StartupCheckBox_Changed"
-                              Unchecked="StartupCheckBox_Changed" />
-                    <TextBlock x:Name="ConnectionLabel" Text="Connecting…"
-                               Foreground="#B8B8B8" FontSize="12"
                                VerticalAlignment="Center" />
                 </StackPanel>
+                <TextBlock x:Name="ConnectionLabel" Text="Connecting…"
+                           Foreground="#B8B8B8" FontSize="12"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Right" />
             </DockPanel>
         </Border>
 
