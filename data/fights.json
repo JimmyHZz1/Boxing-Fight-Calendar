@@ -1,7 +1,7 @@
 {
   "provider": "Boxerbook confirmed cards + Boxing Data additional bouts",
-  "last_updated": "2026-11-11T15:58:27Z",
-  "provider_as_of": "2026-11-11T15:58:27Z",
+  "last_updated": "2026-11-11T16:14:24Z",
+  "provider_as_of": "2026-11-11T16:14:24Z",
   "attribution": "Confirmed cards from Boxerbook; additional scheduled bouts from Boxing Data API.",
   "count_events": 37,
   "count_bouts": 133,
