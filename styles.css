@@ -2591,3 +2591,17 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
  .games-featured-nav .games-discovery-heading p{font-size:10px}
  .games-featured-nav .games-discovery-counter{font-size:9px}
 }
+
+
+/* Sports Up Next uses native horizontal scrolling driven by sports-v11.js.
+   Disable the older CSS transform animation so it cannot fight scrollLeft. */
+#next-event-ticker .next-event-track{
+  animation:none!important;
+  transform:none!important;
+  will-change:auto;
+}
+#next-event-ticker.is-auto-scrolling:hover .next-event-track,
+#next-event-ticker.is-auto-scrolling:focus-within .next-event-track,
+#next-event-ticker.is-paused .next-event-track{
+  animation:none!important;
+}
