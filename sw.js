@@ -1,8 +1,8 @@
-const CACHE="sports-calendar-v148";
+const CACHE="sports-calendar-v149";
 const APP_FILES=[
   "./",
   "./index.html",
-  "./styles.css?v=20261111-18",
+  "./styles.css?v=20261111-19",
   "./app.js?v=20261109-03",
   "./sports-data.js?v=20261111-04",
   "./sports.js?v=20261111-04",
@@ -10,7 +10,7 @@ const APP_FILES=[
   "./sports-nav.js?v=20261111-03",
   "./sport-pages.js?v=20261109-06",
   "./speedway.js?v=20261111-02",
-  "./sports-v12.js?v=20261111-03",
+  "./sports-v11.js?v=20261111-04",
   "./sports-weekend.js?v=20261108-02",
   "./favourites.js?v=20261109-02",
   "./ui-refresh.js?v=20261109-01",
@@ -22,7 +22,7 @@ const APP_FILES=[
   "./games-discovery.js?v=20261111-07",
   "./notifications.js?v=20261111-02",
   "./data-health.js?v=20261111-01",
-  "./admin-updates.js?v=20261111-01",
+  "./admin-updates.js?v=20261111-02",
   "./assets/platform-playstation.svg",
   "./assets/platform-xbox.svg",
   "./assets/platform-nintendo.svg",
