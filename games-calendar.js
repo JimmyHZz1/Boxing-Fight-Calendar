@@ -215,7 +215,7 @@
       card.className = "games-release-card";
       const artwork = document.createElement("div");
       artwork.className = "games-release-artwork";
-      const steamMatch=String(game.source_url||"").match(/store\\.steampowered\\.com\\/app\\/(\\d+)/i);
+      const steamMatch=String(game.source_url||"").match(/store\.steampowered\.com\/app\/(\d+)/i);
       const artworkUrl = game.artwork_url || game.logo_url || (steamMatch?"https://cdn.akamai.steamstatic.com/steam/apps/"+steamMatch[1]+"/header.jpg":"");
       if (artworkUrl.startsWith("https://")) {
         const image = document.createElement("img");
@@ -384,15 +384,32 @@
       node.textContent = releaseCountdown(node.dataset.releaseDate);
     });
   };
-  if (platformFilter) {
-    platformFilter.addEventListener("click", event => {
-      const button = event.target.closest("button[data-games-platform]");
-      if (!button || !platformFilter.contains(button)) return;
-      activePlatform = button.dataset.gamesPlatform || "all";
-      platformFilter.querySelectorAll("button[data-games-platform]").forEach(option => option.setAttribute("aria-pressed", String(option === button)));
-      renderUpcomingReleases(allUpcomingGames);
+  const platformHub = document.getElementById("games-platform-hub");
+  const platformNames = {all:"All-platform",pc:"PC",steam:"Steam",playstation:"PlayStation",xbox:"Xbox",nintendo:"Nintendo"};
+  const platformDescriptions = {
+    all:"Browse every announced PC and console release, grouped by month and launch date.",
+    pc:"PC release dates, supported storefronts, developer and publisher details, and official release sources.",
+    steam:"PC games with a listed Steam release, including their available launch dates and store information.",
+    playstation:"PlayStation releases with platform-specific dates, artwork, developer and publisher details.",
+    xbox:"Xbox releases with platform-specific dates, artwork, developer and publisher details.",
+    nintendo:"Nintendo Switch family releases with platform-specific dates, artwork, developer and publisher details."
+  };
+  const selectPlatform = value => {
+    activePlatform = value || "all";
+    [platformFilter,platformHub].filter(Boolean).forEach(group => group.querySelectorAll("button[data-games-platform]").forEach(option => option.setAttribute("aria-pressed",String(option.dataset.gamesPlatform===activePlatform))));
+    const heading = document.getElementById("games-release-heading");
+    const description = document.getElementById("games-platform-description");
+    if (heading) heading.textContent = activePlatform === "all" ? "Upcoming releases" : platformNames[activePlatform]+" releases";
+    if (description) description.textContent = platformDescriptions[activePlatform] || platformDescriptions.all;
+    renderUpcomingReleases(allUpcomingGames);
+  };
+  [platformFilter,platformHub].filter(Boolean).forEach(group => {
+    group.addEventListener("click",event=>{
+      const button=event.target.closest("button[data-games-platform]");
+      if(!button||!group.contains(button))return;
+      selectPlatform(button.dataset.gamesPlatform);
     });
-  }
+  });
   if (featuredTicker) {
     const pauseTickerForManualScroll = () => {
       if (featuredTicker.classList.contains("is-manually-scrolling")) return;
@@ -481,6 +498,8 @@
         const existing = byTitle.get(key);
         if (!existing) { byTitle.set(key,{...game}); return; }
         existing.platforms = [...new Set([...(existing.platforms || []),...(game.platforms || [])])];
+        existing.release_dates = [...(existing.release_dates || []),...(game.release_dates || [])]
+          .filter((entry,index,array)=>entry && entry.date && array.findIndex(other=>other && other.platform===entry.platform && other.date===entry.date && other.region===entry.region)===index);
         if (!existing.artwork_url) existing.artwork_url = game.artwork_url || null;
         if (!existing.logo_url) existing.logo_url = game.logo_url || null;
         if (!existing.source_url) existing.source_url = game.source_url || "";
