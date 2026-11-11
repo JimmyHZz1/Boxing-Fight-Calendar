@@ -2241,7 +2241,7 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
 #next-event-ticker.next-event-ticker::-webkit-scrollbar{display:none}
 #next-event-ticker .next-event-track{
   display:flex!important;width:max-content!important;min-width:max-content!important;
-  gap:12px!important;animation:none!important;transform:none!important;
+  gap:12px!important;animation:none!important;
   will-change:auto!important;
 }
 #next-event-ticker .next-event-group{
@@ -2597,7 +2597,6 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
    Disable the older CSS transform animation so it cannot fight scrollLeft. */
 #next-event-ticker .next-event-track{
   animation:none!important;
-  transform:none!important;
   will-change:auto;
 }
 #next-event-ticker.is-auto-scrolling:hover .next-event-track,
@@ -2642,15 +2641,15 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
 #next-event-ticker .next-event-track{
   display:flex!important;flex-wrap:nowrap!important;align-items:stretch;
   width:max-content!important;min-width:max-content!important;
-  gap:12px!important;animation:none!important;transform:none!important;
-  will-change:contents;
+  gap:12px!important;animation:none!important;
+  will-change:transform;
 }
 #next-event-ticker .next-event-group{
   display:flex!important;flex:0 0 auto!important;flex-wrap:nowrap!important;
   width:max-content!important;min-width:max-content!important;gap:12px!important;
 }
 #next-event-ticker .next-event-item{flex:0 0 min(250px,78vw)!important;scroll-snap-align:none!important}
-#next-event-ticker.is-auto-scrolling .next-event-track{animation:none!important;transform:none!important}
+#next-event-ticker.is-auto-scrolling .next-event-track{animation:none!important}
 .games-featured-info{justify-content:flex-start!important;align-self:start!important}
 
 
