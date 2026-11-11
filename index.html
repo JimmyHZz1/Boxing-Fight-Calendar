@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#101114">
   <meta name="description" content="Formula 1, PDC darts, boxing, UFC, BKFC and FIM Speedway calendars in one place.">
   <link rel="manifest" href="./manifest.json">
-  <link rel="stylesheet" href="./styles.css?v=20261111-17">
+  <link rel="stylesheet" href="./styles.css?v=20261111-18">
   <title>Sports Calendar</title>
 </head>
 <body>
@@ -366,13 +366,30 @@
         <div id="data-health-summary" class="data-health-summary"></div>
         <section class="data-health-panel"><div class="data-health-panel-heading"><div><span class="eyebrow">PUBLISHED FEEDS</span><h2>Schedule &amp; game data</h2></div></div><div id="data-health-feeds" class="data-health-table data-health-feeds"><p>Checking published feeds…</p></div></section>
         <section class="data-health-panel"><div class="data-health-panel-heading"><div><span class="eyebrow">IMAGE LIBRARY</span><h2>Image database audit</h2></div></div><div id="data-health-images" class="data-health-table data-health-images"><p>Checking image manifests and local files…</p></div></section>
-        <section class="data-health-panel"><div class="data-health-panel-heading"><div><span class="eyebrow">MANUAL OPERATIONS</span><h2>Request a data refresh</h2></div></div><p class="data-health-note">Choose the data pipeline you want to run. GitHub will open the authenticated workflow page; select <strong>Run workflow</strong> there. No access token is stored in this public website.</p><div class="data-health-refresh-grid">
-          <a href="https://github.com/JimmyHZz1/Boxing-Fight-Calendar/actions/workflows/sync-fights.yml" target="_blank" rel="noopener noreferrer">Sports schedules <small>F1 · Boxing · UFC · BKFC</small></a>
-          <a href="https://github.com/JimmyHZz1/Boxing-Fight-Calendar/actions/workflows/sync-pdc-calendar.yml" target="_blank" rel="noopener noreferrer">PDC calendar <small>Televised darts schedule</small></a>
-          <a href="https://github.com/JimmyHZz1/Boxing-Fight-Calendar/actions/workflows/enrich-images.yml" target="_blank" rel="noopener noreferrer">Image enrichment <small>Find and add licensed images</small></a>
-          <a href="https://github.com/JimmyHZz1/Boxing-Fight-Calendar/actions/workflows/update-games-popularity.yml" target="_blank" rel="noopener noreferrer">Games data <small>Refresh popularity snapshot</small></a>
-          <a href="https://github.com/JimmyHZz1/Boxing-Fight-Calendar/actions/workflows/sync-company-profiles.yml" target="_blank" rel="noopener noreferrer">Game companies <small>Refresh company profiles</small></a>
-        </div></section>
+        <section class="data-health-panel admin-updates-panel" aria-labelledby="admin-updates-title">
+          <div class="data-health-panel-heading"><div><span class="eyebrow">RESTRICTED CONTROLS</span><h2 id="admin-updates-title">Administrator updates</h2></div><span id="admin-auth-state" class="admin-auth-state">SIGN IN REQUIRED</span></div>
+          <p class="data-health-note">Sign in with the authorised administrator account to run data updates from here. Public visitors cannot trigger update jobs.</p>
+          <form id="admin-login-form" class="admin-login-form">
+            <label>Email address<input id="admin-email" type="email" autocomplete="username" required></label>
+            <label>Password<input id="admin-password" type="password" autocomplete="current-password" required></label>
+            <div class="admin-login-actions"><button class="primary-button" type="submit" id="admin-login-button">ADMIN SIGN IN</button><span id="admin-login-status" role="status" aria-live="polite"></span></div>
+          </form>
+          <div id="admin-controls" class="admin-controls" hidden>
+            <div class="admin-controls-heading"><div><strong>UPDATE PIPELINES</strong><small id="admin-signed-in-as">Authenticated administrator</small></div><button type="button" class="secondary-button" id="admin-sign-out">SIGN OUT</button></div>
+            <div class="admin-update-grid">
+              <button type="button" data-admin-workflow="sports">Sports schedules<small>F1 · Boxing · UFC · BKFC</small></button>
+              <button type="button" data-admin-workflow="darts">PDC calendar<small>Televised darts schedule</small></button>
+              <button type="button" data-admin-workflow="images">Image enrichment<small>Choose 1, 3, 6 or 10 batches</small></button>
+              <button type="button" data-admin-workflow="games">Games popularity<small>Refresh the popularity snapshot</small></button>
+              <button type="button" data-admin-workflow="companies">Game companies<small>Refresh major company profiles</small></button>
+            </div>
+            <label id="admin-image-batch-wrap" class="admin-image-batch" hidden>Image batches
+              <select id="admin-image-batches"><option value="1">1 batch · 5 lookups</option><option value="3">3 batches · 15 lookups</option><option value="6" selected>6 batches · 30 lookups</option><option value="10">10 batches · 50 lookups</option></select>
+            </label>
+            <div id="admin-update-status" class="admin-update-status" role="status" aria-live="polite">Ready to run an update.</div>
+            <a class="admin-actions-link" href="https://github.com/JimmyHZz1/Boxing-Fight-Calendar/actions" target="_blank" rel="noopener noreferrer">VIEW WORKFLOW RUNS ↗</a>
+          </div>
+        </section>
         <div class="data-health-footer"><button type="button" class="secondary-button" data-screen="home-screen">← BACK TO HOME</button><span id="data-health-checked">Health check not yet run</span></div>
       </section>
     </main>
@@ -404,5 +421,6 @@
   <script src="./games-discovery.js?v=20261111-07"></script>
   <script src="./notifications.js?v=20261111-02"></script>
   <script src="./data-health.js?v=20261111-01"></script>
+  <script src="./admin-updates.js?v=20261111-01"></script>
 </body>
 </html>
