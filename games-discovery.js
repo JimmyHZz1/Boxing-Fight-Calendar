@@ -31,7 +31,7 @@
   const makeTrailer=(game,cls)=>{
     const box=el("div",cls);
     if(game.trailer_id){
-      const frame=document.createElement("iframe");frame.src="https://www.youtube-nocookie.com/embed/"+encodeURIComponent(game.trailer_id)+"?autoplay=1&mute=1&playsinline=1&rel=0";frame.title=game.title+" — "+(game.trailer_label||"official trailer");frame.loading="eager";frame.referrerPolicy="strict-origin-when-cross-origin";frame.allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";frame.allowFullscreen=true;box.append(frame);
+      const frame=document.createElement("iframe");const videoId=encodeURIComponent(game.trailer_id);frame.src="https://www.youtube-nocookie.com/embed/"+videoId+"?autoplay=1&mute=1&playsinline=1&rel=0&loop=1&playlist="+videoId;frame.title=game.title+" — "+(game.trailer_label||"official trailer");frame.loading="eager";frame.referrerPolicy="strict-origin-when-cross-origin";frame.allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";frame.allowFullscreen=true;box.append(frame);
     }else{
       const poster=el("div","games-stage-poster");poster.append(el("strong","games-no-video","OFFICIAL VIDEO NOT AVAILABLE"));
       if(safeUrl(game.trailer_url)){const a=el("a","games-stage-watch","WATCH OFFICIAL TEASER ↗");a.href=game.trailer_url;a.target="_blank";a.rel="noopener noreferrer";poster.append(a);}
@@ -39,6 +39,22 @@
     }
     return box;
   };
+  const featuredLondonMidnight=date=>{
+    if(!/^\\d{4}-\\d{2}-\\d{2}$/.test(String(date||"")))return NaN;
+    const [year,month,day]=date.split("-").map(Number),utcGuess=Date.UTC(year,month-1,day);
+    const parts=new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",second:"2-digit",hourCycle:"h23"}).formatToParts(new Date(utcGuess));
+    const values=Object.fromEntries(parts.filter(part=>part.type!=="literal").map(part=>[part.type,Number(part.value)]));
+    return utcGuess-(Date.UTC(values.year,values.month-1,values.day,values.hour,values.minute,values.second)-utcGuess);
+  };
+  const featuredCountdownText=date=>{
+    const remaining=featuredLondonMidnight(date)-Date.now();
+    if(!Number.isFinite(remaining))return "AWAITING A CONFIRMED DATE";
+    if(remaining<=0)return "RELEASED";
+    const seconds=Math.floor(remaining/1000),days=Math.floor(seconds/86400),hours=Math.floor(seconds%86400/3600),minutes=Math.floor(seconds%3600/60),secs=seconds%60;
+    return "IN "+days+"D "+String(hours).padStart(2,"0")+"H "+String(minutes).padStart(2,"0")+"M "+String(secs).padStart(2,"0")+"S";
+  };
+  const updateFeaturedCountdown=()=>stage.querySelectorAll("[data-featured-release-date]").forEach(node=>{node.textContent=featuredCountdownText(node.dataset.featuredReleaseDate);});
+  window.setInterval(updateFeaturedCountdown,1000);
   const renderStage=game=>{
     stage.setAttribute("tabindex","0");stage.setAttribute("role","group");stage.setAttribute("aria-label","Featured game: "+game.title+". Swipe left or right to change game.");
     stage.replaceChildren();
@@ -50,13 +66,9 @@
     panel.append(el("div","games-featured-info-status",game.date_label||"Release date TBC"));
     const releaseCountdown = el("div","games-featured-info-countdown");
     releaseCountdown.append(el("span","games-featured-info-label","RELEASE COUNTDOWN"));
-    let countdownText = "AWAITING A CONFIRMED DATE";
-    if (/^\\d{4}-\\d{2}-\\d{2}$/.test(String(game.release_date||""))) {
-      const today = new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/London",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
-      const days = Math.ceil((Date.parse(game.release_date+"T00:00:00Z")-Date.parse(today+"T00:00:00Z"))/86400000);
-      countdownText = days < 0 ? "RELEASED" : days === 0 ? "OUT TODAY" : days+" DAYS TO GO";
-    }
-    releaseCountdown.append(el("strong","",countdownText));
+    const countdownValue=el("strong","",featuredCountdownText(game.release_date));
+    if(/^\\d{4}-\\d{2}-\\d{2}$/.test(String(game.release_date||"")))countdownValue.dataset.featuredReleaseDate=game.release_date;
+    releaseCountdown.append(countdownValue);
     panel.append(releaseCountdown);
     const credits=el("div","games-featured-info-row");
     credits.append(el("span","games-featured-info-label","DEVELOPER / PUBLISHER"));
