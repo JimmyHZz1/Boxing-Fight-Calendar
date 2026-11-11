@@ -46,7 +46,7 @@
       const records=Object.entries(library.images||{}),indexCount=Object.keys(index.images||{}).length,extraCount=Object.keys(extra.images||{}).length,eventCount=Object.keys(eventImages.images||{}).length;
       const missingMeta=records.filter(([,v])=>!v.path||!v.source_url||!v.licence||!v.licence_url||!v.creator||!v.attribution||!v.verified_at);
       const paths=records.map(([,v])=>v.path).filter(Boolean),duplicates=paths.length-new Set(paths).size;
-      const local=records.map(([,v])=>v.path).filter(Boolean);
+      const allPaths=records.map(([,v])=>v.path).filter(Boolean),local=allPaths.filter(path=>path.startsWith("assets/images/")),external=allPaths.length-local.length;
       const checks=await Promise.all(local.map(async path=>{try{const r=await fetch("./"+path,{method:"HEAD",cache:"no-store"});return r.ok;}catch{return false;}}));
       const missing=checks.filter(ok=>!ok).length,ok=missingMeta.length===0&&duplicates===0&&missing===0;
       if(ok)good++;else issues++;
