@@ -2555,3 +2555,39 @@ body.compact-view .next-event-ticker.is-auto-scrolling .next-event-item{
 .brand-calendar-trigger[aria-expanded="true"] .brand-switcher-caret{transform:rotate(180deg)}
 .brand-calendar-switcher .mobile-calendar-menu{position:absolute;top:calc(100% + 10px);left:0;right:auto;bottom:auto;z-index:1010;width:min(280px,calc(100vw - 30px));margin:0}
 @media(max-width:699px){.brand-calendar-trigger{min-height:44px}.brand-calendar-trigger .brand-mark{width:32px;height:32px}.brand-calendar-switcher .mobile-calendar-menu{top:calc(100% + 8px);left:0}}
+
+
+/* Games Calendar: ticker first, then a Sports-style hero beside the featured games panel. */
+.games-calendar-screen .games-up-next-strip{margin:0 0 18px;padding:12px 0 14px}
+.games-hero-layout{display:grid;grid-template-columns:minmax(245px,.78fr) minmax(0,1.42fr);gap:18px;align-items:stretch;margin:0 0 24px}
+.games-calendar-hero{display:flex;flex-direction:column;justify-content:center;min-width:0;min-height:100%;padding:34px 27px 28px;border:1px solid rgba(98,167,255,.34);border-left:3px solid #2685e8;background:linear-gradient(115deg,rgba(38,133,232,.17),rgba(25,27,32,.96) 62%),var(--panel);position:relative;overflow:hidden}
+.games-calendar-hero:after{content:"G";position:absolute;right:10px;bottom:-48px;font:900 220px/.9 'Barlow Condensed',sans-serif;color:rgba(98,167,255,.055);pointer-events:none}
+.games-calendar-hero>*{position:relative;z-index:1}
+.games-calendar-hero h1{font-size:clamp(48px,5.2vw,76px);margin:16px 0}
+.games-calendar-hero p{max-width:390px}
+.games-calendar-hero .games-platform-tags{margin-top:24px}
+.games-featured-nav{display:grid;grid-template-columns:34px minmax(0,1fr) 34px;gap:8px;align-items:center;min-width:0}
+.games-featured-nav .games-discovery-featured{min-width:0;height:100%;margin:0!important;display:flex!important;flex-direction:column;justify-content:center}
+.games-featured-nav .games-discovery-heading{align-items:flex-start}
+.games-featured-side-arrow{width:34px;height:46px;padding:0;border:1px solid rgba(143,193,255,.42);background:#172232;color:#b9d9ff;font:700 31px/1 'Barlow Condensed',sans-serif;cursor:pointer;touch-action:manipulation}
+.games-featured-side-arrow:hover{background:#213752;border-color:#62a7ff}
+.games-featured-side-arrow:focus-visible{outline:2px solid #8fc1ff;outline-offset:3px}
+.games-featured-nav .games-discovery-controls{display:none!important}
+.games-featured-nav .games-discovery-dots{justify-content:center;margin-top:12px}
+@media(max-width:850px){
+ .games-hero-layout{grid-template-columns:1fr;gap:14px}
+ .games-calendar-hero{min-height:0;padding:28px 25px}
+ .games-calendar-hero h1{font-size:clamp(48px,8vw,68px)}
+ .games-featured-nav .games-discovery-featured{height:auto}
+}
+@media(max-width:520px){
+ .games-calendar-screen .games-up-next-strip{margin-bottom:14px}
+ .games-calendar-hero{padding:24px 19px}
+ .games-calendar-hero h1{font-size:clamp(46px,13vw,62px)}
+ .games-featured-nav{grid-template-columns:27px minmax(0,1fr) 27px;gap:5px}
+ .games-featured-side-arrow{width:27px;height:40px;font-size:26px}
+ .games-featured-nav .games-discovery-featured{padding:12px!important}
+ .games-featured-nav .games-discovery-heading{gap:8px}
+ .games-featured-nav .games-discovery-heading p{font-size:10px}
+ .games-featured-nav .games-discovery-counter{font-size:9px}
+}
