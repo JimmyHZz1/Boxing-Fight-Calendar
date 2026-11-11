@@ -4,7 +4,7 @@
   const logos={f1:"https://www.formula1.com/assets/home/_next/static/media/f1-logo.43a01c6b.svg",darts:"https://commons.wikimedia.org/wiki/Special:FilePath/Professional%20Darts%20Corporation%20logo.png",ufc:"https://commons.wikimedia.org/wiki/Special:FilePath/UFC%20Logo.svg",bkfc:"https://commons.wikimedia.org/wiki/Special:FilePath/Bkfc-logo.png"};
   const $=id=>document.getElementById(id);
   const today=()=>new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/London"}).format(new Date());
-  const dateValue=e=>e?.start_at||e?.start_time_utc||e?.date||e?.event_date||null;
+  const dateValue=e=>e?.start_at||e?.start_time_utc||e?.starts_at||e?.date||e?.event_date||e?.eventDate||null;
   const dateKey=value=>{
     if(!value)return "";
     const s=String(value);
@@ -44,7 +44,7 @@
     info.append(make("strong",null,event.name||event.title||"Event"));
     const meta=[names[sport],formatDate(event),formatTime(event),event.location||event.venue||event.circuit].filter(Boolean);
     info.append(make("small",null,meta.join(" · ")));
-    const target=event.start_at||event.main_card_at||event.start_time_utc||event.date||event.event_date;
+    const target=event.start_at||event.main_card_at||event.start_time_utc||event.starts_at||event.date||event.event_date||event.eventDate;
     const dateOnly=typeof target==="string"&&/^\d{4}-\d{2}-\d{2}$/.test(target);
     if(!live&&target&&(dateOnly||new Date(target).getTime()>Date.now())){
       const timer=make("small","live-centre-countdown",window.SportsCountdown?.text?.(target)||"COUNTDOWN");timer.dataset.countdownTarget=dateOnly?target:new Date(target).toISOString();info.append(timer);
@@ -96,7 +96,7 @@
       const target=event.start_at||event.main_card_at||event.start_time_utc||event.date||event.event_date;
       if(!live&&target){
         const timer=make("small","next-event-countdown",window.SportsCountdown?.text?.(target)||"DATE TBC");
-        timer.dataset.countdownTarget=/^\\d{4}-\\d{2}-\\d{2}$/.test(String(target))?String(target):new Date(target).toISOString();info.append(timer);
+        timer.dataset.countdownTarget=/^\d{4}-\d{2}-\d{2}$/.test(String(target))?String(target):new Date(target).toISOString();info.append(timer);
       }
       const badge=make("span","next-event-state "+(live?"is-live":"is-upcoming"));
       badge.append(make("i","next-event-state-icon",live?"●":"▣"),make("b",null,live?"LIVE":"UPCOMING"));
