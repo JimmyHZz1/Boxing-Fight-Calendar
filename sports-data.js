@@ -207,7 +207,7 @@
     main.append(make("small",null,sub.filter(Boolean).join(" · ")||dateLabel(event.date||event.start_at)));
     const countdownTarget=event.start_at||event.main_card_at||event.start_time_utc||event.date||event.event_date||null;
     addCountdown(main,countdownTarget);
-    summary.append(visual,date,main,make("span","sport-event-badge",statusLabel({...event,_sport:sport})));
+    summary.append(date,main,visual,make("span","sport-event-badge",statusLabel({...event,_sport:sport})));
     card.append(summary);
     const body=make("div","sport-event-body");
     if (sport==="f1") renderF1Details(body,event);

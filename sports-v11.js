@@ -61,21 +61,23 @@
     const root=$("next-event-ticker"),track=root?.querySelector(".next-event-track");
     const group=track?.querySelector(".next-event-group");
     if(!root||!track||!group)return;
-    const rootWidth=root.clientWidth,groupWidth=group.getBoundingClientRect().width;
-    if(!rootWidth||!groupWidth)return;
-    const trackGap=parseFloat(getComputedStyle(track).columnGap||getComputedStyle(track).gap)||12;
-    tickerLoopDistance=groupWidth+trackGap;
-    track.style.setProperty("--ticker-offset",`-${tickerLoopDistance}px`);
-    track.style.setProperty("--ticker-duration",`${Math.max(24,tickerLoopDistance/35)}s`);
+    const groupWidth=group.getBoundingClientRect().width||group.scrollWidth;
+    const gap=parseFloat(getComputedStyle(group).columnGap||getComputedStyle(group).gap)||0;
+    tickerLoopDistance=groupWidth+gap;
+    if(!groupWidth||!tickerLoopDistance)return;
     track.querySelectorAll("[data-ticker-clone]").forEach(node=>node.remove());
+    const targetWidth=Math.max(root.clientWidth+tickerLoopDistance*1.25,tickerLoopDistance*2.5);
     let copies=1;
-    while(track.scrollWidth<rootWidth+tickerLoopDistance+2&&copies<12){
+    while(track.scrollWidth<targetWidth&&copies<20){
       const clone=group.cloneNode(true);
       clone.dataset.tickerClone="true";clone.setAttribute("aria-hidden","true");
-      clone.querySelectorAll("button").forEach(button=>{button.tabIndex=-1;});
+      clone.querySelectorAll("a,button").forEach(node=>{node.tabIndex=-1;});
       track.append(clone);copies++;
     }
-    root.classList.toggle("is-auto-scrolling",track.scrollWidth>rootWidth+2&&tickerLoopDistance>12);
+    track.style.setProperty("--ticker-distance",tickerLoopDistance+"px");
+    track.style.setProperty("--ticker-offset","-"+tickerLoopDistance+"px");
+    track.style.setProperty("--ticker-duration",Math.max(14,tickerLoopDistance/38)+"s");
+    root.classList.add("is-auto-scrolling");
   }
   function renderTicker(){
     const root=$("next-event-ticker");if(!root)return;

@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#101114">
   <meta name="description" content="Formula 1, PDC darts, boxing, UFC, BKFC and FIM Speedway calendars in one place.">
   <link rel="manifest" href="./manifest.json">
-  <link rel="stylesheet" href="./styles.css?v=20261111-20">
+  <link rel="stylesheet" href="./styles.css?v=20261111-23">
   <title>Sports Calendar</title>
 </head>
 <body>
@@ -73,15 +73,16 @@
           <section class="live-upcoming-panel" aria-labelledby="live-upcoming-title"><div class="live-centre-subheading"><h3 id="live-upcoming-title">COMING UP · NEXT 7 DAYS</h3><span id="live-upcoming-count" class="live-upcoming-count">CHECKING</span><button type="button" class="text-link" id="live-centre-calendar">FULL CALENDAR ↗</button></div><div id="live-upcoming-events" class="live-centre-list"><p class="live-centre-empty">Upcoming events will appear here when feeds load.</p></div></section>
         </section>
           <section class="home-next-up-panel" aria-labelledby="home-next-up-title"><div class="live-centre-subheading"><h3 id="home-next-up-title">NEXT UP ACROSS SPORT</h3><span>ONE EVENT PER SPORT</span></div><div id="home-next-up-list" class="home-next-up-list"><p class="live-centre-empty">Loading the next event in each sport…</p></div></section>
+        <div class="home-speedway-sport-picker">
         <section id="home-speedway-calendar" class="home-speedway-calendar" aria-labelledby="home-speedway-title">
           <div class="live-centre-subheading"><div><span class="eyebrow">FIM SPEEDWAY · 2027 SEASON</span><h3 id="home-speedway-title">Speedway calendar</h3></div><button type="button" class="text-link" id="home-speedway-open">FULL SPEEDWAY CENTRE ↗</button></div>
           <div id="home-speedway-events" class="home-speedway-events"><p class="live-centre-empty">Loading the Speedway calendar…</p></div>
         </section>
         <section id="sports-carousel-section" class="sports-carousel-section" aria-label="Choose a sport">
-          <div class="sports-carousel-heading"><span class="eyebrow">CHOOSE YOUR SPORT</span><span class="carousel-hint">SWIPE TO EXPLORE</span></div>
+          <div class="sports-carousel-heading"><span class="eyebrow">CHOOSE YOUR SPORT</span><span class="carousel-hint">SELECT A TILE TO OPEN</span></div>
           <div class="sports-carousel-controls">
             <button class="carousel-arrow" id="sport-previous" type="button" aria-label="Previous sport">‹</button>
-            <div class="sports-carousel" id="sports-carousel" tabindex="0" aria-label="Sports, swipe left or right">
+            <div class="sports-carousel" id="sports-carousel" tabindex="0" aria-label="Choose a sport">
               <button class="sport-slide sport-f1" type="button" data-sport="f1" aria-pressed="true">
                 <span class="sport-slide-kicker">MOTORSPORT</span><img class="sport-slide-logo" src="https://www.formula1.com/assets/home/_next/static/media/f1-logo.43a01c6b.svg" alt="Formula 1 official logo" loading="eager"><strong>FORMULA 1</strong><small>RACES · QUALIFYING · RESULTS</small><span class="sport-slide-open">OPEN F1 →</span>
               </button>
@@ -101,6 +102,7 @@
           </div>
           <div class="sports-carousel-footer"><div class="carousel-dots" id="sports-carousel-dots" aria-label="Select a sport"></div><span id="sports-carousel-position">01 / 05</span></div>
         </section>
+        </div>
         <section id="sport-coming-soon" class="sport-coming-soon" aria-live="polite" hidden>
           <span class="sport-coming-icon" id="sport-coming-icon">🏎️</span>
           <span class="eyebrow" id="sport-coming-kicker">FORMULA 1</span>
@@ -404,13 +406,13 @@
     <footer class="footer"><button type="button" class="data-health-link" id="open-data-health">DATA HEALTH CENTRE</button><span>•</span> <a class="version-history-link" href="#version-history" id="open-version-history">SPORTS VERSION HISTORY</a><button type="button" class="games-version-history-link" data-screen="games-version-history-screen">GAMES VERSION HISTORY</button><span>•</span> SPORTS CALENDAR <span>•</span> UK LOCAL TIME <span>•</span> PDC logo: <a href="https://commons.wikimedia.org/wiki/File:Professional_Darts_Corporation_logo.png" target="_blank" rel="noopener noreferrer">Chris Ibbotson, CC BY-SA 4.0</a> <span>•</span> BKFC SCHEDULE: <a href="https://www.bkfc.com/events" target="_blank" rel="noopener noreferrer">BKFC</a> <span>•</span> BOXING DATA: <a href="https://boxerbook.com" target="_blank" rel="noopener noreferrer">BOXERBOOK</a></footer>
   </div>
   <script src="./app.js?v=20261109-03"></script>
-  <script src="./sports-data.js?v=20261111-03"></script>
+  <script src="./sports-data.js?v=20261111-04"></script>
   <script src="./sports.js?v=20261111-04"></script>
   <script src="./sports-hub.js?v=20261109-08"></script>
   <script src="./sports-nav.js?v=20261111-03"></script>
   <script src="./sport-pages.js?v=20261109-06"></script>
   <script src="./speedway.js?v=20261111-02"></script>
-  <script src="./sports-v11.js?v=20261111-06"></script>
+  <script src="./sports-v11.js?v=20261111-07"></script>
   <script src="./sports-weekend.js?v=20261108-02"></script>
   <script src="./favourites.js?v=20261109-02"></script>
   <script src="./ui-refresh.js?v=20261109-01"></script>
