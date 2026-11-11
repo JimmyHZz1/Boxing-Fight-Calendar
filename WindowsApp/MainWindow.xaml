@@ -22,16 +22,20 @@
             <DockPanel LastChildFill="True" Margin="8,0">
                 <StackPanel DockPanel.Dock="Left" Orientation="Horizontal" VerticalAlignment="Center">
                     <Button x:Name="MenuButton" Content="☰" FontSize="17" Padding="10,3"
-                            Margin="0,0,10,0" ToolTip="Open app menu" Click="MenuButton_Click" />
+                            Margin="0,0,10,0" ToolTip="Open app menu" Click="MenuButton_Click"
+                            shell:WindowChrome.IsHitTestVisibleInChrome="True" />
                     <TextBlock Text="SPORTS &amp; GAMES" Foreground="{StaticResource AccentGold}"
                                FontWeight="Bold" FontSize="12" VerticalAlignment="Center" />
                 </StackPanel>
                 <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" VerticalAlignment="Center">
                     <TextBlock x:Name="ConnectionLabel" Text="Connecting…" Foreground="#B8B8B8"
                                FontSize="10" VerticalAlignment="Center" Margin="0,0,14,0" />
-                    <Button Content="—" Width="38" Height="30" Padding="0" Click="MinimiseButton_Click" ToolTip="Minimise" />
-                    <Button x:Name="MaximiseButton" Content="□" Width="38" Height="30" Padding="0" Click="MaximiseButton_Click" ToolTip="Maximise" />
-                    <Button Content="×" Width="38" Height="30" Padding="0" Click="CloseButton_Click" ToolTip="Close to system tray" />
+                    <Button Content="—" Width="38" Height="30" Padding="0" Click="MinimiseButton_Click" ToolTip="Minimise"
+                            shell:WindowChrome.IsHitTestVisibleInChrome="True" />
+                    <Button x:Name="MaximiseButton" Content="□" Width="38" Height="30" Padding="0" Click="MaximiseButton_Click" ToolTip="Maximise"
+                            shell:WindowChrome.IsHitTestVisibleInChrome="True" />
+                    <Button Content="×" Width="38" Height="30" Padding="0" Click="CloseButton_Click" ToolTip="Close to system tray"
+                            shell:WindowChrome.IsHitTestVisibleInChrome="True" />
                 </StackPanel>
             </DockPanel>
         </Border>

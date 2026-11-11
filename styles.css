@@ -2997,8 +2997,8 @@ body.games-platform-page .games-platform-hub{display:none}
 .data-health-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:20px 0;color:var(--muted);font-size:9px}
 .data-health-link{border:0;background:transparent;color:var(--accent);font:700 9px 'DM Sans',sans-serif;letter-spacing:.7px;cursor:pointer;padding:4px}
 @media(max-width:520px){.data-health-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.data-health-panel{padding:13px}.data-health-row{align-items:flex-start}.data-health-toolbar{align-items:flex-start;flex-direction:column}}
-/* The Windows host supplies its own native title bar and menu. */
-.desktop-shell .topbar{display:none!important}
+/* Keep the full website banner visible inside the Windows desktop shell. */
+.desktop-shell .topbar{display:flex!important}
 .desktop-shell .app-shell{padding-top:0}
 .desktop-shell .footer{padding-bottom:14px}
 
