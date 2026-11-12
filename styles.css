@@ -3700,3 +3700,45 @@ body.hub-selection-mode .version-history-link,body.hub-selection-mode .games-ver
 
 /* Give the left-hand markers for both preserved hubs the same golden highlight. */
 .hub-roadmap-preserve-item .jobs-todo-number{color:#e2b45b;text-shadow:0 0 7px rgba(226,180,91,.72),0 0 15px rgba(226,180,91,.34)}
+
+
+/* Entertainment Hub foundation — independent rose identity, film and TV only. */
+.entertainment-mode{--accent:#b85b82;--team-glow:#321b2a}
+.entertainment-mode .brand-mark{background:#b85b82;color:#fff}
+.entertainment-mode .brand strong,.entertainment-mode .brand-switcher-caret{color:#e3a1bd}
+.entertainment-mode .topbar{border-color:rgba(184,91,130,.38)}
+.entertainment-mode .screen.active{--accent:#b85b82}
+.entertainment-mode .footer .version-history-link,.entertainment-mode .footer .games-version-history-link,.entertainment-mode .footer .hub-version-history-link,.entertainment-mode .footer .swgoh-version-history-link{display:none!important}
+.entertainment-chrome-hidden{display:none!important}
+.entertainment-hub-screen{max-width:100%;padding-top:22px}
+.entertainment-hero{position:relative;display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:255px;padding:clamp(24px,5vw,44px);overflow:hidden;border:1px solid rgba(184,91,130,.42);background:radial-gradient(ellipse at 85% 45%,rgba(184,91,130,.2),transparent 45%),linear-gradient(120deg,#241721,#17191f 70%)}
+.entertainment-hero-copy{position:relative;z-index:1;max-width:650px}
+.entertainment-eyebrow{color:#d887a8}
+.entertainment-hero h1{margin:16px 0;font:900 clamp(44px,7vw,70px)/.9 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:-.8px}
+.entertainment-hero h1 em{font-style:normal;color:#d887a8}
+.entertainment-hero p{max-width:520px;color:#c0b6bd;font-size:13px;line-height:1.7}
+.entertainment-hero-meta{display:flex;flex-wrap:wrap;gap:18px;margin-top:24px;color:#b98ba0;font-size:8px;font-weight:800;letter-spacing:1.3px}
+.entertainment-hero-mark{flex:none;width:130px;height:130px;display:grid;place-items:center;border:1px solid rgba(216,135,168,.4);background:rgba(184,91,130,.12);color:#d887a8;font-size:52px;transform:rotate(-8deg)}
+.entertainment-section-nav{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 18px;padding:10px;border:1px solid var(--line);background:var(--panel)}
+.entertainment-section-nav a{padding:9px 13px;color:#dca0b8;text-decoration:none;font-size:9px;font-weight:800;letter-spacing:1px;border:1px solid transparent}
+.entertainment-section-nav a:hover,.entertainment-section-nav a:focus-visible{border-color:rgba(184,91,130,.5);background:rgba(184,91,130,.1);outline:none}
+.entertainment-overview-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
+.entertainment-overview-card{position:relative;min-height:142px;overflow:hidden;padding:17px;background:var(--panel);border:1px solid rgba(184,91,130,.28);border-top:2px solid #b85b82}
+.entertainment-card-kicker{display:block;margin-bottom:13px;color:#d887a8;font-size:8px;font-weight:800;letter-spacing:1.2px}
+.entertainment-overview-card strong{display:block;max-width:85%;font:800 20px/1.05 'Barlow Condensed',sans-serif;text-transform:uppercase}
+.entertainment-overview-card p{max-width:85%;margin:8px 0 0;color:var(--muted);font-size:10px;line-height:1.6}
+.entertainment-card-mark{position:absolute;right:13px;bottom:9px;color:rgba(216,135,168,.16);font-size:43px}
+.entertainment-content-section{margin-top:30px;scroll-margin-top:18px}
+.entertainment-section-heading{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:13px}
+.entertainment-section-heading h2{margin:7px 0 0;font:800 clamp(26px,4vw,34px)/1 'Barlow Condensed',sans-serif;text-transform:uppercase}
+.entertainment-section-heading h2 em{font-style:normal;color:#d887a8}
+.entertainment-section-tag{padding:6px 8px;border:1px solid rgba(184,91,130,.35);color:#d887a8;font-size:8px;font-weight:800;letter-spacing:1px;white-space:nowrap}
+.entertainment-empty-panel{display:flex;align-items:center;gap:16px;padding:20px;background:var(--panel);border:1px dashed rgba(184,91,130,.4)}
+.entertainment-empty-icon{width:43px;height:43px;display:grid;place-items:center;flex:none;background:rgba(184,91,130,.13);color:#d887a8;font-size:24px}
+.entertainment-empty-panel strong{display:block;margin-bottom:5px;font:700 16px 'Barlow Condensed',sans-serif;text-transform:uppercase}
+.entertainment-empty-panel p{max-width:680px;margin:0;color:var(--muted);font-size:10px;line-height:1.7}
+.entertainment-page-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:8px;letter-spacing:1px}
+.entertainment-back-button{padding:9px 12px;border:1px solid rgba(184,91,130,.4);background:transparent;color:#d887a8;font-size:9px;font-weight:800;letter-spacing:.8px;cursor:pointer}
+.mobile-calendar-menu .entertainment-mark{width:27px;height:27px;display:grid;place-items:center;background:#b85b82;color:#fff;font-size:14px}
+@media(max-width:700px){.entertainment-hero{min-height:220px}.entertainment-hero-mark{width:76px;height:76px;font-size:31px}.entertainment-overview-grid{grid-template-columns:1fr}.entertainment-overview-card{min-height:112px}.entertainment-page-footer{align-items:flex-start;flex-direction:column}}
+@media(max-width:480px){.entertainment-hero{padding:22px 18px}.entertainment-hero-mark{display:none}.entertainment-section-nav a{padding:8px 9px;font-size:8px}}
