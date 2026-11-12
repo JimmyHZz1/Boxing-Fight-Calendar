@@ -3641,3 +3641,7 @@ button.hub-selection-tile:hover,button.hub-selection-tile:focus-visible{transfor
 @media(max-width:900px){.hub-selection-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){.hub-selection-grid{grid-template-columns:1fr 1fr;gap:9px}.hub-selection-tile{min-height:190px;padding:14px 12px}.hub-tile-mark{width:37px;height:37px;font-size:23px}.hub-tile-name strong{font-size:23px}.hub-tile-description{font-size:9px}}
 @media(max-width:360px){.hub-selection-grid{grid-template-columns:1fr}}
+
+.calendar-menu-wordmark{display:flex;flex-direction:column;align-items:flex-start;gap:2px;font-family:'Barlow Condensed',sans-serif;line-height:.9;letter-spacing:1px}
+.calendar-menu-wordmark strong{font-size:14px;font-weight:900}
+.calendar-menu-wordmark small{font-size:9px;font-weight:800;color:var(--muted);letter-spacing:1.4px}

@@ -4,6 +4,7 @@
   const trigger = document.getElementById("calendar-menu-trigger");
   const mark = document.getElementById("brand-mark-letter");
   const title = document.getElementById("brand-title");
+  const subtitle = document.getElementById("brand-subtitle");
   const closeMenu = () => {
     if (!menu || !trigger) return;
     menu.hidden = true;
@@ -15,7 +16,8 @@
     document.body.classList.toggle("games-mode", games);
     document.body.classList.toggle("swgoh-mode", swgoh);
     if (mark) mark.textContent = games ? "G" : swgoh ? "✦" : "S";
-    if (title) title.textContent = swgoh ? "SWGOH HUB" : games ? "GAMES HUB" : "SPORTS HUB";
+    if (title) title.textContent = swgoh ? "SWGOH" : games ? "GAMES" : "SPORTS";
+    if (subtitle) subtitle.textContent = "HUB";
   };
   if (menu && trigger) {
     // A single document-level capture handler handles taps on every nested part
