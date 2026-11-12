@@ -3776,3 +3776,15 @@ body.hub-selection-mode .version-history-link,body.hub-selection-mode .games-ver
 .sport-darts-match-list li::marker{color:#c3a1e5;font-weight:800}
 .sport-darts-timing-note{margin-top:10px;color:var(--muted);font-size:10px;line-height:1.55}
 @media(max-width:480px){.sport-darts-session{padding:10px}.sport-darts-session-heading{align-items:flex-start;flex-direction:column;gap:4px}.sport-darts-match-list{font-size:10px}}
+
+
+/* F1 Grand Prix Centre: compact seven-day circuit weather forecast. */
+.f1-gp-weather{display:block;padding:12px;background:var(--panel2)}
+.f1-gp-weather-location{font-size:11px;font-weight:800;letter-spacing:.5px;margin-bottom:9px}
+.f1-gp-weather-days{display:grid;gap:0}
+.f1-gp-weather-day{display:grid;grid-template-columns:minmax(72px,1fr) 28px minmax(82px,auto) minmax(64px,auto);align-items:center;gap:7px;padding:8px 0;border-top:1px solid var(--line)}
+.f1-gp-weather-date{font-size:10px}
+.f1-gp-weather-day .f1-gp-weather-icon{font-size:17px;text-align:center}
+.f1-gp-weather-temperatures{font-size:10px;font-weight:800;text-align:right;font-variant-numeric:tabular-nums}
+.f1-gp-weather-rain{font-size:9px;color:var(--muted);text-align:right}
+@media(max-width:420px){.f1-gp-weather-day{grid-template-columns:minmax(64px,1fr) 24px minmax(72px,auto) minmax(54px,auto);gap:5px}.f1-gp-weather-date,.f1-gp-weather-temperatures{font-size:9px}}

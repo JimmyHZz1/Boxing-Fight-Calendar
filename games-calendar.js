@@ -44,7 +44,7 @@
         closeMenu();
         setBrand(destination);
         if (typeof window.showScreen === "function") {
-          window.showScreen(destination);
+          window.showScreen(destination, { userInitiated: true });
         } else {
           document.querySelectorAll(".screen").forEach(screen => {
             screen.classList.toggle("active", screen.id === destination);
