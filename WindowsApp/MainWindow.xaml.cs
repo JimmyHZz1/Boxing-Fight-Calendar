@@ -17,6 +17,8 @@ public partial class MainWindow : Window
     private const string StartupValueName = "SportsGamesCalendar";
     private bool _browserReady;
     private bool _startupEnabled;
+    private bool _canGoBack;
+    private bool _canGoForward;
 
     public MainWindow()
     {
@@ -60,7 +62,7 @@ public partial class MainWindow : Window
         catch { _startupEnabled = false; }
     }
 
-    private void MenuButton_Click(object sender, RoutedEventArgs e)
+    private async void MenuButton_Click(object sender, RoutedEventArgs e)
     {
         var menu = new System.Windows.Controls.ContextMenu
         {
@@ -73,11 +75,47 @@ public partial class MainWindow : Window
             item.Click += (_, _) => action();
             menu.Items.Add(item);
         }
-        Add("Back", () => { if (CalendarBrowser.CanGoBack) CalendarBrowser.GoBack(); });
-        Add("Forward", () => { if (CalendarBrowser.CanGoForward) CalendarBrowser.GoForward(); });
+        Add("Back", () => _ = CalendarBrowser.ExecuteScriptAsync("window.history.back()"));
+        Add("Forward", () => _ = CalendarBrowser.ExecuteScriptAsync("window.history.forward()"));
         menu.Items.Add(new System.Windows.Controls.Separator());
-        Add("Home", () => CalendarBrowser.Source = HomeUri);
+        Add("Home", () => _ = CalendarBrowser.ExecuteScriptAsync("window.showScreen?.('hub-selection-screen')"));
         Add("Refresh page", () => CalendarBrowser.Reload());
+
+        var startupMenu = new System.Windows.Controls.MenuItem { Header = "Open on startup", IsEnabled = _browserReady };
+        var currentDestination = "hub-selection-screen";
+        if (_browserReady)
+        {
+            try
+            {
+                var result = await CalendarBrowser.ExecuteScriptAsync("window.getHubStartupDestination?.() || 'hub-selection-screen'");
+                currentDestination = JsonSerializer.Deserialize<string>(result) ?? currentDestination;
+            }
+            catch { }
+        }
+        var destinations = new (string Label, string Value)[]
+        {
+            ("Hub Selection Screen", "hub-selection-screen"),
+            ("Sports Hub", "home-screen"),
+            ("Games Hub", "games-calendar-screen"),
+            ("SWGOH Hub", "swgoh-hub-screen")
+        };
+        foreach (var destination in destinations)
+        {
+            var item = new System.Windows.Controls.MenuItem
+            {
+                Header = destination.Label,
+                IsCheckable = true,
+                IsChecked = currentDestination == destination.Value
+            };
+            item.Click += (_, _) =>
+            {
+                foreach (System.Windows.Controls.MenuItem option in startupMenu.Items)
+                    option.IsChecked = ReferenceEquals(option, item);
+                _ = CalendarBrowser.ExecuteScriptAsync($"window.setHubStartupDestination?.('{destination.Value}')");
+            };
+            startupMenu.Items.Add(item);
+        }
+        menu.Items.Add(startupMenu);
         Add("Data Health Centre", () => _ = CalendarBrowser.ExecuteScriptAsync("window.DataHealthCentre?.open?.()"));
         Add("Notifications", () => _ = CalendarBrowser.ExecuteScriptAsync("document.getElementById('notification-bell')?.click()"));
         Add("Search", () => _ = CalendarBrowser.ExecuteScriptAsync("document.getElementById('global-search-open')?.click()"));
@@ -86,6 +124,27 @@ public partial class MainWindow : Window
         startup.Click += (_, _) => UpdateStartupSetting(startup.IsChecked);
         menu.Items.Add(startup);
         menu.IsOpen = true;
+    }
+
+    private async void BackButton_Click(object sender, RoutedEventArgs e)
+    {
+        if (_browserReady && _canGoBack) await CalendarBrowser.ExecuteScriptAsync("window.history.back()");
+    }
+
+    private async void ForwardButton_Click(object sender, RoutedEventArgs e)
+    {
+        if (_browserReady && _canGoForward) await CalendarBrowser.ExecuteScriptAsync("window.history.forward()");
+    }
+
+    private async void HomeButton_Click(object sender, RoutedEventArgs e)
+    {
+        if (_browserReady) await CalendarBrowser.ExecuteScriptAsync("window.showScreen?.('hub-selection-screen')");
+    }
+
+    private void UpdateNavigationButtons()
+    {
+        BackButton.IsEnabled = _browserReady && _canGoBack;
+        ForwardButton.IsEnabled = _browserReady && _canGoForward;
     }
 
     private void UpdateStartupSetting(bool enabled)
@@ -126,6 +185,7 @@ public partial class MainWindow : Window
             CalendarBrowser.CoreWebView2.Settings.IsStatusBarEnabled = false;
             CalendarBrowser.CoreWebView2.Settings.AreDefaultContextMenusEnabled = true;
             _browserReady = true;
+            UpdateNavigationButtons();
             CalendarBrowser.Source = HomeUri;
             ConnectionLabel.Text = "Loading calendar…";
         }
@@ -152,7 +212,10 @@ public partial class MainWindow : Window
         ConnectionLabel.Text = e.IsSuccess ? "Connected" : "Connection problem";
         if (e.IsSuccess && _browserReady)
         {
-            try { await CalendarBrowser.ExecuteScriptAsync("document.body.classList.add('desktop-shell')"); }
+            try
+            {
+                await CalendarBrowser.ExecuteScriptAsync("document.body.classList.add('desktop-shell'); window.__hubReportNavigationState?.()");
+            }
             catch { }
         }
     }
@@ -164,6 +227,13 @@ public partial class MainWindow : Window
             using var message = JsonDocument.Parse(e.WebMessageAsJson);
             if (!message.RootElement.TryGetProperty("type", out var type)) return;
             var messageType = type.GetString();
+            if (messageType == "navigation-state")
+            {
+                _canGoBack = message.RootElement.TryGetProperty("canGoBack", out var back) && back.GetBoolean();
+                _canGoForward = message.RootElement.TryGetProperty("canGoForward", out var forward) && forward.GetBoolean();
+                Dispatcher.Invoke(UpdateNavigationButtons);
+                return;
+            }
             if (messageType == "notification-test")
             {
                 var success = System.Windows.Application.Current is App app && app.SendTestNotification();
