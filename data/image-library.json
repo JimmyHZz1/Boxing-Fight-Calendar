@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-12T11:37:10Z",
+  "updated_at": "2026-11-12T19:47:10Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -783,6 +783,39 @@
       "creator": "Wikimedia Commons · JoeKhanMMA · CC BY-SA 4.0",
       "attribution": "Wikimedia Commons · JoeKhanMMA · CC BY-SA 4.0",
       "verified_at": "2026-11-12T11:37:10Z",
+      "sport": "ufc"
+    },
+    "daniel rodriguez": {
+      "name": "Daniel Rodriguez",
+      "path": "assets/images/ufc/daniel-rodriguez.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Daniel_Rodriguez_-_USO_Metro_awards.jpg",
+      "licence": "Public domain",
+      "licence_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "creator": "Wikimedia Commons · Air Force Tech. Sgt. Adam M. Stump · Public domain",
+      "attribution": "Wikimedia Commons · Air Force Tech. Sgt. Adam M. Stump · Public domain",
+      "verified_at": "2026-11-12T19:47:10Z",
+      "sport": "ufc"
+    },
+    "kayla harrison": {
+      "name": "Kayla Harrison",
+      "path": "assets/images/ufc/kayla-harrison.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:JUDOCA_KAYLA_HARRISON_%C3%89_OURO_NA_RIO_2016_(28305677763).jpg",
+      "licence": "CC BY 2.0",
+      "licence_url": "https://creativecommons.org/licenses/by/2.0",
+      "creator": "Wikimedia Commons · Agência Brasil Fotografias · CC BY 2.0",
+      "attribution": "Wikimedia Commons · Agência Brasil Fotografias · CC BY 2.0",
+      "verified_at": "2026-11-12T19:47:10Z",
+      "sport": "ufc"
+    },
+    "julianna pena": {
+      "name": "Julianna Peña",
+      "path": "assets/images/ufc/julianna-pena.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ceremonial_weigh_ins_-_Amanda_Nunes_vs_Julianna_Pe%C3%B1a_UFC_269_-_YouTube_-_0_23_(cropped).jpg",
+      "licence": "CC BY 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by/3.0",
+      "creator": "Wikimedia Commons · MMAnytt · CC BY 3.0",
+      "attribution": "Wikimedia Commons · MMAnytt · CC BY 3.0",
+      "verified_at": "2026-11-12T19:47:10Z",
       "sport": "ufc"
     }
   },

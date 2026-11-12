@@ -59,8 +59,23 @@
       "image_match_method": "category:Category:Seán Brady",
       "image_verified_at": "2026-11-12T03:12:25Z",
       "image_local_path": "assets/images/ufc/sean-brady.jpg"
+    },
+    "kayla harrison": {
+      "name": "Kayla Harrison",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/kayla-harrison.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:JUDOCA_KAYLA_HARRISON_%C3%89_OURO_NA_RIO_2016_(28305677763).jpg",
+      "image_credit": "Wikimedia Commons · Agência Brasil Fotografias · CC BY 2.0",
+      "image_license": "CC BY 2.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/2.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Kayla Harrison",
+      "image_verified_at": "2026-11-12T19:47:10Z",
+      "image_local_path": "assets/images/ufc/kayla-harrison.jpg"
     }
   },
   "attempted": {},
-  "updated_at": "2026-11-12T19:46:29Z"
+  "updated_at": "2026-11-12T19:47:37Z"
 }

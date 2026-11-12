@@ -1033,9 +1033,54 @@
       "image_match_method": "category:Category:Kamaru Usman",
       "image_verified_at": "2026-11-12T11:37:10Z",
       "image_local_path": "assets/images/ufc/kamaru-usman.jpg"
+    },
+    "daniel rodriguez": {
+      "name": "Daniel Rodriguez",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/daniel-rodriguez.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Daniel_Rodriguez_-_USO_Metro_awards.jpg",
+      "image_credit": "Wikimedia Commons · Air Force Tech. Sgt. Adam M. Stump · Public domain",
+      "image_license": "Public domain",
+      "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Daniel Rodriguez",
+      "image_verified_at": "2026-11-12T19:47:10Z",
+      "image_local_path": "assets/images/ufc/daniel-rodriguez.jpg"
+    },
+    "kayla harrison": {
+      "name": "Kayla Harrison",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/kayla-harrison.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:JUDOCA_KAYLA_HARRISON_%C3%89_OURO_NA_RIO_2016_(28305677763).jpg",
+      "image_credit": "Wikimedia Commons · Agência Brasil Fotografias · CC BY 2.0",
+      "image_license": "CC BY 2.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/2.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Kayla Harrison",
+      "image_verified_at": "2026-11-12T19:47:10Z",
+      "image_local_path": "assets/images/ufc/kayla-harrison.jpg"
+    },
+    "julianna pena": {
+      "name": "Julianna Peña",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/julianna-pena.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Ceremonial_weigh_ins_-_Amanda_Nunes_vs_Julianna_Pe%C3%B1a_UFC_269_-_YouTube_-_0_23_(cropped).jpg",
+      "image_credit": "Wikimedia Commons · MMAnytt · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Julianna Peña",
+      "image_verified_at": "2026-11-12T19:47:10Z",
+      "image_local_path": "assets/images/ufc/julianna-pena.jpg"
     }
   },
-  "updated_at": "2026-11-12T19:46:08Z",
+  "updated_at": "2026-11-12T19:47:10Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1229,7 +1274,12 @@
     "mike malott": "2026-11-12T11:37:10Z",
     "kamaru usman": "2026-11-12T11:37:10Z",
     "uros medic": "2026-11-12T11:37:10Z",
-    "yaroslav amosov": "2026-11-12T11:37:10Z"
+    "yaroslav amosov": "2026-11-12T11:37:10Z",
+    "joaquin buckley": "2026-11-12T19:47:10Z",
+    "daniel rodriguez": "2026-11-12T19:47:10Z",
+    "kayla harrison": "2026-11-12T19:47:10Z",
+    "joselyne edwards": "2026-11-12T19:47:10Z",
+    "julianna pena": "2026-11-12T19:47:10Z"
   },
   "audit": {
     "last_reviewed_at": "2026-11-09T12:15:00Z",
@@ -1266,14 +1316,14 @@
     }
   },
   "enrichment": {
-    "batch_number": 25,
+    "batch_number": 26,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 202,
-    "cumulative_found": 75,
-    "cumulative_missing": 127,
-    "cumulative_rejected": 143,
-    "last_batch_at": "2026-11-12T19:02:51Z",
-    "last_successful_batch_at": "2026-11-12T19:02:51Z",
+    "cumulative_attempted": 207,
+    "cumulative_found": 78,
+    "cumulative_missing": 129,
+    "cumulative_rejected": 152,
+    "last_batch_at": "2026-11-12T19:47:10Z",
+    "last_successful_batch_at": "2026-11-12T19:47:10Z",
     "last_rate_limited_at": "2026-11-12T19:02:51Z",
     "history": [
       {
@@ -1475,8 +1525,16 @@
         "found": 0,
         "missing": 1,
         "rate_limited": true
+      },
+      {
+        "batch": 26,
+        "at": "2026-11-12T19:47:10Z",
+        "attempted": 5,
+        "found": 3,
+        "missing": 2,
+        "rate_limited": false
       }
     ],
-    "last_batch_rate_limited": true
+    "last_batch_rate_limited": false
   }
 }
