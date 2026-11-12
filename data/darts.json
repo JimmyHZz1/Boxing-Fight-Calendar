@@ -52,60 +52,64 @@
           "session": "Afternoon session",
           "start_at": "2026-11-15T13:00:00Z",
           "matches": [
-            "Group A: Player B v Saturday afternoon's losing player",
-            "Group B: Player B v Saturday afternoon's losing player",
-            "Group C: Player B v Saturday afternoon's losing player",
-            "Group D: Player B v Saturday afternoon's losing player",
-            "Group E: Player B v Saturday afternoon's losing player",
-            "Group F: Player B v Saturday afternoon's losing player",
-            "Group G: Player B v Saturday afternoon's losing player",
-            "Group H: Player B v Saturday afternoon's losing player"
-          ]
+            "Match 1 — pairing and running order TBC",
+            "Match 2 — pairing and running order TBC",
+            "Match 3 — pairing and running order TBC",
+            "Match 4 — pairing and running order TBC",
+            "Match 5 — pairing and running order TBC",
+            "Match 6 — pairing and running order TBC",
+            "Match 7 — pairing and running order TBC",
+            "Match 8 — pairing and running order TBC"
+          ],
+          "match_note": "The PDC has confirmed eight matches in this session, but has not yet published the individual pairings or running order."
         },
         {
           "date": "2026-11-15",
           "session": "Evening session",
           "start_at": "2026-11-15T19:30:00Z",
           "matches": [
-            "Group I: Player B v Saturday evening's losing player",
-            "Group J: Player B v Saturday evening's losing player",
-            "Group K: Player B v Saturday evening's losing player",
-            "Group L: Player B v Saturday evening's losing player",
-            "Group M: Player B v Saturday evening's losing player",
-            "Group N: Player B v Saturday evening's losing player",
-            "Group O: Player B v Saturday evening's losing player",
-            "Group P: Player B v Saturday evening's losing player"
-          ]
+            "Match 1 — pairing and running order TBC",
+            "Match 2 — pairing and running order TBC",
+            "Match 3 — pairing and running order TBC",
+            "Match 4 — pairing and running order TBC",
+            "Match 5 — pairing and running order TBC",
+            "Match 6 — pairing and running order TBC",
+            "Match 7 — pairing and running order TBC",
+            "Match 8 — pairing and running order TBC"
+          ],
+          "match_note": "The PDC has confirmed eight matches in this session, but has not yet published the individual pairings or running order."
         },
         {
           "date": "2026-11-16",
           "session": "Evening session",
           "start_at": "2026-11-16T19:00:00Z",
           "matches": [
-            "Group A: Player B v Saturday's winning player",
-            "Group B: Player B v Saturday's winning player",
-            "Group C: Player B v Saturday's winning player",
-            "Group D: Player B v Saturday's winning player",
-            "Group E: Player B v Saturday's winning player",
-            "Group F: Player B v Saturday's winning player",
-            "Group G: Player B v Saturday's winning player",
-            "Group H: Player B v Saturday's winning player"
-          ]
+            "Match 1 — pairing and running order TBC",
+            "Match 2 — pairing and running order TBC",
+            "Match 3 — pairing and running order TBC",
+            "Match 4 — pairing and running order TBC",
+            "Match 5 — pairing and running order TBC",
+            "Match 6 — pairing and running order TBC",
+            "Match 7 — pairing and running order TBC",
+            "Match 8 — pairing and running order TBC"
+          ],
+          "match_note": "The PDC has confirmed eight matches in this session, but has not yet published the individual pairings or running order."
         },
         {
           "date": "2026-11-17",
           "session": "Evening session",
           "start_at": "2026-11-17T19:00:00Z",
           "matches": [
-            "Group I: Player B v Saturday's winning player",
-            "Group J: Player B v Saturday's winning player",
-            "Group K: Player B v Saturday's winning player",
-            "Group L: Player B v Saturday's winning player",
-            "Group M: Player B v Saturday's winning player",
-            "Group N: Player B v Saturday's winning player",
-            "Group O: Player B v Saturday's winning player",
-            "Group P: Player B v Saturday's winning player"
-          ]
+            "Match 1 — pairing and running order TBC",
+            "Match 2 — pairing and running order TBC",
+            "Match 3 — pairing and running order TBC",
+            "Match 4 — pairing and running order TBC",
+            "Match 5 — pairing and running order TBC",
+            "Match 6 — pairing and running order TBC",
+            "Match 7 — pairing and running order TBC",
+            "Match 8 — pairing and running order TBC"
+          ],
+          "match_note": "The PDC has confirmed eight matches in this session, but has not yet published the individual pairings or running order."
         },
         {
           "date": "2026-11-18",

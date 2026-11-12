@@ -218,155 +218,159 @@ def pdc_official_fallback_events():
             "venue": "Aldersley Leisure Village, Wolverhampton",
             "tier": "majors",
             "source_url": "https://www.pdc.tv/news/2026/november/09/littler-drawn-greaves-zonneveld-at-mr-vegas-grand-slam/",
-            "schedule_of_play": [
-        {
-                "date": "2026-11-14",
-                "session": "Afternoon session",
-                "start_at": "2026-11-14T13:00:00Z",
-                "matches": [
-                        "Luke Woodhouse v Tom Sykes (Group J)",
-                        "Jermaine Wattimena v Lisa Ashton (Group B)",
-                        "Stephen Bunting v Raymond Smith (Group D)",
-                        "Ryan Searle v Charlie Manby (Group F)",
-                        "Josh Rock v Tommy Morris (Group C)",
-                        "Wessel Nijman v Adam Sevada (Group H)",
-                        "Nathan Aspinall v Maik Kuivenhoven (Group P)",
-                        "Jonny Clayton v Anton Ostlund (Group G)"
-                ]
-        },
-        {
-                "date": "2026-11-14",
-                "session": "Evening session",
-                "start_at": "2026-11-14T19:00:00Z",
-                "matches": [
-                        "Gerwyn Price v Joe Hunt (Group E)",
-                        "James Wade v Cam Crabtree (Group K)",
-                        "Ross Smith v Rusty-Jake Rodriguez (Group O)",
-                        "Michael van Gerwen v Henry Coates (Group L)",
-                        "Luke Humphries v Paolo Nebrida (Group I)",
-                        "Luke Littler v Beau Greaves (Group A)",
-                        "Gian van Veen v Carl Sneyd (Group M)",
-                        "Chris Dobey v Jan Schmidt (Group N)"
-                ]
-        },
-        {
-                "date": "2026-11-15",
-                "session": "Afternoon session",
-                "start_at": "2026-11-15T13:00:00Z",
-                "matches": [
-                        "Group A: Player B v Saturday afternoon's losing player",
-                        "Group B: Player B v Saturday afternoon's losing player",
-                        "Group C: Player B v Saturday afternoon's losing player",
-                        "Group D: Player B v Saturday afternoon's losing player",
-                        "Group E: Player B v Saturday afternoon's losing player",
-                        "Group F: Player B v Saturday afternoon's losing player",
-                        "Group G: Player B v Saturday afternoon's losing player",
-                        "Group H: Player B v Saturday afternoon's losing player"
-                ]
-        },
-        {
-                "date": "2026-11-15",
-                "session": "Evening session",
-                "start_at": "2026-11-15T19:30:00Z",
-                "matches": [
-                        "Group I: Player B v Saturday evening's losing player",
-                        "Group J: Player B v Saturday evening's losing player",
-                        "Group K: Player B v Saturday evening's losing player",
-                        "Group L: Player B v Saturday evening's losing player",
-                        "Group M: Player B v Saturday evening's losing player",
-                        "Group N: Player B v Saturday evening's losing player",
-                        "Group O: Player B v Saturday evening's losing player",
-                        "Group P: Player B v Saturday evening's losing player"
-                ]
-        },
-        {
-                "date": "2026-11-16",
-                "session": "Evening session",
-                "start_at": "2026-11-16T19:00:00Z",
-                "matches": [
-                        "Group A: Player B v Saturday's winning player",
-                        "Group B: Player B v Saturday's winning player",
-                        "Group C: Player B v Saturday's winning player",
-                        "Group D: Player B v Saturday's winning player",
-                        "Group E: Player B v Saturday's winning player",
-                        "Group F: Player B v Saturday's winning player",
-                        "Group G: Player B v Saturday's winning player",
-                        "Group H: Player B v Saturday's winning player"
-                ]
-        },
-        {
-                "date": "2026-11-17",
-                "session": "Evening session",
-                "start_at": "2026-11-17T19:00:00Z",
-                "matches": [
-                        "Group I: Player B v Saturday's winning player",
-                        "Group J: Player B v Saturday's winning player",
-                        "Group K: Player B v Saturday's winning player",
-                        "Group L: Player B v Saturday's winning player",
-                        "Group M: Player B v Saturday's winning player",
-                        "Group N: Player B v Saturday's winning player",
-                        "Group O: Player B v Saturday's winning player",
-                        "Group P: Player B v Saturday's winning player"
-                ]
-        },
-        {
-                "date": "2026-11-18",
-                "session": "Evening session · Round two",
-                "start_at": "2026-11-18T19:00:00Z",
-                "matches": [
-                        "Winner Group A v Winner Group B",
-                        "Winner Group C v Winner Group D",
-                        "Winner Group E v Winner Group F",
-                        "Winner Group G v Winner Group H"
-                ]
-        },
-        {
-                "date": "2026-11-19",
-                "session": "Evening session · Round two",
-                "start_at": "2026-11-19T19:00:00Z",
-                "matches": [
-                        "Winner Group I v Winner Group J",
-                        "Winner Group K v Winner Group L",
-                        "Winner Group M v Winner Group N",
-                        "Winner Group O v Winner Group P"
-                ]
-        },
-        {
-                "date": "2026-11-20",
-                "session": "Evening session · Quarter-finals",
-                "start_at": "2026-11-20T19:00:00Z",
-                "matches": [
-                        "Winner A/B v Winner C/D",
-                        "Winner E/F v Winner G/H"
-                ]
-        },
-        {
-                "date": "2026-11-21",
-                "session": "Evening session · Quarter-finals",
-                "start_at": "2026-11-21T19:00:00Z",
-                "matches": [
-                        "Winner I/J v Winner K/L",
-                        "Winner M/N v Winner O/P"
-                ]
-        },
-        {
-                "date": "2026-11-22",
-                "session": "Afternoon session · Semi-finals",
-                "start_at": "2026-11-22T13:00:00Z",
-                "matches": [
-                        "Winner Quarter-final 1 v Winner Quarter-final 2",
-                        "Winner Quarter-final 3 v Winner Quarter-final 4"
-                ]
-        },
-        {
-                "date": "2026-11-22",
-                "session": "Evening session · Final",
-                "start_at": "2026-11-22T19:30:00Z",
-                "matches": [
-                        "Winner Semi-final 1 v Winner Semi-final 2"
-                ]
-        }
-],
+            "schedule_of_play":             [
+                    {
+                            "date": "2026-11-14",
+                            "session": "Afternoon session",
+                            "start_at": "2026-11-14T13:00:00Z",
+                            "matches": [
+                                    "Luke Woodhouse v Tom Sykes (Group J)",
+                                    "Jermaine Wattimena v Lisa Ashton (Group B)",
+                                    "Stephen Bunting v Raymond Smith (Group D)",
+                                    "Ryan Searle v Charlie Manby (Group F)",
+                                    "Josh Rock v Tommy Morris (Group C)",
+                                    "Wessel Nijman v Adam Sevada (Group H)",
+                                    "Nathan Aspinall v Maik Kuivenhoven (Group P)",
+                                    "Jonny Clayton v Anton Ostlund (Group G)"
+                            ]
+                    },
+                    {
+                            "date": "2026-11-14",
+                            "session": "Evening session",
+                            "start_at": "2026-11-14T19:00:00Z",
+                            "matches": [
+                                    "Gerwyn Price v Joe Hunt (Group E)",
+                                    "James Wade v Cam Crabtree (Group K)",
+                                    "Ross Smith v Rusty-Jake Rodriguez (Group O)",
+                                    "Michael van Gerwen v Henry Coates (Group L)",
+                                    "Luke Humphries v Paolo Nebrida (Group I)",
+                                    "Luke Littler v Beau Greaves (Group A)",
+                                    "Gian van Veen v Carl Sneyd (Group M)",
+                                    "Chris Dobey v Jan Schmidt (Group N)"
+                            ]
+                    },
+                    {
+                            "date": "2026-11-15",
+                            "session": "Afternoon session",
+                            "start_at": "2026-11-15T13:00:00Z",
+                            "matches": [
+                                    "Match 1 — pairing and running order TBC",
+                                    "Match 2 — pairing and running order TBC",
+                                    "Match 3 — pairing and running order TBC",
+                                    "Match 4 — pairing and running order TBC",
+                                    "Match 5 — pairing and running order TBC",
+                                    "Match 6 — pairing and running order TBC",
+                                    "Match 7 — pairing and running order TBC",
+                                    "Match 8 — pairing and running order TBC"
+                            ],
+                            "match_note": "The PDC has confirmed eight matches in this session, but has not yet published the individual pairings or running order."
+                    },
+                    {
+                            "date": "2026-11-15",
+                            "session": "Evening session",
+                            "start_at": "2026-11-15T19:30:00Z",
+                            "matches": [
+                                    "Match 1 — pairing and running order TBC",
+                                    "Match 2 — pairing and running order TBC",
+                                    "Match 3 — pairing and running order TBC",
+                                    "Match 4 — pairing and running order TBC",
+                                    "Match 5 — pairing and running order TBC",
+                                    "Match 6 — pairing and running order TBC",
+                                    "Match 7 — pairing and running order TBC",
+                                    "Match 8 — pairing and running order TBC"
+                            ],
+                            "match_note": "The PDC has confirmed eight matches in this session, but has not yet published the individual pairings or running order."
+                    },
+                    {
+                            "date": "2026-11-16",
+                            "session": "Evening session",
+                            "start_at": "2026-11-16T19:00:00Z",
+                            "matches": [
+                                    "Match 1 — pairing and running order TBC",
+                                    "Match 2 — pairing and running order TBC",
+                                    "Match 3 — pairing and running order TBC",
+                                    "Match 4 — pairing and running order TBC",
+                                    "Match 5 — pairing and running order TBC",
+                                    "Match 6 — pairing and running order TBC",
+                                    "Match 7 — pairing and running order TBC",
+                                    "Match 8 — pairing and running order TBC"
+                            ],
+                            "match_note": "The PDC has confirmed eight matches in this session, but has not yet published the individual pairings or running order."
+                    },
+                    {
+                            "date": "2026-11-17",
+                            "session": "Evening session",
+                            "start_at": "2026-11-17T19:00:00Z",
+                            "matches": [
+                                    "Match 1 — pairing and running order TBC",
+                                    "Match 2 — pairing and running order TBC",
+                                    "Match 3 — pairing and running order TBC",
+                                    "Match 4 — pairing and running order TBC",
+                                    "Match 5 — pairing and running order TBC",
+                                    "Match 6 — pairing and running order TBC",
+                                    "Match 7 — pairing and running order TBC",
+                                    "Match 8 — pairing and running order TBC"
+                            ],
+                            "match_note": "The PDC has confirmed eight matches in this session, but has not yet published the individual pairings or running order."
+                    },
+                    {
+                            "date": "2026-11-18",
+                            "session": "Evening session · Round two",
+                            "start_at": "2026-11-18T19:00:00Z",
+                            "matches": [
+                                    "Winner Group A v Winner Group B",
+                                    "Winner Group C v Winner Group D",
+                                    "Winner Group E v Winner Group F",
+                                    "Winner Group G v Winner Group H"
+                            ]
+                    },
+                    {
+                            "date": "2026-11-19",
+                            "session": "Evening session · Round two",
+                            "start_at": "2026-11-19T19:00:00Z",
+                            "matches": [
+                                    "Winner Group I v Winner Group J",
+                                    "Winner Group K v Winner Group L",
+                                    "Winner Group M v Winner Group N",
+                                    "Winner Group O v Winner Group P"
+                            ]
+                    },
+                    {
+                            "date": "2026-11-20",
+                            "session": "Evening session · Quarter-finals",
+                            "start_at": "2026-11-20T19:00:00Z",
+                            "matches": [
+                                    "Winner A/B v Winner C/D",
+                                    "Winner E/F v Winner G/H"
+                            ]
+                    },
+                    {
+                            "date": "2026-11-21",
+                            "session": "Evening session · Quarter-finals",
+                            "start_at": "2026-11-21T19:00:00Z",
+                            "matches": [
+                                    "Winner I/J v Winner K/L",
+                                    "Winner M/N v Winner O/P"
+                            ]
+                    },
+                    {
+                            "date": "2026-11-22",
+                            "session": "Afternoon session · Semi-finals",
+                            "start_at": "2026-11-22T13:00:00Z",
+                            "matches": [
+                                    "Winner Quarter-final 1 v Winner Quarter-final 2",
+                                    "Winner Quarter-final 3 v Winner Quarter-final 4"
+                            ]
+                    },
+                    {
+                            "date": "2026-11-22",
+                            "session": "Evening session · Final",
+                            "start_at": "2026-11-22T19:30:00Z",
+                            "matches": [
+                                    "Winner Semi-final 1 v Winner Semi-final 2"
+                            ]
+                    }
+            ]
         },
         {
             "id": "pdc-2026-players-championship-finals",
