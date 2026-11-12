@@ -34,6 +34,23 @@
                     <TextBlock Text="THE HUB" Foreground="{StaticResource AccentGold}"
                                FontWeight="Bold" FontSize="12" VerticalAlignment="Center" />
                 </StackPanel>
+                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Button x:Name="BackButton" Content="&#xE72B;" FontFamily="Segoe MDL2 Assets"
+                            Width="36" Height="28" Margin="3,0" Padding="0"
+                            Background="#292929" Foreground="#F5F5F5" BorderBrush="#454545"
+                            IsEnabled="False" Click="BackButton_Click" ToolTip="Back"
+                            shell:WindowChrome.IsHitTestVisibleInChrome="True" />
+                    <Button x:Name="ForwardButton" Content="&#xE72A;" FontFamily="Segoe MDL2 Assets"
+                            Width="36" Height="28" Margin="3,0" Padding="0"
+                            Background="#292929" Foreground="#F5F5F5" BorderBrush="#454545"
+                            IsEnabled="False" Click="ForwardButton_Click" ToolTip="Forward"
+                            shell:WindowChrome.IsHitTestVisibleInChrome="True" />
+                    <Button x:Name="HomeButton" Content="&#xE80F;" FontFamily="Segoe MDL2 Assets"
+                            Width="36" Height="28" Margin="3,0" Padding="0"
+                            Background="#292929" Foreground="#F5F5F5" BorderBrush="#454545"
+                            Click="HomeButton_Click" ToolTip="Go to The Hub home"
+                            shell:WindowChrome.IsHitTestVisibleInChrome="True" />
+                </StackPanel>
                 <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Stretch">
                     <TextBlock x:Name="ConnectionLabel" Text="Connecting…" Foreground="#B8B8B8"
                                FontSize="10" VerticalAlignment="Center" Margin="0,0,12,0" />

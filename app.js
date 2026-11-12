@@ -46,7 +46,31 @@ function allBouts() {
     .filter(b => b.fighter1 || b.fighter2 || b.fighter_a || b.fighter_b)
     .sort((a,b) => (parseDate(boutDateTime(a))?.getTime() || 0) - (parseDate(boutDateTime(b))?.getTime() || 0));
 }
-function showScreen(id) {
+let hubHistoryMax = 0;
+function reportHubNavigationState() {
+  const index = Number(window.history.state?.hubIndex) || 0;
+  hubHistoryMax = Math.max(hubHistoryMax, index);
+  window.chrome?.webview?.postMessage({
+    type: "navigation-state",
+    canGoBack: index > 0,
+    canGoForward: index < hubHistoryMax
+  });
+}
+function showScreen(id, options = {}) {
+  if (!document.getElementById(id)) return;
+  const currentScreen = window.history.state?.hubScreen;
+  if (options.resetHistory === true) {
+    hubHistoryMax = 0;
+    window.history.replaceState({ hubScreen: id, hubIndex: 0 }, "", window.location.href);
+  } else if (options.history === false) {
+    const index = Number(window.history.state?.hubIndex) || 0;
+    hubHistoryMax = Math.max(hubHistoryMax, index);
+    window.history.replaceState({ hubScreen: id, hubIndex: index }, "", window.location.href);
+  } else if (currentScreen !== id) {
+    const index = (Number(window.history.state?.hubIndex) || 0) + 1;
+    hubHistoryMax = index;
+    window.history.pushState({ hubScreen: id, hubIndex: index }, "", window.location.href);
+  }
   if(id==="home-screen"){
     document.querySelectorAll("[data-top-sport]").forEach(button=>{
       button.classList.remove("user-selected");
@@ -83,8 +107,14 @@ function showScreen(id) {
   document.querySelectorAll(".nav-item,.topbar-nav-item").forEach(b => b.classList.toggle("active",b.dataset.screen===id || (id==="sport-detail-screen"&&b.dataset.screen==="home-screen")));
   document.querySelectorAll(".nav-item,.topbar-nav-item,.topbar,.top-sport-selector,.games-platform-hub,.next-event-strip,.bottom-nav").forEach(node=>node.classList.toggle("hub-launch-hidden",id==="hub-selection-screen"));
   window.scrollTo({top:0,behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
+  reportHubNavigationState();
 }
 window.showScreen=showScreen;
+window.__hubReportNavigationState=reportHubNavigationState;
+window.addEventListener("popstate", event => {
+  const destination = event.state?.hubScreen;
+  showScreen(destination && document.getElementById(destination) ? destination : "hub-selection-screen", { history: false });
+});
 
 // The Hub launch experience: the selector is the default; an optional
 // per-device preference can open one of the available hubs directly.
@@ -99,6 +129,8 @@ const setHubStartupDestination=value=>{
   try { localStorage.setItem(HUB_STARTUP_KEY,destination); } catch(_) {}
   return destination;
 };
+window.getHubStartupDestination=getHubStartupDestination;
+window.setHubStartupDestination=setHubStartupDestination;
 document.querySelectorAll("[data-hub-screen]").forEach(tile=>{
   tile.addEventListener("click",()=>showScreen(tile.dataset.hubScreen));
 });
@@ -107,7 +139,7 @@ if(startupSelect){
   startupSelect.value=getHubStartupDestination();
   startupSelect.addEventListener("change",()=>setHubStartupDestination(startupSelect.value));
 }
-showScreen(getHubStartupDestination());
+showScreen(getHubStartupDestination(), { resetHistory: true });
 document.querySelectorAll(".nav-item,.topbar-nav-item").forEach(b => b.addEventListener("click",()=>{if(!b.hasAttribute("data-calendar-switcher"))showScreen(b.dataset.screen);}));
 const favouriteTeamThemes = {
   "Mercedes":{accent:"#00d2be",glow:"#123b3a",chrome:"#101c1c"},
