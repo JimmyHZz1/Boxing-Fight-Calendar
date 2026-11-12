@@ -55,10 +55,26 @@ function showScreen(id) {
   }
   document.querySelectorAll(".screen").forEach(s => s.classList.toggle("active",s.id===id));
   document.body.classList.toggle("hub-selection-mode",id==="hub-selection-screen");
-  document.body.classList.toggle("games-mode",id==="games-calendar-screen"||id==="games-platform-calendar-screen"||id==="games-version-history-screen");
-  document.body.classList.toggle("swgoh-mode",id==="swgoh-hub-screen");
-  document.body.classList.toggle("games-platform-page",id==="games-platform-calendar-screen");
   const gamesHubActive=id==="games-calendar-screen"||id==="games-platform-calendar-screen"||id==="games-version-history-screen";
+  const swgohHubActive=id==="swgoh-hub-screen";
+  document.body.classList.toggle("games-mode",gamesHubActive);
+  document.body.classList.toggle("swgoh-mode",swgohHubActive);
+  document.body.classList.toggle("games-platform-page",id==="games-platform-calendar-screen");
+
+  // Keep the shared header identity in step with the hub currently being viewed.
+  const brandTitle=document.getElementById("brand-title");
+  const brandMark=document.getElementById("brand-mark-letter");
+  if(brandTitle)brandTitle.textContent=swgohHubActive?"SWGOH":gamesHubActive?"GAMES":"SPORTS";
+  if(brandMark){
+    if(swgohHubActive){
+      brandMark.innerHTML='<img class="brand-switcher-app-logo" src="https://play-lh.googleusercontent.com/A6eqLfsKSxaqGXhweuxc57kkkL4RkCNPL3sWHwXJ52Li1Fuiu327nGz4NnWhVRa73HYWrLvtTcNi_VzxZzJ_1Ck%3Dw240-h480" alt="">';
+      brandMark.classList.add("brand-mark-image");
+    }else{
+      brandMark.textContent=gamesHubActive?"G":"S";
+      brandMark.classList.remove("brand-mark-image");
+    }
+  }
+
   document.querySelectorAll("iframe[data-youtube-src]").forEach(frame=>{
     if(gamesHubActive){if(!frame.getAttribute("src"))frame.setAttribute("src",frame.dataset.youtubeSrc);}
     else if(frame.hasAttribute("src"))frame.removeAttribute("src");
