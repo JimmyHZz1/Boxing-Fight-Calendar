@@ -79,5 +79,12 @@ let box=document.getElementById('syncStatus');if(box){box.className='status warn
 try{let base=(window.SWGOH_CONFIG?.API_BASE||'/api').replace(/\/$/,'');let r=await fetch(base+'/sync',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({allyCode:code})});if(!r.ok)throw new Error(await r.text());let d=await r.json();state.profile=d.profile||null;state.roster=d.roster||[];state.crystals=d.crystals??state.crystals;state.lastSync=new Date().toLocaleString();state.syncHistory.push({date:state.lastSync,rosterCount:state.roster.length,gp:state.profile?.gp||0});save();render()}catch(e){if(box){box.className='status bad';box.textContent='❌ Sync failed: '+e.message}}}
 async function loadUpcoming(){try{let r=await fetch('./swgoh/data/upcoming-features.json',{cache:'no-store'});let items=await r.json();let markup=items.map(x=>`<div class="item"><b>${esc(x.title)}</b><div><span class="chip">${esc(x.status)}</span></div><div class="small">${esc(x.description)}</div></div>`).join('');let el=document.getElementById('upcoming');if(el)el.innerHTML=markup;let footer=document.getElementById('swgoh-roadmap-list');if(footer)footer.innerHTML=items.map(x=>`<article class="swgoh-todo-item"><h3>${esc(x.title)} <span>${esc(x.status)}</span></h3><p>${esc(x.description)}</p></article>`).join('')}catch(e){let el=document.getElementById('upcoming');if(el)el.innerHTML='<div class="status bad">Unable to load upcoming-features.json.</div>';let footer=document.getElementById('swgoh-roadmap-list');if(footer)footer.innerHTML='<p class="small">Unable to load the roadmap right now.</p>'}}
 function startNews(){let el=document.getElementById('news');if(!el)return;el.innerHTML='<span class="ticker">'+getTickerMessages().map(esc).join(' &nbsp; • &nbsp; ')+'</span>';el.title='Edit ticker messages in SWGOH Settings';el.onclick=()=>pageNav('settings')}
+document.addEventListener('click',event=>{
+const roadmapLink=event.target.closest('.swgoh-version-history-link');
+if(roadmapLink){event.preventDefault();window.showScreen?.('swgoh-roadmap-screen');return}
+const back=event.target.closest('.swgoh-roadmap-page [data-screen="swgoh-hub-screen"]');
+if(back){event.preventDefault();window.showScreen?.('swgoh-hub-screen')}
+});
+document.addEventListener('sports:screen-changed',event=>{if(event.detail?.screen==='swgoh-roadmap-screen')loadUpcoming()});
 render();startNews();
 })();
