@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "provider": "IGDB PopScore",
-  "updated_at": "2026-11-11T14:19:45.471Z",
+  "updated_at": "2026-11-12T15:11:57.408Z",
   "status": "ok",
   "methodology": "Daily relative ranking across the upcoming PC and console release list. Weighted IGDB Visits (30%), Want to Play (40%), Playing (15%), Played (5%) and Twitch Hours Watched (10%). Steam-only player, review and sales signals are deliberately excluded so console-only games are not penalised. Missing metrics are omitted and remaining weights are renormalised.",
   "games": [
@@ -98,6 +98,30 @@
       "popularity_rank": 4
     },
     {
+      "slug": "final-fantasy-vii-revelation",
+      "title": "FINAL FANTASY VII REVELATION",
+      "release_date": "2027-04-08",
+      "platforms": [
+        "PC",
+        "PlayStation 5",
+        "Xbox Series X|S",
+        "Nintendo Switch 2"
+      ],
+      "verification_status": "verified",
+      "igdb_game_id": 404721,
+      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar62e8.jpg",
+      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar62ze.jpg",
+      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar62ze.jpg",
+      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar62e8.jpg",
+      "popularity_score": 69,
+      "popularity_signals": [
+        "want to play",
+        "visits"
+      ],
+      "popularity_coverage": 2,
+      "popularity_rank": 5
+    },
+    {
       "slug": "pikmin-4-switch-2-edition",
       "title": "Pikmin 4: Nintendo Switch 2 Edition + Dandori Academy",
       "release_date": "2026-11-12",
@@ -115,7 +139,7 @@
         "visits"
       ],
       "popularity_coverage": 1,
-      "popularity_rank": 5
+      "popularity_rank": 6
     },
     {
       "slug": "hela-of-mice-and-magic",
@@ -139,7 +163,7 @@
         "visits"
       ],
       "popularity_coverage": 2,
-      "popularity_rank": 6
+      "popularity_rank": 7
     },
     {
       "slug": "warhammer-40000-dawn-of-war-iv",
@@ -160,30 +184,6 @@
         "visits"
       ],
       "popularity_coverage": 2,
-      "popularity_rank": 7
-    },
-    {
-      "slug": "final-fantasy-vii-revelation",
-      "title": "FINAL FANTASY VII REVELATION",
-      "release_date": "2027-04-08",
-      "platforms": [
-        "PC",
-        "PlayStation 5",
-        "Xbox Series X|S",
-        "Nintendo Switch 2"
-      ],
-      "verification_status": "verified",
-      "igdb_game_id": 404721,
-      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar62e8.jpg",
-      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar62ze.jpg",
-      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar62ze.jpg",
-      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar62e8.jpg",
-      "popularity_score": 60,
-      "popularity_signals": [
-        "want to play",
-        "visits"
-      ],
-      "popularity_coverage": 2,
       "popularity_rank": 8
     },
     {
@@ -199,7 +199,7 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5zbq.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5zbq.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5zbq.jpg",
-      "popularity_score": 59,
+      "popularity_score": 55,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -229,19 +229,22 @@
       "popularity_rank": 10
     },
     {
-      "slug": "there-are-no-ghosts",
-      "title": "There Are No Ghosts at the Grand",
-      "release_date": "2026-12-16",
+      "slug": "professor-layton-new-world-steam",
+      "title": "Professor Layton and the New World of Steam",
+      "release_date": "2026-12-10",
       "platforms": [
-        "PC"
+        "PC",
+        "PlayStation 5",
+        "Nintendo Switch",
+        "Nintendo Switch 2"
       ],
       "verification_status": "estimated",
-      "igdb_game_id": 347841,
-      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar3oxp.jpg",
+      "igdb_game_id": 236665,
+      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar260r.jpg",
       "igdb_logo_url": null,
       "logo_url": null,
-      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar3oxp.jpg",
-      "popularity_score": 44,
+      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar260r.jpg",
+      "popularity_score": 43,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -262,7 +265,7 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo1275.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo1275.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6suz.jpg",
-      "popularity_score": 42,
+      "popularity_score": 40,
       "popularity_signals": [
         "want to play",
         "visits",
@@ -273,21 +276,18 @@
       "popularity_rank": 12
     },
     {
-      "slug": "professor-layton-new-world-steam",
-      "title": "Professor Layton and the New World of Steam",
-      "release_date": "2026-12-10",
+      "slug": "there-are-no-ghosts",
+      "title": "There Are No Ghosts at the Grand",
+      "release_date": "2026-12-16",
       "platforms": [
-        "PC",
-        "PlayStation 5",
-        "Nintendo Switch",
-        "Nintendo Switch 2"
+        "PC"
       ],
       "verification_status": "estimated",
-      "igdb_game_id": 236665,
-      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar260r.jpg",
+      "igdb_game_id": 347841,
+      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar3oxp.jpg",
       "igdb_logo_url": null,
       "logo_url": null,
-      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar260r.jpg",
+      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar3oxp.jpg",
       "popularity_score": 39,
       "popularity_signals": [
         "want to play",
@@ -295,28 +295,6 @@
       ],
       "popularity_coverage": 2,
       "popularity_rank": 13
-    },
-    {
-      "slug": "arkheron",
-      "title": "Arkheron",
-      "release_date": "2026-11-27",
-      "platforms": [
-        "PC",
-        "Xbox Series X|S"
-      ],
-      "verification_status": "estimated",
-      "igdb_game_id": 368311,
-      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6xi8.jpg",
-      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar48ki.jpg",
-      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar48ki.jpg",
-      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6xi8.jpg",
-      "popularity_score": 36,
-      "popularity_signals": [
-        "want to play",
-        "visits"
-      ],
-      "popularity_coverage": 2,
-      "popularity_rank": 14
     },
     {
       "slug": "sonic-pico-park",
@@ -335,13 +313,13 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar60sw.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar60sw.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar60sw.jpg",
-      "popularity_score": 34,
+      "popularity_score": 32,
       "popularity_signals": [
         "want to play",
         "visits"
       ],
       "popularity_coverage": 2,
-      "popularity_rank": 15
+      "popularity_rank": 14
     },
     {
       "slug": "stage-tour",
@@ -359,13 +337,13 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5n09.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5n09.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6lhk.jpg",
-      "popularity_score": 22,
+      "popularity_score": 29,
       "popularity_signals": [
         "want to play",
         "visits"
       ],
       "popularity_coverage": 2,
-      "popularity_rank": 16
+      "popularity_rank": 15
     },
     {
       "slug": "dragon-quest-monsters-the-withered-world",
@@ -384,7 +362,29 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5xzb.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5xzb.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5xzb.jpg",
-      "popularity_score": 19,
+      "popularity_score": 28,
+      "popularity_signals": [
+        "want to play",
+        "visits"
+      ],
+      "popularity_coverage": 2,
+      "popularity_rank": 16
+    },
+    {
+      "slug": "arkheron",
+      "title": "Arkheron",
+      "release_date": "2026-11-27",
+      "platforms": [
+        "PC",
+        "Xbox Series X|S"
+      ],
+      "verification_status": "estimated",
+      "igdb_game_id": 368311,
+      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6xi8.jpg",
+      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar48ki.jpg",
+      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar48ki.jpg",
+      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6xi8.jpg",
+      "popularity_score": 27,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -405,7 +405,7 @@
       "igdb_logo_url": null,
       "logo_url": null,
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6b87.jpg",
-      "popularity_score": 11,
+      "popularity_score": 9,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -429,7 +429,7 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo10cy.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo10cy.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar2ong.jpg",
-      "popularity_score": 9,
+      "popularity_score": 6,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -454,7 +454,7 @@
       "igdb_logo_url": null,
       "logo_url": null,
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6keu.jpg",
-      "popularity_score": 8,
+      "popularity_score": 5,
       "popularity_signals": [
         "want to play",
         "visits"
