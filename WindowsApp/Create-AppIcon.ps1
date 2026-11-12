@@ -1,5 +1,6 @@
-# Generate the Windows icon from the Sports Calendar header brand mark:
-# the same gold square and dark condensed "S" used in the website logo.
+# Generate The Hub's Windows application icon: a gold square with a dark,
+# condensed "H" monogram. This ICO is embedded into TheHub.exe at build time
+# through the ApplicationIcon property in SportsGamesCalendar.csproj.
 Add-Type -AssemblyName System.Drawing
 
 $size = 256
@@ -24,7 +25,7 @@ $format.LineAlignment = [System.Drawing.StringAlignment]::Center
 $graphics.TranslateTransform(128, 128)
 $graphics.RotateTransform(-5)
 $graphics.TranslateTransform(-128, -128)
-$graphics.DrawString("S", $font, $darkBrush, (New-Object System.Drawing.RectangleF(12, 0, 232, 256)), $format)
+$graphics.DrawString("H", $font, $darkBrush, (New-Object System.Drawing.RectangleF(12, 0, 232, 256)), $format)
 $graphics.ResetTransform()
 
 $path = Join-Path $PSScriptRoot "app-icon.ico"
@@ -42,4 +43,4 @@ finally {
   $darkBrush.Dispose()
   $goldBrush.Dispose()
 }
-Write-Host "Created branded calendar icon: $path"
+Write-Host "Created The Hub application icon for embedding in TheHub.exe: $path"

@@ -36,13 +36,13 @@ jobs:
       - name: Verify executable exists
         shell: pwsh
         run: |
-          $exe = ".\publish\SportsGamesCalendar.exe"
+          $exe = ".\publish\TheHub.exe"
           if (!(Test-Path $exe)) { throw "Published executable was not found: $exe" }
           Get-Item $exe | Select-Object Name, Length
       - name: Upload Windows executable
         uses: actions/upload-artifact@v4
         with:
-          name: SportsGamesCalendar-Windows-x64
-          path: .\publish\SportsGamesCalendar.exe
+          name: TheHub-Windows-x64
+          path: .\publish\TheHub.exe
           if-no-files-found: error
           retention-days: 30

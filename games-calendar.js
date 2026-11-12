@@ -15,7 +15,7 @@
     document.body.classList.toggle("games-mode", games);
     document.body.classList.toggle("swgoh-mode", swgoh);
     if (mark) mark.textContent = games ? "G" : swgoh ? "✦" : "S";
-    if (title) title.textContent = swgoh ? "SWGOH HUB" : games ? "GAMES" : "SPORTS";
+    if (title) title.textContent = swgoh ? "SWGOH HUB" : games ? "GAMES HUB" : "SPORTS HUB";
   };
   if (menu && trigger) {
     // A single document-level capture handler handles taps on every nested part

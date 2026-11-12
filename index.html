@@ -4,22 +4,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#101114">
-  <meta name="description" content="Formula 1, PDC darts, boxing, UFC, BKFC and FIM Speedway calendars in one place.">
+  <meta name="description" content="The Hub brings Sports, Games, SWGOH and more together in one place.">
   <link rel="manifest" href="./manifest.json">
-  <link rel="stylesheet" href="./styles.css?v=20261111-27">
-  <title>Sports Calendar</title>
+  <link rel="stylesheet" href="./styles.css?v=20261112-02">
+  <title>The Hub</title>
   <link rel="stylesheet" href="./swgoh.css?v=20261111-02">
 </head>
 <body>
   <div class="app-shell">
     <header class="topbar">
       <div class="brand-calendar-switcher">
-        <button class="brand brand-calendar-trigger" id="calendar-menu-trigger" type="button" aria-label="Switch calendar" aria-haspopup="true" aria-expanded="false" aria-controls="mobile-calendar-menu">
+        <button class="brand brand-calendar-trigger" id="calendar-menu-trigger" type="button" aria-label="Switch hub" aria-haspopup="true" aria-expanded="false" aria-controls="mobile-calendar-menu">
           <span class="brand-mark" id="brand-mark-letter">S</span>
-          <span><strong id="brand-title">SPORTS</strong><small>CALENDAR</small></span>
+          <span><strong id="brand-title">SPORTS HUB</strong><small>THE HUB</small></span>
           <span class="brand-switcher-caret" aria-hidden="true">⌄</span>
         </button>
-        <div id="mobile-calendar-menu" class="mobile-calendar-menu" hidden aria-label="Choose calendar"><button type="button" data-screen="home-screen"><span class="brand-menu-mark sports-mark" aria-hidden="true">S</span> SPORTS CALENDAR</button><button type="button" data-screen="games-calendar-screen"><span class="brand-menu-mark games-mark" aria-hidden="true">G</span> GAMES CALENDAR</button><button type="button" data-screen="swgoh-hub-screen"><img class="brand-menu-logo swgoh-menu-logo" src="https://play-lh.googleusercontent.com/A6eqLfsKSxaqGXhweuxc57kkkL4RkCNPL3sWHwXJ52Li1Fuiu327nGz4NnWhVRa73HYWrLvtTcNi_VzxZzJ_1Ck%3Dw240-h480" alt="" loading="lazy"><span class="calendar-menu-label">SWGOH HUB</span></button></div>
+        <div id="mobile-calendar-menu" class="mobile-calendar-menu" hidden aria-label="Choose calendar"><button type="button" data-screen="home-screen"><span class="brand-menu-mark sports-mark" aria-hidden="true">S</span> SPORTS HUB</button><button type="button" data-screen="games-calendar-screen"><span class="brand-menu-mark games-mark" aria-hidden="true">G</span> GAMES HUB</button><button type="button" data-screen="swgoh-hub-screen"><img class="brand-menu-logo swgoh-menu-logo" src="https://play-lh.googleusercontent.com/A6eqLfsKSxaqGXhweuxc57kkkL4RkCNPL3sWHwXJ52Li1Fuiu327nGz4NnWhVRa73HYWrLvtTcNi_VzxZzJ_1Ck%3Dw240-h480" alt="" loading="lazy"><span class="calendar-menu-label">SWGOH HUB</span></button></div>
       </div>
       <nav class="topbar-nav" aria-label="Main navigation">
         <button type="button" class="topbar-nav-item active" data-screen="home-screen"><span aria-hidden="true">⌂</span> HOME</button>
@@ -54,8 +54,8 @@
     <main>
       <section id="home-screen" class="screen active" aria-labelledby="home-title">
         <div class="hero">
-          <div class="eyebrow">SIX SPORTS · ONE PLACE</div>
-          <h1 id="home-title">Every sport.<br><em>One calendar.</em></h1>
+          <div class="eyebrow">SIX SPORTS · ONE HUB</div>
+          <h1 id="home-title">Every sport.<br><em>One hub.</em></h1>
           <p>Formula 1, PDC darts, boxing, UFC, FIM Speedway and BKFC — all in one place.</p>
           <div class="hero-meta"><span>🇬🇧 UK LOCAL TIME</span><span id="home-updated">WAITING FOR FIRST SYNC</span></div>
           <p id="refresh-help" class="refresh-help" role="status" aria-live="polite">Data syncs automatically every 4 hours. Tap to check for the latest published schedules.</p>
@@ -202,18 +202,18 @@
           <div class="theme-preview-tools">
             <label for="theme-preview-team">Preview a team</label>
             <select id="theme-preview-team" class="favourite-team-select">
-              <option value="">Default Sports Calendar</option>
+              <option value="">Default Sports Hub</option>
               <option value="Mercedes">Mercedes</option><option value="Ferrari">Scuderia Ferrari</option><option value="Red Bull">Oracle Red Bull Racing</option><option value="McLaren">McLaren</option><option value="RB F1 Team">Racing Bulls</option><option value="Alpine F1 Team">BWT Alpine</option><option value="Haas F1 Team">MoneyGram Haas</option><option value="Audi">Audi</option><option value="Williams">Williams</option><option value="Aston Martin">Aston Martin</option><option value="Cadillac F1 Team">Cadillac</option>
             </select>
             <p class="settings-help">Previewing won't change your saved favourite until you apply it.</p>
           </div>
           <div class="theme-preview-stage theme-preview-fullpage" id="theme-preview-stage" aria-live="polite">
             <div class="theme-preview-diagonals" aria-hidden="true"></div>
-            <div class="theme-preview-caption"><span class="eyebrow">FULL WEBSITE THEME PREVIEW</span><strong id="theme-preview-name">SPORTS CALENDAR</strong></div>
-            <div class="preview-site-topbar"><div class="preview-site-brand"><b>S</b><span><strong>SPORTS</strong><small>CALENDAR</small></span></div><span class="preview-site-status"><i></i> SCHEDULE</span></div>
+            <div class="theme-preview-caption"><span class="eyebrow">FULL WEBSITE THEME PREVIEW</span><strong id="theme-preview-name">THE HUB</strong></div>
+            <div class="preview-site-topbar"><div class="preview-site-brand"><b>S</b><span><strong>THE HUB</strong><small>SPORTS HUB</small></span></div><span class="preview-site-status"><i></i> SCHEDULE</span></div>
             <div class="preview-site-sports"><span class="selected preview-site-f1"><b>F1</b><i id="theme-preview-team-mark">F1</i><small id="theme-preview-team-name">TEAM THEME PREVIEW</small></span><span>DARTS</span><span>BOXING</span><span>UFC</span><span>SPEEDWAY</span><span>BKFC</span></div>
             <div class="preview-site-ticker"><b>UP NEXT</b><span>FORMULA 1&nbsp; · &nbsp;RACE WEEKEND</span><span>→</span></div>
-            <section class="preview-site-hero"><span class="eyebrow">FIVE SPORTS · ONE PLACE</span><h3>Every sport.<br><em>One calendar.</em></h3><p>Formula 1, PDC darts, boxing, UFC, FIM Speedway and BKFC — all in one place.</p><span class="theme-preview-cta">EXPLORE CALENDAR&nbsp; →</span><div class="preview-site-meta">🇬🇧 UK LOCAL TIME <span>LIVE SPORTS CENTRE</span></div></section>
+            <section class="preview-site-hero"><span class="eyebrow">FIVE SPORTS · ONE HUB</span><h3>Every sport.<br><em>One hub.</em></h3><p>Formula 1, PDC darts, boxing, UFC, FIM Speedway and BKFC — all in one place.</p><span class="theme-preview-cta">EXPLORE CALENDAR&nbsp; →</span><div class="preview-site-meta">🇬🇧 UK LOCAL TIME <span>LIVE SPORTS CENTRE</span></div></section>
             <section class="preview-site-section"><div class="preview-site-heading"><span class="eyebrow">ACROSS ALL FIVE SPORTS</span><b>Live Sports Centre</b></div><div class="preview-site-live"><i></i><span><small>LIVE NOW</small><strong>Race weekend coverage</strong></span><b>LIVE</b></div><div class="preview-site-live"><i></i><span><small>COMING UP</small><strong>Next events across your sports</strong></span><b>→</b></div></section>
             <section class="preview-site-section"><div class="preview-site-heading"><span class="eyebrow">CHOOSE YOUR SPORT</span><b>Explore the calendar</b></div><div class="preview-site-sportcards"><div><small>MOTORSPORT</small><b>FORMULA 1</b><span>RACES · RESULTS</span></div><div><small>PDC TOUR</small><b>DARTS</b><span>TOURNAMENTS</span></div><div><small>THE FIGHT GAME</small><b>BOXING</b><span>FIGHT NIGHTS</span></div></div></section>
             <section class="preview-site-section"><div class="preview-site-heading"><span class="eyebrow">CHAMPIONSHIP</span><b>Driver standings</b></div><div class="preview-site-standing"><b>01</b><span>Driver championship</span><strong>2026</strong></div><div class="preview-site-standing"><b>02</b><span>Constructor championship</span><strong>2026</strong></div></section>
@@ -272,8 +272,8 @@
         <section class="games-up-next-strip" aria-label="Major upcoming PC and console game releases"><div class="games-up-next-label"><span class="eyebrow games-eyebrow">UP NEXT</span><span>MAJOR PC &amp; CONSOLE RELEASES</span></div><div id="games-up-next-ticker" class="games-up-next-ticker next-event-ticker" aria-live="polite"><span class="games-up-next-loading">Loading upcoming releases…</span></div></section>
         <div class="games-hero-layout">
           <div class="games-page-intro games-calendar-hero">
-            <span class="eyebrow games-eyebrow">PC &amp; CONSOLE · ONE PLACE</span>
-            <h1 id="games-calendar-title">Every game. <em>One calendar.</em></h1>
+            <span class="eyebrow games-eyebrow">PC &amp; CONSOLE · ONE HUB</span>
+            <h1 id="games-calendar-title">Every game. <em>One hub.</em></h1>
             <p>Upcoming PC and console releases, official trailers and confirmed launch dates — all in one place.</p>
             <div class="games-platform-tags"><span><img src="./assets/platform-windows.svg" alt="" aria-hidden="true" loading="eager" onerror="this.replaceWith(Object.assign(document.createElement('b'),{className:'games-platform-mark games-platform-mark-pc',textContent:'PC'}))"> PC</span><span><img src="./assets/platform-playstation.svg" alt="" aria-hidden="true" loading="eager" onerror="this.replaceWith(Object.assign(document.createElement('b'),{className:'games-platform-mark games-platform-mark-ps',textContent:'PS'}))"> PLAYSTATION</span><span><img src="./assets/platform-xbox.svg" alt="" aria-hidden="true" loading="eager" onerror="this.replaceWith(Object.assign(document.createElement('b'),{className:'games-platform-mark games-platform-mark-xbox',textContent:'XBOX'}))"> XBOX</span><span><img src="./assets/platform-nintendo.svg" alt="" aria-hidden="true" loading="eager" onerror="this.replaceWith(Object.assign(document.createElement('b'),{className:'games-platform-mark games-platform-mark-n',textContent:'N'}))"> NINTENDO</span><span><img src="./assets/platform-steam.svg" alt="" aria-hidden="true" loading="eager" onerror="this.replaceWith(Object.assign(document.createElement('b'),{className:'games-platform-mark games-platform-mark-steam',textContent:'STEAM'}))"> STEAM</span></div>
           </div>
@@ -366,6 +366,50 @@
         </details>
         <div class="games-page-footer"><button type="button" class="games-history-link" data-screen="games-calendar-screen">← BACK TO GAMES CALENDAR</button><span>GAMES VERSION HISTORY · INDEPENDENT RELEASE LIST</span></div>
       </section>
+      <section id="hub-version-history-screen" class="screen hub-version-history-screen" aria-labelledby="hub-version-history-title">
+        <div class="page-intro"><span class="eyebrow">THE HUB · PLATFORM ROADMAP</span><h1 id="hub-version-history-title">The Hub <em>roadmap.</em></h1><p>The central development plan for The Hub, including platform releases, work in progress and ideas for future hubs.</p></div>
+
+        <section class="hub-roadmap-release" aria-labelledby="hub-roadmap-release-title">
+          <div class="hub-roadmap-release-top"><span class="eyebrow">CURRENT PLATFORM RELEASE</span><span class="hub-roadmap-status">IN DEVELOPMENT</span></div>
+          <h2 id="hub-roadmap-release-title">The Hub · Unified platform foundation</h2>
+          <p>Bring the existing Sports and Games experiences together under The Hub identity, create a shared launch experience and make room for new independent hubs.</p>
+          <ul>
+            <li>One application identity, shared design language and consistent navigation.</li>
+            <li>Sports Hub and Games Hub retain their existing features and distinct colour identities.</li>
+            <li>A rebuilt native SWGOH Hub using The Hub layout and visual theme.</li>
+            <li>A configurable launch screen and default startup hub.</li>
+          </ul>
+        </section>
+
+        <section class="jobs-todo hub-roadmap-todo" aria-labelledby="hub-roadmap-todo-title">
+          <div class="jobs-todo-heading"><div><span class="eyebrow">PLATFORM BACKLOG</span><h2 id="hub-roadmap-todo-title">The Hub <em>to do.</em></h2><p>Planned work is grouped by the platform areas it affects. Items remain outstanding until implemented and verified.</p></div><span class="jobs-todo-count">PLATFORM ROADMAP</span></div>
+          <div class="jobs-todo-group">
+            <div class="jobs-todo-group-title"><span class="jobs-priority-dot"></span><h3>Core application</h3></div>
+            <article class="jobs-todo-item"><span class="jobs-todo-number">01</span><div><h4>Complete The Hub rebrand</h4><p>Update application name, browser and installable app identity, Sports Hub and Games Hub branding, hero messaging and the H application icon, including the icon embedded in the Windows executable.</p></div><span class="jobs-todo-status">IN PROGRESS</span></article>
+            <article class="jobs-todo-item"><span class="jobs-todo-number">02</span><div><h4>Build the hub selection screen</h4><p>Create the launch screen with selectable hub tiles and a “More Hubs Coming Soon” panel beneath them.</p></div><span class="jobs-todo-status">PLANNED</span></article>
+            <article class="jobs-todo-item"><span class="jobs-todo-number">03</span><div><h4>Add the startup destination setting</h4><p>Allow users to open the hub selection screen by default or choose a specific hub to launch automatically. No favourite stars are needed on the hub tiles.</p></div><span class="jobs-todo-status">PLANNED</span></article>
+            <article class="jobs-todo-item"><span class="jobs-todo-number">04</span><div><h4>Create the shared hub framework</h4><p>Keep each hub's pages, navigation, data and settings independent while sharing the overall application shell and consistent design components.</p></div><span class="jobs-todo-status">PLANNED</span></article>
+          </div>
+          <div class="jobs-todo-group hub-roadmap-group">
+            <div class="jobs-todo-group-title"><span class="jobs-priority-dot"></span><h3>Individual hubs</h3></div>
+            <article class="jobs-todo-item"><span class="jobs-todo-number">05</span><div><h4>Preserve and refine Sports Hub</h4><p>Carry the existing sports calendar, live centre, next-up panels, favourites and sport-specific features into The Hub without losing current functionality.</p></div><span class="jobs-todo-status">PRESERVE</span></article>
+            <article class="jobs-todo-item"><span class="jobs-todo-number">06</span><div><h4>Preserve and refine Games Hub</h4><p>Carry the existing PC and console release calendar, platform browsing, featured games and release information into The Hub.</p></div><span class="jobs-todo-status">PRESERVE</span></article>
+            <article class="jobs-todo-item"><span class="jobs-todo-number">07</span><div><h4>Rebuild SWGOH Hub within The Hub</h4><p>Recreate the agreed dashboard, Galactic Legends, Solo Journeys, Characters, Resources, Events, Team Builder, Conquest, GAC, Priorities and Settings areas using the new shared theme. Develop API-dependent data functionality when the required API access is available.</p></div><span class="jobs-todo-status">PLANNED</span></article>
+            <article class="jobs-todo-item"><span class="jobs-todo-number">08</span><div><h4>Develop Stock Hub</h4><p>Build a green-themed stock watchlist with share prices, historical performance and alerts, with optional personal portfolio tracking as a later enhancement.</p></div><span class="jobs-todo-status">PLANNED</span></article>
+          </div>
+        </section>
+
+        <section class="hub-future-hubs" aria-labelledby="hub-future-hubs-title">
+          <div class="hub-future-hubs-heading"><div><span class="eyebrow">IDEAS FOR THE FUTURE</span><h2 id="hub-future-hubs-title">Potential future <em>hubs.</em></h2><p>These are possibilities, not confirmed commitments. New hubs can be added when there is a clear use for them.</p></div></div>
+          <div class="hub-future-hubs-grid">
+            <article class="hub-future-card"><span class="hub-future-icon">🎬</span><div><h3>Entertainment Hub</h3><p>Film and TV releases, episode schedules, watchlists and viewing history.</p></div><span class="hub-future-tag">IDEA</span></article>
+            <article class="hub-future-card"><span class="hub-future-icon">💻</span><div><h3>Tech Hub</h3><p>Technology news, hardware releases, product announcements and software updates.</p></div><span class="hub-future-tag">IDEA</span></article>
+          </div>
+          <div class="hub-more-coming"><span class="hub-more-coming-mark">＋</span><div><strong>More Hubs Coming Soon</strong><p>The Hub is designed to grow as new ideas are added.</p></div></div>
+        </section>
+        <div class="data-health-footer"><button type="button" class="secondary-button" id="hub-version-history-back">← BACK TO HUB</button><span>THE HUB · VERSION HISTORY &amp; ROADMAP</span></div>
+      </section>
+
       <section id="data-health-screen" class="screen data-health-screen" aria-labelledby="data-health-title">
         <div class="page-intro"><span class="eyebrow">SYSTEM MONITORING</span><h1 id="data-health-title">Data health <em>centre.</em></h1><p>Check published feeds, image coverage, asset integrity and the latest data refresh times.</p></div>
         <div class="data-health-toolbar"><span id="data-health-overall" class="data-health-status">CHECKING DATA SOURCES…</span><button type="button" class="primary-button" id="data-health-recheck">RUN HEALTH CHECK</button></div>
@@ -425,7 +469,7 @@
       <button id="sports-bottom-calendar-button" class="nav-item" data-screen="calendar-screen" aria-label="Open the original Sports Calendar"><span aria-hidden="true">▦</span><small>CALENDAR</small></button>
       <button class="nav-item" data-screen="weekend-screen"><span>★</span><small>FAVOURITES</small></button>
     </nav>
-    <footer class="footer"><button type="button" class="data-health-link" id="open-data-health">DATA HEALTH CENTRE</button><span>•</span> <a class="version-history-link" href="#version-history" id="open-version-history">SPORTS VERSION HISTORY</a><button type="button" class="games-version-history-link" data-screen="games-version-history-screen">GAMES VERSION HISTORY</button><span>•</span> SPORTS CALENDAR <span>•</span> UK LOCAL TIME <span>•</span> PDC logo: <a href="https://commons.wikimedia.org/wiki/File:Professional_Darts_Corporation_logo.png" target="_blank" rel="noopener noreferrer">Chris Ibbotson, CC BY-SA 4.0</a> <span>•</span> BKFC SCHEDULE: <a href="https://www.bkfc.com/events" target="_blank" rel="noopener noreferrer">BKFC</a> <span>•</span> BOXING DATA: <a href="https://boxerbook.com" target="_blank" rel="noopener noreferrer">BOXERBOOK</a></footer>
+    <footer class="footer"><button type="button" class="data-health-link" id="open-data-health">DATA HEALTH CENTRE</button><span>•</span> <a class="version-history-link" href="#version-history" id="open-version-history">SPORTS VERSION HISTORY</a><button type="button" class="games-version-history-link" data-screen="games-version-history-screen">GAMES VERSION HISTORY</button> <button type="button" class="hub-version-history-link" id="open-hub-version-history">THE HUB ROADMAP</button><span>•</span> THE HUB <span>•</span> UK LOCAL TIME <span>•</span> PDC logo: <a href="https://commons.wikimedia.org/wiki/File:Professional_Darts_Corporation_logo.png" target="_blank" rel="noopener noreferrer">Chris Ibbotson, CC BY-SA 4.0</a> <span>•</span> BKFC SCHEDULE: <a href="https://www.bkfc.com/events" target="_blank" rel="noopener noreferrer">BKFC</a> <span>•</span> BOXING DATA: <a href="https://boxerbook.com" target="_blank" rel="noopener noreferrer">BOXERBOOK</a></footer>
   </div>
   <script src="./app.js?v=20261109-03"></script>
   <script src="./swgoh/config.js"></script>
@@ -442,6 +486,7 @@
   <script src="./ui-refresh.js?v=20261109-01"></script>
   <script src="./home-next-up.js?v=20261111-02"></script>
   <script src="./version-history.js?v=20261109-01"></script>
+  <script src="./hub-version.js?v=20261112-01"></script>
   <script src="./f1-grand-prix-centre.js?v=20261109-03"></script>
   <script src="./games-calendar.js?v=20261111-07"></script>
   <script src="./games-popularity.js?v=20261110-07"></script>
