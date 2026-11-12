@@ -1035,7 +1035,7 @@
       "image_local_path": "assets/images/ufc/kamaru-usman.jpg"
     }
   },
-  "updated_at": "2026-11-12T16:51:09Z",
+  "updated_at": "2026-11-12T19:02:51Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1266,15 +1266,15 @@
     }
   },
   "enrichment": {
-    "batch_number": 24,
+    "batch_number": 25,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 201,
+    "cumulative_attempted": 202,
     "cumulative_found": 75,
-    "cumulative_missing": 126,
+    "cumulative_missing": 127,
     "cumulative_rejected": 143,
-    "last_batch_at": "2026-11-12T11:37:10Z",
-    "last_successful_batch_at": "2026-11-12T11:37:10Z",
-    "last_rate_limited_at": "2026-11-12T11:37:10Z",
+    "last_batch_at": "2026-11-12T19:02:51Z",
+    "last_successful_batch_at": "2026-11-12T19:02:51Z",
+    "last_rate_limited_at": "2026-11-12T19:02:51Z",
     "history": [
       {
         "batch": 1,
@@ -1466,6 +1466,14 @@
         "attempted": 5,
         "found": 1,
         "missing": 4,
+        "rate_limited": true
+      },
+      {
+        "batch": 25,
+        "at": "2026-11-12T19:02:51Z",
+        "attempted": 1,
+        "found": 0,
+        "missing": 1,
         "rate_limited": true
       }
     ],

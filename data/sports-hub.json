@@ -234,13 +234,33 @@
           "rank": 20,
           "name": "Yuki Tsunoda",
           "team": "RB F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/yuki-tsunoda.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Yuki_Tsunoda_Macau_2019.jpg",
+          "image_credit": "Wikimedia Commons · Smith007 · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "category:Category:Yuki Tsunoda in 2019",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/yuki-tsunoda.jpg"
         },
         {
           "rank": 21,
           "name": "Ryo Hirakawa",
           "team": "Haas F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/ryo-hirakawa.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Ryo_Hirakawa_2024_WEC_Fuji_1.jpg",
+          "image_credit": "Wikimedia Commons · Morio · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "search:Ryo Hirakawa",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/ryo-hirakawa.jpg"
         },
         {
           "rank": 22,
@@ -5288,17 +5308,48 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 201,
-    "found": 109,
-    "missing": 439,
-    "rejected": 143,
-    "by_sport": {},
+    "attempted": 1,
+    "found": 111,
+    "missing": 705,
+    "rejected": 0,
+    "by_sport": {
+      "ufc": {
+        "attempted": 1,
+        "found": 0,
+        "missing": 1,
+        "rejected": 0
+      }
+    },
+    "search_details": [
+      {
+        "name": "Joaquin Buckley",
+        "queries": 1,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      }
+    ],
+    "checked_at": "2026-11-12T19:02:51Z",
+    "library_entries": 75,
     "newly_found": 0,
+    "cumulative_attempted": 202,
+    "cumulative_found": 75,
+    "cumulative_missing": 127,
+    "cumulative_rejected": 143,
+    "batch_number": 25,
+    "last_batch_at": "2026-11-12T19:02:51Z",
+    "last_successful_batch_at": "2026-11-12T19:02:51Z",
+    "last_rate_limited_at": "2026-11-12T19:02:51Z",
     "coverage": {
+      "boxing fight card fighters": {
+        "total": 268,
+        "with_image": 0,
+        "missing": 268
+      },
       "f1 drivers": {
         "total": 25,
-        "with_image": 23,
-        "missing": 2
+        "with_image": 25,
+        "missing": 0
       },
       "f1 constructors": {
         "total": 11,
@@ -5321,16 +5372,6 @@
         "missing": 81
       }
     },
-    "checked_at": "2026-11-12T16:51:09Z",
-    "library_entries": 75,
-    "cumulative_found": 75,
-    "cumulative_missing": 126,
-    "cumulative_rejected": 143,
-    "batch_number": 24,
-    "last_batch_at": "2026-11-12T11:37:10Z",
-    "last_successful_batch_at": "2026-11-12T11:37:10Z",
-    "last_rate_limited_at": "2026-11-12T11:37:10Z",
-    "enrichment_status": "paused after rate limit",
     "rate_limited": true
   },
   "last_updated": "2026-11-12T16:51:09Z"
