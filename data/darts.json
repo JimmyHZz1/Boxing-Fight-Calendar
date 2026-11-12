@@ -43,11 +43,394 @@
     }
   ],
   "notice": "Main televised PDC tournaments only. The Darts API supplies available event records; official PDC calendar dates fill gaps in upcoming headline events. U23, youth, development, affiliate, qualifier and non-televised Players Championship events are excluded.",
-  "sync_attempted_at": "2026-11-11T12:14:21Z",
+  "sync_attempted_at": "2026-11-12T19:02:12Z",
   "data_status": "fallback",
-  "results": [],
-  "results_sync_warning": "DARTS_API_KEY is not configured; retaining the last published results.",
-  "results_last_successful_update": null,
-  "sync_warning": "DARTS_API_KEY is not configured; using verified official PDC calendar dates.",
-  "last_updated": "2026-11-11T12:14:21Z"
+  "results": [
+    {
+      "match_id": "mt_1T3MNZF6Q6CM95NDAVAJ",
+      "played_on": "2026-10-25",
+      "round": "last_128",
+      "winner": {
+        "name": "Callum Grealis",
+        "score": 4
+      },
+      "loser": {
+        "name": "Jurij Gosar",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_87Q31V",
+      "competition_id": "cp_43BA7P",
+      "event_name": "Hungarian Masters Men",
+      "event_tier": "wdf_gold"
+    },
+    {
+      "match_id": "mt_0993V6DGHAMRDPA6G6X3",
+      "played_on": "2026-10-25",
+      "round": "last_128",
+      "winner": {
+        "name": "Juhasz Daniel Attila",
+        "score": 4
+      },
+      "loser": {
+        "name": "Rody Helsdingen",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_87Q31V",
+      "competition_id": "cp_43BA7P",
+      "event_name": "Hungarian Masters Men",
+      "event_tier": "wdf_gold"
+    },
+    {
+      "match_id": "mt_0B6Z1BKNAS7Y610DQ739",
+      "played_on": "2026-10-25",
+      "round": "last_128",
+      "winner": {
+        "name": "Danio Aalders",
+        "score": 4
+      },
+      "loser": {
+        "name": "Stephen Tagliaferro",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_87Q31V",
+      "competition_id": "cp_43BA7P",
+      "event_name": "Hungarian Masters Men",
+      "event_tier": "wdf_gold"
+    },
+    {
+      "match_id": "mt_0J4EBJ7MC6EKJ8K6BVZ4",
+      "played_on": "2026-10-25",
+      "round": "last_128",
+      "winner": {
+        "name": "Daniel Bauerdick",
+        "score": 4
+      },
+      "loser": {
+        "name": "Mason Teese",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_87Q31V",
+      "competition_id": "cp_43BA7P",
+      "event_name": "Hungarian Masters Men",
+      "event_tier": "wdf_gold"
+    },
+    {
+      "match_id": "mt_1VFK7H2VY6QP2SV3JBW4",
+      "played_on": "2026-10-25",
+      "round": "last_16",
+      "winner": {
+        "name": "Ben Townley",
+        "score": 4
+      },
+      "loser": {
+        "name": "Jarno Bottenberg",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_87Q31V",
+      "competition_id": "cp_43BA7P",
+      "event_name": "Hungarian Masters Men",
+      "event_tier": "wdf_gold"
+    },
+    {
+      "match_id": "mt_0A7A8RPKRQ5NPEZR05S5",
+      "played_on": "2026-10-25",
+      "round": "last_16",
+      "winner": {
+        "name": "Ron Meulenkamp",
+        "score": 4
+      },
+      "loser": {
+        "name": "Krohne Paul",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_87Q31V",
+      "competition_id": "cp_43BA7P",
+      "event_name": "Hungarian Masters Men",
+      "event_tier": "wdf_gold"
+    },
+    {
+      "match_id": "mt_0T5GJ305NHRDNK0NBZKT",
+      "played_on": "2026-10-25",
+      "round": "last_32",
+      "winner": {
+        "name": "Moreno Blom",
+        "score": 4
+      },
+      "loser": {
+        "name": "Joszef Rucska",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_87Q31V",
+      "competition_id": "cp_43BA7P",
+      "event_name": "Hungarian Masters Men",
+      "event_tier": "wdf_gold"
+    },
+    {
+      "match_id": "mt_1G74W2AJ406HW6Z053ZY",
+      "played_on": "2026-10-25",
+      "round": "last_32",
+      "winner": {
+        "name": "Pat Scurfield",
+        "score": 4
+      },
+      "loser": {
+        "name": "Jordan Brooks",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_87Q31V",
+      "competition_id": "cp_43BA7P",
+      "event_name": "Hungarian Masters Men",
+      "event_tier": "wdf_gold"
+    },
+    {
+      "match_id": "mt_0DPVC6SAJGD40GADYH3T",
+      "played_on": "2026-10-25",
+      "round": "last_32",
+      "winner": {
+        "name": "Sean Fisher",
+        "score": 4
+      },
+      "loser": {
+        "name": "Liam Maendl-Lawrance",
+        "score": 2
+      },
+      "result_status": "final",
+      "event_id": "ev_87Q31V",
+      "competition_id": "cp_43BA7P",
+      "event_name": "Hungarian Masters Men",
+      "event_tier": "wdf_gold"
+    },
+    {
+      "match_id": "mt_0S6DRBCYV895NFGAEDFT",
+      "played_on": "2026-10-25",
+      "round": "last_32",
+      "winner": {
+        "name": "Ben Townley",
+        "score": 4
+      },
+      "loser": {
+        "name": "David Ladley",
+        "score": 2
+      },
+      "result_status": "final",
+      "event_id": "ev_87Q31V",
+      "competition_id": "cp_43BA7P",
+      "event_name": "Hungarian Masters Men",
+      "event_tier": "wdf_gold"
+    },
+    {
+      "match_id": "mt_0VKQB9HKP53AM4JAFEKR",
+      "played_on": "2026-10-25",
+      "round": "last_32",
+      "winner": {
+        "name": "Moreno Blom",
+        "score": 4
+      },
+      "loser": {
+        "name": "Kirsten Aquilina",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_87Q31V",
+      "competition_id": "cp_43BA7P",
+      "event_name": "Hungarian Masters Men",
+      "event_tier": "wdf_gold"
+    },
+    {
+      "match_id": "mt_0GCFN7HZ6XM1XAVRYN2A",
+      "played_on": "2026-10-25",
+      "round": "last_32",
+      "winner": {
+        "name": "Dmitrii Rogov",
+        "score": 4
+      },
+      "loser": {
+        "name": "Mika Donnevert",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_87Q31V",
+      "competition_id": "cp_43BA7P",
+      "event_name": "Hungarian Masters Men",
+      "event_tier": "wdf_gold"
+    },
+    {
+      "match_id": "mt_1W6GCZWDDG59HPCNZW18",
+      "played_on": "2026-10-25",
+      "round": "last_64",
+      "winner": {
+        "name": "Jarno Bottenberg",
+        "score": 4
+      },
+      "loser": {
+        "name": "Neven Resetar",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_87Q31V",
+      "competition_id": "cp_43BA7P",
+      "event_name": "Hungarian Masters Men",
+      "event_tier": "wdf_gold"
+    },
+    {
+      "match_id": "mt_13BYNW2PV5V0BSRP86GR",
+      "played_on": "2026-10-25",
+      "round": "last_64",
+      "winner": {
+        "name": "Matt Clark",
+        "score": 4
+      },
+      "loser": {
+        "name": "Juhasz Daniel Attila",
+        "score": 2
+      },
+      "result_status": "final",
+      "event_id": "ev_87Q31V",
+      "competition_id": "cp_43BA7P",
+      "event_name": "Hungarian Masters Men",
+      "event_tier": "wdf_gold"
+    },
+    {
+      "match_id": "mt_16VX6BDEM9TFC3FYPAF6",
+      "played_on": "2026-10-25",
+      "round": "last_64",
+      "winner": {
+        "name": "Joszef Rucska",
+        "score": 4
+      },
+      "loser": {
+        "name": "Szabo Eduard Cristian",
+        "score": 2
+      },
+      "result_status": "final",
+      "event_id": "ev_87Q31V",
+      "competition_id": "cp_43BA7P",
+      "event_name": "Hungarian Masters Men",
+      "event_tier": "wdf_gold"
+    },
+    {
+      "match_id": "mt_0RX831H7WM1D7X9EDSFK",
+      "played_on": "2026-11-01",
+      "round": "final",
+      "winner": {
+        "name": "Nina Andrejkovicova",
+        "score": 4
+      },
+      "loser": {
+        "name": "Alexandra Vavrovicova",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_J9AA7F",
+      "competition_id": "cp_X3MNQ6",
+      "event_name": "Nitra Masters Girls, 1 Nov 2026",
+      "event_tier": "wdf_other"
+    },
+    {
+      "match_id": "mt_0THQSHHX9MJ3DR5VN8CB",
+      "played_on": "2026-11-01",
+      "round": null,
+      "winner": {
+        "name": "Rebecca Allen",
+        "score": 5
+      },
+      "loser": {
+        "name": "Olivia Heaton",
+        "score": 2
+      },
+      "result_status": "final",
+      "event_id": "ev_XQRZ9S",
+      "competition_id": "cp_YAT2QQ",
+      "event_name": "World Championship Qualifiers UK Girls 2026, 1 Nov 2026",
+      "event_tier": "wdf_other"
+    },
+    {
+      "match_id": "mt_0H526AEJK6E6K1524FVK",
+      "played_on": "2026-11-01",
+      "round": null,
+      "winner": {
+        "name": "Kim Holden",
+        "score": 4
+      },
+      "loser": {
+        "name": "Leanne Topper",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_DKAT85",
+      "competition_id": "cp_SED32S",
+      "event_name": "World Championship Qualifiers UK Women 2026, 1 Nov 2026",
+      "event_tier": "wdf_other"
+    },
+    {
+      "match_id": "mt_0PQPWJRDMD4MJ5NXFVQM",
+      "played_on": "2026-11-01",
+      "round": null,
+      "winner": {
+        "name": "Paige Pauling",
+        "score": 5
+      },
+      "loser": {
+        "name": "Jo Rolls",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_DKAT85",
+      "competition_id": "cp_SED32S",
+      "event_name": "World Championship Qualifiers UK Women 2026, 1 Nov 2026",
+      "event_tier": "wdf_other"
+    },
+    {
+      "match_id": "mt_0SP02JSTN9N3B88T3WX4",
+      "played_on": "2026-11-01",
+      "round": null,
+      "winner": {
+        "name": "Kim Holden",
+        "score": 5
+      },
+      "loser": {
+        "name": "Macy Gibbons",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_DKAT85",
+      "competition_id": "cp_SED32S",
+      "event_name": "World Championship Qualifiers UK Women 2026, 1 Nov 2026",
+      "event_tier": "wdf_other"
+    },
+    {
+      "match_id": "mt_037KPN7ZBPDQ2GD1N1KM",
+      "played_on": "2026-11-03",
+      "round": "final",
+      "winner": {
+        "name": "Paige Pauling",
+        "score": 4
+      },
+      "loser": {
+        "name": "Lena Vitovszki",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_4GZ1RY",
+      "competition_id": "cp_20ZV9E",
+      "event_name": "Hungarian Masters Girls, 3 Nov 2026",
+      "event_tier": "wdf_gold"
+    }
+  ],
+  "results_last_successful_update": "2026-11-12T19:02:12Z",
+  "results_window": {
+    "from": "2026-10-13",
+    "to": "2026-11-05",
+    "note": "Weekly settled-results snapshot; live match scores are not included."
+  },
+  "sync_warning": "Darts API returned no matching televised PDC events in the 60-day window; using official fallback dates.",
+  "last_updated": "2026-11-12T19:02:12Z"
 }
