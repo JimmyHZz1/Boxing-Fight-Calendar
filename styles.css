@@ -3696,3 +3696,7 @@ body.swgoh-mode #brand-title{color:#b99ae8!important;text-shadow:0 0 12px rgba(1
 .hub-version-history-link{display:none}
 body.hub-selection-mode .hub-version-history-link{display:inline-block}
 body.hub-selection-mode .version-history-link,body.hub-selection-mode .games-version-history-link,body.hub-selection-mode .swgoh-version-history-link{display:none!important}
+
+
+/* Give the left-hand markers for both preserved hubs the same golden highlight. */
+.hub-roadmap-preserve-item .jobs-todo-number{color:#e2b45b;text-shadow:0 0 7px rgba(226,180,91,.72),0 0 15px rgba(226,180,91,.34)}
