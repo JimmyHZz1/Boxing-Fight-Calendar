@@ -3743,6 +3743,26 @@ body.hub-selection-mode .version-history-link,body.hub-selection-mode .games-ver
 @media(max-width:700px){.entertainment-hero{min-height:220px}.entertainment-hero-mark{width:76px;height:76px;font-size:31px}.entertainment-overview-grid{grid-template-columns:1fr}.entertainment-overview-card{min-height:112px}.entertainment-page-footer{align-items:flex-start;flex-direction:column}}
 @media(max-width:480px){.entertainment-hero{padding:22px 18px}.entertainment-hero-mark{display:none}.entertainment-section-nav a{padding:8px 9px;font-size:8px}}
 
+/* Keep hub names on one line in the hub-switcher dropdown. */
+.mobile-calendar-menu .calendar-menu-wordmark{
+  flex-direction:row;
+  align-items:baseline;
+  gap:5px;
+  line-height:1;
+  white-space:nowrap;
+}
+.mobile-calendar-menu .calendar-menu-wordmark strong{font-size:13px}
+.mobile-calendar-menu .calendar-menu-wordmark small{
+  font-size:11px;
+  line-height:1;
+  letter-spacing:1px;
+  color:var(--muted);
+}
+
+
+/* Keep the dropdown's hub marks true to each hub's own identity. */
+.mobile-calendar-menu button .brand-menu-mark.hub-home-mark{background:linear-gradient(145deg,#f0f2f5,#aeb6c2)!important;color:#17191e!important;border:1px solid #e3e7ed!important;box-shadow:0 0 9px rgba(215,220,228,.2)!important}
+.mobile-calendar-menu button .brand-menu-mark.entertainment-mark{background:#b85b82!important;color:#fff!important;border:1px solid rgba(255,255,255,.16)!important;box-shadow:0 0 9px rgba(184,91,130,.22)!important}
 
 /* Published PDC order of play and session-level start times. */
 .sport-darts-order-heading{margin-top:16px;color:#c3a1e5;font-weight:900;letter-spacing:1px}
