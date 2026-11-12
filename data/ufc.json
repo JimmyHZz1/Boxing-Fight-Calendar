@@ -45,7 +45,9 @@
           },
           "result": null,
           "referee": null,
-          "bonus": null
+          "bonus": null,
+          "fighter2_image": "./assets/images/ufc/sean-brady.jpg",
+          "fighter2_image_credit": "Wikimedia Commons · Irish Jesuits · CC BY 2.0"
         },
         {
           "id": 93635,

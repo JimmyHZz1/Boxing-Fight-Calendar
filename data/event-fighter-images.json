@@ -44,8 +44,23 @@
       "image_match_method": "category:Category:Ikram Aliskerov",
       "image_verified_at": "2026-11-11T18:26:27Z",
       "image_local_path": "assets/images/ufc/ikram-aliskerov.png"
+    },
+    "sean brady": {
+      "name": "Sean Brady",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/sean-brady.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Cardinal_Sean_Brady_(cropped).jpg",
+      "image_credit": "Wikimedia Commons · Irish Jesuits · CC BY 2.0",
+      "image_license": "CC BY 2.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/2.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Seán Brady",
+      "image_verified_at": "2026-11-12T03:12:25Z",
+      "image_local_path": "assets/images/ufc/sean-brady.jpg"
     }
   },
   "attempted": {},
-  "updated_at": "2026-11-11T22:46:49Z"
+  "updated_at": "2026-11-12T03:12:51Z"
 }

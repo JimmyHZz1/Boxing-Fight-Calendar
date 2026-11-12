@@ -234,13 +234,33 @@
           "rank": 20,
           "name": "Yuki Tsunoda",
           "team": "RB F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/yuki-tsunoda.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Yuki_Tsunoda_Macau_2019.jpg",
+          "image_credit": "Wikimedia Commons · Smith007 · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "category:Category:Yuki Tsunoda in 2019",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/yuki-tsunoda.jpg"
         },
         {
           "rank": 21,
           "name": "Ryo Hirakawa",
           "team": "Haas F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/ryo-hirakawa.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Ryo_Hirakawa_2024_WEC_Fuji_1.jpg",
+          "image_credit": "Wikimedia Commons · Morio · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "search:Ryo Hirakawa",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/ryo-hirakawa.jpg"
         },
         {
           "rank": 22,
@@ -4189,17 +4209,47 @@
             {
               "rank": 6,
               "name": "Sean Brady",
-              "image_url": null
+              "image_url": "./assets/images/ufc/sean-brady.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Cardinal_Sean_Brady_(cropped).jpg",
+              "image_credit": "Wikimedia Commons · Irish Jesuits · CC BY 2.0",
+              "image_license": "CC BY 2.0",
+              "image_license_url": "https://creativecommons.org/licenses/by/2.0",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Seán Brady",
+              "image_verified_at": "2026-11-12T03:12:25Z",
+              "image_local_path": "assets/images/ufc/sean-brady.jpg"
             },
             {
               "rank": 7,
               "name": "Belal Muhammad",
-              "image_url": null
+              "image_url": "./assets/images/ufc/belal-muhammad.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Belal_Muhammad_delivering_speech_(cropped).jpg",
+              "image_credit": "Wikimedia Commons · Rahat · CC BY-SA 3.0",
+              "image_license": "CC BY-SA 3.0",
+              "image_license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Belal Muhammad",
+              "image_verified_at": "2026-11-12T03:12:25Z",
+              "image_local_path": "assets/images/ufc/belal-muhammad.jpg"
             },
             {
               "rank": 8,
               "name": "Leon Edwards",
-              "image_url": null
+              "image_url": "./assets/images/ufc/leon-edwards.png",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Leon_Edwards_2021.png",
+              "image_credit": "Wikimedia Commons · James English · CC BY 3.0",
+              "image_license": "CC BY 3.0",
+              "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Leon Edwards",
+              "image_verified_at": "2026-11-12T03:12:25Z",
+              "image_local_path": "assets/images/ufc/leon-edwards.png"
             },
             {
               "rank": 9,
@@ -5248,17 +5298,74 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 192,
-    "found": 105,
-    "missing": 443,
-    "rejected": 140,
-    "by_sport": {},
-    "newly_found": 0,
+    "attempted": 4,
+    "found": 110,
+    "missing": 683,
+    "rejected": 2,
+    "by_sport": {
+      "ufc": {
+        "attempted": 4,
+        "found": 3,
+        "missing": 1,
+        "rejected": 0
+      }
+    },
+    "rejection_reasons": {
+      "exact_name_pair_not_matched": 2
+    },
+    "search_details": [
+      {
+        "name": "Sean Brady",
+        "queries": 3,
+        "candidate_files": 5,
+        "accepted": 3,
+        "rejections": {
+          "exact_name_pair_not_matched": 2
+        }
+      },
+      {
+        "name": "Belal Muhammad",
+        "queries": 3,
+        "candidate_files": 2,
+        "accepted": 2,
+        "rejections": {}
+      },
+      {
+        "name": "Leon Edwards",
+        "queries": 3,
+        "candidate_files": 2,
+        "accepted": 2,
+        "rejections": {}
+      },
+      {
+        "name": "Mike Malott",
+        "queries": 1,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      }
+    ],
+    "checked_at": "2026-11-12T03:12:25Z",
+    "library_entries": 74,
+    "newly_found": 3,
+    "cumulative_attempted": 196,
+    "cumulative_found": 74,
+    "cumulative_missing": 122,
+    "cumulative_rejected": 142,
+    "batch_number": 23,
+    "last_batch_at": "2026-11-12T03:12:25Z",
+    "last_successful_batch_at": "2026-11-12T03:12:25Z",
+    "last_rate_limited_at": "2026-11-12T03:12:25Z",
     "coverage": {
+      "boxing fight card fighters": {
+        "total": 245,
+        "with_image": 0,
+        "missing": 245
+      },
       "f1 drivers": {
         "total": 25,
-        "with_image": 23,
-        "missing": 2
+        "with_image": 25,
+        "missing": 0
       },
       "f1 constructors": {
         "total": 11,
@@ -5272,8 +5379,8 @@
       },
       "ufc": {
         "total": 206,
-        "with_image": 21,
-        "missing": 185
+        "with_image": 24,
+        "missing": 182
       },
       "boxing": {
         "total": 81,
@@ -5281,16 +5388,6 @@
         "missing": 81
       }
     },
-    "checked_at": "2026-11-11T22:46:28Z",
-    "library_entries": 71,
-    "cumulative_found": 71,
-    "cumulative_missing": 121,
-    "cumulative_rejected": 140,
-    "batch_number": 22,
-    "last_batch_at": "2026-11-11T22:24:19Z",
-    "last_successful_batch_at": "2026-11-11T22:24:19Z",
-    "last_rate_limited_at": "2026-11-11T22:24:19Z",
-    "enrichment_status": "paused after rate limit",
     "rate_limited": true
   },
   "last_updated": "2026-11-11T22:46:28Z"

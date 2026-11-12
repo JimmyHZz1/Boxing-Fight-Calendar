@@ -973,9 +973,54 @@
       "image_match_method": "category:Category:Carlos Prates",
       "image_verified_at": "2026-11-11T22:24:19Z",
       "image_local_path": "assets/images/ufc/carlos-prates.jpg"
+    },
+    "sean brady": {
+      "name": "Sean Brady",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/sean-brady.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Cardinal_Sean_Brady_(cropped).jpg",
+      "image_credit": "Wikimedia Commons · Irish Jesuits · CC BY 2.0",
+      "image_license": "CC BY 2.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/2.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Seán Brady",
+      "image_verified_at": "2026-11-12T03:12:25Z",
+      "image_local_path": "assets/images/ufc/sean-brady.jpg"
+    },
+    "belal muhammad": {
+      "name": "Belal Muhammad",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/belal-muhammad.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Belal_Muhammad_delivering_speech_(cropped).jpg",
+      "image_credit": "Wikimedia Commons · Rahat · CC BY-SA 3.0",
+      "image_license": "CC BY-SA 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Belal Muhammad",
+      "image_verified_at": "2026-11-12T03:12:25Z",
+      "image_local_path": "assets/images/ufc/belal-muhammad.jpg"
+    },
+    "leon edwards": {
+      "name": "Leon Edwards",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/leon-edwards.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Leon_Edwards_2021.png",
+      "image_credit": "Wikimedia Commons · James English · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Leon Edwards",
+      "image_verified_at": "2026-11-12T03:12:25Z",
+      "image_local_path": "assets/images/ufc/leon-edwards.png"
     }
   },
-  "updated_at": "2026-11-11T22:46:28Z",
+  "updated_at": "2026-11-12T03:12:25Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1162,7 +1207,10 @@
     "carlos prates": "2026-11-11T22:24:19Z",
     "michael morales": "2026-11-11T22:24:19Z",
     "jack della maddalena": "2026-11-11T22:24:19Z",
-    "gabriel bonfim": "2026-11-11T22:24:19Z"
+    "gabriel bonfim": "2026-11-11T22:24:19Z",
+    "sean brady": "2026-11-12T03:12:25Z",
+    "belal muhammad": "2026-11-12T03:12:25Z",
+    "leon edwards": "2026-11-12T03:12:25Z"
   },
   "audit": {
     "last_reviewed_at": "2026-11-09T12:15:00Z",
@@ -1199,15 +1247,15 @@
     }
   },
   "enrichment": {
-    "batch_number": 22,
+    "batch_number": 23,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 192,
-    "cumulative_found": 71,
-    "cumulative_missing": 121,
-    "cumulative_rejected": 140,
-    "last_batch_at": "2026-11-11T22:24:19Z",
-    "last_successful_batch_at": "2026-11-11T22:24:19Z",
-    "last_rate_limited_at": "2026-11-11T22:24:19Z",
+    "cumulative_attempted": 196,
+    "cumulative_found": 74,
+    "cumulative_missing": 122,
+    "cumulative_rejected": 142,
+    "last_batch_at": "2026-11-12T03:12:25Z",
+    "last_successful_batch_at": "2026-11-12T03:12:25Z",
+    "last_rate_limited_at": "2026-11-12T03:12:25Z",
     "history": [
       {
         "batch": 1,
@@ -1383,6 +1431,14 @@
         "attempted": 5,
         "found": 1,
         "missing": 4,
+        "rate_limited": true
+      },
+      {
+        "batch": 23,
+        "at": "2026-11-12T03:12:25Z",
+        "attempted": 4,
+        "found": 3,
+        "missing": 1,
         "rate_limited": true
       }
     ],

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-11T22:24:19Z",
+  "updated_at": "2026-11-12T03:12:25Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -739,6 +739,39 @@
       "creator": "Wikimedia Commons · Sexto Round · CC BY 3.0",
       "attribution": "Wikimedia Commons · Sexto Round · CC BY 3.0",
       "verified_at": "2026-11-11T22:24:19Z",
+      "sport": "ufc"
+    },
+    "sean brady": {
+      "name": "Sean Brady",
+      "path": "assets/images/ufc/sean-brady.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Cardinal_Sean_Brady_(cropped).jpg",
+      "licence": "CC BY 2.0",
+      "licence_url": "https://creativecommons.org/licenses/by/2.0",
+      "creator": "Wikimedia Commons · Irish Jesuits · CC BY 2.0",
+      "attribution": "Wikimedia Commons · Irish Jesuits · CC BY 2.0",
+      "verified_at": "2026-11-12T03:12:25Z",
+      "sport": "ufc"
+    },
+    "belal muhammad": {
+      "name": "Belal Muhammad",
+      "path": "assets/images/ufc/belal-muhammad.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Belal_Muhammad_delivering_speech_(cropped).jpg",
+      "licence": "CC BY-SA 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "creator": "Wikimedia Commons · Rahat · CC BY-SA 3.0",
+      "attribution": "Wikimedia Commons · Rahat · CC BY-SA 3.0",
+      "verified_at": "2026-11-12T03:12:25Z",
+      "sport": "ufc"
+    },
+    "leon edwards": {
+      "name": "Leon Edwards",
+      "path": "assets/images/ufc/leon-edwards.png",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Leon_Edwards_2021.png",
+      "licence": "CC BY 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by/3.0",
+      "creator": "Wikimedia Commons · James English · CC BY 3.0",
+      "attribution": "Wikimedia Commons · James English · CC BY 3.0",
+      "verified_at": "2026-11-12T03:12:25Z",
       "sport": "ufc"
     }
   },
