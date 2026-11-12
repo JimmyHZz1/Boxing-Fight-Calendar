@@ -54,14 +54,39 @@ function showScreen(id) {
     });
   }
   document.querySelectorAll(".screen").forEach(s => s.classList.toggle("active",s.id===id));
+  document.body.classList.toggle("hub-selection-mode",id==="hub-selection-screen");
   document.body.classList.toggle("games-mode",id==="games-calendar-screen"||id==="games-platform-calendar-screen"||id==="games-version-history-screen");
   document.body.classList.toggle("swgoh-mode",id==="swgoh-hub-screen");
   document.body.classList.toggle("games-platform-page",id==="games-platform-calendar-screen");
   document.dispatchEvent(new CustomEvent("sports:screen-changed",{detail:{screen:id}}));
   document.querySelectorAll(".nav-item,.topbar-nav-item").forEach(b => b.classList.toggle("active",b.dataset.screen===id || (id==="sport-detail-screen"&&b.dataset.screen==="home-screen")));
+  document.querySelectorAll(".nav-item,.topbar-nav-item,.topbar,.top-sport-selector,.games-platform-hub,.next-event-strip,.bottom-nav").forEach(node=>node.classList.toggle("hub-launch-hidden",id==="hub-selection-screen"));
   window.scrollTo({top:0,behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
 }
 window.showScreen=showScreen;
+
+// The Hub launch experience: the selector is the default; an optional
+// per-device preference can open one of the available hubs directly.
+const HUB_STARTUP_KEY="theHubStartupDestinationV1";
+const HUB_STARTUP_OPTIONS=new Set(["hub-selection-screen","home-screen","games-calendar-screen","swgoh-hub-screen"]);
+const getHubStartupDestination=()=>{
+  try { const saved=localStorage.getItem(HUB_STARTUP_KEY); return HUB_STARTUP_OPTIONS.has(saved)?saved:"hub-selection-screen"; }
+  catch(_) { return "hub-selection-screen"; }
+};
+const setHubStartupDestination=value=>{
+  const destination=HUB_STARTUP_OPTIONS.has(value)?value:"hub-selection-screen";
+  try { localStorage.setItem(HUB_STARTUP_KEY,destination); } catch(_) {}
+  return destination;
+};
+document.querySelectorAll("[data-hub-screen]").forEach(tile=>{
+  tile.addEventListener("click",()=>showScreen(tile.dataset.hubScreen));
+});
+const startupSelect=$("hub-startup-destination");
+if(startupSelect){
+  startupSelect.value=getHubStartupDestination();
+  startupSelect.addEventListener("change",()=>setHubStartupDestination(startupSelect.value));
+}
+showScreen(getHubStartupDestination());
 document.querySelectorAll(".nav-item,.topbar-nav-item").forEach(b => b.addEventListener("click",()=>{if(!b.hasAttribute("data-calendar-switcher"))showScreen(b.dataset.screen);}));
 const favouriteTeamThemes = {
   "Mercedes":{accent:"#00d2be",glow:"#123b3a",chrome:"#101c1c"},
