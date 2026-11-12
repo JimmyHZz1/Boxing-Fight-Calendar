@@ -1,0 +1,52 @@
+{
+  "sport": "bkfc",
+  "provider": "BKFC official events",
+  "events": [
+    {
+      "id": "bkfc-1",
+      "name": "BKFC FIGHT NIGHT MYRTLE BEACH RICHARDSON vs OXENDINE",
+      "date": "2026-11-21",
+      "start_at": "2026-11-21T02:00:00Z",
+      "status": "scheduled",
+      "location": "Myrtle Beach Sports Center, Myrtle Beach, USA",
+      "source_url": "https://www.bkfc.com/events",
+      "fights": [],
+      "source": "BKFC official events"
+    },
+    {
+      "id": "bkfc-2",
+      "name": "BKFC FIGHT NIGHT HERSHEY PAGUE vs RICHMAN",
+      "date": "2026-12-05",
+      "start_at": "2026-12-05T01:00:00Z",
+      "status": "scheduled",
+      "location": "Giant Center, Hershey, USA",
+      "source_url": "https://www.bkfc.com/events",
+      "fights": [],
+      "source": "BKFC official events"
+    },
+    {
+      "id": "bkfc-3",
+      "name": "BKFC 97 HOLLYWOOD HENRY vs COLLARD",
+      "date": "2026-12-12",
+      "start_at": "2026-12-12T00:00:00Z",
+      "status": "scheduled",
+      "location": "Hard Rock Live, Hollywood, Florida",
+      "source_url": "https://www.bkfc.com/events",
+      "fights": [],
+      "source": "BKFC official events"
+    },
+    {
+      "id": "bkfc-4",
+      "name": "BKFC 99 SHEFFIELD BONNER vs FRANCO",
+      "date": "2027-02-13",
+      "start_at": "2027-02-13T14:00:00Z",
+      "status": "scheduled",
+      "location": "Utilita Arena, Sheffield, UK",
+      "source_url": "https://www.bkfc.com/events",
+      "fights": [],
+      "source": "BKFC official events"
+    }
+  ],
+  "notice": "Schedule sourced from BKFC's official events page. Start times and full fight cards are shown only when published by BKFC. UK viewing is event-dependent: BKFC+ carries many live events; selected cards are exclusive to DAZN.",
+  "last_updated": "2026-11-12T16:51:09Z"
+}
