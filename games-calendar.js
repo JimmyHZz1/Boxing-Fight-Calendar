@@ -55,6 +55,7 @@
       if (event.key === "Escape") closeMenu();
     });
     window.addEventListener("sports:screen-changed", event => setBrand(event.detail?.screen || ""));
+    setBrand(document.querySelector(".screen.active")?.id || "home-screen");
   }
 
 
