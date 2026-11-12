@@ -27,3 +27,37 @@ body.swgoh-mode .bottom-nav{display:none!important}
 .swgoh-native .swgoh-app-logo{width:48px;height:48px;flex:0 0 48px;object-fit:cover;border-radius:11px;box-shadow:0 2px 8px #0006}
 .swgoh-native .swgoh-header-brand h1{font-size:24px}
 @media(max-width:420px){.swgoh-native .swgoh-app-logo{width:42px;height:42px;flex-basis:42px}}
+
+
+/* SWGOH Hub theme: retain the official app logo unchanged; use purple for the interface. */
+body.swgoh-mode .swgoh-native{
+  --accent:#b99ae8;
+  --line:#403454;
+  --nav:#100d19;
+  --card:#1b1527;
+  --bg:#100d19;
+  --muted:#b8a9cc;
+  background:#100d19;
+  border-color:#403454;
+  color:#f2eafb;
+}
+body.swgoh-mode .swgoh-native header{background:#171121;border-bottom:1px solid #403454}
+body.swgoh-mode .swgoh-native .card,
+body.swgoh-mode .swgoh-native .tile{background:linear-gradient(145deg,#241b33,#171121);border-color:#49385f}
+body.swgoh-mode .swgoh-native .tile{color:#f0e8fa}
+body.swgoh-mode .swgoh-native .sectionHead h2,
+body.swgoh-mode .swgoh-native .brand h1{color:#f2eafb}
+body.swgoh-mode .swgoh-native .bar{background:#352844}
+body.swgoh-mode .swgoh-native .bar i{background:linear-gradient(90deg,#9b78d1,#c8a9f4)}
+body.swgoh-mode .swgoh-native .btn{background:linear-gradient(135deg,#9b78d1,#7552a8);color:#fff}
+body.swgoh-mode .swgoh-native .btn.secondary{background:#352844;color:#e4d2fa}
+body.swgoh-mode .swgoh-native .pill,
+body.swgoh-mode .swgoh-native .chip{background:#352844;color:#d8c0f5}
+body.swgoh-mode .swgoh-native .nav{background:#100d19;border-color:#403454}
+body.swgoh-mode .swgoh-native .nav button.active{background:#352844;color:#d8baf7}
+body.swgoh-mode .swgoh-native .news{background:#21182e;border-color:#49385f}
+body.swgoh-mode .swgoh-native .notice{border-color:#b99ae8}
+body.swgoh-mode .swgoh-native input,
+body.swgoh-mode .swgoh-native select,
+body.swgoh-mode .swgoh-native textarea{background:#171121;border-color:#49385f;color:#f0e8fa}
+body.swgoh-mode .swgoh-native .swgoh-app-logo{filter:none!important}

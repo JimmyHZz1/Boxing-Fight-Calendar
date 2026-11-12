@@ -3658,3 +3658,13 @@ body.hub-selection-mode .topbar,body.hub-selection-mode .top-sport-selector,body
 body.swgoh-mode #brand-title{color:#b99ae8!important;text-shadow:0 0 12px rgba(185,154,232,.22)}
 .swgoh-hub-tile .hub-tile-name strong,.swgoh-hub-tile .swgoh-tile-mark{color:#b99ae8!important;text-shadow:0 0 12px rgba(185,154,232,.22)}
 .mobile-calendar-menu button .brand-menu-logo.swgoh-menu-logo{filter:grayscale(1) sepia(1) saturate(2.2) hue-rotate(220deg);border:1px solid #a98bdf}
+
+
+/* Make the launch wordmark colours explicit and defeat stale inherited eyebrow styles. */
+.hub-selection-hero > .eyebrow .hub-name-the{color:#c5cbd4!important;text-shadow:0 0 10px rgba(197,203,212,.2)!important}
+.hub-selection-hero > .eyebrow .hub-name-hub{color:#e2b45b!important;text-shadow:0 0 12px rgba(226,180,91,.22)!important}
+
+/* The SWGOH mark in the shared header is the original full-colour app artwork. */
+.brand-mark.brand-mark-image{display:block;overflow:hidden;background:transparent!important;transform:none!important;border-radius:7px;box-shadow:0 2px 9px #0007}
+.brand-mark.brand-mark-image .brand-switcher-app-logo{width:100%;height:100%;object-fit:cover;display:block;border-radius:7px}
+body.swgoh-mode #brand-title{color:#b99ae8!important;text-shadow:0 0 12px rgba(185,154,232,.22)!important}
