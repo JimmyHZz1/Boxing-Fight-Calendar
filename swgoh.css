@@ -21,3 +21,9 @@ body.swgoh-mode .bottom-nav{display:none!important}
 .swgoh-native .nav button small{font-size:9px;line-height:1.1;letter-spacing:.2px;color:inherit}
 .swgoh-native .nav button.active{background:#183252;color:#8acbff}
 .swgoh-native .main{padding-bottom:28px}
+
+/* Official Galaxy of Heroes app mark in the integrated SWGOH header. */
+.swgoh-native .swgoh-header-brand{display:flex;align-items:center;gap:12px;min-width:0}
+.swgoh-native .swgoh-app-logo{width:48px;height:48px;flex:0 0 48px;object-fit:cover;border-radius:11px;box-shadow:0 2px 8px #0006}
+.swgoh-native .swgoh-header-brand h1{font-size:24px}
+@media(max-width:420px){.swgoh-native .swgoh-app-logo{width:42px;height:42px;flex-basis:42px}}
