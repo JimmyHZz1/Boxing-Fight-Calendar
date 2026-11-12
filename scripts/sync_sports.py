@@ -217,7 +217,7 @@ def pdc_official_fallback_events():
             "end_date": "2026-11-22",
             "venue": "Aldersley Leisure Village, Wolverhampton",
             "tier": "majors",
-            "source_url": "https://www.pdc.tv/news/2026/november/09/littler-drawn-greaves-zonneveld-at-mr-vegas-grand-slam/",
+            "schedule_source_url": "https://www.pdc.tv/news/2026/november/09/littler-drawn-greaves-zonneveld-at-mr-vegas-grand-slam/",
             "schedule_of_play":             [
                     {
                             "date": "2026-11-14",
@@ -398,7 +398,7 @@ def pdc_official_fallback_events():
             "status": "scheduled",
             "organiser": "pdc",
             "source": "Official PDC calendar",
-            "source_url": item.get("source_url") or "https://www.pdc.tv/calendar",
+            "source_url": "https://www.pdc.tv/calendar",
         })
     return events
 
@@ -459,7 +459,7 @@ def sync_darts():
             if candidate.get("id") == fallback_event.get("id") or (fallback_name and candidate_name == fallback_name):
                 if fallback_event.get("schedule_of_play"):
                     candidate["schedule_of_play"] = fallback_event["schedule_of_play"]
-                    candidate["source_url"] = fallback_event.get("source_url") or candidate.get("source_url")
+                    candidate["schedule_source_url"] = fallback_event.get("schedule_source_url") or candidate.get("schedule_source_url")
                 break
     if key and not api_events and not warning:
         warning = "Darts API returned no matching televised PDC events in the 60-day window; using official fallback dates."

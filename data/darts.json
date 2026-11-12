@@ -15,7 +15,7 @@
       "status": "scheduled",
       "organiser": "pdc",
       "source": "Official PDC calendar",
-      "source_url": "https://www.pdc.tv/news/2026/november/09/littler-drawn-greaves-zonneveld-at-mr-vegas-grand-slam/",
+      "source_url": "https://www.pdc.tv/calendar",
       "schedule_of_play": [
         {
           "date": "2026-11-14",
@@ -168,7 +168,8 @@
             "Winner Semi-final 1 v Winner Semi-final 2"
           ]
         }
-      ]
+      ],
+      "schedule_source_url": "https://www.pdc.tv/news/2026/november/09/littler-drawn-greaves-zonneveld-at-mr-vegas-grand-slam/"
     },
     {
       "id": "pdc-2026-players-championship-finals",

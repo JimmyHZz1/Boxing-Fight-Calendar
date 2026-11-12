@@ -285,7 +285,7 @@
     }else{
       root.append(make("p","sport-sync-note","The PDC has not yet published a detailed order of play for this tournament. The match schedule will appear here once confirmed."));
     }
-    const source=event.source_url||"https://www.pdc.tv/calendar";
+    const source=event.schedule_source_url||event.source_url||"https://www.pdc.tv/calendar";
     if(/^https?:\/\//i.test(source)){const a=make("a","event-source-link","Official PDC schedule ↗");a.href=source;a.target="_blank";a.rel="noopener noreferrer";root.append(a);}
   }
   function fighterPortrait(name, url) {
