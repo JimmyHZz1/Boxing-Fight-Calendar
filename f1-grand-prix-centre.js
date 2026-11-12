@@ -23,8 +23,70 @@ function setReminder(e,s){const data=read(REM)||{lead:15,items:[]};data.items=da
 function reminderSet(e,s){const d=read(REM)||{};return (d.items||[]).some(x=>x.eventId===e.id&&x.key===s.name+"|"+(s.start_at||s.date));}
 async function enableNotifications(){if(!("Notification"in window)){state.message="Browser notifications are not supported in this browser.";render();return;}try{const p=await Notification.requestPermission();state.message=p==="granted"?"Browser notifications enabled.": "Notification permission was not granted.";render();}catch(_){state.message="Could not request notification permission.";render();}}
 function checkReminders(){const d=read(REM)||{items:[]};let changed=false;(d.items||[]).forEach(x=>{const at=date(x.at);if(!at||x.sent)return;const due=at.getTime()-Number(x.lead||15)*60000;if(Date.now()>=due&&Date.now()<at.getTime()+300000){x.sent=true;changed=true;state.message=x.eventName+" · "+x.sessionName+" reminder";if("Notification"in window&&Notification.permission==="granted")try{new Notification("F1 session reminder",{body:x.eventName+" · "+x.sessionName+" starts at "+fmt(x.at)});}catch(_){}}});if(changed){save(REM,d);render();}}
-function weatherCard(w){const box=el("div","f1-gp-weather");box.append(el("span","f1-gp-weather-icon",w.icon||"🌤️"));const copy=el("div","");copy.append(el("strong","",w.temp===null?"Forecast":Math.round(w.temp)+"°C"),el("small","",w.label+" · "+(w.rain===null?"Rain chance unavailable":Math.round(w.rain)+"% rain chance")));box.append(copy);return box;}
-async function loadWeather(){const e=state.event;if(!e?.locality)return;state.busy=true;state.message="";render();try{const g=await fetch("https://geocoding-api.open-meteo.com/v1/search?name="+encodeURIComponent(e.locality)+"&count=1&language=en&format=json");if(!g.ok)throw Error("Weather location lookup failed");const place=(await g.json()).results?.[0];if(!place)throw Error("No forecast location found");const day=String(e.date||"").slice(0,10),today=new Date().toISOString().slice(0,10),delta=(new Date(day)-new Date(today))/86400000;if(!day||delta<0||delta>6)throw Error("Forecast not yet available for this race date");const url="https://api.open-meteo.com/v1/forecast?latitude="+place.latitude+"&longitude="+place.longitude+"&daily=temperature_2m_max,precipitation_probability_max,weather_code&timezone="+encodeURIComponent(place.timezone||"auto")+"&start_date="+day+"&end_date="+day;const r=await fetch(url);if(!r.ok)throw Error("Weather provider unavailable");const d=await r.json(),code=d.daily?.weather_code?.[0],icon=code===0?"☀️":code<=3?"🌤️":code<=48?"🌫️":code<=67?"🌧️":code<=77?"❄️":code<=82?"🌦️":"⛈️";state.weather={temp:d.daily?.temperature_2m_max?.[0]??null,rain:d.daily?.precipitation_probability_max?.[0]??null,label:"Forecast · "+day,icon};save(WEATHER,{eventId:e.id,weather:state.weather,at:Date.now()});}catch(err){const cached=read(WEATHER);if(cached?.eventId===e.id)state.weather=cached.weather;else state.message=err.message||"Weather unavailable";}finally{state.busy=false;render();}}
+function weatherIcon(code){
+ if(!Number.isFinite(code))return "🌤️";
+ if(code===0)return "☀️";
+ if(code<=2)return "🌤️";
+ if(code===3)return "☁️";
+ if(code<=48)return "🌫️";
+ if(code<=57)return "🌦️";
+ if(code<=67)return "🌧️";
+ if(code<=77)return "❄️";
+ if(code<=82)return "🌦️";
+ if(code<=86)return "🌨️";
+ return "⛈️";
+}
+function weatherCard(w){
+ const box=el("div","f1-gp-weather");
+ box.append(el("div","f1-gp-weather-location",w.location||"Circuit location"));
+ const days=el("div","f1-gp-weather-days");
+ (w.days||[]).forEach(day=>{
+  const row=el("div","f1-gp-weather-day");
+  row.append(el("strong","f1-gp-weather-date",day.label||"—"),el("span","f1-gp-weather-icon",day.icon||"🌤️"));
+  row.append(el("span","f1-gp-weather-temperatures",(day.high===null?"—":Math.round(day.high)+"°")+" / "+(day.low===null?"—":Math.round(day.low)+"°")));
+  row.append(el("small","f1-gp-weather-rain",day.rain===null?"—":Math.round(day.rain)+"% rain"));
+  days.append(row);
+ });
+ box.append(days);
+ return box;
+}
+async function loadWeather(){
+ const e=state.event;if(!e?.locality)return;
+ state.busy=true;state.message="";render();
+ try{
+  const query=[e.locality,e.country].filter(Boolean).join(", ");
+  const g=await fetch("https://geocoding-api.open-meteo.com/v1/search?name="+encodeURIComponent(e.locality)+"&count=10&language=en&format=json");
+  if(!g.ok)throw Error("Weather location lookup failed");
+  const results=(await g.json()).results||[];
+  const countryAliases={"usa":"united states","uk":"united kingdom","uae":"united arab emirates","south korea":"republic of korea"};
+  const country=countryAliases[norm(e.country)]||norm(e.country);
+  const place=results.find(x=>norm(x.country)===country)||results[0];
+  if(!place)throw Error("No forecast location found for "+query);
+  const params=new URLSearchParams({
+   latitude:String(place.latitude),longitude:String(place.longitude),
+   daily:"temperature_2m_max,temperature_2m_min,precipitation_probability_max,weather_code",
+   forecast_days:"7",timezone:place.timezone||"auto"
+  });
+  const response=await fetch("https://api.open-meteo.com/v1/forecast?"+params.toString());
+  if(!response.ok)throw Error("Weather provider unavailable");
+  const data=await response.json(),daily=data.daily||{};
+  const days=(daily.time||[]).map((day,i)=>({
+   date:day,
+   label:new Intl.DateTimeFormat("en-GB",{weekday:"short",day:"numeric",month:"short",timeZone:"UTC"}).format(new Date(day+"T12:00:00Z")),
+   high:daily.temperature_2m_max?.[i]??null,
+   low:daily.temperature_2m_min?.[i]??null,
+   rain:daily.precipitation_probability_max?.[i]??null,
+   icon:weatherIcon(daily.weather_code?.[i])
+  }));
+  if(!days.length)throw Error("The weather provider returned no daily forecast.");
+  state.weather={location:[place.name,place.country].filter(Boolean).join(", "),days};
+  save(WEATHER,{eventId:e.id,weather:state.weather,at:Date.now()});
+ }catch(err){
+  const cached=read(WEATHER);
+  if(cached?.eventId===e.id&&cached.weather?.days?.length)state.weather=cached.weather;
+  else state.message=err.message||"Weather unavailable";
+ }finally{state.busy=false;render();}
+}
 
 function cleanMeta(value){return String(value||"").replace(/<[^>]*>/g," ").replace(/&nbsp;/g," ").replace(/&#160;/g," ").replace(/\s+/g," ").trim();}
 async function loadCircuitAssets(){
@@ -75,14 +137,14 @@ function render(){
  ["RACE DISTANCE",e.race_distance_km?e.race_distance_km+" km":"Not supplied"],
  ["LAP RECORD",e.lap_record||"Not supplied"]
 ];circuitFacts.forEach(([k,v])=>{const x=el("div","f1-gp-fact");x.append(el("strong","",String(v)),el("small","",k));facts.append(x);});circuit.append(facts,el("p","f1-gp-footnote","Track specifications are displayed only when present in verified event or circuit metadata; unpublished figures are not guessed."));
- const wx=panel(grid,"Weather");if(state.busy)wx.append(el("div","f1-gp-empty","Checking forecast…"));else if(state.weather)wx.append(weatherCard(state.weather));else{wx.append(el("div","f1-gp-empty","Forecast is available only when the event date falls within the provider's forecast window."));const b=el("button","f1-gp-inline-button","CHECK WEATHER");b.type="button";b.addEventListener("click",loadWeather);wx.append(b);}wx.append(el("p","f1-gp-footnote","Open-Meteo forecast · not live track telemetry."));
+ const wx=panel(grid,"7-day weather forecast");if(state.busy)wx.append(el("div","f1-gp-empty","Checking forecast…"));else if(state.weather)wx.append(weatherCard(state.weather));else{wx.append(el("div","f1-gp-empty","A seven-day forecast will appear here when the location data is available."));const b=el("button","f1-gp-inline-button","CHECK WEATHER");b.type="button";b.addEventListener("click",loadWeather);wx.append(b);}wx.append(el("p","f1-gp-footnote","Open-Meteo forecast · not live track telemetry."));
  const favourite=panel(grid,"Your F1 favourites");if(f.length)f.forEach(x=>{const line=el("div","f1-gp-favourite");line.append(el("span","",x.name),el("b","",x.type==="team"?"CONSTRUCTOR":"DRIVER"));favourite.append(line);});else favourite.append(el("div","f1-gp-empty","Add drivers or constructors in the existing Favourites page. They will be highlighted in verified classifications."));
  const reminder=panel(grid,"Session reminders"),controls=el("div","f1-gp-reminder-controls"),data=read(REM)||{lead:15,items:[]},lead=el("select","");[15,30,60].forEach(n=>{const o=el("option","",n+" minutes before");o.value=String(n);o.selected=Number(data.lead||15)===n;lead.append(o);});lead.addEventListener("change",()=>{const d=read(REM)||{items:[]};d.lead=Number(lead.value);save(REM,d);});const notify=el("button","f1-gp-inline-button",("Notification"in window&&Notification.permission==="granted")?"NOTIFICATIONS ENABLED":"ENABLE BROWSER NOTIFICATIONS");notify.type="button";notify.addEventListener("click",enableNotifications);controls.append(lead,notify);reminder.append(controls);const saved=(data.items||[]).filter(x=>x.eventId===e.id);reminder.append(el("div","f1-gp-empty",saved.length?saved.length+" reminder(s) saved for this Grand Prix.":"No reminders saved for this Grand Prix."),el("p","f1-gp-footnote","In-app and browser alerts are checked while the PWA is open. iOS may not deliver scheduled alerts while the app is closed; background delivery is not guaranteed."));
  root.append(grid);
  const section=el("section","");section.id="f1-gp-session-centre";const title=el("div","f1-gp-section-title");title.append(el("h2","","Session centre"));const selector=el("select","f1-gp-select");ss.forEach((s,i)=>{const o=el("option","",s.name);o.value=String(i);o.selected=i===state.session;selector.append(o);});selector.addEventListener("change",()=>{state.session=Number(selector.value);render();document.getElementById("f1-gp-session-centre")?.scrollIntoView({behavior:"smooth"});});title.append(selector);section.append(title);
  const chosen=ss[state.session]||ss[0];if(chosen){const rows=resultRows(e,chosen.name),p=el("div","f1-gp-panel"),head=el("div","f1-gp-panel-head");head.append(el("h2","",chosen.name+" · "+(rows.length?"CLASSIFICATION":"SESSION")));p.append(head);if(rows.length){const wrap=el("div","f1-gp-results-wrap"),table=el("table","f1-gp-results"),thead=el("thead",""),tr=el("tr","");["POS","DRIVER","TEAM","TIME / STATUS","PTS"].forEach(x=>tr.append(el("th","",x)));thead.append(tr);table.append(thead);const body=el("tbody","");rows.forEach((r,i)=>{const row=el("tr",isFav(r)?"is-favourite":""),team=r.team||"—";[r.position||i+1,r.driver||"—",team,r.time||r.status||"—",r.points??"—"].forEach((v,j)=>{const td=el("td","");if(j===2){const mark=el("i","f1-gp-team-mark");mark.style.setProperty("--team-color",colours[team]||"#777");td.append(mark,document.createTextNode(String(v)));}else td.textContent=String(v);row.append(td);});body.append(row);});table.append(body);wrap.append(table);p.append(wrap,el("p","f1-gp-footnote","Published classification from the feed. Favourite drivers and constructors are highlighted."));}else p.append(el("div","f1-gp-empty","No verified classification is available for this session. Live positions, sectors and a session clock are hidden because the connected feed does not verify live timing."));section.append(p);}root.append(section);history(e);if(state.message)root.append(el("div","f1-gp-toast",state.message));
 }
-async function load(){root.replaceChildren(el("div","f1-gp-empty","Loading the published F1 calendar…"));try{const r=await fetch("./data/f1.json?gp="+Date.now(),{cache:"no-store"});if(!r.ok)throw Error("F1 schedule could not be loaded.");const d=await r.json();state.events=Array.isArray(d.events)?d.events:[];state.event=eventPick(state.events);state.session=0;state.weather=null;const cached=read(WEATHER);if(cached?.eventId===state.event?.id)state.weather=cached.weather;render();if(state.event&&!state.weather)loadWeather();if(state.event)loadCircuitAssets();}catch(err){root.replaceChildren(el("div","f1-gp-empty",err.message||"F1 schedule unavailable."));}}
+async function load(){root.replaceChildren(el("div","f1-gp-empty","Loading the published F1 calendar…"));try{const r=await fetch("./data/f1.json?gp="+Date.now(),{cache:"no-store"});if(!r.ok)throw Error("F1 schedule could not be loaded.");const d=await r.json();state.events=Array.isArray(d.events)?d.events:[];state.event=eventPick(state.events);state.session=0;state.weather=null;const cached=read(WEATHER),cacheFresh=cached?.eventId===state.event?.id&&cached.weather?.days?.length&&Date.now()-Number(cached.at||0)<6*60*60*1000;if(cacheFresh)state.weather=cached.weather;render();if(state.event&&!cacheFresh)loadWeather();if(state.event)loadCircuitAssets();}catch(err){root.replaceChildren(el("div","f1-gp-empty",err.message||"F1 schedule unavailable."));}}
 function open(){window.showScreen?.("f1-grand-prix-screen");load();}
 document.getElementById("f1-gp-back")?.addEventListener("click",()=>{window.showScreen?.("sport-detail-screen");window.SportPages?.open?.("f1");});
 window.setInterval(checkReminders,30000);
