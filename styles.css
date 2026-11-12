@@ -3650,7 +3650,7 @@ button.hub-selection-tile:hover,button.hub-selection-tile:focus-visible{transfor
 body.hub-selection-mode .topbar,body.hub-selection-mode .top-sport-selector,body.hub-selection-mode .games-platform-hub,body.hub-selection-mode .next-event-strip{display:none!important}
 
 .brand-switcher-app-logo{width:100%;height:100%;object-fit:cover;border-radius:5px;display:block}
-.brand-menu-mark.hub-home-mark{background:#e2b45b;color:#17130d;font-weight:900}
+.brand-menu-mark.hub-home-mark{background:linear-gradient(145deg,#f0f2f5,#aeb6c2)!important;color:#17191e!important;border:1px solid #e3e7ed;box-shadow:0 0 9px rgba(215,220,228,.2);font-weight:900}
 
 /* Hub identity polish: silver THE, hub-specific accent, and purple SWGOH lettering. */
 .hub-name-the{color:#c5cbd4;text-shadow:0 0 10px rgba(197,203,212,.18)}
