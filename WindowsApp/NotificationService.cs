@@ -52,7 +52,7 @@ public sealed class NotificationService : IDisposable
             {
                 if (!_sent.Add(item.Id)) continue;
                 var when = item.StartsAt.ToLocalTime().ToString("ddd d MMM, HH:mm");
-                _notify($"{item.Category}: {item.Title}", $"Starts {when}. Open Sports & Games Calendar for details.");
+                _notify($"{item.Category}: {item.Title}", $"Starts {when}. Open The Hub for details.");
             }
 
             if (due.Count > 0) SaveSentState();
@@ -205,7 +205,7 @@ public sealed class NotificationService : IDisposable
 
     public void SendTestNotification()
     {
-        _notify("Sports & Games Calendar test", "Windows notifications are connected. Event reminders can be delivered by this app.");
+        _notify("The Hub test", "Windows notifications are connected. The Hub can deliver event reminders.");
     }
 
     public void Dispose()

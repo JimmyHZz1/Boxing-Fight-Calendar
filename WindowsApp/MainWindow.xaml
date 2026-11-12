@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
         xmlns:shell="clr-namespace:System.Windows.Shell;assembly=PresentationFramework"
-        Title="Sports &amp; Games Calendar"
+        Title="The Hub"
         Width="1440" Height="900" MinWidth="900" MinHeight="600"
         WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="CanResize"
         Background="{StaticResource AppBackground}" Foreground="#F5F5F5" Icon="app-icon.ico">
@@ -30,7 +30,7 @@
                     <Button x:Name="MenuButton" Content="☰" FontSize="17" Padding="10,3"
                             Margin="0,0,10,0" ToolTip="Open app menu" Click="MenuButton_Click"
                             shell:WindowChrome.IsHitTestVisibleInChrome="True" />
-                    <TextBlock Text="SPORTS &amp; GAMES" Foreground="{StaticResource AccentGold}"
+                    <TextBlock Text="THE HUB" Foreground="{StaticResource AccentGold}"
                                FontWeight="Bold" FontSize="12" VerticalAlignment="Center" />
                 </StackPanel>
                 <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Stretch">
