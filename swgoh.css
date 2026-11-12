@@ -1,63 +1,89 @@
-.swgoh-native{--bg:#080e1d;--card:#101b31;--ink:#edf4ff;--muted:#9eafc9;--line:#263957;--nav:#060b17;--accent:#55b7ff;--good:#39c98a;--warn:#e2b45b;--danger:#ff737d}.swgoh-native *{box-sizing:border-box}.swgoh-native{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.swgoh-native header{background:var(--nav);color:#fff;padding:calc(env(safe-area-inset-top) + 14px) 16px 10px;position:sticky;top:0;z-index:20;box-shadow:0 2px 12px #0002}.swgoh-native .top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.swgoh-native .brand h1{margin:0;font-size:25px;line-height:1.05}.swgoh-native .version{color:#aeb8ca;font-size:12px;margin-top:4px}.swgoh-native .accountStats{text-align:right;font-size:12px;color:#d5dbea}.swgoh-native .accountStats b{font-size:15px;color:#fff}.swgoh-native .news{margin-top:11px;background:#101d35;border:1px solid #2b4770;border-radius:10px;padding:8px 10px;font-size:12px;white-space:nowrap;overflow:hidden;cursor:pointer}.swgoh-native .ticker{display:inline-block;padding-left:100%;animation:ticker 45s linear infinite}.swgoh-native .news:hover .ticker{animation-play-state:paused}@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-100%)}}.swgoh-native .main{padding:14px 14px 96px;max-width:900px;margin:auto}.swgoh-native .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px;margin-bottom:12px;box-shadow:0 8px 24px #0005}.swgoh-native .hero{padding:16px}.swgoh-native .sectionHead{display:flex;justify-content:space-between;align-items:center;margin:17px 2px 9px}.swgoh-native .sectionHead h2{font-size:18px;margin:0}.swgoh-native .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.swgoh-native .tile{background:var(--card);border:1px solid var(--line);border-radius:16px;min-height:104px;padding:16px;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:750;font-size:15px;box-shadow:0 1px 2px #00000008;cursor:pointer}.swgoh-native .tile:active{transform:scale(.98)}.swgoh-native .stat{font-size:27px;font-weight:800}.swgoh-native .small{font-size:12px;color:var(--muted)}.swgoh-native .muted{color:var(--muted)}.swgoh-native .row{display:flex;gap:10px;align-items:center}.swgoh-native .grow{flex:1}.swgoh-native .pill,.swgoh-native .chip{display:inline-block;background:#183252;color:#8acbff;padding:4px 8px;border-radius:999px;font-size:11px;font-weight:750}.swgoh-native .chip{margin-top:4px}.swgoh-native .bar{height:9px;background:#1c2c46;border-radius:99px;overflow:hidden;margin-top:9px}.swgoh-native .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#e2b45b);border-radius:99px}.swgoh-native .btn{border:0;border-radius:10px;padding:9px 12px;background:var(--accent);color:#fff;font-weight:700;cursor:pointer}.swgoh-native .secondary{background:#eaf0ff;color:#1d4ed8}.swgoh-native .danger{background:#fee2e2;color:var(--danger)}.swgoh-native .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.swgoh-native input,.swgoh-native select,.swgoh-native textarea{width:100%;padding:11px;border:1px solid #d0d5dd;border-radius:10px;font:inherit;background:#0d1930;color:#c6d5eb}.swgoh-native label{font-size:12px;color:var(--muted);display:block;margin:9px 0 5px}.swgoh-native .item{padding:12px 0;border-bottom:1px solid var(--line)}.swgoh-native .item:last-child{border-bottom:0}.swgoh-native .name{font-weight:750}.swgoh-native .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.swgoh-native .three{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.swgoh-native .status{padding:10px;border-radius:10px;background:#172641;margin-top:10px;font-size:12px}.swgoh-native .status.good{background:#103b34;color:#8af0c0}.swgoh-native .status.warn{background:#3c2d13;color:#f4d18a}.swgoh-native .status.bad{background:#3d1b29;color:#ffabb2}.swgoh-native .empty{text-align:center;padding:24px;color:var(--muted)}.swgoh-native details summary{cursor:pointer;font-weight:750}.swgoh-native .notice{border-left:4px solid var(--accent);padding-left:10px}.swgoh-native .rank{font-size:11px;color:var(--muted);font-weight:700}.swgoh-native .nav{position:fixed;bottom:0;left:0;right:0;background:#091326;border-top:1px solid #263957;display:grid;grid-template-columns:repeat(5,1fr);z-index:30;padding-bottom:env(safe-area-inset-bottom)}.swgoh-native .nav button{border:0;background:transparent;padding:9px 3px;color:#667085;font-size:10px;cursor:pointer}.swgoh-native .nav button span{display:block;font-size:18px;margin-bottom:2px}.swgoh-native .nav button.active{color:#8acbff;font-weight:800}@media(max-width:520px){.swgoh-native .grid{gap:9px}.swgoh-native .tile{min-height:92px;font-size:13px}.swgoh-native .three{grid-template-columns:1fr}.swgoh-native .two{grid-template-columns:1fr 1fr}}.swgoh-native input::placeholder{color:#7488a5}.swgoh-native select option{background:#0d1930;color:#edf4ff}.swgoh-native .card,.swgoh-native .tile{background:linear-gradient(145deg,#12213a,#0d172a);border-color:#263957}.swgoh-native .tile{color:#dceaff}.swgoh-native .sectionHead h2{color:#eaf3ff}.swgoh-native .bar i{background:linear-gradient(90deg,#42aaff,#e2b45b)}.swgoh-native .nav button.active{color:#65bdff}.swgoh-native .btn{background:linear-gradient(135deg,#238bd8,#1764ad)}.swgoh-native .btn.secondary{background:#183252;color:#a7d8ff}.swgoh-native .pill,.swgoh-native .chip{background:#24334c;color:#e7c77c}.swgoh-native .news{background:#101d35;border-color:#29466d}
-/* Keep the integrated tracker visually contained within the calendar shell. */
-.swgoh-native{min-height:calc(100vh - 150px);background:#080e1d;color:#edf4ff;border:1px solid #263957;border-radius:16px;overflow:hidden}
-.swgoh-native header{position:relative;top:auto}
-.swgoh-native .main{max-width:1120px;padding-bottom:24px}
-.swgoh-native .nav{position:sticky;bottom:0;z-index:10}
-body.swgoh-mode .next-event-strip,
+/* SWGOH is a first-class Hub page: no nested app shell, independent header, or inset frame. */
+body.swgoh-mode{--swgoh-accent:#b99ae8;--swgoh-line:#403454;--swgoh-panel:#1b1527;--swgoh-panel-strong:#241b33;--swgoh-muted:#b8a9cc}
+body.swgoh-mode .topbar-nav,
+body.swgoh-mode .topbar-actions,
 body.swgoh-mode .top-sport-selector,
 body.swgoh-mode .games-platform-hub,
-body.swgoh-mode #open-settings,
+body.swgoh-mode .next-event-strip,
 body.swgoh-mode .bottom-nav{display:none!important}
-.home-snapshot-panels{grid-template-columns:minmax(0,1fr)!important}
-@media(max-width:760px){.swgoh-native{border-radius:10px}.swgoh-native .main{padding-left:10px;padding-right:10px}}
-
-
-/* Full native tracker navigation: every tracker area remains directly reachable. */
-.swgoh-native .nav{display:flex;gap:2px;overflow-x:auto;overflow-y:hidden;justify-content:flex-start;scrollbar-width:thin;scrollbar-color:#365778 #091326;padding:5px 8px calc(5px + env(safe-area-inset-bottom));}
-.swgoh-native .nav.dashboard-hidden{display:none!important}
-.swgoh-native .nav button{display:flex;flex:0 0 auto;min-width:76px;min-height:48px;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:5px 8px;white-space:nowrap;border-radius:8px;}
-.swgoh-native .nav button span{display:block;font-size:16px;line-height:1.1;margin:0}
-.swgoh-native .nav button small{font-size:9px;line-height:1.1;letter-spacing:.2px;color:inherit}
-.swgoh-native .nav button.active{background:#183252;color:#8acbff}
-.swgoh-native .main{padding-bottom:28px}
-
-/* Official Galaxy of Heroes app mark in the integrated SWGOH header. */
-.swgoh-native .swgoh-header-brand{display:flex;align-items:center;gap:12px;min-width:0}
-.swgoh-native .swgoh-app-logo{width:48px;height:48px;flex:0 0 48px;object-fit:cover;border-radius:11px;box-shadow:0 2px 8px #0006}
-.swgoh-native .swgoh-header-brand h1{font-size:24px}
-@media(max-width:420px){.swgoh-native .swgoh-app-logo{width:42px;height:42px;flex-basis:42px}}
-
-
-/* SWGOH Hub theme: retain the official app logo unchanged; use purple for the interface. */
-body.swgoh-mode .swgoh-native{
-  --accent:#b99ae8;
-  --line:#403454;
-  --nav:#100d19;
-  --card:#1b1527;
-  --bg:#100d19;
-  --muted:#b8a9cc;
-  background:#100d19;
-  border-color:#403454;
-  color:#f2eafb;
+body.swgoh-mode .topbar{border-color:var(--swgoh-line)}
+body.swgoh-mode #brand-title{color:var(--swgoh-accent)!important;text-shadow:0 0 12px rgba(185,154,232,.22)}
+.swgoh-hub-screen{width:100%;min-width:0}
+.swgoh-page{width:100%;min-width:0;color:#f2eafb}
+.swgoh-page-heading{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:12px 0 22px;border-bottom:1px solid var(--swgoh-line)}
+.swgoh-page-identity{display:flex;align-items:center;gap:16px;min-width:0}
+.swgoh-app-logo{width:62px;height:62px;flex:0 0 62px;object-fit:cover;border-radius:10px;box-shadow:0 4px 18px #0006}
+.swgoh-page-identity h1{margin:4px 0 2px;font-family:'Barlow Condensed',sans-serif;font-size:clamp(30px,4vw,46px);line-height:1;text-transform:uppercase;letter-spacing:.3px;color:#f2eafb}
+.swgoh-eyebrow{color:var(--swgoh-accent)}
+.swgoh-page .version{font-size:11px;color:var(--swgoh-muted);margin-top:5px}
+.swgoh-account-stats{display:flex;align-items:center;gap:28px;flex:0 0 auto}
+.swgoh-account-stats>div{display:flex;flex-direction:column;gap:4px;text-align:right}
+.swgoh-account-stats span{font-size:9px;letter-spacing:1.2px;color:var(--swgoh-muted);font-weight:800}
+.swgoh-account-stats b{font-size:22px;line-height:1.1;color:#fff;font-variant-numeric:tabular-nums}
+.swgoh-news{margin:16px 0 24px;padding:10px 14px;overflow:hidden;border-left:3px solid var(--swgoh-accent);background:linear-gradient(90deg,rgba(185,154,232,.12),rgba(185,154,232,.025));color:#d9c8ef;font-size:12px;white-space:nowrap;cursor:pointer}
+.swgoh-news .ticker{display:inline-block;padding-left:100%;animation:swgoh-ticker 45s linear infinite}
+.swgoh-news:hover .ticker{animation-play-state:paused}
+@keyframes swgoh-ticker{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+.swgoh-workspace{display:grid;grid-template-columns:190px minmax(0,1fr);align-items:start;gap:28px;min-width:0}
+.swgoh-section-nav{position:sticky;top:18px;display:flex;flex-direction:column;gap:4px;min-width:0;padding:0;border:0;background:transparent}
+.swgoh-section-nav button{display:flex;align-items:center;gap:11px;width:100%;min-height:43px;padding:9px 12px;border:1px solid transparent;border-radius:5px;background:transparent;color:#b8a9cc;text-align:left;font:700 11px 'DM Sans',sans-serif;letter-spacing:.2px;cursor:pointer}
+.swgoh-section-nav button span{width:20px;flex:0 0 20px;text-align:center;font-size:17px}
+.swgoh-section-nav button small{font-size:10px;font-weight:800;letter-spacing:.35px}
+.swgoh-section-nav button:hover{background:rgba(185,154,232,.08);color:#f2eafb}
+.swgoh-section-nav button.active{background:rgba(185,154,232,.14);border-color:#49385f;color:#e3cef9}
+.swgoh-section-nav.dashboard-hidden{display:none!important}
+.swgoh-main{width:100%;max-width:none;min-width:0;margin:0;padding:0 0 28px}
+.swgoh-main .sectionHead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:4px 0 14px}
+.swgoh-main .sectionHead h2{margin:0;color:#f2eafb;font-size:21px;font-weight:800}
+.swgoh-main .card{min-width:0;margin:0 0 16px;padding:18px 20px;border:1px solid var(--swgoh-line);border-radius:7px;background:linear-gradient(135deg,rgba(36,27,51,.94),rgba(23,17,33,.96));box-shadow:0 8px 22px rgba(0,0,0,.14)}
+.swgoh-main .hero{padding:22px}
+.swgoh-main .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.swgoh-main .tile{display:flex;align-items:center;justify-content:center;min-height:112px;padding:16px;border:1px solid #49385f;border-radius:7px;background:linear-gradient(145deg,#241b33,#171121);color:#f0e8fa;text-align:center;font-size:12px;font-weight:850;letter-spacing:.5px;cursor:pointer;transition:transform .18s,border-color .18s}
+.swgoh-main .tile:hover{transform:translateY(-2px);border-color:var(--swgoh-accent)}
+.swgoh-main .stat{font-size:28px;font-weight:850;font-variant-numeric:tabular-nums}
+.swgoh-main .small,.swgoh-main .muted{color:var(--swgoh-muted);font-size:12px;line-height:1.55}
+.swgoh-main .row{display:flex;gap:10px;align-items:center;min-width:0}
+.swgoh-main .grow{flex:1;min-width:0}
+.swgoh-main .pill,.swgoh-main .chip{display:inline-block;padding:4px 9px;border-radius:999px;background:#352844;color:#dfc9f8;font-size:10px;font-weight:800;white-space:nowrap}
+.swgoh-main .bar{height:8px;margin-top:9px;overflow:hidden;border-radius:99px;background:#352844}
+.swgoh-main .bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#9b78d1,#c8a9f4)}
+.swgoh-main .btn{padding:9px 13px;border:1px solid #725a91;border-radius:5px;background:linear-gradient(135deg,#9b78d1,#7552a8);color:#fff;font-weight:800;font-size:11px;cursor:pointer}
+.swgoh-main .btn.secondary{background:#352844;color:#e4d2fa;border-color:#49385f}
+.swgoh-main .btn.danger{background:#512a3d;color:#ffc4d0;border-color:#754158}
+.swgoh-main .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.swgoh-main input,.swgoh-main select,.swgoh-main textarea{width:100%;padding:10px 12px;border:1px solid #49385f;border-radius:5px;background:#171121;color:#f0e8fa;font:inherit}
+.swgoh-main label{display:block;margin:10px 0 5px;color:var(--swgoh-muted);font-size:11px}
+.swgoh-main .item{padding:13px 0;border-bottom:1px solid rgba(73,56,95,.65)}
+.swgoh-main .item:last-child{border-bottom:0}
+.swgoh-main .name{font-weight:800;color:#f2eafb}
+.swgoh-main .two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.swgoh-main .three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.swgoh-main .status{margin-top:10px;padding:10px 12px;border-radius:5px;background:#2c2239;color:#e4d2fa;font-size:12px}
+.swgoh-main .status.good{background:#173b32;color:#a3efd0}
+.swgoh-main .status.warn{background:#44351f;color:#f4d18a}
+.swgoh-main .status.bad{background:#482633;color:#ffbac4}
+.swgoh-main .empty{padding:30px 18px;color:var(--swgoh-muted);text-align:center}
+.swgoh-main .notice{padding-left:12px;border-left:3px solid var(--swgoh-accent)}
+.swgoh-main .rank{color:var(--swgoh-muted);font-size:11px;font-weight:800}
+.swgoh-main details summary{cursor:pointer;font-weight:800;color:#f2eafb}
+@media(max-width:900px){
+ .swgoh-workspace{grid-template-columns:minmax(0,1fr);gap:16px}
+ .swgoh-section-nav{position:relative;top:auto;flex-direction:row;overflow-x:auto;overflow-y:hidden;padding:5px 0 9px;border-bottom:1px solid var(--swgoh-line);scrollbar-width:thin}
+ .swgoh-section-nav button{flex:0 0 auto;width:auto;min-width:84px;min-height:48px;flex-direction:column;justify-content:center;gap:3px;padding:6px 10px}
+ .swgoh-section-nav button span{width:auto;font-size:16px}
+ .swgoh-section-nav button small{font-size:9px}
+ .swgoh-section-nav.dashboard-hidden{display:none!important}
+ .swgoh-main .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
-body.swgoh-mode .swgoh-native header{background:#171121;border-bottom:1px solid #403454}
-body.swgoh-mode .swgoh-native .card,
-body.swgoh-mode .swgoh-native .tile{background:linear-gradient(145deg,#241b33,#171121);border-color:#49385f}
-body.swgoh-mode .swgoh-native .tile{color:#f0e8fa}
-body.swgoh-mode .swgoh-native .sectionHead h2,
-body.swgoh-mode .swgoh-native .brand h1{color:#f2eafb}
-body.swgoh-mode .swgoh-native .bar{background:#352844}
-body.swgoh-mode .swgoh-native .bar i{background:linear-gradient(90deg,#9b78d1,#c8a9f4)}
-body.swgoh-mode .swgoh-native .btn{background:linear-gradient(135deg,#9b78d1,#7552a8);color:#fff}
-body.swgoh-mode .swgoh-native .btn.secondary{background:#352844;color:#e4d2fa}
-body.swgoh-mode .swgoh-native .pill,
-body.swgoh-mode .swgoh-native .chip{background:#352844;color:#d8c0f5}
-body.swgoh-mode .swgoh-native .nav{background:#100d19;border-color:#403454}
-body.swgoh-mode .swgoh-native .nav button.active{background:#352844;color:#d8baf7}
-body.swgoh-mode .swgoh-native .news{background:#21182e;border-color:#49385f}
-body.swgoh-mode .swgoh-native .notice{border-color:#b99ae8}
-body.swgoh-mode .swgoh-native input,
-body.swgoh-mode .swgoh-native select,
-body.swgoh-mode .swgoh-native textarea{background:#171121;border-color:#49385f;color:#f0e8fa}
-body.swgoh-mode .swgoh-native .swgoh-app-logo{filter:none!important}
+@media(max-width:560px){
+ .swgoh-page-heading{align-items:flex-start;flex-direction:column;gap:14px;padding-top:4px}
+ .swgoh-account-stats{width:100%;justify-content:flex-start;gap:32px}
+ .swgoh-account-stats>div{text-align:left}
+ .swgoh-app-logo{width:48px;height:48px;flex-basis:48px}
+ .swgoh-page-identity h1{font-size:30px}
+ .swgoh-news{margin:12px 0 17px}
+ .swgoh-main .card{padding:14px}
+ .swgoh-main .hero{padding:16px}
+ .swgoh-main .three{grid-template-columns:1fr}
+ .swgoh-main .two{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+}
