@@ -233,7 +233,9 @@
     table.append(tbody);root.append(table);
   }
   function renderF1Details(root,event) {
-    const sessions=event.sessions||[];
+    const sessions=[...(event.sessions||[])];
+    if(event.start_at&&!sessions.some(s=>/\brace\b/i.test(String(s.name||"")))) sessions.push({name:"Race",date:event.date,start_at:event.start_at});
+    sessions.sort((a,b)=>String(a.start_at||"").localeCompare(String(b.start_at||"")));
     if (sessions.length) {
       const list=make("div","sport-session-list");
       sessions.forEach(s=>list.append(make("div","sport-session-row",safe(s.name)+" · "+dateLabel(s.date)+" — "+timeLabel(s.start_at))));
@@ -256,12 +258,34 @@
   }
   function renderDartsDetails(root,event) {
     const period=event.end_date?dateLabel(event.date||event.start_at)+" – "+dateLabel(event.end_date):dateLabel(event.date||event.start_at);
-    const bits=[event.tier?String(event.tier).replaceAll("_"," ").toUpperCase():null,event.venue||event.location||null,period,event.start_at?timeLabel(event.start_at):null,event.matches&&typeof event.matches==="number"?event.matches+" matches scheduled":null].filter(Boolean);
+    const bits=[event.tier?String(event.tier).replaceAll("_"," ").toUpperCase():null,event.venue||event.location||null,period,event.matches&&typeof event.matches==="number"?event.matches+" matches scheduled":null].filter(Boolean);
     root.append(make("p","sport-sync-note",bits.join(" · ")||"PDC tournament date"));
     if(event.status)root.append(make("p","sport-sync-note","Tournament status: "+String(event.status).replaceAll("_"," ").toUpperCase()));
-    root.append(make("p","sport-sync-note","Televised PDC tournament listing. Match draws and live scores are shown only when the data provider supplies verified match-level information."));
+    const sessions=Array.isArray(event.schedule_of_play)?event.schedule_of_play:[];
+    if(sessions.length){
+      root.append(make("p","sport-sync-note sport-darts-order-heading","ORDER OF PLAY · UK SESSION START TIMES"));
+      const schedule=make("div","sport-darts-schedule");
+      sessions.forEach(session=>{
+        const block=make("section","sport-darts-session");
+        const heading=make("div","sport-darts-session-heading");
+        heading.append(make("strong",null,session.session||"Session"));
+        heading.append(make("span",null,dateLabel(session.date)+" · "+timeLabel(session.start_at)));
+        block.append(heading);
+        const matches=Array.isArray(session.matches)?session.matches:[];
+        if(matches.length){
+          const list=make("ol","sport-darts-match-list");
+          matches.forEach(match=>list.append(make("li",null,match)));
+          block.append(list);
+        }else block.append(make("p","sport-sync-note","Match order and pairings have not yet been published."));
+        schedule.append(block);
+      });
+      root.append(schedule);
+      root.append(make("p","sport-darts-timing-note","The time shown is the published session start. Individual match kick-off times are not fixed and can move as earlier matches finish."));
+    }else{
+      root.append(make("p","sport-sync-note","The PDC has not yet published a detailed order of play for this tournament. The match schedule will appear here once confirmed."));
+    }
     const source=event.source_url||"https://www.pdc.tv/calendar";
-    if(/^https?:\/\//i.test(source)){const a=make("a","event-source-link","Official PDC tournament details ↗");a.href=source;a.target="_blank";a.rel="noopener noreferrer";root.append(a);}
+    if(/^https?:\/\//i.test(source)){const a=make("a","event-source-link","Official PDC schedule ↗");a.href=source;a.target="_blank";a.rel="noopener noreferrer";root.append(a);}
   }
   function fighterPortrait(name, url) {
     const initials=String(name||"?").trim().split(/\\s+/).filter(Boolean).slice(0,2).map(part=>part[0]).join("").toUpperCase()||"?";
