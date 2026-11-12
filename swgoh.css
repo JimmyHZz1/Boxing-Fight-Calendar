@@ -154,3 +154,13 @@ body.swgoh-mode .app-shell{width:100%;max-width:1680px;margin:0 auto;padding-lef
 .swgoh-todo-item h3 span{padding:3px 6px;border-radius:3px;background:rgba(185,154,232,.12);color:var(--swgoh-accent);font-size:8px;letter-spacing:.7px}
 .swgoh-todo-item p{margin:0;color:var(--swgoh-muted);font-size:11px;line-height:1.65}
 @media(max-width:560px){.swgoh-todo-content{grid-template-columns:1fr;padding:6px 15px 12px}}
+
+
+/* Keep SWGOH tracker navigation in the shared hub-selector position, above all tracker content. */
+.swgoh-section-nav{position:relative;top:auto;display:flex;flex-direction:row;align-items:stretch;gap:7px;width:100%;max-width:1560px;margin:0 auto 18px;padding:12px 0 13px;border:0;border-bottom:1px solid var(--swgoh-line);overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;scrollbar-color:#66517f transparent}
+.swgoh-section-nav button{flex:1 0 auto;width:auto;min-width:96px;min-height:46px;justify-content:center;gap:8px;padding:10px 13px;border:1px solid #342a42;border-radius:6px;background:rgba(36,27,51,.42);white-space:nowrap;text-align:center}
+.swgoh-section-nav button span{width:auto;flex:0 0 auto;font-size:15px}
+.swgoh-section-nav button small{font-size:10px;letter-spacing:.45px}
+.swgoh-section-nav button.active{background:rgba(185,154,232,.16);border-color:#725a91;color:#f0e5ff;box-shadow:inset 0 -2px 0 var(--swgoh-accent)}
+.swgoh-section-nav.dashboard-hidden{display:flex!important}
+@media(max-width:560px){.swgoh-section-nav{gap:6px;margin-bottom:14px;padding:8px 0 10px}.swgoh-section-nav button{min-width:82px;min-height:44px;padding:8px 10px;gap:5px}.swgoh-section-nav button small{font-size:9px}}

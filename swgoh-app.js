@@ -20,7 +20,7 @@ function sorted(type){return journeyItems(type).sort((a,b)=>{let ao=a.override??
 function pageNav(p){tab=p;save();render()}
 function render(){
 document.getElementById('app').innerHTML=pages[tab]();
-const navEl=document.getElementById('nav');navEl.innerHTML=nav.map(x=>`<button class="${tab===x[0]?'active':''}" data-tab="${x[0]}" aria-label="${x[2]}" title="${x[2]}"><span>${x[1]}</span><small>${x[2]}</small></button>`).join('');navEl.classList.toggle('dashboard-hidden',tab==='dashboard');
+const navEl=document.getElementById('nav');navEl.innerHTML=nav.map(x=>`<button class="${tab===x[0]?'active':''}" data-tab="${x[0]}" aria-label="${x[2]}" title="${x[2]}"><span>${x[1]}</span><small>${x[2]}</small></button>`).join('');
 document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>pageNav(b.dataset.tab));
 document.querySelectorAll('[data-page]').forEach(b=>b.onclick=()=>pageNav(b.dataset.page));bind();
 document.getElementById('gp').textContent=fmt(state.profile?.gp??state.profile?.galacticPower);
