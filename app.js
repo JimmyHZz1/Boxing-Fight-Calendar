@@ -56,6 +56,7 @@ function reportHubNavigationState() {
     canGoForward: index < hubHistoryMax
   });
 }
+let gamesHubUserSelected = false;
 function showScreen(id, options = {}) {
   if (!document.getElementById(id)) return;
   const currentScreen = window.history.state?.hubScreen;
@@ -81,6 +82,8 @@ function showScreen(id, options = {}) {
   document.body.classList.toggle("hub-selection-mode",id==="hub-selection-screen");
   const gamesHubActive=id==="games-calendar-screen"||id==="games-platform-calendar-screen"||id==="games-version-history-screen";
   const swgohHubActive=id==="swgoh-hub-screen"||id==="swgoh-roadmap-screen";
+  if(options.userInitiated && gamesHubActive) gamesHubUserSelected = true;
+  window.__gamesHubVideosEnabled = gamesHubActive && gamesHubUserSelected;
   document.body.classList.toggle("games-mode",gamesHubActive);
   document.body.classList.toggle("swgoh-mode",swgohHubActive);
   document.body.classList.toggle("games-platform-page",id==="games-platform-calendar-screen");
@@ -100,7 +103,7 @@ function showScreen(id, options = {}) {
   }
 
   document.querySelectorAll("iframe[data-youtube-src]").forEach(frame=>{
-    if(gamesHubActive){if(!frame.getAttribute("src"))frame.setAttribute("src",frame.dataset.youtubeSrc);}
+    if(gamesHubActive && gamesHubUserSelected){if(!frame.getAttribute("src"))frame.setAttribute("src",frame.dataset.youtubeSrc);}
     else if(frame.hasAttribute("src"))frame.removeAttribute("src");
   });
   document.dispatchEvent(new CustomEvent("sports:screen-changed",{detail:{screen:id}}));
@@ -132,7 +135,7 @@ const setHubStartupDestination=value=>{
 window.getHubStartupDestination=getHubStartupDestination;
 window.setHubStartupDestination=setHubStartupDestination;
 document.querySelectorAll("[data-hub-screen]").forEach(tile=>{
-  tile.addEventListener("click",()=>showScreen(tile.dataset.hubScreen));
+  tile.addEventListener("click",()=>showScreen(tile.dataset.hubScreen,{userInitiated:true}));
 });
 const startupSelect=$("hub-startup-destination");
 if(startupSelect){
