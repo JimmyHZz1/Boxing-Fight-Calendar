@@ -1018,9 +1018,24 @@
       "image_match_method": "category:Category:Leon Edwards",
       "image_verified_at": "2026-11-12T03:12:25Z",
       "image_local_path": "assets/images/ufc/leon-edwards.png"
+    },
+    "kamaru usman": {
+      "name": "Kamaru Usman",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/kamaru-usman.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Kamaru_Usman.jpg",
+      "image_credit": "Wikimedia Commons · JoeKhanMMA · CC BY-SA 4.0",
+      "image_license": "CC BY-SA 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Kamaru Usman",
+      "image_verified_at": "2026-11-12T11:37:10Z",
+      "image_local_path": "assets/images/ufc/kamaru-usman.jpg"
     }
   },
-  "updated_at": "2026-11-12T07:18:17Z",
+  "updated_at": "2026-11-12T11:37:10Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1210,7 +1225,11 @@
     "gabriel bonfim": "2026-11-11T22:24:19Z",
     "sean brady": "2026-11-12T03:12:25Z",
     "belal muhammad": "2026-11-12T03:12:25Z",
-    "leon edwards": "2026-11-12T03:12:25Z"
+    "leon edwards": "2026-11-12T03:12:25Z",
+    "mike malott": "2026-11-12T11:37:10Z",
+    "kamaru usman": "2026-11-12T11:37:10Z",
+    "uros medic": "2026-11-12T11:37:10Z",
+    "yaroslav amosov": "2026-11-12T11:37:10Z"
   },
   "audit": {
     "last_reviewed_at": "2026-11-09T12:15:00Z",
@@ -1247,15 +1266,15 @@
     }
   },
   "enrichment": {
-    "batch_number": 23,
+    "batch_number": 24,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 196,
-    "cumulative_found": 74,
-    "cumulative_missing": 122,
-    "cumulative_rejected": 142,
-    "last_batch_at": "2026-11-12T03:12:25Z",
-    "last_successful_batch_at": "2026-11-12T03:12:25Z",
-    "last_rate_limited_at": "2026-11-12T03:12:25Z",
+    "cumulative_attempted": 201,
+    "cumulative_found": 75,
+    "cumulative_missing": 126,
+    "cumulative_rejected": 143,
+    "last_batch_at": "2026-11-12T11:37:10Z",
+    "last_successful_batch_at": "2026-11-12T11:37:10Z",
+    "last_rate_limited_at": "2026-11-12T11:37:10Z",
     "history": [
       {
         "batch": 1,
@@ -1439,6 +1458,14 @@
         "attempted": 4,
         "found": 3,
         "missing": 1,
+        "rate_limited": true
+      },
+      {
+        "batch": 24,
+        "at": "2026-11-12T11:37:10Z",
+        "attempted": 5,
+        "found": 1,
+        "missing": 4,
         "rate_limited": true
       }
     ],

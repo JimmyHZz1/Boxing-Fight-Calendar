@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-12T03:12:25Z",
+  "updated_at": "2026-11-12T11:37:10Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -772,6 +772,17 @@
       "creator": "Wikimedia Commons · James English · CC BY 3.0",
       "attribution": "Wikimedia Commons · James English · CC BY 3.0",
       "verified_at": "2026-11-12T03:12:25Z",
+      "sport": "ufc"
+    },
+    "kamaru usman": {
+      "name": "Kamaru Usman",
+      "path": "assets/images/ufc/kamaru-usman.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Kamaru_Usman.jpg",
+      "licence": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "creator": "Wikimedia Commons · JoeKhanMMA · CC BY-SA 4.0",
+      "attribution": "Wikimedia Commons · JoeKhanMMA · CC BY-SA 4.0",
+      "verified_at": "2026-11-12T11:37:10Z",
       "sport": "ufc"
     }
   },
