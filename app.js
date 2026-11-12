@@ -66,13 +66,8 @@ function showScreen(id) {
   const brandMark=document.getElementById("brand-mark-letter");
   if(brandTitle)brandTitle.textContent=swgohHubActive?"SWGOH":gamesHubActive?"GAMES":"SPORTS";
   if(brandMark){
-    if(swgohHubActive){
-      brandMark.innerHTML='<img class="brand-switcher-app-logo" src="https://play-lh.googleusercontent.com/A6eqLfsKSxaqGXhweuxc57kkkL4RkCNPL3sWHwXJ52Li1Fuiu327nGz4NnWhVRa73HYWrLvtTcNi_VzxZzJ_1Ck%3Dw240-h480" alt="">';
-      brandMark.classList.add("brand-mark-image");
-    }else{
-      brandMark.textContent=gamesHubActive?"G":"S";
-      brandMark.classList.remove("brand-mark-image");
-    }
+    brandMark.textContent=gamesHubActive?"G":"S";
+    brandMark.classList.remove("brand-mark-image");
   }
 
   document.querySelectorAll("iframe[data-youtube-src]").forEach(frame=>{
