@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#101114">
   <meta name="description" content="The Hub brings Sports, Games, SWGOH and more together in one place.">
   <link rel="manifest" href="./manifest.json">
-  <link rel="stylesheet" href="./styles.css?v=20261112-09">
+  <link rel="stylesheet" href="./styles.css?v=20261112-12">
   <title>The Hub</title>
   <link rel="stylesheet" href="./swgoh.css?v=20261112-06">
 </head>
@@ -19,7 +19,7 @@
           <span class="brand-wordmark"><strong id="brand-title">SPORTS</strong><small id="brand-subtitle">HUB</small></span>
           <span class="brand-switcher-caret" aria-hidden="true">⌄</span>
         </button>
-        <div id="mobile-calendar-menu" class="mobile-calendar-menu" hidden aria-label="Choose hub"><button type="button" data-screen="hub-selection-screen"><span class="brand-menu-mark hub-home-mark" aria-hidden="true">H</span><span class="calendar-menu-wordmark"><strong>THE HUB</strong><small>HOME</small></span></button><button type="button" data-screen="home-screen"><span class="brand-menu-mark sports-mark" aria-hidden="true">S</span><span class="calendar-menu-wordmark"><strong>SPORTS</strong><small>HUB</small></span></button><button type="button" data-screen="games-calendar-screen"><span class="brand-menu-mark games-mark" aria-hidden="true">G</span><span class="calendar-menu-wordmark"><strong>GAMES</strong><small>HUB</small></span></button><button type="button" data-screen="swgoh-hub-screen"><img class="brand-menu-logo swgoh-menu-logo" src="https://play-lh.googleusercontent.com/A6eqLfsKSxaqGXhweuxc57kkkL4RkCNPL3sWHwXJ52Li1Fuiu327nGz4NnWhVRa73HYWrLvtTcNi_VzxZzJ_1Ck%3Dw240-h480" alt="" loading="lazy"><span class="calendar-menu-wordmark"><strong>SWGOH</strong><small>HUB</small></span></button></div>
+        <div id="mobile-calendar-menu" class="mobile-calendar-menu" hidden aria-label="Choose hub"><button type="button" data-screen="hub-selection-screen"><span class="brand-menu-mark hub-home-mark" aria-hidden="true">H</span><span class="calendar-menu-wordmark"><strong>THE HUB</strong><small>HOME</small></span></button><button type="button" data-screen="home-screen"><span class="brand-menu-mark sports-mark" aria-hidden="true">S</span><span class="calendar-menu-wordmark"><strong>SPORTS</strong><small>HUB</small></span></button><button type="button" data-screen="games-calendar-screen"><span class="brand-menu-mark games-mark" aria-hidden="true">G</span><span class="calendar-menu-wordmark"><strong>GAMES</strong><small>HUB</small></span></button><button type="button" data-screen="entertainment-hub-screen"><span class="brand-menu-mark entertainment-mark" aria-hidden="true">▶</span><span class="calendar-menu-wordmark"><strong>ENTERTAINMENT</strong><small>HUB</small></span></button><button type="button" data-screen="swgoh-hub-screen"><img class="brand-menu-logo swgoh-menu-logo" src="https://play-lh.googleusercontent.com/A6eqLfsKSxaqGXhweuxc57kkkL4RkCNPL3sWHwXJ52Li1Fuiu327nGz4NnWhVRa73HYWrLvtTcNi_VzxZzJ_1Ck%3Dw240-h480" alt="" loading="lazy"><span class="calendar-menu-wordmark"><strong>SWGOH</strong><small>HUB</small></span></button></div>
       </div>
       <nav class="topbar-nav" aria-label="Main navigation">
         <button type="button" class="topbar-nav-item active" data-screen="home-screen"><span aria-hidden="true">⌂</span> HOME</button>
@@ -71,14 +71,46 @@
           <article class="hub-selection-tile stock-hub-tile is-coming" aria-label="Stocks Hub coming soon">
             <span class="hub-tile-mark stock-tile-mark" aria-hidden="true">£</span><span class="hub-tile-name"><strong>STOCKS</strong><small>HUB</small></span><span class="hub-tile-description">Watchlists, markets and alerts</span><span class="hub-tile-open">COMING SOON</span>
           </article>
-          <article class="hub-selection-tile entertainment-hub-tile is-coming" aria-label="Entertainment Hub under construction">
-            <span class="hub-tile-mark entertainment-tile-mark" aria-hidden="true">▶</span><span class="hub-tile-name"><strong>ENTERTAINMENT</strong><small>HUB</small></span><span class="hub-tile-description">Film and television releases, watchlists and ratings</span><span class="hub-tile-open">UNDER CONSTRUCTION</span>
-          </article>
+          <button type="button" class="hub-selection-tile entertainment-hub-tile" data-hub-screen="entertainment-hub-screen">
+            <span class="hub-tile-mark entertainment-tile-mark" aria-hidden="true">▶</span><span class="hub-tile-name"><strong>ENTERTAINMENT</strong><small>HUB</small></span><span class="hub-tile-description">Film and television releases, watchlists and ratings</span><span class="hub-tile-open">OPEN ENTERTAINMENT HUB →</span>
+          </button>
           <article class="hub-selection-tile technology-hub-tile is-coming" aria-label="Technology Hub coming soon">
             <span class="hub-tile-mark technology-tile-mark" aria-hidden="true">⌘</span><span class="hub-tile-name"><strong>TECHNOLOGY</strong><small>HUB</small></span><span class="hub-tile-description">Technology, devices and industry updates</span><span class="hub-tile-open">COMING SOON</span>
           </article>
         </div>
         <section class="hub-selection-coming"><span class="hub-selection-coming-mark">＋</span><div><strong>More Hubs Coming Soon</strong><p>New hubs will join as they are ready.</p></div></section>
+      </section>
+<section id="entertainment-hub-screen" class="screen entertainment-hub-screen" aria-labelledby="entertainment-hub-title">
+        <div class="entertainment-hero">
+          <div class="entertainment-hero-copy">
+            <span class="eyebrow entertainment-eyebrow">THE ENTERTAINMENT HUB</span>
+            <h1 id="entertainment-hub-title">Film. Television.<br><em>All in one place.</em></h1>
+            <p>Your home for cinema releases, television schedules and the films and series you want to keep track of.</p>
+            <div class="entertainment-hero-meta"><span>FILM &amp; TELEVISION ONLY</span><span>YOUR NEXT WATCH STARTS HERE</span></div>
+          </div>
+          <div class="entertainment-hero-mark" aria-hidden="true">▶</div>
+        </div>
+        <nav class="entertainment-section-nav" aria-label="Entertainment sections">
+          <a href="#entertainment-film-section">FILM</a><a href="#entertainment-tv-section">TELEVISION</a><a href="#entertainment-watchlist-section">MY WATCHLIST</a>
+        </nav>
+        <section class="entertainment-overview-grid" aria-label="Entertainment hub overview">
+          <article class="entertainment-overview-card"><span class="entertainment-card-kicker">ON THE BIG SCREEN</span><strong>Film releases</strong><p>Upcoming cinema releases, dates and details.</p><span class="entertainment-card-mark" aria-hidden="true">▣</span></article>
+          <article class="entertainment-overview-card"><span class="entertainment-card-kicker">AT HOME</span><strong>Television &amp; streaming</strong><p>New series, returning shows and episode schedules.</p><span class="entertainment-card-mark" aria-hidden="true">▤</span></article>
+          <article class="entertainment-overview-card"><span class="entertainment-card-kicker">KEEP YOUR PLACE</span><strong>Personal watchlist</strong><p>A place for films and shows you plan to watch.</p><span class="entertainment-card-mark" aria-hidden="true">☆</span></article>
+        </section>
+        <section id="entertainment-film-section" class="entertainment-content-section">
+          <div class="entertainment-section-heading"><div><span class="eyebrow entertainment-eyebrow">THE CINEMA</span><h2>Film <em>releases.</em></h2></div><span class="entertainment-section-tag">COMING NEXT</span></div>
+          <div class="entertainment-empty-panel"><span class="entertainment-empty-icon" aria-hidden="true">▣</span><div><strong>Film release calendar is next</strong><p>This space is ready for upcoming cinema releases, confirmed dates, trailers and film details. Live release data will be connected in a later step.</p></div></div>
+        </section>
+        <section id="entertainment-tv-section" class="entertainment-content-section">
+          <div class="entertainment-section-heading"><div><span class="eyebrow entertainment-eyebrow">ON YOUR SCREEN</span><h2>Television <em>&amp; streaming.</em></h2></div><span class="entertainment-section-tag">COMING NEXT</span></div>
+          <div class="entertainment-empty-panel"><span class="entertainment-empty-icon" aria-hidden="true">▤</span><div><strong>TV and streaming schedules are next</strong><p>This space will cover new and returning series, streaming premieres and episode schedules.</p></div></div>
+        </section>
+        <section id="entertainment-watchlist-section" class="entertainment-content-section">
+          <div class="entertainment-section-heading"><div><span class="eyebrow entertainment-eyebrow">YOUR COLLECTION</span><h2>My <em>watchlist.</em></h2></div><span class="entertainment-section-tag">PERSONAL TRACKER</span></div>
+          <div class="entertainment-empty-panel"><span class="entertainment-empty-icon" aria-hidden="true">☆</span><div><strong>Your watchlist will live here</strong><p>Later, you’ll be able to save films and series, mark what you’ve watched and keep a personal viewing history.</p></div></div>
+        </section>
+        <div class="entertainment-page-footer"><button type="button" class="entertainment-back-button" data-screen="hub-selection-screen">← BACK TO THE HUB</button><span>THE HUB · ENTERTAINMENT</span></div>
       </section>
       <section id="home-screen" class="screen" aria-labelledby="home-title">
         <div class="hero">
@@ -538,7 +570,7 @@
     </nav>
     <footer class="footer"><button type="button" class="data-health-link" id="open-data-health">DATA HEALTH CENTRE</button><span>•</span> <a class="version-history-link" href="#version-history" id="open-version-history">SPORTS VERSION HISTORY</a><button type="button" class="games-version-history-link" data-screen="games-version-history-screen">GAMES VERSION HISTORY</button> <button type="button" class="hub-version-history-link" id="open-hub-version-history">THE HUB ROADMAP</button> <button type="button" class="swgoh-version-history-link" data-screen="swgoh-roadmap-screen">SWGOH TRACKER ROADMAP</button><span>•</span> THE HUB <span>•</span> UK LOCAL TIME <span>•</span> PDC logo: <a href="https://commons.wikimedia.org/wiki/File:Professional_Darts_Corporation_logo.png" target="_blank" rel="noopener noreferrer">Chris Ibbotson, CC BY-SA 4.0</a> <span>•</span> BKFC SCHEDULE: <a href="https://www.bkfc.com/events" target="_blank" rel="noopener noreferrer">BKFC</a> <span>•</span> BOXING DATA: <a href="https://boxerbook.com" target="_blank" rel="noopener noreferrer">BOXERBOOK</a></footer>
   </div>
-  <script src="./app.js?v=20261112-03"></script>
+  <script src="./app.js?v=20261112-05"></script>
   <script src="./swgoh/config.js"></script>
   <script src="./swgoh-app.js?v=20261112-04"></script>
   <script src="./sports-data.js?v=20261111-04"></script>

@@ -82,22 +82,24 @@ function showScreen(id, options = {}) {
   document.body.classList.toggle("hub-selection-mode",id==="hub-selection-screen");
   const gamesHubActive=id==="games-calendar-screen"||id==="games-platform-calendar-screen"||id==="games-version-history-screen";
   const swgohHubActive=id==="swgoh-hub-screen"||id==="swgoh-roadmap-screen";
+  const entertainmentHubActive=id==="entertainment-hub-screen";
   if(options.userInitiated && gamesHubActive) gamesHubUserSelected = true;
   window.__gamesHubVideosEnabled = gamesHubActive && gamesHubUserSelected;
   document.body.classList.toggle("games-mode",gamesHubActive);
   document.body.classList.toggle("swgoh-mode",swgohHubActive);
+  document.body.classList.toggle("entertainment-mode",entertainmentHubActive);
   document.body.classList.toggle("games-platform-page",id==="games-platform-calendar-screen");
 
   // Keep the shared header identity in step with the hub currently being viewed.
   const brandTitle=document.getElementById("brand-title");
   const brandMark=document.getElementById("brand-mark-letter");
-  if(brandTitle)brandTitle.textContent=swgohHubActive?"SWGOH":gamesHubActive?"GAMES":"SPORTS";
+  if(brandTitle)brandTitle.textContent=swgohHubActive?"SWGOH":gamesHubActive?"GAMES":entertainmentHubActive?"ENTERTAINMENT":"SPORTS";
   if(brandMark){
     if(swgohHubActive){
       brandMark.innerHTML='<img class="brand-switcher-app-logo" src="https://play-lh.googleusercontent.com/A6eqLfsKSxaqGXhweuxc57kkkL4RkCNPL3sWHwXJ52Li1Fuiu327nGz4NnWhVRa73HYWrLvtTcNi_VzxZzJ_1Ck%3Dw240-h480" alt="">';
       brandMark.classList.add("brand-mark-image");
     }else{
-      brandMark.textContent=gamesHubActive?"G":"S";
+      brandMark.textContent=gamesHubActive?"G":entertainmentHubActive?"▶":"S";
       brandMark.classList.remove("brand-mark-image");
     }
   }
@@ -109,6 +111,7 @@ function showScreen(id, options = {}) {
   document.dispatchEvent(new CustomEvent("sports:screen-changed",{detail:{screen:id}}));
   document.querySelectorAll(".nav-item,.topbar-nav-item").forEach(b => b.classList.toggle("active",b.dataset.screen===id || (id==="sport-detail-screen"&&b.dataset.screen==="home-screen")));
   document.querySelectorAll(".nav-item,.topbar-nav-item,.topbar,.top-sport-selector,.games-platform-hub,.next-event-strip,.bottom-nav").forEach(node=>node.classList.toggle("hub-launch-hidden",id==="hub-selection-screen"));
+  document.querySelectorAll(".topbar-nav,.topbar-actions,.top-sport-selector,.games-platform-hub,.next-event-strip,.bottom-nav").forEach(node=>node.classList.toggle("entertainment-chrome-hidden",entertainmentHubActive));
   window.scrollTo({top:0,behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
   reportHubNavigationState();
 }
