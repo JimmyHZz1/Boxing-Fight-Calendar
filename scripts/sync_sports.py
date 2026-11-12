@@ -217,6 +217,160 @@ def pdc_official_fallback_events():
             "end_date": "2026-11-22",
             "venue": "Aldersley Leisure Village, Wolverhampton",
             "tier": "majors",
+            "schedule_source_url": "https://www.pdc.tv/news/2026/november/09/littler-drawn-greaves-zonneveld-at-mr-vegas-grand-slam/",
+            "schedule_of_play":             [
+                    {
+                            "date": "2026-11-14",
+                            "session": "Afternoon session",
+                            "start_at": "2026-11-14T13:00:00Z",
+                            "matches": [
+                                    "Luke Woodhouse v Tom Sykes (Group J)",
+                                    "Jermaine Wattimena v Lisa Ashton (Group B)",
+                                    "Stephen Bunting v Raymond Smith (Group D)",
+                                    "Ryan Searle v Charlie Manby (Group F)",
+                                    "Josh Rock v Tommy Morris (Group C)",
+                                    "Wessel Nijman v Adam Sevada (Group H)",
+                                    "Nathan Aspinall v Maik Kuivenhoven (Group P)",
+                                    "Jonny Clayton v Anton Ostlund (Group G)"
+                            ]
+                    },
+                    {
+                            "date": "2026-11-14",
+                            "session": "Evening session",
+                            "start_at": "2026-11-14T19:00:00Z",
+                            "matches": [
+                                    "Gerwyn Price v Joe Hunt (Group E)",
+                                    "James Wade v Cam Crabtree (Group K)",
+                                    "Ross Smith v Rusty-Jake Rodriguez (Group O)",
+                                    "Michael van Gerwen v Henry Coates (Group L)",
+                                    "Luke Humphries v Paolo Nebrida (Group I)",
+                                    "Luke Littler v Beau Greaves (Group A)",
+                                    "Gian van Veen v Carl Sneyd (Group M)",
+                                    "Chris Dobey v Jan Schmidt (Group N)"
+                            ]
+                    },
+                    {
+                            "date": "2026-11-15",
+                            "session": "Afternoon session",
+                            "start_at": "2026-11-15T13:00:00Z",
+                            "matches": [
+                                    "Match 1 — pairing and running order TBC",
+                                    "Match 2 — pairing and running order TBC",
+                                    "Match 3 — pairing and running order TBC",
+                                    "Match 4 — pairing and running order TBC",
+                                    "Match 5 — pairing and running order TBC",
+                                    "Match 6 — pairing and running order TBC",
+                                    "Match 7 — pairing and running order TBC",
+                                    "Match 8 — pairing and running order TBC"
+                            ],
+                            "match_note": "The PDC has confirmed eight matches in this session, but has not yet published the individual pairings or running order."
+                    },
+                    {
+                            "date": "2026-11-15",
+                            "session": "Evening session",
+                            "start_at": "2026-11-15T19:30:00Z",
+                            "matches": [
+                                    "Match 1 — pairing and running order TBC",
+                                    "Match 2 — pairing and running order TBC",
+                                    "Match 3 — pairing and running order TBC",
+                                    "Match 4 — pairing and running order TBC",
+                                    "Match 5 — pairing and running order TBC",
+                                    "Match 6 — pairing and running order TBC",
+                                    "Match 7 — pairing and running order TBC",
+                                    "Match 8 — pairing and running order TBC"
+                            ],
+                            "match_note": "The PDC has confirmed eight matches in this session, but has not yet published the individual pairings or running order."
+                    },
+                    {
+                            "date": "2026-11-16",
+                            "session": "Evening session",
+                            "start_at": "2026-11-16T19:00:00Z",
+                            "matches": [
+                                    "Match 1 — pairing and running order TBC",
+                                    "Match 2 — pairing and running order TBC",
+                                    "Match 3 — pairing and running order TBC",
+                                    "Match 4 — pairing and running order TBC",
+                                    "Match 5 — pairing and running order TBC",
+                                    "Match 6 — pairing and running order TBC",
+                                    "Match 7 — pairing and running order TBC",
+                                    "Match 8 — pairing and running order TBC"
+                            ],
+                            "match_note": "The PDC has confirmed eight matches in this session, but has not yet published the individual pairings or running order."
+                    },
+                    {
+                            "date": "2026-11-17",
+                            "session": "Evening session",
+                            "start_at": "2026-11-17T19:00:00Z",
+                            "matches": [
+                                    "Match 1 — pairing and running order TBC",
+                                    "Match 2 — pairing and running order TBC",
+                                    "Match 3 — pairing and running order TBC",
+                                    "Match 4 — pairing and running order TBC",
+                                    "Match 5 — pairing and running order TBC",
+                                    "Match 6 — pairing and running order TBC",
+                                    "Match 7 — pairing and running order TBC",
+                                    "Match 8 — pairing and running order TBC"
+                            ],
+                            "match_note": "The PDC has confirmed eight matches in this session, but has not yet published the individual pairings or running order."
+                    },
+                    {
+                            "date": "2026-11-18",
+                            "session": "Evening session · Round two",
+                            "start_at": "2026-11-18T19:00:00Z",
+                            "matches": [
+                                    "Winner Group A v Winner Group B",
+                                    "Winner Group C v Winner Group D",
+                                    "Winner Group E v Winner Group F",
+                                    "Winner Group G v Winner Group H"
+                            ]
+                    },
+                    {
+                            "date": "2026-11-19",
+                            "session": "Evening session · Round two",
+                            "start_at": "2026-11-19T19:00:00Z",
+                            "matches": [
+                                    "Winner Group I v Winner Group J",
+                                    "Winner Group K v Winner Group L",
+                                    "Winner Group M v Winner Group N",
+                                    "Winner Group O v Winner Group P"
+                            ]
+                    },
+                    {
+                            "date": "2026-11-20",
+                            "session": "Evening session · Quarter-finals",
+                            "start_at": "2026-11-20T19:00:00Z",
+                            "matches": [
+                                    "Winner A/B v Winner C/D",
+                                    "Winner E/F v Winner G/H"
+                            ]
+                    },
+                    {
+                            "date": "2026-11-21",
+                            "session": "Evening session · Quarter-finals",
+                            "start_at": "2026-11-21T19:00:00Z",
+                            "matches": [
+                                    "Winner I/J v Winner K/L",
+                                    "Winner M/N v Winner O/P"
+                            ]
+                    },
+                    {
+                            "date": "2026-11-22",
+                            "session": "Afternoon session · Semi-finals",
+                            "start_at": "2026-11-22T13:00:00Z",
+                            "matches": [
+                                    "Winner Quarter-final 1 v Winner Quarter-final 2",
+                                    "Winner Quarter-final 3 v Winner Quarter-final 4"
+                            ]
+                    },
+                    {
+                            "date": "2026-11-22",
+                            "session": "Evening session · Final",
+                            "start_at": "2026-11-22T19:30:00Z",
+                            "matches": [
+                                    "Winner Semi-final 1 v Winner Semi-final 2"
+                            ]
+                    }
+            ]
         },
         {
             "id": "pdc-2026-players-championship-finals",
@@ -296,6 +450,17 @@ def sync_darts():
         key_name = re.sub(r"[^a-z0-9]+", " ", event["name"].lower()).strip()
         if event["id"] not in merged and key_name not in api_names:
             merged[event["id"]] = event
+    # Preserve manually verified PDC order-of-play details even when the API
+    # begins returning a matching tournament record.
+    for fallback_event in fallback:
+        fallback_name = re.sub(r"[^a-z0-9]+", " ", str(fallback_event.get("name", "")).lower()).strip()
+        for candidate in merged.values():
+            candidate_name = re.sub(r"[^a-z0-9]+", " ", str(candidate.get("name", "")).lower()).strip()
+            if candidate.get("id") == fallback_event.get("id") or (fallback_name and candidate_name == fallback_name):
+                if fallback_event.get("schedule_of_play"):
+                    candidate["schedule_of_play"] = fallback_event["schedule_of_play"]
+                    candidate["schedule_source_url"] = fallback_event.get("schedule_source_url") or candidate.get("schedule_source_url")
+                break
     if key and not api_events and not warning:
         warning = "Darts API returned no matching televised PDC events in the 60-day window; using official fallback dates."
     events = list(merged.values())
