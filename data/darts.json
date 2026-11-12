@@ -1,0 +1,53 @@
+{
+  "sport": "darts",
+  "provider": "Darts API + official PDC calendar",
+  "organisers_included": [
+    "pdc"
+  ],
+  "events": [
+    {
+      "id": "pdc-2026-grand-slam",
+      "name": "2026 Grand Slam of Darts",
+      "date": "2026-11-14",
+      "end_date": "2026-11-22",
+      "venue": "Aldersley Leisure Village, Wolverhampton",
+      "tier": "majors",
+      "status": "scheduled",
+      "organiser": "pdc",
+      "source": "Official PDC calendar",
+      "source_url": "https://www.pdc.tv/calendar"
+    },
+    {
+      "id": "pdc-2026-players-championship-finals",
+      "name": "2026 Players Championship Finals",
+      "date": "2026-11-27",
+      "end_date": "2026-11-29",
+      "venue": "Butlins, Minehead",
+      "tier": "majors",
+      "status": "scheduled",
+      "organiser": "pdc",
+      "source": "Official PDC calendar",
+      "source_url": "https://www.pdc.tv/calendar"
+    },
+    {
+      "id": "pdc-2026-27-world-championship",
+      "name": "2026/27 World Championship",
+      "date": "2026-12-11",
+      "end_date": "2027-01-03",
+      "venue": "Alexandra Palace, London",
+      "tier": "majors",
+      "status": "scheduled",
+      "organiser": "pdc",
+      "source": "Official PDC calendar",
+      "source_url": "https://www.pdc.tv/calendar"
+    }
+  ],
+  "notice": "Main televised PDC tournaments only. The Darts API supplies available event records; official PDC calendar dates fill gaps in upcoming headline events. U23, youth, development, affiliate, qualifier and non-televised Players Championship events are excluded.",
+  "sync_attempted_at": "2026-11-11T12:14:21Z",
+  "data_status": "fallback",
+  "results": [],
+  "results_sync_warning": "DARTS_API_KEY is not configured; retaining the last published results.",
+  "results_last_successful_update": null,
+  "sync_warning": "DARTS_API_KEY is not configured; using verified official PDC calendar dates.",
+  "last_updated": "2026-11-11T12:14:21Z"
+}
