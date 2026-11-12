@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Nintendo Switch">
-  <path fill="#e60012" d="M20 4C10.6 4 4 11.2 4 21v22c0 9.8 6.6 17 16 17h8V4h-8Z"/>
-  <path fill="#00a1e9" d="M44 4h-8v56h8c9.4 0 16-7.2 16-17V21C60 11.2 53.4 4 44 4Z"/>
-  <circle cx="17" cy="19" r="4" fill="#fff"/>
-  <path d="M17 35v12M11 41h12" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
-  <circle cx="47" cy="45" r="4" fill="#fff"/>
-  <path d="M41 17h12" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+  <path fill="#c5c9d0" d="M20 4C10.6 4 4 11.2 4 21v22c0 9.8 6.6 17 16 17h8V4h-8Z"/>
+  <path fill="#c5c9d0" d="M44 4h-8v56h8c9.4 0 16-7.2 16-17V21C60 11.2 53.4 4 44 4Z"/>
+  <circle cx="17" cy="19" r="4" fill="#25282d"/>
+  <path d="M17 35v12M11 41h12" stroke="#25282d" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="47" cy="45" r="4" fill="#25282d"/>
+  <path d="M41 17h12" stroke="#25282d" stroke-width="3" stroke-linecap="round"/>
 </svg>
