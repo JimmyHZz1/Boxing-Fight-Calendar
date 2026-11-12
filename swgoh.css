@@ -164,3 +164,19 @@ body.swgoh-mode .app-shell{width:100%;max-width:1680px;margin:0 auto;padding-lef
 .swgoh-section-nav button.active{background:rgba(185,154,232,.16);border-color:#725a91;color:#f0e5ff;box-shadow:inset 0 -2px 0 var(--swgoh-accent)}
 .swgoh-section-nav.dashboard-hidden{display:flex!important}
 @media(max-width:560px){.swgoh-section-nav{gap:6px;margin-bottom:14px;padding:8px 0 10px}.swgoh-section-nav button{min-width:82px;min-height:44px;padding:8px 10px;gap:5px}.swgoh-section-nav button small{font-size:9px}}
+
+
+/* Dedicated SWGOH footer roadmap page. */
+.swgoh-roadmap-screen{width:100%;min-width:0}
+.swgoh-roadmap-page{width:100%;max-width:1560px;margin:0 auto;color:#f2eafb}
+.swgoh-roadmap-page .page-intro{margin:12px 0 24px}
+.swgoh-roadmap-page .page-intro h1{color:#f2eafb}
+.swgoh-roadmap-page .page-intro h1 em{color:var(--swgoh-accent)}
+.swgoh-version-history-panel,.swgoh-roadmap-todo{margin:0 0 22px;padding:22px;border:1px solid var(--swgoh-line);border-radius:8px;background:linear-gradient(135deg,rgba(36,27,51,.72),rgba(23,17,33,.88))}
+.swgoh-roadmap-section-heading{margin-bottom:12px}
+.swgoh-roadmap-section-heading h2{margin:5px 0;color:#f2eafb;font-size:20px}
+.swgoh-roadmap-section-heading p{margin:0;color:var(--swgoh-muted);font-size:12px}
+.swgoh-roadmap-page .swgoh-version-history-content{padding:8px 0 4px}
+.swgoh-roadmap-page .swgoh-todo-content{padding:8px 0 4px}
+.swgoh-roadmap-page .data-health-footer{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:18px 0 30px;padding-top:16px;border-top:1px solid var(--swgoh-line);color:var(--swgoh-muted);font-size:10px}
+@media(max-width:560px){.swgoh-version-history-panel,.swgoh-roadmap-todo{padding:15px}.swgoh-roadmap-page .data-health-footer{align-items:flex-start;flex-direction:column}}
