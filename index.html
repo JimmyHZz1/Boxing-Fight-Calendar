@@ -8,7 +8,7 @@
   <link rel="manifest" href="./manifest.json">
   <link rel="stylesheet" href="./styles.css?v=20261112-07">
   <title>The Hub</title>
-  <link rel="stylesheet" href="./swgoh.css?v=20261112-04">
+  <link rel="stylesheet" href="./swgoh.css?v=20261112-06">
 </head>
 <body>
   <div class="app-shell">
@@ -496,12 +496,18 @@
           </div>
         </header>
         <div class="swgoh-news" id="news" aria-label="Tracker updates"></div>
-        <div class="swgoh-workspace">
-          <nav class="nav swgoh-section-nav" id="nav" aria-label="SWGOH sections"></nav>
+        <nav class="nav swgoh-section-nav" id="nav" aria-label="SWGOH tracker sections"></nav>
+      <div class="swgoh-workspace">
           <main class="main swgoh-main" id="app"></main>
         </div>
-        <details class="swgoh-version-history">
-          <summary><span><small>TRACKER RELEASE NOTES</small><strong>SWGOH version history</strong><em>View changes included in each tracker release</em></span><b aria-hidden="true">＋</b></summary>
+
+      </div>
+    </section>
+    <section id="swgoh-roadmap-screen" class="screen swgoh-roadmap-screen" aria-labelledby="swgoh-roadmap-title">
+      <div class="swgoh-roadmap-page">
+        <div class="page-intro"><span class="eyebrow swgoh-eyebrow">SWGOH HUB · TRACKER ROADMAP</span><h1 id="swgoh-roadmap-title">SWGOH Tracker <em>roadmap.</em></h1><p>Tracker release history and planned improvements. This roadmap is available only while viewing the SWGOH Hub.</p></div>
+        <section class="swgoh-version-history-panel" aria-labelledby="swgoh-version-history-title">
+          <div class="swgoh-roadmap-section-heading"><span class="eyebrow swgoh-eyebrow">TRACKER RELEASE NOTES</span><h2 id="swgoh-version-history-title">Version history</h2><p>Features and improvements included in each tracker release.</p></div>
           <div class="swgoh-version-history-content">
             <article class="swgoh-v1-rework"><h3>✨ v1.0 <span>IN PROGRESS</span></h3><ul><li>Major rework bringing the SWGOH Tracker natively into The Hub.</li><li>Shared Hub layout, navigation and consistent page styling.</li><li>Full-width responsive section tabs and improved spacing.</li><li>Preserve and progressively polish the existing tracker tools and workflows.</li></ul></article>
             <article><h3>🔄 v0.5.2 <span>CURRENT</span></h3><ul><li>Functional SWGOH.GG public roster sync boundary.</li><li>Working Ally Code save and Sync Now.</li><li>GL and Solo pages consume synced roster data.</li><li>Upcoming Features JSON renders automatically.</li><li>Dashboard navigation and scrolling news ticker fixes.</li></ul></article>
@@ -510,11 +516,12 @@
             <article><h3>ℹ️ v0.3</h3><ul><li>Not released.</li></ul></article>
             <article><h3>📱 v0.2</h3><ul><li>Initial installable iPhone PWA prototype.</li><li>Dashboard, character gear and relic tracking, resources and local storage.</li></ul></article>
           </div>
-        </details>
-        <details class="swgoh-todo-list">
-          <summary><span><small>WHAT'S NEXT</small><strong>SWGOH to-do list</strong><em>Planned features and future improvements</em></span><b aria-hidden="true">＋</b></summary>
+        </section>
+        <section class="swgoh-roadmap-todo" aria-labelledby="swgoh-roadmap-todo-title">
+          <div class="swgoh-roadmap-section-heading"><span class="eyebrow swgoh-eyebrow">WHAT'S NEXT</span><h2 id="swgoh-roadmap-todo-title">SWGOH to-do list</h2><p>Planned tracker features and future improvements.</p></div>
           <div class="swgoh-todo-content" id="swgoh-roadmap-list"><p class="small">Loading the current roadmap…</p></div>
-        </details>
+        </section>
+        <div class="data-health-footer"><button type="button" class="secondary-button" data-screen="swgoh-hub-screen">← BACK TO SWGOH TRACKER</button><span>SWGOH HUB · VERSION HISTORY &amp; ROADMAP</span></div>
       </div>
     </section>
     <div id="global-search-dialog" class="global-search-dialog" hidden role="dialog" aria-modal="true" aria-labelledby="global-search-title"><div class="global-search-panel"><div class="global-search-heading"><div><span class="eyebrow">ALL FIVE SPORTS</span><h2 id="global-search-title">Find your <em>next event.</em></h2></div><button type="button" id="global-search-close" aria-label="Close search">×</button></div><label class="global-search-input-wrap"><span>⌕</span><input id="global-search-input" type="search" placeholder="Search events, fighters, drivers, teams…" autocomplete="off"><kbd>ESC</kbd></label><div class="global-search-filters" id="global-search-filters"><button type="button" data-search-sport="all" aria-pressed="true">ALL</button><button type="button" data-search-sport="f1" aria-pressed="false">F1</button><button type="button" data-search-sport="darts" aria-pressed="false">DARTS</button><button type="button" data-search-sport="boxing" aria-pressed="false">BOXING</button><button type="button" data-search-sport="ufc" aria-pressed="false">UFC</button><button type="button" data-search-sport="bkfc" aria-pressed="false">BKFC</button></div><div id="global-search-results" class="global-search-results"><p>Start typing to search across events and competitors.</p></div></div></div>
@@ -523,11 +530,11 @@
       <button id="sports-bottom-calendar-button" class="nav-item" data-screen="calendar-screen" aria-label="Open the original Sports Calendar"><span aria-hidden="true">▦</span><small>CALENDAR</small></button>
       <button class="nav-item" data-screen="weekend-screen"><span>★</span><small>FAVOURITES</small></button>
     </nav>
-    <footer class="footer"><button type="button" class="data-health-link" id="open-data-health">DATA HEALTH CENTRE</button><span>•</span> <a class="version-history-link" href="#version-history" id="open-version-history">SPORTS VERSION HISTORY</a><button type="button" class="games-version-history-link" data-screen="games-version-history-screen">GAMES VERSION HISTORY</button> <button type="button" class="hub-version-history-link" id="open-hub-version-history">THE HUB ROADMAP</button><span>•</span> THE HUB <span>•</span> UK LOCAL TIME <span>•</span> PDC logo: <a href="https://commons.wikimedia.org/wiki/File:Professional_Darts_Corporation_logo.png" target="_blank" rel="noopener noreferrer">Chris Ibbotson, CC BY-SA 4.0</a> <span>•</span> BKFC SCHEDULE: <a href="https://www.bkfc.com/events" target="_blank" rel="noopener noreferrer">BKFC</a> <span>•</span> BOXING DATA: <a href="https://boxerbook.com" target="_blank" rel="noopener noreferrer">BOXERBOOK</a></footer>
+    <footer class="footer"><button type="button" class="data-health-link" id="open-data-health">DATA HEALTH CENTRE</button><span>•</span> <a class="version-history-link" href="#version-history" id="open-version-history">SPORTS VERSION HISTORY</a><button type="button" class="games-version-history-link" data-screen="games-version-history-screen">GAMES VERSION HISTORY</button> <button type="button" class="hub-version-history-link" id="open-hub-version-history">THE HUB ROADMAP</button> <button type="button" class="swgoh-version-history-link" data-screen="swgoh-roadmap-screen">SWGOH TRACKER ROADMAP</button><span>•</span> THE HUB <span>•</span> UK LOCAL TIME <span>•</span> PDC logo: <a href="https://commons.wikimedia.org/wiki/File:Professional_Darts_Corporation_logo.png" target="_blank" rel="noopener noreferrer">Chris Ibbotson, CC BY-SA 4.0</a> <span>•</span> BKFC SCHEDULE: <a href="https://www.bkfc.com/events" target="_blank" rel="noopener noreferrer">BKFC</a> <span>•</span> BOXING DATA: <a href="https://boxerbook.com" target="_blank" rel="noopener noreferrer">BOXERBOOK</a></footer>
   </div>
   <script src="./app.js?v=20261112-01"></script>
   <script src="./swgoh/config.js"></script>
-  <script src="./swgoh-app.js?v=20261112-02"></script>
+  <script src="./swgoh-app.js?v=20261112-04"></script>
   <script src="./sports-data.js?v=20261111-04"></script>
   <script src="./sports.js?v=20261111-04"></script>
   <script src="./sports-hub.js?v=20261109-08"></script>

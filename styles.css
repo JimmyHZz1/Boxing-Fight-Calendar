@@ -3686,3 +3686,13 @@ body.swgoh-mode #brand-title{color:#b99ae8!important;text-shadow:0 0 12px rgba(1
   filter:none!important;
   opacity:1!important;
 }
+
+
+/* Keep each hub's release history link inside its own hub context. */
+.games-mode .version-history-link,.games-mode .hub-version-history-link,.swgoh-mode .version-history-link,.swgoh-mode .games-version-history-link,.swgoh-mode .hub-version-history-link{display:none!important}
+.games-mode .games-version-history-link{display:inline-block}
+.swgoh-version-history-link{display:none;border:0;background:transparent;color:#c7a9ef;padding:0;font:inherit;letter-spacing:inherit;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.swgoh-mode .swgoh-version-history-link{display:inline-block}
+.hub-version-history-link{display:none}
+body.hub-selection-mode .hub-version-history-link{display:inline-block}
+body.hub-selection-mode .version-history-link,body.hub-selection-mode .games-version-history-link,body.hub-selection-mode .swgoh-version-history-link{display:none!important}

@@ -56,7 +56,7 @@ function showScreen(id) {
   document.querySelectorAll(".screen").forEach(s => s.classList.toggle("active",s.id===id));
   document.body.classList.toggle("hub-selection-mode",id==="hub-selection-screen");
   const gamesHubActive=id==="games-calendar-screen"||id==="games-platform-calendar-screen"||id==="games-version-history-screen";
-  const swgohHubActive=id==="swgoh-hub-screen";
+  const swgohHubActive=id==="swgoh-hub-screen"||id==="swgoh-roadmap-screen";
   document.body.classList.toggle("games-mode",gamesHubActive);
   document.body.classList.toggle("swgoh-mode",swgohHubActive);
   document.body.classList.toggle("games-platform-page",id==="games-platform-calendar-screen");
