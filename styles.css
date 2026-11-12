@@ -3645,3 +3645,9 @@ button.hub-selection-tile:hover,button.hub-selection-tile:focus-visible{transfor
 .calendar-menu-wordmark{display:flex;flex-direction:column;align-items:flex-start;gap:2px;font-family:'Barlow Condensed',sans-serif;line-height:.9;letter-spacing:1px}
 .calendar-menu-wordmark strong{font-size:14px;font-weight:900}
 .calendar-menu-wordmark small{font-size:9px;font-weight:800;color:var(--muted);letter-spacing:1.4px}
+
+/* Keep the launch selector clean: it is the top-level home, not a sports page. */
+body.hub-selection-mode .topbar,body.hub-selection-mode .top-sport-selector,body.hub-selection-mode .games-platform-hub,body.hub-selection-mode .next-event-strip{display:none!important}
+
+.brand-switcher-app-logo{width:100%;height:100%;object-fit:cover;border-radius:5px;display:block}
+.brand-menu-mark.hub-home-mark{background:#e2b45b;color:#17130d;font-weight:900}

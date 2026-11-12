@@ -58,6 +58,11 @@ function showScreen(id) {
   document.body.classList.toggle("games-mode",id==="games-calendar-screen"||id==="games-platform-calendar-screen"||id==="games-version-history-screen");
   document.body.classList.toggle("swgoh-mode",id==="swgoh-hub-screen");
   document.body.classList.toggle("games-platform-page",id==="games-platform-calendar-screen");
+  const gamesHubActive=id==="games-calendar-screen"||id==="games-platform-calendar-screen"||id==="games-version-history-screen";
+  document.querySelectorAll("iframe[data-youtube-src]").forEach(frame=>{
+    if(gamesHubActive){if(!frame.getAttribute("src"))frame.setAttribute("src",frame.dataset.youtubeSrc);}
+    else if(frame.hasAttribute("src"))frame.removeAttribute("src");
+  });
   document.dispatchEvent(new CustomEvent("sports:screen-changed",{detail:{screen:id}}));
   document.querySelectorAll(".nav-item,.topbar-nav-item").forEach(b => b.classList.toggle("active",b.dataset.screen===id || (id==="sport-detail-screen"&&b.dataset.screen==="home-screen")));
   document.querySelectorAll(".nav-item,.topbar-nav-item,.topbar,.top-sport-selector,.games-platform-hub,.next-event-strip,.bottom-nav").forEach(node=>node.classList.toggle("hub-launch-hidden",id==="hub-selection-screen"));

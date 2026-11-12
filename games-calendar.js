@@ -3,6 +3,7 @@
   const menu = document.getElementById("mobile-calendar-menu");
   const trigger = document.getElementById("calendar-menu-trigger");
   const mark = document.getElementById("brand-mark-letter");
+  const swgohMark = "https://play-lh.googleusercontent.com/A6eqLfsKSxaqGXhweuxc57kkkL4RkCNPL3sWHwXJ52Li1Fuiu327nGz4NnWhVRa73HYWrLvtTcNi_VzxZzJ_1Ck%3Dw240-h480";
   const title = document.getElementById("brand-title");
   const subtitle = document.getElementById("brand-subtitle");
   const closeMenu = () => {
@@ -15,7 +16,10 @@
     const swgoh = screenId === "swgoh-hub-screen";
     document.body.classList.toggle("games-mode", games);
     document.body.classList.toggle("swgoh-mode", swgoh);
-    if (mark) mark.textContent = games ? "G" : swgoh ? "✦" : "S";
+    if (mark) {
+      if (swgoh) { const image=document.createElement("img"); image.src=swgohMark; image.alt=""; image.className="brand-switcher-app-logo"; mark.replaceChildren(image); }
+      else mark.textContent = games ? "G" : "S";
+    }
     if (title) title.textContent = swgoh ? "SWGOH" : games ? "GAMES" : "SPORTS";
     if (subtitle) subtitle.textContent = "HUB";
   };
