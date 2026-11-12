@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#101114">
   <meta name="description" content="The Hub brings Sports, Games, SWGOH and more together in one place.">
   <link rel="manifest" href="./manifest.json">
-  <link rel="stylesheet" href="./styles.css?v=20261112-02">
+  <link rel="stylesheet" href="./styles.css?v=20261112-03">
   <title>The Hub</title>
   <link rel="stylesheet" href="./swgoh.css?v=20261111-02">
 </head>
@@ -16,10 +16,10 @@
       <div class="brand-calendar-switcher">
         <button class="brand brand-calendar-trigger" id="calendar-menu-trigger" type="button" aria-label="Switch hub" aria-haspopup="true" aria-expanded="false" aria-controls="mobile-calendar-menu">
           <span class="brand-mark" id="brand-mark-letter">S</span>
-          <span><strong id="brand-title">SPORTS HUB</strong><small>THE HUB</small></span>
+          <span class="brand-wordmark"><strong id="brand-title">SPORTS</strong><small id="brand-subtitle">HUB</small></span>
           <span class="brand-switcher-caret" aria-hidden="true">⌄</span>
         </button>
-        <div id="mobile-calendar-menu" class="mobile-calendar-menu" hidden aria-label="Choose calendar"><button type="button" data-screen="home-screen"><span class="brand-menu-mark sports-mark" aria-hidden="true">S</span> SPORTS HUB</button><button type="button" data-screen="games-calendar-screen"><span class="brand-menu-mark games-mark" aria-hidden="true">G</span> GAMES HUB</button><button type="button" data-screen="swgoh-hub-screen"><img class="brand-menu-logo swgoh-menu-logo" src="https://play-lh.googleusercontent.com/A6eqLfsKSxaqGXhweuxc57kkkL4RkCNPL3sWHwXJ52Li1Fuiu327nGz4NnWhVRa73HYWrLvtTcNi_VzxZzJ_1Ck%3Dw240-h480" alt="" loading="lazy"><span class="calendar-menu-label">SWGOH HUB</span></button></div>
+        <div id="mobile-calendar-menu" class="mobile-calendar-menu" hidden aria-label="Choose calendar"><button type="button" data-screen="home-screen"><span class="brand-menu-mark sports-mark" aria-hidden="true">S</span><span class="calendar-menu-wordmark"><strong>SPORTS</strong><small>HUB</small></span></button><button type="button" data-screen="games-calendar-screen"><span class="brand-menu-mark games-mark" aria-hidden="true">G</span><span class="calendar-menu-wordmark"><strong>GAMES</strong><small>HUB</small></span></button><button type="button" data-screen="swgoh-hub-screen"><img class="brand-menu-logo swgoh-menu-logo" src="https://play-lh.googleusercontent.com/A6eqLfsKSxaqGXhweuxc57kkkL4RkCNPL3sWHwXJ52Li1Fuiu327nGz4NnWhVRa73HYWrLvtTcNi_VzxZzJ_1Ck%3Dw240-h480" alt="" loading="lazy"><span class="calendar-menu-wordmark"><strong>SWGOH</strong><small>HUB</small></span></button></div>
       </div>
       <nav class="topbar-nav" aria-label="Main navigation">
         <button type="button" class="topbar-nav-item active" data-screen="home-screen"><span aria-hidden="true">⌂</span> HOME</button>
@@ -52,7 +52,29 @@
     </section>
 
     <main>
-      <section id="home-screen" class="screen active" aria-labelledby="home-title">
+      <section id="hub-selection-screen" class="screen hub-selection-screen active" aria-labelledby="hub-selection-title">
+        <div class="hub-selection-hero">
+          <span class="eyebrow">WELCOME TO THE HUB</span>
+          <h1 id="hub-selection-title">Everything.<br><em>One hub.</em></h1>
+          <p>Choose where you want to go. Each hub has its own features and identity, all within one application.</p>
+        </div>
+        <div class="hub-selection-grid" aria-label="Choose a hub">
+          <button type="button" class="hub-selection-tile sports-hub-tile" data-hub-screen="home-screen">
+            <span class="hub-tile-mark sports-tile-mark" aria-hidden="true">S</span><span class="hub-tile-name"><strong>SPORTS</strong><small>HUB</small></span><span class="hub-tile-description">Fixtures, live action and results</span><span class="hub-tile-open">OPEN SPORTS HUB →</span>
+          </button>
+          <button type="button" class="hub-selection-tile games-hub-tile" data-hub-screen="games-calendar-screen">
+            <span class="hub-tile-mark games-tile-mark" aria-hidden="true">G</span><span class="hub-tile-name"><strong>GAMES</strong><small>HUB</small></span><span class="hub-tile-description">Upcoming PC and console releases</span><span class="hub-tile-open">OPEN GAMES HUB →</span>
+          </button>
+          <button type="button" class="hub-selection-tile swgoh-hub-tile" data-hub-screen="swgoh-hub-screen">
+            <span class="hub-tile-mark swgoh-tile-mark" aria-hidden="true">✦</span><span class="hub-tile-name"><strong>SWGOH</strong><small>HUB</small></span><span class="hub-tile-description">Roster, journeys and progression</span><span class="hub-tile-open">OPEN SWGOH HUB →</span>
+          </button>
+          <article class="hub-selection-tile stock-hub-tile is-coming" aria-label="Stock Hub coming soon">
+            <span class="hub-tile-mark stock-tile-mark" aria-hidden="true">£</span><span class="hub-tile-name"><strong>STOCK</strong><small>HUB</small></span><span class="hub-tile-description">Watchlists, markets and alerts</span><span class="hub-tile-open">COMING SOON</span>
+          </article>
+        </div>
+        <section class="hub-selection-coming"><span class="hub-selection-coming-mark">＋</span><div><strong>More Hubs Coming Soon</strong><p>New hubs will join as they are ready.</p></div></section>
+      </section>
+      <section id="home-screen" class="screen" aria-labelledby="home-title">
         <div class="hero">
           <div class="eyebrow">SIX SPORTS · ONE HUB</div>
           <h1 id="home-title">Every sport.<br><em>One hub.</em></h1>
@@ -195,6 +217,17 @@
       </section>
       <section id="settings-screen" class="screen" aria-labelledby="settings-title">
         <div class="page-intro"><span class="eyebrow">MAKE IT YOURS</span><h1 id="settings-title">Your <em>settings.</em></h1><p>Preview the Formula 1 team colours before choosing your favourite. Your saved theme only changes when you press Apply.</p></div>
+        <section class="hub-startup-settings" aria-labelledby="hub-startup-heading">
+          <span class="eyebrow">APPLICATION STARTUP</span><h2 id="hub-startup-heading">Startup destination</h2>
+          <p class="settings-help">Choose what The Hub opens to when you launch the app. This setting is saved on this device.</p>
+          <label class="hub-startup-label" for="hub-startup-destination">Open on startup</label>
+          <select id="hub-startup-destination" class="favourite-team-select">
+            <option value="hub-selection-screen">Hub Selection Screen</option>
+            <option value="home-screen">Sports Hub</option>
+            <option value="games-calendar-screen">Games Hub</option>
+            <option value="swgoh-hub-screen">SWGOH Hub</option>
+          </select>
+        </section>
         <section class="favourite-team-panel" aria-labelledby="favourite-team-heading">
           <span class="eyebrow">FORMULA 1 PERSONALISATION</span>
           <h2 id="favourite-team-heading">Favourite team</h2>
@@ -386,8 +419,8 @@
           <div class="jobs-todo-group">
             <div class="jobs-todo-group-title"><span class="jobs-priority-dot"></span><h3>Core application</h3></div>
             <article class="jobs-todo-item"><span class="jobs-todo-number">01</span><div><h4>Complete The Hub rebrand</h4><p>Update application name, browser and installable app identity, Sports Hub and Games Hub branding, hero messaging and the H application icon, including the icon embedded in the Windows executable.</p></div><span class="jobs-todo-status">IN PROGRESS</span></article>
-            <article class="jobs-todo-item"><span class="jobs-todo-number">02</span><div><h4>Build the hub selection screen</h4><p>Create the launch screen with selectable hub tiles and a “More Hubs Coming Soon” panel beneath them.</p></div><span class="jobs-todo-status">PLANNED</span></article>
-            <article class="jobs-todo-item"><span class="jobs-todo-number">03</span><div><h4>Add the startup destination setting</h4><p>Allow users to open the hub selection screen by default or choose a specific hub to launch automatically. No favourite stars are needed on the hub tiles.</p></div><span class="jobs-todo-status">PLANNED</span></article>
+            <article class="jobs-todo-item"><span class="jobs-todo-number">02</span><div><h4>Build the hub selection screen</h4><p>Create the launch screen with selectable hub tiles and a “More Hubs Coming Soon” panel beneath them.</p></div><span class="jobs-todo-status">COMPLETE</span></article>
+            <article class="jobs-todo-item"><span class="jobs-todo-number">03</span><div><h4>Add the startup destination setting</h4><p>Allow users to open the hub selection screen by default or choose a specific hub to launch automatically. No favourite stars are needed on the hub tiles.</p></div><span class="jobs-todo-status">COMPLETE</span></article>
             <article class="jobs-todo-item"><span class="jobs-todo-number">04</span><div><h4>Create the shared hub framework</h4><p>Keep each hub's pages, navigation, data and settings independent while sharing the overall application shell and consistent design components.</p></div><span class="jobs-todo-status">PLANNED</span></article>
           </div>
           <div class="jobs-todo-group hub-roadmap-group">
@@ -471,7 +504,7 @@
     </nav>
     <footer class="footer"><button type="button" class="data-health-link" id="open-data-health">DATA HEALTH CENTRE</button><span>•</span> <a class="version-history-link" href="#version-history" id="open-version-history">SPORTS VERSION HISTORY</a><button type="button" class="games-version-history-link" data-screen="games-version-history-screen">GAMES VERSION HISTORY</button> <button type="button" class="hub-version-history-link" id="open-hub-version-history">THE HUB ROADMAP</button><span>•</span> THE HUB <span>•</span> UK LOCAL TIME <span>•</span> PDC logo: <a href="https://commons.wikimedia.org/wiki/File:Professional_Darts_Corporation_logo.png" target="_blank" rel="noopener noreferrer">Chris Ibbotson, CC BY-SA 4.0</a> <span>•</span> BKFC SCHEDULE: <a href="https://www.bkfc.com/events" target="_blank" rel="noopener noreferrer">BKFC</a> <span>•</span> BOXING DATA: <a href="https://boxerbook.com" target="_blank" rel="noopener noreferrer">BOXERBOOK</a></footer>
   </div>
-  <script src="./app.js?v=20261109-03"></script>
+  <script src="./app.js?v=20261112-01"></script>
   <script src="./swgoh/config.js"></script>
   <script src="./swgoh-app.js?v=20261111-01"></script>
   <script src="./sports-data.js?v=20261111-04"></script>
@@ -488,7 +521,7 @@
   <script src="./version-history.js?v=20261109-01"></script>
   <script src="./hub-version.js?v=20261112-01"></script>
   <script src="./f1-grand-prix-centre.js?v=20261109-03"></script>
-  <script src="./games-calendar.js?v=20261111-07"></script>
+  <script src="./games-calendar.js?v=20261112-01"></script>
   <script src="./games-popularity.js?v=20261110-07"></script>
   <script src="./games-discovery.js?v=20261111-07"></script>
   <script src="./notifications.js?v=20261111-02"></script>
