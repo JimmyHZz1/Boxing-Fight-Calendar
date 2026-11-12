@@ -1,11 +1,16 @@
 using System.Drawing;
 using System.Windows;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace SportsGamesCalendar;
 
 public partial class App : System.Windows.Application
 {
+    private const string AppUserModelId = "TheHub.Desktop";
+
+    [DllImport("shell32.dll", CharSet = CharSet.Unicode, PreserveSig = true)]
+    private static extern int SetCurrentProcessExplicitAppUserModelID(string appId);
     private NotifyIcon? _trayIcon;
     private NotificationService? _notifications;
     private MainWindow? _mainWindow;
@@ -13,6 +18,8 @@ public partial class App : System.Windows.Application
 
     private void OnStartup(object sender, StartupEventArgs e)
     {
+        // Give Windows a stable identity for taskbar grouping and pinned shortcuts.
+        _ = SetCurrentProcessExplicitAppUserModelID(AppUserModelId);
         var menu = new ContextMenuStrip();
         menu.Items.Add("Open The Hub", null, (_, _) => ShowMainWindow());
         menu.Items.Add("Check for event reminders now", null, async (_, _) => { if (_notifications is not null) await _notifications.CheckNowAsync(); });

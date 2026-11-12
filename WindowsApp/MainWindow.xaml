@@ -6,7 +6,8 @@
         Title="The Hub"
         Width="1440" Height="900" MinWidth="900" MinHeight="600"
         WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="CanResize"
-        Background="{StaticResource AppBackground}" Foreground="#F5F5F5" Icon="app-icon.ico">
+        Background="{StaticResource AppBackground}" Foreground="#F5F5F5"
+        Icon="pack://application:,,,/app-icon.ico">
     <shell:WindowChrome.WindowChrome>
         <shell:WindowChrome CaptionHeight="42" ResizeBorderThickness="6" GlassFrameThickness="0"
                             CornerRadius="0" UseAeroCaptionButtons="False" />
