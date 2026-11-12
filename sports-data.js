@@ -276,6 +276,7 @@
           const list=make("ol","sport-darts-match-list");
           matches.forEach(match=>list.append(make("li",null,match)));
           block.append(list);
+          if(session.match_note)block.append(make("p","sport-darts-timing-note",session.match_note));
         }else block.append(make("p","sport-sync-note","Match order and pairings have not yet been published."));
         schedule.append(block);
       });
