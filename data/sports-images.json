@@ -1078,9 +1078,24 @@
       "image_match_method": "category:Category:Julianna Peña",
       "image_verified_at": "2026-11-12T19:47:10Z",
       "image_local_path": "assets/images/ufc/julianna-pena.jpg"
+    },
+    "luana santos": {
+      "name": "Luana Santos",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/luana-santos.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Luana_Santos_at_the_UFC_by_Maritza_Sanchez_01.jpg",
+      "image_credit": "Wikimedia Commons · Maritza Sanchez · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Luana Santos",
+      "image_verified_at": "2026-11-13T00:39:21Z",
+      "image_local_path": "assets/images/ufc/luana-santos.jpg"
     }
   },
-  "updated_at": "2026-11-12T19:47:10Z",
+  "updated_at": "2026-11-13T00:39:21Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1279,7 +1294,11 @@
     "daniel rodriguez": "2026-11-12T19:47:10Z",
     "kayla harrison": "2026-11-12T19:47:10Z",
     "joselyne edwards": "2026-11-12T19:47:10Z",
-    "julianna pena": "2026-11-12T19:47:10Z"
+    "julianna pena": "2026-11-12T19:47:10Z",
+    "ailin perez": "2026-11-13T00:39:21Z",
+    "norma dumont": "2026-11-13T00:39:21Z",
+    "luana santos": "2026-11-13T00:39:21Z",
+    "yana santos": "2026-11-13T00:39:21Z"
   },
   "audit": {
     "last_reviewed_at": "2026-11-09T12:15:00Z",
@@ -1316,15 +1335,15 @@
     }
   },
   "enrichment": {
-    "batch_number": 26,
+    "batch_number": 27,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 207,
-    "cumulative_found": 78,
-    "cumulative_missing": 129,
+    "cumulative_attempted": 212,
+    "cumulative_found": 79,
+    "cumulative_missing": 133,
     "cumulative_rejected": 152,
-    "last_batch_at": "2026-11-12T19:47:10Z",
-    "last_successful_batch_at": "2026-11-12T19:47:10Z",
-    "last_rate_limited_at": "2026-11-12T19:02:51Z",
+    "last_batch_at": "2026-11-13T00:39:21Z",
+    "last_successful_batch_at": "2026-11-13T00:39:21Z",
+    "last_rate_limited_at": "2026-11-13T00:39:21Z",
     "history": [
       {
         "batch": 1,
@@ -1533,8 +1552,16 @@
         "found": 3,
         "missing": 2,
         "rate_limited": false
+      },
+      {
+        "batch": 27,
+        "at": "2026-11-13T00:39:21Z",
+        "attempted": 5,
+        "found": 1,
+        "missing": 4,
+        "rate_limited": true
       }
     ],
-    "last_batch_rate_limited": false
+    "last_batch_rate_limited": true
   }
 }

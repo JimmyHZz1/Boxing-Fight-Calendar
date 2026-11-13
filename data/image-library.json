@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-12T19:47:10Z",
+  "updated_at": "2026-11-13T00:39:21Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -816,6 +816,17 @@
       "creator": "Wikimedia Commons · MMAnytt · CC BY 3.0",
       "attribution": "Wikimedia Commons · MMAnytt · CC BY 3.0",
       "verified_at": "2026-11-12T19:47:10Z",
+      "sport": "ufc"
+    },
+    "luana santos": {
+      "name": "Luana Santos",
+      "path": "assets/images/ufc/luana-santos.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Luana_Santos_at_the_UFC_by_Maritza_Sanchez_01.jpg",
+      "licence": "CC BY 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by/3.0",
+      "creator": "Wikimedia Commons · Maritza Sanchez · CC BY 3.0",
+      "attribution": "Wikimedia Commons · Maritza Sanchez · CC BY 3.0",
+      "verified_at": "2026-11-13T00:39:21Z",
       "sport": "ufc"
     }
   },

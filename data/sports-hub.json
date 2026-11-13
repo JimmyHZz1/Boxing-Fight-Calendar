@@ -4360,7 +4360,17 @@
             {
               "rank": 5,
               "name": "Luana Santos",
-              "image_url": null
+              "image_url": "./assets/images/ufc/luana-santos.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Luana_Santos_at_the_UFC_by_Maritza_Sanchez_01.jpg",
+              "image_credit": "Wikimedia Commons · Maritza Sanchez · CC BY 3.0",
+              "image_license": "CC BY 3.0",
+              "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Luana Santos",
+              "image_verified_at": "2026-11-13T00:39:21Z",
+              "image_local_path": "assets/images/ufc/luana-santos.jpg"
             },
             {
               "rank": 6,
@@ -5340,74 +5350,65 @@
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
     "attempted": 5,
-    "found": 114,
-    "missing": 704,
-    "rejected": 9,
+    "found": 115,
+    "missing": 703,
+    "rejected": 0,
     "by_sport": {
       "ufc": {
         "attempted": 5,
-        "found": 3,
-        "missing": 2,
+        "found": 1,
+        "missing": 4,
         "rejected": 0
       }
     },
     "search_details": [
       {
-        "name": "Joaquin Buckley",
+        "name": "Ailin Perez",
         "queries": 2,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       },
       {
-        "name": "Daniel Rodriguez",
-        "queries": 3,
-        "candidate_files": 8,
-        "accepted": 7,
-        "rejections": {
-          "exact_name_pair_not_matched": 1
-        }
-      },
-      {
-        "name": "Kayla Harrison",
-        "queries": 3,
-        "candidate_files": 30,
-        "accepted": 24,
-        "rejections": {
-          "exact_name_pair_not_matched": 6
-        }
-      },
-      {
-        "name": "Joselyne Edwards",
+        "name": "Norma Dumont",
         "queries": 2,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       },
       {
-        "name": "Julianna Peña",
+        "name": "Luana Santos",
         "queries": 3,
-        "candidate_files": 4,
+        "candidate_files": 2,
         "accepted": 2,
-        "rejections": {
-          "exact_name_pair_not_matched": 2
-        }
+        "rejections": {}
+      },
+      {
+        "name": "Yana Santos",
+        "queries": 2,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Raquel Pennington",
+        "queries": 1,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
       }
     ],
-    "rejection_reasons": {
-      "exact_name_pair_not_matched": 9
-    },
-    "checked_at": "2026-11-12T19:47:10Z",
-    "library_entries": 78,
-    "newly_found": 3,
-    "cumulative_attempted": 207,
-    "cumulative_found": 78,
-    "cumulative_missing": 129,
+    "checked_at": "2026-11-13T00:39:21Z",
+    "library_entries": 79,
+    "newly_found": 1,
+    "cumulative_attempted": 212,
+    "cumulative_found": 79,
+    "cumulative_missing": 133,
     "cumulative_rejected": 152,
-    "batch_number": 26,
-    "last_batch_at": "2026-11-12T19:47:10Z",
-    "last_successful_batch_at": "2026-11-12T19:47:10Z",
-    "last_rate_limited_at": "2026-11-12T19:02:51Z",
+    "batch_number": 27,
+    "last_batch_at": "2026-11-13T00:39:21Z",
+    "last_successful_batch_at": "2026-11-13T00:39:21Z",
+    "last_rate_limited_at": "2026-11-13T00:39:21Z",
     "coverage": {
       "boxing fight card fighters": {
         "total": 270,
@@ -5431,8 +5432,8 @@
       },
       "ufc": {
         "total": 206,
-        "with_image": 28,
-        "missing": 178
+        "with_image": 29,
+        "missing": 177
       },
       "boxing": {
         "total": 81,
@@ -5440,7 +5441,7 @@
         "missing": 81
       }
     },
-    "rate_limited": false
+    "rate_limited": true
   },
   "last_updated": "2026-11-12T19:46:08Z"
 }
