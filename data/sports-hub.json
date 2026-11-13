@@ -234,13 +234,33 @@
           "rank": 20,
           "name": "Yuki Tsunoda",
           "team": "RB F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/yuki-tsunoda.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Yuki_Tsunoda_Macau_2019.jpg",
+          "image_credit": "Wikimedia Commons · Smith007 · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "category:Category:Yuki Tsunoda in 2019",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/yuki-tsunoda.jpg"
         },
         {
           "rank": 21,
           "name": "Ryo Hirakawa",
           "team": "Haas F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/ryo-hirakawa.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Ryo_Hirakawa_2024_WEC_Fuji_1.jpg",
+          "image_credit": "Wikimedia Commons · Morio · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "search:Ryo Hirakawa",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/ryo-hirakawa.jpg"
         },
         {
           "rank": 22,
@@ -4431,12 +4451,32 @@
             {
               "rank": 2,
               "name": "Alexa Grasso",
-              "image_url": null
+              "image_url": "./assets/images/ufc/alexa-grasso.png",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Alexa_Grasso_2020_01.png",
+              "image_credit": "Wikimedia Commons · La Tribuna · CC BY 3.0",
+              "image_license": "CC BY 3.0",
+              "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Alexa Grasso",
+              "image_verified_at": "2026-11-13T21:55:12Z",
+              "image_local_path": "assets/images/ufc/alexa-grasso.png"
             },
             {
               "rank": 3,
               "name": "Manon Fiorot",
-              "image_url": null
+              "image_url": "./assets/images/ufc/manon-fiorot.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:MANON_FIOROT_ET_ALDRIC_CASSATA,_LE_COUPLE_GOAL_DU_MMA_-_MMA_EXTRA_ROUND_-22_-_YouTube_-_0-28-31_(cropped).jpg",
+              "image_credit": "Wikimedia Commons · Lucie Bertaud · CC BY 3.0",
+              "image_license": "CC BY 3.0",
+              "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Manon Fiorot",
+              "image_verified_at": "2026-11-13T21:55:12Z",
+              "image_local_path": "assets/images/ufc/manon-fiorot.jpg"
             },
             {
               "rank": 4,
@@ -4512,7 +4552,17 @@
             {
               "rank": 2,
               "name": "Kayla Harrison",
-              "image_url": null
+              "image_url": "./assets/images/ufc/kayla-harrison.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:JUDOCA_KAYLA_HARRISON_%C3%89_OURO_NA_RIO_2016_(28305677763).jpg",
+              "image_credit": "Wikimedia Commons · Agência Brasil Fotografias · CC BY 2.0",
+              "image_license": "CC BY 2.0",
+              "image_license_url": "https://creativecommons.org/licenses/by/2.0",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Kayla Harrison",
+              "image_verified_at": "2026-11-12T19:47:10Z",
+              "image_local_path": "assets/images/ufc/kayla-harrison.jpg"
             },
             {
               "rank": 3,
@@ -5339,17 +5389,69 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 222,
-    "found": 114,
-    "missing": 434,
-    "rejected": 153,
-    "by_sport": {},
-    "newly_found": 0,
+    "attempted": 4,
+    "found": 119,
+    "missing": 752,
+    "rejected": 0,
+    "by_sport": {
+      "ufc": {
+        "attempted": 4,
+        "found": 2,
+        "missing": 2,
+        "rejected": 0
+      }
+    },
+    "search_details": [
+      {
+        "name": "Valentina Shevchenko",
+        "queries": 3,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Alexa Grasso",
+        "queries": 3,
+        "candidate_files": 8,
+        "accepted": 8,
+        "rejections": {}
+      },
+      {
+        "name": "Manon Fiorot",
+        "queries": 3,
+        "candidate_files": 1,
+        "accepted": 1,
+        "rejections": {}
+      },
+      {
+        "name": "Jasmine Jasudavicius",
+        "queries": 1,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      }
+    ],
+    "checked_at": "2026-11-13T21:55:12Z",
+    "library_entries": 82,
+    "newly_found": 2,
+    "cumulative_attempted": 226,
+    "cumulative_found": 82,
+    "cumulative_missing": 144,
+    "cumulative_rejected": 153,
+    "batch_number": 30,
+    "last_batch_at": "2026-11-13T21:55:12Z",
+    "last_successful_batch_at": "2026-11-13T21:55:12Z",
+    "last_rate_limited_at": "2026-11-13T21:55:12Z",
     "coverage": {
+      "boxing fight card fighters": {
+        "total": 323,
+        "with_image": 0,
+        "missing": 323
+      },
       "f1 drivers": {
         "total": 25,
-        "with_image": 23,
-        "missing": 2
+        "with_image": 25,
+        "missing": 0
       },
       "f1 constructors": {
         "total": 11,
@@ -5363,8 +5465,8 @@
       },
       "ufc": {
         "total": 206,
-        "with_image": 30,
-        "missing": 176
+        "with_image": 33,
+        "missing": 173
       },
       "boxing": {
         "total": 81,
@@ -5372,16 +5474,6 @@
         "missing": 81
       }
     },
-    "checked_at": "2026-11-13T19:49:07Z",
-    "library_entries": 80,
-    "cumulative_found": 80,
-    "cumulative_missing": 142,
-    "cumulative_rejected": 153,
-    "batch_number": 29,
-    "last_batch_at": "2026-11-13T15:59:30Z",
-    "last_successful_batch_at": "2026-11-13T15:59:30Z",
-    "last_rate_limited_at": "2026-11-13T15:59:30Z",
-    "enrichment_status": "paused after rate limit",
     "rate_limited": true
   },
   "last_updated": "2026-11-13T19:49:07Z"

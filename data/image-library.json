@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-13T07:41:42Z",
+  "updated_at": "2026-11-13T21:55:12Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -838,6 +838,28 @@
       "creator": "Wikimedia Commons · Lance Cpl. Enge You · Public domain",
       "attribution": "Wikimedia Commons · Lance Cpl. Enge You · Public domain",
       "verified_at": "2026-11-13T07:41:42Z",
+      "sport": "ufc"
+    },
+    "alexa grasso": {
+      "name": "Alexa Grasso",
+      "path": "assets/images/ufc/alexa-grasso.png",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Alexa_Grasso_2020_01.png",
+      "licence": "CC BY 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by/3.0",
+      "creator": "Wikimedia Commons · La Tribuna · CC BY 3.0",
+      "attribution": "Wikimedia Commons · La Tribuna · CC BY 3.0",
+      "verified_at": "2026-11-13T21:55:12Z",
+      "sport": "ufc"
+    },
+    "manon fiorot": {
+      "name": "Manon Fiorot",
+      "path": "assets/images/ufc/manon-fiorot.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:MANON_FIOROT_ET_ALDRIC_CASSATA,_LE_COUPLE_GOAL_DU_MMA_-_MMA_EXTRA_ROUND_-22_-_YouTube_-_0-28-31_(cropped).jpg",
+      "licence": "CC BY 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by/3.0",
+      "creator": "Wikimedia Commons · Lucie Bertaud · CC BY 3.0",
+      "attribution": "Wikimedia Commons · Lucie Bertaud · CC BY 3.0",
+      "verified_at": "2026-11-13T21:55:12Z",
       "sport": "ufc"
     }
   },

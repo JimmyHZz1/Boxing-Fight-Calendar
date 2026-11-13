@@ -1108,9 +1108,39 @@
       "image_match_method": "category:Category:Raquel Pennington",
       "image_verified_at": "2026-11-13T07:41:42Z",
       "image_local_path": "assets/images/ufc/raquel-pennington.jpg"
+    },
+    "alexa grasso": {
+      "name": "Alexa Grasso",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/alexa-grasso.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Alexa_Grasso_2020_01.png",
+      "image_credit": "Wikimedia Commons · La Tribuna · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Alexa Grasso",
+      "image_verified_at": "2026-11-13T21:55:12Z",
+      "image_local_path": "assets/images/ufc/alexa-grasso.png"
+    },
+    "manon fiorot": {
+      "name": "Manon Fiorot",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/manon-fiorot.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:MANON_FIOROT_ET_ALDRIC_CASSATA,_LE_COUPLE_GOAL_DU_MMA_-_MMA_EXTRA_ROUND_-22_-_YouTube_-_0-28-31_(cropped).jpg",
+      "image_credit": "Wikimedia Commons · Lucie Bertaud · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Manon Fiorot",
+      "image_verified_at": "2026-11-13T21:55:12Z",
+      "image_local_path": "assets/images/ufc/manon-fiorot.jpg"
     }
   },
-  "updated_at": "2026-11-13T19:49:07Z",
+  "updated_at": "2026-11-13T21:55:12Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1322,7 +1352,10 @@
     "michelle montague": "2026-11-13T15:59:30Z",
     "nora cornolle": "2026-11-13T15:59:30Z",
     "alice pereira": "2026-11-13T15:59:30Z",
-    "natalia silva": "2026-11-13T15:59:30Z"
+    "natalia silva": "2026-11-13T15:59:30Z",
+    "valentina shevchenko": "2026-11-13T21:55:12Z",
+    "alexa grasso": "2026-11-13T21:55:12Z",
+    "manon fiorot": "2026-11-13T21:55:12Z"
   },
   "audit": {
     "last_reviewed_at": "2026-11-09T12:15:00Z",
@@ -1359,15 +1392,15 @@
     }
   },
   "enrichment": {
-    "batch_number": 29,
+    "batch_number": 30,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 222,
-    "cumulative_found": 80,
-    "cumulative_missing": 142,
+    "cumulative_attempted": 226,
+    "cumulative_found": 82,
+    "cumulative_missing": 144,
     "cumulative_rejected": 153,
-    "last_batch_at": "2026-11-13T15:59:30Z",
-    "last_successful_batch_at": "2026-11-13T15:59:30Z",
-    "last_rate_limited_at": "2026-11-13T15:59:30Z",
+    "last_batch_at": "2026-11-13T21:55:12Z",
+    "last_successful_batch_at": "2026-11-13T21:55:12Z",
+    "last_rate_limited_at": "2026-11-13T21:55:12Z",
     "history": [
       {
         "batch": 1,
@@ -1599,6 +1632,14 @@
         "attempted": 5,
         "found": 0,
         "missing": 5,
+        "rate_limited": true
+      },
+      {
+        "batch": 30,
+        "at": "2026-11-13T21:55:12Z",
+        "attempted": 4,
+        "found": 2,
+        "missing": 2,
         "rate_limited": true
       }
     ],
