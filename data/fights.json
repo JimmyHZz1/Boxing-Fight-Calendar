@@ -1,13 +1,13 @@
 {
   "provider": "Boxerbook confirmed cards + Boxing Data additional bouts",
-  "last_updated": "2026-11-13T12:14:51Z",
-  "provider_as_of": "2026-11-13T12:14:51Z",
+  "last_updated": "2026-11-13T19:49:07Z",
+  "provider_as_of": "2026-11-13T19:49:07Z",
   "attribution": "Confirmed cards from Boxerbook; additional scheduled bouts from Boxing Data API.",
   "count_events": 43,
-  "count_bouts": 176,
+  "count_bouts": 175,
   "count_confirmed_events": 31,
   "count_confirmed_bouts": 137,
-  "count_additional_bouts": 39,
+  "count_additional_bouts": 38,
   "count_fighter_photos": 14,
   "events": [
     {
@@ -308,19 +308,7 @@
           "data_source": "Boxing Data API"
         },
         {
-          "id": "fx_3221464r",
-          "fighter1": "Charlie Sheehy",
-          "fighter2": "Gabriel Flores Jr",
-          "date": "2026-11-14",
-          "start_time_utc": "02:00",
-          "start_datetime_utc": "2026-11-14T02:00:00Z",
-          "weight_class": null,
-          "rounds": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API"
-        },
-        {
-          "id": "fx_0gc94emj",
+          "id": "fx_2pz4ds8h",
           "fighter1": "Charlie Sheehy",
           "fighter2": "Jose Matias Romero",
           "date": "2026-11-14",
