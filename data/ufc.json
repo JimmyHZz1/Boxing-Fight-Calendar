@@ -80,11 +80,11 @@
             "winner_fighter_id": 7170,
             "method": "KO/TKO",
             "method_normalized": "ko_tko",
-            "finish_detail": null,
+            "finish_detail": "Punch to Head At Distance",
             "round": 3,
             "time": "2:27",
             "time_seconds": 147,
-            "details": null
+            "details": "Punch to Head At Distance"
           },
           "referee": "Jason Herzog",
           "bonus": "Fight of the Night"
@@ -160,11 +160,11 @@
             "winner_fighter_id": 511,
             "method": "KO/TKO",
             "method_normalized": "ko_tko",
-            "finish_detail": null,
+            "finish_detail": "Punches to Head On Ground",
             "round": 1,
             "time": "1:00",
             "time_seconds": 60,
-            "details": null
+            "details": "Punches to Head On Ground"
           },
           "referee": "Herb Dean",
           "bonus": "Performance of the Night"
@@ -240,11 +240,11 @@
             "winner_fighter_id": 33223,
             "method": "KO/TKO",
             "method_normalized": "ko_tko",
-            "finish_detail": null,
+            "finish_detail": "Elbows to Head From Mount",
             "round": 2,
             "time": "3:40",
             "time_seconds": 220,
-            "details": null
+            "details": "Elbows to Head From Mount"
           },
           "referee": "Jason Herzog",
           "bonus": null
@@ -422,11 +422,11 @@
             "winner_fighter_id": 167,
             "method": "KO/TKO",
             "method_normalized": "ko_tko",
-            "finish_detail": null,
+            "finish_detail": "Punches to Head From Half Guard",
             "round": 3,
             "time": "4:47",
             "time_seconds": 287,
-            "details": null
+            "details": "Punches to Head From Half Guard"
           },
           "referee": "Chris Tognoni",
           "bonus": "Performance of the Night"
@@ -573,11 +573,11 @@
             "winner_fighter_id": 2865,
             "method": "Submission",
             "method_normalized": "submission",
-            "finish_detail": null,
+            "finish_detail": "Rear Naked Choke",
             "round": 1,
             "time": "1:07",
             "time_seconds": 67,
-            "details": null
+            "details": "Rear Naked Choke"
           },
           "referee": "Herb Dean",
           "bonus": null
@@ -613,11 +613,11 @@
             "winner_fighter_id": 44,
             "method": "KO/TKO",
             "method_normalized": "ko_tko",
-            "finish_detail": null,
+            "finish_detail": "Punches to Head From Mount",
             "round": 2,
             "time": "4:39",
             "time_seconds": 279,
-            "details": null
+            "details": "Punches to Head From Mount"
           },
           "referee": "Chris Tognoni",
           "bonus": null
@@ -693,11 +693,11 @@
             "winner_fighter_id": 286,
             "method": "KO/TKO",
             "method_normalized": "ko_tko",
-            "finish_detail": null,
+            "finish_detail": "Punches to Head At Distance",
             "round": 1,
             "time": "4:16",
             "time_seconds": 256,
-            "details": null
+            "details": "Punches to Head At Distance"
           },
           "referee": "Keith Peterson",
           "bonus": null
@@ -1005,8 +1005,8 @@
           "ordering": 9,
           "card_section": "prelims",
           "sport": "mma",
-          "weight_class": "Middleweight",
-          "division_slug": "middleweight",
+          "weight_class": "Catchweight",
+          "division_slug": "catchweight",
           "is_title": false,
           "is_main": false,
           "scheduled_rounds": 3,
@@ -1604,5 +1604,5 @@
     }
   ],
   "notice": "All upcoming UFC events returned by UFCalendar, with detailed fight cards for the next two events and the latest completed card. Free API allowance: 1,000 requests per month.",
-  "last_updated": "2026-11-12T19:46:08Z"
+  "last_updated": "2026-11-13T01:05:58Z"
 }
