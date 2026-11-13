@@ -97,6 +97,14 @@
   function closeDetails(){const overlay=$("entertainment-detail-overlay");if(overlay)overlay.hidden=true;document.body.style.overflow="";}
   function init(){
     readWatchlist();renderWatchlist();
+    document.addEventListener("click",event=>{
+      const control=event.target.closest("[data-shelf-scroll]");
+      if(!control)return;
+      const shelf=$(control.dataset.shelfScroll);
+      if(!shelf)return;
+      const direction=Number(control.dataset.direction)||1;
+      shelf.scrollBy({left:direction*Math.max(260,shelf.clientWidth*0.78),behavior:"smooth"});
+    });
     document.addEventListener("sports:screen-changed",event=>{if(event.detail?.screen==="entertainment-hub-screen"&&!state.loaded){state.loaded=true;loadCatalogues();}});
     document.querySelectorAll("#entertainment-hub-screen [data-screen],#entertainment-version-history-screen [data-screen],.entertainment-version-history-link").forEach(button=>button.addEventListener("click",()=>{const destination=button.dataset.screen||"entertainment-version-history-screen";window.showScreen?.(destination);}));
     const input=$("entertainment-search-input");if(input){input.addEventListener("input",()=>{clearTimeout(state.searchTimer);const value=input.value;state.searchTimer=setTimeout(()=>search(value),350);});input.addEventListener("keydown",event=>{if(event.key==="Escape"){input.value="";search("");input.blur();}});}
