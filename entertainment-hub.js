@@ -2,7 +2,7 @@
 (() => {
   const API = "https://dyulhgfpbnyotxjstwcq.supabase.co/functions/v1/tmdb";
   const $ = id => document.getElementById(id);
-  const state = { films:{}, tv:{}, watchlist:[], searchTimer:null, active:null };
+  const state = { films:{}, tv:{}, watchlist:[], searchTimer:null, active:null, loaded:false };
   const WATCHLIST_KEY = "theHubEntertainmentWatchlistV1";
   const image = path => path ? "https://image.tmdb.org/t/p/w500" + path : "";
   const escapeText = value => String(value ?? "").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
@@ -96,7 +96,9 @@
   }
   function closeDetails(){const overlay=$("entertainment-detail-overlay");if(overlay)overlay.hidden=true;document.body.style.overflow="";}
   function init(){
-    readWatchlist();renderWatchlist();loadCatalogues();
+    readWatchlist();renderWatchlist();
+    document.addEventListener("sports:screen-changed",event=>{if(event.detail?.screen==="entertainment-hub-screen"&&!state.loaded){state.loaded=true;loadCatalogues();}});
+    document.querySelectorAll("#entertainment-hub-screen [data-screen],#entertainment-version-history-screen [data-screen],.entertainment-version-history-link").forEach(button=>button.addEventListener("click",()=>{const destination=button.dataset.screen||"entertainment-version-history-screen";window.showScreen?.(destination);}));
     const input=$("entertainment-search-input");if(input){input.addEventListener("input",()=>{clearTimeout(state.searchTimer);const value=input.value;state.searchTimer=setTimeout(()=>search(value),350);});input.addEventListener("keydown",event=>{if(event.key==="Escape"){input.value="";search("");input.blur();}});}
     $("entertainment-detail-close")?.addEventListener("click",closeDetails);
     $("entertainment-detail-overlay")?.addEventListener("click",event=>{if(event.target.id==="entertainment-detail-overlay")closeDetails();});
