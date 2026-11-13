@@ -65,12 +65,11 @@ Deno.serve(async (req: Request) => {
   }
 
   const target = new URL("https://api.themoviedb.org" + path);
-  for (const [key, value] of incoming.searchParams.entries()) {
-    if (key === "path") continue;
-    if (!ALLOWED_PARAMS.has(key)) {
-      return json({ error: "Unsupported TMDB query parameter." }, 400, origin);
-    }
-    target.searchParams.set(key, value);
+  // Only forward explicitly supported TMDB parameters. Ignore unrelated query
+  // parameters added by browsers, proxies, or hosting layers.
+  for (const key of ALLOWED_PARAMS) {
+    const values = incoming.searchParams.getAll(key);
+    for (const value of values) target.searchParams.append(key, value);
   }
 
   if (!target.searchParams.has("language")) target.searchParams.set("language", "en-GB");
