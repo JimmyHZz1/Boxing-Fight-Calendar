@@ -3849,3 +3849,18 @@ body.hub-selection-mode .version-history-link,body.hub-selection-mode .games-ver
 @media(max-width:850px){.entertainment-title-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media(max-width:600px){.entertainment-title-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.entertainment-detail-hero{grid-template-columns:105px minmax(0,1fr);gap:14px;padding:15px}.entertainment-detail-copy{padding:5px 25px 0 0}.entertainment-detail-copy h2{font-size:27px}.entertainment-roadmap-item{grid-template-columns:25px minmax(0,1fr)}.entertainment-roadmap-item>b{grid-column:2}.entertainment-toolbar{align-items:stretch;flex-direction:column}}
 @media(max-width:390px){.entertainment-title-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+
+/* Entertainment catalogue shelves: one horizontal row with manual left/right browsing. */
+.entertainment-shelf-heading{align-items:center}
+.entertainment-shelf-title{display:flex;align-items:baseline;gap:12px;min-width:0}
+.entertainment-shelf-controls{display:flex;gap:6px;flex:0 0 auto}
+.entertainment-shelf-controls button{width:32px;height:32px;border:1px solid rgba(184,91,130,.45);background:#211a20;color:#e3a0ba;font-size:24px;line-height:1;cursor:pointer;display:grid;place-items:center;transition:background .18s,border-color .18s}
+.entertainment-shelf-controls button:hover,.entertainment-shelf-controls button:focus-visible{background:rgba(184,91,130,.2);border-color:#d887a8;outline:none}
+.entertainment-shelf .entertainment-title-grid{display:flex;flex-flow:row nowrap;gap:12px;overflow-x:auto;overflow-y:hidden;padding:2px 2px 12px;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:#9b526f #211a20;overscroll-behavior-x:contain}
+.entertainment-shelf .entertainment-title-grid::-webkit-scrollbar{height:7px}
+.entertainment-shelf .entertainment-title-grid::-webkit-scrollbar-track{background:#211a20}
+.entertainment-shelf .entertainment-title-grid::-webkit-scrollbar-thumb{background:#9b526f;border-radius:8px}
+.entertainment-shelf .entertainment-title-card{flex:0 0 clamp(145px,17vw,190px);scroll-snap-align:start}
+.entertainment-shelf .entertainment-loading,.entertainment-shelf .entertainment-empty-copy{flex:0 0 100%}
+@media(max-width:600px){.entertainment-shelf .entertainment-title-card{flex-basis:clamp(132px,42vw,165px)}.entertainment-shelf-heading h3{font-size:18px}.entertainment-shelf-title{gap:7px}.entertainment-shelf-heading span{font-size:7px}}
