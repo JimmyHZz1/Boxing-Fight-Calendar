@@ -122,7 +122,67 @@
     section("Previous releases",previous,"Historical releases will appear after the first IGDB catalogue sync.");
     const attribution=el("p","games-company-attribution"),source=document.createElement("a");source.href="https://www.igdb.com/";source.target="_blank";source.rel="noopener noreferrer";source.textContent="Game data powered by IGDB";attribution.append(source);dialogContent.append(attribution);openDialog();
   };
-  document.addEventListener("open-games-company-profile",event=>showCompany(event.detail?.companyId));
+  const platformCompanyProfiles = [
+    {id:"valve",name:"Valve",website:"https://www.valvesoftware.com/",description:"Valve develops games and operates Steam, a major PC game storefront.",founded:1996,parent_name:"",releases:[]},
+    {id:"microsoft",name:"Microsoft",website:"https://www.microsoft.com/gaming",description:"Microsoft develops and publishes games across Xbox and Windows, and operates the Xbox ecosystem.",founded:1975,parent_name:"",releases:[]}
+  ];
+  const showCompanyProfile = id => {
+    if(!profileData.companies.some(company=>company.id===id) && !catalogue.companies.some(company=>company.id===id)){
+      const fallback=platformCompanyProfiles.find(company=>company.id===id);if(fallback)profileData.companies.push(fallback);
+    }
+    showCompany(id);
+  };
+  document.addEventListener("open-games-company-profile",event=>showCompanyProfile(event.detail?.companyId));
+
+  const storeSearchLinks = (title,platforms) => {
+    const q=encodeURIComponent(title||"");
+    const values=Array.isArray(platforms)?platforms:[];
+    const links=[];
+    const add=(label,url)=>{if(!links.some(item=>item.label===label))links.push({label,url});};
+    values.forEach(platform=>{
+      const p=String(platform||"").toLowerCase();
+      if(p.includes("steam")||p==="pc"||p.includes("windows"))add("STEAM STORE","https://store.steampowered.com/search/?term="+q);
+      if(p.includes("playstation")||/\bps[45]\b/.test(p))add("PLAYSTATION STORE","https://store.playstation.com/en-gb/search/"+q);
+      if(p.includes("xbox"))add("XBOX STORE","https://www.xbox.com/en-GB/Search?q="+q);
+      if(p.includes("nintendo")||p.includes("switch"))add("NINTENDO ESHOP","https://www.nintendo.com/en-gb/Search/Search-299117.html?f="+q);
+    });
+    return links;
+  };
+  const showCalendarGame = (game,allGames=[]) => {
+    if(!game)return;
+    dialogContent.replaceChildren();
+    const head=el("section","games-dialog-section games-calendar-game-head");
+    if(safeUrl(game.artwork_url)){const img=document.createElement("img");img.className="games-calendar-game-artwork";img.src=game.artwork_url;img.alt=(game.title||"Game")+" artwork";img.loading="lazy";img.onerror=()=>img.remove();head.append(img);}
+    head.append(el("small","games-discovery-badge",game.verification_status==="verified"?"VERIFIED RELEASE":"RELEASE INFORMATION"));
+    head.append(el("h2","games-dialog-title",game.title||"Game details"));
+    head.append(el("p","games-dialog-meta",(game.developer||"Developer TBC")+" · "+(game.publisher||"Publisher TBC")));
+    if(game.release_date)head.append(el("p","games-dialog-meta","Release date: "+profileDate(game.release_date)));
+    dialogContent.append(head);
+    const platforms=el("section","games-dialog-section");platforms.append(el("h3","","Available platforms"),platformMarks(game.platforms||[]));dialogContent.append(platforms);
+    const editions=[game,...(Array.isArray(game.editions)?game.editions:[])];
+    const editionSection=el("section","games-dialog-section games-calendar-editions");
+    editionSection.append(el("h3","","Editions & versions · "+editions.length));
+    editions.forEach(edition=>{
+      const row=el("article","games-calendar-edition");
+      row.append(el("div","games-calendar-edition-copy",edition.title||game.title));
+      const meta=[edition.release_date?profileDate(edition.release_date):"",Array.isArray(edition.platforms)?edition.platforms.join(" · "):""].filter(Boolean);
+      if(meta.length)row.append(el("small","games-dialog-meta",meta.join("  /  ")));
+      const links=storeSearchLinks(edition.title||game.title,edition.platforms||game.platforms||[]);
+      const actions=el("div","games-dialog-actions");
+      links.forEach(item=>{const a=el("a","",item.label+" ↗");a.href=item.url;a.target="_blank";a.rel="noopener noreferrer";actions.append(a);});
+      if(!links.length)actions.append(el("span","games-dialog-meta","Store links are not listed for this platform yet."));
+      row.append(actions);editionSection.append(row);
+    });
+    dialogContent.append(editionSection);
+    const companies=el("section","games-dialog-section");companies.append(el("h3","","Developer & publisher"));
+    const companyNames=[game.developer,game.publisher].filter((name,index,array)=>name&&array.findIndex(x=>String(x).toLowerCase()===String(name).toLowerCase())===index);
+    const companyButtons=el("div","games-company-games");
+    companyNames.forEach(name=>{const match=catalogue.companies.find(company=>company.name.toLowerCase()===String(name).toLowerCase()||company.aliases?.some(alias=>alias.toLowerCase()===String(name).toLowerCase()));if(match)companyButtons.append(companyButton(match.id,match.name));});
+    if(companyButtons.childElementCount)companies.append(companyButtons);else companies.append(el("p","games-company-empty","Company profiles are not available for this developer or publisher yet."));
+    dialogContent.append(companies);
+    openDialog();
+  };
+  document.addEventListener("open-games-calendar-game",event=>showCalendarGame(event.detail?.game,event.detail?.allGames));
 
   const platformAsset=platform=>{
     const value=String(platform||"").toLowerCase();

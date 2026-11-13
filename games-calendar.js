@@ -281,8 +281,15 @@
       platforms.className = "games-platform-badges";
       (Array.isArray(game.platforms) ? game.platforms : ["PC & console"]).forEach(platform => {
         const [icon,label] = platformIcon(platform);
-        const chip = document.createElement("span");
-        chip.className = "games-platform-chip";
+        const chip = document.createElement("button");
+        chip.type = "button";
+        chip.className = "games-platform-chip games-platform-chip-button";
+        const platformCompanyIds = {steam:"valve",playstation:"playstation-studios",xbox:"xbox-game-studios",nintendo:"nintendo",pc:"microsoft"};
+        const platformKey = String(platform||"").toLowerCase();
+        const profileId = platformKey.includes("steam") ? platformCompanyIds.steam : platformKey.includes("playstation")||/\bps[45]\b/.test(platformKey) ? platformCompanyIds.playstation : platformKey.includes("xbox") ? platformCompanyIds.xbox : platformKey.includes("nintendo")||platformKey.includes("switch") ? platformCompanyIds.nintendo : platformKey==="pc"||platformKey.includes("windows") ? platformCompanyIds.pc : "";
+        chip.title = profileId ? "View "+label+" company profile" : label;
+        chip.setAttribute("aria-label",profileId ? "View "+label+" company profile" : label);
+        if(profileId) chip.addEventListener("click",event=>{event.stopPropagation();document.dispatchEvent(new CustomEvent("open-games-company-profile",{detail:{companyId:profileId}}));});
         const mark = document.createElement("img");
         const logoSlug = icon === "PS" ? "playstation" : icon === "XBOX" ? "xbox" : icon === "N" ? "nintendo" : icon === "STEAM" ? "steam" : icon === "PC" ? "windows" : "";
         mark.className = "games-platform-mark-image";
@@ -337,6 +344,13 @@
         details.append(link);
       }
       card.append(artwork,details);
+      card.classList.add("games-release-card-selectable");
+      card.tabIndex = 0;
+      card.setAttribute("role","button");
+      card.setAttribute("aria-label","View details and store links for "+(game.title||"game"));
+      const openGame = () => document.dispatchEvent(new CustomEvent("open-games-calendar-game",{detail:{game,allGames:allUpcomingGames}}));
+      card.addEventListener("click",event=>{if(event.target.closest("a,button"))return;openGame();});
+      card.addEventListener("keydown",event=>{if(event.target!==card)return;if(event.key==="Enter"||event.key===" "){event.preventDefault();openGame();}});
       target.append(card);
     });
   };
@@ -357,7 +371,11 @@
       return false;
     }));
     const dated=(Array.isArray(items)?items:[]).filter(game=>game&&typeof game.release_date==="string"&&/^\d{4}-\d{2}-\d{2}$/.test(game.release_date)&&game.release_date>=today&&matchesPlatform(game)).sort((a,b)=>a.release_date.localeCompare(b.release_date)||String(a.title).localeCompare(String(b.title)));
-    const full=dated.filter(game=>!isAdditionalRelease(game)),additional=dated.filter(isAdditionalRelease);
+    const byIgdbId=new Map(dated.filter(game=>game.igdb_id).map(game=>[Number(game.igdb_id),game]));
+    const editionsByParent=new Map();
+    dated.forEach(game=>{const parentId=Number(game.version_parent);if(parentId&&byIgdbId.has(parentId)){if(!editionsByParent.has(parentId))editionsByParent.set(parentId,[]);editionsByParent.get(parentId).push(game);}});
+    const calendarDated=dated.filter(game=>{const parentId=Number(game.version_parent);return !(parentId&&byIgdbId.has(parentId));}).map(game=>({...game,editions:editionsByParent.get(Number(game.igdb_id))||[]}));
+    const full=calendarDated.filter(game=>!isAdditionalRelease(game)),additional=calendarDated.filter(isAdditionalRelease);
     renderReleaseGroups(full,target,platform==="all"?"Upcoming full PC and console game releases will appear here as dates are added.":"There are no upcoming full game releases listed for this platform.","full-"+platform+"-");
     if(fullCount)fullCount.textContent=full.length+(full.length===1?" RELEASE":" RELEASES");
     if(extraDetails&&extraTarget){extraDetails.hidden=additional.length===0;if(extraCount)extraCount.textContent=additional.length+(additional.length===1?" RELEASE":" RELEASES");if(additional.length)renderReleaseGroups(additional,extraTarget,"No DLC or alternate versions are currently listed.","additional-"+platform+"-");else extraTarget.replaceChildren();}
@@ -460,7 +478,7 @@
           if(!release.title||!/^\d{4}-\d{2}-\d{2}$/.test(String(release.release_date||""))||release.release_date<today)return;
           const key=String(release.title).toLowerCase();
           const existing=byGame.get(key)||{
-            id:"igdb-"+(release.igdb_id||key.replace(/[^a-z0-9]+/g,"-")),
+            id:"igdb-"+(release.igdb_id||key.replace(/[^a-z0-9]+/g,"-")),igdb_id:release.igdb_id||null,version_parent:release.version_parent||null,
             title:release.title,developer:release.developer?company.name:"",publisher:release.publisher?company.name:"",
             release_date:release.release_date,igdb_category:release.igdb_category,category_name:release.category_name,release_type:release.release_type,release_date_precision:/^\d{4}$/.test(String(release.release_label||""))?"year":"day",
             platforms:[],release_dates:[],artwork_url:release.artwork_url||null,logo_url:release.logo_url||null,

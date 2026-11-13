@@ -3788,3 +3788,17 @@ body.hub-selection-mode .version-history-link,body.hub-selection-mode .games-ver
 .f1-gp-weather-temperatures{font-size:10px;font-weight:800;text-align:right;font-variant-numeric:tabular-nums}
 .f1-gp-weather-rain{font-size:9px;color:var(--muted);text-align:right}
 @media(max-width:420px){.f1-gp-weather-day{grid-template-columns:minmax(64px,1fr) 24px minmax(72px,auto) minmax(54px,auto);gap:5px}.f1-gp-weather-date,.f1-gp-weather-temperatures{font-size:9px}}
+
+/* Games Calendar interactions: clickable platform profiles and floating game details. */
+.games-platform-chip-button{font:inherit;color:inherit;cursor:pointer}
+.games-platform-chip-button:hover,.games-platform-chip-button:focus-visible{border-color:#7db8f5;background:rgba(69,139,210,.14);outline:none}
+.games-release-card-selectable{cursor:pointer;transition:border-color .18s ease,transform .18s ease}
+.games-release-card-selectable:hover,.games-release-card-selectable:focus-visible{border-color:#6faeea;outline:none;transform:translateY(-1px)}
+.games-calendar-game-head{display:grid;grid-template-columns:112px minmax(0,1fr);column-gap:16px;align-items:start}
+.games-calendar-game-artwork{grid-row:1/5;width:112px;max-height:160px;object-fit:cover;border:1px solid var(--line);border-radius:5px}
+.games-calendar-editions{display:grid;gap:10px}
+.games-calendar-edition{padding:12px;border:1px solid var(--line);background:var(--panel2);border-radius:5px}
+.games-calendar-edition-copy{font-weight:700;margin-bottom:6px}
+.games-calendar-edition .games-dialog-actions{margin-top:9px;gap:8px;flex-wrap:wrap}
+.games-calendar-edition .games-dialog-actions a{font-size:10px}
+@media(max-width:520px){.games-calendar-game-head{grid-template-columns:82px minmax(0,1fr);column-gap:12px}.games-calendar-game-artwork{width:82px;max-height:124px}}
