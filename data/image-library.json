@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-13T00:39:21Z",
+  "updated_at": "2026-11-13T07:41:42Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -827,6 +827,17 @@
       "creator": "Wikimedia Commons · Maritza Sanchez · CC BY 3.0",
       "attribution": "Wikimedia Commons · Maritza Sanchez · CC BY 3.0",
       "verified_at": "2026-11-13T00:39:21Z",
+      "sport": "ufc"
+    },
+    "raquel pennington": {
+      "name": "Raquel Pennington",
+      "path": "assets/images/ufc/raquel-pennington.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Raquel_Pennington_MCCS_Twentynine_Palms_presents_an_action-packed_MMA_Fight_Night_Live_at_The_Combat_Center_(5)_(cropped).jpg",
+      "licence": "Public domain",
+      "licence_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "creator": "Wikimedia Commons · Lance Cpl. Enge You · Public domain",
+      "attribution": "Wikimedia Commons · Lance Cpl. Enge You · Public domain",
+      "verified_at": "2026-11-13T07:41:42Z",
       "sport": "ufc"
     }
   },

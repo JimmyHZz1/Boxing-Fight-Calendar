@@ -234,13 +234,33 @@
           "rank": 20,
           "name": "Yuki Tsunoda",
           "team": "RB F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/yuki-tsunoda.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Yuki_Tsunoda_Macau_2019.jpg",
+          "image_credit": "Wikimedia Commons · Smith007 · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "category:Category:Yuki Tsunoda in 2019",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/yuki-tsunoda.jpg"
         },
         {
           "rank": 21,
           "name": "Ryo Hirakawa",
           "team": "Haas F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/ryo-hirakawa.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Ryo_Hirakawa_2024_WEC_Fuji_1.jpg",
+          "image_credit": "Wikimedia Commons · Morio · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "search:Ryo Hirakawa",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/ryo-hirakawa.jpg"
         },
         {
           "rank": 22,
@@ -4360,7 +4380,17 @@
             {
               "rank": 7,
               "name": "Raquel Pennington",
-              "image_url": null
+              "image_url": "./assets/images/ufc/raquel-pennington.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Raquel_Pennington_MCCS_Twentynine_Palms_presents_an_action-packed_MMA_Fight_Night_Live_at_The_Combat_Center_(5)_(cropped).jpg",
+              "image_credit": "Wikimedia Commons · Lance Cpl. Enge You · Public domain",
+              "image_license": "Public domain",
+              "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Raquel Pennington",
+              "image_verified_at": "2026-11-13T07:41:42Z",
+              "image_local_path": "assets/images/ufc/raquel-pennington.jpg"
             },
             {
               "rank": 8,
@@ -5329,17 +5359,81 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 212,
-    "found": 113,
-    "missing": 435,
-    "rejected": 152,
-    "by_sport": {},
-    "newly_found": 0,
+    "attempted": 5,
+    "found": 116,
+    "missing": 704,
+    "rejected": 1,
+    "by_sport": {
+      "ufc": {
+        "attempted": 5,
+        "found": 1,
+        "missing": 4,
+        "rejected": 0
+      }
+    },
+    "rejection_reasons": {
+      "not_an_image": 1
+    },
+    "search_details": [
+      {
+        "name": "Raquel Pennington",
+        "queries": 3,
+        "candidate_files": 17,
+        "accepted": 16,
+        "rejections": {
+          "not_an_image": 1
+        }
+      },
+      {
+        "name": "Jacqueline Cavalcanti",
+        "queries": 2,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Karol Rosa",
+        "queries": 2,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Macy Chiasson",
+        "queries": 2,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Bia Mesquita",
+        "queries": 2,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      }
+    ],
+    "checked_at": "2026-11-13T07:41:42Z",
+    "library_entries": 80,
+    "newly_found": 1,
+    "cumulative_attempted": 217,
+    "cumulative_found": 80,
+    "cumulative_missing": 137,
+    "cumulative_rejected": 153,
+    "batch_number": 28,
+    "last_batch_at": "2026-11-13T07:41:42Z",
+    "last_successful_batch_at": "2026-11-13T07:41:42Z",
+    "last_rate_limited_at": "2026-11-13T00:39:21Z",
     "coverage": {
+      "boxing fight card fighters": {
+        "total": 272,
+        "with_image": 0,
+        "missing": 272
+      },
       "f1 drivers": {
         "total": 25,
-        "with_image": 23,
-        "missing": 2
+        "with_image": 25,
+        "missing": 0
       },
       "f1 constructors": {
         "total": 11,
@@ -5353,8 +5447,8 @@
       },
       "ufc": {
         "total": 206,
-        "with_image": 29,
-        "missing": 177
+        "with_image": 30,
+        "missing": 176
       },
       "boxing": {
         "total": 81,
@@ -5362,17 +5456,7 @@
         "missing": 81
       }
     },
-    "checked_at": "2026-11-13T01:05:58Z",
-    "library_entries": 79,
-    "cumulative_found": 79,
-    "cumulative_missing": 133,
-    "cumulative_rejected": 152,
-    "batch_number": 27,
-    "last_batch_at": "2026-11-13T00:39:21Z",
-    "last_successful_batch_at": "2026-11-13T00:39:21Z",
-    "last_rate_limited_at": "2026-11-13T00:39:21Z",
-    "enrichment_status": "paused after rate limit",
-    "rate_limited": true
+    "rate_limited": false
   },
   "last_updated": "2026-11-13T01:05:58Z"
 }

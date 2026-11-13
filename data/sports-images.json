@@ -1093,9 +1093,24 @@
       "image_match_method": "category:Category:Luana Santos",
       "image_verified_at": "2026-11-13T00:39:21Z",
       "image_local_path": "assets/images/ufc/luana-santos.jpg"
+    },
+    "raquel pennington": {
+      "name": "Raquel Pennington",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/raquel-pennington.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Raquel_Pennington_MCCS_Twentynine_Palms_presents_an_action-packed_MMA_Fight_Night_Live_at_The_Combat_Center_(5)_(cropped).jpg",
+      "image_credit": "Wikimedia Commons · Lance Cpl. Enge You · Public domain",
+      "image_license": "Public domain",
+      "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Raquel Pennington",
+      "image_verified_at": "2026-11-13T07:41:42Z",
+      "image_local_path": "assets/images/ufc/raquel-pennington.jpg"
     }
   },
-  "updated_at": "2026-11-13T01:05:58Z",
+  "updated_at": "2026-11-13T07:41:42Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1298,7 +1313,12 @@
     "ailin perez": "2026-11-13T00:39:21Z",
     "norma dumont": "2026-11-13T00:39:21Z",
     "luana santos": "2026-11-13T00:39:21Z",
-    "yana santos": "2026-11-13T00:39:21Z"
+    "yana santos": "2026-11-13T00:39:21Z",
+    "raquel pennington": "2026-11-13T07:41:42Z",
+    "jacqueline cavalcanti": "2026-11-13T07:41:42Z",
+    "karol rosa": "2026-11-13T07:41:42Z",
+    "macy chiasson": "2026-11-13T07:41:42Z",
+    "bia mesquita": "2026-11-13T07:41:42Z"
   },
   "audit": {
     "last_reviewed_at": "2026-11-09T12:15:00Z",
@@ -1335,14 +1355,14 @@
     }
   },
   "enrichment": {
-    "batch_number": 27,
+    "batch_number": 28,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 212,
-    "cumulative_found": 79,
-    "cumulative_missing": 133,
-    "cumulative_rejected": 152,
-    "last_batch_at": "2026-11-13T00:39:21Z",
-    "last_successful_batch_at": "2026-11-13T00:39:21Z",
+    "cumulative_attempted": 217,
+    "cumulative_found": 80,
+    "cumulative_missing": 137,
+    "cumulative_rejected": 153,
+    "last_batch_at": "2026-11-13T07:41:42Z",
+    "last_successful_batch_at": "2026-11-13T07:41:42Z",
     "last_rate_limited_at": "2026-11-13T00:39:21Z",
     "history": [
       {
@@ -1560,8 +1580,16 @@
         "found": 1,
         "missing": 4,
         "rate_limited": true
+      },
+      {
+        "batch": 28,
+        "at": "2026-11-13T07:41:42Z",
+        "attempted": 5,
+        "found": 1,
+        "missing": 4,
+        "rate_limited": false
       }
     ],
-    "last_batch_rate_limited": true
+    "last_batch_rate_limited": false
   }
 }
