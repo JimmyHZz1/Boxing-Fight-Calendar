@@ -141,10 +141,11 @@
     const add=(label,url)=>{if(!links.some(item=>item.label===label))links.push({label,url});};
     values.forEach(platform=>{
       const p=String(platform||"").toLowerCase();
-      if(p.includes("steam")||p==="pc"||p.includes("windows"))add("STEAM STORE","https://store.steampowered.com/search/?term="+q);
-      if(p.includes("playstation")||/\bps[45]\b/.test(p))add("PLAYSTATION STORE","https://store.playstation.com/en-gb/search/"+q);
-      if(p.includes("xbox"))add("XBOX STORE","https://www.xbox.com/en-GB/Search?q="+q);
-      if(p.includes("nintendo")||p.includes("switch"))add("NINTENDO ESHOP","https://www.nintendo.com/en-gb/Search/Search-299117.html?f="+q);
+      if(p.includes("steam")||p==="pc"||p.includes("windows"))add("SEARCH STEAM","https://store.steampowered.com/search/?term="+q);
+      if(p==="pc"||p.includes("windows"))add("SEARCH EPIC GAMES","https://store.epicgames.com/en-US/browse?q="+q);
+      if(p.includes("playstation")||/\bps[45]\b/.test(p))add("SEARCH PLAYSTATION","https://store.playstation.com/en-gb/search/"+q);
+      if(p.includes("xbox"))add("SEARCH XBOX","https://www.xbox.com/en-GB/Search?q="+q);
+      if(p.includes("nintendo")||p.includes("switch"))add("SEARCH NINTENDO ESHOP","https://www.nintendo.com/en-gb/Search/Search-299117.html?f="+q);
     });
     return links;
   };

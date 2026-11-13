@@ -100,6 +100,8 @@
       String(minutes).padStart(2,"0") + "M " + String(secs).padStart(2,"0") + "S";
   };
   const isAdditionalRelease = game => {
+    const title=String(game?.title||"");
+    if(/\b(dlc|expansion|season pass|add.on|remaster(ed)?|remake|definitive edition|complete edition|game of the year|goty edition|deluxe edition|ultimate edition|collector.?s edition|special edition|anniversary edition|enhanced edition|switch 2 edition|next.?gen upgrade|bundle|pack)\b/i.test(title)) return true;
     const type=String(game?.release_type||game?.category_name||"").toLowerCase().replace(/[^a-z0-9]+/g,"_");
     if(["full_release","main_game","full_game"].includes(type)) return false;
     if(type && !["unknown","game"].includes(type)) return true;
