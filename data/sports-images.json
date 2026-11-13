@@ -1110,7 +1110,7 @@
       "image_local_path": "assets/images/ufc/raquel-pennington.jpg"
     }
   },
-  "updated_at": "2026-11-13T12:14:51Z",
+  "updated_at": "2026-11-13T15:59:30Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1318,7 +1318,11 @@
     "jacqueline cavalcanti": "2026-11-13T07:41:42Z",
     "karol rosa": "2026-11-13T07:41:42Z",
     "macy chiasson": "2026-11-13T07:41:42Z",
-    "bia mesquita": "2026-11-13T07:41:42Z"
+    "bia mesquita": "2026-11-13T07:41:42Z",
+    "michelle montague": "2026-11-13T15:59:30Z",
+    "nora cornolle": "2026-11-13T15:59:30Z",
+    "alice pereira": "2026-11-13T15:59:30Z",
+    "natalia silva": "2026-11-13T15:59:30Z"
   },
   "audit": {
     "last_reviewed_at": "2026-11-09T12:15:00Z",
@@ -1355,15 +1359,15 @@
     }
   },
   "enrichment": {
-    "batch_number": 28,
+    "batch_number": 29,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 217,
+    "cumulative_attempted": 222,
     "cumulative_found": 80,
-    "cumulative_missing": 137,
+    "cumulative_missing": 142,
     "cumulative_rejected": 153,
-    "last_batch_at": "2026-11-13T07:41:42Z",
-    "last_successful_batch_at": "2026-11-13T07:41:42Z",
-    "last_rate_limited_at": "2026-11-13T00:39:21Z",
+    "last_batch_at": "2026-11-13T15:59:30Z",
+    "last_successful_batch_at": "2026-11-13T15:59:30Z",
+    "last_rate_limited_at": "2026-11-13T15:59:30Z",
     "history": [
       {
         "batch": 1,
@@ -1588,8 +1592,16 @@
         "found": 1,
         "missing": 4,
         "rate_limited": false
+      },
+      {
+        "batch": 29,
+        "at": "2026-11-13T15:59:30Z",
+        "attempted": 5,
+        "found": 0,
+        "missing": 5,
+        "rate_limited": true
       }
     ],
-    "last_batch_rate_limited": false
+    "last_batch_rate_limited": true
   }
 }
