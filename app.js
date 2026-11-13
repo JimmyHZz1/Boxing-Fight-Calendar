@@ -82,7 +82,7 @@ function showScreen(id, options = {}) {
   document.body.classList.toggle("hub-selection-mode",id==="hub-selection-screen");
   const gamesHubActive=id==="games-calendar-screen"||id==="games-platform-calendar-screen"||id==="games-version-history-screen";
   const swgohHubActive=id==="swgoh-hub-screen"||id==="swgoh-roadmap-screen";
-  const entertainmentHubActive=id==="entertainment-hub-screen";
+  const entertainmentHubActive=id==="entertainment-hub-screen"||id==="entertainment-version-history-screen";
   if(options.userInitiated && gamesHubActive) gamesHubUserSelected = true;
   window.__gamesHubVideosEnabled = gamesHubActive && gamesHubUserSelected;
   document.body.classList.toggle("games-mode",gamesHubActive);

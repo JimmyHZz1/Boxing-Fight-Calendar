@@ -81,38 +81,72 @@
         <section class="hub-selection-coming"><span class="hub-selection-coming-mark">＋</span><div><strong>More Hubs Coming Soon</strong><p>New hubs will join as they are ready.</p></div></section>
       </section>
 <section id="entertainment-hub-screen" class="screen entertainment-hub-screen" aria-labelledby="entertainment-hub-title">
-        <div class="entertainment-hero">
-          <div class="entertainment-hero-copy">
-            <span class="eyebrow entertainment-eyebrow">THE ENTERTAINMENT HUB</span>
-            <h1 id="entertainment-hub-title">Film. Television.<br><em>All in one place.</em></h1>
-            <p>Your home for cinema releases, television schedules and the films and series you want to keep track of.</p>
-            <div class="entertainment-hero-meta"><span>FILM &amp; TELEVISION ONLY</span><span>YOUR NEXT WATCH STARTS HERE</span></div>
-          </div>
-          <div class="entertainment-hero-mark" aria-hidden="true">▶</div>
-        </div>
-        <nav class="entertainment-section-nav" aria-label="Entertainment sections">
-          <a href="#entertainment-film-section">FILM</a><a href="#entertainment-tv-section">TELEVISION</a><a href="#entertainment-watchlist-section">MY WATCHLIST</a>
-        </nav>
-        <section class="entertainment-overview-grid" aria-label="Entertainment hub overview">
-          <article class="entertainment-overview-card"><span class="entertainment-card-kicker">ON THE BIG SCREEN</span><strong>Film releases</strong><p>Upcoming cinema releases, dates and details.</p><span class="entertainment-card-mark" aria-hidden="true">▣</span></article>
-          <article class="entertainment-overview-card"><span class="entertainment-card-kicker">AT HOME</span><strong>Television &amp; streaming</strong><p>New series, returning shows and episode schedules.</p><span class="entertainment-card-mark" aria-hidden="true">▤</span></article>
-          <article class="entertainment-overview-card"><span class="entertainment-card-kicker">KEEP YOUR PLACE</span><strong>Personal watchlist</strong><p>A place for films and shows you plan to watch.</p><span class="entertainment-card-mark" aria-hidden="true">☆</span></article>
-        </section>
-        <section id="entertainment-film-section" class="entertainment-content-section">
-          <div class="entertainment-section-heading"><div><span class="eyebrow entertainment-eyebrow">THE CINEMA</span><h2>Film <em>releases.</em></h2></div><span class="entertainment-section-tag">COMING NEXT</span></div>
-          <div class="entertainment-empty-panel"><span class="entertainment-empty-icon" aria-hidden="true">▣</span><div><strong>Film release calendar is next</strong><p>This space is ready for upcoming cinema releases, confirmed dates, trailers and film details. Live release data will be connected in a later step.</p></div></div>
-        </section>
-        <section id="entertainment-tv-section" class="entertainment-content-section">
-          <div class="entertainment-section-heading"><div><span class="eyebrow entertainment-eyebrow">ON YOUR SCREEN</span><h2>Television <em>&amp; streaming.</em></h2></div><span class="entertainment-section-tag">COMING NEXT</span></div>
-          <div class="entertainment-empty-panel"><span class="entertainment-empty-icon" aria-hidden="true">▤</span><div><strong>TV and streaming schedules are next</strong><p>This space will cover new and returning series, streaming premieres and episode schedules.</p></div></div>
-        </section>
-        <section id="entertainment-watchlist-section" class="entertainment-content-section">
-          <div class="entertainment-section-heading"><div><span class="eyebrow entertainment-eyebrow">YOUR COLLECTION</span><h2>My <em>watchlist.</em></h2></div><span class="entertainment-section-tag">PERSONAL TRACKER</span></div>
-          <div class="entertainment-empty-panel"><span class="entertainment-empty-icon" aria-hidden="true">☆</span><div><strong>Your watchlist will live here</strong><p>Later, you’ll be able to save films and series, mark what you’ve watched and keep a personal viewing history.</p></div></div>
-        </section>
-        <div class="entertainment-page-footer"><button type="button" class="entertainment-back-button" data-screen="hub-selection-screen">← BACK TO THE HUB</button><span>THE HUB · ENTERTAINMENT</span></div>
-      </section>
-      <section id="home-screen" class="screen" aria-labelledby="home-title">
+  <div class="entertainment-hero">
+    <div class="entertainment-hero-copy">
+      <span class="eyebrow entertainment-eyebrow">THE ENTERTAINMENT HUB</span>
+      <h1 id="entertainment-hub-title">Film. Television.<br><em>All in one place.</em></h1>
+      <p>Discover cinema releases, new and returning series, trailers and where to watch in the UK.</p>
+      <div class="entertainment-hero-meta"><span>FILM &amp; TELEVISION ONLY</span><span>POWERED BY TMDB</span></div>
+    </div><div class="entertainment-hero-mark" aria-hidden="true">▶</div>
+  </div>
+  <div class="entertainment-toolbar">
+    <label class="entertainment-search"><span aria-hidden="true">⌕</span><input id="entertainment-search-input" type="search" placeholder="Search films and television…" autocomplete="off"><kbd>ENTER</kbd></label>
+    <span id="entertainment-data-status" class="entertainment-data-status" role="status" aria-live="polite">Connecting to film and TV listings…</span>
+  </div>
+  <nav class="entertainment-section-nav" aria-label="Entertainment sections">
+    <a href="#entertainment-film-section">FILMS</a><a href="#entertainment-tv-section">TELEVISION</a><a href="#entertainment-watchlist-section">MY WATCHLIST</a>
+  </nav>
+  <section id="entertainment-search-results" class="entertainment-content-section" hidden>
+    <div class="entertainment-section-heading"><div><span class="eyebrow entertainment-eyebrow">DISCOVERY</span><h2>Search <em>results.</em></h2></div><span id="entertainment-search-count" class="entertainment-section-tag"></span></div>
+    <div id="entertainment-search-grid" class="entertainment-title-grid"></div>
+  </section>
+  <section id="entertainment-film-section" class="entertainment-content-section">
+    <div class="entertainment-section-heading"><div><span class="eyebrow entertainment-eyebrow">THE CINEMA</span><h2>Films <em>&amp; releases.</em></h2></div><span class="entertainment-section-tag">FILM</span></div>
+    <div class="entertainment-shelf"><div class="entertainment-shelf-heading"><h3>Now playing in cinemas</h3><span>UK RELEASES</span></div><div id="entertainment-now-playing" class="entertainment-title-grid"><p class="entertainment-loading">Loading cinema releases…</p></div></div>
+    <div class="entertainment-shelf"><div class="entertainment-shelf-heading"><h3>Coming soon</h3><span>UPCOMING FILMS</span></div><div id="entertainment-upcoming-films" class="entertainment-title-grid"><p class="entertainment-loading">Loading upcoming films…</p></div></div>
+    <div class="entertainment-shelf"><div class="entertainment-shelf-heading"><h3>Popular films</h3><span>MOST DISCUSSED</span></div><div id="entertainment-popular-films" class="entertainment-title-grid"><p class="entertainment-loading">Loading popular films…</p></div></div>
+  </section>
+  <section id="entertainment-tv-section" class="entertainment-content-section">
+    <div class="entertainment-section-heading"><div><span class="eyebrow entertainment-eyebrow">ON YOUR SCREEN</span><h2>Television <em>&amp; streaming.</em></h2></div><span class="entertainment-section-tag">TV</span></div>
+    <div class="entertainment-shelf"><div class="entertainment-shelf-heading"><h3>On the air</h3><span>NEW EPISODES</span></div><div id="entertainment-on-air" class="entertainment-title-grid"><p class="entertainment-loading">Loading TV listings…</p></div></div>
+    <div class="entertainment-shelf"><div class="entertainment-shelf-heading"><h3>Airing today</h3><span>UK TODAY</span></div><div id="entertainment-airing-today" class="entertainment-title-grid"><p class="entertainment-loading">Loading today's episodes…</p></div></div>
+    <div class="entertainment-shelf"><div class="entertainment-shelf-heading"><h3>Popular series</h3><span>POPULAR TV</span></div><div id="entertainment-popular-tv" class="entertainment-title-grid"><p class="entertainment-loading">Loading popular series…</p></div></div>
+  </section>
+  <section id="entertainment-watchlist-section" class="entertainment-content-section">
+    <div class="entertainment-section-heading"><div><span class="eyebrow entertainment-eyebrow">YOUR COLLECTION</span><h2>My <em>watchlist.</em></h2></div><span id="entertainment-watchlist-count" class="entertainment-section-tag">0 SAVED</span></div>
+    <div id="entertainment-watchlist-grid" class="entertainment-title-grid"><p class="entertainment-empty-copy">Save films and series with the ☆ button on any title.</p></div>
+  </section>
+  <div class="entertainment-attribution">This product uses the TMDB API but is not endorsed or certified by TMDB. Streaming availability data is provided by JustWatch via TMDB.</div>
+  <div class="entertainment-page-footer"><button type="button" class="entertainment-back-button" data-screen="hub-selection-screen">← BACK TO THE HUB</button><button type="button" class="entertainment-roadmap-button" data-screen="entertainment-version-history-screen">ENTERTAINMENT VERSION HISTORY &amp; TO-DO →</button></div>
+</section>
+<section id="entertainment-version-history-screen" class="screen entertainment-version-history-screen" aria-labelledby="entertainment-version-history-title">
+  <div class="page-intro entertainment-roadmap-intro"><span class="eyebrow entertainment-eyebrow">ENTERTAINMENT HUB · RELEASE NOTES</span><h1 id="entertainment-version-history-title">Entertainment <em>roadmap.</em></h1><p>Version history and planned improvements for the film and television hub. This roadmap is separate from Sports, Games and The Hub platform roadmaps.</p></div>
+  <section class="entertainment-roadmap-release">
+    <div class="entertainment-roadmap-top"><span class="eyebrow entertainment-eyebrow">CURRENT RELEASE</span><span class="entertainment-section-tag">V1.0 · FOUNDATION</span></div>
+    <h2>Entertainment Hub V1.0</h2><p>TMDB-powered film and TV discovery, UK release information, title details, trailers, watch providers and a personal watchlist.</p>
+    <ul><li>Film and television listings in separate sections.</li><li>Search, title detail panels, trailers and UK watch-provider links.</li><li>Personal watchlist saved on this device.</li></ul>
+  </section>
+  <section class="entertainment-roadmap-todo">
+    <div class="entertainment-section-heading"><div><span class="eyebrow entertainment-eyebrow">WHAT'S NEXT</span><h2>Entertainment <em>to-do list.</em></h2></div><span class="entertainment-section-tag">PLANNED WORK</span></div>
+    <article class="entertainment-roadmap-item is-complete"><span>✓</span><div><strong>Secure TMDB connection</strong><p>Keep the TMDB access token in Supabase and request catalogue data through the read-only Edge Function.</p></div><b>COMPLETE</b></article>
+    <article class="entertainment-roadmap-item is-complete"><span>✓</span><div><strong>Film and TV discovery</strong><p>Separate UK-focused film and television shelves with posters, dates and popularity information.</p></div><b>COMPLETE</b></article>
+    <article class="entertainment-roadmap-item is-complete"><span>✓</span><div><strong>Search, title details and watchlist</strong><p>Search both catalogues, inspect title information and save titles locally.</p></div><b>COMPLETE</b></article>
+    <article class="entertainment-roadmap-item is-complete"><span>✓</span><div><strong>UK streaming availability</strong><p>Show TMDB/JustWatch provider information when available for the selected title.</p></div><b>COMPLETE</b></article>
+    <article class="entertainment-roadmap-item"><span>01</span><div><strong>Trending films and series</strong><p>Add dedicated daily and weekly trending shelves with clear date ranges.</p></div><b>PLANNED</b></article>
+    <article class="entertainment-roadmap-item"><span>02</span><div><strong>UK box office</strong><p>Add verified UK box-office chart data, source attribution and weekly movement.</p></div><b>PLANNED</b></article>
+    <article class="entertainment-roadmap-item"><span>03</span><div><strong>Episode and season tracking</strong><p>Expand TV details with season progress, episode dates and watched-status tracking.</p></div><b>PLANNED</b></article>
+    <article class="entertainment-roadmap-item"><span>04</span><div><strong>Personal ratings and watch history</strong><p>Let you rate titles and maintain a watched history alongside your watchlist.</p></div><b>PLANNED</b></article>
+    <article class="entertainment-roadmap-item"><span>05</span><div><strong>Notifications</strong><p>Optional reminders for upcoming cinema releases and new episodes of followed series.</p></div><b>PLANNED</b></article>
+  </section>
+  <div class="entertainment-page-footer"><button type="button" class="entertainment-back-button" data-screen="entertainment-hub-screen">← BACK TO ENTERTAINMENT</button><span>ENTERTAINMENT HUB · VERSION HISTORY &amp; ROADMAP</span></div>
+</section>
+<div id="entertainment-detail-overlay" class="entertainment-detail-overlay" hidden>
+  <section class="entertainment-detail-panel" role="dialog" aria-modal="true" aria-labelledby="entertainment-detail-title">
+    <button id="entertainment-detail-close" class="entertainment-detail-close" type="button" aria-label="Close title details">×</button>
+    <div id="entertainment-detail-content"></div>
+  </section>
+</div>
+<section id="home-screen" class="screen" aria-labelledby="home-title">
         <div class="hero">
           <div class="eyebrow">SIX SPORTS · ONE HUB</div>
           <h1 id="home-title">Every sport.<br><em>One hub.</em></h1>
@@ -568,7 +602,7 @@
       <button id="sports-bottom-calendar-button" class="nav-item" data-screen="calendar-screen" aria-label="Open the original Sports Calendar"><span aria-hidden="true">▦</span><small>CALENDAR</small></button>
       <button class="nav-item" data-screen="weekend-screen"><span>★</span><small>FAVOURITES</small></button>
     </nav>
-    <footer class="footer"><button type="button" class="data-health-link" id="open-data-health">DATA HEALTH CENTRE</button><span>•</span> <a class="version-history-link" href="#version-history" id="open-version-history">SPORTS VERSION HISTORY</a><button type="button" class="games-version-history-link" data-screen="games-version-history-screen">GAMES VERSION HISTORY</button> <button type="button" class="hub-version-history-link" id="open-hub-version-history">THE HUB ROADMAP</button> <button type="button" class="swgoh-version-history-link" data-screen="swgoh-roadmap-screen">SWGOH TRACKER ROADMAP</button><span>•</span> THE HUB <span>•</span> UK LOCAL TIME <span>•</span> PDC logo: <a href="https://commons.wikimedia.org/wiki/File:Professional_Darts_Corporation_logo.png" target="_blank" rel="noopener noreferrer">Chris Ibbotson, CC BY-SA 4.0</a> <span>•</span> BKFC SCHEDULE: <a href="https://www.bkfc.com/events" target="_blank" rel="noopener noreferrer">BKFC</a> <span>•</span> BOXING DATA: <a href="https://boxerbook.com" target="_blank" rel="noopener noreferrer">BOXERBOOK</a></footer>
+    <footer class="footer"><button type="button" class="data-health-link" id="open-data-health">DATA HEALTH CENTRE</button><span>•</span> <a class="version-history-link" href="#version-history" id="open-version-history">SPORTS VERSION HISTORY</a><button type="button" class="games-version-history-link" data-screen="games-version-history-screen">GAMES VERSION HISTORY</button> <button type="button" class="hub-version-history-link" id="open-hub-version-history">THE HUB ROADMAP</button> <button type="button" class="swgoh-version-history-link" data-screen="swgoh-roadmap-screen">SWGOH TRACKER ROADMAP</button> <button type="button" class="entertainment-version-history-link" data-screen="entertainment-version-history-screen">ENTERTAINMENT HUB ROADMAP</button><span>•</span> THE HUB <span>•</span> UK LOCAL TIME <span>•</span> PDC logo: <a href="https://commons.wikimedia.org/wiki/File:Professional_Darts_Corporation_logo.png" target="_blank" rel="noopener noreferrer">Chris Ibbotson, CC BY-SA 4.0</a> <span>•</span> BKFC SCHEDULE: <a href="https://www.bkfc.com/events" target="_blank" rel="noopener noreferrer">BKFC</a> <span>•</span> BOXING DATA: <a href="https://boxerbook.com" target="_blank" rel="noopener noreferrer">BOXERBOOK</a></footer>
   </div>
   <script src="./app.js?v=20261112-05"></script>
   <script src="./swgoh/config.js"></script>
@@ -590,6 +624,7 @@
   <script src="./games-calendar.js?v=20261112-01"></script>
   <script src="./games-popularity.js?v=20261110-07"></script>
   <script src="./games-discovery.js?v=20261112-02"></script>
+  <script src="./entertainment-hub.js?v=20261113-01"></script>
   <script src="./notifications.js?v=20261111-02"></script>
   <script src="./data-health.js?v=20261111-02"></script>
   <script src="./admin-updates.js?v=20261111-02"></script>
