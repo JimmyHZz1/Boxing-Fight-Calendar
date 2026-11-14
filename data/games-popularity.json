@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "provider": "IGDB PopScore",
-  "updated_at": "2026-11-13T14:30:25.864Z",
+  "updated_at": "2026-11-14T13:27:24.453Z",
   "status": "ok",
   "methodology": "Daily relative ranking across the upcoming PC and console release list. Weighted IGDB Visits (30%), Want to Play (40%), Playing (15%), Played (5%) and Twitch Hours Watched (10%). Steam-only player, review and sales signals are deliberately excluded so console-only games are not penalised. Missing metrics are omitted and remaining weights are renormalised.",
   "games": [
@@ -75,30 +75,6 @@
       "popularity_rank": 3
     },
     {
-      "slug": "final-fantasy-vii-revelation",
-      "title": "FINAL FANTASY VII REVELATION",
-      "release_date": "2027-04-08",
-      "platforms": [
-        "PC",
-        "PlayStation 5",
-        "Xbox Series X|S",
-        "Nintendo Switch 2"
-      ],
-      "verification_status": "verified",
-      "igdb_game_id": 404721,
-      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar62e8.jpg",
-      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar62ze.jpg",
-      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar62ze.jpg",
-      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar62e8.jpg",
-      "popularity_score": 73,
-      "popularity_signals": [
-        "want to play",
-        "visits"
-      ],
-      "popularity_coverage": 2,
-      "popularity_rank": 4
-    },
-    {
       "slug": "hela-of-mice-and-magic",
       "title": "Hela: of Mice & Magic",
       "release_date": "2026-12-01",
@@ -114,7 +90,31 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo11ng.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo11ng.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6r3h.jpg",
-      "popularity_score": 69,
+      "popularity_score": 71,
+      "popularity_signals": [
+        "want to play",
+        "visits"
+      ],
+      "popularity_coverage": 2,
+      "popularity_rank": 4
+    },
+    {
+      "slug": "final-fantasy-vii-revelation",
+      "title": "FINAL FANTASY VII REVELATION",
+      "release_date": "2027-04-08",
+      "platforms": [
+        "PC",
+        "PlayStation 5",
+        "Xbox Series X|S",
+        "Nintendo Switch 2"
+      ],
+      "verification_status": "verified",
+      "igdb_game_id": 404721,
+      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar62e8.jpg",
+      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar62ze.jpg",
+      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar62ze.jpg",
+      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar62e8.jpg",
+      "popularity_score": 68,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -156,34 +156,13 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5zbq.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5zbq.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5zbq.jpg",
-      "popularity_score": 59,
+      "popularity_score": 56,
       "popularity_signals": [
         "want to play",
         "visits"
       ],
       "popularity_coverage": 2,
       "popularity_rank": 7
-    },
-    {
-      "slug": "trees-hate-you",
-      "title": "Trees Hate You",
-      "release_date": "2026-11-16",
-      "platforms": [
-        "PC"
-      ],
-      "verification_status": "verified",
-      "igdb_game_id": 382400,
-      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar4y6f.jpg",
-      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar4y6g.jpg",
-      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar4y6g.jpg",
-      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar4y6f.jpg",
-      "popularity_score": 50,
-      "popularity_signals": [
-        "want to play",
-        "visits"
-      ],
-      "popularity_coverage": 2,
-      "popularity_rank": 8
     },
     {
       "slug": "professor-layton-new-world-steam",
@@ -201,7 +180,28 @@
       "igdb_logo_url": null,
       "logo_url": null,
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar260r.jpg",
-      "popularity_score": 46,
+      "popularity_score": 49,
+      "popularity_signals": [
+        "want to play",
+        "visits"
+      ],
+      "popularity_coverage": 2,
+      "popularity_rank": 8
+    },
+    {
+      "slug": "trees-hate-you",
+      "title": "Trees Hate You",
+      "release_date": "2026-11-16",
+      "platforms": [
+        "PC"
+      ],
+      "verification_status": "verified",
+      "igdb_game_id": 382400,
+      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar4y6f.jpg",
+      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar4y6g.jpg",
+      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar4y6g.jpg",
+      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar4y6f.jpg",
+      "popularity_score": 47,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -222,7 +222,7 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo1275.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo1275.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6suz.jpg",
-      "popularity_score": 44,
+      "popularity_score": 46,
       "popularity_signals": [
         "want to play",
         "visits",
@@ -254,6 +254,28 @@
       "popularity_rank": 11
     },
     {
+      "slug": "arkheron",
+      "title": "Arkheron",
+      "release_date": "2026-11-27",
+      "platforms": [
+        "PC",
+        "Xbox Series X|S"
+      ],
+      "verification_status": "estimated",
+      "igdb_game_id": 368311,
+      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6xi8.jpg",
+      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar48ki.jpg",
+      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar48ki.jpg",
+      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6xi8.jpg",
+      "popularity_score": 33,
+      "popularity_signals": [
+        "want to play",
+        "visits"
+      ],
+      "popularity_coverage": 2,
+      "popularity_rank": 12
+    },
+    {
       "slug": "dragon-quest-monsters-the-withered-world",
       "title": "DRAGON QUEST MONSTERS: The Withered World",
       "release_date": "2026-12-03",
@@ -270,29 +292,7 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5xzb.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5xzb.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5xzb.jpg",
-      "popularity_score": 29,
-      "popularity_signals": [
-        "want to play",
-        "visits"
-      ],
-      "popularity_coverage": 2,
-      "popularity_rank": 12
-    },
-    {
-      "slug": "arkheron",
-      "title": "Arkheron",
-      "release_date": "2026-11-27",
-      "platforms": [
-        "PC",
-        "Xbox Series X|S"
-      ],
-      "verification_status": "estimated",
-      "igdb_game_id": 368311,
-      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6xi8.jpg",
-      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar48ki.jpg",
-      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar48ki.jpg",
-      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6xi8.jpg",
-      "popularity_score": 28,
+      "popularity_score": 27,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -340,7 +340,7 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo10cy.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo10cy.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar2ong.jpg",
-      "popularity_score": 15,
+      "popularity_score": 18,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -361,7 +361,7 @@
       "igdb_logo_url": null,
       "logo_url": null,
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6b87.jpg",
-      "popularity_score": 11,
+      "popularity_score": 8,
       "popularity_signals": [
         "want to play",
         "visits"
