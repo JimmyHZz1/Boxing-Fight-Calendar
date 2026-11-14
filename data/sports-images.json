@@ -1230,7 +1230,7 @@
       "image_local_path": "assets/images/ufc/tatiana-suarez.jpg"
     }
   },
-  "updated_at": "2026-11-14T20:41:38Z",
+  "updated_at": "2026-11-14T20:42:26Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1504,24 +1504,16 @@
     }
   },
   "enrichment": {
-    "batch_number": 35,
+    "batch_number": 36,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 250,
+    "cumulative_attempted": 251,
     "cumulative_found": 88,
-    "cumulative_missing": 162,
+    "cumulative_missing": 163,
     "cumulative_rejected": 155,
-    "last_batch_at": "2026-11-14T20:40:17Z",
-    "last_successful_batch_at": "2026-11-14T20:40:17Z",
-    "last_rate_limited_at": "2026-11-14T20:40:17Z",
+    "last_batch_at": "2026-11-14T20:42:26Z",
+    "last_successful_batch_at": "2026-11-14T20:42:26Z",
+    "last_rate_limited_at": "2026-11-14T20:42:26Z",
     "history": [
-      {
-        "batch": 6,
-        "at": "2026-11-09T13:35:58Z",
-        "attempted": 5,
-        "found": 0,
-        "missing": 5,
-        "rate_limited": false
-      },
       {
         "batch": 7,
         "at": "2026-11-09T13:37:46Z",
@@ -1752,6 +1744,14 @@
         "attempted": 4,
         "found": 0,
         "missing": 4,
+        "rate_limited": true
+      },
+      {
+        "batch": 36,
+        "at": "2026-11-14T20:42:26Z",
+        "attempted": 1,
+        "found": 0,
+        "missing": 1,
         "rate_limited": true
       }
     ],
