@@ -129,7 +129,9 @@
             "details": "27 - 30. 27 - 30. 28 - 29."
           },
           "referee": "Keith Peterson",
-          "bonus": null
+          "bonus": null,
+          "fighter1_image": "./assets/images/ufc/tatiana-suarez.jpg",
+          "fighter1_image_credit": "Wikimedia Commons · MMAnytt · CC BY 3.0"
         },
         {
           "id": 93283,

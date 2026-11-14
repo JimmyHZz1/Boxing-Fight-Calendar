@@ -234,13 +234,33 @@
           "rank": 20,
           "name": "Yuki Tsunoda",
           "team": "RB F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/yuki-tsunoda.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Yuki_Tsunoda_Macau_2019.jpg",
+          "image_credit": "Wikimedia Commons · Smith007 · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "category:Category:Yuki Tsunoda in 2019",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/yuki-tsunoda.jpg"
         },
         {
           "rank": 21,
           "name": "Ryo Hirakawa",
           "team": "Haas F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/ryo-hirakawa.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Ryo_Hirakawa_2024_WEC_Fuji_1.jpg",
+          "image_credit": "Wikimedia Commons · Morio · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "search:Ryo Hirakawa",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/ryo-hirakawa.jpg"
         },
         {
           "rank": 22,
@@ -4641,27 +4661,77 @@
             {
               "rank": 5,
               "name": "Mackenzie Dern",
-              "image_url": null
+              "image_url": "./assets/images/ufc/mackenzie-dern.png",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Mackenzie_Dern.png",
+              "image_credit": "Wikimedia Commons · Canal Faixa Preta · CC BY 3.0",
+              "image_license": "CC BY 3.0",
+              "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Mackenzie Dern",
+              "image_verified_at": "2026-11-14T15:57:49Z",
+              "image_local_path": "assets/images/ufc/mackenzie-dern.png"
             },
             {
               "rank": 6,
               "name": "Alexa Grasso",
-              "image_url": null
+              "image_url": "./assets/images/ufc/alexa-grasso.png",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Alexa_Grasso_2020_01.png",
+              "image_credit": "Wikimedia Commons · La Tribuna · CC BY 3.0",
+              "image_license": "CC BY 3.0",
+              "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Alexa Grasso",
+              "image_verified_at": "2026-11-13T21:55:12Z",
+              "image_local_path": "assets/images/ufc/alexa-grasso.png"
             },
             {
               "rank": 7,
               "name": "Manon Fiorot",
-              "image_url": null
+              "image_url": "./assets/images/ufc/manon-fiorot.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:MANON_FIOROT_ET_ALDRIC_CASSATA,_LE_COUPLE_GOAL_DU_MMA_-_MMA_EXTRA_ROUND_-22_-_YouTube_-_0-28-31_(cropped).jpg",
+              "image_credit": "Wikimedia Commons · Lucie Bertaud · CC BY 3.0",
+              "image_license": "CC BY 3.0",
+              "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Manon Fiorot",
+              "image_verified_at": "2026-11-13T21:55:12Z",
+              "image_local_path": "assets/images/ufc/manon-fiorot.jpg"
             },
             {
               "rank": 8,
               "name": "Tatiana Suarez",
-              "image_url": null
+              "image_url": "./assets/images/ufc/tatiana-suarez.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Tatiana_Suarez_at_UFC_228.jpg",
+              "image_credit": "Wikimedia Commons · MMAnytt · CC BY 3.0",
+              "image_license": "CC BY 3.0",
+              "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Tatiana Suarez",
+              "image_verified_at": "2026-11-14T15:57:49Z",
+              "image_local_path": "assets/images/ufc/tatiana-suarez.jpg"
             },
             {
               "rank": 9,
               "name": "Jasmine Jasudavicius",
-              "image_url": null
+              "image_url": "./assets/images/ufc/jasmine-jasudavicius.png",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Jasmine_Jasudavicius_2023.png",
+              "image_credit": "Wikimedia Commons · MM-eh · CC BY 3.0",
+              "image_license": "CC BY 3.0",
+              "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Jasmine Jasudavicius",
+              "image_verified_at": "2026-11-14T02:03:57Z",
+              "image_local_path": "assets/images/ufc/jasmine-jasudavicius.png"
             },
             {
               "rank": 10,
@@ -4671,7 +4741,17 @@
             {
               "rank": 11,
               "name": "Julianna Peña",
-              "image_url": null
+              "image_url": "./assets/images/ufc/julianna-pena.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Ceremonial_weigh_ins_-_Amanda_Nunes_vs_Julianna_Pe%C3%B1a_UFC_269_-_YouTube_-_0_23_(cropped).jpg",
+              "image_credit": "Wikimedia Commons · MMAnytt · CC BY 3.0",
+              "image_license": "CC BY 3.0",
+              "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Julianna Peña",
+              "image_verified_at": "2026-11-12T19:47:10Z",
+              "image_local_path": "assets/images/ufc/julianna-pena.jpg"
             },
             {
               "rank": 12,
@@ -4702,7 +4782,17 @@
             {
               "rank": 0,
               "name": "Mackenzie Dern",
-              "image_url": null
+              "image_url": "./assets/images/ufc/mackenzie-dern.png",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Mackenzie_Dern.png",
+              "image_credit": "Wikimedia Commons · Canal Faixa Preta · CC BY 3.0",
+              "image_license": "CC BY 3.0",
+              "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Mackenzie Dern",
+              "image_verified_at": "2026-11-14T15:57:49Z",
+              "image_local_path": "assets/images/ufc/mackenzie-dern.png"
             },
             {
               "rank": 1,
@@ -4712,7 +4802,17 @@
             {
               "rank": 2,
               "name": "Tatiana Suarez",
-              "image_url": null
+              "image_url": "./assets/images/ufc/tatiana-suarez.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Tatiana_Suarez_at_UFC_228.jpg",
+              "image_credit": "Wikimedia Commons · MMAnytt · CC BY 3.0",
+              "image_license": "CC BY 3.0",
+              "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Tatiana Suarez",
+              "image_verified_at": "2026-11-14T15:57:49Z",
+              "image_local_path": "assets/images/ufc/tatiana-suarez.jpg"
             },
             {
               "rank": 3,
@@ -5453,17 +5553,83 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 236,
-    "found": 121,
-    "missing": 431,
-    "rejected": 153,
-    "by_sport": {},
-    "newly_found": 0,
+    "attempted": 5,
+    "found": 131,
+    "missing": 786,
+    "rejected": 2,
+    "by_sport": {
+      "ufc": {
+        "attempted": 5,
+        "found": 2,
+        "missing": 3,
+        "rejected": 0
+      }
+    },
+    "search_details": [
+      {
+        "name": "Eduarda Moura",
+        "queries": 2,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Regina Tarin",
+        "queries": 2,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Zhang Weili",
+        "queries": 3,
+        "candidate_files": 1,
+        "accepted": 0,
+        "rejections": {
+          "exact_name_pair_not_matched": 1
+        }
+      },
+      {
+        "name": "Mackenzie Dern",
+        "queries": 3,
+        "candidate_files": 1,
+        "accepted": 1,
+        "rejections": {}
+      },
+      {
+        "name": "Tatiana Suarez",
+        "queries": 3,
+        "candidate_files": 2,
+        "accepted": 1,
+        "rejections": {
+          "exact_name_pair_not_matched": 1
+        }
+      }
+    ],
+    "rejection_reasons": {
+      "exact_name_pair_not_matched": 2
+    },
+    "checked_at": "2026-11-14T15:57:49Z",
+    "library_entries": 88,
+    "newly_found": 2,
+    "cumulative_attempted": 241,
+    "cumulative_found": 88,
+    "cumulative_missing": 153,
+    "cumulative_rejected": 155,
+    "batch_number": 33,
+    "last_batch_at": "2026-11-14T15:57:49Z",
+    "last_successful_batch_at": "2026-11-14T15:57:49Z",
+    "last_rate_limited_at": "2026-11-14T02:03:57Z",
     "coverage": {
+      "boxing fight card fighters": {
+        "total": 365,
+        "with_image": 0,
+        "missing": 365
+      },
       "f1 drivers": {
         "total": 25,
-        "with_image": 23,
-        "missing": 2
+        "with_image": 25,
+        "missing": 0
       },
       "f1 constructors": {
         "total": 11,
@@ -5477,8 +5643,8 @@
       },
       "ufc": {
         "total": 206,
-        "with_image": 37,
-        "missing": 169
+        "with_image": 45,
+        "missing": 161
       },
       "boxing": {
         "total": 81,
@@ -5486,16 +5652,6 @@
         "missing": 81
       }
     },
-    "checked_at": "2026-11-14T11:29:27Z",
-    "library_entries": 86,
-    "cumulative_found": 86,
-    "cumulative_missing": 150,
-    "cumulative_rejected": 153,
-    "batch_number": 32,
-    "last_batch_at": "2026-11-14T09:16:34Z",
-    "last_successful_batch_at": "2026-11-14T09:16:34Z",
-    "last_rate_limited_at": "2026-11-14T02:03:57Z",
-    "enrichment_status": "awaiting next scheduled batch",
     "rate_limited": false
   },
   "last_updated": "2026-11-14T11:29:27Z"

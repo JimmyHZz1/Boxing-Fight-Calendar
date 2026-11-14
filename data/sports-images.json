@@ -1198,9 +1198,39 @@
       "image_match_method": "category:Category:Tracy Cortez",
       "image_verified_at": "2026-11-14T09:16:34Z",
       "image_local_path": "assets/images/ufc/tracy-cortez.png"
+    },
+    "mackenzie dern": {
+      "name": "Mackenzie Dern",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/mackenzie-dern.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Mackenzie_Dern.png",
+      "image_credit": "Wikimedia Commons · Canal Faixa Preta · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Mackenzie Dern",
+      "image_verified_at": "2026-11-14T15:57:49Z",
+      "image_local_path": "assets/images/ufc/mackenzie-dern.png"
+    },
+    "tatiana suarez": {
+      "name": "Tatiana Suarez",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/tatiana-suarez.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Tatiana_Suarez_at_UFC_228.jpg",
+      "image_credit": "Wikimedia Commons · MMAnytt · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Tatiana Suarez",
+      "image_verified_at": "2026-11-14T15:57:49Z",
+      "image_local_path": "assets/images/ufc/tatiana-suarez.jpg"
     }
   },
-  "updated_at": "2026-11-14T11:29:27Z",
+  "updated_at": "2026-11-14T15:57:49Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1424,7 +1454,12 @@
     "tracy cortez": "2026-11-14T09:16:34Z",
     "miranda maverick": "2026-11-14T09:16:34Z",
     "karine silva": "2026-11-14T09:16:34Z",
-    "casey o neill": "2026-11-14T09:16:34Z"
+    "casey o neill": "2026-11-14T09:16:34Z",
+    "eduarda moura": "2026-11-14T15:57:49Z",
+    "regina tarin": "2026-11-14T15:57:49Z",
+    "zhang weili": "2026-11-14T15:57:49Z",
+    "mackenzie dern": "2026-11-14T15:57:49Z",
+    "tatiana suarez": "2026-11-14T15:57:49Z"
   },
   "audit": {
     "last_reviewed_at": "2026-11-09T12:15:00Z",
@@ -1461,24 +1496,16 @@
     }
   },
   "enrichment": {
-    "batch_number": 32,
+    "batch_number": 33,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 236,
-    "cumulative_found": 86,
-    "cumulative_missing": 150,
-    "cumulative_rejected": 153,
-    "last_batch_at": "2026-11-14T09:16:34Z",
-    "last_successful_batch_at": "2026-11-14T09:16:34Z",
+    "cumulative_attempted": 241,
+    "cumulative_found": 88,
+    "cumulative_missing": 153,
+    "cumulative_rejected": 155,
+    "last_batch_at": "2026-11-14T15:57:49Z",
+    "last_successful_batch_at": "2026-11-14T15:57:49Z",
     "last_rate_limited_at": "2026-11-14T02:03:57Z",
     "history": [
-      {
-        "batch": 3,
-        "at": "2026-11-09T12:52:57Z",
-        "attempted": 1,
-        "found": 0,
-        "missing": 1,
-        "rate_limited": true
-      },
       {
         "batch": 4,
         "at": "2026-11-09T13:10:18Z",
@@ -1709,6 +1736,14 @@
         "attempted": 5,
         "found": 1,
         "missing": 4,
+        "rate_limited": false
+      },
+      {
+        "batch": 33,
+        "at": "2026-11-14T15:57:49Z",
+        "attempted": 5,
+        "found": 2,
+        "missing": 3,
         "rate_limited": false
       }
     ],
