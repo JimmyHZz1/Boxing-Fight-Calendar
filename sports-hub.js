@@ -137,7 +137,7 @@
     const latestStamp=d.checked_at?reportDate(d.checked_at):"Not checked";
     const lastSuccess=d.last_successful_batch_at?reportDate(d.last_successful_batch_at):"Not recorded";
     const rateLimit=!!d.rate_limited;
-    const libraryCount=Number(d.library_entries||Object.keys(localImages).length);
+    const libraryCount=Object.keys(localImages).length;
     const latestMatches=Object.values(localImages).filter(item=>item.verified_at && d.last_successful_batch_at && String(item.verified_at)>=String(d.last_successful_batch_at));
     const latestAssets=latestMatches.map(item=>'<div class="hub-image-report-asset"><strong>'+esc(item.name)+'</strong><span>'+esc(item.licence||"Licence not listed")+'</span><a href="'+esc(item.source_url||"#")+'" target="_blank" rel="noopener noreferrer">SOURCE ↗</a></div>').join("");
     const warning=rateLimit?'<div class="hub-image-report-alert">UPSTREAM RATE LIMIT · Wikimedia Commons limited requests during the latest check. The queue should pause and retry later.</div>':'';
