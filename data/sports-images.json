@@ -1230,7 +1230,7 @@
       "image_local_path": "assets/images/ufc/tatiana-suarez.jpg"
     }
   },
-  "updated_at": "2026-11-14T20:36:38Z",
+  "updated_at": "2026-11-14T20:40:17Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1464,7 +1464,10 @@
     "denise gomes": "2026-11-14T20:36:38Z",
     "gillian robertson": "2026-11-14T20:36:38Z",
     "fatima kline": "2026-11-14T20:36:38Z",
-    "yan xiaonan": "2026-11-14T20:36:38Z"
+    "yan xiaonan": "2026-11-14T20:36:38Z",
+    "loopy godinez": "2026-11-14T20:40:17Z",
+    "alexia thainara": "2026-11-14T20:40:17Z",
+    "tabatha ricci": "2026-11-14T20:40:17Z"
   },
   "audit": {
     "last_reviewed_at": "2026-11-09T12:15:00Z",
@@ -1501,24 +1504,16 @@
     }
   },
   "enrichment": {
-    "batch_number": 34,
+    "batch_number": 35,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 246,
+    "cumulative_attempted": 250,
     "cumulative_found": 88,
-    "cumulative_missing": 158,
+    "cumulative_missing": 162,
     "cumulative_rejected": 155,
-    "last_batch_at": "2026-11-14T20:36:38Z",
-    "last_successful_batch_at": "2026-11-14T20:36:38Z",
-    "last_rate_limited_at": "2026-11-14T02:03:57Z",
+    "last_batch_at": "2026-11-14T20:40:17Z",
+    "last_successful_batch_at": "2026-11-14T20:40:17Z",
+    "last_rate_limited_at": "2026-11-14T20:40:17Z",
     "history": [
-      {
-        "batch": 5,
-        "at": "2026-11-09T13:33:36Z",
-        "attempted": 3,
-        "found": 0,
-        "missing": 3,
-        "rate_limited": true
-      },
       {
         "batch": 6,
         "at": "2026-11-09T13:35:58Z",
@@ -1750,8 +1745,16 @@
         "found": 0,
         "missing": 5,
         "rate_limited": false
+      },
+      {
+        "batch": 35,
+        "at": "2026-11-14T20:40:17Z",
+        "attempted": 4,
+        "found": 0,
+        "missing": 4,
+        "rate_limited": true
       }
     ],
-    "last_batch_rate_limited": false
+    "last_batch_rate_limited": true
   }
 }

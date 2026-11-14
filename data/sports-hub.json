@@ -5573,66 +5573,59 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 5,
+    "attempted": 4,
     "found": 133,
     "missing": 784,
     "rejected": 0,
     "by_sport": {
       "ufc": {
-        "attempted": 5,
+        "attempted": 4,
         "found": 0,
-        "missing": 5,
+        "missing": 4,
         "rejected": 0
       }
     },
     "search_details": [
       {
-        "name": "Virna Jandiroba",
-        "queries": 2,
+        "name": "Loopy Godinez",
+        "queries": 3,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       },
       {
-        "name": "Denise Gomes",
-        "queries": 2,
+        "name": "Alexia Thainara",
+        "queries": 3,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       },
       {
-        "name": "Gillian Robertson",
-        "queries": 2,
+        "name": "Tabatha Ricci",
+        "queries": 3,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       },
       {
-        "name": "Fatima Kline",
-        "queries": 2,
-        "candidate_files": 0,
-        "accepted": 0,
-        "rejections": {}
-      },
-      {
-        "name": "Yan Xiaonan",
-        "queries": 2,
+        "name": "Amanda Lemos",
+        "queries": 1,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       }
     ],
-    "checked_at": "2026-11-14T20:36:38Z",
+    "checked_at": "2026-11-14T20:40:17Z",
     "library_entries": 88,
     "newly_found": 0,
-    "cumulative_attempted": 246,
+    "cumulative_attempted": 250,
     "cumulative_found": 88,
-    "cumulative_missing": 158,
+    "cumulative_missing": 162,
     "cumulative_rejected": 155,
-    "batch_number": 34,
-    "last_batch_at": "2026-11-14T20:36:38Z",
-    "last_successful_batch_at": "2026-11-14T20:36:38Z",
-    "last_rate_limited_at": "2026-11-14T02:03:57Z",
+    "batch_number": 35,
+    "last_batch_at": "2026-11-14T20:40:17Z",
+    "last_successful_batch_at": "2026-11-14T20:40:17Z",
+    "last_rate_limited_at": "2026-11-14T20:40:17Z",
     "coverage": {
       "boxing fight card fighters": {
         "total": 365,
@@ -5665,7 +5658,7 @@
         "missing": 81
       }
     },
-    "rate_limited": false
+    "rate_limited": true
   },
   "last_updated": "2026-11-14T18:04:21Z"
 }
