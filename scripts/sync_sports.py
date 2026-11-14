@@ -937,7 +937,15 @@ def image_aliases(name):
         "kick sauber": ["Stake F1 Team", "Sauber F1 Team"],
         "haas": ["MoneyGram Haas F1 Team"]
     }
-    return aliases.get(key, [str(name).strip()])
+    values = list(aliases.get(key, [str(name).strip()]))
+    # Commons frequently indexes athletes under family-name-first ordering.
+    # Search both forms so a valid portrait is not missed solely because the
+    # source uses (for example) "Weili Zhang" instead of "Zhang Weili".
+    if len(key.split()) == 2:
+        reversed_name = " ".join(reversed(key.split()))
+        if reversed_name not in values:
+            values.append(reversed_name)
+    return values
 
 def commons_photo(name, image_kind="portrait"):
     """Find a high-confidence, licensed Commons image using alternate names and category fallback."""
@@ -1032,10 +1040,18 @@ def commons_photo(name, image_kind="portrait"):
                     return re.findall(r"[a-z0-9]+", unicodedata.normalize("NFKD", str(value or "")).encode("ascii", "ignore").decode().lower())
                 name_tokens = token_list(name)
                 identity_pair = name_tokens[-2:] if len(name_tokens) >= 2 else []
-                source_texts = [title, meta_value("ImageDescription"), meta_value("ObjectName"), meta_value("Credit")]
-                pair_matched = bool(identity_pair) and any(
-                    any(tokens[index:index + 2] == identity_pair for index in range(max(0, len(tokens) - 1)))
-                    for tokens in (token_list(value) for value in source_texts)
+                # Include Artist as well as Credit: Commons often stores the
+                # athlete's name in the creator field rather than the file title.
+                # Accept family-name-first ordering and intervening middle-name
+                # tokens, but require both distinctive name tokens in one field.
+                source_texts = [
+                    title, meta_value("ImageDescription"), meta_value("ObjectName"),
+                    meta_value("Artist"), meta_value("Credit")
+                ]
+                identity_pair_set = set(identity_pair)
+                pair_matched = bool(identity_pair_set) and any(
+                    identity_pair_set.issubset(set(token_list(value)))
+                    for value in source_texts
                 )
                 if not pair_matched:
                     reject("exact_name_pair_not_matched")
