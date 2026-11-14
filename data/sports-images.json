@@ -1183,9 +1183,24 @@
       "image_match_method": "category:Category:Maycee Barber",
       "image_verified_at": "2026-11-14T02:03:57Z",
       "image_local_path": "assets/images/ufc/maycee-barber.png"
+    },
+    "tracy cortez": {
+      "name": "Tracy Cortez",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/tracy-cortez.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Tracy_Cortez_UFC_322.png",
+      "image_credit": "Wikimedia Commons · We Fight All Night · CC BY 4.0",
+      "image_license": "CC BY 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Tracy Cortez",
+      "image_verified_at": "2026-11-14T09:16:34Z",
+      "image_local_path": "assets/images/ufc/tracy-cortez.png"
     }
   },
-  "updated_at": "2026-11-14T02:03:57Z",
+  "updated_at": "2026-11-14T09:16:34Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1404,7 +1419,12 @@
     "jasmine jasudavicius": "2026-11-14T02:03:57Z",
     "erin blanchfield": "2026-11-14T02:03:57Z",
     "rose namajunas": "2026-11-14T02:03:57Z",
-    "maycee barber": "2026-11-14T02:03:57Z"
+    "maycee barber": "2026-11-14T02:03:57Z",
+    "wang cong": "2026-11-14T09:16:34Z",
+    "tracy cortez": "2026-11-14T09:16:34Z",
+    "miranda maverick": "2026-11-14T09:16:34Z",
+    "karine silva": "2026-11-14T09:16:34Z",
+    "casey o neill": "2026-11-14T09:16:34Z"
   },
   "audit": {
     "last_reviewed_at": "2026-11-09T12:15:00Z",
@@ -1441,24 +1461,16 @@
     }
   },
   "enrichment": {
-    "batch_number": 31,
+    "batch_number": 32,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 231,
-    "cumulative_found": 85,
-    "cumulative_missing": 146,
+    "cumulative_attempted": 236,
+    "cumulative_found": 86,
+    "cumulative_missing": 150,
     "cumulative_rejected": 153,
-    "last_batch_at": "2026-11-14T02:03:57Z",
-    "last_successful_batch_at": "2026-11-14T02:03:57Z",
+    "last_batch_at": "2026-11-14T09:16:34Z",
+    "last_successful_batch_at": "2026-11-14T09:16:34Z",
     "last_rate_limited_at": "2026-11-14T02:03:57Z",
     "history": [
-      {
-        "batch": 2,
-        "at": "2026-11-09T12:52:42Z",
-        "attempted": 5,
-        "found": 2,
-        "missing": 3,
-        "rate_limited": false
-      },
       {
         "batch": 3,
         "at": "2026-11-09T12:52:57Z",
@@ -1690,8 +1702,16 @@
         "found": 3,
         "missing": 2,
         "rate_limited": true
+      },
+      {
+        "batch": 32,
+        "at": "2026-11-14T09:16:34Z",
+        "attempted": 5,
+        "found": 1,
+        "missing": 4,
+        "rate_limited": false
       }
     ],
-    "last_batch_rate_limited": true
+    "last_batch_rate_limited": false
   }
 }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-14T02:03:57Z",
+  "updated_at": "2026-11-14T09:16:34Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -893,6 +893,17 @@
       "creator": "Wikimedia Commons · Maritza Sanchez · CC BY 4.0",
       "attribution": "Wikimedia Commons · Maritza Sanchez · CC BY 4.0",
       "verified_at": "2026-11-14T02:03:57Z",
+      "sport": "ufc"
+    },
+    "tracy cortez": {
+      "name": "Tracy Cortez",
+      "path": "assets/images/ufc/tracy-cortez.png",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Tracy_Cortez_UFC_322.png",
+      "licence": "CC BY 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by/4.0",
+      "creator": "Wikimedia Commons · We Fight All Night · CC BY 4.0",
+      "attribution": "Wikimedia Commons · We Fight All Night · CC BY 4.0",
+      "verified_at": "2026-11-14T09:16:34Z",
       "sport": "ufc"
     }
   },

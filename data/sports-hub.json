@@ -4536,7 +4536,17 @@
             {
               "rank": 9,
               "name": "Tracy Cortez",
-              "image_url": null
+              "image_url": "./assets/images/ufc/tracy-cortez.png",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Tracy_Cortez_UFC_322.png",
+              "image_credit": "Wikimedia Commons · We Fight All Night · CC BY 4.0",
+              "image_license": "CC BY 4.0",
+              "image_license_url": "https://creativecommons.org/licenses/by/4.0",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Tracy Cortez",
+              "image_verified_at": "2026-11-14T09:16:34Z",
+              "image_local_path": "assets/images/ufc/tracy-cortez.png"
             },
             {
               "rank": 10,
@@ -5420,64 +5430,64 @@
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
     "attempted": 5,
-    "found": 122,
-    "missing": 737,
+    "found": 123,
+    "missing": 736,
     "rejected": 0,
     "by_sport": {
       "ufc": {
         "attempted": 5,
-        "found": 3,
-        "missing": 2,
+        "found": 1,
+        "missing": 4,
         "rejected": 0
       }
     },
     "search_details": [
       {
-        "name": "Jasmine Jasudavicius",
-        "queries": 3,
-        "candidate_files": 3,
-        "accepted": 3,
-        "rejections": {}
-      },
-      {
-        "name": "Erin Blanchfield",
+        "name": "Wang Cong",
         "queries": 2,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       },
       {
-        "name": "Rose Namajunas",
-        "queries": 3,
-        "candidate_files": 1,
-        "accepted": 1,
-        "rejections": {}
-      },
-      {
-        "name": "Maycee Barber",
+        "name": "Tracy Cortez",
         "queries": 3,
         "candidate_files": 2,
         "accepted": 2,
         "rejections": {}
       },
       {
-        "name": "Wang Cong",
-        "queries": 0,
+        "name": "Miranda Maverick",
+        "queries": 2,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Karine Silva",
+        "queries": 2,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Casey O'Neill",
+        "queries": 2,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       }
     ],
-    "checked_at": "2026-11-14T02:03:57Z",
-    "library_entries": 85,
-    "newly_found": 3,
-    "cumulative_attempted": 231,
-    "cumulative_found": 85,
-    "cumulative_missing": 146,
+    "checked_at": "2026-11-14T09:16:34Z",
+    "library_entries": 86,
+    "newly_found": 1,
+    "cumulative_attempted": 236,
+    "cumulative_found": 86,
+    "cumulative_missing": 150,
     "cumulative_rejected": 153,
-    "batch_number": 31,
-    "last_batch_at": "2026-11-14T02:03:57Z",
-    "last_successful_batch_at": "2026-11-14T02:03:57Z",
+    "batch_number": 32,
+    "last_batch_at": "2026-11-14T09:16:34Z",
+    "last_successful_batch_at": "2026-11-14T09:16:34Z",
     "last_rate_limited_at": "2026-11-14T02:03:57Z",
     "coverage": {
       "boxing fight card fighters": {
@@ -5502,8 +5512,8 @@
       },
       "ufc": {
         "total": 206,
-        "with_image": 36,
-        "missing": 170
+        "with_image": 37,
+        "missing": 169
       },
       "boxing": {
         "total": 81,
@@ -5511,7 +5521,7 @@
         "missing": 81
       }
     },
-    "rate_limited": true
+    "rate_limited": false
   },
   "last_updated": "2026-11-14T00:53:43Z"
 }
