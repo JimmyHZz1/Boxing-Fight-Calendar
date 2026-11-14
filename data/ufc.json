@@ -1021,7 +1021,7 @@
           "ordering": 9,
           "card_section": "prelims",
           "sport": "mma",
-          "weight_class": "Catchweight",
+          "weight_class": "Catch Weight",
           "division_slug": "catchweight",
           "is_title": false,
           "is_main": false,
@@ -1088,7 +1088,7 @@
           "is_title": false,
           "is_main": false,
           "scheduled_rounds": 3,
-          "status": "announced",
+          "status": "completed",
           "fighter_a": {
             "id": 190,
             "slug": "macy-chiasson",
@@ -1105,8 +1105,18 @@
             "nationality": "Brazil",
             "country_code": "BR"
           },
-          "result": null,
-          "referee": null,
+          "result": {
+            "winner_fighter_id": 174,
+            "method": "Submission",
+            "method_normalized": "submission",
+            "finish_detail": "Rear-Naked Choke",
+            "finish_position": null,
+            "round": 1,
+            "time": "3:23",
+            "time_seconds": 203,
+            "details": "Rear Naked Choke"
+          },
+          "referee": "Blake Grice",
           "bonus": null
         },
         {
@@ -1181,7 +1191,7 @@
           "is_title": false,
           "is_main": false,
           "scheduled_rounds": 3,
-          "status": "announced",
+          "status": "completed",
           "fighter_a": {
             "id": 7566,
             "slug": "heili-alateng",
@@ -1198,8 +1208,18 @@
             "nationality": "Peru",
             "country_code": "PE"
           },
-          "result": null,
-          "referee": null,
+          "result": {
+            "winner_fighter_id": 32,
+            "method": "Decision - Unanimous",
+            "method_normalized": "decision_unanimous",
+            "finish_detail": "Unanimous",
+            "finish_position": null,
+            "round": 3,
+            "time": "5:00",
+            "time_seconds": 300,
+            "details": "27 - 30. 27 - 30. 27 - 30."
+          },
+          "referee": "Kevin Mulhall",
           "bonus": null
         },
         {
@@ -1212,7 +1232,7 @@
           "is_title": false,
           "is_main": false,
           "scheduled_rounds": 3,
-          "status": "announced",
+          "status": "completed",
           "fighter_a": {
             "id": 982,
             "slug": "evan-elder",
@@ -1229,8 +1249,18 @@
             "nationality": "Brazil",
             "country_code": "BR"
           },
-          "result": null,
-          "referee": null,
+          "result": {
+            "winner_fighter_id": 982,
+            "method": "Decision - Unanimous",
+            "method_normalized": "decision_unanimous",
+            "finish_detail": "Unanimous",
+            "finish_position": null,
+            "round": 3,
+            "time": "5:00",
+            "time_seconds": 300,
+            "details": "26 - 30. 26 - 30. 26 - 30."
+          },
+          "referee": "Kevin MacDonald",
           "bonus": null
         }
       ],
@@ -1682,7 +1712,5 @@
     }
   ],
   "notice": "All upcoming UFC events returned by UFCalendar, with detailed fight cards for the next two events and the latest completed card. Free API allowance: 1,000 requests per month.",
-  "last_updated": "2026-11-14T18:04:21Z",
-  "sync_warning": "UFCalendar HTTP 429: {\"error\":{\"code\":\"rate_limited\",\"message\":\"Per-minute limit of 10 requests reached for the free plan. Slow down or upgrade at https://www.ufcalendar.com/account/api\",\"request_id\":\"c1e624f5-1951-428e-996c-ee80417f3ba5\"}}",
-  "sync_attempted_at": "2026-11-14T20:41:38Z"
+  "last_updated": "2026-11-14T23:55:45Z"
 }
