@@ -1595,7 +1595,7 @@ def enrich_cached_images():
     if speedway:
         with open(speedway_path, "w", encoding="utf-8") as handle:
             json.dump(speedway, handle, ensure_ascii=False, indent=2)
-            handle.write("\\n")
+            handle.write("\n")
 
     boxing = sports.get("boxing") or {}
     for division in boxing.get("divisions") or []:
