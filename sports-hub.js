@@ -102,21 +102,59 @@
     const tabs='<nav class="hub-sport-shortcuts" aria-label="Sports Hub tabs">'+sportTabs.map(tab=>'<button type="button" class="hub-sport-shortcut'+(tab.id===sport?' is-active':'')+'" data-hub-sport="'+tab.id+'" aria-pressed="'+(tab.id===sport?'true':'false')+'"><span>'+tab.label+'</span></button>').join("")+'</nav>';
     return tabs+'<div class="hub-sport-title"><strong>'+sportNames[sport]+'</strong><span>UPDATED '+esc(updated)+'</span></div>'+out+(note?'<p class="hub-source-note">'+esc(note)+'</p>':"");
   }
+  let enrichmentHistory = [];
+  function reportDate(value) {
+    if(!value) return "Not recorded";
+    const date=new Date(value);
+    return Number.isNaN(date.getTime())?String(value):date.toLocaleString("en-GB",{timeZone:"Europe/London",dateStyle:"medium",timeStyle:"short"});
+  }
   function updateImageDiagnostics() {
     const box=$("version-image-diagnostics");
     if(!box) return;
     const wasOpen=!!box.querySelector("details")?.open;
-    const d=imageDiagnostics;
-    const found=Number(d.found||0), missing=Number(d.missing||0);
+    const d=imageDiagnostics||{};
     const coverage=d.coverage||{};
-    const coverageRows=Object.entries(coverage).map(([name,row])=>'<div class="hub-image-coverage-row"><span>'+esc(name)+'</span><strong>'+Number(row.with_image||0)+' / '+Number(row.total||0)+' images</strong><small>'+Number(row.missing||0)+' missing</small></div>').join("");
-    const pause=d.rate_limited?'<p class="hub-image-warning">Image lookup is currently rate-limited upstream. The scheduled queue will retry; no missing portraits are being substituted with guessed matches.</p>':'';
-    const checked=d.checked_at?new Date(d.checked_at).toLocaleString("en-GB",{timeZone:"Europe/London",dateStyle:"medium",timeStyle:"short"}):"Not checked";
-    const batchNumber=Number(d.batch_number||0);
-    const lastBatch=d.last_successful_batch_at?new Date(d.last_successful_batch_at).toLocaleString("en-GB",{timeZone:"Europe/London",dateStyle:"medium",timeStyle:"short"}):"Not recorded yet";
-    const enrichmentState=d.enrichment_status||"Awaiting scheduled batch";
-    const entries=Math.max(Number(d.library_entries||0),Object.keys(localImages).length);
-    box.innerHTML='<details class="version-entry version-dropdown image-status-dropdown"'+(wasOpen?' open':'')+'><summary class="version-entry-summary"><span class="version-entry-top"><span class="version-number">IMAGE LIBRARY</span><span class="version-status">'+found+' FOUND · '+missing+' MISSING</span></span><span class="version-entry-title">Image loading &amp; coverage information</span><span class="version-entry-toggle" aria-hidden="true"></span></summary><div class="image-status-content"><p><strong>Last automated check:</strong> '+esc(checked)+'</p><p><strong>Batch progress:</strong> '+batchNumber+' batches recorded · <strong>Last successful batch:</strong> '+esc(lastBatch)+' · <strong>Status:</strong> '+esc(enrichmentState)+'</p><p><strong>Library entries:</strong> '+entries+' · <strong>New matches this run:</strong> '+Number(d.newly_found??d.found??0)+' · <strong>Lookup attempts:</strong> '+Number(d.attempted||0)+' · <strong>Rejected matches:</strong> '+Number(d.cumulative_rejected??d.rejected??0)+'</p><div class="hub-image-coverage">'+coverageRows+'</div><p><strong>This browser session:</strong> '+imageLoads+' image loads successful · '+imageFailures+' image loads failed. These two counters cover images rendered in the Sports Hub during this session.</p>'+pause+'<p>Only identity-matched images with source and licence metadata are published. Missing images remain missing rather than being replaced with guessed identities.</p></div></details>';
+    const found=Number(d.found||0), missing=Number(d.missing||0);
+    const total=Object.values(coverage).reduce((sum,row)=>sum+Number(row.total||0),0);
+    const covered=Object.values(coverage).reduce((sum,row)=>sum+Number(row.with_image||0),0);
+    const pct=total?Math.round(covered/total*100):0;
+    const coverageRows=Object.entries(coverage).map(([name,row])=>{
+      const n=Number(row.with_image||0), t=Number(row.total||0), m=Number(row.missing||Math.max(0,t-n));
+      const rate=t?Math.round(n/t*100):0;
+      return '<div class="hub-image-report-coverage"><div><strong>'+esc(name)+'</strong><span>'+n+' / '+t+' · '+rate+'%</span></div><div class="hub-image-report-bar"><i style="width:'+rate+'%"></i></div><small>'+m+' still missing</small></div>';
+    }).join("");
+    const attempts=(d.search_details||[]).map(item=>{
+      const accepted=Number(item.accepted||0), candidates=Number(item.candidate_files||0), rejected=Object.values(item.rejections||{}).reduce((a,b)=>a+Number(b||0),0);
+      const status=accepted?"IMAGE ADDED":(candidates||rejected)?"CANDIDATES REJECTED":"NO USABLE IMAGE";
+      const cls=accepted?"success":(candidates||rejected)?"warning":"muted";
+      const reason=accepted?"Identity checks passed and the image was saved.":rejected?Object.entries(item.rejections||{}).map(([k,v])=>k.replace(/_/g," ")+" ("+v+")").join(", "):"No suitable image candidate was returned.";
+      return '<div class="hub-image-report-result"><div><strong>'+esc(item.name)+'</strong><span class="hub-image-result-badge is-'+cls+'">'+status+'</span></div><small>'+Number(item.queries||0)+' queries · '+candidates+' candidates · '+accepted+' accepted</small><p>'+esc(reason)+'</p></div>';
+    }).join("");
+    const recent=(enrichmentHistory||[]).slice(-8).reverse().map(batch=>{
+      const ok=Number(batch.found||0), tried=Number(batch.attempted||0), miss=Number(batch.missing||0), limited=!!batch.rate_limited;
+      return '<div class="hub-image-history-row"><span><strong>Batch '+Number(batch.batch||0)+'</strong><small>'+esc(reportDate(batch.at))+'</small></span><b class="'+(ok?"is-good":limited?"is-warning":"")+'">'+ok+' found</b><small>'+tried+' attempted · '+miss+' without match'+(limited?' · rate limited':'')+'</small></div>';
+    }).join("");
+    const latestStamp=d.checked_at?reportDate(d.checked_at):"Not checked";
+    const lastSuccess=d.last_successful_batch_at?reportDate(d.last_successful_batch_at):"Not recorded";
+    const rateLimit=!!d.rate_limited;
+    const libraryCount=Number(d.library_entries||Object.keys(localImages).length);
+    const latestMatches=Object.values(localImages).filter(item=>item.verified_at && d.checked_at && String(item.verified_at)>=String(d.checked_at).slice(0,10)+"T00:00:00Z");
+    const latestAssets=latestMatches.map(item=>'<div class="hub-image-report-asset"><strong>'+esc(item.name)+'</strong><span>'+esc(item.licence||"Licence not listed")+'</span><a href="'+esc(item.source_url||"#")+'" target="_blank" rel="noopener noreferrer">SOURCE ↗</a></div>').join("");
+    const warning=rateLimit?'<div class="hub-image-report-alert">UPSTREAM RATE LIMIT · Wikimedia Commons limited requests during the latest check. The queue should pause and retry later.</div>':'';
+    const cumulative=d.cumulative_found!=null?Number(d.cumulative_found):found;
+    const attemptsTotal=d.cumulative_attempted!=null?Number(d.cumulative_attempted):Number(d.attempted||0);
+    const failedTotal=d.cumulative_missing!=null?Number(d.cumulative_missing):missing;
+    const rejectedTotal=d.cumulative_rejected!=null?Number(d.cumulative_rejected):Number(d.rejected||0);
+    box.innerHTML='<details class="version-entry version-dropdown image-status-dropdown"'+(wasOpen?' open':'')+'><summary class="version-entry-summary"><span class="version-entry-top"><span class="version-number">IMAGE ENRICHMENT REPORT</span><span class="version-status">'+pct+'% COVERAGE</span></span><span class="version-entry-title">What worked, what failed and what still needs attention</span><span class="version-entry-toggle" aria-hidden="true"></span></summary><div class="image-status-content hub-image-report">'+
+      '<div class="hub-image-report-intro"><p><strong>Latest check:</strong> '+esc(latestStamp)+' · <strong>Last successful batch:</strong> '+esc(lastSuccess)+'</p><p>This report separates successful image additions from searches that returned nothing and candidates rejected by identity checks. Rejected candidates are not counted as successful images.</p></div>'+
+      '<div class="hub-image-report-stats"><div><strong>'+libraryCount+'</strong><span>Library records</span></div><div><strong>'+cumulative+'</strong><span>Enrichment matches</span></div><div><strong>'+attemptsTotal+'</strong><span>Lookups attempted</span></div><div><strong>'+failedTotal+'</strong><span>No usable match</span></div><div><strong>'+rejectedTotal+'</strong><span>Candidates rejected</span></div></div>'+
+      '<section class="hub-image-report-section"><h4>Coverage by sport</h4><div class="hub-image-report-coverage-grid">'+(coverageRows||'<p>Coverage data has not been published yet.</p>')+'</div></section>'+
+      '<section class="hub-image-report-section"><h4>Latest search results</h4><p class="hub-image-report-caption">Each name below shows whether an image was saved, candidates were rejected, or no suitable image was found.</p>'+(attempts||'<p>No individual search results were recorded for the latest batch.</p>')+'</section>'+
+      '<section class="hub-image-report-section"><h4>Images added in the latest check</h4>'+(latestAssets||'<p>No newly verified image assets were recorded in this check.</p>')+'</section>'+
+      '<section class="hub-image-report-section"><h4>Recent batch history</h4><div class="hub-image-history">'+(recent||'<p>No batch history has been published yet.</p>')+'</div></section>'+
+      (warning||'')+
+      '<p class="hub-image-report-footnote">Images are only published when identity matching and reuse-right checks pass. Source and licence details are retained with each accepted asset. Browser image-load failures are tracked separately from enrichment search failures.</p>'+
+      '<p><strong>Browser session:</strong> '+imageLoads+' image loads successful · '+imageFailures+' failed to load.</p></div></details>';
   }
   function render(sport=active) {
     active=sport;
@@ -152,10 +190,12 @@
   Promise.all([
     fetch("./data/sports-hub.json?t="+Date.now(),{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("HTTP "+r.status);return r.json();}),
     fetch("./data/image-library.json?t="+Date.now(),{cache:"no-store"}).then(r=>r.ok?r.json():{images:{}}),
-    fetch("./data/bkfc.json?t="+Date.now(),{cache:"no-store"}).then(r=>r.ok?r.json():{events:[]})
-  ]).then(([data,library,bkfc])=>{
+    fetch("./data/bkfc.json?t="+Date.now(),{cache:"no-store"}).then(r=>r.ok?r.json():{events:[]}),
+    fetch("./data/sports-images.json?t="+Date.now(),{cache:"no-store"}).then(r=>r.ok?r.json():{enrichment:{history:[]}})
+  ]).then(([data,library,bkfc,sportsImages])=>{
     payload=data.sports||data;
     imageDiagnostics=data.image_diagnostics||{};
+    enrichmentHistory=sportsImages?.enrichment?.history||[];
     localImages=library.images||{};
     bkfcPayload=bkfc||{events:[]};
     render(active);
