@@ -12,10 +12,7 @@
       "end_date": "2026-11-22",
       "venue": "Aldersley Leisure Village, Wolverhampton",
       "tier": "majors",
-      "status": "scheduled",
-      "organiser": "pdc",
-      "source": "Official PDC calendar",
-      "source_url": "https://www.pdc.tv/calendar",
+      "schedule_source_url": "https://www.pdc.tv/news/2026/november/09/littler-drawn-greaves-zonneveld-at-mr-vegas-grand-slam/",
       "schedule_of_play": [
         {
           "date": "2026-11-14",
@@ -169,7 +166,10 @@
           ]
         }
       ],
-      "schedule_source_url": "https://www.pdc.tv/news/2026/november/09/littler-drawn-greaves-zonneveld-at-mr-vegas-grand-slam/"
+      "status": "scheduled",
+      "organiser": "pdc",
+      "source": "Official PDC calendar",
+      "source_url": "https://www.pdc.tv/calendar"
     },
     {
       "id": "pdc-2026-players-championship-finals",
@@ -197,279 +197,9 @@
     }
   ],
   "notice": "Main televised PDC tournaments only. The Darts API supplies available event records; official PDC calendar dates fill gaps in upcoming headline events. U23, youth, development, affiliate, qualifier and non-televised Players Championship events are excluded.",
-  "sync_attempted_at": "2026-11-12T19:02:12Z",
+  "sync_attempted_at": "2026-11-14T20:34:01Z",
   "data_status": "fallback",
   "results": [
-    {
-      "match_id": "mt_1T3MNZF6Q6CM95NDAVAJ",
-      "played_on": "2026-10-25",
-      "round": "last_128",
-      "winner": {
-        "name": "Callum Grealis",
-        "score": 4
-      },
-      "loser": {
-        "name": "Jurij Gosar",
-        "score": 3
-      },
-      "result_status": "final",
-      "event_id": "ev_87Q31V",
-      "competition_id": "cp_43BA7P",
-      "event_name": "Hungarian Masters Men",
-      "event_tier": "wdf_gold"
-    },
-    {
-      "match_id": "mt_0993V6DGHAMRDPA6G6X3",
-      "played_on": "2026-10-25",
-      "round": "last_128",
-      "winner": {
-        "name": "Juhasz Daniel Attila",
-        "score": 4
-      },
-      "loser": {
-        "name": "Rody Helsdingen",
-        "score": 3
-      },
-      "result_status": "final",
-      "event_id": "ev_87Q31V",
-      "competition_id": "cp_43BA7P",
-      "event_name": "Hungarian Masters Men",
-      "event_tier": "wdf_gold"
-    },
-    {
-      "match_id": "mt_0B6Z1BKNAS7Y610DQ739",
-      "played_on": "2026-10-25",
-      "round": "last_128",
-      "winner": {
-        "name": "Danio Aalders",
-        "score": 4
-      },
-      "loser": {
-        "name": "Stephen Tagliaferro",
-        "score": 0
-      },
-      "result_status": "final",
-      "event_id": "ev_87Q31V",
-      "competition_id": "cp_43BA7P",
-      "event_name": "Hungarian Masters Men",
-      "event_tier": "wdf_gold"
-    },
-    {
-      "match_id": "mt_0J4EBJ7MC6EKJ8K6BVZ4",
-      "played_on": "2026-10-25",
-      "round": "last_128",
-      "winner": {
-        "name": "Daniel Bauerdick",
-        "score": 4
-      },
-      "loser": {
-        "name": "Mason Teese",
-        "score": 3
-      },
-      "result_status": "final",
-      "event_id": "ev_87Q31V",
-      "competition_id": "cp_43BA7P",
-      "event_name": "Hungarian Masters Men",
-      "event_tier": "wdf_gold"
-    },
-    {
-      "match_id": "mt_1VFK7H2VY6QP2SV3JBW4",
-      "played_on": "2026-10-25",
-      "round": "last_16",
-      "winner": {
-        "name": "Ben Townley",
-        "score": 4
-      },
-      "loser": {
-        "name": "Jarno Bottenberg",
-        "score": 3
-      },
-      "result_status": "final",
-      "event_id": "ev_87Q31V",
-      "competition_id": "cp_43BA7P",
-      "event_name": "Hungarian Masters Men",
-      "event_tier": "wdf_gold"
-    },
-    {
-      "match_id": "mt_0A7A8RPKRQ5NPEZR05S5",
-      "played_on": "2026-10-25",
-      "round": "last_16",
-      "winner": {
-        "name": "Ron Meulenkamp",
-        "score": 4
-      },
-      "loser": {
-        "name": "Krohne Paul",
-        "score": 3
-      },
-      "result_status": "final",
-      "event_id": "ev_87Q31V",
-      "competition_id": "cp_43BA7P",
-      "event_name": "Hungarian Masters Men",
-      "event_tier": "wdf_gold"
-    },
-    {
-      "match_id": "mt_0T5GJ305NHRDNK0NBZKT",
-      "played_on": "2026-10-25",
-      "round": "last_32",
-      "winner": {
-        "name": "Moreno Blom",
-        "score": 4
-      },
-      "loser": {
-        "name": "Joszef Rucska",
-        "score": 3
-      },
-      "result_status": "final",
-      "event_id": "ev_87Q31V",
-      "competition_id": "cp_43BA7P",
-      "event_name": "Hungarian Masters Men",
-      "event_tier": "wdf_gold"
-    },
-    {
-      "match_id": "mt_1G74W2AJ406HW6Z053ZY",
-      "played_on": "2026-10-25",
-      "round": "last_32",
-      "winner": {
-        "name": "Pat Scurfield",
-        "score": 4
-      },
-      "loser": {
-        "name": "Jordan Brooks",
-        "score": 0
-      },
-      "result_status": "final",
-      "event_id": "ev_87Q31V",
-      "competition_id": "cp_43BA7P",
-      "event_name": "Hungarian Masters Men",
-      "event_tier": "wdf_gold"
-    },
-    {
-      "match_id": "mt_0DPVC6SAJGD40GADYH3T",
-      "played_on": "2026-10-25",
-      "round": "last_32",
-      "winner": {
-        "name": "Sean Fisher",
-        "score": 4
-      },
-      "loser": {
-        "name": "Liam Maendl-Lawrance",
-        "score": 2
-      },
-      "result_status": "final",
-      "event_id": "ev_87Q31V",
-      "competition_id": "cp_43BA7P",
-      "event_name": "Hungarian Masters Men",
-      "event_tier": "wdf_gold"
-    },
-    {
-      "match_id": "mt_0S6DRBCYV895NFGAEDFT",
-      "played_on": "2026-10-25",
-      "round": "last_32",
-      "winner": {
-        "name": "Ben Townley",
-        "score": 4
-      },
-      "loser": {
-        "name": "David Ladley",
-        "score": 2
-      },
-      "result_status": "final",
-      "event_id": "ev_87Q31V",
-      "competition_id": "cp_43BA7P",
-      "event_name": "Hungarian Masters Men",
-      "event_tier": "wdf_gold"
-    },
-    {
-      "match_id": "mt_0VKQB9HKP53AM4JAFEKR",
-      "played_on": "2026-10-25",
-      "round": "last_32",
-      "winner": {
-        "name": "Moreno Blom",
-        "score": 4
-      },
-      "loser": {
-        "name": "Kirsten Aquilina",
-        "score": 3
-      },
-      "result_status": "final",
-      "event_id": "ev_87Q31V",
-      "competition_id": "cp_43BA7P",
-      "event_name": "Hungarian Masters Men",
-      "event_tier": "wdf_gold"
-    },
-    {
-      "match_id": "mt_0GCFN7HZ6XM1XAVRYN2A",
-      "played_on": "2026-10-25",
-      "round": "last_32",
-      "winner": {
-        "name": "Dmitrii Rogov",
-        "score": 4
-      },
-      "loser": {
-        "name": "Mika Donnevert",
-        "score": 1
-      },
-      "result_status": "final",
-      "event_id": "ev_87Q31V",
-      "competition_id": "cp_43BA7P",
-      "event_name": "Hungarian Masters Men",
-      "event_tier": "wdf_gold"
-    },
-    {
-      "match_id": "mt_1W6GCZWDDG59HPCNZW18",
-      "played_on": "2026-10-25",
-      "round": "last_64",
-      "winner": {
-        "name": "Jarno Bottenberg",
-        "score": 4
-      },
-      "loser": {
-        "name": "Neven Resetar",
-        "score": 3
-      },
-      "result_status": "final",
-      "event_id": "ev_87Q31V",
-      "competition_id": "cp_43BA7P",
-      "event_name": "Hungarian Masters Men",
-      "event_tier": "wdf_gold"
-    },
-    {
-      "match_id": "mt_13BYNW2PV5V0BSRP86GR",
-      "played_on": "2026-10-25",
-      "round": "last_64",
-      "winner": {
-        "name": "Matt Clark",
-        "score": 4
-      },
-      "loser": {
-        "name": "Juhasz Daniel Attila",
-        "score": 2
-      },
-      "result_status": "final",
-      "event_id": "ev_87Q31V",
-      "competition_id": "cp_43BA7P",
-      "event_name": "Hungarian Masters Men",
-      "event_tier": "wdf_gold"
-    },
-    {
-      "match_id": "mt_16VX6BDEM9TFC3FYPAF6",
-      "played_on": "2026-10-25",
-      "round": "last_64",
-      "winner": {
-        "name": "Joszef Rucska",
-        "score": 4
-      },
-      "loser": {
-        "name": "Szabo Eduard Cristian",
-        "score": 2
-      },
-      "result_status": "final",
-      "event_id": "ev_87Q31V",
-      "competition_id": "cp_43BA7P",
-      "event_name": "Hungarian Masters Men",
-      "event_tier": "wdf_gold"
-    },
     {
       "match_id": "mt_0RX831H7WM1D7X9EDSFK",
       "played_on": "2026-11-01",
@@ -489,102 +219,2622 @@
       "event_tier": "wdf_other"
     },
     {
-      "match_id": "mt_0THQSHHX9MJ3DR5VN8CB",
-      "played_on": "2026-11-01",
-      "round": null,
+      "match_id": "mt_1W23TYX3Y5HMNT7YBMBR",
+      "played_on": "2026-11-07",
+      "round": "final",
       "winner": {
-        "name": "Rebecca Allen",
+        "name": "Jenson Walker",
         "score": 5
       },
       "loser": {
-        "name": "Olivia Heaton",
+        "name": "Nick Fullwell",
         "score": 2
       },
       "result_status": "final",
-      "event_id": "ev_XQRZ9S",
-      "competition_id": "cp_YAT2QQ",
-      "event_name": "World Championship Qualifiers UK Girls 2026, 1 Nov 2026",
-      "event_tier": "wdf_other"
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
     },
     {
-      "match_id": "mt_0H526AEJK6E6K1524FVK",
-      "played_on": "2026-11-01",
-      "round": null,
+      "match_id": "mt_1EC9MVHKWK04XDQGMPKB",
+      "played_on": "2026-11-07",
+      "round": "last_128",
       "winner": {
-        "name": "Kim Holden",
+        "name": "Daniel Bauerdick",
         "score": 4
       },
       "loser": {
-        "name": "Leanne Topper",
-        "score": 3
+        "name": "Manuel Meloni",
+        "score": 0
       },
       "result_status": "final",
-      "event_id": "ev_DKAT85",
-      "competition_id": "cp_SED32S",
-      "event_name": "World Championship Qualifiers UK Women 2026, 1 Nov 2026",
-      "event_tier": "wdf_other"
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
     },
     {
-      "match_id": "mt_0PQPWJRDMD4MJ5NXFVQM",
-      "played_on": "2026-11-01",
-      "round": null,
+      "match_id": "mt_0STX5N9B06J1PC5H6RC9",
+      "played_on": "2026-11-07",
+      "round": "last_128",
       "winner": {
-        "name": "Paige Pauling",
-        "score": 5
+        "name": "Alberto Bezjian",
+        "score": 4
       },
       "loser": {
-        "name": "Jo Rolls",
+        "name": "Alexander Haack",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1XWJCQR3E007S4HY1R2S",
+      "played_on": "2026-11-07",
+      "round": "last_128",
+      "winner": {
+        "name": "Robin Radloff",
+        "score": 4
+      },
+      "loser": {
+        "name": "Dennis Fenech",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0DN5C1CYJ82SF6W9W7GM",
+      "played_on": "2026-11-07",
+      "round": "last_128",
+      "winner": {
+        "name": "Giovanni Stecconi",
+        "score": 4
+      },
+      "loser": {
+        "name": "Cameron Cunningham",
         "score": 1
       },
       "result_status": "final",
-      "event_id": "ev_DKAT85",
-      "competition_id": "cp_SED32S",
-      "event_name": "World Championship Qualifiers UK Women 2026, 1 Nov 2026",
-      "event_tier": "wdf_other"
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
     },
     {
-      "match_id": "mt_0SP02JSTN9N3B88T3WX4",
-      "played_on": "2026-11-01",
-      "round": null,
+      "match_id": "mt_06ZYFX5JTXWMJWEGKVG4",
+      "played_on": "2026-11-07",
+      "round": "last_128",
       "winner": {
-        "name": "Kim Holden",
-        "score": 5
+        "name": "Philip van Gasse",
+        "score": 4
       },
       "loser": {
-        "name": "Macy Gibbons",
+        "name": "Sebastian Pohl",
+        "score": 2
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1GSB775C2HE8535P2PQ8",
+      "played_on": "2026-11-07",
+      "round": "last_128",
+      "winner": {
+        "name": "Aleksander Zalewski",
+        "score": 4
+      },
+      "loser": {
+        "name": "Steven Micallef",
+        "score": 2
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1HWX756R5G8HA3CDTD5S",
+      "played_on": "2026-11-07",
+      "round": "last_128",
+      "winner": {
+        "name": "Oliver Madge",
+        "score": 4
+      },
+      "loser": {
+        "name": "Julian Marx",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0261BYYMQYST31Y1TXP8",
+      "played_on": "2026-11-07",
+      "round": "last_128",
+      "winner": {
+        "name": "Mirko Paro",
+        "score": 4
+      },
+      "loser": {
+        "name": "Kevin Spiteri",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_08S2X8C8BMR37JX4SVA6",
+      "played_on": "2026-11-07",
+      "round": "last_128",
+      "winner": {
+        "name": "Milan van Diemen",
+        "score": 4
+      },
+      "loser": {
+        "name": "Davy Vandendriessche",
         "score": 3
       },
       "result_status": "final",
-      "event_id": "ev_DKAT85",
-      "competition_id": "cp_SED32S",
-      "event_name": "World Championship Qualifiers UK Women 2026, 1 Nov 2026",
-      "event_tier": "wdf_other"
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
     },
     {
-      "match_id": "mt_037KPN7ZBPDQ2GD1N1KM",
-      "played_on": "2026-11-03",
+      "match_id": "mt_0X1FF89PV2FS78J9HKVW",
+      "played_on": "2026-11-07",
+      "round": "last_128",
+      "winner": {
+        "name": "Darren Fenech",
+        "score": 4
+      },
+      "loser": {
+        "name": "Ivan Borg",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0TPWAF7EN7GZN9PQ0KJ1",
+      "played_on": "2026-11-07",
+      "round": "last_128",
+      "winner": {
+        "name": "Wim Hofsink",
+        "score": 4
+      },
+      "loser": {
+        "name": "Michael Espener",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1M4CJNQSWV6TMZJ0DEXB",
+      "played_on": "2026-11-07",
+      "round": "last_128",
+      "winner": {
+        "name": "Nick Fullwell",
+        "score": 4
+      },
+      "loser": {
+        "name": "Luke Gammon",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_15YF3N637FGERZVG1QQH",
+      "played_on": "2026-11-07",
+      "round": "last_128",
+      "winner": {
+        "name": "Tony Borg",
+        "score": 4
+      },
+      "loser": {
+        "name": "Renato Scolamiero",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_15QPY0DTPH7SVHN9NV11",
+      "played_on": "2026-11-07",
+      "round": "last_128",
+      "winner": {
+        "name": "Daniele Sergi",
+        "score": 4
+      },
+      "loser": {
+        "name": "Eucharist Baldacchino",
+        "score": 2
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0SZ7E2X4JRAGX47K2896",
+      "played_on": "2026-11-07",
+      "round": "last_128",
+      "winner": {
+        "name": "Jitse van der Wal",
+        "score": 4
+      },
+      "loser": {
+        "name": "Felix Losan",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_06EDYTCSF9C5RQ31YA4Z",
+      "played_on": "2026-11-07",
+      "round": "last_128",
+      "winner": {
+        "name": "Jannes Bremermann",
+        "score": 4
+      },
+      "loser": {
+        "name": "Franky Callebaut",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1WAKRYMDSCF1KZ8FN5JH",
+      "played_on": "2026-11-07",
+      "round": "last_128",
+      "winner": {
+        "name": "Luke Cox",
+        "score": 4
+      },
+      "loser": {
+        "name": "Matthew Smith",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0BRFXETF9RSJBYPVC9GC",
+      "played_on": "2026-11-07",
+      "round": "last_128",
+      "winner": {
+        "name": "Cliff Prior",
+        "score": 4
+      },
+      "loser": {
+        "name": "Kevin Grech",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0610FG9EWC0KCFHEXC0G",
+      "played_on": "2026-11-07",
+      "round": "last_128",
+      "winner": {
+        "name": "Albert Scerri",
+        "score": 4
+      },
+      "loser": {
+        "name": "Sander Teijn",
+        "score": 2
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_15Y64223WVBBXFW6RQT3",
+      "played_on": "2026-11-07",
+      "round": "last_128",
+      "winner": {
+        "name": "Liam Maendl-Lawrance",
+        "score": 4
+      },
+      "loser": {
+        "name": "Owen Whiteside",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_12RSPPSEHSHDNEQWX5W0",
+      "played_on": "2026-11-07",
+      "round": "last_128",
+      "winner": {
+        "name": "Danny Penney",
+        "score": 4
+      },
+      "loser": {
+        "name": "Gary Black",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1Y8P82C93AG7R78JB4FC",
+      "played_on": "2026-11-07",
+      "round": "last_128",
+      "winner": {
+        "name": "Darran Laker",
+        "score": 4
+      },
+      "loser": {
+        "name": "Dennis Veldhuis",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1ZKHFTBPNT8HTXA6QWCX",
+      "played_on": "2026-11-07",
+      "round": "last_128",
+      "winner": {
+        "name": "Jenson Walker",
+        "score": 4
+      },
+      "loser": {
+        "name": "Adam Jenkinson",
+        "score": 2
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1GPD7Y2905WWHGMVJJJ0",
+      "played_on": "2026-11-07",
+      "round": "last_128",
+      "winner": {
+        "name": "Norbert Attard",
+        "score": 4
+      },
+      "loser": {
+        "name": "Jerzy Kobylarz",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0QPHA3S60S6WSKMBMZXG",
+      "played_on": "2026-11-07",
+      "round": "last_128",
+      "winner": {
+        "name": "Luke Pryde",
+        "score": 4
+      },
+      "loser": {
+        "name": "Owlyn Abela",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_00XQ5MZM0XZV6DHEMXVD",
+      "played_on": "2026-11-07",
+      "round": "last_128",
+      "winner": {
+        "name": "David Wilson",
+        "score": 4
+      },
+      "loser": {
+        "name": "Akos Szentgyorgyi",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0XD3KD7D1VSH5M284X20",
+      "played_on": "2026-11-07",
+      "round": "last_128",
+      "winner": {
+        "name": "Jamie Mccabe",
+        "score": 4
+      },
+      "loser": {
+        "name": "John Hillman",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0NG2X1AJSY39ZK8SCMES",
+      "played_on": "2026-11-07",
+      "round": "last_128",
+      "winner": {
+        "name": "Gabor Czotter",
+        "score": 4
+      },
+      "loser": {
+        "name": "Stefano Vanitelli",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_011XDH1ZGKHJ453PRJD2",
+      "played_on": "2026-11-07",
+      "round": "last_128",
+      "winner": {
+        "name": "Jonathan Bilocca",
+        "score": 4
+      },
+      "loser": {
+        "name": "Danny Diller",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0G14RV139RAFDCC0PR5G",
+      "played_on": "2026-11-07",
+      "round": "last_128",
+      "winner": {
+        "name": "Gordon Stanmore",
+        "score": 4
+      },
+      "loser": {
+        "name": "Colin Littlecott",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1SCH7V5H87CW0M8X7BTR",
+      "played_on": "2026-11-07",
+      "round": "last_128",
+      "winner": {
+        "name": "Brian Woods",
+        "score": 4
+      },
+      "loser": {
+        "name": "David Kramp",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0J9CVEMWY9QPW34K7V8J",
+      "played_on": "2026-11-07",
+      "round": "last_128",
+      "winner": {
+        "name": "Fabian Herz",
+        "score": 4
+      },
+      "loser": {
+        "name": "Ronald Balfoort",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_14FCNK60FHWWRKRK30PF",
+      "played_on": "2026-11-07",
+      "round": "last_128",
+      "winner": {
+        "name": "Lukasz Sawicki",
+        "score": 4
+      },
+      "loser": {
+        "name": "Vojtech Krayzel",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1KVWPFYK0Y274Q7Z6Q4Y",
+      "played_on": "2026-11-07",
+      "round": "last_16",
+      "winner": {
+        "name": "Danijel Bartolic",
+        "score": 4
+      },
+      "loser": {
+        "name": "Philip van Gasse",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_198G49W8548RK0DYGFSF",
+      "played_on": "2026-11-07",
+      "round": "last_16",
+      "winner": {
+        "name": "Gabor Czotter",
+        "score": 4
+      },
+      "loser": {
+        "name": "Albert Scerri",
+        "score": 2
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0ACR3ZZ7SYNQK2BDWYPY",
+      "played_on": "2026-11-07",
+      "round": "last_16",
+      "winner": {
+        "name": "James Beeton",
+        "score": 4
+      },
+      "loser": {
+        "name": "Norbert Attard",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0BFX82B59W07F6Z6GRYB",
+      "played_on": "2026-11-07",
+      "round": "last_16",
+      "winner": {
+        "name": "Danny Penney",
+        "score": 4
+      },
+      "loser": {
+        "name": "Borbely Andras",
+        "score": 2
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0WNNM5H6F4ZPVZ6YQ7RQ",
+      "played_on": "2026-11-07",
+      "round": "last_16",
+      "winner": {
+        "name": "Giovanni Stecconi",
+        "score": 4
+      },
+      "loser": {
+        "name": "Aleksander Zalewski",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0WTVJEGQD6XD6161NSX2",
+      "played_on": "2026-11-07",
+      "round": "last_16",
+      "winner": {
+        "name": "Jenson Walker",
+        "score": 4
+      },
+      "loser": {
+        "name": "Darran Laker",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0E66YAKPAJ7MJZN0Q26P",
+      "played_on": "2026-11-07",
+      "round": "last_16",
+      "winner": {
+        "name": "Nick Fullwell",
+        "score": 4
+      },
+      "loser": {
+        "name": "Luke Pryde",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_09AS7GNS6P73A80QN3VQ",
+      "played_on": "2026-11-07",
+      "round": "last_256",
+      "winner": {
+        "name": "Philip van Gasse",
+        "score": 4
+      },
+      "loser": {
+        "name": "Salvatore Verderosa",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1WTVSGZJE899R91HQ6WY",
+      "played_on": "2026-11-07",
+      "round": "last_256",
+      "winner": {
+        "name": "Milan van Diemen",
+        "score": 4
+      },
+      "loser": {
+        "name": "Stuart Wallace",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1V15PWTDXZPGSXXFVGFM",
+      "played_on": "2026-11-07",
+      "round": "last_256",
+      "winner": {
+        "name": "Tony Borg",
+        "score": 4
+      },
+      "loser": {
+        "name": "Craig Drillot",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0W9AQ93W5KJCQ83DTTCQ",
+      "played_on": "2026-11-07",
+      "round": "last_256",
+      "winner": {
+        "name": "Jamie Mccabe",
+        "score": 4
+      },
+      "loser": {
+        "name": "Cristian Poggiali",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1K58V5CSRMA0B92R8XRX",
+      "played_on": "2026-11-07",
+      "round": "last_256",
+      "winner": {
+        "name": "David Wilson",
+        "score": 4
+      },
+      "loser": {
+        "name": "Brian Abela",
+        "score": 2
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1FF9DARB7CSBKNXBN02E",
+      "played_on": "2026-11-07",
+      "round": "last_256",
+      "winner": {
+        "name": "Darren Fenech",
+        "score": 4
+      },
+      "loser": {
+        "name": "Edward Azzopardi",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0QKM3H7WP85HS54JP5ZZ",
+      "played_on": "2026-11-07",
+      "round": "last_256",
+      "winner": {
+        "name": "Albert Scerri",
+        "score": 4
+      },
+      "loser": {
+        "name": "Martin Debono",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_09WSPYBSC44XQ2BJ1JPJ",
+      "played_on": "2026-11-07",
+      "round": "last_256",
+      "winner": {
+        "name": "Aleksander Zalewski",
+        "score": 4
+      },
+      "loser": {
+        "name": "Jordan Van Der Graaf",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0QER3B5ZXT7PDVK48JPZ",
+      "played_on": "2026-11-07",
+      "round": "last_256",
+      "winner": {
+        "name": "Giovanni Stecconi",
+        "score": 4
+      },
+      "loser": {
+        "name": "Kevin de Smit",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_12P99VSQS798PJ68HVE5",
+      "played_on": "2026-11-07",
+      "round": "last_256",
+      "winner": {
+        "name": "Steven Micallef",
+        "score": 4
+      },
+      "loser": {
+        "name": "Kyle Satariano",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0EF0D5E2H5SDJW47SQJV",
+      "played_on": "2026-11-07",
+      "round": "last_256",
+      "winner": {
+        "name": "Robin Radloff",
+        "score": 4
+      },
+      "loser": {
+        "name": "Anthony Borg",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1XQHW626HAQTEDP7AFMS",
+      "played_on": "2026-11-07",
+      "round": "last_256",
+      "winner": {
+        "name": "Oliver Madge",
+        "score": 4
+      },
+      "loser": {
+        "name": "Andras Szabo",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1JKX9A23FP2KKREBHNE5",
+      "played_on": "2026-11-07",
+      "round": "last_256",
+      "winner": {
+        "name": "Lukasz Sawicki",
+        "score": 4
+      },
+      "loser": {
+        "name": "Gergo Farkas",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0VM4QPMWGF119QF1GQNY",
+      "played_on": "2026-11-07",
+      "round": "last_256",
+      "winner": {
+        "name": "Fabian Herz",
+        "score": 4
+      },
+      "loser": {
+        "name": "Lyndon Philip",
+        "score": 2
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1FQM0K970A3FCAZ5S0FA",
+      "played_on": "2026-11-07",
+      "round": "last_256",
+      "winner": {
+        "name": "Wim Hofsink",
+        "score": 4
+      },
+      "loser": {
+        "name": "George Ayres",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_03SGASWYDCZ57PMCCYXE",
+      "played_on": "2026-11-07",
+      "round": "last_256",
+      "winner": {
+        "name": "Brian Woods",
+        "score": 4
+      },
+      "loser": {
+        "name": "Christian Lyager",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_09Z4CN8S28EW228DBYN5",
+      "played_on": "2026-11-07",
+      "round": "last_256",
+      "winner": {
+        "name": "Gabor Czotter",
+        "score": 4
+      },
+      "loser": {
+        "name": "David Cser",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0NH0PCNVN8RXYA3YTX9E",
+      "played_on": "2026-11-07",
+      "round": "last_256",
+      "winner": {
+        "name": "Sander Teijn",
+        "score": 4
+      },
+      "loser": {
+        "name": "Tomas Mikulka",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0H1F377GKF3KTP9KPMSH",
+      "played_on": "2026-11-07",
+      "round": "last_256",
+      "winner": {
+        "name": "Norbert Attard",
+        "score": 4
+      },
+      "loser": {
+        "name": "Callum Maguire",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1SGNMDBTS9MCFH99S1PS",
+      "played_on": "2026-11-07",
+      "round": "last_256",
+      "winner": {
+        "name": "Gordon Stanmore",
+        "score": 4
+      },
+      "loser": {
+        "name": "Eef Schellevis",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0JN3N4QN9AZEVSMV26CB",
+      "played_on": "2026-11-07",
+      "round": "last_256",
+      "winner": {
+        "name": "Mirko Paro",
+        "score": 4
+      },
+      "loser": {
+        "name": "Raymond van den Ende",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0TF43JQJTF3N3TA98E6P",
+      "played_on": "2026-11-07",
+      "round": "last_256",
+      "winner": {
+        "name": "David Gradwell",
+        "score": 4
+      },
+      "loser": {
+        "name": "Joseph Westby",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0X6WGE826ZDBVXMYVSF9",
+      "played_on": "2026-11-07",
+      "round": "last_256",
+      "winner": {
+        "name": "Luke Pryde",
+        "score": 4
+      },
+      "loser": {
+        "name": "Matthew Vella",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1YNW5ZBQ64Z2RYR050BZ",
+      "played_on": "2026-11-07",
+      "round": "last_256",
+      "winner": {
+        "name": "Renato Scolamiero",
+        "score": 4
+      },
+      "loser": {
+        "name": "Piotr Sawicki",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1M834JX4A0WK1JE74VS6",
+      "played_on": "2026-11-07",
+      "round": "last_256",
+      "winner": {
+        "name": "Daniele Sergi",
+        "score": 4
+      },
+      "loser": {
+        "name": "Emiliano Macchi",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1H0D0MMM1T51QGQPKR6H",
+      "played_on": "2026-11-07",
+      "round": "last_32",
+      "winner": {
+        "name": "Albert Scerri",
+        "score": 4
+      },
+      "loser": {
+        "name": "Mirko Paro",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0YSAD76H1VGV11VG6GPZ",
+      "played_on": "2026-11-07",
+      "round": "last_32",
+      "winner": {
+        "name": "Giovanni Stecconi",
+        "score": 4
+      },
+      "loser": {
+        "name": "Liam Maendl-Lawrance",
+        "score": 2
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0SZ1GGJT5T94CTQZ0BDE",
+      "played_on": "2026-11-07",
+      "round": "last_32",
+      "winner": {
+        "name": "Gabor Czotter",
+        "score": 4
+      },
+      "loser": {
+        "name": "Luke Cox",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1AQQHPT59XMXS92J40RQ",
+      "played_on": "2026-11-07",
+      "round": "last_32",
+      "winner": {
+        "name": "Danijel Bartolic",
+        "score": 4
+      },
+      "loser": {
+        "name": "Tony Borg",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_10AAGZGGQCWYBQCNX134",
+      "played_on": "2026-11-07",
+      "round": "last_32",
+      "winner": {
+        "name": "Aleksander Zalewski",
+        "score": 4
+      },
+      "loser": {
+        "name": "Jannes Bremermann",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_11246XJ7NQE1PY3PWE0B",
+      "played_on": "2026-11-07",
+      "round": "last_32",
+      "winner": {
+        "name": "David Gradwell",
+        "score": 4
+      },
+      "loser": {
+        "name": "Cliff Prior",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_043A0HPKFJ5NDKB0MAXD",
+      "played_on": "2026-11-07",
+      "round": "last_32",
+      "winner": {
+        "name": "Danny Penney",
+        "score": 4
+      },
+      "loser": {
+        "name": "Mark Pryde",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_074CV8MF45Y0TDQ6DWF6",
+      "played_on": "2026-11-07",
+      "round": "last_32",
+      "winner": {
+        "name": "Luke Pryde",
+        "score": 4
+      },
+      "loser": {
+        "name": "David Wilson",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0KKTWP0VTJA7926KY3CP",
+      "played_on": "2026-11-07",
+      "round": "last_32",
+      "winner": {
+        "name": "Philip van Gasse",
+        "score": 4
+      },
+      "loser": {
+        "name": "Dmitrii Rogov",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1SVNWMC5SYM8HW7XDTVA",
+      "played_on": "2026-11-07",
+      "round": "last_32",
+      "winner": {
+        "name": "Norbert Attard",
+        "score": 4
+      },
+      "loser": {
+        "name": "Jonathan Bilocca",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1P0JNDWWF00WHSNV8CRQ",
+      "played_on": "2026-11-07",
+      "round": "last_32",
+      "winner": {
+        "name": "James Beeton",
+        "score": 4
+      },
+      "loser": {
+        "name": "Philip Smith",
+        "score": 2
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1ZBZ1TWSGVG13F5ZWSK1",
+      "played_on": "2026-11-07",
+      "round": "last_32",
+      "winner": {
+        "name": "Jenson Walker",
+        "score": 4
+      },
+      "loser": {
+        "name": "Jamie Mccabe",
+        "score": 2
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0HXZ01B9RTFXY6TGHVCA",
+      "played_on": "2026-11-07",
+      "round": "last_32",
+      "winner": {
+        "name": "Nick Fullwell",
+        "score": 4
+      },
+      "loser": {
+        "name": "Lukasz Sawicki",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1XS3RF5QDTTBZYNJPXYD",
+      "played_on": "2026-11-07",
+      "round": "last_32",
+      "winner": {
+        "name": "Andy Davidson",
+        "score": 4
+      },
+      "loser": {
+        "name": "Milan van Diemen",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_02DWNW4SQZ7TDDA3DWBG",
+      "played_on": "2026-11-07",
+      "round": "last_64",
+      "winner": {
+        "name": "Tony Borg",
+        "score": 4
+      },
+      "loser": {
+        "name": "Karsten Kornath",
+        "score": 2
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1Z9R1YCC9BANNYQT4G2R",
+      "played_on": "2026-11-07",
+      "round": "last_64",
+      "winner": {
+        "name": "Jannes Bremermann",
+        "score": 4
+      },
+      "loser": {
+        "name": "Zsombor Szabo",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1SBVDS46YMR8ZQ4VMH1Y",
+      "played_on": "2026-11-07",
+      "round": "last_64",
+      "winner": {
+        "name": "Danny Penney",
+        "score": 4
+      },
+      "loser": {
+        "name": "Massimo Alfieri",
+        "score": 2
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0Q3GWY62BR7NTJD8TP0C",
+      "played_on": "2026-11-07",
+      "round": "last_64",
+      "winner": {
+        "name": "Giovanni Stecconi",
+        "score": 4
+      },
+      "loser": {
+        "name": "Pal Biro",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1JBB7NWDDB1H3JX1E348",
+      "played_on": "2026-11-07",
+      "round": "last_64",
+      "winner": {
+        "name": "Jonathan Bilocca",
+        "score": 4
+      },
+      "loser": {
+        "name": "Artur Pasotto",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_190ZS6PK0CENRTQ2Y2G9",
+      "played_on": "2026-11-07",
+      "round": "last_64",
+      "winner": {
+        "name": "Cliff Prior",
+        "score": 4
+      },
+      "loser": {
+        "name": "Artur Podsada",
+        "score": 2
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0YM1NQJ499WC13NVVSNB",
+      "played_on": "2026-11-07",
+      "round": "last_64",
+      "winner": {
+        "name": "Dmitrii Rogov",
+        "score": 4
+      },
+      "loser": {
+        "name": "Robin Radloff",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1D8E2CYBEWPFGA8SC320",
+      "played_on": "2026-11-07",
+      "round": "last_64",
+      "winner": {
+        "name": "Darran Laker",
+        "score": 4
+      },
+      "loser": {
+        "name": "Brian Woods",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_10MKYBG872H1ZRY1PGW7",
+      "played_on": "2026-11-07",
+      "round": "last_64",
+      "winner": {
+        "name": "Philip van Gasse",
+        "score": 4
+      },
+      "loser": {
+        "name": "Jitse van der Wal",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_151HXZ9Q93WVJKW8Y5QM",
+      "played_on": "2026-11-07",
+      "round": "last_64",
+      "winner": {
+        "name": "Nick Fullwell",
+        "score": 4
+      },
+      "loser": {
+        "name": "Enrico Scerri",
+        "score": 2
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1CKSGKY389JPDBPSTAHM",
+      "played_on": "2026-11-07",
+      "round": "last_64",
+      "winner": {
+        "name": "David Wilson",
+        "score": 4
+      },
+      "loser": {
+        "name": "Omar Aquilina",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1G7DH1DAT96V07EF6MR0",
+      "played_on": "2026-11-07",
+      "round": "last_64",
+      "winner": {
+        "name": "James Beeton",
+        "score": 4
+      },
+      "loser": {
+        "name": "Richard Allen",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1BTTRS1MWPJDQF0PVD76",
+      "played_on": "2026-11-07",
+      "round": "last_64",
+      "winner": {
+        "name": "Jamie Mccabe",
+        "score": 4
+      },
+      "loser": {
+        "name": "Gordon Stanmore",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_19JV0WWSV09H2WG36SCE",
+      "played_on": "2026-11-07",
+      "round": "last_64",
+      "winner": {
+        "name": "Luke Cox",
+        "score": 4
+      },
+      "loser": {
+        "name": "Daniel Bauerdick",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0YBRP0RWXJ0M6J37VQ0B",
+      "played_on": "2026-11-07",
+      "round": "last_64",
+      "winner": {
+        "name": "Milan van Diemen",
+        "score": 4
+      },
+      "loser": {
+        "name": "Jonny Yorke",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_09AA34AE424D8SABDEJV",
+      "played_on": "2026-11-07",
+      "round": "last_64",
+      "winner": {
+        "name": "Luke Pryde",
+        "score": 4
+      },
+      "loser": {
+        "name": "Alberto Bezjian",
+        "score": 2
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0RGQ2HBQ1TAK4SQPVDM0",
+      "played_on": "2026-11-07",
+      "round": "last_64",
+      "winner": {
+        "name": "Mirko Paro",
+        "score": 4
+      },
+      "loser": {
+        "name": "Phil Smith",
+        "score": 2
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1S8Q8YN3ZXE7S1S7RC2W",
+      "played_on": "2026-11-07",
+      "round": "last_64",
+      "winner": {
+        "name": "Danijel Bartolic",
+        "score": 4
+      },
+      "loser": {
+        "name": "Aaron Pryde",
+        "score": 2
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1XZJQEE7W82GVAV07M9H",
+      "played_on": "2026-11-07",
+      "round": "last_64",
+      "winner": {
+        "name": "Liam Maendl-Lawrance",
+        "score": 4
+      },
+      "loser": {
+        "name": "Oliver Madge",
+        "score": 2
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0CAHWVHPNJ06N7ZS3T1B",
+      "played_on": "2026-11-07",
+      "round": "last_64",
+      "winner": {
+        "name": "Albert Scerri",
+        "score": 4
+      },
+      "loser": {
+        "name": "Bert de Ruiter",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_14S8G0QQFG9WX3BY97X6",
+      "played_on": "2026-11-07",
+      "round": "last_64",
+      "winner": {
+        "name": "Norbert Attard",
+        "score": 4
+      },
+      "loser": {
+        "name": "Darren Fenech",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0KJ9E5Y5NMDDSSAKR1F3",
+      "played_on": "2026-11-07",
+      "round": "last_64",
+      "winner": {
+        "name": "Gabor Czotter",
+        "score": 4
+      },
+      "loser": {
+        "name": "Wim Hofsink",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0N305A8ZYHK12W4YX010",
+      "played_on": "2026-11-07",
+      "round": "last_64",
+      "winner": {
+        "name": "Jenson Walker",
+        "score": 4
+      },
+      "loser": {
+        "name": "Wouter De Snoo",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0C98P2XPW14MAAE315JW",
+      "played_on": "2026-11-07",
+      "round": "last_64",
+      "winner": {
+        "name": "Lukasz Sawicki",
+        "score": 4
+      },
+      "loser": {
+        "name": "Daniele Sergi",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0GE33AX7KVZCDCCSQ6TH",
+      "played_on": "2026-11-07",
+      "round": "last_64",
+      "winner": {
+        "name": "Aleksander Zalewski",
+        "score": 4
+      },
+      "loser": {
+        "name": "Pawel Krasinski",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1BBB43PWHR0915AKTC77",
+      "played_on": "2026-11-07",
+      "round": "last_64",
+      "winner": {
+        "name": "Fabian Herz",
+        "score": 4
+      },
+      "loser": {
+        "name": "Mark Sanders",
+        "score": 2
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1K0R2RZTDKQTX0TWN5SX",
+      "played_on": "2026-11-07",
+      "round": "quarter_final",
+      "winner": {
+        "name": "Danijel Bartolic",
+        "score": 4
+      },
+      "loser": {
+        "name": "Danny Penney",
+        "score": 2
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0HJYJPM2DWPAXWBQ0Z1X",
+      "played_on": "2026-11-07",
+      "round": "quarter_final",
+      "winner": {
+        "name": "Jenson Walker",
+        "score": 4
+      },
+      "loser": {
+        "name": "Gabor Czotter",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1HT1QZHM9MMSRPN6HZMG",
+      "played_on": "2026-11-07",
+      "round": "quarter_final",
+      "winner": {
+        "name": "David Gradwell",
+        "score": 4
+      },
+      "loser": {
+        "name": "Giovanni Stecconi",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0PQ3CGP7W8JF06Z5F44S",
+      "played_on": "2026-11-07",
+      "round": "quarter_final",
+      "winner": {
+        "name": "Nick Fullwell",
+        "score": 4
+      },
+      "loser": {
+        "name": "James Beeton",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1SJ84NBCN948N4BW550A",
+      "played_on": "2026-11-07",
+      "round": "semi_final",
+      "winner": {
+        "name": "Nick Fullwell",
+        "score": 4
+      },
+      "loser": {
+        "name": "Danijel Bartolic",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1GA5FQ6R5FEJCW09BRTN",
+      "played_on": "2026-11-07",
+      "round": "semi_final",
+      "winner": {
+        "name": "Jenson Walker",
+        "score": 4
+      },
+      "loser": {
+        "name": "David Gradwell",
+        "score": 2
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1BBAHH3APST7FRX0GSZP",
+      "played_on": "2026-11-07",
       "round": "final",
       "winner": {
-        "name": "Paige Pauling",
+        "name": "Karolina Ratajska",
+        "score": 5
+      },
+      "loser": {
+        "name": "Irina Armstrong",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_SNP64E",
+      "competition_id": "cp_R8ZEB2",
+      "event_name": "Malta Masters Womens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_080CD2XHEG4DNHE61G1M",
+      "played_on": "2026-11-07",
+      "round": "last_16",
+      "winner": {
+        "name": "Julia Siek",
         "score": 4
       },
       "loser": {
-        "name": "Lena Vitovszki",
+        "name": "Jackie Dempster",
         "score": 1
       },
       "result_status": "final",
-      "event_id": "ev_4GZ1RY",
-      "competition_id": "cp_20ZV9E",
-      "event_name": "Hungarian Masters Girls, 3 Nov 2026",
-      "event_tier": "wdf_gold"
+      "event_id": "ev_SNP64E",
+      "competition_id": "cp_R8ZEB2",
+      "event_name": "Malta Masters Womens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_006RSYMZ34HD0WZ38V1W",
+      "played_on": "2026-11-07",
+      "round": "last_16",
+      "winner": {
+        "name": "Nicole Sescu Gal",
+        "score": 4
+      },
+      "loser": {
+        "name": "Evdokia Nakka",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_SNP64E",
+      "competition_id": "cp_R8ZEB2",
+      "event_name": "Malta Masters Womens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1YDWT52HARWZD89Q9JC0",
+      "played_on": "2026-11-07",
+      "round": "last_16",
+      "winner": {
+        "name": "Anca Zijlstra",
+        "score": 4
+      },
+      "loser": {
+        "name": "Charline Pohl",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_SNP64E",
+      "competition_id": "cp_R8ZEB2",
+      "event_name": "Malta Masters Womens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0J46JCB4SPF1VEY9737T",
+      "played_on": "2026-11-07",
+      "round": "last_16",
+      "winner": {
+        "name": "Paula Jacklin",
+        "score": 4
+      },
+      "loser": {
+        "name": "Giada Macchi",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_SNP64E",
+      "competition_id": "cp_R8ZEB2",
+      "event_name": "Malta Masters Womens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0N40M39GTGY9PX2V7NX3",
+      "played_on": "2026-11-07",
+      "round": "last_16",
+      "winner": {
+        "name": "Karolina Ratajska",
+        "score": 4
+      },
+      "loser": {
+        "name": "Margaret Sutton",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_SNP64E",
+      "competition_id": "cp_R8ZEB2",
+      "event_name": "Malta Masters Womens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0NRGSHR53FAZZ6NX4G9Q",
+      "played_on": "2026-11-07",
+      "round": "last_16",
+      "winner": {
+        "name": "Irina Armstrong",
+        "score": 4
+      },
+      "loser": {
+        "name": "Renata Slowikowska",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_SNP64E",
+      "competition_id": "cp_R8ZEB2",
+      "event_name": "Malta Masters Womens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1HPNPD6WEA3P54PY7JTN",
+      "played_on": "2026-11-07",
+      "round": "last_16",
+      "winner": {
+        "name": "Catalina Pasa",
+        "score": 4
+      },
+      "loser": {
+        "name": "Heather Lodge",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_SNP64E",
+      "competition_id": "cp_R8ZEB2",
+      "event_name": "Malta Masters Womens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_140ADBYJP7VZG27DJ9QG",
+      "played_on": "2026-11-07",
+      "round": "last_16",
+      "winner": {
+        "name": "Daniela Neumayer",
+        "score": 4
+      },
+      "loser": {
+        "name": "Annalena Bielefeld",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_SNP64E",
+      "competition_id": "cp_R8ZEB2",
+      "event_name": "Malta Masters Womens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0J04HWN7PXE0YX67WD3H",
+      "played_on": "2026-11-07",
+      "round": "last_32",
+      "winner": {
+        "name": "Karolina Ratajska",
+        "score": 4
+      },
+      "loser": {
+        "name": "Angela Isbister",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_SNP64E",
+      "competition_id": "cp_R8ZEB2",
+      "event_name": "Malta Masters Womens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_15PSMBE9K82FNEY4VD0X",
+      "played_on": "2026-11-07",
+      "round": "last_32",
+      "winner": {
+        "name": "Evdokia Nakka",
+        "score": 4
+      },
+      "loser": {
+        "name": "Gesine Marx",
+        "score": 2
+      },
+      "result_status": "final",
+      "event_id": "ev_SNP64E",
+      "competition_id": "cp_R8ZEB2",
+      "event_name": "Malta Masters Womens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1YMRVR3R589B8PAK861Q",
+      "played_on": "2026-11-07",
+      "round": "last_32",
+      "winner": {
+        "name": "Paula Jacklin",
+        "score": 4
+      },
+      "loser": {
+        "name": "Susan Ramsay",
+        "score": 2
+      },
+      "result_status": "final",
+      "event_id": "ev_SNP64E",
+      "competition_id": "cp_R8ZEB2",
+      "event_name": "Malta Masters Womens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1MR34B00QJANHZP93WX3",
+      "played_on": "2026-11-07",
+      "round": "last_32",
+      "winner": {
+        "name": "Heather Lodge",
+        "score": 4
+      },
+      "loser": {
+        "name": "Marina Callebaut",
+        "score": 2
+      },
+      "result_status": "final",
+      "event_id": "ev_SNP64E",
+      "competition_id": "cp_R8ZEB2",
+      "event_name": "Malta Masters Womens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1D8W2CYCKYBX34WATEAW",
+      "played_on": "2026-11-07",
+      "round": "last_32",
+      "winner": {
+        "name": "Renata Slowikowska",
+        "score": 4
+      },
+      "loser": {
+        "name": "Nadine Spet",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_SNP64E",
+      "competition_id": "cp_R8ZEB2",
+      "event_name": "Malta Masters Womens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1FDAPASHSS2X7TY6K6CW",
+      "played_on": "2026-11-07",
+      "round": "last_32",
+      "winner": {
+        "name": "Annalena Bielefeld",
+        "score": 4
+      },
+      "loser": {
+        "name": "Nathalie Kallen",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_SNP64E",
+      "competition_id": "cp_R8ZEB2",
+      "event_name": "Malta Masters Womens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1F8BGYTZVWF217FNRDNZ",
+      "played_on": "2026-11-07",
+      "round": "last_32",
+      "winner": {
+        "name": "Catalina Pasa",
+        "score": 4
+      },
+      "loser": {
+        "name": "Katrin Spitzer",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_SNP64E",
+      "competition_id": "cp_R8ZEB2",
+      "event_name": "Malta Masters Womens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0DMX22DQVBWVR7TQ7NA2",
+      "played_on": "2026-11-07",
+      "round": "last_32",
+      "winner": {
+        "name": "Nicole Sescu Gal",
+        "score": 4
+      },
+      "loser": {
+        "name": "Josianne Caruana",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_SNP64E",
+      "competition_id": "cp_R8ZEB2",
+      "event_name": "Malta Masters Womens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1E7MMAT3JBBGDE1881E1",
+      "played_on": "2026-11-07",
+      "round": "last_32",
+      "winner": {
+        "name": "Anca Zijlstra",
+        "score": 4
+      },
+      "loser": {
+        "name": "Mayreece Zammit",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_SNP64E",
+      "competition_id": "cp_R8ZEB2",
+      "event_name": "Malta Masters Womens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1P8WTDZ321949JK70VKM",
+      "played_on": "2026-11-07",
+      "round": "last_32",
+      "winner": {
+        "name": "Irina Armstrong",
+        "score": 4
+      },
+      "loser": {
+        "name": "Milda Zaneviciene",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_SNP64E",
+      "competition_id": "cp_R8ZEB2",
+      "event_name": "Malta Masters Womens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1J23SM2663ZHADM0SY7X",
+      "played_on": "2026-11-07",
+      "round": "last_32",
+      "winner": {
+        "name": "Margaret Sutton",
+        "score": 4
+      },
+      "loser": {
+        "name": "Jane Woods",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_SNP64E",
+      "competition_id": "cp_R8ZEB2",
+      "event_name": "Malta Masters Womens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1D8S0PVDSJQA21X5291H",
+      "played_on": "2026-11-07",
+      "round": "last_32",
+      "winner": {
+        "name": "Daniela Neumayer",
+        "score": 4
+      },
+      "loser": {
+        "name": "Manuela Ott",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_SNP64E",
+      "competition_id": "cp_R8ZEB2",
+      "event_name": "Malta Masters Womens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1VTV33NBGPWBEERP56XX",
+      "played_on": "2026-11-07",
+      "round": "last_32",
+      "winner": {
+        "name": "Giada Macchi",
+        "score": 4
+      },
+      "loser": {
+        "name": "Chloe Judd",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_SNP64E",
+      "competition_id": "cp_R8ZEB2",
+      "event_name": "Malta Masters Womens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_00TVY18XSB5BM5PVHPYC",
+      "played_on": "2026-11-07",
+      "round": "last_32",
+      "winner": {
+        "name": "Jackie Dempster",
+        "score": 4
+      },
+      "loser": {
+        "name": "Tarita Marchetti",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_SNP64E",
+      "competition_id": "cp_R8ZEB2",
+      "event_name": "Malta Masters Womens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_19R77VQ6M7NQTXCSN771",
+      "played_on": "2026-11-07",
+      "round": "last_64",
+      "winner": {
+        "name": "Heather Lodge",
+        "score": 4
+      },
+      "loser": {
+        "name": "Audrey Gauci",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_SNP64E",
+      "competition_id": "cp_R8ZEB2",
+      "event_name": "Malta Masters Womens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1055Y7PJ2SFK0WBPDYC8",
+      "played_on": "2026-11-07",
+      "round": "last_64",
+      "winner": {
+        "name": "Chloe Judd",
+        "score": 4
+      },
+      "loser": {
+        "name": "Helen McPherson",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_SNP64E",
+      "competition_id": "cp_R8ZEB2",
+      "event_name": "Malta Masters Womens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_13RRZCWR52KHE9JETHP8",
+      "played_on": "2026-11-07",
+      "round": "last_64",
+      "winner": {
+        "name": "Karolina Ratajska",
+        "score": 4
+      },
+      "loser": {
+        "name": "Matilde Baruzzi",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_SNP64E",
+      "competition_id": "cp_R8ZEB2",
+      "event_name": "Malta Masters Womens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1C9QH6R6XBJCGZKEEHPK",
+      "played_on": "2026-11-07",
+      "round": "last_64",
+      "winner": {
+        "name": "Renata Slowikowska",
+        "score": 4
+      },
+      "loser": {
+        "name": "Sue Green",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_SNP64E",
+      "competition_id": "cp_R8ZEB2",
+      "event_name": "Malta Masters Womens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1XM72WKBEBQW67DTJGVS",
+      "played_on": "2026-11-07",
+      "round": "quarter_final",
+      "winner": {
+        "name": "Karolina Ratajska",
+        "score": 4
+      },
+      "loser": {
+        "name": "Catalina Pasa",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_SNP64E",
+      "competition_id": "cp_R8ZEB2",
+      "event_name": "Malta Masters Womens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1MF9YEWT1YZS0M933ZSS",
+      "played_on": "2026-11-07",
+      "round": "quarter_final",
+      "winner": {
+        "name": "Paula Jacklin",
+        "score": 4
+      },
+      "loser": {
+        "name": "Daniela Neumayer",
+        "score": 1
+      },
+      "result_status": "final",
+      "event_id": "ev_SNP64E",
+      "competition_id": "cp_R8ZEB2",
+      "event_name": "Malta Masters Womens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0JYD46ZH4Y9D0VV6X2NT",
+      "played_on": "2026-11-07",
+      "round": "quarter_final",
+      "winner": {
+        "name": "Anca Zijlstra",
+        "score": 4
+      },
+      "loser": {
+        "name": "Julia Siek",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_SNP64E",
+      "competition_id": "cp_R8ZEB2",
+      "event_name": "Malta Masters Womens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1EMMMGZQM05NG01BAG2N",
+      "played_on": "2026-11-07",
+      "round": "quarter_final",
+      "winner": {
+        "name": "Irina Armstrong",
+        "score": 4
+      },
+      "loser": {
+        "name": "Nicole Sescu Gal",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_SNP64E",
+      "competition_id": "cp_R8ZEB2",
+      "event_name": "Malta Masters Womens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_10XFTKJP42YR27P5YE70",
+      "played_on": "2026-11-07",
+      "round": "semi_final",
+      "winner": {
+        "name": "Irina Armstrong",
+        "score": 4
+      },
+      "loser": {
+        "name": "Anca Zijlstra",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_SNP64E",
+      "competition_id": "cp_R8ZEB2",
+      "event_name": "Malta Masters Womens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0AP9G1M6MCBMZ7CMCRRS",
+      "played_on": "2026-11-07",
+      "round": "semi_final",
+      "winner": {
+        "name": "Karolina Ratajska",
+        "score": 4
+      },
+      "loser": {
+        "name": "Paula Jacklin",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_SNP64E",
+      "competition_id": "cp_R8ZEB2",
+      "event_name": "Malta Masters Womens",
+      "event_tier": "wdf_silver"
     }
   ],
-  "results_last_successful_update": "2026-11-12T19:02:12Z",
+  "results_last_successful_update": "2026-11-14T20:34:01Z",
   "results_window": {
-    "from": "2026-10-13",
-    "to": "2026-11-05",
+    "from": "2026-10-15",
+    "to": "2026-11-07",
     "note": "Weekly settled-results snapshot; live match scores are not included."
   },
   "sync_warning": "Darts API returned no matching televised PDC events in the 60-day window; using official fallback dates.",
-  "last_updated": "2026-11-12T19:02:12Z"
+  "last_updated": "2026-11-14T20:34:01Z"
 }
