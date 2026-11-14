@@ -1682,5 +1682,7 @@
     }
   ],
   "notice": "All upcoming UFC events returned by UFCalendar, with detailed fight cards for the next two events and the latest completed card. Free API allowance: 1,000 requests per month.",
-  "last_updated": "2026-11-14T18:04:21Z"
+  "last_updated": "2026-11-14T18:04:21Z",
+  "sync_warning": "UFCalendar HTTP 429: {\"error\":{\"code\":\"rate_limited\",\"message\":\"Per-minute limit of 10 requests reached for the free plan. Slow down or upgrade at https://www.ufcalendar.com/account/api\",\"request_id\":\"c1e624f5-1951-428e-996c-ee80417f3ba5\"}}",
+  "sync_attempted_at": "2026-11-14T20:41:38Z"
 }
