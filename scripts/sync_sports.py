@@ -1556,12 +1556,47 @@ def enrich_cached_images():
     sports = hub.get("sports") or hub
     f1 = sports.get("f1") or {}
     f1["drivers"] = add_photos(f1.get("drivers") or [], limit=30, sport="f1 drivers")
-    # Prioritise fighters before the long tail of the PDC list. The PDC Top 50
-    # already has complete portrait coverage; processing the remaining 175 first
-    # would otherwise consume every five-image batch before UFC/boxing are reached.
+    # Image queue priority: UFC ranked fighters first, then Speedway GP riders.
+    # Keep each UFC division focused on its leading 15 ranked entries; do not
+    # let the long PDC tail or boxing event-card names starve these collections.
     ufc = sports.get("ufc") or {}
     for division in ufc.get("divisions") or []:
         division["entries"] = add_photos(division.get("entries") or [], limit=15, sport="ufc")
+
+    # Speedway portraits cover both the current 2027 permanent GP line-up and
+    # the latest published rider standings. Merge by normalized name so riders
+    # appearing in both lists consume only one Commons lookup per image.
+    speedway_path = os.path.join(DATA, "speedway.json")
+    try:
+        with open(speedway_path, encoding="utf-8") as handle:
+            speedway = json.load(handle)
+    except (FileNotFoundError, json.JSONDecodeError):
+        speedway = {}
+    rider_groups = [
+        (speedway.get("championship2027") or {}).get("riders") or [],
+        (speedway.get("riderStandings") or {}).get("riders") or []
+    ]
+    rider_by_key = {}
+    for group in rider_groups:
+        for rider in group:
+            key = image_key(rider.get("name"))
+            if key:
+                rider_by_key.setdefault(key, {"name": rider.get("name")})
+    speedway_riders = list(rider_by_key.values())
+    speedway_riders = add_photos(speedway_riders, limit=len(speedway_riders), sport="speedway")
+    speedway_images = {image_key(row.get("name")): row for row in speedway_riders}
+    for group in rider_groups:
+        for rider in group:
+            matched = speedway_images.get(image_key(rider.get("name")))
+            if matched:
+                for field, value in matched.items():
+                    if field.startswith("image_") and value:
+                        rider[field] = value
+    if speedway:
+        with open(speedway_path, "w", encoding="utf-8") as handle:
+            json.dump(speedway, handle, ensure_ascii=False, indent=2)
+            handle.write("\n")
+
     boxing = sports.get("boxing") or {}
     for division in boxing.get("divisions") or []:
         division["champions"] = add_photos(division.get("champions") or [], limit=12, sport="boxing")
@@ -1599,7 +1634,9 @@ def enrich_cached_images():
     # After UFC and boxing title-holders, process boxing event fighters and
     # then the wider PDC list. Keep the already-complete Top 50 out of the way.
     darts = sports.get("darts") or {}
-    darts["rankings"] = add_photos(darts.get("rankings") or [], limit=225, sport="darts")
+    # Only the PDC Top 50 is in scope. Preserve existing images below rank 50,
+    # but do not spend any further lookup budget on those lower-ranked players.
+    darts["rankings"] = add_photos(darts.get("rankings") or [], limit=50, sport="darts")
     for sport in ("ufc", "bkfc"):
         path = os.path.join(DATA, sport + ".json")
         try:
@@ -1617,8 +1654,9 @@ def enrich_cached_images():
     coverage = {
         "boxing fight card fighters": count_rows(boxer_rows),
         "f1 drivers": count_rows(f1.get("drivers")), "f1 constructors": count_rows(f1.get("constructors")),
-        "darts": count_rows(darts.get("rankings")),
+        "darts top 50": count_rows((darts.get("rankings") or [])[:50]),
         "ufc": count_rows([r for d in ufc.get("divisions", []) for r in d.get("entries", [])]),
+        "speedway GP riders": count_rows(speedway_riders),
         "boxing": count_rows([r for d in boxing.get("divisions", []) for r in d.get("champions", [])])
     }
     found_this_batch = IMAGE_DIAGNOSTICS.get("found", 0)
