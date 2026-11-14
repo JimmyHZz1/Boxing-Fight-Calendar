@@ -3864,3 +3864,41 @@ body.hub-selection-mode .version-history-link,body.hub-selection-mode .games-ver
 .entertainment-shelf .entertainment-title-card{flex:0 0 clamp(145px,17vw,190px);scroll-snap-align:start}
 .entertainment-shelf .entertainment-loading,.entertainment-shelf .entertainment-empty-copy{flex:0 0 100%}
 @media(max-width:600px){.entertainment-shelf .entertainment-title-card{flex-basis:clamp(132px,42vw,165px)}.entertainment-shelf-heading h3{font-size:18px}.entertainment-shelf-title{gap:7px}.entertainment-shelf-heading span{font-size:7px}}
+
+
+/* Sports Hub image enrichment report: expandable, evidence-led diagnostics. */
+.hub-image-report{display:grid;gap:17px;padding-top:15px}
+.hub-image-report-intro p,.hub-image-report-caption,.hub-image-report-footnote{margin:0 0 7px;color:var(--muted);font-size:10px;line-height:1.65}
+.hub-image-report-stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px}
+.hub-image-report-stats>div{padding:11px 9px;background:var(--panel2);border:1px solid var(--line);min-width:0}
+.hub-image-report-stats strong,.hub-image-report-stats span{display:block}
+.hub-image-report-stats strong{font:800 23px 'Barlow Condensed',sans-serif;color:var(--accent)}
+.hub-image-report-stats span{font-size:8px;line-height:1.4;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.hub-image-report-section{padding-top:13px;border-top:1px solid var(--line)}
+.hub-image-report-section h4{margin:0 0 10px;font:700 17px 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.5px}
+.hub-image-report-coverage-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.hub-image-report-coverage{padding:10px;background:var(--panel2);border:1px solid var(--line);min-width:0}
+.hub-image-report-coverage>div:first-child{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.hub-image-report-coverage strong{font-size:10px;text-transform:capitalize}
+.hub-image-report-coverage span,.hub-image-report-coverage small{font-size:9px;color:var(--muted)}
+.hub-image-report-bar{height:5px;margin:8px 0 5px;background:rgba(255,255,255,.08);overflow:hidden}
+.hub-image-report-bar i{display:block;height:100%;background:var(--accent)}
+.hub-image-report-result{padding:10px 0;border-top:1px solid var(--line)}
+.hub-image-report-result>div{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.hub-image-report-result strong{font-size:10px}
+.hub-image-result-badge{font-size:8px;font-weight:800;letter-spacing:.5px;white-space:nowrap}
+.hub-image-result-badge.is-success,.hub-image-history-row .is-good{color:#83d59a}
+.hub-image-result-badge.is-warning,.hub-image-history-row .is-warning{color:#e7bd70}
+.hub-image-result-badge.is-muted{color:var(--muted)}
+.hub-image-report-result small,.hub-image-report-result p{display:block;margin:5px 0 0;color:var(--muted);font-size:9px;line-height:1.5}
+.hub-image-report-asset{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:10px;align-items:center;padding:9px 0;border-top:1px solid var(--line)}
+.hub-image-report-asset strong{font-size:10px}
+.hub-image-report-asset span,.hub-image-report-asset a{font-size:9px;color:var(--muted)}
+.hub-image-report-asset a{color:var(--accent);text-decoration:none;font-weight:800}
+.hub-image-history-row{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:9px;align-items:center;padding:8px 0;border-top:1px solid var(--line)}
+.hub-image-history-row strong,.hub-image-history-row small{display:block}
+.hub-image-history-row strong{font-size:10px}
+.hub-image-history-row small{font-size:8px;color:var(--muted);line-height:1.5}
+.hub-image-history-row>b{font-size:9px;color:var(--muted)}
+.hub-image-report-alert{padding:11px;border:1px solid rgba(231,189,112,.45);background:rgba(231,189,112,.07);color:#e7bd70;font-size:9px;font-weight:800;letter-spacing:.5px;line-height:1.6}
+@media(max-width:600px){.hub-image-report-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.hub-image-report-coverage-grid{grid-template-columns:1fr}.hub-image-report-asset{grid-template-columns:minmax(0,1fr) auto}.hub-image-report-asset span{grid-column:1/-1;grid-row:2}.hub-image-history-row{grid-template-columns:minmax(0,1fr) auto}.hub-image-history-row>small{grid-column:1/-1}}
