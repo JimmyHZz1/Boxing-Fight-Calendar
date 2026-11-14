@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-14T15:57:49Z",
+  "updated_at": "2026-11-14T20:52:50Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -926,6 +926,17 @@
       "creator": "Wikimedia Commons · MMAnytt · CC BY 3.0",
       "attribution": "Wikimedia Commons · MMAnytt · CC BY 3.0",
       "verified_at": "2026-11-14T15:57:49Z",
+      "sport": "ufc"
+    },
+    "jessica andrade": {
+      "name": "Jéssica Andrade",
+      "path": "assets/images/ufc/jessica-andrade.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Jessica_Andrade_at_UFC_228.jpg",
+      "licence": "CC BY 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by/3.0",
+      "creator": "Wikimedia Commons · MMAnytt · CC BY 3.0",
+      "attribution": "Wikimedia Commons · MMAnytt · CC BY 3.0",
+      "verified_at": "2026-11-14T20:52:50Z",
       "sport": "ufc"
     }
   },
