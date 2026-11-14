@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-13T21:55:12Z",
+  "updated_at": "2026-11-14T02:03:57Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -860,6 +860,39 @@
       "creator": "Wikimedia Commons · Lucie Bertaud · CC BY 3.0",
       "attribution": "Wikimedia Commons · Lucie Bertaud · CC BY 3.0",
       "verified_at": "2026-11-13T21:55:12Z",
+      "sport": "ufc"
+    },
+    "jasmine jasudavicius": {
+      "name": "Jasmine Jasudavicius",
+      "path": "assets/images/ufc/jasmine-jasudavicius.png",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Jasmine_Jasudavicius_2023.png",
+      "licence": "CC BY 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by/3.0",
+      "creator": "Wikimedia Commons · MM-eh · CC BY 3.0",
+      "attribution": "Wikimedia Commons · MM-eh · CC BY 3.0",
+      "verified_at": "2026-11-14T02:03:57Z",
+      "sport": "ufc"
+    },
+    "rose namajunas": {
+      "name": "Rose Namajunas",
+      "path": "assets/images/ufc/rose-namajunas.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Rose_Namajunas.jpg",
+      "licence": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "creator": "Wikimedia Commons · Andy Grahn · CC BY-SA 4.0",
+      "attribution": "Wikimedia Commons · Andy Grahn · CC BY-SA 4.0",
+      "verified_at": "2026-11-14T02:03:57Z",
+      "sport": "ufc"
+    },
+    "maycee barber": {
+      "name": "Maycee Barber",
+      "path": "assets/images/ufc/maycee-barber.png",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Maycee_Barber_(cropped).png",
+      "licence": "CC BY 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by/4.0",
+      "creator": "Wikimedia Commons · Maritza Sanchez · CC BY 4.0",
+      "attribution": "Wikimedia Commons · Maritza Sanchez · CC BY 4.0",
+      "verified_at": "2026-11-14T02:03:57Z",
       "sport": "ufc"
     }
   },

@@ -1138,9 +1138,54 @@
       "image_match_method": "category:Category:Manon Fiorot",
       "image_verified_at": "2026-11-13T21:55:12Z",
       "image_local_path": "assets/images/ufc/manon-fiorot.jpg"
+    },
+    "jasmine jasudavicius": {
+      "name": "Jasmine Jasudavicius",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/jasmine-jasudavicius.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Jasmine_Jasudavicius_2023.png",
+      "image_credit": "Wikimedia Commons · MM-eh · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Jasmine Jasudavicius",
+      "image_verified_at": "2026-11-14T02:03:57Z",
+      "image_local_path": "assets/images/ufc/jasmine-jasudavicius.png"
+    },
+    "rose namajunas": {
+      "name": "Rose Namajunas",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/rose-namajunas.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Rose_Namajunas.jpg",
+      "image_credit": "Wikimedia Commons · Andy Grahn · CC BY-SA 4.0",
+      "image_license": "CC BY-SA 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Rose Namajunas",
+      "image_verified_at": "2026-11-14T02:03:57Z",
+      "image_local_path": "assets/images/ufc/rose-namajunas.jpg"
+    },
+    "maycee barber": {
+      "name": "Maycee Barber",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/maycee-barber.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Maycee_Barber_(cropped).png",
+      "image_credit": "Wikimedia Commons · Maritza Sanchez · CC BY 4.0",
+      "image_license": "CC BY 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Maycee Barber",
+      "image_verified_at": "2026-11-14T02:03:57Z",
+      "image_local_path": "assets/images/ufc/maycee-barber.png"
     }
   },
-  "updated_at": "2026-11-14T00:53:43Z",
+  "updated_at": "2026-11-14T02:03:57Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1355,7 +1400,11 @@
     "natalia silva": "2026-11-13T15:59:30Z",
     "valentina shevchenko": "2026-11-13T21:55:12Z",
     "alexa grasso": "2026-11-13T21:55:12Z",
-    "manon fiorot": "2026-11-13T21:55:12Z"
+    "manon fiorot": "2026-11-13T21:55:12Z",
+    "jasmine jasudavicius": "2026-11-14T02:03:57Z",
+    "erin blanchfield": "2026-11-14T02:03:57Z",
+    "rose namajunas": "2026-11-14T02:03:57Z",
+    "maycee barber": "2026-11-14T02:03:57Z"
   },
   "audit": {
     "last_reviewed_at": "2026-11-09T12:15:00Z",
@@ -1392,24 +1441,16 @@
     }
   },
   "enrichment": {
-    "batch_number": 30,
+    "batch_number": 31,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 226,
-    "cumulative_found": 82,
-    "cumulative_missing": 144,
+    "cumulative_attempted": 231,
+    "cumulative_found": 85,
+    "cumulative_missing": 146,
     "cumulative_rejected": 153,
-    "last_batch_at": "2026-11-13T21:55:12Z",
-    "last_successful_batch_at": "2026-11-13T21:55:12Z",
-    "last_rate_limited_at": "2026-11-13T21:55:12Z",
+    "last_batch_at": "2026-11-14T02:03:57Z",
+    "last_successful_batch_at": "2026-11-14T02:03:57Z",
+    "last_rate_limited_at": "2026-11-14T02:03:57Z",
     "history": [
-      {
-        "batch": 1,
-        "at": "2026-11-09T12:52:30Z",
-        "attempted": 5,
-        "found": 2,
-        "missing": 3,
-        "rate_limited": false
-      },
       {
         "batch": 2,
         "at": "2026-11-09T12:52:42Z",
@@ -1639,6 +1680,14 @@
         "at": "2026-11-13T21:55:12Z",
         "attempted": 4,
         "found": 2,
+        "missing": 2,
+        "rate_limited": true
+      },
+      {
+        "batch": 31,
+        "at": "2026-11-14T02:03:57Z",
+        "attempted": 5,
+        "found": 3,
         "missing": 2,
         "rate_limited": true
       }

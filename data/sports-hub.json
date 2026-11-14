@@ -234,13 +234,33 @@
           "rank": 20,
           "name": "Yuki Tsunoda",
           "team": "RB F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/yuki-tsunoda.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Yuki_Tsunoda_Macau_2019.jpg",
+          "image_credit": "Wikimedia Commons · Smith007 · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "category:Category:Yuki Tsunoda in 2019",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/yuki-tsunoda.jpg"
         },
         {
           "rank": 21,
           "name": "Ryo Hirakawa",
           "team": "Haas F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/ryo-hirakawa.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Ryo_Hirakawa_2024_WEC_Fuji_1.jpg",
+          "image_credit": "Wikimedia Commons · Morio · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "search:Ryo Hirakawa",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/ryo-hirakawa.jpg"
         },
         {
           "rank": 22,
@@ -4461,7 +4481,17 @@
             {
               "rank": 4,
               "name": "Jasmine Jasudavicius",
-              "image_url": null
+              "image_url": "./assets/images/ufc/jasmine-jasudavicius.png",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Jasmine_Jasudavicius_2023.png",
+              "image_credit": "Wikimedia Commons · MM-eh · CC BY 3.0",
+              "image_license": "CC BY 3.0",
+              "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Jasmine Jasudavicius",
+              "image_verified_at": "2026-11-14T02:03:57Z",
+              "image_local_path": "assets/images/ufc/jasmine-jasudavicius.png"
             },
             {
               "rank": 5,
@@ -4471,12 +4501,32 @@
             {
               "rank": 6,
               "name": "Rose Namajunas",
-              "image_url": null
+              "image_url": "./assets/images/ufc/rose-namajunas.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Rose_Namajunas.jpg",
+              "image_credit": "Wikimedia Commons · Andy Grahn · CC BY-SA 4.0",
+              "image_license": "CC BY-SA 4.0",
+              "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Rose Namajunas",
+              "image_verified_at": "2026-11-14T02:03:57Z",
+              "image_local_path": "assets/images/ufc/rose-namajunas.jpg"
             },
             {
               "rank": 7,
               "name": "Maycee Barber",
-              "image_url": null
+              "image_url": "./assets/images/ufc/maycee-barber.png",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Maycee_Barber_(cropped).png",
+              "image_credit": "Wikimedia Commons · Maritza Sanchez · CC BY 4.0",
+              "image_license": "CC BY 4.0",
+              "image_license_url": "https://creativecommons.org/licenses/by/4.0",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Maycee Barber",
+              "image_verified_at": "2026-11-14T02:03:57Z",
+              "image_local_path": "assets/images/ufc/maycee-barber.png"
             },
             {
               "rank": 8,
@@ -5369,17 +5419,76 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 226,
-    "found": 117,
-    "missing": 431,
-    "rejected": 153,
-    "by_sport": {},
-    "newly_found": 0,
+    "attempted": 5,
+    "found": 122,
+    "missing": 737,
+    "rejected": 0,
+    "by_sport": {
+      "ufc": {
+        "attempted": 5,
+        "found": 3,
+        "missing": 2,
+        "rejected": 0
+      }
+    },
+    "search_details": [
+      {
+        "name": "Jasmine Jasudavicius",
+        "queries": 3,
+        "candidate_files": 3,
+        "accepted": 3,
+        "rejections": {}
+      },
+      {
+        "name": "Erin Blanchfield",
+        "queries": 2,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Rose Namajunas",
+        "queries": 3,
+        "candidate_files": 1,
+        "accepted": 1,
+        "rejections": {}
+      },
+      {
+        "name": "Maycee Barber",
+        "queries": 3,
+        "candidate_files": 2,
+        "accepted": 2,
+        "rejections": {}
+      },
+      {
+        "name": "Wang Cong",
+        "queries": 0,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      }
+    ],
+    "checked_at": "2026-11-14T02:03:57Z",
+    "library_entries": 85,
+    "newly_found": 3,
+    "cumulative_attempted": 231,
+    "cumulative_found": 85,
+    "cumulative_missing": 146,
+    "cumulative_rejected": 153,
+    "batch_number": 31,
+    "last_batch_at": "2026-11-14T02:03:57Z",
+    "last_successful_batch_at": "2026-11-14T02:03:57Z",
+    "last_rate_limited_at": "2026-11-14T02:03:57Z",
     "coverage": {
+      "boxing fight card fighters": {
+        "total": 311,
+        "with_image": 0,
+        "missing": 311
+      },
       "f1 drivers": {
         "total": 25,
-        "with_image": 23,
-        "missing": 2
+        "with_image": 25,
+        "missing": 0
       },
       "f1 constructors": {
         "total": 11,
@@ -5393,8 +5502,8 @@
       },
       "ufc": {
         "total": 206,
-        "with_image": 33,
-        "missing": 173
+        "with_image": 36,
+        "missing": 170
       },
       "boxing": {
         "total": 81,
@@ -5402,16 +5511,6 @@
         "missing": 81
       }
     },
-    "checked_at": "2026-11-14T00:53:43Z",
-    "library_entries": 82,
-    "cumulative_found": 82,
-    "cumulative_missing": 144,
-    "cumulative_rejected": 153,
-    "batch_number": 30,
-    "last_batch_at": "2026-11-13T21:55:12Z",
-    "last_successful_batch_at": "2026-11-13T21:55:12Z",
-    "last_rate_limited_at": "2026-11-13T21:55:12Z",
-    "enrichment_status": "paused after rate limit",
     "rate_limited": true
   },
   "last_updated": "2026-11-14T00:53:43Z"
