@@ -1,13 +1,13 @@
 {
   "provider": "Boxerbook confirmed cards + Boxing Data additional bouts",
-  "last_updated": "2026-11-14T11:29:26Z",
-  "provider_as_of": "2026-11-14T11:29:26Z",
+  "last_updated": "2026-11-14T18:04:21Z",
+  "provider_as_of": "2026-11-14T18:04:20Z",
   "attribution": "Confirmed cards from Boxerbook; additional scheduled bouts from Boxing Data API.",
-  "count_events": 45,
-  "count_bouts": 195,
+  "count_events": 46,
+  "count_bouts": 197,
   "count_confirmed_events": 34,
-  "count_confirmed_bouts": 160,
-  "count_additional_bouts": 35,
+  "count_confirmed_bouts": 157,
+  "count_additional_bouts": 40,
   "count_fighter_photos": 14,
   "events": [
     {
@@ -40,7 +40,7 @@
           "data_source": "Boxing Data API"
         },
         {
-          "id": "fx_2pz4ds8h",
+          "id": "fx_3221464r",
           "fighter1": "Charlie Sheehy",
           "fighter2": "Jose Matias Romero",
           "date": "2026-11-14",
@@ -100,6 +100,18 @@
           "data_source": "Boxing Data API"
         },
         {
+          "id": "fx_xq5wqm0x",
+          "fighter1": "Brandon Colantonio",
+          "fighter2": "Jakhongir Zokirov",
+          "date": "2026-11-14",
+          "start_time_utc": "16:00",
+          "start_datetime_utc": "2026-11-14T16:00:00Z",
+          "weight_class": null,
+          "rounds": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
           "id": "fx_9rm1b31h",
           "fighter1": "Cesar Ivan Ortiz",
           "fighter2": "Darial Kuchmenov",
@@ -115,6 +127,18 @@
           "id": "fx_hw4aqh4z",
           "fighter1": "Moro Kanla Inusah",
           "fighter2": "Rakhmatullo Boymatov",
+          "date": "2026-11-14",
+          "start_time_utc": "16:00",
+          "start_datetime_utc": "2026-11-14T16:00:00Z",
+          "weight_class": null,
+          "rounds": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_wvcqjpqn",
+          "fighter1": "Alexander Castro",
+          "fighter2": "Radzhab Butaev",
           "date": "2026-11-14",
           "start_time_utc": "16:00",
           "start_datetime_utc": "2026-11-14T16:00:00Z",
@@ -152,8 +176,8 @@
           "fighter1": "Federico Pacheco Jr.",
           "fighter2": "Jack May",
           "date": "2026-11-14",
-          "start_time_utc": "22:00",
-          "start_datetime_utc": "2026-11-14T22:00:00Z",
+          "start_time_utc": "23:05",
+          "start_datetime_utc": "2026-11-14T23:05:00Z",
           "weight_class": null,
           "rounds": null,
           "status": "scheduled",
@@ -164,8 +188,8 @@
           "fighter1": "Abisai Torres",
           "fighter2": "Frank Espinoza",
           "date": "2026-11-14",
-          "start_time_utc": "22:00",
-          "start_datetime_utc": "2026-11-14T22:00:00Z",
+          "start_time_utc": "23:40",
+          "start_datetime_utc": "2026-11-14T23:40:00Z",
           "weight_class": null,
           "rounds": null,
           "status": "scheduled",
@@ -186,7 +210,7 @@
       "city": null,
       "country": null,
       "country_code": null,
-      "start_time_utc": "2026-11-14T16:00Z",
+      "start_time_utc": "2026-11-14T23:00Z",
       "broadcasters": [],
       "bouts": [
         {
@@ -249,27 +273,6 @@
           "title_text": null,
           "status": "scheduled",
           "url": "https://boxerbook.com/bouts/204240/kyosuke-takami-vs-angel-geovanny-meza-morales",
-          "broadcaster": null,
-          "data_source": "Boxerbook"
-        },
-        {
-          "id": 204291,
-          "fighter1": "Jakhongir Zokirov",
-          "fighter2": "Brandon Colantonio",
-          "fighter1_image": null,
-          "fighter2_image": null,
-          "fighter1_nationality": null,
-          "fighter2_nationality": null,
-          "record1": "2-0-0",
-          "record2": "0-1-0",
-          "date": "2026-11-14",
-          "start_time_utc": null,
-          "start_datetime_utc": null,
-          "weight_class": "hea",
-          "rounds": null,
-          "title_text": null,
-          "status": "scheduled",
-          "url": "https://boxerbook.com/bouts/204291/jakhongir-zokirov-vs-brandon-colantonio",
           "broadcaster": null,
           "data_source": "Boxerbook"
         }
@@ -852,7 +855,7 @@
       "city": "Riyadh",
       "country": "SA",
       "country_code": null,
-      "start_time_utc": "2026-11-14T13:45Z",
+      "start_time_utc": "2026-11-14T16:10Z",
       "broadcasters": [
         {
           "name": "Paramount+",
@@ -890,7 +893,7 @@
           "fighter2_image": null,
           "fighter1_nationality": null,
           "fighter2_nationality": null,
-          "record1": null,
+          "record1": "19-2-0",
           "record2": "29-4-0",
           "date": "2026-11-14",
           "start_time_utc": null,
@@ -921,48 +924,6 @@
           "title_text": null,
           "status": "scheduled",
           "url": "https://boxerbook.com/bouts/193314/kamil-bednarek-vs-bruno-surace",
-          "broadcaster": null,
-          "data_source": "Boxerbook"
-        },
-        {
-          "id": 193315,
-          "fighter1": "Alexander Castro",
-          "fighter2": "Radzhab Butaev",
-          "fighter1_image": null,
-          "fighter2_image": null,
-          "fighter1_nationality": null,
-          "fighter2_nationality": null,
-          "record1": "0-1-0",
-          "record2": "16-2-0",
-          "date": "2026-11-14",
-          "start_time_utc": null,
-          "start_datetime_utc": null,
-          "weight_class": "mid",
-          "rounds": 10,
-          "title_text": null,
-          "status": "scheduled",
-          "url": "https://boxerbook.com/bouts/193315/alexander-castro-vs-radzhab-butaev",
-          "broadcaster": null,
-          "data_source": "Boxerbook"
-        },
-        {
-          "id": 193316,
-          "fighter1": "Ivan Ortiz",
-          "fighter2": "Dariial Muyedovic Kuchmenov",
-          "fighter1_image": null,
-          "fighter2_image": null,
-          "fighter1_nationality": null,
-          "fighter2_nationality": null,
-          "record1": "13-0-2",
-          "record2": "10-0-0",
-          "date": "2026-11-14",
-          "start_time_utc": null,
-          "start_datetime_utc": null,
-          "weight_class": "lig",
-          "rounds": 8,
-          "title_text": null,
-          "status": "scheduled",
-          "url": "https://boxerbook.com/bouts/193316/ivan-ortiz-vs-dariial-muyedovic-kuchmenov",
           "broadcaster": null,
           "data_source": "Boxerbook"
         }
@@ -1239,6 +1200,51 @@
         }
       ],
       "data_source": "Boxerbook"
+    },
+    {
+      "id": "boxingdata-2026-11-15",
+      "name": "Additional scheduled bouts — Sun 15 Nov",
+      "date": "2026-11-15T12:00:00Z",
+      "bouts": [
+        {
+          "id": "fx_1cf1tkst",
+          "fighter1": "Alexander Flores",
+          "fighter2": "David Adeleye",
+          "date": "2026-11-15",
+          "start_time_utc": "01:10",
+          "start_datetime_utc": "2026-11-15T01:10:00Z",
+          "weight_class": null,
+          "rounds": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_hjhw69pw",
+          "fighter1": "Anthony Olascuaga",
+          "fighter2": "Yuberjen Martinez",
+          "date": "2026-11-15",
+          "start_time_utc": "03:00",
+          "start_datetime_utc": "2026-11-15T03:00:00Z",
+          "weight_class": null,
+          "rounds": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_jyw1d01x",
+          "fighter1": "Darius Fulghum",
+          "fighter2": "Diego Pacheco",
+          "date": "2026-11-15",
+          "start_time_utc": "04:00",
+          "start_datetime_utc": "2026-11-15T04:00:00Z",
+          "weight_class": null,
+          "rounds": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        }
+      ],
+      "data_source": "Boxing Data API",
+      "source_note": "Additional scheduled bouts — card not confirmed. These individual matchups are listed by Boxing Data and have not been assigned to a confirmed promoter event."
     },
     {
       "id": "boxerbook-21058",
@@ -3073,7 +3079,7 @@
           "fighter1_nationality": null,
           "fighter2_nationality": null,
           "record1": null,
-          "record2": "0-3-0",
+          "record2": "0-4-0",
           "date": "2026-11-21",
           "start_time_utc": null,
           "start_datetime_utc": null,
@@ -4505,7 +4511,7 @@
           "fighter1_nationality": null,
           "fighter2_nationality": null,
           "record1": "25-1-0",
-          "record2": "19-1-0",
+          "record2": "20-1-0",
           "date": "2026-12-12",
           "start_time_utc": null,
           "start_datetime_utc": null,
