@@ -1273,9 +1273,39 @@
       "image_match_method": "category:Category:Brady Kurtz",
       "image_verified_at": "2026-11-15T00:53:17Z",
       "image_local_path": "assets/images/speedway/brady-kurtz.jpg"
+    },
+    "michael jepsen jensen": {
+      "name": "Michael Jepsen Jensen",
+      "sport": "speedway",
+      "image_url": "./assets/images/speedway/michael-jepsen-jensen.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Michael_Jepsen_Jensen(2012).jpg",
+      "image_credit": "Wikimedia Commons · Crash override83 · CC BY-SA 4.0",
+      "image_license": "CC BY-SA 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Michael Jepsen Jensen",
+      "image_verified_at": "2026-11-15T07:40:38Z",
+      "image_local_path": "assets/images/speedway/michael-jepsen-jensen.jpg"
+    },
+    "patryk dudek": {
+      "name": "Patryk Dudek",
+      "sport": "speedway",
+      "image_url": "./assets/images/speedway/patryk-dudek.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:2014_Woodstock_118_Patryk_Dudek.jpg",
+      "image_credit": "Wikimedia Commons · Ralf Lotys (Sicherlich) · CC BY 4.0",
+      "image_license": "CC BY 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Patryk Dudek",
+      "image_verified_at": "2026-11-15T07:40:38Z",
+      "image_local_path": "assets/images/speedway/patryk-dudek.jpg"
     }
   },
-  "updated_at": "2026-11-15T06:35:54Z",
+  "updated_at": "2026-11-15T07:40:38Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1519,7 +1549,12 @@
     "piera rodriguez": "2026-11-14T20:52:50Z",
     "robert lambert": "2026-11-15T00:53:17Z",
     "bartosz zmarzlik": "2026-11-15T00:53:17Z",
-    "brady kurtz": "2026-11-15T00:53:17Z"
+    "brady kurtz": "2026-11-15T00:53:17Z",
+    "michael jepsen jensen": "2026-11-15T07:40:38Z",
+    "patryk dudek": "2026-11-15T07:40:38Z",
+    "leon madsen": "2026-11-15T07:40:38Z",
+    "max fricke": "2026-11-15T07:40:38Z",
+    "kacper woryna": "2026-11-15T07:40:38Z"
   },
   "audit": {
     "last_reviewed_at": "2026-11-09T12:15:00Z",
@@ -1556,24 +1591,16 @@
     }
   },
   "enrichment": {
-    "batch_number": 38,
+    "batch_number": 39,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 260,
-    "cumulative_found": 91,
-    "cumulative_missing": 169,
-    "cumulative_rejected": 174,
-    "last_batch_at": "2026-11-15T00:53:17Z",
-    "last_successful_batch_at": "2026-11-15T00:53:17Z",
+    "cumulative_attempted": 265,
+    "cumulative_found": 93,
+    "cumulative_missing": 172,
+    "cumulative_rejected": 181,
+    "last_batch_at": "2026-11-15T07:40:38Z",
+    "last_successful_batch_at": "2026-11-15T07:40:38Z",
     "last_rate_limited_at": "2026-11-15T00:53:17Z",
     "history": [
-      {
-        "batch": 9,
-        "at": "2026-11-10T04:42:54Z",
-        "attempted": 5,
-        "found": 0,
-        "missing": 5,
-        "rate_limited": false
-      },
       {
         "batch": 10,
         "at": "2026-11-10T13:10:28Z",
@@ -1805,8 +1832,16 @@
         "found": 2,
         "missing": 2,
         "rate_limited": true
+      },
+      {
+        "batch": 39,
+        "at": "2026-11-15T07:40:38Z",
+        "attempted": 5,
+        "found": 2,
+        "missing": 3,
+        "rate_limited": false
       }
     ],
-    "last_batch_rate_limited": true
+    "last_batch_rate_limited": false
   }
 }
