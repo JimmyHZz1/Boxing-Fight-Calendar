@@ -336,62 +336,62 @@ def pdc_official_fallback_events():
                                 "session": "Afternoon session",
                                 "start_at": "2026-11-15T13:00:00Z",
                                 "matches": [
-                                          "Karel Sedlacek v Maik Kuivenhoven (Group P)",
-                                          "Niko Springer v Adam Sevada (Group H)",
-                                          "Alan Soutar v Lisa Ashton (Group B)",
-                                          "Cameron Menzies v Raymond Smith (Group D)",
-                                          "Luke Woodhouse v Krzysztof Ratajski (Group J)",
-                                          "Andrew Gilding v Charlie Manby (Group F)",
-                                          "Jonny Clayton v Rob Cross (Group G)",
-                                          "Josh Rock v Kevin Doets (Group C)"
-                                ]
+                                          "Match 1 — pairing and running order TBC",
+                                          "Match 2 — pairing and running order TBC",
+                                          "Match 3 — pairing and running order TBC",
+                                          "Match 4 — pairing and running order TBC",
+                                          "Match 5 — pairing and running order TBC",
+                                          "Match 6 — pairing and running order TBC",
+                                          "Match 7 — pairing and running order TBC",
+                                          "Match 8 — pairing and running order TBC"
+                                ],
+                                "match_note": "The PDC has confirmed eight matches in this session, but has not yet published the individual pairings or running order."
                       },
                       {
                                 "date": "2026-11-15",
                                 "session": "Evening session",
                                 "start_at": "2026-11-15T19:30:00Z",
                                 "matches": [
-                                          "Martin Schindler v Jan Schmidt (Group N)",
-                                          "Joe Cullen v Paolo Nebrida (Group I)",
-                                          "Sebastian Bialecki v Joe Hunt (Group E)",
-                                          "Bradley Brooks v Carl Sneyd (Group M)",
-                                          "Ricky Evans v Cam Crabtree (Group K)",
-                                          "Niels Zonneveld v Beau Greaves (Group A)",
-                                          "Ross Smith v Gabriel Clemens (Group O)",
-                                          "Jeffrey de Graaf v Henry Coates (Group L)"
-                                ]
+                                          "Match 1 — pairing and running order TBC",
+                                          "Match 2 — pairing and running order TBC",
+                                          "Match 3 — pairing and running order TBC",
+                                          "Match 4 — pairing and running order TBC",
+                                          "Match 5 — pairing and running order TBC",
+                                          "Match 6 — pairing and running order TBC",
+                                          "Match 7 — pairing and running order TBC",
+                                          "Match 8 — pairing and running order TBC"
+                                ],
+                                "match_note": "The PDC has confirmed eight matches in this session, but has not yet published the individual pairings or running order."
                       },
                       {
                                 "date": "2026-11-16",
                                 "session": "Evening session",
                                 "start_at": "2026-11-16T19:00:00Z",
                                 "matches": [
-                                          "Match 1 — pairing and running order TBC",
-                                          "Match 2 — pairing and running order TBC",
-                                          "Match 3 — pairing and running order TBC",
-                                          "Match 4 — pairing and running order TBC",
-                                          "Match 5 — pairing and running order TBC",
-                                          "Match 6 — pairing and running order TBC",
-                                          "Match 7 — pairing and running order TBC",
-                                          "Match 8 — pairing and running order TBC"
-                                ],
-                                "match_note": "The PDC has confirmed eight matches in this session, but has not yet published the individual pairings or running order."
+                                          "Niels Zonneveld v Luke Littler (Group A)",
+                                          "Alan Soutar v Jermaine Wattimena (Group B)",
+                                          "Kevin Doets v Tommy Morris (Group C)",
+                                          "Cameron Menzies v Stephen Bunting (Group D)",
+                                          "Sebastian Bialecki v Gerwyn Price (Group E)",
+                                          "Andrew Gilding v Ryan Searle (Group F)",
+                                          "Rob Cross v Anton Ostlund (Group G)",
+                                          "Niko Springer v Wessel Nijman (Group H)"
+                                ]
                       },
                       {
                                 "date": "2026-11-17",
                                 "session": "Evening session",
                                 "start_at": "2026-11-17T19:00:00Z",
                                 "matches": [
-                                          "Match 1 — pairing and running order TBC",
-                                          "Match 2 — pairing and running order TBC",
-                                          "Match 3 — pairing and running order TBC",
-                                          "Match 4 — pairing and running order TBC",
-                                          "Match 5 — pairing and running order TBC",
-                                          "Match 6 — pairing and running order TBC",
-                                          "Match 7 — pairing and running order TBC",
-                                          "Match 8 — pairing and running order TBC"
-                                ],
-                                "match_note": "The PDC has confirmed eight matches in this session, but has not yet published the individual pairings or running order."
+                                          "Joe Cullen v Luke Humphries (Group I)",
+                                          "Krzysztof Ratajski v Tom Sykes (Group J)",
+                                          "Ricky Evans v James Wade (Group K)",
+                                          "Jeffrey de Graaf v Michael van Gerwen (Group L)",
+                                          "Bradley Brooks v Gian van Veen (Group M)",
+                                          "Martin Schindler v Chris Dobey (Group N)",
+                                          "Gabriel Clemens v Rusty-Jake Rodriguez (Group O)",
+                                          "Karel Sedlacek v Nathan Aspinall (Group P)"
+                                ]
                       },
                       {
                                 "date": "2026-11-18",
