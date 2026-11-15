@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "provider": "IGDB PopScore",
-  "updated_at": "2026-11-14T13:27:24.453Z",
+  "updated_at": "2026-11-15T13:53:24.195Z",
   "status": "ok",
   "methodology": "Daily relative ranking across the upcoming PC and console release list. Weighted IGDB Visits (30%), Want to Play (40%), Playing (15%), Played (5%) and Twitch Hours Watched (10%). Steam-only player, review and sales signals are deliberately excluded so console-only games are not penalised. Missing metrics are omitted and remaining weights are renormalised.",
   "games": [
@@ -75,6 +75,27 @@
       "popularity_rank": 3
     },
     {
+      "slug": "rayman-legends-retold",
+      "title": "Rayman Legends Retold",
+      "release_date": "2026-12-03",
+      "platforms": [
+        "PlayStation 5"
+      ],
+      "verification_status": "verified",
+      "igdb_game_id": 404044,
+      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5zbq.jpg",
+      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5zbq.jpg",
+      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5zbq.jpg",
+      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5zbq.jpg",
+      "popularity_score": 70,
+      "popularity_signals": [
+        "want to play",
+        "visits"
+      ],
+      "popularity_coverage": 2,
+      "popularity_rank": 4
+    },
+    {
       "slug": "hela-of-mice-and-magic",
       "title": "Hela: of Mice & Magic",
       "release_date": "2026-12-01",
@@ -90,13 +111,13 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo11ng.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo11ng.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6r3h.jpg",
-      "popularity_score": 71,
+      "popularity_score": 69,
       "popularity_signals": [
         "want to play",
         "visits"
       ],
       "popularity_coverage": 2,
-      "popularity_rank": 4
+      "popularity_rank": 5
     },
     {
       "slug": "final-fantasy-vii-revelation",
@@ -114,13 +135,13 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar62ze.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar62ze.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar62e8.jpg",
-      "popularity_score": 68,
+      "popularity_score": 65,
       "popularity_signals": [
         "want to play",
         "visits"
       ],
       "popularity_coverage": 2,
-      "popularity_rank": 5
+      "popularity_rank": 6
     },
     {
       "slug": "warhammer-40000-dawn-of-war-iv",
@@ -135,34 +156,78 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar41cc.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar41cc.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6ox1.jpg",
-      "popularity_score": 67,
-      "popularity_signals": [
-        "want to play",
-        "visits"
-      ],
-      "popularity_coverage": 2,
-      "popularity_rank": 6
-    },
-    {
-      "slug": "rayman-legends-retold",
-      "title": "Rayman Legends Retold",
-      "release_date": "2026-12-03",
-      "platforms": [
-        "PlayStation 5"
-      ],
-      "verification_status": "verified",
-      "igdb_game_id": 404044,
-      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5zbq.jpg",
-      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5zbq.jpg",
-      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5zbq.jpg",
-      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5zbq.jpg",
-      "popularity_score": 56,
+      "popularity_score": 64,
       "popularity_signals": [
         "want to play",
         "visits"
       ],
       "popularity_coverage": 2,
       "popularity_rank": 7
+    },
+    {
+      "slug": "trees-hate-you",
+      "title": "Trees Hate You",
+      "release_date": "2026-11-16",
+      "platforms": [
+        "PC"
+      ],
+      "verification_status": "verified",
+      "igdb_game_id": 382400,
+      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar4y6f.jpg",
+      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar4y6g.jpg",
+      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar4y6g.jpg",
+      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar4y6f.jpg",
+      "popularity_score": 53,
+      "popularity_signals": [
+        "want to play",
+        "visits"
+      ],
+      "popularity_coverage": 2,
+      "popularity_rank": 8
+    },
+    {
+      "slug": "warhammer-boltgun-2",
+      "title": "Warhammer 40,000: Boltgun 2",
+      "release_date": "2026-11-19",
+      "platforms": [
+        "Nintendo Switch 2"
+      ],
+      "verification_status": "estimated",
+      "igdb_game_id": 344669,
+      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6suz.jpg",
+      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo1275.jpg",
+      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo1275.jpg",
+      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6suz.jpg",
+      "popularity_score": 44,
+      "popularity_signals": [
+        "want to play",
+        "visits",
+        "playing",
+        "played"
+      ],
+      "popularity_coverage": 4,
+      "popularity_rank": 9
+    },
+    {
+      "slug": "there-are-no-ghosts",
+      "title": "There Are No Ghosts at the Grand",
+      "release_date": "2026-12-16",
+      "platforms": [
+        "PC"
+      ],
+      "verification_status": "estimated",
+      "igdb_game_id": 347841,
+      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar3oxp.jpg",
+      "igdb_logo_url": null,
+      "logo_url": null,
+      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar3oxp.jpg",
+      "popularity_score": 44,
+      "popularity_signals": [
+        "want to play",
+        "visits"
+      ],
+      "popularity_coverage": 2,
+      "popularity_rank": 10
     },
     {
       "slug": "professor-layton-new-world-steam",
@@ -180,72 +245,7 @@
       "igdb_logo_url": null,
       "logo_url": null,
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar260r.jpg",
-      "popularity_score": 49,
-      "popularity_signals": [
-        "want to play",
-        "visits"
-      ],
-      "popularity_coverage": 2,
-      "popularity_rank": 8
-    },
-    {
-      "slug": "trees-hate-you",
-      "title": "Trees Hate You",
-      "release_date": "2026-11-16",
-      "platforms": [
-        "PC"
-      ],
-      "verification_status": "verified",
-      "igdb_game_id": 382400,
-      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar4y6f.jpg",
-      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar4y6g.jpg",
-      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar4y6g.jpg",
-      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar4y6f.jpg",
-      "popularity_score": 47,
-      "popularity_signals": [
-        "want to play",
-        "visits"
-      ],
-      "popularity_coverage": 2,
-      "popularity_rank": 9
-    },
-    {
-      "slug": "warhammer-boltgun-2",
-      "title": "Warhammer 40,000: Boltgun 2",
-      "release_date": "2026-11-19",
-      "platforms": [
-        "Nintendo Switch 2"
-      ],
-      "verification_status": "estimated",
-      "igdb_game_id": 344669,
-      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6suz.jpg",
-      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo1275.jpg",
-      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo1275.jpg",
-      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6suz.jpg",
-      "popularity_score": 46,
-      "popularity_signals": [
-        "want to play",
-        "visits",
-        "playing",
-        "played"
-      ],
-      "popularity_coverage": 4,
-      "popularity_rank": 10
-    },
-    {
-      "slug": "there-are-no-ghosts",
-      "title": "There Are No Ghosts at the Grand",
-      "release_date": "2026-12-16",
-      "platforms": [
-        "PC"
-      ],
-      "verification_status": "estimated",
-      "igdb_game_id": 347841,
-      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar3oxp.jpg",
-      "igdb_logo_url": null,
-      "logo_url": null,
-      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar3oxp.jpg",
-      "popularity_score": 38,
+      "popularity_score": 41,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -267,7 +267,7 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar48ki.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar48ki.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6xi8.jpg",
-      "popularity_score": 33,
+      "popularity_score": 36,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -292,7 +292,7 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5xzb.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5xzb.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5xzb.jpg",
-      "popularity_score": 27,
+      "popularity_score": 24,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -316,7 +316,7 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5n09.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5n09.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6lhk.jpg",
-      "popularity_score": 27,
+      "popularity_score": 24,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -349,27 +349,6 @@
       "popularity_rank": 15
     },
     {
-      "slug": "xenoblade-chronicles-3-switch-2",
-      "title": "Xenoblade Chronicles 3: Switch 2 Edition",
-      "release_date": "2026-12-03",
-      "platforms": [
-        "Nintendo Switch 2"
-      ],
-      "verification_status": "estimated",
-      "igdb_game_id": 405448,
-      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6b87.jpg",
-      "igdb_logo_url": null,
-      "logo_url": null,
-      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6b87.jpg",
-      "popularity_score": 8,
-      "popularity_signals": [
-        "want to play",
-        "visits"
-      ],
-      "popularity_coverage": 2,
-      "popularity_rank": 16
-    },
-    {
       "slug": "romancing-saga-3-destinies-united",
       "title": "Romancing SaGa 3: Destinies United",
       "release_date": "2027-02-16",
@@ -386,7 +365,28 @@
       "igdb_logo_url": null,
       "logo_url": null,
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6keu.jpg",
-      "popularity_score": 4,
+      "popularity_score": 9,
+      "popularity_signals": [
+        "want to play",
+        "visits"
+      ],
+      "popularity_coverage": 2,
+      "popularity_rank": 16
+    },
+    {
+      "slug": "xenoblade-chronicles-3-switch-2",
+      "title": "Xenoblade Chronicles 3: Switch 2 Edition",
+      "release_date": "2026-12-03",
+      "platforms": [
+        "Nintendo Switch 2"
+      ],
+      "verification_status": "estimated",
+      "igdb_game_id": 405448,
+      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6b87.jpg",
+      "igdb_logo_url": null,
+      "logo_url": null,
+      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6b87.jpg",
+      "popularity_score": 0,
       "popularity_signals": [
         "want to play",
         "visits"
