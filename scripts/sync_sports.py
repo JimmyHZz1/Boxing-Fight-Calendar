@@ -141,8 +141,8 @@ def paged_darts_results(key):
     all_rows, cursor = [], None
     for _ in range(8):
         params = {
-            "from": (TODAY - timedelta(days=30)).isoformat(),
-            "to": (TODAY - timedelta(days=7)).isoformat(),
+            "from": (TODAY - timedelta(days=14)).isoformat(),
+            "to": (TODAY - timedelta(days=1)).isoformat(),
             "limit": 200,
         }
         if cursor:
@@ -488,9 +488,9 @@ def sync_darts():
             payload["results"] = paged_darts_results(key)
             payload["results_last_successful_update"] = iso_now()
             payload["results_window"] = {
-                "from": (TODAY - timedelta(days=30)).isoformat(),
-                "to": (TODAY - timedelta(days=7)).isoformat(),
-                "note": "Weekly settled-results snapshot; live match scores are not included."
+                "from": (TODAY - timedelta(days=14)).isoformat(),
+                "to": (TODAY - timedelta(days=1)).isoformat(),
+                "note": "Recent settled-results snapshot through yesterday; live match scores are not included."
             }
         else:
             raise RuntimeError("DARTS_API_KEY is not configured; retaining the last published results.")
