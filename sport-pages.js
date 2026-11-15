@@ -245,8 +245,15 @@
     target.replaceChildren();
     const events=eventsFor(sport);
     const now=today();
-    const upcoming=events.filter(e=>dateKey(dateValue(e))>=now).sort((a,b)=>dateKey(dateValue(a)).localeCompare(dateKey(dateValue(b))));
-    const past=events.filter(e=>dateKey(dateValue(e))&&dateKey(dateValue(e))<now).sort((a,b)=>dateKey(dateValue(b)).localeCompare(dateKey(dateValue(a))));
+    const isOngoing=e=>{
+      if(sport!=="darts")return false;
+      const start=dateKey(dateValue(e));
+      const end=dateKey(e.end_date||e.ends_at||e.end_at||dateValue(e));
+      return !!(start&&end&&start<=now&&end>=now);
+    };
+    const onNow=events.filter(isOngoing).sort((a,b)=>dateKey(dateValue(a)).localeCompare(dateKey(dateValue(b))));
+    const upcoming=events.filter(e=>!isOngoing(e)&&dateKey(dateValue(e))>=now).sort((a,b)=>dateKey(dateValue(a)).localeCompare(dateKey(dateValue(b))));
+    const past=events.filter(e=>!isOngoing(e)&&dateKey(dateValue(e))&&dateKey(dateValue(e))<now).sort((a,b)=>dateKey(dateValue(b)).localeCompare(dateKey(dateValue(a))));
     const next=upcoming[0]||null;
     // The hero "Next up" card already presents the first upcoming event.
     // Keep it out of the following list so every event appears only once.
@@ -262,6 +269,17 @@
     const title=el("h1",null,info.name);title.id="sport-detail-title";const desc=el("p",null,info.intro);
     const meta=el("div","sport-detail-meta");meta.append(el("span",null,"UK LOCAL TIME"),el("span",null,upcoming.length+" UPCOMING"),el("span",null,events.length+" EVENTS IN FEED"));
     hero.append(top,title,desc,meta);target.append(hero);
+    if(onNow.length){
+      const live=section("On now","LIVE TOURNAMENTS");
+      onNow.forEach(event=>{
+        const wrap=el("div","sport-page-live-event");
+        wrap.append(el("span","live-badge","● ON NOW"));
+        const card=renderEvent(sport,event);
+        if(card)wrap.append(card);else wrap.append(empty(eventName(event)));
+        live.append(wrap);
+      });
+      target.append(live);
+    }
     const stats=el("div","sport-detail-stats");
     const third=sport==="f1"?[String(sessionCount),"RACE SESSIONS"]:sport==="darts"?[String(matchCount),"MATCHES SCHEDULED"]:[String(totalFights),"FIGHTS / BOUTS LISTED"];
     [[String(upcoming.length),"UPCOMING EVENTS"],[String(past.length),"PAST EVENTS"],third].forEach(([n,l])=>{const c=el("div","sport-detail-stat");c.append(el("strong",null,n),el("small",null,l));stats.append(c);});
