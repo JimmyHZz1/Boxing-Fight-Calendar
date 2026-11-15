@@ -151,7 +151,12 @@
     const centreTitle=$("live-now-title");
     const centreRows=compact?(live.length?live.slice(0,3):(nextUpcoming?[nextUpcoming]:[])):live;
     if(centreTitle)centreTitle.textContent=compact&&!live.length?"NEXT UP":"LIVE NOW";
-    $("live-now-count").textContent=compact?(live.length?live.length+" LIVE":nextUpcoming?"NEXT EVENT":"NO EVENTS"):live.length+" LIVE";
+    const feedTimes=sports.map(sport=>window.SportsData?.getMeta?.(sport)?.last_updated||window.SportsData?.getMeta?.(sport)?.last_successful_update).filter(Boolean).map(value=>new Date(value)).filter(value=>!Number.isNaN(value.getTime()));
+    const latestFeed=feedTimes.length?new Date(Math.min(...feedTimes.map(value=>value.getTime()))):null;
+    const feedLabel=latestFeed?" · FEED "+new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",hour:"2-digit",minute:"2-digit"}).format(latestFeed):" · FEED TIME UNKNOWN";
+    const feedStale=latestFeed&&(Date.now()-latestFeed.getTime()>6*3600000);
+    $("live-now-count").textContent=(compact?(live.length?live.length+" LIVE":nextUpcoming?"NEXT EVENT":"NO EVENTS"):live.length+" LIVE")+feedLabel+(feedStale?" · STALE":"");
+    $("live-now-count").title=feedStale?"The published sports data is over six hours old. Live scores are only shown when supplied by a source.":"Timestamp of the latest successful published sports feed.";
     if(centreRows.length)centreRows.forEach(x=>{const row=renderSummary(x.sport,x.event,isLive(x.event));row.tabIndex=0;row.setAttribute("role","button");row.setAttribute("aria-label","Open "+names[x.sport]+" event: "+(x.event.name||x.event.title||"Event"));const open=()=>window.SportPages?.open?.(x.sport);row.addEventListener("click",open);row.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();open();}});liveRoot.append(row);});
     else liveRoot.append(make("p","live-centre-empty",compact?"No live or upcoming events are listed in the published feeds.":"No events are currently marked live in the published feeds. Live indicators appear only when a source explicitly reports an event or session as live."));
     const limit=new Date(Date.now()+7*86400000);const limitKey=new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/London"}).format(limit);
