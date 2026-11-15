@@ -1243,9 +1243,39 @@
       "image_match_method": "category:Category:Jéssica Andrade",
       "image_verified_at": "2026-11-14T20:52:50Z",
       "image_local_path": "assets/images/ufc/jessica-andrade.jpg"
+    },
+    "bartosz zmarzlik": {
+      "name": "Bartosz Zmarzlik",
+      "sport": "speedway",
+      "image_url": "./assets/images/speedway/bartosz-zmarzlik.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Bartosz_Zmarzlik_(2016).jpg",
+      "image_credit": "Wikimedia Commons · Stiopa · CC BY-SA 4.0",
+      "image_license": "CC BY-SA 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Bartosz Zmarzlik",
+      "image_verified_at": "2026-11-15T00:53:17Z",
+      "image_local_path": "assets/images/speedway/bartosz-zmarzlik.jpg"
+    },
+    "brady kurtz": {
+      "name": "Brady Kurtz",
+      "sport": "speedway",
+      "image_url": "./assets/images/speedway/brady-kurtz.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Brady_Kurtz.JPG",
+      "image_credit": "Wikimedia Commons · Lawson Speedway · CC BY-SA 4.0",
+      "image_license": "CC BY-SA 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Brady Kurtz",
+      "image_verified_at": "2026-11-15T00:53:17Z",
+      "image_local_path": "assets/images/speedway/brady-kurtz.jpg"
     }
   },
-  "updated_at": "2026-11-14T23:55:45Z",
+  "updated_at": "2026-11-15T00:53:17Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1486,7 +1516,10 @@
     "amanda lemos": "2026-11-14T20:52:50Z",
     "jessica andrade": "2026-11-14T20:52:50Z",
     "amanda ribas": "2026-11-14T20:52:50Z",
-    "piera rodriguez": "2026-11-14T20:52:50Z"
+    "piera rodriguez": "2026-11-14T20:52:50Z",
+    "robert lambert": "2026-11-15T00:53:17Z",
+    "bartosz zmarzlik": "2026-11-15T00:53:17Z",
+    "brady kurtz": "2026-11-15T00:53:17Z"
   },
   "audit": {
     "last_reviewed_at": "2026-11-09T12:15:00Z",
@@ -1523,24 +1556,16 @@
     }
   },
   "enrichment": {
-    "batch_number": 37,
+    "batch_number": 38,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 256,
-    "cumulative_found": 89,
-    "cumulative_missing": 167,
-    "cumulative_rejected": 159,
-    "last_batch_at": "2026-11-14T20:52:50Z",
-    "last_successful_batch_at": "2026-11-14T20:52:50Z",
-    "last_rate_limited_at": "2026-11-14T20:52:50Z",
+    "cumulative_attempted": 260,
+    "cumulative_found": 91,
+    "cumulative_missing": 169,
+    "cumulative_rejected": 174,
+    "last_batch_at": "2026-11-15T00:53:17Z",
+    "last_successful_batch_at": "2026-11-15T00:53:17Z",
+    "last_rate_limited_at": "2026-11-15T00:53:17Z",
     "history": [
-      {
-        "batch": 8,
-        "at": "2026-11-09T23:04:13Z",
-        "attempted": 5,
-        "found": 0,
-        "missing": 5,
-        "rate_limited": false
-      },
       {
         "batch": 9,
         "at": "2026-11-10T04:42:54Z",
@@ -1771,6 +1796,14 @@
         "attempted": 5,
         "found": 1,
         "missing": 4,
+        "rate_limited": true
+      },
+      {
+        "batch": 38,
+        "at": "2026-11-15T00:53:17Z",
+        "attempted": 4,
+        "found": 2,
+        "missing": 2,
         "rate_limited": true
       }
     ],

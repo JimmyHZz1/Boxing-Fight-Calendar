@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-14T20:52:50Z",
+  "updated_at": "2026-11-15T00:53:17Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -938,6 +938,28 @@
       "attribution": "Wikimedia Commons · MMAnytt · CC BY 3.0",
       "verified_at": "2026-11-14T20:52:50Z",
       "sport": "ufc"
+    },
+    "bartosz zmarzlik": {
+      "name": "Bartosz Zmarzlik",
+      "path": "assets/images/speedway/bartosz-zmarzlik.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Bartosz_Zmarzlik_(2016).jpg",
+      "licence": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "creator": "Wikimedia Commons · Stiopa · CC BY-SA 4.0",
+      "attribution": "Wikimedia Commons · Stiopa · CC BY-SA 4.0",
+      "verified_at": "2026-11-15T00:53:17Z",
+      "sport": "speedway"
+    },
+    "brady kurtz": {
+      "name": "Brady Kurtz",
+      "path": "assets/images/speedway/brady-kurtz.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Brady_Kurtz.JPG",
+      "licence": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "creator": "Wikimedia Commons · Lawson Speedway · CC BY-SA 4.0",
+      "attribution": "Wikimedia Commons · Lawson Speedway · CC BY-SA 4.0",
+      "verified_at": "2026-11-15T00:53:17Z",
+      "sport": "speedway"
     }
   },
   "collections": {
