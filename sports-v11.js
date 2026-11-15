@@ -16,6 +16,11 @@
   const formatDate=e=>{const v=dateValue(e);if(!v)return "Date TBC";const d=new Date(/^\d{4}-\d{2}-\d{2}$/.test(String(v))?v+"T12:00:00Z":v);return Number.isNaN(d.getTime())?"Date TBC":new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",weekday:"short",day:"numeric",month:"short"}).format(d);};
   const formatTime=e=>{const v=dateValue(e);if(!v||/^\d{4}-\d{2}-\d{2}$/.test(String(v)))return "Time TBC";const d=new Date(v);return Number.isNaN(d.getTime())?"Time TBC":new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",hour:"2-digit",minute:"2-digit"}).format(d)+" UK";};
   const status=e=>String(e?.status||"").toLowerCase().replace(/[ -]/g,"_");
+  const isActiveWindow=e=>{
+    const start=dateKey(dateValue(e));
+    const end=dateKey(e?.end_date||e?.ends_at||e?.end_at);
+    return !!(start&&end&&start<today()&&end>=today());
+  };
   const isLive=e=>{
     if(["live","in_progress","ongoing","inprogress"].includes(status(e))||e?.is_live===true||e?.live===true||(e?.sessions||[]).some(s=>["live","in_progress","ongoing"].includes(String(s.status||"").toLowerCase().replace(/[ -]/g,"_"))||s.is_live===true))return true;
     // F1 sessions can finish well before the race weekend's four-hour window.
@@ -26,6 +31,7 @@
     const s=status(e),finished=["completed","complete","finished","ended","cancelled","canceled","postponed","abandoned"];
     if(finished.includes(s))return false;
     const value=dateValue(e),key=dateKey(value);
+    if(isActiveWindow(e))return true;
     if(!value||key<today())return false;
     if(/^\d{4}-\d{2}-\d{2}$/.test(String(value)))return true;
     return timestamp(e)>Date.now();
@@ -49,7 +55,7 @@
     if(!live&&target&&(dateOnly||new Date(target).getTime()>Date.now())){
       const timer=make("small","live-centre-countdown",window.SportsCountdown?.text?.(target)||"COUNTDOWN");timer.dataset.countdownTarget=dateOnly?target:new Date(target).toISOString();info.append(timer);
     }
-    row.append(mark,info,make("span","live-centre-badge",live?"● LIVE":"UPCOMING"));
+    row.append(mark,info,make("span","live-centre-badge",live?"● LIVE":isActiveWindow(event)?"ONGOING":"UPCOMING"));
     return row;
   }
   function allEvents(){
@@ -86,7 +92,9 @@
       const rows=allEvents().filter(x=>x.sport===sport&&!(sport==="boxing"&&(x.event.data_source==="Boxing Data API"||/^Additional scheduled bouts\\b/i.test(String(x.event.name||x.event.title||"")))));
       const live=rows.filter(x=>isLive(x.event)).sort((a,b)=>timestamp(a.event)-timestamp(b.event))[0];
       const next=rows.filter(x=>!isLive(x.event)&&isUpcoming(x.event)).sort((a,b)=>timestamp(a.event)-timestamp(b.event))[0];
-      const chosen=live||next;if(chosen)selected.push({sport,event:chosen.event,live:!!live});
+      const ongoing=rows.filter(x=>isActiveWindow(x.event)).sort((a,b)=>timestamp(a.event)-timestamp(b.event))[0];
+      const chosen=live||ongoing||next;
+      if(chosen)selected.push({sport,event:chosen.event,live:!!live,ongoing:!live&&isActiveWindow(chosen.event)});
     });
     // Keep FIM Speedway as an explicit ticker entry, sourced from the same
     // published Speedway calendar used by the dedicated Speedway page.
@@ -95,12 +103,12 @@
     const speedwayNext=speedwayRows.filter(x=>!isLive(x.event)&&isUpcoming(x.event)).sort((a,b)=>timestamp(a.event)-timestamp(b.event))[0];
     const nextSpeedway=speedwayLive||speedwayNext;
     if(nextSpeedway)selected.push({sport:"speedway",event:nextSpeedway.event,live:!!speedwayLive});
-    const signature=selected.map(x=>x.sport+":"+String(x.event.id||x.event.event_id||x.event.name||x.event.title||"")+":"+String(x.event.start_at||x.event.main_card_at||x.event.start_time_utc||x.event.starts_at||x.event.date||x.event.event_date||x.event.eventDate||"")+":"+x.live).join("|");
+    const signature=selected.map(x=>x.sport+":"+String(x.event.id||x.event.event_id||x.event.name||x.event.title||"")+":"+String(x.event.start_at||x.event.main_card_at||x.event.start_time_utc||x.event.starts_at||x.event.date||x.event.event_date||x.event.eventDate||"")+":"+x.live+":"+!!x.ongoing).join("|");
     if(signature===tickerSignature&&root.querySelector(".next-event-track")){requestAnimationFrame(measureTicker);return;}
     tickerSignature=signature;root.classList.remove("is-auto-scrolling","is-paused");root.scrollLeft=0;root.replaceChildren();
     if(!selected.length){tickerLoopDistance=0;root.append(make("span","next-event-loading","No live or upcoming events currently listed."));return;}
     const track=make("div","next-event-track"),group=make("div","next-event-group");
-    selected.forEach(({sport,event,live})=>{
+    selected.forEach(({sport,event,live,ongoing})=>{
       const button=make("button","next-event-item");button.type="button";button.dataset.sport=sport;
       const info=make("span","next-event-info");
       info.append(make("small","next-event-sport",names[sport]),make("strong","next-event-name",event.name||event.title||"Event"));
@@ -110,7 +118,7 @@
         timer.dataset.countdownTarget=/^\d{4}-\d{2}-\d{2}$/.test(String(target))?String(target):new Date(target).toISOString();info.append(timer);
       }
       const badge=make("span","next-event-state "+(live?"is-live":"is-upcoming"));
-      badge.append(make("i","next-event-state-icon",live?"●":"▣"),make("b",null,live?"LIVE":"UPCOMING"));
+      badge.append(make("i","next-event-state-icon",live?"●":ongoing?"◷":"▣"),make("b",null,live?"LIVE":ongoing?"ONGOING":"UPCOMING"));
       button.append(info,badge);group.append(button);
     });
     track.append(group);root.append(track);requestAnimationFrame(measureTicker);
@@ -147,15 +155,21 @@
     const all=allEvents(),live=all.filter(x=>isLive(x.event)).sort((a,b)=>timestamp(a.event)-timestamp(b.event));
     liveRoot.replaceChildren();
     const compact=document.body.classList.contains("compact-view");
-    const nextUpcoming=all.filter(x=>!isLive(x.event)&&isUpcoming(x.event)).sort((a,b)=>timestamp(a.event)-timestamp(b.event))[0];
+    const ongoing=all.filter(x=>!isLive(x.event)&&isActiveWindow(x.event)).sort((a,b)=>timestamp(a.event)-timestamp(b.event));
+    const nextUpcoming=all.filter(x=>!isLive(x.event)&&!isActiveWindow(x.event)&&isUpcoming(x.event)).sort((a,b)=>timestamp(a.event)-timestamp(b.event))[0];
     const centreTitle=$("live-now-title");
-    const centreRows=compact?(live.length?live.slice(0,3):(nextUpcoming?[nextUpcoming]:[])):live;
-    if(centreTitle)centreTitle.textContent=compact&&!live.length?"NEXT UP":"LIVE NOW";
-    $("live-now-count").textContent=compact?(live.length?live.length+" LIVE":nextUpcoming?"NEXT EVENT":"NO EVENTS"):live.length+" LIVE";
+    const centreRows=compact?(live.length?live.slice(0,3):ongoing.length?ongoing.slice(0,3):(nextUpcoming?[nextUpcoming]:[])):(live.length?live:ongoing);
+    if(centreTitle)centreTitle.textContent=live.length?"LIVE NOW":ongoing.length?"ON NOW":"NEXT UP";
+    const feedTimes=sports.map(sport=>window.SportsData?.getMeta?.(sport)?.last_updated||window.SportsData?.getMeta?.(sport)?.last_successful_update).filter(Boolean).map(value=>new Date(value)).filter(value=>!Number.isNaN(value.getTime()));
+    const latestFeed=feedTimes.length?new Date(Math.min(...feedTimes.map(value=>value.getTime()))):null;
+    const feedLabel=latestFeed?" · FEED "+new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",hour:"2-digit",minute:"2-digit"}).format(latestFeed):" · FEED TIME UNKNOWN";
+    const feedStale=latestFeed&&(Date.now()-latestFeed.getTime()>6*3600000);
+    $("live-now-count").textContent=(compact?(live.length?live.length+" LIVE":nextUpcoming?"NEXT EVENT":"NO EVENTS"):live.length+" LIVE")+feedLabel+(feedStale?" · STALE":"");
+    $("live-now-count").title=feedStale?"The published sports data is over six hours old. Live scores are only shown when supplied by a source.":"Timestamp of the latest successful published sports feed.";
     if(centreRows.length)centreRows.forEach(x=>{const row=renderSummary(x.sport,x.event,isLive(x.event));row.tabIndex=0;row.setAttribute("role","button");row.setAttribute("aria-label","Open "+names[x.sport]+" event: "+(x.event.name||x.event.title||"Event"));const open=()=>window.SportPages?.open?.(x.sport);row.addEventListener("click",open);row.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();open();}});liveRoot.append(row);});
     else liveRoot.append(make("p","live-centre-empty",compact?"No live or upcoming events are listed in the published feeds.":"No events are currently marked live in the published feeds. Live indicators appear only when a source explicitly reports an event or session as live."));
     const limit=new Date(Date.now()+7*86400000);const limitKey=new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/London"}).format(limit);
-    const upcoming=all.filter(x=>isUpcoming(x.event)&&dateKey(dateValue(x.event))<=limitKey&&!isLive(x.event)).sort((a,b)=>timestamp(a.event)-timestamp(b.event));
+    const upcoming=all.filter(x=>isUpcoming(x.event)&&!isActiveWindow(x.event)&&dateKey(dateValue(x.event))<=limitKey&&!isLive(x.event)).sort((a,b)=>timestamp(a.event)-timestamp(b.event));
     const upcomingCount=$("live-upcoming-count");if(upcomingCount)upcomingCount.textContent=upcoming.length+" UPCOMING";
     upcomingRoot.replaceChildren();
     if(upcoming.length){

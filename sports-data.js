@@ -132,8 +132,13 @@
   }
   function sortedEvents(sport, includePast=false) {
     const list=data[sport].slice();
-    return list.filter(e=>includePast||eventDate({...e,sport})>=today())
-      .sort((a,b)=>(eventDate({...a,sport})||"").localeCompare(eventDate({...b,sport})||""));
+    return list.filter(e=>{
+      if(includePast)return true;
+      const start=eventDate({...e,sport});
+      const end=dateKey(e.end_date||e.ends_at||e.end_at||"");
+      // Multi-day tournaments remain current until their published final day.
+      return (start&&start>=today())||(end&&end>=today());
+    }).sort((a,b)=>(eventDate({...a,sport})||"").localeCompare(eventDate({...b,sport})||""));
   }
   function sportLogo(sport) {
     const logos={
@@ -288,6 +293,27 @@
     const source=event.schedule_source_url||event.source_url||"https://www.pdc.tv/calendar";
     if(/^https?:\/\//i.test(source)){const a=make("a","event-source-link","Official PDC schedule ↗");a.href=source;a.target="_blank";a.rel="noopener noreferrer";root.append(a);}
   }
+  function renderDartsResults(root) {
+    const results=Array.isArray(meta.darts?.results)?meta.darts.results.slice():[];
+    const confirmed=results.filter(r=>r&&r.winner?.name&&r.loser?.name&&String(r.result_status||"final").toLowerCase()==="final")
+      .sort((a,b)=>String(b.played_on||"").localeCompare(String(a.played_on||"")));
+    root.append(make("p","sport-sync-note sport-darts-order-heading","RECENT CONFIRMED RESULTS"));
+    if(!confirmed.length){
+      root.append(make("p","sport-sync-note",meta.darts?.results_sync_warning?"Results feed is temporarily unavailable; the last confirmed results could not be loaded.":"No settled PDC match results are available in the current published results window."));
+      return;
+    }
+    renderRows(root,confirmed.slice(0,12),["DATE","WINNER","SCORE","LOSER","ROUND"],r=>[
+      r.played_on?dateLabel(r.played_on):"—",r.winner?.name,
+      r.winner?.score!=null&&r.loser?.score!=null?r.winner.score+" – "+r.loser.score:"—",r.loser?.name,
+      String(r.round||"").replaceAll("_"," ").toUpperCase()||"—"
+    ]);
+    const updated=meta.darts?.results_last_successful_update;
+    if(updated){
+      const stamp=new Date(updated);
+      if(!Number.isNaN(stamp.getTime()))root.append(make("p","sport-sync-note","Results feed updated "+new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"}).format(stamp)+" UK. Settled results only; no live scores are supplied by this feed."));
+    }
+    if(meta.darts?.results_sync_warning)root.append(make("p","sport-sync-note sport-sync-warning","Results refresh warning: "+meta.darts.results_sync_warning));
+  }
   function fighterPortrait(name, url) {
     const initials=String(name||"?").trim().split(/\\s+/).filter(Boolean).slice(0,2).map(part=>part[0]).join("").toUpperCase()||"?";
     const fallback=()=>make("span","sport-fight-portrait sport-fight-portrait-fallback",initials);
@@ -378,6 +404,7 @@
     if (!events.length) list.append(make("div","sport-empty",sport==="darts"?"PDC calendar data will appear here once the Darts API key is connected and its first sync completes.":sport==="bkfc"?"BKFC event data will appear here after the next successful official schedule sync.":"Schedule data will appear here once the API connection is configured and its first sync completes."));
     else events.forEach(event=>list.append(eventCard(sport,event)));
     panel.append(list);
+    if(sport==="darts")renderDartsResults(panel);
   }
   function getNextEvent(sport){return sortedEvents(sport)[0]||null;}
   function getCalendarFilter(){return calendarFilter;}
@@ -427,6 +454,11 @@
   document.querySelectorAll("[data-calendar-sport]").forEach(button=>button.addEventListener("click",()=>setCalendarFilter(button.dataset.calendarSport)));
   window.SportsCountdown={text:countdownText,tick:tickCountdowns};
   setInterval(tickCountdowns,1000);
-  window.SportsData={load:async()=>{await Promise.all(SPORTS.map(fetchFeed));renderAll();tickCountdowns();if(window.renderCalendar)window.renderCalendar();document.dispatchEvent(new CustomEvent("sports:feeds-updated"));},renderActive,renderAll,renderEventCards,renderSelectedDate,markCalendarDays,getCalendarFilter,getNextEvent,getEvents:(sport,includePast=true)=>includePast?data[sport].map(e=>({...e,sport})):sortedEvents(sport).map(e=>({...e,sport})),getMeta:sport=>meta[sport]||{},renderEventCard:(sport,event)=>eventCard(sport,event)};
+  let loading=false;
+  window.SportsData={load:async()=>{if(loading)return;loading=true;try{await Promise.all(SPORTS.map(fetchFeed));renderAll();tickCountdowns();if(window.renderCalendar)window.renderCalendar();document.dispatchEvent(new CustomEvent("sports:feeds-updated"));}finally{loading=false;}},renderActive,renderAll,renderEventCards,renderSelectedDate,markCalendarDays,getCalendarFilter,getNextEvent,getEvents:(sport,includePast=true)=>includePast?data[sport].map(e=>({...e,sport})):sortedEvents(sport).map(e=>({...e,sport})),getMeta:sport=>meta[sport]||{},renderEventCard:(sport,event)=>eventCard(sport,event)};
   window.SportsData.load();
+  // Static JSON is refreshed by the scheduled GitHub workflow. Re-fetch while
+  // the app is open so newly published snapshots reach the Live Sports Centre.
+  setInterval(()=>{if(!document.hidden)window.SportsData.load();},90000);
+  document.addEventListener("visibilitychange",()=>{if(!document.hidden)window.SportsData.load();});
 })();

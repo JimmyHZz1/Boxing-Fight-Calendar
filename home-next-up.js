@@ -99,6 +99,13 @@
         }
       });
     });
+    const dartsMeta=window.SportsData?.getMeta?.("darts")||{};
+    (Array.isArray(dartsMeta.results)?dartsMeta.results:[]).forEach(result=>{
+      const date=String(result.played_on||"").slice(0,10);
+      if(!date||date>today||!result.winner?.name||!result.loser?.name||String(result.result_status||"final").toLowerCase()!=="final")return;
+      const score=result.winner.score!=null&&result.loser.score!=null?" · "+result.winner.score+"–"+result.loser.score+" legs":"";
+      records.push({sport:"darts",mark:"PDC",name:result.event_name||"PDC event",date,summary:result.winner.name+" beat "+result.loser.name+score,event:result});
+    });
     boxingEvents.forEach(event => {
       const bouts = Array.isArray(event.bouts) ? event.bouts : [];
       const completed = bouts.filter(b => b.result || b.winner || b.status === "completed");
