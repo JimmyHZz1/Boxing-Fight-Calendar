@@ -1305,7 +1305,7 @@
       "image_local_path": "assets/images/speedway/patryk-dudek.jpg"
     }
   },
-  "updated_at": "2026-11-15T14:50:21Z",
+  "updated_at": "2026-11-15T14:51:27Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1591,24 +1591,16 @@
     }
   },
   "enrichment": {
-    "batch_number": 39,
+    "batch_number": 40,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 265,
+    "cumulative_attempted": 266,
     "cumulative_found": 93,
-    "cumulative_missing": 172,
+    "cumulative_missing": 173,
     "cumulative_rejected": 181,
-    "last_batch_at": "2026-11-15T07:40:38Z",
-    "last_successful_batch_at": "2026-11-15T07:40:38Z",
-    "last_rate_limited_at": "2026-11-15T00:53:17Z",
+    "last_batch_at": "2026-11-15T14:51:27Z",
+    "last_successful_batch_at": "2026-11-15T14:51:27Z",
+    "last_rate_limited_at": "2026-11-15T14:51:27Z",
     "history": [
-      {
-        "batch": 10,
-        "at": "2026-11-10T13:10:28Z",
-        "attempted": 5,
-        "found": 0,
-        "missing": 5,
-        "rate_limited": false
-      },
       {
         "batch": 11,
         "at": "2026-11-10T20:31:18Z",
@@ -1840,8 +1832,16 @@
         "found": 2,
         "missing": 3,
         "rate_limited": false
+      },
+      {
+        "batch": 40,
+        "at": "2026-11-15T14:51:27Z",
+        "attempted": 1,
+        "found": 0,
+        "missing": 1,
+        "rate_limited": true
       }
     ],
-    "last_batch_rate_limited": false
+    "last_batch_rate_limited": true
   }
 }

@@ -234,13 +234,33 @@
           "rank": 20,
           "name": "Yuki Tsunoda",
           "team": "RB F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/yuki-tsunoda.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Yuki_Tsunoda_Macau_2019.jpg",
+          "image_credit": "Wikimedia Commons · Smith007 · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "category:Category:Yuki Tsunoda in 2019",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/yuki-tsunoda.jpg"
         },
         {
           "rank": 21,
           "name": "Ryo Hirakawa",
           "team": "Haas F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/ryo-hirakawa.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Ryo_Hirakawa_2024_WEC_Fuji_1.jpg",
+          "image_credit": "Wikimedia Commons · Morio · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "search:Ryo Hirakawa",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/ryo-hirakawa.jpg"
         },
         {
           "rank": 22,
@@ -5563,32 +5583,68 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 265,
-    "found": 132,
-    "missing": 420,
-    "rejected": 181,
-    "by_sport": {},
+    "attempted": 1,
+    "found": 136,
+    "missing": 564,
+    "rejected": 0,
+    "by_sport": {
+      "speedway": {
+        "attempted": 1,
+        "found": 0,
+        "missing": 1,
+        "rejected": 0
+      }
+    },
+    "search_details": [
+      {
+        "name": "Andzejs Lebedevs",
+        "queries": 1,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      }
+    ],
+    "checked_at": "2026-11-15T14:51:27Z",
+    "library_entries": 93,
     "newly_found": 0,
+    "cumulative_attempted": 266,
+    "cumulative_found": 93,
+    "cumulative_missing": 173,
+    "cumulative_rejected": 181,
+    "batch_number": 40,
+    "last_batch_at": "2026-11-15T14:51:27Z",
+    "last_successful_batch_at": "2026-11-15T14:51:27Z",
+    "last_rate_limited_at": "2026-11-15T14:51:27Z",
     "coverage": {
+      "boxing fight card fighters": {
+        "total": 306,
+        "with_image": 1,
+        "missing": 305
+      },
       "f1 drivers": {
         "total": 25,
-        "with_image": 23,
-        "missing": 2
+        "with_image": 25,
+        "missing": 0
       },
       "f1 constructors": {
         "total": 11,
         "with_image": 11,
         "missing": 0
       },
-      "darts": {
-        "total": 229,
-        "with_image": 50,
-        "missing": 179
+      "darts top 50": {
+        "total": 50,
+        "with_image": 47,
+        "missing": 3
       },
       "ufc": {
         "total": 206,
         "with_image": 48,
         "missing": 158
+      },
+      "speedway GP riders": {
+        "total": 21,
+        "with_image": 4,
+        "missing": 17
       },
       "boxing": {
         "total": 81,
@@ -5596,17 +5652,7 @@
         "missing": 81
       }
     },
-    "checked_at": "2026-11-15T14:50:21Z",
-    "library_entries": 93,
-    "cumulative_found": 93,
-    "cumulative_missing": 172,
-    "cumulative_rejected": 181,
-    "batch_number": 39,
-    "last_batch_at": "2026-11-15T07:40:38Z",
-    "last_successful_batch_at": "2026-11-15T07:40:38Z",
-    "last_rate_limited_at": "2026-11-15T00:53:17Z",
-    "enrichment_status": "awaiting next scheduled batch",
-    "rate_limited": false
+    "rate_limited": true
   },
   "last_updated": "2026-11-15T14:50:21Z"
 }
