@@ -283,7 +283,18 @@
         "name": "Jason Doyle",
         "number": 69,
         "nationality": "Australia",
-        "points": 73
+        "points": 73,
+        "image_url": "./assets/images/speedway/jason-doyle.jpg",
+        "image_page_url": "https://commons.wikimedia.org/wiki/File:Jason_Doyle_2017.jpg",
+        "image_credit": "Wikimedia Commons · Loco Steve · CC BY-SA 2.0",
+        "image_license": "CC BY-SA 2.0",
+        "image_license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+        "image_source": "Wikimedia Commons",
+        "image_source_class": "licensed-third-party",
+        "image_match_score": 1.0,
+        "image_match_method": "category:Category:Jason Doyle",
+        "image_verified_at": "2026-11-15T16:10:46Z",
+        "image_local_path": "assets/images/speedway/jason-doyle.jpg"
       },
       {
         "rank": 10,
@@ -297,7 +308,18 @@
         "name": "Anders Thomsen",
         "number": 105,
         "nationality": "Denmark",
-        "points": 62
+        "points": 62,
+        "image_url": "./assets/images/speedway/anders-thomsen.jpg",
+        "image_page_url": "https://commons.wikimedia.org/wiki/File:Anders_Thomsen.jpg",
+        "image_credit": "Wikimedia Commons · Georg Lindstrøm · Public domain",
+        "image_license": "Public domain",
+        "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+        "image_source": "Wikimedia Commons",
+        "image_source_class": "licensed-third-party",
+        "image_match_score": 1.0,
+        "image_match_method": "category:Category:Anders Thomsen",
+        "image_verified_at": "2026-11-15T16:10:46Z",
+        "image_local_path": "assets/images/speedway/anders-thomsen.jpg"
       },
       {
         "rank": 12,
@@ -533,7 +555,18 @@
         "name": "Kim Nilsson",
         "number": 233,
         "nationality": "Sweden",
-        "status": "confirmed"
+        "status": "confirmed",
+        "image_url": "./assets/images/speedway/kim-nilsson.jpg",
+        "image_page_url": "https://commons.wikimedia.org/wiki/File:Kim_Nilsson_-_Sweden_men%27s_national_floorball_team.jpg",
+        "image_credit": "Wikimedia Commons · Svenska Innebandyförbundet · CC BY 3.0",
+        "image_license": "CC BY 3.0",
+        "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+        "image_source": "Wikimedia Commons",
+        "image_source_class": "licensed-third-party",
+        "image_match_score": 1.0,
+        "image_match_method": "category:Category:Kim Nilsson",
+        "image_verified_at": "2026-11-15T16:10:46Z",
+        "image_local_path": "assets/images/speedway/kim-nilsson.jpg"
       },
       {
         "rank": 15,

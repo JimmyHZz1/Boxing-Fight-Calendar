@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-15T15:28:41Z",
+  "updated_at": "2026-11-15T16:10:46Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -1003,6 +1003,39 @@
       "creator": "Wikimedia Commons · Afanasyev Sergey · CC BY-SA 3.0",
       "attribution": "Wikimedia Commons · Afanasyev Sergey · CC BY-SA 3.0",
       "verified_at": "2026-11-15T15:28:41Z",
+      "sport": "speedway"
+    },
+    "kim nilsson": {
+      "name": "Kim Nilsson",
+      "path": "assets/images/speedway/kim-nilsson.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Kim_Nilsson_-_Sweden_men%27s_national_floorball_team.jpg",
+      "licence": "CC BY 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by/3.0",
+      "creator": "Wikimedia Commons · Svenska Innebandyförbundet · CC BY 3.0",
+      "attribution": "Wikimedia Commons · Svenska Innebandyförbundet · CC BY 3.0",
+      "verified_at": "2026-11-15T16:10:46Z",
+      "sport": "speedway"
+    },
+    "jason doyle": {
+      "name": "Jason Doyle",
+      "path": "assets/images/speedway/jason-doyle.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Jason_Doyle_2017.jpg",
+      "licence": "CC BY-SA 2.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "creator": "Wikimedia Commons · Loco Steve · CC BY-SA 2.0",
+      "attribution": "Wikimedia Commons · Loco Steve · CC BY-SA 2.0",
+      "verified_at": "2026-11-15T16:10:46Z",
+      "sport": "speedway"
+    },
+    "anders thomsen": {
+      "name": "Anders Thomsen",
+      "path": "assets/images/speedway/anders-thomsen.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Anders_Thomsen.jpg",
+      "licence": "Public domain",
+      "licence_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "creator": "Wikimedia Commons · Georg Lindstrøm · Public domain",
+      "attribution": "Wikimedia Commons · Georg Lindstrøm · Public domain",
+      "verified_at": "2026-11-15T16:10:46Z",
       "sport": "speedway"
     }
   },

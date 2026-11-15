@@ -1333,9 +1333,54 @@
       "image_match_method": "category:Category:Maciej Janowski",
       "image_verified_at": "2026-11-15T15:28:41Z",
       "image_local_path": "assets/images/speedway/maciej-janowski.jpg"
+    },
+    "kim nilsson": {
+      "name": "Kim Nilsson",
+      "sport": "speedway",
+      "image_url": "./assets/images/speedway/kim-nilsson.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Kim_Nilsson_-_Sweden_men%27s_national_floorball_team.jpg",
+      "image_credit": "Wikimedia Commons · Svenska Innebandyförbundet · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Kim Nilsson",
+      "image_verified_at": "2026-11-15T16:10:46Z",
+      "image_local_path": "assets/images/speedway/kim-nilsson.jpg"
+    },
+    "jason doyle": {
+      "name": "Jason Doyle",
+      "sport": "speedway",
+      "image_url": "./assets/images/speedway/jason-doyle.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Jason_Doyle_2017.jpg",
+      "image_credit": "Wikimedia Commons · Loco Steve · CC BY-SA 2.0",
+      "image_license": "CC BY-SA 2.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Jason Doyle",
+      "image_verified_at": "2026-11-15T16:10:46Z",
+      "image_local_path": "assets/images/speedway/jason-doyle.jpg"
+    },
+    "anders thomsen": {
+      "name": "Anders Thomsen",
+      "sport": "speedway",
+      "image_url": "./assets/images/speedway/anders-thomsen.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Anders_Thomsen.jpg",
+      "image_credit": "Wikimedia Commons · Georg Lindstrøm · Public domain",
+      "image_license": "Public domain",
+      "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Anders Thomsen",
+      "image_verified_at": "2026-11-15T16:10:46Z",
+      "image_local_path": "assets/images/speedway/anders-thomsen.jpg"
     }
   },
-  "updated_at": "2026-11-15T15:40:31Z",
+  "updated_at": "2026-11-15T16:10:46Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1589,7 +1634,12 @@
     "jack holder": "2026-11-15T15:28:41Z",
     "fredrik lindgren": "2026-11-15T15:28:41Z",
     "dan bewley": "2026-11-15T15:28:41Z",
-    "maciej janowski": "2026-11-15T15:28:41Z"
+    "maciej janowski": "2026-11-15T15:28:41Z",
+    "kim nilsson": "2026-11-15T16:10:46Z",
+    "rohan tungate": "2026-11-15T16:10:46Z",
+    "jason doyle": "2026-11-15T16:10:46Z",
+    "anders thomsen": "2026-11-15T16:10:46Z",
+    "jan kvech": "2026-11-15T16:10:46Z"
   },
   "audit": {
     "last_reviewed_at": "2026-11-09T12:15:00Z",
@@ -1626,24 +1676,16 @@
     }
   },
   "enrichment": {
-    "batch_number": 41,
+    "batch_number": 42,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 271,
-    "cumulative_found": 95,
-    "cumulative_missing": 176,
-    "cumulative_rejected": 184,
-    "last_batch_at": "2026-11-15T15:28:41Z",
-    "last_successful_batch_at": "2026-11-15T15:28:41Z",
+    "cumulative_attempted": 276,
+    "cumulative_found": 98,
+    "cumulative_missing": 178,
+    "cumulative_rejected": 191,
+    "last_batch_at": "2026-11-15T16:10:46Z",
+    "last_successful_batch_at": "2026-11-15T16:10:46Z",
     "last_rate_limited_at": "2026-11-15T14:51:27Z",
     "history": [
-      {
-        "batch": 12,
-        "at": "2026-11-11T00:57:41Z",
-        "attempted": 5,
-        "found": 0,
-        "missing": 5,
-        "rate_limited": false
-      },
       {
         "batch": 13,
         "at": "2026-11-11T07:30:35Z",
@@ -1874,6 +1916,14 @@
         "attempted": 5,
         "found": 2,
         "missing": 3,
+        "rate_limited": false
+      },
+      {
+        "batch": 42,
+        "at": "2026-11-15T16:10:46Z",
+        "attempted": 5,
+        "found": 3,
+        "missing": 2,
         "rate_limited": false
       }
     ],
