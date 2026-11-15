@@ -340,7 +340,18 @@
         "name": "Dominik Kubera",
         "number": 415,
         "nationality": "Poland",
-        "points": 44
+        "points": 44,
+        "image_url": "./assets/images/speedway/dominik-kubera.png",
+        "image_page_url": "https://commons.wikimedia.org/wiki/File:Dominik_Kubera_in_2017,_Unia_Leszno_speedway.png",
+        "image_credit": "Wikimedia Commons · Marcin Kubiak · CC BY 4.0",
+        "image_license": "CC BY 4.0",
+        "image_license_url": "https://creativecommons.org/licenses/by/4.0",
+        "image_source": "Wikimedia Commons",
+        "image_source_class": "licensed-third-party",
+        "image_match_score": 1.0,
+        "image_match_method": "category:Category:Dominik Kubera",
+        "image_verified_at": "2026-11-15T20:31:19Z",
+        "image_local_path": "assets/images/speedway/dominik-kubera.png"
       },
       {
         "rank": 15,
@@ -379,7 +390,18 @@
         "name": "Kai Huckenbeck",
         "number": 744,
         "nationality": "Germany",
-        "points": 18
+        "points": 18,
+        "image_url": "./assets/images/speedway/kai-huckenbeck.jpg",
+        "image_page_url": "https://commons.wikimedia.org/wiki/File:Kai_Huckenbeck_Profilbild_2017.jpg",
+        "image_credit": "Wikimedia Commons · Huckenbeckspeedway · CC BY-SA 4.0",
+        "image_license": "CC BY-SA 4.0",
+        "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "image_source": "Wikimedia Commons",
+        "image_source_class": "licensed-third-party",
+        "image_match_score": 1.0,
+        "image_match_method": "category:Category:Kai Huckenbeck",
+        "image_verified_at": "2026-11-15T20:31:19Z",
+        "image_local_path": "assets/images/speedway/kai-huckenbeck.jpg"
       }
     ]
   },

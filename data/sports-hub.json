@@ -234,13 +234,33 @@
           "rank": 20,
           "name": "Yuki Tsunoda",
           "team": "RB F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/yuki-tsunoda.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Yuki_Tsunoda_Macau_2019.jpg",
+          "image_credit": "Wikimedia Commons · Smith007 · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "category:Category:Yuki Tsunoda in 2019",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/yuki-tsunoda.jpg"
         },
         {
           "rank": 21,
           "name": "Ryo Hirakawa",
           "team": "Haas F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/ryo-hirakawa.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Ryo_Hirakawa_2024_WEC_Fuji_1.jpg",
+          "image_credit": "Wikimedia Commons · Morio · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "search:Ryo Hirakawa",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/ryo-hirakawa.jpg"
         },
         {
           "rank": 22,
@@ -5563,32 +5583,100 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 276,
-    "found": 132,
-    "missing": 420,
-    "rejected": 191,
-    "by_sport": {},
-    "newly_found": 0,
+    "attempted": 4,
+    "found": 143,
+    "missing": 567,
+    "rejected": 1,
+    "by_sport": {
+      "speedway": {
+        "attempted": 3,
+        "found": 2,
+        "missing": 1,
+        "rejected": 0
+      },
+      "boxing": {
+        "attempted": 1,
+        "found": 0,
+        "missing": 1,
+        "rejected": 0
+      }
+    },
+    "rejection_reasons": {
+      "exact_name_pair_not_matched": 1
+    },
+    "search_details": [
+      {
+        "name": "Dominik Kubera",
+        "queries": 3,
+        "candidate_files": 2,
+        "accepted": 1,
+        "rejections": {
+          "exact_name_pair_not_matched": 1
+        }
+      },
+      {
+        "name": "Nazar Parnitskyi",
+        "queries": 3,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Kai Huckenbeck",
+        "queries": 3,
+        "candidate_files": 2,
+        "accepted": 2,
+        "rejections": {}
+      },
+      {
+        "name": "Inoue",
+        "queries": 1,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      }
+    ],
+    "checked_at": "2026-11-15T20:31:19Z",
+    "library_entries": 100,
+    "newly_found": 2,
+    "cumulative_attempted": 280,
+    "cumulative_found": 100,
+    "cumulative_missing": 180,
+    "cumulative_rejected": 192,
+    "batch_number": 43,
+    "last_batch_at": "2026-11-15T20:31:19Z",
+    "last_successful_batch_at": "2026-11-15T20:31:19Z",
+    "last_rate_limited_at": "2026-11-15T20:31:19Z",
     "coverage": {
+      "boxing fight card fighters": {
+        "total": 316,
+        "with_image": 1,
+        "missing": 315
+      },
       "f1 drivers": {
         "total": 25,
-        "with_image": 23,
-        "missing": 2
+        "with_image": 25,
+        "missing": 0
       },
       "f1 constructors": {
         "total": 11,
         "with_image": 11,
         "missing": 0
       },
-      "darts": {
-        "total": 229,
-        "with_image": 50,
-        "missing": 179
+      "darts top 50": {
+        "total": 50,
+        "with_image": 47,
+        "missing": 3
       },
       "ufc": {
         "total": 206,
         "with_image": 48,
         "missing": 158
+      },
+      "speedway GP riders": {
+        "total": 21,
+        "with_image": 11,
+        "missing": 10
       },
       "boxing": {
         "total": 81,
@@ -5596,17 +5684,7 @@
         "missing": 81
       }
     },
-    "checked_at": "2026-11-15T16:11:54Z",
-    "library_entries": 98,
-    "cumulative_found": 98,
-    "cumulative_missing": 178,
-    "cumulative_rejected": 191,
-    "batch_number": 42,
-    "last_batch_at": "2026-11-15T16:10:46Z",
-    "last_successful_batch_at": "2026-11-15T16:10:46Z",
-    "last_rate_limited_at": "2026-11-15T14:51:27Z",
-    "enrichment_status": "awaiting next scheduled batch",
-    "rate_limited": false
+    "rate_limited": true
   },
   "last_updated": "2026-11-15T16:11:54Z"
 }

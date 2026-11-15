@@ -1378,9 +1378,39 @@
       "image_match_method": "category:Category:Anders Thomsen",
       "image_verified_at": "2026-11-15T16:10:46Z",
       "image_local_path": "assets/images/speedway/anders-thomsen.jpg"
+    },
+    "dominik kubera": {
+      "name": "Dominik Kubera",
+      "sport": "speedway",
+      "image_url": "./assets/images/speedway/dominik-kubera.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Dominik_Kubera_in_2017,_Unia_Leszno_speedway.png",
+      "image_credit": "Wikimedia Commons · Marcin Kubiak · CC BY 4.0",
+      "image_license": "CC BY 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Dominik Kubera",
+      "image_verified_at": "2026-11-15T20:31:19Z",
+      "image_local_path": "assets/images/speedway/dominik-kubera.png"
+    },
+    "kai huckenbeck": {
+      "name": "Kai Huckenbeck",
+      "sport": "speedway",
+      "image_url": "./assets/images/speedway/kai-huckenbeck.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Kai_Huckenbeck_Profilbild_2017.jpg",
+      "image_credit": "Wikimedia Commons · Huckenbeckspeedway · CC BY-SA 4.0",
+      "image_license": "CC BY-SA 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Kai Huckenbeck",
+      "image_verified_at": "2026-11-15T20:31:19Z",
+      "image_local_path": "assets/images/speedway/kai-huckenbeck.jpg"
     }
   },
-  "updated_at": "2026-11-15T16:11:54Z",
+  "updated_at": "2026-11-15T20:31:19Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1639,7 +1669,10 @@
     "rohan tungate": "2026-11-15T16:10:46Z",
     "jason doyle": "2026-11-15T16:10:46Z",
     "anders thomsen": "2026-11-15T16:10:46Z",
-    "jan kvech": "2026-11-15T16:10:46Z"
+    "jan kvech": "2026-11-15T16:10:46Z",
+    "dominik kubera": "2026-11-15T20:31:19Z",
+    "nazar parnitskyi": "2026-11-15T20:31:19Z",
+    "kai huckenbeck": "2026-11-15T20:31:19Z"
   },
   "audit": {
     "last_reviewed_at": "2026-11-09T12:15:00Z",
@@ -1676,24 +1709,16 @@
     }
   },
   "enrichment": {
-    "batch_number": 42,
+    "batch_number": 43,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 276,
-    "cumulative_found": 98,
-    "cumulative_missing": 178,
-    "cumulative_rejected": 191,
-    "last_batch_at": "2026-11-15T16:10:46Z",
-    "last_successful_batch_at": "2026-11-15T16:10:46Z",
-    "last_rate_limited_at": "2026-11-15T14:51:27Z",
+    "cumulative_attempted": 280,
+    "cumulative_found": 100,
+    "cumulative_missing": 180,
+    "cumulative_rejected": 192,
+    "last_batch_at": "2026-11-15T20:31:19Z",
+    "last_successful_batch_at": "2026-11-15T20:31:19Z",
+    "last_rate_limited_at": "2026-11-15T20:31:19Z",
     "history": [
-      {
-        "batch": 13,
-        "at": "2026-11-11T07:30:35Z",
-        "attempted": 5,
-        "found": 0,
-        "missing": 5,
-        "rate_limited": false
-      },
       {
         "batch": 14,
         "at": "2026-11-11T12:13:51Z",
@@ -1925,8 +1950,16 @@
         "found": 3,
         "missing": 2,
         "rate_limited": false
+      },
+      {
+        "batch": 43,
+        "at": "2026-11-15T20:31:19Z",
+        "attempted": 4,
+        "found": 2,
+        "missing": 2,
+        "rate_limited": true
       }
     ],
-    "last_batch_rate_limited": false
+    "last_batch_rate_limited": true
   }
 }

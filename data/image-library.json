@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-15T16:10:46Z",
+  "updated_at": "2026-11-15T20:31:19Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -1036,6 +1036,28 @@
       "creator": "Wikimedia Commons · Georg Lindstrøm · Public domain",
       "attribution": "Wikimedia Commons · Georg Lindstrøm · Public domain",
       "verified_at": "2026-11-15T16:10:46Z",
+      "sport": "speedway"
+    },
+    "dominik kubera": {
+      "name": "Dominik Kubera",
+      "path": "assets/images/speedway/dominik-kubera.png",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Dominik_Kubera_in_2017,_Unia_Leszno_speedway.png",
+      "licence": "CC BY 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by/4.0",
+      "creator": "Wikimedia Commons · Marcin Kubiak · CC BY 4.0",
+      "attribution": "Wikimedia Commons · Marcin Kubiak · CC BY 4.0",
+      "verified_at": "2026-11-15T20:31:19Z",
+      "sport": "speedway"
+    },
+    "kai huckenbeck": {
+      "name": "Kai Huckenbeck",
+      "path": "assets/images/speedway/kai-huckenbeck.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Kai_Huckenbeck_Profilbild_2017.jpg",
+      "licence": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "creator": "Wikimedia Commons · Huckenbeckspeedway · CC BY-SA 4.0",
+      "attribution": "Wikimedia Commons · Huckenbeckspeedway · CC BY-SA 4.0",
+      "verified_at": "2026-11-15T20:31:19Z",
       "sport": "speedway"
     }
   },
