@@ -81,7 +81,6 @@
       return '<div class="hub-bkfc-event"><div class="hub-bkfc-event-title"><strong>'+esc(event.name)+'</strong><span>'+esc(event.date||"Date TBC")+'</span></div>'+sections+'</div>';
     }).join("");
   }
-  let dartsPayload={events:[]};
   function grandSlamPanel(event) {
     const ongoing=String(event.status||"").toLowerCase()==="ongoing";
     const groups=event.groups||{};
