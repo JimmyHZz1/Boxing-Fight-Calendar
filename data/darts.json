@@ -81,32 +81,30 @@
           "session": "Evening session",
           "start_at": "2026-11-16T19:00:00Z",
           "matches": [
-            "Match 1 — pairing and running order TBC",
-            "Match 2 — pairing and running order TBC",
-            "Match 3 — pairing and running order TBC",
-            "Match 4 — pairing and running order TBC",
-            "Match 5 — pairing and running order TBC",
-            "Match 6 — pairing and running order TBC",
-            "Match 7 — pairing and running order TBC",
-            "Match 8 — pairing and running order TBC"
-          ],
-          "match_note": "The PDC has confirmed eight matches in this session, but has not yet published the individual pairings or running order."
+            "Niels Zonneveld v Luke Littler (Group A)",
+            "Alan Soutar v Jermaine Wattimena (Group B)",
+            "Kevin Doets v Tommy Morris (Group C)",
+            "Cameron Menzies v Stephen Bunting (Group D)",
+            "Sebastian Bialecki v Gerwyn Price (Group E)",
+            "Andrew Gilding v Ryan Searle (Group F)",
+            "Rob Cross v Anton Ostlund (Group G)",
+            "Niko Springer v Wessel Nijman (Group H)"
+          ]
         },
         {
           "date": "2026-11-17",
           "session": "Evening session",
           "start_at": "2026-11-17T19:00:00Z",
           "matches": [
-            "Match 1 — pairing and running order TBC",
-            "Match 2 — pairing and running order TBC",
-            "Match 3 — pairing and running order TBC",
-            "Match 4 — pairing and running order TBC",
-            "Match 5 — pairing and running order TBC",
-            "Match 6 — pairing and running order TBC",
-            "Match 7 — pairing and running order TBC",
-            "Match 8 — pairing and running order TBC"
-          ],
-          "match_note": "The PDC has confirmed eight matches in this session, but has not yet published the individual pairings or running order."
+            "Joe Cullen v Luke Humphries (Group I)",
+            "Krzysztof Ratajski v Tom Sykes (Group J)",
+            "Ricky Evans v James Wade (Group K)",
+            "Jeffrey de Graaf v Michael van Gerwen (Group L)",
+            "Bradley Brooks v Gian van Veen (Group M)",
+            "Martin Schindler v Chris Dobey (Group N)",
+            "Gabriel Clemens v Rusty-Jake Rodriguez (Group O)",
+            "Karel Sedlacek v Nathan Aspinall (Group P)"
+          ]
         },
         {
           "date": "2026-11-18",
@@ -166,10 +164,92 @@
           ]
         }
       ],
-      "status": "scheduled",
+      "status": "ongoing",
       "organiser": "pdc",
       "source": "Official PDC calendar",
-      "source_url": "https://www.pdc.tv/calendar"
+      "source_url": "https://www.pdc.tv/calendar",
+      "groups": {
+        "A": [
+          "Luke Littler",
+          "Niels Zonneveld",
+          "Beau Greaves"
+        ],
+        "B": [
+          "Jermaine Wattimena",
+          "Alan Soutar",
+          "Lisa Ashton"
+        ],
+        "C": [
+          "Josh Rock",
+          "Kevin Doets",
+          "Tommy Morris"
+        ],
+        "D": [
+          "Stephen Bunting",
+          "Cameron Menzies",
+          "Raymond Smith"
+        ],
+        "E": [
+          "Gerwyn Price",
+          "Sebastian Bialecki",
+          "Joe Hunt"
+        ],
+        "F": [
+          "Ryan Searle",
+          "Andrew Gilding",
+          "Charlie Manby"
+        ],
+        "G": [
+          "Jonny Clayton",
+          "Rob Cross",
+          "Anton Ostlund"
+        ],
+        "H": [
+          "Wessel Nijman",
+          "Niko Springer",
+          "Adam Sevada"
+        ],
+        "I": [
+          "Luke Humphries",
+          "Joe Cullen",
+          "Paolo Nebrida"
+        ],
+        "J": [
+          "Luke Woodhouse",
+          "Krzysztof Ratajski",
+          "Tom Sykes"
+        ],
+        "K": [
+          "James Wade",
+          "Ricky Evans",
+          "Cam Crabtree"
+        ],
+        "L": [
+          "Michael van Gerwen",
+          "Jeffrey de Graaf",
+          "Henry Coates"
+        ],
+        "M": [
+          "Gian van Veen",
+          "Bradley Brooks",
+          "Carl Sneyd"
+        ],
+        "N": [
+          "Chris Dobey",
+          "Martin Schindler",
+          "Jan Schmidt"
+        ],
+        "O": [
+          "Ross Smith",
+          "Gabriel Clemens",
+          "Rusty-Jake Rodriguez"
+        ],
+        "P": [
+          "Nathan Aspinall",
+          "Karel Sedlacek",
+          "Maik Kuivenhoven"
+        ]
+      }
     },
     {
       "id": "pdc-2026-players-championship-finals",

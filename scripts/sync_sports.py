@@ -218,166 +218,239 @@ def pdc_official_fallback_events():
             "venue": "Aldersley Leisure Village, Wolverhampton",
             "tier": "majors",
             "schedule_source_url": "https://www.pdc.tv/news/2026/november/09/littler-drawn-greaves-zonneveld-at-mr-vegas-grand-slam/",
+            "groups": {
+                "A": [
+                    "Luke Littler",
+                    "Niels Zonneveld",
+                    "Beau Greaves"
+                ],
+                "B": [
+                    "Jermaine Wattimena",
+                    "Alan Soutar",
+                    "Lisa Ashton"
+                ],
+                "C": [
+                    "Josh Rock",
+                    "Kevin Doets",
+                    "Tommy Morris"
+                ],
+                "D": [
+                    "Stephen Bunting",
+                    "Cameron Menzies",
+                    "Raymond Smith"
+                ],
+                "E": [
+                    "Gerwyn Price",
+                    "Sebastian Bialecki",
+                    "Joe Hunt"
+                ],
+                "F": [
+                    "Ryan Searle",
+                    "Andrew Gilding",
+                    "Charlie Manby"
+                ],
+                "G": [
+                    "Jonny Clayton",
+                    "Rob Cross",
+                    "Anton Ostlund"
+                ],
+                "H": [
+                    "Wessel Nijman",
+                    "Niko Springer",
+                    "Adam Sevada"
+                ],
+                "I": [
+                    "Luke Humphries",
+                    "Joe Cullen",
+                    "Paolo Nebrida"
+                ],
+                "J": [
+                    "Luke Woodhouse",
+                    "Krzysztof Ratajski",
+                    "Tom Sykes"
+                ],
+                "K": [
+                    "James Wade",
+                    "Ricky Evans",
+                    "Cam Crabtree"
+                ],
+                "L": [
+                    "Michael van Gerwen",
+                    "Jeffrey de Graaf",
+                    "Henry Coates"
+                ],
+                "M": [
+                    "Gian van Veen",
+                    "Bradley Brooks",
+                    "Carl Sneyd"
+                ],
+                "N": [
+                    "Chris Dobey",
+                    "Martin Schindler",
+                    "Jan Schmidt"
+                ],
+                "O": [
+                    "Ross Smith",
+                    "Gabriel Clemens",
+                    "Rusty-Jake Rodriguez"
+                ],
+                "P": [
+                    "Nathan Aspinall",
+                    "Karel Sedlacek",
+                    "Maik Kuivenhoven"
+                ]
+            },
             "schedule_of_play":             [
-                    {
-                            "date": "2026-11-14",
-                            "session": "Afternoon session",
-                            "start_at": "2026-11-14T13:00:00Z",
-                            "matches": [
-                                    "Luke Woodhouse v Tom Sykes (Group J)",
-                                    "Jermaine Wattimena v Lisa Ashton (Group B)",
-                                    "Stephen Bunting v Raymond Smith (Group D)",
-                                    "Ryan Searle v Charlie Manby (Group F)",
-                                    "Josh Rock v Tommy Morris (Group C)",
-                                    "Wessel Nijman v Adam Sevada (Group H)",
-                                    "Nathan Aspinall v Maik Kuivenhoven (Group P)",
-                                    "Jonny Clayton v Anton Ostlund (Group G)"
-                            ]
-                    },
-                    {
-                            "date": "2026-11-14",
-                            "session": "Evening session",
-                            "start_at": "2026-11-14T19:00:00Z",
-                            "matches": [
-                                    "Gerwyn Price v Joe Hunt (Group E)",
-                                    "James Wade v Cam Crabtree (Group K)",
-                                    "Ross Smith v Rusty-Jake Rodriguez (Group O)",
-                                    "Michael van Gerwen v Henry Coates (Group L)",
-                                    "Luke Humphries v Paolo Nebrida (Group I)",
-                                    "Luke Littler v Beau Greaves (Group A)",
-                                    "Gian van Veen v Carl Sneyd (Group M)",
-                                    "Chris Dobey v Jan Schmidt (Group N)"
-                            ]
-                    },
-                    {
-                            "date": "2026-11-15",
-                            "session": "Afternoon session",
-                            "start_at": "2026-11-15T13:00:00Z",
-                            "matches": [
-                                    "Match 1 — pairing and running order TBC",
-                                    "Match 2 — pairing and running order TBC",
-                                    "Match 3 — pairing and running order TBC",
-                                    "Match 4 — pairing and running order TBC",
-                                    "Match 5 — pairing and running order TBC",
-                                    "Match 6 — pairing and running order TBC",
-                                    "Match 7 — pairing and running order TBC",
-                                    "Match 8 — pairing and running order TBC"
-                            ],
-                            "match_note": "The PDC has confirmed eight matches in this session, but has not yet published the individual pairings or running order."
-                    },
-                    {
-                            "date": "2026-11-15",
-                            "session": "Evening session",
-                            "start_at": "2026-11-15T19:30:00Z",
-                            "matches": [
-                                    "Match 1 — pairing and running order TBC",
-                                    "Match 2 — pairing and running order TBC",
-                                    "Match 3 — pairing and running order TBC",
-                                    "Match 4 — pairing and running order TBC",
-                                    "Match 5 — pairing and running order TBC",
-                                    "Match 6 — pairing and running order TBC",
-                                    "Match 7 — pairing and running order TBC",
-                                    "Match 8 — pairing and running order TBC"
-                            ],
-                            "match_note": "The PDC has confirmed eight matches in this session, but has not yet published the individual pairings or running order."
-                    },
-                    {
-                            "date": "2026-11-16",
-                            "session": "Evening session",
-                            "start_at": "2026-11-16T19:00:00Z",
-                            "matches": [
-                                    "Match 1 — pairing and running order TBC",
-                                    "Match 2 — pairing and running order TBC",
-                                    "Match 3 — pairing and running order TBC",
-                                    "Match 4 — pairing and running order TBC",
-                                    "Match 5 — pairing and running order TBC",
-                                    "Match 6 — pairing and running order TBC",
-                                    "Match 7 — pairing and running order TBC",
-                                    "Match 8 — pairing and running order TBC"
-                            ],
-                            "match_note": "The PDC has confirmed eight matches in this session, but has not yet published the individual pairings or running order."
-                    },
-                    {
-                            "date": "2026-11-17",
-                            "session": "Evening session",
-                            "start_at": "2026-11-17T19:00:00Z",
-                            "matches": [
-                                    "Match 1 — pairing and running order TBC",
-                                    "Match 2 — pairing and running order TBC",
-                                    "Match 3 — pairing and running order TBC",
-                                    "Match 4 — pairing and running order TBC",
-                                    "Match 5 — pairing and running order TBC",
-                                    "Match 6 — pairing and running order TBC",
-                                    "Match 7 — pairing and running order TBC",
-                                    "Match 8 — pairing and running order TBC"
-                            ],
-                            "match_note": "The PDC has confirmed eight matches in this session, but has not yet published the individual pairings or running order."
-                    },
-                    {
-                            "date": "2026-11-18",
-                            "session": "Evening session · Round two",
-                            "start_at": "2026-11-18T19:00:00Z",
-                            "matches": [
-                                    "Winner Group A v Winner Group B",
-                                    "Winner Group C v Winner Group D",
-                                    "Winner Group E v Winner Group F",
-                                    "Winner Group G v Winner Group H"
-                            ]
-                    },
-                    {
-                            "date": "2026-11-19",
-                            "session": "Evening session · Round two",
-                            "start_at": "2026-11-19T19:00:00Z",
-                            "matches": [
-                                    "Winner Group I v Winner Group J",
-                                    "Winner Group K v Winner Group L",
-                                    "Winner Group M v Winner Group N",
-                                    "Winner Group O v Winner Group P"
-                            ]
-                    },
-                    {
-                            "date": "2026-11-20",
-                            "session": "Evening session · Quarter-finals",
-                            "start_at": "2026-11-20T19:00:00Z",
-                            "matches": [
-                                    "Winner A/B v Winner C/D",
-                                    "Winner E/F v Winner G/H"
-                            ]
-                    },
-                    {
-                            "date": "2026-11-21",
-                            "session": "Evening session · Quarter-finals",
-                            "start_at": "2026-11-21T19:00:00Z",
-                            "matches": [
-                                    "Winner I/J v Winner K/L",
-                                    "Winner M/N v Winner O/P"
-                            ]
-                    },
-                    {
-                            "date": "2026-11-22",
-                            "session": "Afternoon session · Semi-finals",
-                            "start_at": "2026-11-22T13:00:00Z",
-                            "matches": [
-                                    "Winner Quarter-final 1 v Winner Quarter-final 2",
-                                    "Winner Quarter-final 3 v Winner Quarter-final 4"
-                            ]
-                    },
-                    {
-                            "date": "2026-11-22",
-                            "session": "Evening session · Final",
-                            "start_at": "2026-11-22T19:30:00Z",
-                            "matches": [
-                                    "Winner Semi-final 1 v Winner Semi-final 2"
-                            ]
-                    }
-            ]
-        },
-        {
-            "id": "pdc-2026-players-championship-finals",
-            "name": "2026 Players Championship Finals",
-            "date": "2026-11-27",
-            "end_date": "2026-11-29",
-            "venue": "Butlins, Minehead",
+                      {
+                                "date": "2026-11-14",
+                                "session": "Afternoon session",
+                                "start_at": "2026-11-14T13:00:00Z",
+                                "matches": [
+                                          "Luke Woodhouse v Tom Sykes (Group J)",
+                                          "Jermaine Wattimena v Lisa Ashton (Group B)",
+                                          "Stephen Bunting v Raymond Smith (Group D)",
+                                          "Ryan Searle v Charlie Manby (Group F)",
+                                          "Josh Rock v Tommy Morris (Group C)",
+                                          "Wessel Nijman v Adam Sevada (Group H)",
+                                          "Nathan Aspinall v Maik Kuivenhoven (Group P)",
+                                          "Jonny Clayton v Anton Ostlund (Group G)"
+                                ]
+                      },
+                      {
+                                "date": "2026-11-14",
+                                "session": "Evening session",
+                                "start_at": "2026-11-14T19:00:00Z",
+                                "matches": [
+                                          "Gerwyn Price v Joe Hunt (Group E)",
+                                          "James Wade v Cam Crabtree (Group K)",
+                                          "Ross Smith v Rusty-Jake Rodriguez (Group O)",
+                                          "Michael van Gerwen v Henry Coates (Group L)",
+                                          "Luke Humphries v Paolo Nebrida (Group I)",
+                                          "Luke Littler v Beau Greaves (Group A)",
+                                          "Gian van Veen v Carl Sneyd (Group M)",
+                                          "Chris Dobey v Jan Schmidt (Group N)"
+                                ]
+                      },
+                      {
+                                "date": "2026-11-15",
+                                "session": "Afternoon session",
+                                "start_at": "2026-11-15T13:00:00Z",
+                                "matches": [
+                                          "Match 1 — pairing and running order TBC",
+                                          "Match 2 — pairing and running order TBC",
+                                          "Match 3 — pairing and running order TBC",
+                                          "Match 4 — pairing and running order TBC",
+                                          "Match 5 — pairing and running order TBC",
+                                          "Match 6 — pairing and running order TBC",
+                                          "Match 7 — pairing and running order TBC",
+                                          "Match 8 — pairing and running order TBC"
+                                ],
+                                "match_note": "The PDC has confirmed eight matches in this session, but has not yet published the individual pairings or running order."
+                      },
+                      {
+                                "date": "2026-11-15",
+                                "session": "Evening session",
+                                "start_at": "2026-11-15T19:30:00Z",
+                                "matches": [
+                                          "Match 1 — pairing and running order TBC",
+                                          "Match 2 — pairing and running order TBC",
+                                          "Match 3 — pairing and running order TBC",
+                                          "Match 4 — pairing and running order TBC",
+                                          "Match 5 — pairing and running order TBC",
+                                          "Match 6 — pairing and running order TBC",
+                                          "Match 7 — pairing and running order TBC",
+                                          "Match 8 — pairing and running order TBC"
+                                ],
+                                "match_note": "The PDC has confirmed eight matches in this session, but has not yet published the individual pairings or running order."
+                      },
+                      {
+                                "date": "2026-11-16",
+                                "session": "Evening session",
+                                "start_at": "2026-11-16T19:00:00Z",
+                                "matches": [
+                                          "Niels Zonneveld v Luke Littler (Group A)",
+                                          "Alan Soutar v Jermaine Wattimena (Group B)",
+                                          "Kevin Doets v Tommy Morris (Group C)",
+                                          "Cameron Menzies v Stephen Bunting (Group D)",
+                                          "Sebastian Bialecki v Gerwyn Price (Group E)",
+                                          "Andrew Gilding v Ryan Searle (Group F)",
+                                          "Rob Cross v Anton Ostlund (Group G)",
+                                          "Niko Springer v Wessel Nijman (Group H)"
+                                ]
+                      },
+                      {
+                                "date": "2026-11-17",
+                                "session": "Evening session",
+                                "start_at": "2026-11-17T19:00:00Z",
+                                "matches": [
+                                          "Joe Cullen v Luke Humphries (Group I)",
+                                          "Krzysztof Ratajski v Tom Sykes (Group J)",
+                                          "Ricky Evans v James Wade (Group K)",
+                                          "Jeffrey de Graaf v Michael van Gerwen (Group L)",
+                                          "Bradley Brooks v Gian van Veen (Group M)",
+                                          "Martin Schindler v Chris Dobey (Group N)",
+                                          "Gabriel Clemens v Rusty-Jake Rodriguez (Group O)",
+                                          "Karel Sedlacek v Nathan Aspinall (Group P)"
+                                ]
+                      },
+                      {
+                                "date": "2026-11-18",
+                                "session": "Evening session · Round two",
+                                "start_at": "2026-11-18T19:00:00Z",
+                                "matches": [
+                                          "Winner Group A v Winner Group B",
+                                          "Winner Group C v Winner Group D",
+                                          "Winner Group E v Winner Group F",
+                                          "Winner Group G v Winner Group H"
+                                ]
+                      },
+                      {
+                                "date": "2026-11-19",
+                                "session": "Evening session · Round two",
+                                "start_at": "2026-11-19T19:00:00Z",
+                                "matches": [
+                                          "Winner Group I v Winner Group J",
+                                          "Winner Group K v Winner Group L",
+                                          "Winner Group M v Winner Group N",
+                                          "Winner Group O v Winner Group P"
+                                ]
+                      },
+                      {
+                                "date": "2026-11-20",
+                                "session": "Evening session · Quarter-finals",
+                                "start_at": "2026-11-20T19:00:00Z",
+                                "matches": [
+                                          "Winner A/B v Winner C/D",
+                                          "Winner E/F v Winner G/H"
+                                ]
+                      },
+                      {
+                                "date": "2026-11-21",
+                                "session": "Evening session · Quarter-finals",
+                                "start_at": "2026-11-21T19:00:00Z",
+                                "matches": [
+                                          "Winner I/J v Winner K/L",
+                                          "Winner M/N v Winner O/P"
+                                ]
+                      },
+                      {
+                                "date": "2026-11-22",
+                                "session": "Afternoon session · Semi-finals",
+                                "start_at": "2026-11-22T13:00:00Z",
+                                "matches": [
+                                          "Winner Quarter-final 1 v Winner Quarter-final 2",
+                                          "Winner Quarter-final 3 v Winner Quarter-final 4"
+                                ]
+                      },
+                      {
+                                "date": "2026-11-22",
+                                "session": "Evening session · Final",
+                                "start_at": "2026-11-22T19:30:00Z",
+                                "matches": [
+                                          "Winner Semi-final 1 v Winner Semi-final 2"
+                                ]
+                      }
+            ],
             "tier": "majors",
         },
         {
@@ -463,6 +536,19 @@ def sync_darts():
                 break
     if key and not api_events and not warning:
         warning = "Darts API returned no matching televised PDC events in the 60-day window; using official fallback dates."
+    # Derive multi-day tournament state from its published date range. A
+    # scheduled upstream status must not hide a tournament already underway.
+    today_key = TODAY.isoformat()
+    for event in merged.values():
+        start_day = str(event.get("date") or "")[:10]
+        end_day = str(event.get("end_date") or event.get("ends_at") or event.get("end_at") or start_day)[:10]
+        if start_day and end_day and start_day <= today_key <= end_day:
+            event["status"] = "ongoing"
+        elif end_day and end_day < today_key:
+            event["status"] = "completed"
+        elif start_day:
+            event["status"] = "scheduled"
+
     events = list(merged.values())
     events.sort(key=lambda e: (e.get("date") or "", e.get("name") or ""))
 
