@@ -218,6 +218,88 @@ def pdc_official_fallback_events():
             "venue": "Aldersley Leisure Village, Wolverhampton",
             "tier": "majors",
             "schedule_source_url": "https://www.pdc.tv/news/2026/november/09/littler-drawn-greaves-zonneveld-at-mr-vegas-grand-slam/",
+            "groups": {
+                "A": [
+                    "Luke Littler",
+                    "Niels Zonneveld",
+                    "Beau Greaves"
+                ],
+                "B": [
+                    "Jermaine Wattimena",
+                    "Alan Soutar",
+                    "Lisa Ashton"
+                ],
+                "C": [
+                    "Josh Rock",
+                    "Kevin Doets",
+                    "Tommy Morris"
+                ],
+                "D": [
+                    "Stephen Bunting",
+                    "Cameron Menzies",
+                    "Raymond Smith"
+                ],
+                "E": [
+                    "Gerwyn Price",
+                    "Sebastian Bialecki",
+                    "Joe Hunt"
+                ],
+                "F": [
+                    "Ryan Searle",
+                    "Andrew Gilding",
+                    "Charlie Manby"
+                ],
+                "G": [
+                    "Jonny Clayton",
+                    "Rob Cross",
+                    "Anton Ostlund"
+                ],
+                "H": [
+                    "Wessel Nijman",
+                    "Niko Springer",
+                    "Adam Sevada"
+                ],
+                "I": [
+                    "Luke Humphries",
+                    "Joe Cullen",
+                    "Paolo Nebrida"
+                ],
+                "J": [
+                    "Luke Woodhouse",
+                    "Krzysztof Ratajski",
+                    "Tom Sykes"
+                ],
+                "K": [
+                    "James Wade",
+                    "Ricky Evans",
+                    "Cam Crabtree"
+                ],
+                "L": [
+                    "Michael van Gerwen",
+                    "Jeffrey de Graaf",
+                    "Henry Coates"
+                ],
+                "M": [
+                    "Gian van Veen",
+                    "Bradley Brooks",
+                    "Carl Sneyd"
+                ],
+                "N": [
+                    "Chris Dobey",
+                    "Martin Schindler",
+                    "Jan Schmidt"
+                ],
+                "O": [
+                    "Ross Smith",
+                    "Gabriel Clemens",
+                    "Rusty-Jake Rodriguez"
+                ],
+                "P": [
+                    "Nathan Aspinall",
+                    "Karel Sedlacek",
+                    "Maik Kuivenhoven"
+                ]
+            },
             "schedule_of_play":             [
                     {
                             "date": "2026-11-14",
@@ -463,6 +545,19 @@ def sync_darts():
                 break
     if key and not api_events and not warning:
         warning = "Darts API returned no matching televised PDC events in the 60-day window; using official fallback dates."
+    # Derive multi-day tournament state from its published date range. A
+    # scheduled upstream status must not hide a tournament already underway.
+    today_key = TODAY.isoformat()
+    for event in merged.values():
+        start_day = str(event.get("date") or "")[:10]
+        end_day = str(event.get("end_date") or event.get("ends_at") or event.get("end_at") or start_day)[:10]
+        if start_day and end_day and start_day <= today_key <= end_day:
+            event["status"] = "ongoing"
+        elif end_day and end_day < today_key:
+            event["status"] = "completed"
+        elif start_day:
+            event["status"] = "scheduled"
+
     events = list(merged.values())
     events.sort(key=lambda e: (e.get("date") or "", e.get("name") or ""))
 
