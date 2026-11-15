@@ -4,6 +4,7 @@
   if (!root) return;
   let payload = {};
   let bkfcPayload = {};
+  let dartsPayload = {events:[]};
   let active = "f1";
   const sportNames = {f1:"FORMULA 1",darts:"PDC DARTS",boxing:"BOXING WORLD CHAMPIONS",ufc:"UFC",bkfc:"BKFC BARE KNUCKLE"};
   const sportTabs = [{id:"f1",label:"F1"},{id:"darts",label:"DARTS"},{id:"boxing",label:"BOXING"},{id:"ufc",label:"UFC"},{id:"bkfc",label:"BKFC"}];
@@ -80,13 +81,34 @@
       return '<div class="hub-bkfc-event"><div class="hub-bkfc-event-title"><strong>'+esc(event.name)+'</strong><span>'+esc(event.date||"Date TBC")+'</span></div>'+sections+'</div>';
     }).join("");
   }
+  let dartsPayload={events:[]};
+  function grandSlamPanel(event) {
+    const ongoing=String(event.status||"").toLowerCase()==="ongoing";
+    const groups=event.groups||{};
+    const groupCards=Object.entries(groups).map(([group,players])=>
+      '<details class="hub-dropdown"><summary>GROUP '+esc(group)+'<span>'+players.length+' PLAYERS</span></summary><div class="hub-dropdown-list">'+
+      players.map((name,index)=>'<div class="hub-person"><span class="hub-rank">'+(index+1)+'</span><span class="hub-person-name"><strong>'+esc(name)+'</strong><small>Group '+esc(group)+'</small></span></div>').join('')+
+      '</div></details>'
+    ).join('');
+    const start=new Date(String(event.date||'')+'T12:00:00Z');
+    const end=new Date(String(event.end_date||event.date||'')+'T12:00:00Z');
+    const range=[start.toLocaleDateString('en-GB',{day:'numeric',month:'short',timeZone:'Europe/London'}),end.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric',timeZone:'Europe/London'})].join(' – ');
+    return '<section class="hub-bkfc-event" style="margin:0 0 18px;padding:16px;border:1px solid rgba(201,164,91,.45);border-radius:14px;background:rgba(201,164,91,.07)">'+
+      '<div class="hub-bkfc-event-title"><strong>'+esc(event.name)+'</strong><span style="color:'+(ongoing?'#67d69b':'#c9a45b')+'">'+(ongoing?'● ONGOING':'UPCOMING')+'</span></div>'+
+      '<p class="hub-source-note" style="margin:8px 0 14px">'+esc(range)+' · '+esc(event.venue||'PDC')+'</p>'+
+      '<details class="hub-dropdown" open><summary>GROUP DRAW<span>'+Object.keys(groups).length+' GROUPS · '+Object.values(groups).flat().length+' PLAYERS</span></summary><div class="hub-dropdown-list" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:8px">'+groupCards+'</div></details>'+
+      (event.schedule_source_url?'<p style="margin:10px 0 0"><a class="event-source-link" href="'+esc(event.schedule_source_url)+'" target="_blank" rel="noopener noreferrer">Official PDC draw ↗</a></p>':'')+
+      '</section>';
+  }
   function panel(sport) {
     const d=sport==="bkfc"?bkfcPayload:(payload[sport]||{});
     let out="";
     if(sport==="f1"){
       out=dropdown("Drivers’ championship",d.drivers,"Driver",30)+dropdown("Constructors’ championship",d.constructors,"Constructor",20);
     } else if(sport==="darts"){
-      out=dropdown("PDC Order of Merit",d.rankings,"Player",40);
+      const todayKey=new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/London",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
+      const tournament=(dartsPayload.events||[]).find(event=>/grand slam of darts/i.test(event.name||"")&&String(event.date||"").slice(0,10)<=todayKey&&String(event.end_date||event.date||"").slice(0,10)>=todayKey);
+      out=(tournament?grandSlamPanel(tournament):"")+dropdown("PDC Order of Merit",d.rankings,"Player",40);
     } else if(sport==="ufc"){
       const divisions=d.divisions||[];
       out=divisions.length?divisions.map(div=>dropdown(div.name||div.division,div.entries,"Fighter",15)).join(""):'<p class="hub-empty">UFC rankings are not available yet.</p>';
@@ -191,13 +213,15 @@
     fetch("./data/sports-hub.json?t="+Date.now(),{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("HTTP "+r.status);return r.json();}),
     fetch("./data/image-library.json?t="+Date.now(),{cache:"no-store"}).then(r=>r.ok?r.json():{images:{}}),
     fetch("./data/bkfc.json?t="+Date.now(),{cache:"no-store"}).then(r=>r.ok?r.json():{events:[]}),
+    fetch("./data/darts.json?t="+Date.now(),{cache:"no-store"}).then(r=>r.ok?r.json():{events:[]}),
     fetch("./data/sports-images.json?t="+Date.now(),{cache:"no-store"}).then(r=>r.ok?r.json():{enrichment:{history:[]}})
-  ]).then(([data,library,bkfc,sportsImages])=>{
+  ]).then(([data,library,bkfc,darts,sportsImages])=>{
     payload=data.sports||data;
     imageDiagnostics=data.image_diagnostics||{};
     enrichmentHistory=sportsImages?.enrichment?.history||[];
     localImages=library.images||{};
     bkfcPayload=bkfc||{events:[]};
+    dartsPayload=darts||{events:[]};
     render(active);
   }).catch(()=>{root.innerHTML='<p class="hub-empty">Standings and rankings are not available yet.</p>';});
   document.addEventListener("sports:select",e=>{if(e.detail&&e.detail.sport)render(e.detail.sport);});
