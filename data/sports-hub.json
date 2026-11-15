@@ -5583,37 +5583,72 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 1,
-    "found": 136,
-    "missing": 564,
-    "rejected": 0,
+    "attempted": 5,
+    "found": 138,
+    "missing": 562,
+    "rejected": 3,
     "by_sport": {
       "speedway": {
-        "attempted": 1,
-        "found": 0,
-        "missing": 1,
+        "attempted": 5,
+        "found": 2,
+        "missing": 3,
         "rejected": 0
       }
     },
     "search_details": [
       {
         "name": "Andzejs Lebedevs",
-        "queries": 1,
+        "queries": 3,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
+      },
+      {
+        "name": "Jack Holder",
+        "queries": 3,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Fredrik Lindgren",
+        "queries": 3,
+        "candidate_files": 5,
+        "accepted": 3,
+        "rejections": {
+          "exact_name_pair_not_matched": 2
+        }
+      },
+      {
+        "name": "Dan Bewley",
+        "queries": 3,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Maciej Janowski",
+        "queries": 3,
+        "candidate_files": 2,
+        "accepted": 1,
+        "rejections": {
+          "exact_name_pair_not_matched": 1
+        }
       }
     ],
-    "checked_at": "2026-11-15T14:51:27Z",
-    "library_entries": 93,
-    "newly_found": 0,
-    "cumulative_attempted": 266,
-    "cumulative_found": 93,
-    "cumulative_missing": 173,
-    "cumulative_rejected": 181,
-    "batch_number": 40,
-    "last_batch_at": "2026-11-15T14:51:27Z",
-    "last_successful_batch_at": "2026-11-15T14:51:27Z",
+    "rejection_reasons": {
+      "exact_name_pair_not_matched": 3
+    },
+    "checked_at": "2026-11-15T15:28:41Z",
+    "library_entries": 95,
+    "newly_found": 2,
+    "cumulative_attempted": 271,
+    "cumulative_found": 95,
+    "cumulative_missing": 176,
+    "cumulative_rejected": 184,
+    "batch_number": 41,
+    "last_batch_at": "2026-11-15T15:28:41Z",
+    "last_successful_batch_at": "2026-11-15T15:28:41Z",
     "last_rate_limited_at": "2026-11-15T14:51:27Z",
     "coverage": {
       "boxing fight card fighters": {
@@ -5643,8 +5678,8 @@
       },
       "speedway GP riders": {
         "total": 21,
-        "with_image": 4,
-        "missing": 17
+        "with_image": 6,
+        "missing": 15
       },
       "boxing": {
         "total": 81,
@@ -5652,7 +5687,7 @@
         "missing": 81
       }
     },
-    "rate_limited": true
+    "rate_limited": false
   },
   "last_updated": "2026-11-15T14:50:21Z"
 }

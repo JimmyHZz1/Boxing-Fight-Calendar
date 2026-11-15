@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-15T07:40:38Z",
+  "updated_at": "2026-11-15T15:28:41Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -981,6 +981,28 @@
       "creator": "Wikimedia Commons · Ralf Lotys (Sicherlich) · CC BY 4.0",
       "attribution": "Wikimedia Commons · Ralf Lotys (Sicherlich) · CC BY 4.0",
       "verified_at": "2026-11-15T07:40:38Z",
+      "sport": "speedway"
+    },
+    "fredrik lindgren": {
+      "name": "Fredrik Lindgren",
+      "path": "assets/images/speedway/fredrik-lindgren.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Fredrik_Lindgren_on_track.jpg",
+      "licence": "CC BY-SA 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "creator": "Wikimedia Commons · Afanasyev Sergey · CC BY-SA 3.0",
+      "attribution": "Wikimedia Commons · Afanasyev Sergey · CC BY-SA 3.0",
+      "verified_at": "2026-11-15T15:28:41Z",
+      "sport": "speedway"
+    },
+    "maciej janowski": {
+      "name": "Maciej Janowski",
+      "path": "assets/images/speedway/maciej-janowski.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Maciej_Janowski.jpg",
+      "licence": "CC BY-SA 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "creator": "Wikimedia Commons · Afanasyev Sergey · CC BY-SA 3.0",
+      "attribution": "Wikimedia Commons · Afanasyev Sergey · CC BY-SA 3.0",
+      "verified_at": "2026-11-15T15:28:41Z",
       "sport": "speedway"
     }
   },

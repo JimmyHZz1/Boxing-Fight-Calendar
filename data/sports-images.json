@@ -1303,9 +1303,39 @@
       "image_match_method": "category:Category:Patryk Dudek",
       "image_verified_at": "2026-11-15T07:40:38Z",
       "image_local_path": "assets/images/speedway/patryk-dudek.jpg"
+    },
+    "fredrik lindgren": {
+      "name": "Fredrik Lindgren",
+      "sport": "speedway",
+      "image_url": "./assets/images/speedway/fredrik-lindgren.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Fredrik_Lindgren_on_track.jpg",
+      "image_credit": "Wikimedia Commons · Afanasyev Sergey · CC BY-SA 3.0",
+      "image_license": "CC BY-SA 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Fredrik Lindgren",
+      "image_verified_at": "2026-11-15T15:28:41Z",
+      "image_local_path": "assets/images/speedway/fredrik-lindgren.jpg"
+    },
+    "maciej janowski": {
+      "name": "Maciej Janowski",
+      "sport": "speedway",
+      "image_url": "./assets/images/speedway/maciej-janowski.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Maciej_Janowski.jpg",
+      "image_credit": "Wikimedia Commons · Afanasyev Sergey · CC BY-SA 3.0",
+      "image_license": "CC BY-SA 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Maciej Janowski",
+      "image_verified_at": "2026-11-15T15:28:41Z",
+      "image_local_path": "assets/images/speedway/maciej-janowski.jpg"
     }
   },
-  "updated_at": "2026-11-15T14:51:27Z",
+  "updated_at": "2026-11-15T15:28:41Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1554,7 +1584,12 @@
     "patryk dudek": "2026-11-15T07:40:38Z",
     "leon madsen": "2026-11-15T07:40:38Z",
     "max fricke": "2026-11-15T07:40:38Z",
-    "kacper woryna": "2026-11-15T07:40:38Z"
+    "kacper woryna": "2026-11-15T07:40:38Z",
+    "andzejs lebedevs": "2026-11-15T15:28:41Z",
+    "jack holder": "2026-11-15T15:28:41Z",
+    "fredrik lindgren": "2026-11-15T15:28:41Z",
+    "dan bewley": "2026-11-15T15:28:41Z",
+    "maciej janowski": "2026-11-15T15:28:41Z"
   },
   "audit": {
     "last_reviewed_at": "2026-11-09T12:15:00Z",
@@ -1591,24 +1626,16 @@
     }
   },
   "enrichment": {
-    "batch_number": 40,
+    "batch_number": 41,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 266,
-    "cumulative_found": 93,
-    "cumulative_missing": 173,
-    "cumulative_rejected": 181,
-    "last_batch_at": "2026-11-15T14:51:27Z",
-    "last_successful_batch_at": "2026-11-15T14:51:27Z",
+    "cumulative_attempted": 271,
+    "cumulative_found": 95,
+    "cumulative_missing": 176,
+    "cumulative_rejected": 184,
+    "last_batch_at": "2026-11-15T15:28:41Z",
+    "last_successful_batch_at": "2026-11-15T15:28:41Z",
     "last_rate_limited_at": "2026-11-15T14:51:27Z",
     "history": [
-      {
-        "batch": 11,
-        "at": "2026-11-10T20:31:18Z",
-        "attempted": 5,
-        "found": 0,
-        "missing": 5,
-        "rate_limited": false
-      },
       {
         "batch": 12,
         "at": "2026-11-11T00:57:41Z",
@@ -1840,8 +1867,16 @@
         "found": 0,
         "missing": 1,
         "rate_limited": true
+      },
+      {
+        "batch": 41,
+        "at": "2026-11-15T15:28:41Z",
+        "attempted": 5,
+        "found": 2,
+        "missing": 3,
+        "rate_limited": false
       }
     ],
-    "last_batch_rate_limited": true
+    "last_batch_rate_limited": false
   }
 }

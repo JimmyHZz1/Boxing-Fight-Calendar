@@ -325,7 +325,18 @@
         "name": "Fredrik Lindgren",
         "number": 66,
         "nationality": "Sweden",
-        "points": 36
+        "points": 36,
+        "image_url": "./assets/images/speedway/fredrik-lindgren.jpg",
+        "image_page_url": "https://commons.wikimedia.org/wiki/File:Fredrik_Lindgren_on_track.jpg",
+        "image_credit": "Wikimedia Commons · Afanasyev Sergey · CC BY-SA 3.0",
+        "image_license": "CC BY-SA 3.0",
+        "image_license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+        "image_source": "Wikimedia Commons",
+        "image_source_class": "licensed-third-party",
+        "image_match_score": 1.0,
+        "image_match_method": "category:Category:Fredrik Lindgren",
+        "image_verified_at": "2026-11-15T15:28:41Z",
+        "image_local_path": "assets/images/speedway/fredrik-lindgren.jpg"
       },
       {
         "rank": 16,
@@ -479,7 +490,18 @@
         "name": "Fredrik Lindgren",
         "number": 66,
         "nationality": "Sweden",
-        "status": "confirmed"
+        "status": "confirmed",
+        "image_url": "./assets/images/speedway/fredrik-lindgren.jpg",
+        "image_page_url": "https://commons.wikimedia.org/wiki/File:Fredrik_Lindgren_on_track.jpg",
+        "image_credit": "Wikimedia Commons · Afanasyev Sergey · CC BY-SA 3.0",
+        "image_license": "CC BY-SA 3.0",
+        "image_license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+        "image_source": "Wikimedia Commons",
+        "image_source_class": "licensed-third-party",
+        "image_match_score": 1.0,
+        "image_match_method": "category:Category:Fredrik Lindgren",
+        "image_verified_at": "2026-11-15T15:28:41Z",
+        "image_local_path": "assets/images/speedway/fredrik-lindgren.jpg"
       },
       {
         "rank": 12,
@@ -493,7 +515,18 @@
         "name": "Maciej Janowski",
         "number": 71,
         "nationality": "Poland",
-        "status": "confirmed"
+        "status": "confirmed",
+        "image_url": "./assets/images/speedway/maciej-janowski.jpg",
+        "image_page_url": "https://commons.wikimedia.org/wiki/File:Maciej_Janowski.jpg",
+        "image_credit": "Wikimedia Commons · Afanasyev Sergey · CC BY-SA 3.0",
+        "image_license": "CC BY-SA 3.0",
+        "image_license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+        "image_source": "Wikimedia Commons",
+        "image_source_class": "licensed-third-party",
+        "image_match_score": 1.0,
+        "image_match_method": "category:Category:Maciej Janowski",
+        "image_verified_at": "2026-11-15T15:28:41Z",
+        "image_local_path": "assets/images/speedway/maciej-janowski.jpg"
       },
       {
         "rank": 14,
