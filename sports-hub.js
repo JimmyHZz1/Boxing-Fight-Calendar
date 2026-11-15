@@ -89,6 +89,13 @@
       players.map((name,index)=>'<div class="hub-person"><span class="hub-rank">'+(index+1)+'</span><span class="hub-person-name"><strong>'+esc(name)+'</strong><small>Group '+esc(group)+'</small></span></div>').join('')+
       '</div></details>'
     ).join('');
+    const schedule=(event.schedule_of_play||[]).slice().sort((a,b)=>(a.date||"").localeCompare(b.date||"")||(a.start_at||"").localeCompare(b.start_at||""));
+    const scheduleHtml=schedule.map(session=>{
+      const date=new Date(String(session.date||"")+"T12:00:00Z");
+      const dateLabel=date.toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long",timeZone:"Europe/London"});
+      const time=session.start_at?new Date(session.start_at).toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit",timeZone:"Europe/London"}):"Time TBC";
+      return '<div class="hub-dropdown" style="margin-top:8px"><div style="padding:10px 12px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap"><strong>'+esc(dateLabel)+' · '+esc(session.session||"Session")+'</strong><span>'+esc(time)+' UK</span></div><div class="hub-dropdown-list">'+(session.matches||[]).map((match,i)=>'<div class="hub-person"><span class="hub-rank">'+(i+1)+'</span><span class="hub-person-name"><strong>'+esc(match)+'</strong></span></div>').join('')+'</div>'+(session.match_note?'<p class="hub-source-note" style="padding:0 12px 10px">'+esc(session.match_note)+'</p>':'')+'</div>';
+    }).join('');
     const start=new Date(String(event.date||'')+'T12:00:00Z');
     const end=new Date(String(event.end_date||event.date||'')+'T12:00:00Z');
     const range=[start.toLocaleDateString('en-GB',{day:'numeric',month:'short',timeZone:'Europe/London'}),end.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric',timeZone:'Europe/London'})].join(' – ');
@@ -96,6 +103,7 @@
       '<div class="hub-bkfc-event-title"><strong>'+esc(event.name)+'</strong><span style="color:'+(ongoing?'#67d69b':'#c9a45b')+'">'+(ongoing?'● ONGOING':'UPCOMING')+'</span></div>'+
       '<p class="hub-source-note" style="margin:8px 0 14px">'+esc(range)+' · '+esc(event.venue||'PDC')+'</p>'+
       '<details class="hub-dropdown" open><summary>GROUP DRAW<span>'+Object.keys(groups).length+' GROUPS · '+Object.values(groups).flat().length+' PLAYERS</span></summary><div class="hub-dropdown-list" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:8px">'+groupCards+'</div></details>'+
+      '<details class="hub-dropdown" style="margin-top:12px"><summary>FULL MATCH SCHEDULE<span>'+schedule.reduce((n,session)=>n+(session.matches||[]).length,0)+' MATCHES</span></summary><div class="hub-dropdown-list" style="padding:8px">'+scheduleHtml+'</div></details>'+
       (event.schedule_source_url?'<p style="margin:10px 0 0"><a class="event-source-link" href="'+esc(event.schedule_source_url)+'" target="_blank" rel="noopener noreferrer">Official PDC draw ↗</a></p>':'')+
       '</section>';
   }
