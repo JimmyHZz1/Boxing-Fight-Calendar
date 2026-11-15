@@ -89,8 +89,23 @@
       "image_match_method": "category:Category:Tatiana Suarez",
       "image_verified_at": "2026-11-14T15:57:49Z",
       "image_local_path": "assets/images/ufc/tatiana-suarez.jpg"
+    },
+    "israel adesanya": {
+      "name": "Israel Adesanya",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/israel-adesanya.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Israel_Adesanya_2014.jpg",
+      "image_credit": "Wikimedia Commons · Ewornod · CC BY-SA 4.0",
+      "image_license": "CC BY-SA 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Israel Adesanya",
+      "image_verified_at": "2026-11-11T17:57:00Z",
+      "image_local_path": "assets/images/ufc/israel-adesanya.jpg"
     }
   },
   "attempted": {},
-  "updated_at": "2026-11-15T00:53:45Z"
+  "updated_at": "2026-11-15T06:36:17Z"
 }
