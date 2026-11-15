@@ -1421,7 +1421,7 @@
     {
       "id": 3554,
       "slug": "ufc-fight-night-2027-01-17",
-      "name": "UFC Dallas",
+      "name": "UFC Fight Night: Rodriguez vs Garcia",
       "date": "2027-01-16",
       "start_at": "2027-01-16T22:00:00.000Z",
       "status": "announced",
@@ -1430,6 +1430,22 @@
       "is_title_card": false,
       "main_card_at": "2027-01-17T01:00:00.000Z",
       "prelims_at": "2027-01-16T22:00:00.000Z",
+      "early_prelims_at": null,
+      "fights": [],
+      "source": "UFCalendar"
+    },
+    {
+      "id": 3605,
+      "slug": "ufc-fight-night-2027-01-23",
+      "name": "UFC Fight Night: Bonfim vs Brady",
+      "date": "2027-01-23",
+      "start_at": "2027-01-23T20:00:00.000Z",
+      "status": "announced",
+      "number": null,
+      "is_ppv": false,
+      "is_title_card": false,
+      "main_card_at": "2027-01-23T22:00:00.000Z",
+      "prelims_at": "2027-01-23T20:00:00.000Z",
       "early_prelims_at": null,
       "fights": [],
       "source": "UFCalendar"
@@ -1484,5 +1500,5 @@
     }
   ],
   "notice": "All upcoming UFC events returned by UFCalendar, with detailed fight cards for the next two events and the latest completed card. Free API allowance: 1,000 requests per month.",
-  "last_updated": "2026-11-15T06:35:54Z"
+  "last_updated": "2026-11-15T14:50:21Z"
 }
