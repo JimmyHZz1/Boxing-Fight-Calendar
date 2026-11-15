@@ -1,12 +1,12 @@
 {
   "provider": "Boxerbook confirmed cards + Boxing Data additional bouts",
-  "last_updated": "2026-11-15T15:40:31Z",
-  "provider_as_of": "2026-11-15T15:40:30Z",
+  "last_updated": "2026-11-15T16:11:54Z",
+  "provider_as_of": "2026-11-15T16:11:33Z",
   "attribution": "Confirmed cards from Boxerbook; additional scheduled bouts from Boxing Data API.",
-  "count_events": 40,
-  "count_bouts": 162,
-  "count_confirmed_events": 29,
-  "count_confirmed_bouts": 137,
+  "count_events": 45,
+  "count_bouts": 167,
+  "count_confirmed_events": 34,
+  "count_confirmed_bouts": 142,
   "count_additional_bouts": 25,
   "count_fighter_photos": 14,
   "events": [
@@ -2316,6 +2316,44 @@
       "data_source": "Boxerbook"
     },
     {
+      "id": "boxerbook-21113",
+      "source_id": 21113,
+      "name": "Épernay boxing event",
+      "date": "2026-11-21T12:00:00Z",
+      "event_url": "https://boxerbook.com/events/21113/2026-11-21-epernay",
+      "promoter": null,
+      "location": null,
+      "city": "Épernay",
+      "country": "FR",
+      "country_code": null,
+      "start_time_utc": null,
+      "broadcasters": [],
+      "bouts": [
+        {
+          "id": 204405,
+          "fighter1": "Clothilde Del Ben",
+          "fighter2": "Inna Statkevych",
+          "fighter1_image": null,
+          "fighter2_image": null,
+          "fighter1_nationality": null,
+          "fighter2_nationality": null,
+          "record1": null,
+          "record2": null,
+          "date": "2026-11-21",
+          "start_time_utc": null,
+          "start_datetime_utc": null,
+          "weight_class": "w_sfly",
+          "rounds": null,
+          "title_text": "WBF Women's Intercontinental Super Flyweight Title",
+          "status": "scheduled",
+          "url": "https://boxerbook.com/bouts/204405/clothilde-del-ben-vs-inna-statkevych",
+          "broadcaster": null,
+          "data_source": "Boxerbook"
+        }
+      ],
+      "data_source": "Boxerbook"
+    },
+    {
       "id": "boxerbook-11683",
       "source_id": 11683,
       "name": "帝拳プロモーション event",
@@ -2871,6 +2909,44 @@
       "source_note": "Additional scheduled bouts — card not confirmed. These individual matchups are listed by Boxing Data and have not been assigned to a confirmed promoter event."
     },
     {
+      "id": "boxerbook-21112",
+      "source_id": 21112,
+      "name": "Charles Manyuchi Boxing Academy event",
+      "date": "2026-11-27T12:00:00Z",
+      "event_url": "https://boxerbook.com/events/21112/2026-11-27-gwanda",
+      "promoter": "Charles Manyuchi Boxing Academy",
+      "location": "Phelandaba Stadium",
+      "city": "Gwanda",
+      "country": "ZW",
+      "country_code": null,
+      "start_time_utc": null,
+      "broadcasters": [],
+      "bouts": [
+        {
+          "id": 204404,
+          "fighter1": "Gracious Simwalizi",
+          "fighter2": "Yamikani Mtambo",
+          "fighter1_image": null,
+          "fighter2_image": null,
+          "fighter1_nationality": null,
+          "fighter2_nationality": null,
+          "record1": null,
+          "record2": null,
+          "date": "2026-11-27",
+          "start_time_utc": null,
+          "start_datetime_utc": null,
+          "weight_class": "sfea",
+          "rounds": null,
+          "title_text": "WBF Super Featherweight Title",
+          "status": "scheduled",
+          "url": "https://boxerbook.com/bouts/204404/gracious-simwalizi-vs-yamikani-mtambo",
+          "broadcaster": null,
+          "data_source": "Boxerbook"
+        }
+      ],
+      "data_source": "Boxerbook"
+    },
+    {
       "id": "boxerbook-11870",
       "source_id": 11870,
       "name": "Dusseldorf boxing event",
@@ -3090,6 +3166,44 @@
       ],
       "data_source": "Boxing Data API",
       "source_note": "Additional scheduled bouts — card not confirmed. These individual matchups are listed by Boxing Data and have not been assigned to a confirmed promoter event."
+    },
+    {
+      "id": "boxerbook-21111",
+      "source_id": 21111,
+      "name": "Antigua Guatemala boxing event",
+      "date": "2026-12-04T12:00:00Z",
+      "event_url": "https://boxerbook.com/events/21111/2026-12-04-antigua-guatemala",
+      "promoter": null,
+      "location": "Polideportivo La Pólvora",
+      "city": "Antigua Guatemala",
+      "country": "GT",
+      "country_code": null,
+      "start_time_utc": null,
+      "broadcasters": [],
+      "bouts": [
+        {
+          "id": 204403,
+          "fighter1": "Efraín Ureña",
+          "fighter2": "Wyatt Trujillo",
+          "fighter1_image": null,
+          "fighter2_image": null,
+          "fighter1_nationality": null,
+          "fighter2_nationality": null,
+          "record1": null,
+          "record2": null,
+          "date": "2026-12-04",
+          "start_time_utc": null,
+          "start_datetime_utc": null,
+          "weight_class": "smid",
+          "rounds": null,
+          "title_text": "WBF World Super Middleweight Title",
+          "status": "scheduled",
+          "url": "https://boxerbook.com/bouts/204403/efrain-urena-vs-wyatt-trujillo",
+          "broadcaster": null,
+          "data_source": "Boxerbook"
+        }
+      ],
+      "data_source": "Boxerbook"
     },
     {
       "id": "boxerbook-12894",
@@ -3488,6 +3602,44 @@
       "source_note": "Additional scheduled bouts — card not confirmed. These individual matchups are listed by Boxing Data and have not been assigned to a confirmed promoter event."
     },
     {
+      "id": "boxerbook-21110",
+      "source_id": 21110,
+      "name": "Boxing event",
+      "date": "2026-12-11T12:00:00Z",
+      "event_url": "https://boxerbook.com/events/21110/2026-12-11",
+      "promoter": null,
+      "location": null,
+      "city": null,
+      "country": "GE",
+      "country_code": null,
+      "start_time_utc": null,
+      "broadcasters": [],
+      "bouts": [
+        {
+          "id": 204402,
+          "fighter1": "Givi Todua",
+          "fighter2": "Kagiso Bagwasi",
+          "fighter1_image": null,
+          "fighter2_image": null,
+          "fighter1_nationality": null,
+          "fighter2_nationality": null,
+          "record1": null,
+          "record2": null,
+          "date": "2026-12-11",
+          "start_time_utc": null,
+          "start_datetime_utc": null,
+          "weight_class": "mid",
+          "rounds": null,
+          "title_text": "WBF World Middleweight Title",
+          "status": "scheduled",
+          "url": "https://boxerbook.com/bouts/204402/givi-todua-vs-kagiso-bagwasi",
+          "broadcaster": null,
+          "data_source": "Boxerbook"
+        }
+      ],
+      "data_source": "Boxerbook"
+    },
+    {
       "id": "boxerbook-11873",
       "source_id": 11873,
       "name": "Cardiff boxing event",
@@ -3584,6 +3736,44 @@
       ],
       "data_source": "Boxing Data API",
       "source_note": "Additional scheduled bouts — card not confirmed. These individual matchups are listed by Boxing Data and have not been assigned to a confirmed promoter event."
+    },
+    {
+      "id": "boxerbook-21109",
+      "source_id": 21109,
+      "name": "Cape Town boxing event",
+      "date": "2026-12-12T12:00:00Z",
+      "event_url": "https://boxerbook.com/events/21109/2026-12-12-cape-town",
+      "promoter": null,
+      "location": null,
+      "city": "Cape Town",
+      "country": "ZA",
+      "country_code": null,
+      "start_time_utc": null,
+      "broadcasters": [],
+      "bouts": [
+        {
+          "id": 204401,
+          "fighter1": "Mxolisi Zuma",
+          "fighter2": "Prince Nocele",
+          "fighter1_image": null,
+          "fighter2_image": null,
+          "fighter1_nationality": null,
+          "fighter2_nationality": null,
+          "record1": null,
+          "record2": null,
+          "date": "2026-12-12",
+          "start_time_utc": null,
+          "start_datetime_utc": null,
+          "weight_class": "sban",
+          "rounds": null,
+          "title_text": "WBF World Super Bantamweight Title (Vacant)",
+          "status": "scheduled",
+          "url": "https://boxerbook.com/bouts/204401/mxolisi-zuma-vs-prince-nocele",
+          "broadcaster": null,
+          "data_source": "Boxerbook"
+        }
+      ],
+      "data_source": "Boxerbook"
     },
     {
       "id": "boxerbook-12897",
