@@ -313,7 +313,6 @@
       if(!Number.isNaN(stamp.getTime()))root.append(make("p","sport-sync-note","Results feed updated "+new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"}).format(stamp)+" UK. Settled results only; no live scores are supplied by this feed."));
     }
     if(meta.darts?.results_sync_warning)root.append(make("p","sport-sync-note sport-sync-warning","Results refresh warning: "+meta.darts.results_sync_warning));
-    }
   }
   function fighterPortrait(name, url) {
     const initials=String(name||"?").trim().split(/\\s+/).filter(Boolean).slice(0,2).map(part=>part[0]).join("").toUpperCase()||"?";
