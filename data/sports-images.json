@@ -1410,7 +1410,7 @@
       "image_local_path": "assets/images/speedway/kai-huckenbeck.jpg"
     }
   },
-  "updated_at": "2026-11-15T21:03:41Z",
+  "updated_at": "2026-11-16T00:51:57Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1672,7 +1672,12 @@
     "jan kvech": "2026-11-15T16:10:46Z",
     "dominik kubera": "2026-11-15T20:31:19Z",
     "nazar parnitskyi": "2026-11-15T20:31:19Z",
-    "kai huckenbeck": "2026-11-15T20:31:19Z"
+    "kai huckenbeck": "2026-11-15T20:31:19Z",
+    "inoue": "2026-11-16T00:51:57Z",
+    "moloney": "2026-11-16T00:51:57Z",
+    "rozanski": "2026-11-16T00:51:57Z",
+    "goulamirian": "2026-11-16T00:51:57Z",
+    "opetaia": "2026-11-16T00:51:57Z"
   },
   "audit": {
     "last_reviewed_at": "2026-11-09T12:15:00Z",
@@ -1709,24 +1714,16 @@
     }
   },
   "enrichment": {
-    "batch_number": 43,
+    "batch_number": 44,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 280,
+    "cumulative_attempted": 285,
     "cumulative_found": 100,
-    "cumulative_missing": 180,
+    "cumulative_missing": 185,
     "cumulative_rejected": 192,
-    "last_batch_at": "2026-11-15T20:31:19Z",
-    "last_successful_batch_at": "2026-11-15T20:31:19Z",
+    "last_batch_at": "2026-11-16T00:51:57Z",
+    "last_successful_batch_at": "2026-11-16T00:51:57Z",
     "last_rate_limited_at": "2026-11-15T20:31:19Z",
     "history": [
-      {
-        "batch": 14,
-        "at": "2026-11-11T12:13:51Z",
-        "attempted": 5,
-        "found": 0,
-        "missing": 5,
-        "rate_limited": false
-      },
       {
         "batch": 15,
         "at": "2026-11-11T14:44:21Z",
@@ -1958,8 +1955,16 @@
         "found": 2,
         "missing": 2,
         "rate_limited": true
+      },
+      {
+        "batch": 44,
+        "at": "2026-11-16T00:51:57Z",
+        "attempted": 5,
+        "found": 0,
+        "missing": 5,
+        "rate_limited": false
       }
     ],
-    "last_batch_rate_limited": true
+    "last_batch_rate_limited": false
   }
 }
