@@ -1410,7 +1410,7 @@
       "image_local_path": "assets/images/speedway/kai-huckenbeck.jpg"
     }
   },
-  "updated_at": "2026-11-16T07:45:25Z",
+  "updated_at": "2026-11-16T18:07:49Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1681,7 +1681,12 @@
     "jack": "2026-11-16T07:45:25Z",
     "billam smith": "2026-11-16T07:45:25Z",
     "vargas": "2026-11-16T07:45:25Z",
-    "lopez": "2026-11-16T07:45:25Z"
+    "lopez": "2026-11-16T07:45:25Z",
+    "ramirez": "2026-11-16T18:07:49Z",
+    "wood": "2026-11-16T18:07:49Z",
+    "dalakian": "2026-11-16T18:07:49Z",
+    "martinez": "2026-11-16T18:07:49Z",
+    "edwards": "2026-11-16T18:07:49Z"
   },
   "audit": {
     "last_reviewed_at": "2026-11-09T12:15:00Z",
@@ -1718,24 +1723,16 @@
     }
   },
   "enrichment": {
-    "batch_number": 45,
+    "batch_number": 46,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 290,
+    "cumulative_attempted": 295,
     "cumulative_found": 100,
-    "cumulative_missing": 190,
-    "cumulative_rejected": 211,
-    "last_batch_at": "2026-11-16T07:45:25Z",
-    "last_successful_batch_at": "2026-11-16T07:45:25Z",
+    "cumulative_missing": 195,
+    "cumulative_rejected": 249,
+    "last_batch_at": "2026-11-16T18:07:49Z",
+    "last_successful_batch_at": "2026-11-16T18:07:49Z",
     "last_rate_limited_at": "2026-11-16T07:45:25Z",
     "history": [
-      {
-        "batch": 16,
-        "at": "2026-11-11T15:17:19Z",
-        "attempted": 5,
-        "found": 0,
-        "missing": 5,
-        "rate_limited": false
-      },
       {
         "batch": 17,
         "at": "2026-11-11T15:30:44Z",
@@ -1967,8 +1964,16 @@
         "found": 0,
         "missing": 5,
         "rate_limited": true
+      },
+      {
+        "batch": 46,
+        "at": "2026-11-16T18:07:49Z",
+        "attempted": 5,
+        "found": 0,
+        "missing": 5,
+        "rate_limited": false
       }
     ],
-    "last_batch_rate_limited": true
+    "last_batch_rate_limited": false
   }
 }

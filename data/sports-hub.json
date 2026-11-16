@@ -5586,7 +5586,7 @@
     "attempted": 5,
     "found": 142,
     "missing": 544,
-    "rejected": 19,
+    "rejected": 38,
     "by_sport": {
       "boxing": {
         "attempted": 5,
@@ -5596,61 +5596,61 @@
       }
     },
     "rejection_reasons": {
-      "not_an_image": 19
+      "not_an_image": 38
     },
     "search_details": [
       {
-        "name": "Jack",
-        "queries": 2,
-        "candidate_files": 17,
-        "accepted": 0,
-        "rejections": {
-          "not_an_image": 17
-        }
-      },
-      {
-        "name": "Billam-Smith",
-        "queries": 3,
-        "candidate_files": 0,
-        "accepted": 0,
-        "rejections": {}
-      },
-      {
-        "name": "Vargas",
-        "queries": 2,
-        "candidate_files": 0,
-        "accepted": 0,
-        "rejections": {}
-      },
-      {
-        "name": "Lopez",
-        "queries": 2,
-        "candidate_files": 1,
-        "accepted": 0,
-        "rejections": {
-          "not_an_image": 1
-        }
-      },
-      {
         "name": "Ramirez",
-        "queries": 1,
+        "queries": 2,
         "candidate_files": 1,
         "accepted": 0,
         "rejections": {
           "not_an_image": 1
+        }
+      },
+      {
+        "name": "Wood",
+        "queries": 2,
+        "candidate_files": 30,
+        "accepted": 0,
+        "rejections": {
+          "not_an_image": 30
+        }
+      },
+      {
+        "name": "Dalakian",
+        "queries": 2,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Martinez",
+        "queries": 2,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Edwards",
+        "queries": 2,
+        "candidate_files": 7,
+        "accepted": 0,
+        "rejections": {
+          "not_an_image": 7
         }
       }
     ],
-    "checked_at": "2026-11-16T07:45:25Z",
+    "checked_at": "2026-11-16T18:07:49Z",
     "library_entries": 100,
     "newly_found": 0,
-    "cumulative_attempted": 290,
+    "cumulative_attempted": 295,
     "cumulative_found": 100,
-    "cumulative_missing": 190,
-    "cumulative_rejected": 211,
-    "batch_number": 45,
-    "last_batch_at": "2026-11-16T07:45:25Z",
-    "last_successful_batch_at": "2026-11-16T07:45:25Z",
+    "cumulative_missing": 195,
+    "cumulative_rejected": 249,
+    "batch_number": 46,
+    "last_batch_at": "2026-11-16T18:07:49Z",
+    "last_successful_batch_at": "2026-11-16T18:07:49Z",
     "last_rate_limited_at": "2026-11-16T07:45:25Z",
     "coverage": {
       "boxing fight card fighters": {
@@ -5689,7 +5689,7 @@
         "missing": 81
       }
     },
-    "rate_limited": true
+    "rate_limited": false
   },
   "last_updated": "2026-11-16T06:32:17Z"
 }
