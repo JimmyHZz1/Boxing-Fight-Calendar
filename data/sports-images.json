@@ -1410,7 +1410,7 @@
       "image_local_path": "assets/images/speedway/kai-huckenbeck.jpg"
     }
   },
-  "updated_at": "2026-11-16T06:32:17Z",
+  "updated_at": "2026-11-16T07:45:25Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1677,7 +1677,11 @@
     "moloney": "2026-11-16T00:51:57Z",
     "rozanski": "2026-11-16T00:51:57Z",
     "goulamirian": "2026-11-16T00:51:57Z",
-    "opetaia": "2026-11-16T00:51:57Z"
+    "opetaia": "2026-11-16T00:51:57Z",
+    "jack": "2026-11-16T07:45:25Z",
+    "billam smith": "2026-11-16T07:45:25Z",
+    "vargas": "2026-11-16T07:45:25Z",
+    "lopez": "2026-11-16T07:45:25Z"
   },
   "audit": {
     "last_reviewed_at": "2026-11-09T12:15:00Z",
@@ -1714,24 +1718,16 @@
     }
   },
   "enrichment": {
-    "batch_number": 44,
+    "batch_number": 45,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 285,
+    "cumulative_attempted": 290,
     "cumulative_found": 100,
-    "cumulative_missing": 185,
-    "cumulative_rejected": 192,
-    "last_batch_at": "2026-11-16T00:51:57Z",
-    "last_successful_batch_at": "2026-11-16T00:51:57Z",
-    "last_rate_limited_at": "2026-11-15T20:31:19Z",
+    "cumulative_missing": 190,
+    "cumulative_rejected": 211,
+    "last_batch_at": "2026-11-16T07:45:25Z",
+    "last_successful_batch_at": "2026-11-16T07:45:25Z",
+    "last_rate_limited_at": "2026-11-16T07:45:25Z",
     "history": [
-      {
-        "batch": 15,
-        "at": "2026-11-11T14:44:21Z",
-        "attempted": 5,
-        "found": 0,
-        "missing": 5,
-        "rate_limited": false
-      },
       {
         "batch": 16,
         "at": "2026-11-11T15:17:19Z",
@@ -1963,8 +1959,16 @@
         "found": 0,
         "missing": 5,
         "rate_limited": false
+      },
+      {
+        "batch": 45,
+        "at": "2026-11-16T07:45:25Z",
+        "attempted": 5,
+        "found": 0,
+        "missing": 5,
+        "rate_limited": true
       }
     ],
-    "last_batch_rate_limited": false
+    "last_batch_rate_limited": true
   }
 }
