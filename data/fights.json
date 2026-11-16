@@ -1,13 +1,13 @@
 {
   "provider": "Boxerbook confirmed cards + Boxing Data additional bouts",
-  "last_updated": "2026-11-16T06:32:17Z",
-  "provider_as_of": "2026-11-16T06:32:17Z",
+  "last_updated": "2026-11-16T18:35:12Z",
+  "provider_as_of": "2026-11-16T18:35:12Z",
   "attribution": "Confirmed cards from Boxerbook; additional scheduled bouts from Boxing Data API.",
-  "count_events": 45,
-  "count_bouts": 156,
+  "count_events": 44,
+  "count_bouts": 154,
   "count_confirmed_events": 36,
   "count_confirmed_bouts": 137,
-  "count_additional_bouts": 19,
+  "count_additional_bouts": 17,
   "count_fighter_photos": 14,
   "events": [
     {
@@ -32,8 +32,8 @@
       "bouts": [
         {
           "id": 204300,
-          "fighter1": "坂本 和洋",
-          "fighter2": "山田 素晴",
+          "fighter1": "Kazuhiro Sakamoto",
+          "fighter2": "Motoharu Yamada",
           "fighter1_image": null,
           "fighter2_image": null,
           "fighter1_nationality": null,
@@ -47,13 +47,13 @@
           "rounds": 4,
           "title_text": null,
           "status": "scheduled",
-          "url": "https://boxerbook.com/bouts/204300",
+          "url": "https://boxerbook.com/bouts/204300/kazuhiro-sakamoto-vs-motoharu-yamada",
           "broadcaster": null,
           "data_source": "Boxerbook"
         },
         {
           "id": 204301,
-          "fighter1": "奥山 歩夢",
+          "fighter1": "Ayumu Okuyama",
           "fighter2": "Hitoshi Ishikawa",
           "fighter1_image": null,
           "fighter2_image": null,
@@ -68,14 +68,14 @@
           "rounds": 4,
           "title_text": null,
           "status": "scheduled",
-          "url": "https://boxerbook.com/bouts/204301/boxer-vs-hitoshi-ishikawa",
+          "url": "https://boxerbook.com/bouts/204301/ayumu-okuyama-vs-hitoshi-ishikawa",
           "broadcaster": null,
           "data_source": "Boxerbook"
         },
         {
           "id": 204302,
-          "fighter1": "平岡 知大",
-          "fighter2": "小牧 緯宙",
+          "fighter1": "Tomohiro Hiraoka",
+          "fighter2": "Isao Komaki",
           "fighter1_image": null,
           "fighter2_image": null,
           "fighter1_nationality": null,
@@ -89,7 +89,7 @@
           "rounds": 4,
           "title_text": null,
           "status": "scheduled",
-          "url": "https://boxerbook.com/bouts/204302",
+          "url": "https://boxerbook.com/bouts/204302/tomohiro-hiraoka-vs-isao-komaki",
           "broadcaster": null,
           "data_source": "Boxerbook"
         },
@@ -216,7 +216,17 @@
       "broadcasters": [
         {
           "name": "DAZN",
-          "region": "JP",
+          "region": "ES",
+          "url": null
+        },
+        {
+          "name": "DAZN",
+          "region": "MX",
+          "url": null
+        },
+        {
+          "name": "DAZN",
+          "region": "US-es",
           "url": null
         }
       ],
@@ -335,24 +345,24 @@
       "date": "2026-11-20T12:00:00Z",
       "bouts": [
         {
-          "id": "fx_qscjhmj6",
-          "fighter1": "Alberto Ignacio Palmetta",
-          "fighter2": "Willy Gilheaney",
+          "id": "fx_8pn2qyfh",
+          "fighter1": "Amari Jones",
+          "fighter2": "Deaundre Pettus",
           "date": "2026-11-20",
-          "start_time_utc": "19:00",
-          "start_datetime_utc": "2026-11-20T19:00:00Z",
+          "start_time_utc": "03:40",
+          "start_datetime_utc": "2026-11-20T03:40:00Z",
           "weight_class": null,
           "rounds": null,
           "status": "scheduled",
           "data_source": "Boxing Data API"
         },
         {
-          "id": "fx_kpyvmcbw",
-          "fighter1": "Kyran Jones",
-          "fighter2": "Sean Arkwright",
+          "id": "fx_qscjhmj6",
+          "fighter1": "Alberto Ignacio Palmetta",
+          "fighter2": "Willy Gilheaney",
           "date": "2026-11-20",
-          "start_time_utc": "20:00",
-          "start_datetime_utc": "2026-11-20T20:00:00Z",
+          "start_time_utc": "19:00",
+          "start_datetime_utc": "2026-11-20T19:00:00Z",
           "weight_class": null,
           "rounds": null,
           "status": "scheduled",
@@ -427,7 +437,7 @@
           "fighter1_nationality": null,
           "fighter2_nationality": null,
           "record1": null,
-          "record2": "6-3-0",
+          "record2": "8-3-0",
           "date": "2026-11-20",
           "start_time_utc": null,
           "start_datetime_utc": null,
@@ -510,7 +520,7 @@
           "fighter2_image": null,
           "fighter1_nationality": null,
           "fighter2_nationality": null,
-          "record1": null,
+          "record1": "1-0-0",
           "record2": "0-1-0",
           "date": "2026-11-20",
           "start_time_utc": null,
@@ -791,6 +801,21 @@
           "name": "DAZN",
           "region": "worldwide",
           "url": null
+        },
+        {
+          "name": "DAZN",
+          "region": "ES",
+          "url": null
+        },
+        {
+          "name": "DAZN",
+          "region": "MX",
+          "url": null
+        },
+        {
+          "name": "DAZN",
+          "region": "US-es",
+          "url": null
         }
       ],
       "bouts": [
@@ -939,39 +964,6 @@
         }
       ],
       "data_source": "Boxerbook"
-    },
-    {
-      "id": "boxingdata-2026-11-21",
-      "name": "Additional scheduled bouts — Sat 21 Nov",
-      "date": "2026-11-21T12:00:00Z",
-      "bouts": [
-        {
-          "id": "fx_7fwzxgs1",
-          "fighter1": "Gabriela Fundora",
-          "fighter2": "Jasmina Zapotoczna",
-          "date": "2026-11-21",
-          "start_time_utc": "02:50",
-          "start_datetime_utc": "2026-11-21T02:50:00Z",
-          "weight_class": null,
-          "rounds": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API"
-        },
-        {
-          "id": "fx_vdsgdj5r",
-          "fighter1": "Amari Jones",
-          "fighter2": "Deaundre Pettus",
-          "date": "2026-11-21",
-          "start_time_utc": "03:40",
-          "start_datetime_utc": "2026-11-21T03:40:00Z",
-          "weight_class": null,
-          "rounds": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API"
-        }
-      ],
-      "data_source": "Boxing Data API",
-      "source_note": "Additional scheduled bouts — card not confirmed. These individual matchups are listed by Boxing Data and have not been assigned to a confirmed promoter event."
     },
     {
       "id": "boxerbook-21100",
@@ -1933,8 +1925,8 @@
         },
         {
           "id": 204334,
-          "fighter1": "國川 透也",
-          "fighter2": "フランツ カール・ムイソ",
+          "fighter1": "Toruya Kunikawa",
+          "fighter2": "Franz Karl Muiso",
           "fighter1_image": null,
           "fighter2_image": null,
           "fighter1_nationality": null,
@@ -1948,7 +1940,7 @@
           "rounds": 6,
           "title_text": null,
           "status": "scheduled",
-          "url": "https://boxerbook.com/bouts/204334",
+          "url": "https://boxerbook.com/bouts/204334/toruya-kunikawa-vs-franz-karl-muiso",
           "broadcaster": null,
           "data_source": "Boxerbook"
         },
@@ -1975,7 +1967,7 @@
         },
         {
           "id": 204336,
-          "fighter1": "ケビン・アセニエロ",
+          "fighter1": "Kevin Aceniero",
           "fighter2": "Aomi Yokoyama",
           "fighter1_image": null,
           "fighter2_image": null,
@@ -1990,13 +1982,13 @@
           "rounds": 8,
           "title_text": null,
           "status": "scheduled",
-          "url": "https://boxerbook.com/bouts/204336/boxer-vs-aomi-yokoyama",
+          "url": "https://boxerbook.com/bouts/204336/kevin-aceniero-vs-aomi-yokoyama",
           "broadcaster": null,
           "data_source": "Boxerbook"
         },
         {
           "id": 204337,
-          "fighter1": "ダン・ダクレス",
+          "fighter1": "Dan Dacres",
           "fighter2": "Tsukuru Midorikawa",
           "fighter1_image": null,
           "fighter2_image": null,
@@ -2011,13 +2003,13 @@
           "rounds": 8,
           "title_text": null,
           "status": "scheduled",
-          "url": "https://boxerbook.com/bouts/204337/boxer-vs-tsukuru-midorikawa",
+          "url": "https://boxerbook.com/bouts/204337/dan-dacres-vs-tsukuru-midorikawa",
           "broadcaster": null,
           "data_source": "Boxerbook"
         },
         {
           "id": 204338,
-          "fighter1": "アルビン・ジョン・パシオネス",
+          "fighter1": "Alvin John Pasiones",
           "fighter2": "Jukiya Iimura",
           "fighter1_image": null,
           "fighter2_image": null,
@@ -2032,7 +2024,7 @@
           "rounds": 8,
           "title_text": null,
           "status": "scheduled",
-          "url": "https://boxerbook.com/bouts/204338/boxer-vs-jukiya-iimura",
+          "url": "https://boxerbook.com/bouts/204338/alvin-john-pasiones-vs-jukiya-iimura",
           "broadcaster": null,
           "data_source": "Boxerbook"
         }
@@ -2062,7 +2054,7 @@
         {
           "id": 204369,
           "fighter1": "Hiroharu Okukawa",
-          "fighter2": "大堂 一心",
+          "fighter2": "Isshin Daido",
           "fighter1_image": null,
           "fighter2_image": null,
           "fighter1_nationality": null,
@@ -2076,7 +2068,7 @@
           "rounds": 4,
           "title_text": null,
           "status": "scheduled",
-          "url": "https://boxerbook.com/bouts/204369/hiroharu-okukawa-vs-boxer",
+          "url": "https://boxerbook.com/bouts/204369/hiroharu-okukawa-vs-isshin-daido",
           "broadcaster": null,
           "data_source": "Boxerbook"
         },
@@ -2210,8 +2202,8 @@
       "bouts": [
         {
           "id": 204389,
-          "fighter1": "山形 蒼鳶",
-          "fighter2": "岩本 大樹",
+          "fighter1": "Aoto Yamagata",
+          "fighter2": "Daiki Iwamoto",
           "fighter1_image": null,
           "fighter2_image": null,
           "fighter1_nationality": null,
@@ -2225,7 +2217,7 @@
           "rounds": 4,
           "title_text": null,
           "status": "scheduled",
-          "url": "https://boxerbook.com/bouts/204389",
+          "url": "https://boxerbook.com/bouts/204389/aoto-yamagata-vs-daiki-iwamoto",
           "broadcaster": null,
           "data_source": "Boxerbook"
         },
@@ -2378,8 +2370,8 @@
         },
         {
           "id": 204397,
-          "fighter1": "高橋 宏綺",
-          "fighter2": "山岸 晟也",
+          "fighter1": "Hiroki Takahashi",
+          "fighter2": "Seiya Yamagishi",
           "fighter1_image": null,
           "fighter2_image": null,
           "fighter1_nationality": null,
@@ -2393,7 +2385,7 @@
           "rounds": 4,
           "title_text": null,
           "status": "scheduled",
-          "url": "https://boxerbook.com/bouts/204397",
+          "url": "https://boxerbook.com/bouts/204397/hiroki-takahashi-vs-seiya-yamagishi",
           "broadcaster": null,
           "data_source": "Boxerbook"
         }
@@ -2464,7 +2456,7 @@
           "fighter2_image": null,
           "fighter1_nationality": null,
           "fighter2_nationality": null,
-          "record1": null,
+          "record1": "0-1-0",
           "record2": "12-1-0",
           "date": "2026-11-26",
           "start_time_utc": null,
@@ -2950,7 +2942,7 @@
           "fighter2_image": null,
           "fighter1_nationality": null,
           "fighter2_nationality": null,
-          "record1": null,
+          "record1": "3-0-0",
           "record2": "22-0-0",
           "date": "2026-12-04",
           "start_time_utc": null,
@@ -3035,7 +3027,7 @@
           "fighter1_nationality": null,
           "fighter2_nationality": null,
           "record1": "23-1-0",
-          "record2": "30-6-1",
+          "record2": "30-5-1",
           "date": "2026-12-04",
           "start_time_utc": null,
           "start_datetime_utc": null,
@@ -3236,6 +3228,11 @@
         },
         {
           "name": "DAZN",
+          "region": "US",
+          "url": null
+        },
+        {
+          "name": "DAZN PPV",
           "region": "US",
           "url": null
         }
@@ -3466,7 +3463,7 @@
           "fighter1_nationality": null,
           "fighter2_nationality": null,
           "record1": "36-2-1",
-          "record2": "31-4-0",
+          "record2": "30-4-0",
           "date": "2026-12-11",
           "start_time_utc": null,
           "start_datetime_utc": null,
@@ -3507,7 +3504,7 @@
           "fighter2_image": null,
           "fighter1_nationality": null,
           "fighter2_nationality": null,
-          "record1": null,
+          "record1": "2-0-0",
           "record2": "21-3-2",
           "date": "2026-12-11",
           "start_time_utc": null,
@@ -3867,11 +3864,6 @@
           "name": "DAZN",
           "region": "CA",
           "url": "https://www.dazn.com/"
-        },
-        {
-          "name": "DAZN",
-          "region": "JP",
-          "url": null
         }
       ],
       "bouts": [
