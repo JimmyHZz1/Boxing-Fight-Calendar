@@ -13,6 +13,88 @@
       "venue": "Aldersley Leisure Village, Wolverhampton",
       "tier": "majors",
       "schedule_source_url": "https://www.pdc.tv/news/2026/november/09/littler-drawn-greaves-zonneveld-at-mr-vegas-grand-slam/",
+      "groups": {
+        "A": [
+          "Luke Littler",
+          "Niels Zonneveld",
+          "Beau Greaves"
+        ],
+        "B": [
+          "Jermaine Wattimena",
+          "Alan Soutar",
+          "Lisa Ashton"
+        ],
+        "C": [
+          "Josh Rock",
+          "Kevin Doets",
+          "Tommy Morris"
+        ],
+        "D": [
+          "Stephen Bunting",
+          "Cameron Menzies",
+          "Raymond Smith"
+        ],
+        "E": [
+          "Gerwyn Price",
+          "Sebastian Bialecki",
+          "Joe Hunt"
+        ],
+        "F": [
+          "Ryan Searle",
+          "Andrew Gilding",
+          "Charlie Manby"
+        ],
+        "G": [
+          "Jonny Clayton",
+          "Rob Cross",
+          "Anton Ostlund"
+        ],
+        "H": [
+          "Wessel Nijman",
+          "Niko Springer",
+          "Adam Sevada"
+        ],
+        "I": [
+          "Luke Humphries",
+          "Joe Cullen",
+          "Paolo Nebrida"
+        ],
+        "J": [
+          "Luke Woodhouse",
+          "Krzysztof Ratajski",
+          "Tom Sykes"
+        ],
+        "K": [
+          "James Wade",
+          "Ricky Evans",
+          "Cam Crabtree"
+        ],
+        "L": [
+          "Michael van Gerwen",
+          "Jeffrey de Graaf",
+          "Henry Coates"
+        ],
+        "M": [
+          "Gian van Veen",
+          "Bradley Brooks",
+          "Carl Sneyd"
+        ],
+        "N": [
+          "Chris Dobey",
+          "Martin Schindler",
+          "Jan Schmidt"
+        ],
+        "O": [
+          "Ross Smith",
+          "Gabriel Clemens",
+          "Rusty-Jake Rodriguez"
+        ],
+        "P": [
+          "Nathan Aspinall",
+          "Karel Sedlacek",
+          "Maik Kuivenhoven"
+        ]
+      },
       "schedule_of_play": [
         {
           "date": "2026-11-14",
@@ -167,100 +249,36 @@
       "status": "ongoing",
       "organiser": "pdc",
       "source": "Official PDC calendar",
-      "source_url": "https://www.pdc.tv/calendar",
-      "groups": {
-        "A": [
-          "Luke Littler",
-          "Niels Zonneveld",
-          "Beau Greaves"
-        ],
-        "B": [
-          "Jermaine Wattimena",
-          "Alan Soutar",
-          "Lisa Ashton"
-        ],
-        "C": [
-          "Josh Rock",
-          "Kevin Doets",
-          "Tommy Morris"
-        ],
-        "D": [
-          "Stephen Bunting",
-          "Cameron Menzies",
-          "Raymond Smith"
-        ],
-        "E": [
-          "Gerwyn Price",
-          "Sebastian Bialecki",
-          "Joe Hunt"
-        ],
-        "F": [
-          "Ryan Searle",
-          "Andrew Gilding",
-          "Charlie Manby"
-        ],
-        "G": [
-          "Jonny Clayton",
-          "Rob Cross",
-          "Anton Ostlund"
-        ],
-        "H": [
-          "Wessel Nijman",
-          "Niko Springer",
-          "Adam Sevada"
-        ],
-        "I": [
-          "Luke Humphries",
-          "Joe Cullen",
-          "Paolo Nebrida"
-        ],
-        "J": [
-          "Luke Woodhouse",
-          "Krzysztof Ratajski",
-          "Tom Sykes"
-        ],
-        "K": [
-          "James Wade",
-          "Ricky Evans",
-          "Cam Crabtree"
-        ],
-        "L": [
-          "Michael van Gerwen",
-          "Jeffrey de Graaf",
-          "Henry Coates"
-        ],
-        "M": [
-          "Gian van Veen",
-          "Bradley Brooks",
-          "Carl Sneyd"
-        ],
-        "N": [
-          "Chris Dobey",
-          "Martin Schindler",
-          "Jan Schmidt"
-        ],
-        "O": [
-          "Ross Smith",
-          "Gabriel Clemens",
-          "Rusty-Jake Rodriguez"
-        ],
-        "P": [
-          "Nathan Aspinall",
-          "Karel Sedlacek",
-          "Maik Kuivenhoven"
-        ]
-      }
+      "source_url": "https://www.pdc.tv/calendar"
     },
     {
-      "id": "pdc-2026-players-championship-finals",
-      "name": "2026 Players Championship Finals",
-      "date": "2026-11-27",
-      "end_date": "2026-11-29",
-      "venue": "Butlins, Minehead",
+      "id": "ev_H6KYNY",
+      "name": "Grand Slam of Darts 2026, 14 Nov 2026",
+      "date": "2026-11-14",
+      "start_at": null,
+      "end_date": null,
+      "status": "completed",
+      "organiser": "pdc",
       "tier": "majors",
+      "venue": null,
+      "matches": 8,
+      "competition_id": "cp_YP123F",
+      "source": "Darts API",
+      "source_url": "https://www.pdc.tv/calendar"
+    },
+    {
+      "id": "ev_C8JHDH",
+      "name": "Grand Slam",
+      "date": "2026-11-22",
+      "start_at": null,
+      "end_date": null,
       "status": "scheduled",
       "organiser": "pdc",
-      "source": "Official PDC calendar",
+      "tier": "majors",
+      "venue": null,
+      "matches": 16,
+      "competition_id": "cp_982DPC",
+      "source": "Darts API",
       "source_url": "https://www.pdc.tv/calendar"
     },
     {
@@ -277,27 +295,9 @@
     }
   ],
   "notice": "Main televised PDC tournaments only. The Darts API supplies available event records; official PDC calendar dates fill gaps in upcoming headline events. U23, youth, development, affiliate, qualifier and non-televised Players Championship events are excluded.",
-  "sync_attempted_at": "2026-11-14T20:34:01Z",
-  "data_status": "fallback",
+  "sync_attempted_at": "2026-11-16T13:44:07Z",
+  "data_status": "current",
   "results": [
-    {
-      "match_id": "mt_0RX831H7WM1D7X9EDSFK",
-      "played_on": "2026-11-01",
-      "round": "final",
-      "winner": {
-        "name": "Nina Andrejkovicova",
-        "score": 4
-      },
-      "loser": {
-        "name": "Alexandra Vavrovicova",
-        "score": 1
-      },
-      "result_status": "final",
-      "event_id": "ev_J9AA7F",
-      "competition_id": "cp_X3MNQ6",
-      "event_name": "Nitra Masters Girls, 1 Nov 2026",
-      "event_tier": "wdf_other"
-    },
     {
       "match_id": "mt_1W23TYX3Y5HMNT7YBMBR",
       "played_on": "2026-11-07",
@@ -2907,14 +2907,140 @@
       "competition_id": "cp_R8ZEB2",
       "event_name": "Malta Masters Womens",
       "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0CE1R9RGWVF2EK0F566F",
+      "played_on": "2026-11-08",
+      "round": "last_16",
+      "winner": {
+        "name": "Davey Gradwell",
+        "score": 4
+      },
+      "loser": {
+        "name": "Andrew Davidson",
+        "score": 2
+      },
+      "result_status": "final",
+      "event_id": "ev_WXF65P",
+      "competition_id": "cp_3QN3YF",
+      "event_name": "Malta Masters Men, 8 Nov 2026",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1Z073ETSYP8A8HMG0BMC",
+      "played_on": "2026-11-08",
+      "round": "last_16",
+      "winner": {
+        "name": "Danny Penney",
+        "score": 4
+      },
+      "loser": {
+        "name": "Andras Borbely",
+        "score": 2
+      },
+      "result_status": "final",
+      "event_id": "ev_WXF65P",
+      "competition_id": "cp_3QN3YF",
+      "event_name": "Malta Masters Men, 8 Nov 2026",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_01Y6PHQS9C89965YS90Z",
+      "played_on": "2026-11-08",
+      "round": "last_32",
+      "winner": {
+        "name": "Andras Borbely",
+        "score": 4
+      },
+      "loser": {
+        "name": "Martin Marti",
+        "score": 2
+      },
+      "result_status": "final",
+      "event_id": "ev_WXF65P",
+      "competition_id": "cp_3QN3YF",
+      "event_name": "Malta Masters Men, 8 Nov 2026",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1J1PA3DQG8PH9Z1C3MPX",
+      "played_on": "2026-11-08",
+      "round": "last_32",
+      "winner": {
+        "name": "Davey Gradwell",
+        "score": 4
+      },
+      "loser": {
+        "name": "Cliff Prior",
+        "score": 3
+      },
+      "result_status": "final",
+      "event_id": "ev_WXF65P",
+      "competition_id": "cp_3QN3YF",
+      "event_name": "Malta Masters Men, 8 Nov 2026",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_1BYTQF74FZB3RZC0HQ5V",
+      "played_on": "2026-11-08",
+      "round": "last_32",
+      "winner": {
+        "name": "James Beeton",
+        "score": 4
+      },
+      "loser": {
+        "name": "Philip Smith",
+        "score": 2
+      },
+      "result_status": "final",
+      "event_id": "ev_WXF65P",
+      "competition_id": "cp_3QN3YF",
+      "event_name": "Malta Masters Men, 8 Nov 2026",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_0BJVV6VXQT0A23MZ6PSQ",
+      "played_on": "2026-11-08",
+      "round": "last_32",
+      "winner": {
+        "name": "Darran Laker",
+        "score": 4
+      },
+      "loser": {
+        "name": "Fabian Herz",
+        "score": 2
+      },
+      "result_status": "final",
+      "event_id": "ev_MZBQ9E",
+      "competition_id": "cp_8TW3PE",
+      "event_name": "Malta Masters Mens",
+      "event_tier": "wdf_silver"
+    },
+    {
+      "match_id": "mt_05G1JS9E1C6EQWFGZQST",
+      "played_on": "2026-11-08",
+      "round": "last_16",
+      "winner": {
+        "name": "Anca Zijlstra",
+        "score": 4
+      },
+      "loser": {
+        "name": "Charline Marggraf",
+        "score": 0
+      },
+      "result_status": "final",
+      "event_id": "ev_DQJE82",
+      "competition_id": "cp_6KCFRR",
+      "event_name": "Malta Masters Women, 8 Nov 2026",
+      "event_tier": "wdf_silver"
     }
   ],
-  "results_last_successful_update": "2026-11-14T20:34:01Z",
+  "results_last_successful_update": "2026-11-16T13:44:07Z",
   "results_window": {
-    "from": "2026-10-15",
-    "to": "2026-11-07",
-    "note": "Weekly settled-results snapshot; live match scores are not included."
+    "from": "2026-11-02",
+    "to": "2026-11-15",
+    "note": "Recent settled-results snapshot through yesterday; live match scores are not included."
   },
-  "sync_warning": "Darts API returned no matching televised PDC events in the 60-day window; using official fallback dates.",
-  "last_updated": "2026-11-14T20:34:01Z"
+  "last_successful_update": "2026-11-16T13:44:07Z",
+  "last_updated": "2026-11-16T13:44:07Z"
 }
