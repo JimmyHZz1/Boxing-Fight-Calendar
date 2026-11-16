@@ -85,9 +85,10 @@
     const ongoing=String(event.status||"").toLowerCase()==="ongoing";
     const groups=event.groups||{};
     const groupCards=Object.entries(groups).map(([group,players])=>
-      '<details class="hub-dropdown"><summary>GROUP '+esc(group)+'<span>'+players.length+' PLAYERS</span></summary><div class="hub-dropdown-list">'+
-      players.map((name,index)=>'<div class="hub-person"><span class="hub-rank">'+(index+1)+'</span><span class="hub-person-name"><strong>'+esc(name)+'</strong><small>Group '+esc(group)+'</small></span></div>').join('')+
-      '</div></details>'
+      '<section class="hub-grand-slam-group" style="min-width:0;padding:12px 14px;border:1px solid rgba(201,164,91,.3);border-radius:10px;background:rgba(12,14,18,.72)">'+
+      '<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;padding-bottom:8px;margin-bottom:7px;border-bottom:1px solid rgba(201,164,91,.22)"><strong style="color:#e7bd70;letter-spacing:1px">GROUP '+esc(group)+'</strong><span style="font-size:10px;color:#aeb2bc">3 PLAYERS</span></div>'+
+      '<ol style="list-style:none;padding:0;margin:0;display:grid;gap:7px">'+players.map((name,index)=>'<li style="display:flex;align-items:center;gap:9px;min-width:0"><span style="display:grid;place-items:center;flex:none;width:20px;height:20px;border-radius:50%;background:#292b32;color:#d9b46c;font-size:10px;font-weight:700">'+(index+1)+'</span><strong style="font-size:13px;line-height:1.35;color:#f5f3ee;overflow-wrap:anywhere">'+esc(name)+'</strong></li>').join('')+'</ol>'+
+      '</section>'
     ).join('');
     const schedule=(event.schedule_of_play||[]).slice().sort((a,b)=>(a.date||"").localeCompare(b.date||"")||(a.start_at||"").localeCompare(b.start_at||""));
     const scheduleHtml=schedule.map(session=>{
@@ -102,7 +103,7 @@
     return '<section class="hub-bkfc-event" style="margin:0 0 18px;padding:16px;border:1px solid rgba(201,164,91,.45);border-radius:14px;background:rgba(201,164,91,.07)">'+
       '<div class="hub-bkfc-event-title"><strong>'+esc(event.name)+'</strong><span style="color:'+(ongoing?'#67d69b':'#c9a45b')+'">'+(ongoing?'● ONGOING':'UPCOMING')+'</span></div>'+
       '<p class="hub-source-note" style="margin:8px 0 14px">'+esc(range)+' · '+esc(event.venue||'PDC')+'</p>'+
-      '<details class="hub-dropdown" open><summary>GROUP DRAW<span>'+Object.keys(groups).length+' GROUPS · '+Object.values(groups).flat().length+' PLAYERS</span></summary><div class="hub-dropdown-list" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:8px">'+groupCards+'</div></details>'+
+      '<section class="hub-grand-slam-draw" style="margin-top:12px"><div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px"><strong style="letter-spacing:1px;color:#f1d49c">GROUP DRAW</strong><span style="font-size:10px;color:#aeb2bc">'+Object.keys(groups).length+' GROUPS · '+Object.values(groups).flat().length+' PLAYERS</span></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:9px">'+groupCards+'</div></section>'+
       '<details class="hub-dropdown" style="margin-top:12px"><summary>FULL MATCH SCHEDULE<span>'+schedule.reduce((n,session)=>n+(session.matches||[]).length,0)+' MATCHES</span></summary><div class="hub-dropdown-list" style="padding:8px">'+scheduleHtml+'</div></details>'+
       (event.schedule_source_url?'<p style="margin:10px 0 0"><a class="event-source-link" href="'+esc(event.schedule_source_url)+'" target="_blank" rel="noopener noreferrer">Official PDC draw ↗</a></p>':'')+
       '</section>';
