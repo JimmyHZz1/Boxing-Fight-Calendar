@@ -1,12 +1,12 @@
 {
   "provider": "Boxerbook confirmed cards + Boxing Data additional bouts",
-  "last_updated": "2026-11-17T13:28:42Z",
-  "provider_as_of": "2026-11-17T13:28:41Z",
+  "last_updated": "2026-11-17T23:31:43Z",
+  "provider_as_of": "2026-11-17T23:31:43Z",
   "attribution": "Confirmed cards from Boxerbook; additional scheduled bouts from Boxing Data API.",
-  "count_events": 44,
-  "count_bouts": 154,
-  "count_confirmed_events": 35,
-  "count_confirmed_bouts": 136,
+  "count_events": 45,
+  "count_bouts": 155,
+  "count_confirmed_events": 36,
+  "count_confirmed_bouts": 137,
   "count_additional_bouts": 18,
   "count_fighter_photos": 14,
   "events": [
@@ -371,6 +371,44 @@
       ],
       "data_source": "Boxing Data API",
       "source_note": "Additional scheduled bouts — card not confirmed. These individual matchups are listed by Boxing Data and have not been assigned to a confirmed promoter event."
+    },
+    {
+      "id": "boxerbook-None",
+      "source_id": null,
+      "name": "Boxing event",
+      "date": "2026-11-20T12:00:00Z",
+      "event_url": null,
+      "promoter": null,
+      "location": null,
+      "city": null,
+      "country": null,
+      "country_code": null,
+      "start_time_utc": "2026-11-20T22:00Z",
+      "broadcasters": [],
+      "bouts": [
+        {
+          "id": 204463,
+          "fighter1": "Leonardo Sanchez",
+          "fighter2": "Victor Morales Jr",
+          "fighter1_image": null,
+          "fighter2_image": null,
+          "fighter1_nationality": null,
+          "fighter2_nationality": null,
+          "record1": "7-1-0",
+          "record2": null,
+          "date": "2026-11-20",
+          "start_time_utc": null,
+          "start_datetime_utc": null,
+          "weight_class": "wel",
+          "rounds": null,
+          "title_text": null,
+          "status": "scheduled",
+          "url": "https://boxerbook.com/bouts/204463/leonardo-sanchez-vs-victor-morales-jr",
+          "broadcaster": null,
+          "data_source": "Boxerbook"
+        }
+      ],
+      "data_source": "Boxerbook"
     },
     {
       "id": "boxerbook-11868",
@@ -3428,7 +3466,7 @@
       "city": "Cardiff",
       "country": "GB",
       "country_code": null,
-      "start_time_utc": "2026-12-12T00:00Z",
+      "start_time_utc": "2026-12-12T02:00Z",
       "broadcasters": [
         {
           "name": "Netflix",
