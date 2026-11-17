@@ -1410,7 +1410,7 @@
       "image_local_path": "assets/images/speedway/kai-huckenbeck.jpg"
     }
   },
-  "updated_at": "2026-11-17T13:28:42Z",
+  "updated_at": "2026-11-17T19:40:30Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1696,7 +1696,12 @@
     "nontshinga": "2026-11-17T10:32:05Z",
     "beterbiev": "2026-11-17T10:32:05Z",
     "bivol": "2026-11-17T10:32:05Z",
-    "haney": "2026-11-17T10:32:05Z"
+    "haney": "2026-11-17T10:32:05Z",
+    "davis": "2026-11-17T19:40:30Z",
+    "charlo": "2026-11-17T19:40:30Z",
+    "golovkin": "2026-11-17T19:40:30Z",
+    "lara": "2026-11-17T19:40:30Z",
+    "alimkhanuly": "2026-11-17T19:40:30Z"
   },
   "audit": {
     "last_reviewed_at": "2026-11-09T12:15:00Z",
@@ -1733,24 +1738,16 @@
     }
   },
   "enrichment": {
-    "batch_number": 48,
+    "batch_number": 49,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 305,
+    "cumulative_attempted": 310,
     "cumulative_found": 100,
-    "cumulative_missing": 205,
-    "cumulative_rejected": 257,
-    "last_batch_at": "2026-11-17T10:32:05Z",
-    "last_successful_batch_at": "2026-11-17T10:32:05Z",
+    "cumulative_missing": 210,
+    "cumulative_rejected": 284,
+    "last_batch_at": "2026-11-17T19:40:30Z",
+    "last_successful_batch_at": "2026-11-17T19:40:30Z",
     "last_rate_limited_at": "2026-11-16T07:45:25Z",
     "history": [
-      {
-        "batch": 19,
-        "at": "2026-11-11T15:59:25Z",
-        "attempted": 1,
-        "found": 0,
-        "missing": 1,
-        "rate_limited": true
-      },
       {
         "batch": 20,
         "at": "2026-11-11T17:57:00Z",
@@ -1978,6 +1975,14 @@
       {
         "batch": 48,
         "at": "2026-11-17T10:32:05Z",
+        "attempted": 5,
+        "found": 0,
+        "missing": 5,
+        "rate_limited": false
+      },
+      {
+        "batch": 49,
+        "at": "2026-11-17T19:40:30Z",
         "attempted": 5,
         "found": 0,
         "missing": 5,
