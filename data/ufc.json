@@ -98,7 +98,9 @@
           "referee": "Blake Grice",
           "bonus": "Performance of the Night",
           "fighter1_image": "./assets/images/ufc/kayla-harrison.jpg",
-          "fighter1_image_credit": "Wikimedia Commons · Agência Brasil Fotografias · CC BY 2.0"
+          "fighter1_image_credit": "Wikimedia Commons · Agência Brasil Fotografias · CC BY 2.0",
+          "fighter2_image": "https://upload.wikimedia.org/wikipedia/commons/3/30/Amanda_Nunes_UFC_2023_02.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "fighter2_image_credit": "Wikimedia Commons · Esporte na Band · CC BY 3.0"
         },
         {
           "id": 93104,
@@ -180,7 +182,9 @@
             "details": "27 - 29. 28 - 28. 28 - 28."
           },
           "referee": "Marc Goddard",
-          "bonus": null
+          "bonus": null,
+          "fighter2_image": "./assets/images/ufc/kevin-holland.jpg",
+          "fighter2_image_credit": "Wikimedia Commons · The White House · Public domain"
         },
         {
           "id": 93106,

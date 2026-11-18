@@ -234,13 +234,33 @@
           "rank": 20,
           "name": "Yuki Tsunoda",
           "team": "RB F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/yuki-tsunoda.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Yuki_Tsunoda_Macau_2019.jpg",
+          "image_credit": "Wikimedia Commons · Smith007 · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "category:Category:Yuki Tsunoda in 2019",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/yuki-tsunoda.jpg"
         },
         {
           "rank": 21,
           "name": "Ryo Hirakawa",
           "team": "Haas F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/ryo-hirakawa.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Ryo_Hirakawa_2024_WEC_Fuji_1.jpg",
+          "image_credit": "Wikimedia Commons · Morio · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "search:Ryo Hirakawa",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/ryo-hirakawa.jpg"
         },
         {
           "rank": 22,
@@ -4313,7 +4333,17 @@
             {
               "rank": 14,
               "name": "Kevin Holland",
-              "image_url": null
+              "image_url": "./assets/images/ufc/kevin-holland.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Kevin_Holland_at_UFC_316_(54576727207).jpg",
+              "image_credit": "Wikimedia Commons · The White House · Public domain",
+              "image_license": "Public domain",
+              "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Kevin Holland",
+              "image_verified_at": "2026-11-18T02:14:27Z",
+              "image_local_path": "assets/images/ufc/kevin-holland.jpg"
             },
             {
               "rank": 15,
@@ -4354,7 +4384,16 @@
             {
               "rank": 1,
               "name": "Amanda Nunes",
-              "image_url": null
+              "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/30/Amanda_Nunes_UFC_2023_02.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Amanda_Nunes_UFC_2023_02.png",
+              "image_credit": "Wikimedia Commons · Esporte na Band · CC BY 3.0",
+              "image_license": "CC BY 3.0",
+              "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Amanda Nunes",
+              "image_verified_at": "2026-11-18T02:14:27Z"
             },
             {
               "rank": 2,
@@ -4364,7 +4403,17 @@
             {
               "rank": 2,
               "name": "Julianna Peña",
-              "image_url": null
+              "image_url": "./assets/images/ufc/julianna-pena.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Ceremonial_weigh_ins_-_Amanda_Nunes_vs_Julianna_Pe%C3%B1a_UFC_269_-_YouTube_-_0_23_(cropped).jpg",
+              "image_credit": "Wikimedia Commons · MMAnytt · CC BY 3.0",
+              "image_license": "CC BY 3.0",
+              "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Julianna Peña",
+              "image_verified_at": "2026-11-12T19:47:10Z",
+              "image_local_path": "assets/images/ufc/julianna-pena.jpg"
             },
             {
               "rank": 4,
@@ -4374,7 +4423,17 @@
             {
               "rank": 5,
               "name": "Luana Santos",
-              "image_url": null
+              "image_url": "./assets/images/ufc/luana-santos.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Luana_Santos_at_the_UFC_by_Maritza_Sanchez_01.jpg",
+              "image_credit": "Wikimedia Commons · Maritza Sanchez · CC BY 3.0",
+              "image_license": "CC BY 3.0",
+              "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Luana Santos",
+              "image_verified_at": "2026-11-13T00:39:21Z",
+              "image_local_path": "assets/images/ufc/luana-santos.jpg"
             },
             {
               "rank": 6,
@@ -4384,7 +4443,17 @@
             {
               "rank": 7,
               "name": "Raquel Pennington",
-              "image_url": null
+              "image_url": "./assets/images/ufc/raquel-pennington.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Raquel_Pennington_MCCS_Twentynine_Palms_presents_an_action-packed_MMA_Fight_Night_Live_at_The_Combat_Center_(5)_(cropped).jpg",
+              "image_credit": "Wikimedia Commons · Lance Cpl. Enge You · Public domain",
+              "image_license": "Public domain",
+              "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Raquel Pennington",
+              "image_verified_at": "2026-11-13T07:41:42Z",
+              "image_local_path": "assets/images/ufc/raquel-pennington.jpg"
             },
             {
               "rank": 8,
@@ -4686,7 +4755,16 @@
             {
               "rank": 10,
               "name": "Amanda Nunes",
-              "image_url": null
+              "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/30/Amanda_Nunes_UFC_2023_02.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Amanda_Nunes_UFC_2023_02.png",
+              "image_credit": "Wikimedia Commons · Esporte na Band · CC BY 3.0",
+              "image_license": "CC BY 3.0",
+              "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Amanda Nunes",
+              "image_verified_at": "2026-11-18T02:14:27Z"
             },
             {
               "rank": 11,
@@ -5523,32 +5601,95 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 310,
-    "found": 128,
-    "missing": 424,
-    "rejected": 284,
-    "by_sport": {},
-    "newly_found": 0,
+    "attempted": 4,
+    "found": 144,
+    "missing": 543,
+    "rejected": 0,
+    "by_sport": {
+      "ufc": {
+        "attempted": 3,
+        "found": 2,
+        "missing": 1,
+        "rejected": 0
+      },
+      "boxing": {
+        "attempted": 1,
+        "found": 0,
+        "missing": 1,
+        "rejected": 0
+      }
+    },
+    "search_details": [
+      {
+        "name": "David Onama",
+        "queries": 3,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Kevin Holland",
+        "queries": 3,
+        "candidate_files": 6,
+        "accepted": 6,
+        "rejections": {}
+      },
+      {
+        "name": "Amanda Nunes",
+        "queries": 3,
+        "candidate_files": 6,
+        "accepted": 6,
+        "rejections": {}
+      },
+      {
+        "name": "CP Freshmart",
+        "queries": 1,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      }
+    ],
+    "checked_at": "2026-11-18T02:14:27Z",
+    "library_entries": 102,
+    "newly_found": 2,
+    "cumulative_attempted": 314,
+    "cumulative_found": 102,
+    "cumulative_missing": 212,
+    "cumulative_rejected": 284,
+    "batch_number": 50,
+    "last_batch_at": "2026-11-18T02:14:27Z",
+    "last_successful_batch_at": "2026-11-18T02:14:27Z",
+    "last_rate_limited_at": "2026-11-18T02:14:27Z",
     "coverage": {
+      "boxing fight card fighters": {
+        "total": 293,
+        "with_image": 0,
+        "missing": 293
+      },
       "f1 drivers": {
         "total": 25,
-        "with_image": 23,
-        "missing": 2
+        "with_image": 25,
+        "missing": 0
       },
       "f1 constructors": {
         "total": 11,
         "with_image": 11,
         "missing": 0
       },
-      "darts": {
-        "total": 229,
-        "with_image": 50,
-        "missing": 179
+      "darts top 50": {
+        "total": 50,
+        "with_image": 47,
+        "missing": 3
       },
       "ufc": {
         "total": 206,
-        "with_image": 44,
-        "missing": 162
+        "with_image": 50,
+        "missing": 156
+      },
+      "speedway GP riders": {
+        "total": 21,
+        "with_image": 11,
+        "missing": 10
       },
       "boxing": {
         "total": 81,
@@ -5556,17 +5697,7 @@
         "missing": 81
       }
     },
-    "checked_at": "2026-11-17T23:31:43Z",
-    "library_entries": 100,
-    "cumulative_found": 100,
-    "cumulative_missing": 210,
-    "cumulative_rejected": 284,
-    "batch_number": 49,
-    "last_batch_at": "2026-11-17T19:40:30Z",
-    "last_successful_batch_at": "2026-11-17T19:40:30Z",
-    "last_rate_limited_at": "2026-11-16T07:45:25Z",
-    "enrichment_status": "awaiting next scheduled batch",
-    "rate_limited": false
+    "rate_limited": true
   },
   "last_updated": "2026-11-17T23:31:43Z"
 }

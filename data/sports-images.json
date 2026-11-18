@@ -1408,9 +1408,38 @@
       "image_match_method": "category:Category:Kai Huckenbeck",
       "image_verified_at": "2026-11-15T20:31:19Z",
       "image_local_path": "assets/images/speedway/kai-huckenbeck.jpg"
+    },
+    "kevin holland": {
+      "name": "Kevin Holland",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/kevin-holland.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Kevin_Holland_at_UFC_316_(54576727207).jpg",
+      "image_credit": "Wikimedia Commons · The White House · Public domain",
+      "image_license": "Public domain",
+      "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Kevin Holland",
+      "image_verified_at": "2026-11-18T02:14:27Z",
+      "image_local_path": "assets/images/ufc/kevin-holland.jpg"
+    },
+    "amanda nunes": {
+      "name": "Amanda Nunes",
+      "sport": "ufc",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/30/Amanda_Nunes_UFC_2023_02.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Amanda_Nunes_UFC_2023_02.png",
+      "image_credit": "Wikimedia Commons · Esporte na Band · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Amanda Nunes",
+      "image_verified_at": "2026-11-18T02:14:27Z"
     }
   },
-  "updated_at": "2026-11-17T23:31:43Z",
+  "updated_at": "2026-11-18T02:14:27Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1701,7 +1730,10 @@
     "charlo": "2026-11-17T19:40:30Z",
     "golovkin": "2026-11-17T19:40:30Z",
     "lara": "2026-11-17T19:40:30Z",
-    "alimkhanuly": "2026-11-17T19:40:30Z"
+    "alimkhanuly": "2026-11-17T19:40:30Z",
+    "david onama": "2026-11-18T02:14:27Z",
+    "kevin holland": "2026-11-18T02:14:27Z",
+    "amanda nunes": "2026-11-18T02:14:27Z"
   },
   "audit": {
     "last_reviewed_at": "2026-11-09T12:15:00Z",
@@ -1738,24 +1770,16 @@
     }
   },
   "enrichment": {
-    "batch_number": 49,
+    "batch_number": 50,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 310,
-    "cumulative_found": 100,
-    "cumulative_missing": 210,
+    "cumulative_attempted": 314,
+    "cumulative_found": 102,
+    "cumulative_missing": 212,
     "cumulative_rejected": 284,
-    "last_batch_at": "2026-11-17T19:40:30Z",
-    "last_successful_batch_at": "2026-11-17T19:40:30Z",
-    "last_rate_limited_at": "2026-11-16T07:45:25Z",
+    "last_batch_at": "2026-11-18T02:14:27Z",
+    "last_successful_batch_at": "2026-11-18T02:14:27Z",
+    "last_rate_limited_at": "2026-11-18T02:14:27Z",
     "history": [
-      {
-        "batch": 20,
-        "at": "2026-11-11T17:57:00Z",
-        "attempted": 5,
-        "found": 2,
-        "missing": 3,
-        "rate_limited": true
-      },
       {
         "batch": 21,
         "at": "2026-11-11T18:26:27Z",
@@ -1987,8 +2011,16 @@
         "found": 0,
         "missing": 5,
         "rate_limited": false
+      },
+      {
+        "batch": 50,
+        "at": "2026-11-18T02:14:27Z",
+        "attempted": 4,
+        "found": 2,
+        "missing": 2,
+        "rate_limited": true
       }
     ],
-    "last_batch_rate_limited": false
+    "last_batch_rate_limited": true
   }
 }

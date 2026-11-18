@@ -104,8 +104,37 @@
       "image_match_method": "category:Category:Israel Adesanya",
       "image_verified_at": "2026-11-11T17:57:00Z",
       "image_local_path": "assets/images/ufc/israel-adesanya.jpg"
+    },
+    "amanda nunes": {
+      "name": "Amanda Nunes",
+      "sport": "ufc",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/30/Amanda_Nunes_UFC_2023_02.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Amanda_Nunes_UFC_2023_02.png",
+      "image_credit": "Wikimedia Commons · Esporte na Band · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Amanda Nunes",
+      "image_verified_at": "2026-11-18T02:14:27Z"
+    },
+    "kevin holland": {
+      "name": "Kevin Holland",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/kevin-holland.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Kevin_Holland_at_UFC_316_(54576727207).jpg",
+      "image_credit": "Wikimedia Commons · The White House · Public domain",
+      "image_license": "Public domain",
+      "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Kevin Holland",
+      "image_verified_at": "2026-11-18T02:14:27Z",
+      "image_local_path": "assets/images/ufc/kevin-holland.jpg"
     }
   },
   "attempted": {},
-  "updated_at": "2026-11-17T23:32:01Z"
+  "updated_at": "2026-11-18T02:14:54Z"
 }
