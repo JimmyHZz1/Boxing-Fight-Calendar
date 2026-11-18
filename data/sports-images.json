@@ -1439,7 +1439,7 @@
       "image_verified_at": "2026-11-18T02:14:27Z"
     }
   },
-  "updated_at": "2026-11-18T07:31:44Z",
+  "updated_at": "2026-11-18T10:32:47Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1733,7 +1733,12 @@
     "alimkhanuly": "2026-11-17T19:40:30Z",
     "david onama": "2026-11-18T02:14:27Z",
     "kevin holland": "2026-11-18T02:14:27Z",
-    "amanda nunes": "2026-11-18T02:14:27Z"
+    "amanda nunes": "2026-11-18T02:14:27Z",
+    "cp freshmart": "2026-11-18T10:32:47Z",
+    "pradabsri": "2026-11-18T10:32:47Z",
+    "rosa": "2026-11-18T10:32:47Z",
+    "valladares": "2026-11-18T10:32:47Z",
+    "collazo": "2026-11-18T10:32:47Z"
   },
   "audit": {
     "last_reviewed_at": "2026-11-09T12:15:00Z",
@@ -1770,24 +1775,16 @@
     }
   },
   "enrichment": {
-    "batch_number": 50,
+    "batch_number": 51,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 314,
+    "cumulative_attempted": 319,
     "cumulative_found": 102,
-    "cumulative_missing": 212,
-    "cumulative_rejected": 284,
-    "last_batch_at": "2026-11-18T02:14:27Z",
-    "last_successful_batch_at": "2026-11-18T02:14:27Z",
+    "cumulative_missing": 217,
+    "cumulative_rejected": 289,
+    "last_batch_at": "2026-11-18T10:32:47Z",
+    "last_successful_batch_at": "2026-11-18T10:32:47Z",
     "last_rate_limited_at": "2026-11-18T02:14:27Z",
     "history": [
-      {
-        "batch": 21,
-        "at": "2026-11-11T18:26:27Z",
-        "attempted": 4,
-        "found": 2,
-        "missing": 2,
-        "rate_limited": true
-      },
       {
         "batch": 22,
         "at": "2026-11-11T22:24:19Z",
@@ -2019,8 +2016,16 @@
         "found": 2,
         "missing": 2,
         "rate_limited": true
+      },
+      {
+        "batch": 51,
+        "at": "2026-11-18T10:32:47Z",
+        "attempted": 5,
+        "found": 0,
+        "missing": 5,
+        "rate_limited": false
       }
     ],
-    "last_batch_rate_limited": true
+    "last_batch_rate_limited": false
   }
 }
