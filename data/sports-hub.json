@@ -5604,7 +5604,7 @@
     "attempted": 5,
     "found": 144,
     "missing": 552,
-    "rejected": 29,
+    "rejected": 1,
     "by_sport": {
       "boxing": {
         "attempted": 5,
@@ -5613,62 +5613,58 @@
         "rejected": 0
       }
     },
-    "rejection_reasons": {
-      "not_an_image": 29
-    },
     "search_details": [
       {
-        "name": "Fulton",
-        "queries": 2,
-        "candidate_files": 7,
-        "accepted": 0,
-        "rejections": {
-          "not_an_image": 7
-        }
-      },
-      {
-        "name": "Tapales",
+        "name": "Cordina",
         "queries": 2,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       },
       {
-        "name": "Garcia",
+        "name": "Estrada",
         "queries": 2,
-        "candidate_files": 3,
+        "candidate_files": 1,
         "accepted": 0,
         "rejections": {
-          "not_an_image": 3
+          "not_an_image": 1
         }
       },
       {
-        "name": "Navarrete",
+        "name": "Nakatani",
         "queries": 2,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       },
       {
-        "name": "Foster",
+        "name": "Ioka",
         "queries": 2,
-        "candidate_files": 19,
+        "candidate_files": 0,
         "accepted": 0,
-        "rejections": {
-          "not_an_image": 19
-        }
+        "rejections": {}
+      },
+      {
+        "name": "Prograis",
+        "queries": 2,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
       }
     ],
-    "checked_at": "2026-11-18T19:16:54Z",
+    "rejection_reasons": {
+      "not_an_image": 1
+    },
+    "checked_at": "2026-11-19T01:22:46Z",
     "library_entries": 102,
     "newly_found": 0,
-    "cumulative_attempted": 324,
+    "cumulative_attempted": 329,
     "cumulative_found": 102,
-    "cumulative_missing": 222,
-    "cumulative_rejected": 318,
-    "batch_number": 52,
-    "last_batch_at": "2026-11-18T19:16:54Z",
-    "last_successful_batch_at": "2026-11-18T19:16:54Z",
+    "cumulative_missing": 227,
+    "cumulative_rejected": 319,
+    "batch_number": 53,
+    "last_batch_at": "2026-11-19T01:22:46Z",
+    "last_successful_batch_at": "2026-11-19T01:22:46Z",
     "last_rate_limited_at": "2026-11-18T02:14:27Z",
     "coverage": {
       "boxing fight card fighters": {

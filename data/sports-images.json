@@ -1439,7 +1439,7 @@
       "image_verified_at": "2026-11-18T02:14:27Z"
     }
   },
-  "updated_at": "2026-11-18T19:16:54Z",
+  "updated_at": "2026-11-19T01:22:46Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1743,7 +1743,12 @@
     "tapales": "2026-11-18T19:16:54Z",
     "garcia": "2026-11-18T19:16:54Z",
     "navarrete": "2026-11-18T19:16:54Z",
-    "foster": "2026-11-18T19:16:54Z"
+    "foster": "2026-11-18T19:16:54Z",
+    "cordina": "2026-11-19T01:22:46Z",
+    "estrada": "2026-11-19T01:22:46Z",
+    "nakatani": "2026-11-19T01:22:46Z",
+    "ioka": "2026-11-19T01:22:46Z",
+    "prograis": "2026-11-19T01:22:46Z"
   },
   "audit": {
     "last_reviewed_at": "2026-11-09T12:15:00Z",
@@ -1780,24 +1785,16 @@
     }
   },
   "enrichment": {
-    "batch_number": 52,
+    "batch_number": 53,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 324,
+    "cumulative_attempted": 329,
     "cumulative_found": 102,
-    "cumulative_missing": 222,
-    "cumulative_rejected": 318,
-    "last_batch_at": "2026-11-18T19:16:54Z",
-    "last_successful_batch_at": "2026-11-18T19:16:54Z",
+    "cumulative_missing": 227,
+    "cumulative_rejected": 319,
+    "last_batch_at": "2026-11-19T01:22:46Z",
+    "last_successful_batch_at": "2026-11-19T01:22:46Z",
     "last_rate_limited_at": "2026-11-18T02:14:27Z",
     "history": [
-      {
-        "batch": 23,
-        "at": "2026-11-12T03:12:25Z",
-        "attempted": 4,
-        "found": 3,
-        "missing": 1,
-        "rate_limited": true
-      },
       {
         "batch": 24,
         "at": "2026-11-12T11:37:10Z",
@@ -2025,6 +2022,14 @@
       {
         "batch": 52,
         "at": "2026-11-18T19:16:54Z",
+        "attempted": 5,
+        "found": 0,
+        "missing": 5,
+        "rate_limited": false
+      },
+      {
+        "batch": 53,
+        "at": "2026-11-19T01:22:46Z",
         "attempted": 5,
         "found": 0,
         "missing": 5,
