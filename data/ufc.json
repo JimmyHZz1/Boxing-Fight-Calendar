@@ -1011,6 +1011,37 @@
           "result": null,
           "referee": null,
           "bonus": null
+        },
+        {
+          "id": 93886,
+          "ordering": 12,
+          "card_section": "prelims",
+          "sport": "mma",
+          "weight_class": "Lightweight",
+          "division_slug": "lightweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "announced",
+          "fighter_a": {
+            "id": 3535,
+            "slug": "shoaib-yousaf",
+            "name": "Shoaib Yousaf",
+            "nickname": "THE ASSASSIN",
+            "nationality": "United Kingdom",
+            "country_code": "GB"
+          },
+          "fighter_b": {
+            "id": 5603,
+            "slug": "john-mitchell",
+            "name": "John Mitchell",
+            "nickname": "The Cork Horse",
+            "nationality": "Ireland",
+            "country_code": "IE"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
         }
       ],
       "source": "UFCalendar"
@@ -1501,8 +1532,24 @@
       "early_prelims_at": null,
       "fights": [],
       "source": "UFCalendar"
+    },
+    {
+      "id": 3608,
+      "slug": "ufc-337-2027-02-20",
+      "name": "UFC 337",
+      "date": "2027-02-20",
+      "start_at": "2027-02-20T20:00:00.000Z",
+      "status": "announced",
+      "number": null,
+      "is_ppv": true,
+      "is_title_card": false,
+      "main_card_at": "2027-02-20T22:00:00.000Z",
+      "prelims_at": "2027-02-20T20:00:00.000Z",
+      "early_prelims_at": null,
+      "fights": [],
+      "source": "UFCalendar"
     }
   ],
   "notice": "All upcoming UFC events returned by UFCalendar, with detailed fight cards for the next two events and the latest completed card. Free API allowance: 1,000 requests per month.",
-  "last_updated": "2026-11-19T13:11:20Z"
+  "last_updated": "2026-11-19T23:04:02Z"
 }
