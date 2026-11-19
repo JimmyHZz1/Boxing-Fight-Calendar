@@ -1220,7 +1220,7 @@
         {
           "id": 93767,
           "ordering": 7,
-          "card_section": "main",
+          "card_section": "prelims",
           "sport": "mma",
           "weight_class": "Flyweight",
           "division_slug": "flyweight",
@@ -1251,7 +1251,7 @@
         {
           "id": 93768,
           "ordering": 8,
-          "card_section": "main",
+          "card_section": "prelims",
           "sport": "mma",
           "weight_class": "Light Heavyweight",
           "division_slug": "light-heavyweight",
@@ -1282,7 +1282,7 @@
         {
           "id": 93769,
           "ordering": 9,
-          "card_section": "main",
+          "card_section": "prelims",
           "sport": "mma",
           "weight_class": "Middleweight",
           "division_slug": "middleweight",
@@ -1313,7 +1313,7 @@
         {
           "id": 93770,
           "ordering": 10,
-          "card_section": "main",
+          "card_section": "prelims",
           "sport": "mma",
           "weight_class": "Bantamweight",
           "division_slug": "bantamweight",
@@ -1344,7 +1344,7 @@
         {
           "id": 93771,
           "ordering": 11,
-          "card_section": "main",
+          "card_section": "prelims",
           "sport": "mma",
           "weight_class": "Middleweight",
           "division_slug": "middleweight",
@@ -1375,7 +1375,7 @@
         {
           "id": 93772,
           "ordering": 12,
-          "card_section": "main",
+          "card_section": "prelims",
           "sport": "mma",
           "weight_class": "Bantamweight",
           "division_slug": "bantamweight",
@@ -1443,13 +1443,13 @@
       "slug": "ufc-fight-night-2027-01-23",
       "name": "UFC Fight Night: Bonfim vs Brady",
       "date": "2027-01-23",
-      "start_at": "2027-01-23T20:00:00.000Z",
+      "start_at": "2027-01-23T22:00:00.000Z",
       "status": "announced",
       "number": null,
       "is_ppv": false,
       "is_title_card": false,
-      "main_card_at": "2027-01-23T22:00:00.000Z",
-      "prelims_at": "2027-01-23T20:00:00.000Z",
+      "main_card_at": "2027-01-24T01:00:00.000Z",
+      "prelims_at": "2027-01-23T22:00:00.000Z",
       "early_prelims_at": null,
       "fights": [],
       "source": "UFCalendar"
@@ -1504,5 +1504,5 @@
     }
   ],
   "notice": "All upcoming UFC events returned by UFCalendar, with detailed fight cards for the next two events and the latest completed card. Free API allowance: 1,000 requests per month.",
-  "last_updated": "2026-11-18T17:16:34Z"
+  "last_updated": "2026-11-19T01:53:10Z"
 }
