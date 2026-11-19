@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "provider": "IGDB PopScore",
-  "updated_at": "2026-11-18T15:34:35.153Z",
+  "updated_at": "2026-11-19T15:40:39.618Z",
   "status": "ok",
   "methodology": "Daily relative ranking across the upcoming PC and console release list. Weighted IGDB Visits (30%), Want to Play (40%), Playing (15%), Played (5%) and Twitch Hours Watched (10%). Steam-only player, review and sales signals are deliberately excluded so console-only games are not penalised. Missing metrics are omitted and remaining weights are renormalised.",
   "games": [
@@ -64,7 +64,7 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar64ek.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar64ek.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6w51.jpg",
-      "popularity_score": 86,
+      "popularity_score": 89,
       "popularity_signals": [
         "want to play",
         "visits",
@@ -99,6 +99,27 @@
       "popularity_rank": 4
     },
     {
+      "slug": "rayman-legends-retold",
+      "title": "Rayman Legends Retold",
+      "release_date": "2026-12-03",
+      "platforms": [
+        "PlayStation 5"
+      ],
+      "verification_status": "verified",
+      "igdb_game_id": 404044,
+      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5zbq.jpg",
+      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5zbq.jpg",
+      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5zbq.jpg",
+      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5zbq.jpg",
+      "popularity_score": 65,
+      "popularity_signals": [
+        "want to play",
+        "visits"
+      ],
+      "popularity_coverage": 2,
+      "popularity_rank": 5
+    },
+    {
       "slug": "final-fantasy-vii-revelation",
       "title": "FINAL FANTASY VII REVELATION",
       "release_date": "2027-04-08",
@@ -120,7 +141,7 @@
         "visits"
       ],
       "popularity_coverage": 2,
-      "popularity_rank": 5
+      "popularity_rank": 6
     },
     {
       "slug": "warhammer-40000-dawn-of-war-iv",
@@ -135,27 +156,6 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar41cc.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar41cc.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6ox1.jpg",
-      "popularity_score": 62,
-      "popularity_signals": [
-        "want to play",
-        "visits"
-      ],
-      "popularity_coverage": 2,
-      "popularity_rank": 6
-    },
-    {
-      "slug": "rayman-legends-retold",
-      "title": "Rayman Legends Retold",
-      "release_date": "2026-12-03",
-      "platforms": [
-        "PlayStation 5"
-      ],
-      "verification_status": "verified",
-      "igdb_game_id": 404044,
-      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5zbq.jpg",
-      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5zbq.jpg",
-      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5zbq.jpg",
-      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5zbq.jpg",
       "popularity_score": 62,
       "popularity_signals": [
         "want to play",
@@ -177,7 +177,7 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo1275.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo1275.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6suz.jpg",
-      "popularity_score": 46,
+      "popularity_score": 43,
       "popularity_signals": [
         "want to play",
         "visits",
@@ -203,7 +203,7 @@
       "igdb_logo_url": null,
       "logo_url": null,
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar260r.jpg",
-      "popularity_score": 46,
+      "popularity_score": 43,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -246,13 +246,37 @@
       "igdb_logo_url": null,
       "logo_url": null,
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar3oxp.jpg",
-      "popularity_score": 34,
+      "popularity_score": 37,
       "popularity_signals": [
         "want to play",
         "visits"
       ],
       "popularity_coverage": 2,
       "popularity_rank": 11
+    },
+    {
+      "slug": "aeterna-lucis",
+      "title": "Aeterna Lucis",
+      "release_date": "2026-12-03",
+      "platforms": [
+        "PC",
+        "PlayStation 5",
+        "Xbox Series X|S",
+        "Nintendo Switch"
+      ],
+      "verification_status": "verified",
+      "igdb_game_id": 280572,
+      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar2ong.jpg",
+      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo10cy.jpg",
+      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo10cy.jpg",
+      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar2ong.jpg",
+      "popularity_score": 22,
+      "popularity_signals": [
+        "want to play",
+        "visits"
+      ],
+      "popularity_coverage": 2,
+      "popularity_rank": 12
     },
     {
       "slug": "dragon-quest-monsters-the-withered-world",
@@ -271,13 +295,13 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5xzb.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5xzb.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5xzb.jpg",
-      "popularity_score": 26,
+      "popularity_score": 20,
       "popularity_signals": [
         "want to play",
         "visits"
       ],
       "popularity_coverage": 2,
-      "popularity_rank": 12
+      "popularity_rank": 13
     },
     {
       "slug": "stage-tour",
@@ -295,30 +319,6 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5n09.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5n09.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6lhk.jpg",
-      "popularity_score": 22,
-      "popularity_signals": [
-        "want to play",
-        "visits"
-      ],
-      "popularity_coverage": 2,
-      "popularity_rank": 13
-    },
-    {
-      "slug": "aeterna-lucis",
-      "title": "Aeterna Lucis",
-      "release_date": "2026-12-03",
-      "platforms": [
-        "PC",
-        "PlayStation 5",
-        "Xbox Series X|S",
-        "Nintendo Switch"
-      ],
-      "verification_status": "verified",
-      "igdb_game_id": 280572,
-      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar2ong.jpg",
-      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo10cy.jpg",
-      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo10cy.jpg",
-      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar2ong.jpg",
       "popularity_score": 19,
       "popularity_signals": [
         "want to play",
@@ -326,6 +326,27 @@
       ],
       "popularity_coverage": 2,
       "popularity_rank": 14
+    },
+    {
+      "slug": "xenoblade-chronicles-3-switch-2",
+      "title": "Xenoblade Chronicles 3: Switch 2 Edition",
+      "release_date": "2026-12-03",
+      "platforms": [
+        "Nintendo Switch 2"
+      ],
+      "verification_status": "estimated",
+      "igdb_game_id": 405448,
+      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6b87.jpg",
+      "igdb_logo_url": null,
+      "logo_url": null,
+      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6b87.jpg",
+      "popularity_score": 11,
+      "popularity_signals": [
+        "want to play",
+        "visits"
+      ],
+      "popularity_coverage": 2,
+      "popularity_rank": 15
     },
     {
       "slug": "romancing-saga-3-destinies-united",
@@ -344,28 +365,7 @@
       "igdb_logo_url": null,
       "logo_url": null,
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6keu.jpg",
-      "popularity_score": 12,
-      "popularity_signals": [
-        "want to play",
-        "visits"
-      ],
-      "popularity_coverage": 2,
-      "popularity_rank": 15
-    },
-    {
-      "slug": "xenoblade-chronicles-3-switch-2",
-      "title": "Xenoblade Chronicles 3: Switch 2 Edition",
-      "release_date": "2026-12-03",
-      "platforms": [
-        "Nintendo Switch 2"
-      ],
-      "verification_status": "estimated",
-      "igdb_game_id": 405448,
-      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6b87.jpg",
-      "igdb_logo_url": null,
-      "logo_url": null,
-      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6b87.jpg",
-      "popularity_score": 6,
+      "popularity_score": 10,
       "popularity_signals": [
         "want to play",
         "visits"
