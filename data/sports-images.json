@@ -1452,9 +1452,24 @@
       "image_match_method": "category:Category:Adrian King",
       "image_verified_at": "2026-11-20T01:06:03Z",
       "image_local_path": "assets/images/boxing-fighters/adrian-king.jpg"
+    },
+    "akira saito": {
+      "name": "Akira Saito",
+      "sport": "boxing fighters",
+      "image_url": "./assets/images/boxing-fighters/akira-saito.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:ADM_SAITO_Akira,Chief_of_Staff_of_the_JMSDF_and_VADM_Patrick_J._Hannifin,_Commander,_U.S._7th_Fleet.jpg",
+      "image_credit": "Wikimedia Commons · https://www.mod.go.jp/msdf/index.html 海上自衛隊 · CC BY 4.0",
+      "image_license": "CC BY 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Akira Saito",
+      "image_verified_at": "2026-11-20T08:58:01Z",
+      "image_local_path": "assets/images/boxing-fighters/akira-saito.jpg"
     }
   },
-  "updated_at": "2026-11-20T07:18:29Z",
+  "updated_at": "2026-11-20T08:58:01Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1775,7 +1790,10 @@
     "adian williamson": "2026-11-19T18:31:43Z",
     "adrian king": "2026-11-20T01:06:03Z",
     "ai kamikaze": "2026-11-20T01:06:03Z",
-    "aito hashiguchi": "2026-11-20T01:06:03Z"
+    "aito hashiguchi": "2026-11-20T01:06:03Z",
+    "abel ramos": "2026-11-20T08:58:01Z",
+    "akira saito": "2026-11-20T08:58:01Z",
+    "alan ayala crisosto": "2026-11-20T08:58:01Z"
   },
   "audit": {
     "last_reviewed_at": "2026-11-09T12:15:00Z",
@@ -1812,24 +1830,16 @@
     }
   },
   "enrichment": {
-    "batch_number": 56,
+    "batch_number": 57,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 343,
-    "cumulative_found": 103,
-    "cumulative_missing": 240,
-    "cumulative_rejected": 326,
-    "last_batch_at": "2026-11-20T01:06:03Z",
-    "last_successful_batch_at": "2026-11-20T01:06:03Z",
-    "last_rate_limited_at": "2026-11-20T01:06:03Z",
+    "cumulative_attempted": 347,
+    "cumulative_found": 104,
+    "cumulative_missing": 243,
+    "cumulative_rejected": 330,
+    "last_batch_at": "2026-11-20T08:58:01Z",
+    "last_successful_batch_at": "2026-11-20T08:58:01Z",
+    "last_rate_limited_at": "2026-11-20T08:58:01Z",
     "history": [
-      {
-        "batch": 27,
-        "at": "2026-11-13T00:39:21Z",
-        "attempted": 5,
-        "found": 1,
-        "missing": 4,
-        "rate_limited": true
-      },
       {
         "batch": 28,
         "at": "2026-11-13T07:41:42Z",
@@ -2057,6 +2067,14 @@
       {
         "batch": 56,
         "at": "2026-11-20T01:06:03Z",
+        "attempted": 4,
+        "found": 1,
+        "missing": 3,
+        "rate_limited": true
+      },
+      {
+        "batch": 57,
+        "at": "2026-11-20T08:58:01Z",
         "attempted": 4,
         "found": 1,
         "missing": 3,

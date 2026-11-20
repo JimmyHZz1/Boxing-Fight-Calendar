@@ -131,6 +131,14 @@
       "license": "CC BY-SA 3.0",
       "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
       "source": "Wikimedia Commons"
+    },
+    "akira saito": {
+      "url": "./assets/images/boxing-fighters/akira-saito.jpg",
+      "page_url": "https://commons.wikimedia.org/wiki/File:ADM_SAITO_Akira,Chief_of_Staff_of_the_JMSDF_and_VADM_Patrick_J._Hannifin,_Commander,_U.S._7th_Fleet.jpg",
+      "artist": "Wikimedia Commons · https://www.mod.go.jp/msdf/index.html 海上自衛隊 · CC BY 4.0",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source": "Wikimedia Commons"
     }
   },
   "attempted": {
@@ -345,5 +353,5 @@
     "yuberjen martinez": "2026-11-08",
     "yudai nakazato": "2026-11-08"
   },
-  "updated_at": "2026-11-20T07:18:29Z"
+  "updated_at": "2026-11-20T08:58:01Z"
 }
