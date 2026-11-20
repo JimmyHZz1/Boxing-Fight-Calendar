@@ -1469,7 +1469,7 @@
       "image_local_path": "assets/images/boxing-fighters/akira-saito.jpg"
     }
   },
-  "updated_at": "2026-11-20T17:42:19Z",
+  "updated_at": "2026-11-20T23:48:19Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1797,7 +1797,10 @@
     "alan crisosto": "2026-11-20T17:42:19Z",
     "alberto ignacio palmetta": "2026-11-20T17:42:19Z",
     "alisha lewis": "2026-11-20T17:42:19Z",
-    "ally b lubanja": "2026-11-20T17:42:19Z"
+    "ally b lubanja": "2026-11-20T17:42:19Z",
+    "alvin john pasiones": "2026-11-20T23:48:19Z",
+    "amelia barker": "2026-11-20T23:48:19Z",
+    "amir anderson": "2026-11-20T23:48:19Z"
   },
   "audit": {
     "last_reviewed_at": "2026-11-09T12:15:00Z",
@@ -1834,24 +1837,16 @@
     }
   },
   "enrichment": {
-    "batch_number": 58,
+    "batch_number": 59,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 352,
+    "cumulative_attempted": 356,
     "cumulative_found": 104,
-    "cumulative_missing": 248,
+    "cumulative_missing": 252,
     "cumulative_rejected": 330,
-    "last_batch_at": "2026-11-20T17:42:19Z",
-    "last_successful_batch_at": "2026-11-20T17:42:19Z",
-    "last_rate_limited_at": "2026-11-20T17:42:19Z",
+    "last_batch_at": "2026-11-20T23:48:19Z",
+    "last_successful_batch_at": "2026-11-20T23:48:19Z",
+    "last_rate_limited_at": "2026-11-20T23:48:19Z",
     "history": [
-      {
-        "batch": 29,
-        "at": "2026-11-13T15:59:30Z",
-        "attempted": 5,
-        "found": 0,
-        "missing": 5,
-        "rate_limited": true
-      },
       {
         "batch": 30,
         "at": "2026-11-13T21:55:12Z",
@@ -2082,6 +2077,14 @@
         "attempted": 5,
         "found": 0,
         "missing": 5,
+        "rate_limited": true
+      },
+      {
+        "batch": 59,
+        "at": "2026-11-20T23:48:19Z",
+        "attempted": 4,
+        "found": 0,
+        "missing": 4,
         "rate_limited": true
       }
     ],

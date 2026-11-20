@@ -5601,66 +5601,59 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 5,
+    "attempted": 4,
     "found": 147,
     "missing": 611,
     "rejected": 0,
     "by_sport": {
       "boxing fighters": {
-        "attempted": 5,
+        "attempted": 4,
         "found": 0,
-        "missing": 5,
+        "missing": 4,
         "rejected": 0
       }
     },
     "search_details": [
       {
-        "name": "Alan Crisosto",
-        "queries": 3,
-        "candidate_files": 0,
-        "accepted": 0,
-        "rejections": {}
-      },
-      {
-        "name": "Alberto Ignacio Palmetta",
-        "queries": 2,
-        "candidate_files": 0,
-        "accepted": 0,
-        "rejections": {}
-      },
-      {
-        "name": "Alisha Lewis",
-        "queries": 3,
-        "candidate_files": 0,
-        "accepted": 0,
-        "rejections": {}
-      },
-      {
-        "name": "Ally B Lubanja",
-        "queries": 2,
-        "candidate_files": 0,
-        "accepted": 0,
-        "rejections": {}
-      },
-      {
         "name": "Alvin John Pasiones",
-        "queries": 0,
+        "queries": 2,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Amelia Barker",
+        "queries": 3,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Amir Anderson",
+        "queries": 3,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Andrew Tabiti",
+        "queries": 2,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       }
     ],
-    "checked_at": "2026-11-20T17:42:19Z",
+    "checked_at": "2026-11-20T23:48:19Z",
     "library_entries": 104,
     "newly_found": 0,
-    "cumulative_attempted": 352,
+    "cumulative_attempted": 356,
     "cumulative_found": 104,
-    "cumulative_missing": 248,
+    "cumulative_missing": 252,
     "cumulative_rejected": 330,
-    "batch_number": 58,
-    "last_batch_at": "2026-11-20T17:42:19Z",
-    "last_successful_batch_at": "2026-11-20T17:42:19Z",
-    "last_rate_limited_at": "2026-11-20T17:42:19Z",
+    "batch_number": 59,
+    "last_batch_at": "2026-11-20T23:48:19Z",
+    "last_successful_batch_at": "2026-11-20T23:48:19Z",
+    "last_rate_limited_at": "2026-11-20T23:48:19Z",
     "coverage": {
       "boxing fight card fighters": {
         "total": 364,
