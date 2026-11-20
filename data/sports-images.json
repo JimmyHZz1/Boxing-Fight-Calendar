@@ -1469,7 +1469,7 @@
       "image_local_path": "assets/images/boxing-fighters/akira-saito.jpg"
     }
   },
-  "updated_at": "2026-11-20T16:58:46Z",
+  "updated_at": "2026-11-20T17:42:19Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1793,7 +1793,11 @@
     "aito hashiguchi": "2026-11-20T01:06:03Z",
     "abel ramos": "2026-11-20T08:58:01Z",
     "akira saito": "2026-11-20T08:58:01Z",
-    "alan ayala crisosto": "2026-11-20T08:58:01Z"
+    "alan ayala crisosto": "2026-11-20T08:58:01Z",
+    "alan crisosto": "2026-11-20T17:42:19Z",
+    "alberto ignacio palmetta": "2026-11-20T17:42:19Z",
+    "alisha lewis": "2026-11-20T17:42:19Z",
+    "ally b lubanja": "2026-11-20T17:42:19Z"
   },
   "audit": {
     "last_reviewed_at": "2026-11-09T12:15:00Z",
@@ -1830,24 +1834,16 @@
     }
   },
   "enrichment": {
-    "batch_number": 57,
+    "batch_number": 58,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 347,
+    "cumulative_attempted": 352,
     "cumulative_found": 104,
-    "cumulative_missing": 243,
+    "cumulative_missing": 248,
     "cumulative_rejected": 330,
-    "last_batch_at": "2026-11-20T08:58:01Z",
-    "last_successful_batch_at": "2026-11-20T08:58:01Z",
-    "last_rate_limited_at": "2026-11-20T08:58:01Z",
+    "last_batch_at": "2026-11-20T17:42:19Z",
+    "last_successful_batch_at": "2026-11-20T17:42:19Z",
+    "last_rate_limited_at": "2026-11-20T17:42:19Z",
     "history": [
-      {
-        "batch": 28,
-        "at": "2026-11-13T07:41:42Z",
-        "attempted": 5,
-        "found": 1,
-        "missing": 4,
-        "rate_limited": false
-      },
       {
         "batch": 29,
         "at": "2026-11-13T15:59:30Z",
@@ -2078,6 +2074,14 @@
         "attempted": 4,
         "found": 1,
         "missing": 3,
+        "rate_limited": true
+      },
+      {
+        "batch": 58,
+        "at": "2026-11-20T17:42:19Z",
+        "attempted": 5,
+        "found": 0,
+        "missing": 5,
         "rate_limited": true
       }
     ],
