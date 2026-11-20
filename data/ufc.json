@@ -1027,7 +1027,7 @@
             "id": 3535,
             "slug": "shoaib-yousaf",
             "name": "Shoaib Yousaf",
-            "nickname": "THE ASSASSIN",
+            "nickname": "The Assassin",
             "nationality": "United Kingdom",
             "country_code": "GB"
           },
@@ -1551,5 +1551,5 @@
     }
   ],
   "notice": "All upcoming UFC events returned by UFCalendar, with detailed fight cards for the next two events and the latest completed card. Free API allowance: 1,000 requests per month.",
-  "last_updated": "2026-11-19T23:04:02Z"
+  "last_updated": "2026-11-20T07:18:29Z"
 }
