@@ -123,6 +123,14 @@
       "license": "Public domain",
       "license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
       "source": "Wikimedia Commons"
+    },
+    "adrian king": {
+      "url": "./assets/images/boxing-fighters/adrian-king.jpg",
+      "page_url": "https://commons.wikimedia.org/wiki/File:130908_-_Adrian_King_ready_to_shoot_vs_Japan_-_3b_-_crop.jpg",
+      "artist": "Wikimedia Commons · Heath Campanaro · CC BY-SA 3.0",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "source": "Wikimedia Commons"
     }
   },
   "attempted": {
@@ -337,5 +345,5 @@
     "yuberjen martinez": "2026-11-08",
     "yudai nakazato": "2026-11-08"
   },
-  "updated_at": "2026-11-19T23:04:02Z"
+  "updated_at": "2026-11-20T01:06:03Z"
 }
