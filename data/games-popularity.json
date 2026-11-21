@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "provider": "IGDB PopScore",
-  "updated_at": "2026-11-20T15:23:11.801Z",
+  "updated_at": "2026-11-21T14:35:52.113Z",
   "status": "ok",
   "methodology": "Daily relative ranking across the upcoming PC and console release list. Weighted IGDB Visits (30%), Want to Play (40%), Playing (15%), Played (5%) and Twitch Hours Watched (10%). Steam-only player, review and sales signals are deliberately excluded so console-only games are not penalised. Missing metrics are omitted and remaining weights are renormalised.",
   "games": [
@@ -87,7 +87,7 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5zbq.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5zbq.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5zbq.jpg",
-      "popularity_score": 70,
+      "popularity_score": 74,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -178,7 +178,7 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar48ki.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar48ki.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6xi8.jpg",
-      "popularity_score": 47,
+      "popularity_score": 44,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -199,7 +199,7 @@
       "igdb_logo_url": null,
       "logo_url": null,
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar3oxp.jpg",
-      "popularity_score": 38,
+      "popularity_score": 35,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -224,37 +224,13 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5xzb.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5xzb.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5xzb.jpg",
-      "popularity_score": 23,
+      "popularity_score": 26,
       "popularity_signals": [
         "want to play",
         "visits"
       ],
       "popularity_coverage": 2,
       "popularity_rank": 10
-    },
-    {
-      "slug": "aeterna-lucis",
-      "title": "Aeterna Lucis",
-      "release_date": "2026-12-03",
-      "platforms": [
-        "PC",
-        "PlayStation 5",
-        "Xbox Series X|S",
-        "Nintendo Switch"
-      ],
-      "verification_status": "verified",
-      "igdb_game_id": 280572,
-      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar2ong.jpg",
-      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo10cy.jpg",
-      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo10cy.jpg",
-      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar2ong.jpg",
-      "popularity_score": 22,
-      "popularity_signals": [
-        "want to play",
-        "visits"
-      ],
-      "popularity_coverage": 2,
-      "popularity_rank": 11
     },
     {
       "slug": "stage-tour",
@@ -272,7 +248,31 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5n09.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5n09.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6lhk.jpg",
-      "popularity_score": 22,
+      "popularity_score": 25,
+      "popularity_signals": [
+        "want to play",
+        "visits"
+      ],
+      "popularity_coverage": 2,
+      "popularity_rank": 11
+    },
+    {
+      "slug": "aeterna-lucis",
+      "title": "Aeterna Lucis",
+      "release_date": "2026-12-03",
+      "platforms": [
+        "PC",
+        "PlayStation 5",
+        "Xbox Series X|S",
+        "Nintendo Switch"
+      ],
+      "verification_status": "verified",
+      "igdb_game_id": 280572,
+      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar2ong.jpg",
+      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo10cy.jpg",
+      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo10cy.jpg",
+      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar2ong.jpg",
+      "popularity_score": 19,
       "popularity_signals": [
         "want to play",
         "visits"
