@@ -1484,7 +1484,7 @@
       "image_local_path": "assets/images/boxing-fighters/anthony-joshua.png"
     }
   },
-  "updated_at": "2026-11-21T14:52:44Z",
+  "updated_at": "2026-11-21T20:49:15Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1824,7 +1824,10 @@
     "angie paola rocha": "2026-11-21T14:52:44Z",
     "anthony cacace": "2026-11-21T14:52:44Z",
     "anthony joshua": "2026-11-21T14:52:44Z",
-    "antonella shirley molina": "2026-11-21T14:52:44Z"
+    "antonella shirley molina": "2026-11-21T14:52:44Z",
+    "aomi yokoyama": "2026-11-21T20:49:15Z",
+    "aoto yamagata": "2026-11-21T20:49:15Z",
+    "april jay abne": "2026-11-21T20:49:15Z"
   },
   "audit": {
     "last_reviewed_at": "2026-11-09T12:15:00Z",
@@ -1861,24 +1864,16 @@
     }
   },
   "enrichment": {
-    "batch_number": 61,
+    "batch_number": 62,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 366,
+    "cumulative_attempted": 370,
     "cumulative_found": 105,
-    "cumulative_missing": 261,
+    "cumulative_missing": 265,
     "cumulative_rejected": 334,
-    "last_batch_at": "2026-11-21T14:52:44Z",
-    "last_successful_batch_at": "2026-11-21T14:52:44Z",
-    "last_rate_limited_at": "2026-11-21T06:16:26Z",
+    "last_batch_at": "2026-11-21T20:49:15Z",
+    "last_successful_batch_at": "2026-11-21T20:49:15Z",
+    "last_rate_limited_at": "2026-11-21T20:49:15Z",
     "history": [
-      {
-        "batch": 32,
-        "at": "2026-11-14T09:16:34Z",
-        "attempted": 5,
-        "found": 1,
-        "missing": 4,
-        "rate_limited": false
-      },
       {
         "batch": 33,
         "at": "2026-11-14T15:57:49Z",
@@ -2110,8 +2105,16 @@
         "found": 1,
         "missing": 4,
         "rate_limited": false
+      },
+      {
+        "batch": 62,
+        "at": "2026-11-21T20:49:15Z",
+        "attempted": 4,
+        "found": 0,
+        "missing": 4,
+        "rate_limited": true
       }
     ],
-    "last_batch_rate_limited": false
+    "last_batch_rate_limited": true
   }
 }

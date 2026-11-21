@@ -5601,71 +5601,59 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 5,
+    "attempted": 4,
     "found": 147,
     "missing": 564,
-    "rejected": 4,
+    "rejected": 0,
     "by_sport": {
       "boxing fighters": {
-        "attempted": 5,
-        "found": 1,
+        "attempted": 4,
+        "found": 0,
         "missing": 4,
         "rejected": 0
       }
     },
     "search_details": [
       {
-        "name": "Angelo Dragone",
+        "name": "Aomi Yokoyama",
         "queries": 3,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       },
       {
-        "name": "Angie Paola Rocha",
+        "name": "Aoto Yamagata",
+        "queries": 3,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "April Jay Abne",
         "queries": 2,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       },
       {
-        "name": "Anthony Cacace",
-        "queries": 3,
-        "candidate_files": 0,
-        "accepted": 0,
-        "rejections": {}
-      },
-      {
-        "name": "Anthony Joshua",
-        "queries": 3,
-        "candidate_files": 16,
-        "accepted": 12,
-        "rejections": {
-          "exact_name_pair_not_matched": 4
-        }
-      },
-      {
-        "name": "Antonella Shirley Molina",
+        "name": "Arnaldo Vega",
         "queries": 2,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       }
     ],
-    "rejection_reasons": {
-      "exact_name_pair_not_matched": 4
-    },
-    "checked_at": "2026-11-21T14:52:44Z",
+    "checked_at": "2026-11-21T20:49:15Z",
     "library_entries": 105,
-    "newly_found": 1,
-    "cumulative_attempted": 366,
+    "newly_found": 0,
+    "cumulative_attempted": 370,
     "cumulative_found": 105,
-    "cumulative_missing": 261,
+    "cumulative_missing": 265,
     "cumulative_rejected": 334,
-    "batch_number": 61,
-    "last_batch_at": "2026-11-21T14:52:44Z",
-    "last_successful_batch_at": "2026-11-21T14:52:44Z",
-    "last_rate_limited_at": "2026-11-21T06:16:26Z",
+    "batch_number": 62,
+    "last_batch_at": "2026-11-21T20:49:15Z",
+    "last_successful_batch_at": "2026-11-21T20:49:15Z",
+    "last_rate_limited_at": "2026-11-21T20:49:15Z",
     "coverage": {
       "boxing fight card fighters": {
         "total": 317,
@@ -5703,7 +5691,7 @@
         "missing": 81
       }
     },
-    "rate_limited": false
+    "rate_limited": true
   },
   "last_updated": "2026-11-21T12:41:34Z"
 }
