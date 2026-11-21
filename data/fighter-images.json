@@ -139,6 +139,14 @@
       "license": "CC BY 4.0",
       "license_url": "https://creativecommons.org/licenses/by/4.0",
       "source": "Wikimedia Commons"
+    },
+    "anthony joshua": {
+      "url": "./assets/images/boxing-fighters/anthony-joshua.png",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Anthony_Joshua_2017_2.png",
+      "artist": "Wikimedia Commons · Jumeirah · CC BY 3.0",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source": "Wikimedia Commons"
     }
   },
   "attempted": {
@@ -353,5 +361,5 @@
     "yuberjen martinez": "2026-11-08",
     "yudai nakazato": "2026-11-08"
   },
-  "updated_at": "2026-11-21T12:41:34Z"
+  "updated_at": "2026-11-21T14:52:44Z"
 }

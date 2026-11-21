@@ -1467,9 +1467,24 @@
       "image_match_method": "category:Category:Akira Saito",
       "image_verified_at": "2026-11-20T08:58:01Z",
       "image_local_path": "assets/images/boxing-fighters/akira-saito.jpg"
+    },
+    "anthony joshua": {
+      "name": "Anthony Joshua",
+      "sport": "boxing fighters",
+      "image_url": "./assets/images/boxing-fighters/anthony-joshua.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Anthony_Joshua_2017_2.png",
+      "image_credit": "Wikimedia Commons · Jumeirah · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Anthony Joshua",
+      "image_verified_at": "2026-11-21T14:52:44Z",
+      "image_local_path": "assets/images/boxing-fighters/anthony-joshua.png"
     }
   },
-  "updated_at": "2026-11-21T12:41:34Z",
+  "updated_at": "2026-11-21T14:52:44Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1804,7 +1819,12 @@
     "andrew tabiti": "2026-11-21T06:16:26Z",
     "andy cruz gomez": "2026-11-21T06:16:26Z",
     "angel daniel garcia": "2026-11-21T06:16:26Z",
-    "angelika oles": "2026-11-21T06:16:26Z"
+    "angelika oles": "2026-11-21T06:16:26Z",
+    "angelo dragone": "2026-11-21T14:52:44Z",
+    "angie paola rocha": "2026-11-21T14:52:44Z",
+    "anthony cacace": "2026-11-21T14:52:44Z",
+    "anthony joshua": "2026-11-21T14:52:44Z",
+    "antonella shirley molina": "2026-11-21T14:52:44Z"
   },
   "audit": {
     "last_reviewed_at": "2026-11-09T12:15:00Z",
@@ -1841,24 +1861,16 @@
     }
   },
   "enrichment": {
-    "batch_number": 60,
+    "batch_number": 61,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 361,
-    "cumulative_found": 104,
-    "cumulative_missing": 257,
-    "cumulative_rejected": 330,
-    "last_batch_at": "2026-11-21T06:16:26Z",
-    "last_successful_batch_at": "2026-11-21T06:16:26Z",
+    "cumulative_attempted": 366,
+    "cumulative_found": 105,
+    "cumulative_missing": 261,
+    "cumulative_rejected": 334,
+    "last_batch_at": "2026-11-21T14:52:44Z",
+    "last_successful_batch_at": "2026-11-21T14:52:44Z",
     "last_rate_limited_at": "2026-11-21T06:16:26Z",
     "history": [
-      {
-        "batch": 31,
-        "at": "2026-11-14T02:03:57Z",
-        "attempted": 5,
-        "found": 3,
-        "missing": 2,
-        "rate_limited": true
-      },
       {
         "batch": 32,
         "at": "2026-11-14T09:16:34Z",
@@ -2090,8 +2102,16 @@
         "found": 0,
         "missing": 5,
         "rate_limited": true
+      },
+      {
+        "batch": 61,
+        "at": "2026-11-21T14:52:44Z",
+        "attempted": 5,
+        "found": 1,
+        "missing": 4,
+        "rate_limited": false
       }
     ],
-    "last_batch_rate_limited": true
+    "last_batch_rate_limited": false
   }
 }
