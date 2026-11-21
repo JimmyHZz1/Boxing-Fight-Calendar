@@ -1,14 +1,14 @@
 {
   "provider": "Boxerbook confirmed cards + Boxing Data additional bouts",
-  "last_updated": "2026-11-21T12:41:34Z",
-  "provider_as_of": "2026-11-21T12:41:34Z",
+  "last_updated": "2026-11-21T21:40:16Z",
+  "provider_as_of": "2026-11-21T21:40:15Z",
   "attribution": "Confirmed cards from Boxerbook; additional scheduled bouts from Boxing Data API.",
   "count_events": 48,
   "count_bouts": 171,
   "count_confirmed_events": 40,
   "count_confirmed_bouts": 147,
   "count_additional_bouts": 24,
-  "count_fighter_photos": 16,
+  "count_fighter_photos": 17,
   "events": [
     {
       "id": "boxingdata-2026-11-21",
@@ -88,12 +88,12 @@
           "data_source": "Boxing Data API"
         },
         {
-          "id": "fx_r7cw2q9h",
+          "id": "fx_w4agbptc",
           "fighter1": "Charlton Malajika",
           "fighter2": "Landile Ngxeke",
           "date": "2026-11-21",
-          "start_time_utc": "17:00",
-          "start_datetime_utc": "2026-11-21T17:00:00Z",
+          "start_time_utc": "19:00",
+          "start_datetime_utc": "2026-11-21T19:00:00Z",
           "weight_class": null,
           "rounds": null,
           "status": "scheduled",

@@ -133,8 +133,53 @@
       "image_match_method": "category:Category:Kevin Holland",
       "image_verified_at": "2026-11-18T02:14:27Z",
       "image_local_path": "assets/images/ufc/kevin-holland.jpg"
+    },
+    "diego lopes": {
+      "name": "Diego Lopes",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/diego-lopes.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Diogo_Lopes_de_Sequeira_(Archaeological_Survey_of_India,_Goa).jpg",
+      "image_credit": "Wikimedia Commons · Sailko · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "search:Diego Lopes",
+      "image_verified_at": "2026-11-09T12:52:30Z",
+      "image_local_path": "assets/images/ufc/diego-lopes.jpg"
+    },
+    "bo nickal": {
+      "name": "Bo Nickal",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/bo-nickal.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Bo_Nickal_(52791819473)_(cropped).jpg",
+      "image_credit": "Wikimedia Commons · Noah Riffe · Public domain",
+      "image_license": "Public domain",
+      "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Bo Nickal",
+      "image_verified_at": "2026-11-11T18:26:27Z",
+      "image_local_path": "assets/images/ufc/bo-nickal.jpg"
+    },
+    "maycee barber": {
+      "name": "Maycee Barber",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/maycee-barber.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Maycee_Barber_(cropped).png",
+      "image_credit": "Wikimedia Commons · Maritza Sanchez · CC BY 4.0",
+      "image_license": "CC BY 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Maycee Barber",
+      "image_verified_at": "2026-11-14T02:03:57Z",
+      "image_local_path": "assets/images/ufc/maycee-barber.png"
     }
   },
   "attempted": {},
-  "updated_at": "2026-11-21T20:49:41Z"
+  "updated_at": "2026-11-21T21:40:31Z"
 }
