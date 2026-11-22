@@ -1484,7 +1484,7 @@
       "image_local_path": "assets/images/boxing-fighters/anthony-joshua.png"
     }
   },
-  "updated_at": "2026-11-21T21:40:16Z",
+  "updated_at": "2026-11-22T01:02:28Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1562,8 +1562,8 @@
     "petr yan": "2026-11-08T20:18:56Z",
     "merab dvalishvili": "2026-11-08T20:18:56Z",
     "sean o malley": "2026-11-08T20:18:56Z",
-    "song yadong": "2026-11-08T20:18:56Z",
-    "umar nurmagomedov": "2026-11-08T20:18:56Z",
+    "song yadong": "2026-11-22T01:02:28Z",
+    "umar nurmagomedov": "2026-11-22T01:02:28Z",
     "mario bautista": "2026-11-08T20:19:29Z",
     "cory sandhagen": "2026-11-08T20:50:27Z",
     "payton talbott": "2026-11-08T20:57:53Z",
@@ -1864,24 +1864,16 @@
     }
   },
   "enrichment": {
-    "batch_number": 62,
+    "batch_number": 63,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 370,
+    "cumulative_attempted": 373,
     "cumulative_found": 105,
-    "cumulative_missing": 265,
-    "cumulative_rejected": 334,
-    "last_batch_at": "2026-11-21T20:49:15Z",
-    "last_successful_batch_at": "2026-11-21T20:49:15Z",
-    "last_rate_limited_at": "2026-11-21T20:49:15Z",
+    "cumulative_missing": 268,
+    "cumulative_rejected": 335,
+    "last_batch_at": "2026-11-22T01:02:28Z",
+    "last_successful_batch_at": "2026-11-22T01:02:28Z",
+    "last_rate_limited_at": "2026-11-22T01:02:28Z",
     "history": [
-      {
-        "batch": 33,
-        "at": "2026-11-14T15:57:49Z",
-        "attempted": 5,
-        "found": 2,
-        "missing": 3,
-        "rate_limited": false
-      },
       {
         "batch": 34,
         "at": "2026-11-14T20:36:38Z",
@@ -2112,6 +2104,14 @@
         "attempted": 4,
         "found": 0,
         "missing": 4,
+        "rate_limited": true
+      },
+      {
+        "batch": 63,
+        "at": "2026-11-22T01:02:28Z",
+        "attempted": 3,
+        "found": 0,
+        "missing": 3,
         "rate_limited": true
       }
     ],
