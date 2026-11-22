@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-21T14:52:44Z",
+  "updated_at": "2026-11-22T08:37:38Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -1102,6 +1102,39 @@
       "creator": "Wikimedia Commons · Jumeirah · CC BY 3.0",
       "attribution": "Wikimedia Commons · Jumeirah · CC BY 3.0",
       "verified_at": "2026-11-21T14:52:44Z",
+      "sport": "boxing fighters"
+    },
+    "mario bautista": {
+      "name": "Mario Bautista",
+      "path": "assets/images/ufc/mario-bautista.png",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mario_Bautista_(2019).png",
+      "licence": "CC BY 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by/3.0",
+      "creator": "Wikimedia Commons · NotimexTV · CC BY 3.0",
+      "attribution": "Wikimedia Commons · NotimexTV · CC BY 3.0",
+      "verified_at": "2026-11-22T08:37:38Z",
+      "sport": "ufc"
+    },
+    "cory sandhagen": {
+      "name": "Cory Sandhagen",
+      "path": "assets/images/ufc/cory-sandhagen.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Cory_Sandhagen_at_UFC_Fight_Night_143.jpg",
+      "licence": "CC BY 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by/3.0",
+      "creator": "Wikimedia Commons · MMAnytt · CC BY 3.0",
+      "attribution": "Wikimedia Commons · MMAnytt · CC BY 3.0",
+      "verified_at": "2026-11-22T08:37:38Z",
+      "sport": "ufc"
+    },
+    "agit kabayel": {
+      "name": "Agit Kabayel",
+      "path": "assets/images/boxing-fighters/agit-kabayel.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Gem%C3%A4lde_Agit_Kabayel.jpg",
+      "licence": "CC BY-SA 2.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "creator": "Wikimedia Commons · Kortum-Gesellschaft Bochum · CC BY-SA 2.0",
+      "attribution": "Wikimedia Commons · Kortum-Gesellschaft Bochum · CC BY-SA 2.0",
+      "verified_at": "2026-11-22T08:37:38Z",
       "sport": "boxing fighters"
     }
   },

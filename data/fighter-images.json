@@ -27,12 +27,11 @@
       "source": "Wikimedia Commons"
     },
     "agit kabayel": {
-      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Gem%C3%A4lde_Agit_Kabayel.jpg/330px-Gem%C3%A4lde_Agit_Kabayel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "url": "./assets/images/boxing-fighters/agit-kabayel.jpg",
       "page_url": "https://commons.wikimedia.org/wiki/File:Gem%C3%A4lde_Agit_Kabayel.jpg",
-      "artist": "Kortum-Gesellschaft Bochum",
+      "artist": "Wikimedia Commons · Kortum-Gesellschaft Bochum · CC BY-SA 2.0",
       "license": "CC BY-SA 2.0",
       "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
-      "title": "File:Gemälde Agit Kabayel.jpg",
       "source": "Wikimedia Commons"
     },
     "alberto palmetta": {
@@ -361,5 +360,5 @@
     "yuberjen martinez": "2026-11-08",
     "yudai nakazato": "2026-11-08"
   },
-  "updated_at": "2026-11-22T06:51:48Z"
+  "updated_at": "2026-11-22T08:37:38Z"
 }

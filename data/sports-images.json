@@ -1482,13 +1482,58 @@
       "image_match_method": "category:Category:Anthony Joshua",
       "image_verified_at": "2026-11-21T14:52:44Z",
       "image_local_path": "assets/images/boxing-fighters/anthony-joshua.png"
+    },
+    "mario bautista": {
+      "name": "Mario Bautista",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/mario-bautista.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Mario_Bautista_(2019).png",
+      "image_credit": "Wikimedia Commons · NotimexTV · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Mario Bautista",
+      "image_verified_at": "2026-11-22T08:37:38Z",
+      "image_local_path": "assets/images/ufc/mario-bautista.png"
+    },
+    "cory sandhagen": {
+      "name": "Cory Sandhagen",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/cory-sandhagen.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Cory_Sandhagen_at_UFC_Fight_Night_143.jpg",
+      "image_credit": "Wikimedia Commons · MMAnytt · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Cory Sandhagen",
+      "image_verified_at": "2026-11-22T08:37:38Z",
+      "image_local_path": "assets/images/ufc/cory-sandhagen.jpg"
+    },
+    "agit kabayel": {
+      "name": "Agit Kabayel",
+      "sport": "boxing fighters",
+      "image_url": "./assets/images/boxing-fighters/agit-kabayel.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Gem%C3%A4lde_Agit_Kabayel.jpg",
+      "image_credit": "Wikimedia Commons · Kortum-Gesellschaft Bochum · CC BY-SA 2.0",
+      "image_license": "CC BY-SA 2.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Agit Kabayel",
+      "image_verified_at": "2026-11-22T08:37:38Z",
+      "image_local_path": "assets/images/boxing-fighters/agit-kabayel.jpg"
     }
   },
-  "updated_at": "2026-11-22T06:51:48Z",
+  "updated_at": "2026-11-22T08:37:38Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
-    "agit kabayel": "2026-11-08T12:34:52Z",
+    "agit kabayel": "2026-11-22T08:37:38Z",
     "aiden anderson": "2026-11-08T12:34:52Z",
     "alberto palmetta": "2026-11-08T12:34:52Z",
     "max verstappen": "2026-11-08T12:58:07Z",
@@ -1528,7 +1573,7 @@
     "alexander castellano": "2026-11-08T13:35:19Z",
     "alexander castro": "2026-11-08T13:35:19Z",
     "alexander flores": "2026-11-08T13:35:19Z",
-    "alexis rocha": "2026-11-08T13:35:19Z",
+    "alexis rocha": "2026-11-22T08:37:38Z",
     "alycia baumgardner": "2026-11-08T13:35:19Z",
     "red bull": "2026-11-08T13:36:08Z",
     "aston martin": "2026-11-08T13:36:08Z",
@@ -1564,9 +1609,9 @@
     "sean o malley": "2026-11-08T20:18:56Z",
     "song yadong": "2026-11-22T01:02:28Z",
     "umar nurmagomedov": "2026-11-22T01:02:28Z",
-    "mario bautista": "2026-11-08T20:19:29Z",
-    "cory sandhagen": "2026-11-08T20:50:27Z",
-    "payton talbott": "2026-11-08T20:57:53Z",
+    "mario bautista": "2026-11-22T08:37:38Z",
+    "cory sandhagen": "2026-11-22T08:37:38Z",
+    "payton talbott": "2026-11-22T08:37:38Z",
     "aiemann zahabi": "2026-11-09T00:10:34Z",
     "raul rosas jr": "2026-11-09T00:10:34Z",
     "marlon vera": "2026-11-09T00:10:34Z",
@@ -1864,24 +1909,16 @@
     }
   },
   "enrichment": {
-    "batch_number": 63,
+    "batch_number": 64,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 373,
-    "cumulative_found": 105,
-    "cumulative_missing": 268,
-    "cumulative_rejected": 335,
-    "last_batch_at": "2026-11-22T01:02:28Z",
-    "last_successful_batch_at": "2026-11-22T01:02:28Z",
+    "cumulative_attempted": 378,
+    "cumulative_found": 108,
+    "cumulative_missing": 270,
+    "cumulative_rejected": 337,
+    "last_batch_at": "2026-11-22T08:37:38Z",
+    "last_successful_batch_at": "2026-11-22T08:37:38Z",
     "last_rate_limited_at": "2026-11-22T01:02:28Z",
     "history": [
-      {
-        "batch": 34,
-        "at": "2026-11-14T20:36:38Z",
-        "attempted": 5,
-        "found": 0,
-        "missing": 5,
-        "rate_limited": false
-      },
       {
         "batch": 35,
         "at": "2026-11-14T20:40:17Z",
@@ -2113,8 +2150,16 @@
         "found": 0,
         "missing": 3,
         "rate_limited": true
+      },
+      {
+        "batch": 64,
+        "at": "2026-11-22T08:37:38Z",
+        "attempted": 5,
+        "found": 3,
+        "missing": 2,
+        "rate_limited": false
       }
     ],
-    "last_batch_rate_limited": true
+    "last_batch_rate_limited": false
   }
 }

@@ -234,13 +234,33 @@
           "rank": 20,
           "name": "Yuki Tsunoda",
           "team": "RB F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/yuki-tsunoda.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Yuki_Tsunoda_Macau_2019.jpg",
+          "image_credit": "Wikimedia Commons · Smith007 · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "category:Category:Yuki Tsunoda in 2019",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/yuki-tsunoda.jpg"
         },
         {
           "rank": 21,
           "name": "Ryo Hirakawa",
           "team": "Haas F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/ryo-hirakawa.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Ryo_Hirakawa_2024_WEC_Fuji_1.jpg",
+          "image_credit": "Wikimedia Commons · Morio · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "search:Ryo Hirakawa",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/ryo-hirakawa.jpg"
         },
         {
           "rank": 22,
@@ -3365,12 +3385,32 @@
             {
               "rank": 5,
               "name": "Mario Bautista",
-              "image_url": null
+              "image_url": "./assets/images/ufc/mario-bautista.png",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Mario_Bautista_(2019).png",
+              "image_credit": "Wikimedia Commons · NotimexTV · CC BY 3.0",
+              "image_license": "CC BY 3.0",
+              "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Mario Bautista",
+              "image_verified_at": "2026-11-22T08:37:38Z",
+              "image_local_path": "assets/images/ufc/mario-bautista.png"
             },
             {
               "rank": 6,
               "name": "Cory Sandhagen",
-              "image_url": null
+              "image_url": "./assets/images/ufc/cory-sandhagen.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Cory_Sandhagen_at_UFC_Fight_Night_143.jpg",
+              "image_credit": "Wikimedia Commons · MMAnytt · CC BY 3.0",
+              "image_license": "CC BY 3.0",
+              "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Cory Sandhagen",
+              "image_verified_at": "2026-11-22T08:37:38Z",
+              "image_local_path": "assets/images/ufc/cory-sandhagen.jpg"
             },
             {
               "rank": 7,
@@ -5581,32 +5621,107 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 373,
-    "found": 134,
-    "missing": 418,
-    "rejected": 335,
-    "by_sport": {},
-    "newly_found": 0,
+    "attempted": 5,
+    "found": 150,
+    "missing": 451,
+    "rejected": 2,
+    "by_sport": {
+      "ufc": {
+        "attempted": 3,
+        "found": 2,
+        "missing": 1,
+        "rejected": 0
+      },
+      "boxing fighters": {
+        "attempted": 2,
+        "found": 1,
+        "missing": 1,
+        "rejected": 0
+      }
+    },
+    "search_details": [
+      {
+        "name": "Mario Bautista",
+        "queries": 3,
+        "candidate_files": 3,
+        "accepted": 3,
+        "rejections": {}
+      },
+      {
+        "name": "Cory Sandhagen",
+        "queries": 3,
+        "candidate_files": 3,
+        "accepted": 1,
+        "rejections": {
+          "exact_name_pair_not_matched": 2
+        }
+      },
+      {
+        "name": "Payton Talbott",
+        "queries": 3,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Agit Kabayel",
+        "queries": 3,
+        "candidate_files": 1,
+        "accepted": 1,
+        "rejections": {}
+      },
+      {
+        "name": "Alexis Rocha",
+        "queries": 3,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      }
+    ],
+    "rejection_reasons": {
+      "exact_name_pair_not_matched": 2
+    },
+    "checked_at": "2026-11-22T08:37:38Z",
+    "library_entries": 108,
+    "newly_found": 3,
+    "cumulative_attempted": 378,
+    "cumulative_found": 108,
+    "cumulative_missing": 270,
+    "cumulative_rejected": 337,
+    "batch_number": 64,
+    "last_batch_at": "2026-11-22T08:37:38Z",
+    "last_successful_batch_at": "2026-11-22T08:37:38Z",
+    "last_rate_limited_at": "2026-11-22T01:02:28Z",
     "coverage": {
+      "boxing fight card fighters": {
+        "total": 207,
+        "with_image": 4,
+        "missing": 203
+      },
       "f1 drivers": {
         "total": 25,
-        "with_image": 23,
-        "missing": 2
+        "with_image": 25,
+        "missing": 0
       },
       "f1 constructors": {
         "total": 11,
         "with_image": 11,
         "missing": 0
       },
-      "darts": {
-        "total": 229,
-        "with_image": 50,
-        "missing": 179
+      "darts top 50": {
+        "total": 50,
+        "with_image": 47,
+        "missing": 3
       },
       "ufc": {
         "total": 206,
-        "with_image": 50,
-        "missing": 156
+        "with_image": 52,
+        "missing": 154
+      },
+      "speedway GP riders": {
+        "total": 21,
+        "with_image": 11,
+        "missing": 10
       },
       "boxing": {
         "total": 81,
@@ -5614,17 +5729,7 @@
         "missing": 81
       }
     },
-    "checked_at": "2026-11-22T06:51:48Z",
-    "library_entries": 105,
-    "cumulative_found": 105,
-    "cumulative_missing": 268,
-    "cumulative_rejected": 335,
-    "batch_number": 63,
-    "last_batch_at": "2026-11-22T01:02:28Z",
-    "last_successful_batch_at": "2026-11-22T01:02:28Z",
-    "last_rate_limited_at": "2026-11-22T01:02:28Z",
-    "enrichment_status": "paused after rate limit",
-    "rate_limited": true
+    "rate_limited": false
   },
   "last_updated": "2026-11-22T06:51:48Z"
 }
