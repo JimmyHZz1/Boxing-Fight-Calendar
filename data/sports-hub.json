@@ -234,13 +234,33 @@
           "rank": 20,
           "name": "Yuki Tsunoda",
           "team": "RB F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/yuki-tsunoda.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Yuki_Tsunoda_Macau_2019.jpg",
+          "image_credit": "Wikimedia Commons · Smith007 · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "category:Category:Yuki Tsunoda in 2019",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/yuki-tsunoda.jpg"
         },
         {
           "rank": 21,
           "name": "Ryo Hirakawa",
           "team": "Haas F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/ryo-hirakawa.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Ryo_Hirakawa_2024_WEC_Fuji_1.jpg",
+          "image_credit": "Wikimedia Commons · Morio · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "search:Ryo Hirakawa",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/ryo-hirakawa.jpg"
         },
         {
           "rank": 22,
@@ -5601,32 +5621,96 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 378,
-    "found": 136,
-    "missing": 416,
-    "rejected": 337,
-    "by_sport": {},
+    "attempted": 5,
+    "found": 150,
+    "missing": 500,
+    "rejected": 0,
+    "by_sport": {
+      "boxing fighters": {
+        "attempted": 5,
+        "found": 0,
+        "missing": 5,
+        "rejected": 0
+      }
+    },
+    "search_details": [
+      {
+        "name": "Ahmed Jama",
+        "queries": 3,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Alfie Thomas",
+        "queries": 3,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Arnaldo Vega",
+        "queries": 3,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Artjom Kasparian",
+        "queries": 3,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Artur Subkhankulov",
+        "queries": 2,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      }
+    ],
+    "checked_at": "2026-11-22T16:57:49Z",
+    "library_entries": 108,
     "newly_found": 0,
+    "cumulative_attempted": 383,
+    "cumulative_found": 108,
+    "cumulative_missing": 275,
+    "cumulative_rejected": 337,
+    "batch_number": 65,
+    "last_batch_at": "2026-11-22T16:57:49Z",
+    "last_successful_batch_at": "2026-11-22T16:57:49Z",
+    "last_rate_limited_at": "2026-11-22T16:57:49Z",
     "coverage": {
+      "boxing fight card fighters": {
+        "total": 256,
+        "with_image": 4,
+        "missing": 252
+      },
       "f1 drivers": {
         "total": 25,
-        "with_image": 23,
-        "missing": 2
+        "with_image": 25,
+        "missing": 0
       },
       "f1 constructors": {
         "total": 11,
         "with_image": 11,
         "missing": 0
       },
-      "darts": {
-        "total": 229,
-        "with_image": 50,
-        "missing": 179
+      "darts top 50": {
+        "total": 50,
+        "with_image": 47,
+        "missing": 3
       },
       "ufc": {
         "total": 206,
         "with_image": 52,
         "missing": 154
+      },
+      "speedway GP riders": {
+        "total": 21,
+        "with_image": 11,
+        "missing": 10
       },
       "boxing": {
         "total": 81,
@@ -5634,17 +5718,7 @@
         "missing": 81
       }
     },
-    "checked_at": "2026-11-22T16:17:14Z",
-    "library_entries": 108,
-    "cumulative_found": 108,
-    "cumulative_missing": 270,
-    "cumulative_rejected": 337,
-    "batch_number": 64,
-    "last_batch_at": "2026-11-22T08:37:38Z",
-    "last_successful_batch_at": "2026-11-22T08:37:38Z",
-    "last_rate_limited_at": "2026-11-22T01:02:28Z",
-    "enrichment_status": "awaiting next scheduled batch",
-    "rate_limited": false
+    "rate_limited": true
   },
   "last_updated": "2026-11-22T16:17:14Z"
 }
