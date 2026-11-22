@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "provider": "IGDB PopScore",
-  "updated_at": "2026-11-21T14:35:52.113Z",
+  "updated_at": "2026-11-22T14:30:00.967Z",
   "status": "ok",
   "methodology": "Daily relative ranking across the upcoming PC and console release list. Weighted IGDB Visits (30%), Want to Play (40%), Playing (15%), Played (5%) and Twitch Hours Watched (10%). Steam-only player, review and sales signals are deliberately excluded so console-only games are not penalised. Missing metrics are omitted and remaining weights are renormalised.",
   "games": [
@@ -208,6 +208,30 @@
       "popularity_rank": 9
     },
     {
+      "slug": "stage-tour",
+      "title": "Stage Tour",
+      "release_date": "2026-12-10",
+      "platforms": [
+        "PC",
+        "PlayStation 5",
+        "Xbox Series X|S",
+        "Nintendo Switch 2"
+      ],
+      "verification_status": "verified",
+      "igdb_game_id": 393269,
+      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6lhk.jpg",
+      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5n09.jpg",
+      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5n09.jpg",
+      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6lhk.jpg",
+      "popularity_score": 32,
+      "popularity_signals": [
+        "want to play",
+        "visits"
+      ],
+      "popularity_coverage": 2,
+      "popularity_rank": 10
+    },
+    {
       "slug": "dragon-quest-monsters-the-withered-world",
       "title": "DRAGON QUEST MONSTERS: The Withered World",
       "release_date": "2026-12-03",
@@ -230,31 +254,28 @@
         "visits"
       ],
       "popularity_coverage": 2,
-      "popularity_rank": 10
+      "popularity_rank": 11
     },
     {
-      "slug": "stage-tour",
-      "title": "Stage Tour",
-      "release_date": "2026-12-10",
+      "slug": "xenoblade-chronicles-3-switch-2",
+      "title": "Xenoblade Chronicles 3: Switch 2 Edition",
+      "release_date": "2026-12-03",
       "platforms": [
-        "PC",
-        "PlayStation 5",
-        "Xbox Series X|S",
         "Nintendo Switch 2"
       ],
-      "verification_status": "verified",
-      "igdb_game_id": 393269,
-      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6lhk.jpg",
-      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5n09.jpg",
-      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5n09.jpg",
-      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6lhk.jpg",
-      "popularity_score": 25,
+      "verification_status": "estimated",
+      "igdb_game_id": 405448,
+      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6b87.jpg",
+      "igdb_logo_url": null,
+      "logo_url": null,
+      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6b87.jpg",
+      "popularity_score": 16,
       "popularity_signals": [
         "want to play",
         "visits"
       ],
       "popularity_coverage": 2,
-      "popularity_rank": 11
+      "popularity_rank": 12
     },
     {
       "slug": "aeterna-lucis",
@@ -272,28 +293,7 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo10cy.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo10cy.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar2ong.jpg",
-      "popularity_score": 19,
-      "popularity_signals": [
-        "want to play",
-        "visits"
-      ],
-      "popularity_coverage": 2,
-      "popularity_rank": 12
-    },
-    {
-      "slug": "xenoblade-chronicles-3-switch-2",
-      "title": "Xenoblade Chronicles 3: Switch 2 Edition",
-      "release_date": "2026-12-03",
-      "platforms": [
-        "Nintendo Switch 2"
-      ],
-      "verification_status": "estimated",
-      "igdb_game_id": 405448,
-      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6b87.jpg",
-      "igdb_logo_url": null,
-      "logo_url": null,
-      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6b87.jpg",
-      "popularity_score": 16,
+      "popularity_score": 15,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -318,7 +318,7 @@
       "igdb_logo_url": null,
       "logo_url": null,
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6keu.jpg",
-      "popularity_score": 11,
+      "popularity_score": 8,
       "popularity_signals": [
         "want to play",
         "visits"
