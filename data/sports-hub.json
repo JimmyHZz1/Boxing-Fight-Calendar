@@ -5624,7 +5624,7 @@
     "attempted": 5,
     "found": 150,
     "missing": 500,
-    "rejected": 0,
+    "rejected": 2,
     "by_sport": {
       "boxing fighters": {
         "attempted": 5,
@@ -5633,53 +5633,58 @@
         "rejected": 0
       }
     },
+    "rejection_reasons": {
+      "exact_name_pair_not_matched": 2
+    },
     "search_details": [
       {
-        "name": "Ahmed Jama",
-        "queries": 3,
-        "candidate_files": 0,
-        "accepted": 0,
-        "rejections": {}
-      },
-      {
-        "name": "Alfie Thomas",
-        "queries": 3,
-        "candidate_files": 0,
-        "accepted": 0,
-        "rejections": {}
-      },
-      {
-        "name": "Arnaldo Vega",
-        "queries": 3,
-        "candidate_files": 0,
-        "accepted": 0,
-        "rejections": {}
-      },
-      {
-        "name": "Artjom Kasparian",
-        "queries": 3,
-        "candidate_files": 0,
-        "accepted": 0,
-        "rejections": {}
-      },
-      {
         "name": "Artur Subkhankulov",
-        "queries": 2,
+        "queries": 4,
+        "candidate_files": 2,
+        "accepted": 0,
+        "rejections": {
+          "exact_name_pair_not_matched": 2
+        }
+      },
+      {
+        "name": "Ashleyann Lozada",
+        "queries": 3,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Azalia Amineva",
+        "queries": 3,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Aznaur Kalsynov",
+        "queries": 3,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Bernard Joseph",
+        "queries": 3,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       }
     ],
-    "checked_at": "2026-11-22T16:57:49Z",
+    "checked_at": "2026-11-22T22:23:37Z",
     "library_entries": 108,
     "newly_found": 0,
-    "cumulative_attempted": 383,
+    "cumulative_attempted": 388,
     "cumulative_found": 108,
-    "cumulative_missing": 275,
-    "cumulative_rejected": 337,
-    "batch_number": 65,
-    "last_batch_at": "2026-11-22T16:57:49Z",
-    "last_successful_batch_at": "2026-11-22T16:57:49Z",
+    "cumulative_missing": 280,
+    "cumulative_rejected": 339,
+    "batch_number": 66,
+    "last_batch_at": "2026-11-22T22:23:37Z",
+    "last_successful_batch_at": "2026-11-22T22:23:37Z",
     "last_rate_limited_at": "2026-11-22T16:57:49Z",
     "coverage": {
       "boxing fight card fighters": {
@@ -5718,7 +5723,7 @@
         "missing": 81
       }
     },
-    "rate_limited": true
+    "rate_limited": false
   },
   "last_updated": "2026-11-22T16:17:14Z"
 }

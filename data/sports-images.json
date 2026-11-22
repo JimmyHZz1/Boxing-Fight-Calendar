@@ -1529,7 +1529,7 @@
       "image_local_path": "assets/images/boxing-fighters/agit-kabayel.jpg"
     }
   },
-  "updated_at": "2026-11-22T16:57:49Z",
+  "updated_at": "2026-11-22T22:23:37Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1876,7 +1876,12 @@
     "ahmed jama": "2026-11-22T16:57:49Z",
     "alfie thomas": "2026-11-22T16:57:49Z",
     "arnaldo vega": "2026-11-22T16:57:49Z",
-    "artjom kasparian": "2026-11-22T16:57:49Z"
+    "artjom kasparian": "2026-11-22T16:57:49Z",
+    "artur subkhankulov": "2026-11-22T22:23:37Z",
+    "ashleyann lozada": "2026-11-22T22:23:37Z",
+    "azalia amineva": "2026-11-22T22:23:37Z",
+    "aznaur kalsynov": "2026-11-22T22:23:37Z",
+    "bernard joseph": "2026-11-22T22:23:37Z"
   },
   "audit": {
     "last_reviewed_at": "2026-11-09T12:15:00Z",
@@ -1913,24 +1918,16 @@
     }
   },
   "enrichment": {
-    "batch_number": 65,
+    "batch_number": 66,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 383,
+    "cumulative_attempted": 388,
     "cumulative_found": 108,
-    "cumulative_missing": 275,
-    "cumulative_rejected": 337,
-    "last_batch_at": "2026-11-22T16:57:49Z",
-    "last_successful_batch_at": "2026-11-22T16:57:49Z",
+    "cumulative_missing": 280,
+    "cumulative_rejected": 339,
+    "last_batch_at": "2026-11-22T22:23:37Z",
+    "last_successful_batch_at": "2026-11-22T22:23:37Z",
     "last_rate_limited_at": "2026-11-22T16:57:49Z",
     "history": [
-      {
-        "batch": 36,
-        "at": "2026-11-14T20:42:26Z",
-        "attempted": 1,
-        "found": 0,
-        "missing": 1,
-        "rate_limited": true
-      },
       {
         "batch": 37,
         "at": "2026-11-14T20:52:50Z",
@@ -2162,8 +2159,16 @@
         "found": 0,
         "missing": 5,
         "rate_limited": true
+      },
+      {
+        "batch": 66,
+        "at": "2026-11-22T22:23:37Z",
+        "attempted": 5,
+        "found": 0,
+        "missing": 5,
+        "rate_limited": false
       }
     ],
-    "last_batch_rate_limited": true
+    "last_batch_rate_limited": false
   }
 }
