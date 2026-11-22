@@ -6,85 +6,85 @@
           "rank": 1,
           "name": "Andrea Kimi Antonelli",
           "team": "Mercedes",
-          "points": "390",
+          "points": "402",
           "image_url": "https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/mercedes/andant01/2026mercedesandant01right.webp",
           "image_page_url": "https://www.formula1.com/en/drivers/kimi-antonelli",
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-22T06:51:48Z"
+          "image_verified_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 2,
           "name": "Max Verstappen",
           "team": "Red Bull",
-          "points": "279",
+          "points": "304",
           "image_url": "https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/redbullracing/maxver01/2026redbullracingmaxver01right.webp",
           "image_page_url": "https://www.formula1.com/en/drivers/max-verstappen",
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-22T06:51:48Z"
+          "image_verified_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 3,
-          "name": "George Russell",
-          "team": "Mercedes",
-          "points": "262",
-          "image_url": "https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/mercedes/georus01/2026mercedesgeorus01right.webp",
-          "image_page_url": "https://www.formula1.com/en/drivers/george-russell",
-          "image_credit": "Official Formula 1 driver profile",
-          "image_source": "Formula1.com",
-          "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-22T06:51:48Z"
-        },
-        {
-          "rank": 4,
           "name": "Lewis Hamilton",
           "team": "Ferrari",
-          "points": "261",
+          "points": "267",
           "image_url": "https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/ferrari/lewham01/2026ferrarilewham01right.webp",
           "image_page_url": "https://www.formula1.com/en/drivers/lewis-hamilton",
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-22T06:51:48Z"
+          "image_verified_at": "2026-11-22T16:17:14Z"
         },
         {
-          "rank": 5,
-          "name": "Charles Leclerc",
-          "team": "Ferrari",
-          "points": "249",
-          "image_url": "https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/ferrari/chalec01/2026ferrarichalec01right.webp",
-          "image_page_url": "https://www.formula1.com/en/drivers/charles-leclerc",
+          "rank": 4,
+          "name": "George Russell",
+          "team": "Mercedes",
+          "points": "264",
+          "image_url": "https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/mercedes/georus01/2026mercedesgeorus01right.webp",
+          "image_page_url": "https://www.formula1.com/en/drivers/george-russell",
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-22T06:51:48Z"
+          "image_verified_at": "2026-11-22T16:17:14Z"
         },
         {
-          "rank": 6,
+          "rank": 5,
           "name": "Lando Norris",
           "team": "McLaren",
-          "points": "246",
+          "points": "264",
           "image_url": "https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/mclaren/lannor01/2026mclarenlannor01right.webp",
           "image_page_url": "https://www.formula1.com/en/drivers/lando-norris",
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-22T06:51:48Z"
+          "image_verified_at": "2026-11-22T16:17:14Z"
+        },
+        {
+          "rank": 6,
+          "name": "Charles Leclerc",
+          "team": "Ferrari",
+          "points": "250",
+          "image_url": "https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/ferrari/chalec01/2026ferrarichalec01right.webp",
+          "image_page_url": "https://www.formula1.com/en/drivers/charles-leclerc",
+          "image_credit": "Official Formula 1 driver profile",
+          "image_source": "Formula1.com",
+          "image_match_method": "official-driver-profile",
+          "image_verified_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 7,
           "name": "Oscar Piastri",
           "team": "McLaren",
-          "points": "152",
+          "points": "167",
           "image_url": "https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/mclaren/oscpia01/2026mclarenoscpia01right.webp",
           "image_page_url": "https://www.formula1.com/en/drivers/oscar-piastri",
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-22T06:51:48Z"
+          "image_verified_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 8,
@@ -96,7 +96,7 @@
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-22T06:51:48Z"
+          "image_verified_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 9,
@@ -108,19 +108,19 @@
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-22T06:51:48Z"
+          "image_verified_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 10,
           "name": "Pierre Gasly",
           "team": "Alpine F1 Team",
-          "points": "42",
+          "points": "52",
           "image_url": "https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/alpine/piegas01/2026alpinepiegas01right.webp",
           "image_page_url": "https://www.formula1.com/en/drivers/pierre-gasly",
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-22T06:51:48Z"
+          "image_verified_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 11,
@@ -132,19 +132,19 @@
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-22T06:51:48Z"
+          "image_verified_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 12,
           "name": "Franco Colapinto",
           "team": "Alpine F1 Team",
-          "points": "27",
+          "points": "35",
           "image_url": "https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/alpine/fracol01/2026alpinefracol01right.webp",
           "image_page_url": "https://www.formula1.com/en/drivers/franco-colapinto",
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-22T06:51:48Z"
+          "image_verified_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 13,
@@ -156,7 +156,7 @@
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-22T06:51:48Z"
+          "image_verified_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 14,
@@ -168,7 +168,7 @@
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-22T06:51:48Z"
+          "image_verified_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 15,
@@ -180,10 +180,22 @@
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-22T06:51:48Z"
+          "image_verified_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 16,
+          "name": "Carlos Sainz",
+          "team": "Williams",
+          "points": "11",
+          "image_url": "https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/williams/carsai01/2026williamscarsai01right.webp",
+          "image_page_url": "https://www.formula1.com/en/drivers/carlos-sainz",
+          "image_credit": "Official Formula 1 driver profile",
+          "image_source": "Formula1.com",
+          "image_match_method": "official-driver-profile",
+          "image_verified_at": "2026-11-22T16:17:14Z"
+        },
+        {
+          "rank": 17,
           "name": "Esteban Ocon",
           "team": "Haas F1 Team",
           "points": "7",
@@ -192,10 +204,10 @@
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-22T06:51:48Z"
+          "image_verified_at": "2026-11-22T16:17:14Z"
         },
         {
-          "rank": 17,
+          "rank": 18,
           "name": "Fernando Alonso",
           "team": "Aston Martin",
           "points": "7",
@@ -204,19 +216,7 @@
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-22T06:51:48Z"
-        },
-        {
-          "rank": 18,
-          "name": "Carlos Sainz",
-          "team": "Williams",
-          "points": "7",
-          "image_url": "https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/williams/carsai01/2026williamscarsai01right.webp",
-          "image_page_url": "https://www.formula1.com/en/drivers/carlos-sainz",
-          "image_credit": "Official Formula 1 driver profile",
-          "image_source": "Formula1.com",
-          "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-22T06:51:48Z"
+          "image_verified_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 19,
@@ -228,39 +228,19 @@
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-22T06:51:48Z"
+          "image_verified_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 20,
           "name": "Yuki Tsunoda",
           "team": "RB F1 Team",
-          "points": "1",
-          "image_url": "./assets/images/f1-drivers/yuki-tsunoda.jpg",
-          "image_page_url": "https://commons.wikimedia.org/wiki/File:Yuki_Tsunoda_Macau_2019.jpg",
-          "image_credit": "Wikimedia Commons · Smith007 · CC BY-SA 4.0",
-          "image_license": "CC BY-SA 4.0",
-          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-          "image_source": "Wikimedia Commons",
-          "image_match_score": 1,
-          "image_match_method": "category:Category:Yuki Tsunoda in 2019",
-          "image_verified_at": "2026-11-08T13:28:36Z",
-          "image_local_path": "assets/images/f1-drivers/yuki-tsunoda.jpg"
+          "points": "1"
         },
         {
           "rank": 21,
           "name": "Ryo Hirakawa",
           "team": "Haas F1 Team",
-          "points": "1",
-          "image_url": "./assets/images/f1-drivers/ryo-hirakawa.jpg",
-          "image_page_url": "https://commons.wikimedia.org/wiki/File:Ryo_Hirakawa_2024_WEC_Fuji_1.jpg",
-          "image_credit": "Wikimedia Commons · Morio · CC BY-SA 4.0",
-          "image_license": "CC BY-SA 4.0",
-          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-          "image_source": "Wikimedia Commons",
-          "image_match_score": 1,
-          "image_match_method": "search:Ryo Hirakawa",
-          "image_verified_at": "2026-11-08T13:28:36Z",
-          "image_local_path": "assets/images/f1-drivers/ryo-hirakawa.jpg"
+          "points": "1"
         },
         {
           "rank": 22,
@@ -272,7 +252,7 @@
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-22T06:51:48Z"
+          "image_verified_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 23,
@@ -284,7 +264,7 @@
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-22T06:51:48Z"
+          "image_verified_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 24,
@@ -296,7 +276,7 @@
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-22T06:51:48Z"
+          "image_verified_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 25,
@@ -308,14 +288,14 @@
           "image_credit": "Official Formula 1 driver profile",
           "image_source": "Formula1.com",
           "image_match_method": "official-driver-profile",
-          "image_verified_at": "2026-11-22T06:51:48Z"
+          "image_verified_at": "2026-11-22T16:17:14Z"
         }
       ],
       "constructors": [
         {
           "rank": 1,
           "name": "Mercedes",
-          "points": "652",
+          "points": "666",
           "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Mercedes-AMG_Petronas_F1_Team_logo_%282026%29.svg",
           "image_page_url": "https://commons.wikimedia.org/wiki/File:Mercedes-AMG_Petronas_F1_Team_logo_(2026).svg",
           "image_credit": "Mercedes-AMG Petronas F1 Team · Public domain (text/logo mark)",
@@ -329,7 +309,7 @@
         {
           "rank": 2,
           "name": "Ferrari",
-          "points": "510",
+          "points": "517",
           "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Ferrari_wordmark.svg",
           "image_page_url": "https://commons.wikimedia.org/wiki/File:Ferrari_wordmark.svg",
           "image_credit": "Ferrari · Public domain (text/logo mark)",
@@ -343,7 +323,7 @@
         {
           "rank": 3,
           "name": "Red Bull",
-          "points": "415",
+          "points": "440",
           "image_url": "./assets/images/f1-constructors/red-bull.png",
           "image_page_url": "https://commons.wikimedia.org/wiki/File:Red_Bull_Racing_logo_ita.png",
           "image_credit": "Wikimedia Commons · Unknown authorUnknown author · Public domain",
@@ -358,7 +338,7 @@
         {
           "rank": 4,
           "name": "McLaren",
-          "points": "398",
+          "points": "431",
           "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/bc/McLaren_logo_%282026%29.svg",
           "image_page_url": "https://commons.wikimedia.org/wiki/File:McLaren_logo_(2026).svg",
           "image_credit": "McLaren · Public domain (text/logo mark)",
@@ -386,7 +366,7 @@
         {
           "rank": 6,
           "name": "Alpine F1 Team",
-          "points": "69",
+          "points": "87",
           "image_url": "./assets/images/f1-constructors/alpine-f1-team.png",
           "image_page_url": "https://commons.wikimedia.org/wiki/File:Logo_of_alpine_f1_team_2022.png",
           "image_credit": "Wikimedia Commons · KarlMarx1889 · CC0",
@@ -431,7 +411,7 @@
         {
           "rank": 9,
           "name": "Williams",
-          "points": "12",
+          "points": "16",
           "image_url": "./assets/images/f1-constructors/williams.png",
           "image_page_url": "https://commons.wikimedia.org/wiki/File:20150130002217!Williams_Martini_Racing_logo.png",
           "image_credit": "Wikimedia Commons · Unknown authorUnknown author · Public domain",
@@ -476,7 +456,7 @@
       ],
       "season": 2026,
       "notice": "Official Formula 1 driver profile portraits; championship data sourced from Jolpica F1.",
-      "last_updated": "2026-11-22T06:51:48Z"
+      "last_updated": "2026-11-22T16:17:14Z"
     },
     "darts": {
       "rankings": [
@@ -489,7 +469,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/luke-littler.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/luke-littler",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -500,13 +480,13 @@
         {
           "rank": 2,
           "name": "Gian van Veen",
-          "prize_money": "1,087,250",
+          "prize_money": "1,127,250",
           "points": null,
           "movement": null,
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/gian-van-veen.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/gian-van-veen",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -524,7 +504,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/luke-humphries.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/luke-humphries",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -535,13 +515,13 @@
         {
           "rank": 4,
           "name": "Gerwyn Price",
-          "prize_money": "890,500",
+          "prize_money": "930,500",
           "points": null,
           "movement": null,
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/gerwyn-price.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/gerwyn-price",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -559,7 +539,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/jonny-clayton.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/jonny-clayton",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -577,7 +557,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/ross-smith.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/ross-smith",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -595,7 +575,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/james-wade.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/james-wade",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -613,7 +593,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/michael-van-gerwen.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/michael-van-gerwen",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -631,7 +611,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/nathan-aspinall.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/nathan-aspinall",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -649,7 +629,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/stephen-bunting.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/stephen-bunting",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -666,7 +646,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/wessel-nijman.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/wessel-nijman",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -684,7 +664,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/josh-rock.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/josh-rock",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -702,7 +682,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/ryan-searle.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/ryan-searle",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -720,7 +700,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/danny-noppert.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/danny-noppert",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -738,7 +718,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/chris-dobey.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/chris-dobey",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -756,7 +736,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/gary-anderson.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/gary-anderson",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -774,7 +754,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/luke-woodhouse.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/luke-woodhouse",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -792,7 +772,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/jermaine-wattimena.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/jermaine-wattimena",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -810,7 +790,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/krzysztof-ratajski.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/krzysztof-ratajski",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -827,7 +807,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/martin-schindler.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/martin-schindler",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -844,7 +824,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/kevin-doets.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/kevin-doets",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -861,7 +841,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/damon-heta.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/damon-heta",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -878,7 +858,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/dirk-van-duijvenbode.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/dirk-van-duijvenbode",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -895,7 +875,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/rob-cross.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/rob-cross",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -912,7 +892,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/cameron-menzies.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/cameron-menzies",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -929,7 +909,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/ryan-joyce.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/ryan-joyce",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -946,7 +926,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/andrew-gilding.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/andrew-gilding",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -963,7 +943,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/niels-zonneveld.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/niels-zonneveld",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -980,7 +960,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/william-o-connor.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/william-o-connor",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -997,7 +977,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/niko-springer.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/niko-springer",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -1014,7 +994,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/daryl-gurney.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/daryl-gurney",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -1031,7 +1011,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/dave-chisnall.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/dave-chisnall",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -1048,7 +1028,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/joe-cullen.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/joe-cullen",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -1065,7 +1045,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/ricardo-pietreczko.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/ricardo-pietreczko",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -1082,7 +1062,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/mike-de-decker.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/mike-de-decker",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -1099,7 +1079,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/peter-wright.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/peter-wright",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -1116,7 +1096,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/michael-smith.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/michael-smith",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -1133,7 +1113,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/justin-hood.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/justin-hood",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -1150,7 +1130,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/karel-sedlacek.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/karel-sedlacek",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -1167,7 +1147,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/callan-rydz.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/callan-rydz",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -1184,7 +1164,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/jeffrey-de-graaf.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/jeffrey-de-graaf",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -1201,7 +1181,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 43,
@@ -1212,7 +1192,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 43,
@@ -1223,7 +1203,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 45,
@@ -1234,7 +1214,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/james-hurrell.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/james-hurrell",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -1251,7 +1231,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/kim-huybrechts.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/kim-huybrechts",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -1268,7 +1248,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/brendan-dolan.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/brendan-dolan",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -1285,7 +1265,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/madars-razma.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/madars-razma",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -1302,7 +1282,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/raymond-van-barneveld.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/raymond-van-barneveld",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -1319,7 +1299,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/scott-williams.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/scott-williams",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -1336,7 +1316,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 52,
@@ -1347,7 +1327,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 53,
@@ -1358,7 +1338,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/mickey-mansell.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/mickey-mansell",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -1375,7 +1355,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 55,
@@ -1386,7 +1366,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/connor-scutt.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/connor-scutt",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -1403,7 +1383,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 57,
@@ -1414,7 +1394,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 57,
@@ -1425,7 +1405,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 59,
@@ -1436,7 +1416,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 60,
@@ -1447,7 +1427,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 61,
@@ -1458,7 +1438,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 62,
@@ -1469,7 +1449,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 63,
@@ -1480,7 +1460,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 64,
@@ -1491,7 +1471,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 65,
@@ -1502,7 +1482,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 66,
@@ -1513,7 +1493,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 67,
@@ -1524,7 +1504,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 68,
@@ -1535,7 +1515,7 @@
           "previous_rank": null,
           "image_url": "https://www.pdc-europe.tv/images/players/martin-lukeman.webp",
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z",
+          "prize_money_updated_at": "2026-11-22T16:17:14Z",
           "image_page_url": "https://www.pdc-europe.tv/spieler/martin-lukeman",
           "image_credit": "PDC Europe · Official PDC Tour Card photo",
           "image_source": "PDC Europe",
@@ -1552,7 +1532,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 70,
@@ -1563,7 +1543,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 71,
@@ -1574,7 +1554,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 72,
@@ -1585,7 +1565,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 73,
@@ -1596,7 +1576,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 74,
@@ -1607,7 +1587,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 75,
@@ -1618,7 +1598,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 76,
@@ -1629,7 +1609,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 77,
@@ -1640,7 +1620,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 78,
@@ -1651,7 +1631,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 79,
@@ -1662,7 +1642,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 80,
@@ -1673,7 +1653,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 81,
@@ -1684,7 +1664,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 82,
@@ -1695,7 +1675,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 83,
@@ -1706,7 +1686,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 84,
@@ -1717,7 +1697,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 85,
@@ -1728,7 +1708,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 86,
@@ -1739,7 +1719,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 86,
@@ -1750,7 +1730,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 88,
@@ -1761,7 +1741,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 88,
@@ -1772,7 +1752,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 90,
@@ -1783,7 +1763,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 91,
@@ -1794,7 +1774,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 92,
@@ -1805,7 +1785,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 93,
@@ -1816,7 +1796,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 94,
@@ -1827,7 +1807,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 95,
@@ -1838,7 +1818,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 96,
@@ -1849,7 +1829,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 97,
@@ -1860,7 +1840,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 98,
@@ -1871,7 +1851,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 99,
@@ -1882,7 +1862,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 100,
@@ -1893,7 +1873,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 101,
@@ -1904,7 +1884,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 102,
@@ -1915,7 +1895,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 103,
@@ -1926,7 +1906,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 104,
@@ -1937,7 +1917,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 105,
@@ -1948,7 +1928,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 106,
@@ -1959,7 +1939,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 107,
@@ -1970,7 +1950,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 108,
@@ -1981,7 +1961,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 109,
@@ -1992,7 +1972,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 110,
@@ -2003,7 +1983,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 110,
@@ -2014,7 +1994,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 112,
@@ -2025,7 +2005,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 112,
@@ -2036,7 +2016,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 114,
@@ -2047,7 +2027,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 115,
@@ -2058,7 +2038,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 116,
@@ -2069,7 +2049,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 116,
@@ -2080,7 +2060,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 118,
@@ -2091,7 +2071,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 118,
@@ -2102,7 +2082,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 118,
@@ -2113,7 +2093,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 118,
@@ -2124,7 +2104,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 122,
@@ -2135,7 +2115,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 123,
@@ -2146,7 +2126,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 123,
@@ -2157,7 +2137,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 125,
@@ -2168,7 +2148,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 126,
@@ -2179,7 +2159,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 127,
@@ -2190,7 +2170,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 128,
@@ -2201,7 +2181,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 129,
@@ -2212,7 +2192,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 130,
@@ -2223,7 +2203,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 131,
@@ -2234,7 +2214,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 132,
@@ -2245,7 +2225,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 133,
@@ -2256,7 +2236,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 134,
@@ -2267,7 +2247,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 135,
@@ -2278,7 +2258,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 136,
@@ -2289,7 +2269,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 137,
@@ -2300,7 +2280,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 138,
@@ -2311,7 +2291,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 138,
@@ -2322,7 +2302,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 140,
@@ -2333,7 +2313,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 140,
@@ -2344,7 +2324,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 142,
@@ -2355,7 +2335,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 143,
@@ -2366,7 +2346,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 143,
@@ -2377,7 +2357,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 145,
@@ -2388,7 +2368,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 146,
@@ -2399,7 +2379,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 147,
@@ -2410,7 +2390,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 147,
@@ -2421,7 +2401,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 149,
@@ -2432,7 +2412,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 150,
@@ -2443,7 +2423,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 151,
@@ -2454,7 +2434,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 151,
@@ -2465,7 +2445,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 153,
@@ -2476,7 +2456,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 154,
@@ -2487,7 +2467,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 154,
@@ -2498,7 +2478,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 154,
@@ -2509,7 +2489,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 154,
@@ -2520,7 +2500,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 158,
@@ -2531,7 +2511,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 158,
@@ -2542,7 +2522,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 158,
@@ -2553,7 +2533,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 161,
@@ -2564,7 +2544,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 162,
@@ -2575,7 +2555,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 162,
@@ -2586,7 +2566,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 162,
@@ -2597,7 +2577,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 162,
@@ -2608,7 +2588,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 162,
@@ -2619,7 +2599,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 167,
@@ -2630,7 +2610,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 167,
@@ -2641,7 +2621,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 167,
@@ -2652,7 +2632,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 167,
@@ -2663,7 +2643,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 171,
@@ -2674,7 +2654,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 171,
@@ -2685,7 +2665,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 171,
@@ -2696,7 +2676,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 174,
@@ -2707,7 +2687,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 174,
@@ -2718,7 +2698,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -2729,7 +2709,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -2740,7 +2720,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -2751,7 +2731,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -2762,7 +2742,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -2773,7 +2753,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -2784,7 +2764,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -2795,7 +2775,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -2806,7 +2786,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -2817,7 +2797,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -2828,7 +2808,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -2839,7 +2819,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -2850,7 +2830,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -2861,7 +2841,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -2872,7 +2852,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -2883,7 +2863,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -2894,7 +2874,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -2905,7 +2885,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -2916,7 +2896,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -2927,7 +2907,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -2938,7 +2918,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -2949,7 +2929,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -2960,7 +2940,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -2971,7 +2951,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -2982,7 +2962,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -2993,7 +2973,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -3004,7 +2984,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -3015,7 +2995,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -3026,7 +3006,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -3037,7 +3017,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -3048,7 +3028,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -3059,7 +3039,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -3070,7 +3050,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -3081,7 +3061,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -3092,7 +3072,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -3103,7 +3083,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -3114,7 +3094,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -3125,7 +3105,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -3136,7 +3116,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -3147,7 +3127,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -3158,7 +3138,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -3169,7 +3149,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -3180,7 +3160,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 176,
@@ -3191,7 +3171,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 219,
@@ -3202,7 +3182,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 219,
@@ -3213,7 +3193,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 219,
@@ -3224,7 +3204,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 219,
@@ -3235,7 +3215,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 219,
@@ -3246,7 +3226,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 219,
@@ -3257,7 +3237,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 219,
@@ -3268,7 +3248,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 219,
@@ -3279,7 +3259,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 219,
@@ -3290,7 +3270,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 228,
@@ -3301,7 +3281,7 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         },
         {
           "rank": 228,
@@ -3312,13 +3292,13 @@
           "previous_rank": null,
           "image_url": null,
           "prize_money_source": "DartsRankings.com live PDC Order of Merit",
-          "prize_money_updated_at": "2026-11-22T06:51:48Z"
+          "prize_money_updated_at": "2026-11-22T16:17:14Z"
         }
       ],
       "source_url": "https://www.dartsrankings.com/",
       "notice": "PDC Order of Merit prize money (rolling two-year ranking total), updated after PDC ranking events.",
-      "last_updated": "2026-11-22T06:51:48Z",
-      "last_successful_update": "2026-11-22T06:51:48Z",
+      "last_updated": "2026-11-22T16:17:14Z",
+      "last_successful_update": "2026-11-22T16:17:14Z",
       "data_status": "current"
     },
     "ufc": {
@@ -4952,7 +4932,7 @@
       ],
       "snapshot_date": "2026-11-17",
       "notice": "Official UFC divisional rankings from UFCalendar. Rank 0 denotes the champion; rankings are updated when the publisher releases a new snapshot.",
-      "last_updated": "2026-11-22T06:51:48Z"
+      "last_updated": "2026-11-22T16:17:14Z"
     },
     "boxing": {
       "divisions": [
@@ -5615,113 +5595,38 @@
         }
       ],
       "notice": "Current reigns from Open Boxing, covering the major sanctioning bodies and The Ring where recorded. Boxing title status can change between updates; data coverage is subject to the source database.",
-      "last_updated": "2026-11-22T06:51:48Z",
+      "last_updated": "2026-11-22T16:17:14Z",
       "sync_warning": "Open Boxing HTTP 404: <!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><link rel=\"icon\" href=\"/favicon.ico\" sizes=\"32x32\"><link rel=\"icon\" type=\"image/svg+xml\" href=\"/favicon.svg\"><link rel=\"apple-touch-icon\" href=\"/apple-touch-icon.png\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><style>@font-face{font-family:\"Inter Variable-d88a3a3540fff3e3\";src:url(\"/_astro/fonts/cb13050e68e771d7.woff2\") format(\"woff2\");font-display:swap;font-weight:100 900;font-style:normal;}@font-face{font-famil"
     }
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 5,
-    "found": 150,
-    "missing": 451,
-    "rejected": 2,
-    "by_sport": {
-      "ufc": {
-        "attempted": 3,
-        "found": 2,
-        "missing": 1,
-        "rejected": 0
-      },
-      "boxing fighters": {
-        "attempted": 2,
-        "found": 1,
-        "missing": 1,
-        "rejected": 0
-      }
-    },
-    "search_details": [
-      {
-        "name": "Mario Bautista",
-        "queries": 3,
-        "candidate_files": 3,
-        "accepted": 3,
-        "rejections": {}
-      },
-      {
-        "name": "Cory Sandhagen",
-        "queries": 3,
-        "candidate_files": 3,
-        "accepted": 1,
-        "rejections": {
-          "exact_name_pair_not_matched": 2
-        }
-      },
-      {
-        "name": "Payton Talbott",
-        "queries": 3,
-        "candidate_files": 0,
-        "accepted": 0,
-        "rejections": {}
-      },
-      {
-        "name": "Agit Kabayel",
-        "queries": 3,
-        "candidate_files": 1,
-        "accepted": 1,
-        "rejections": {}
-      },
-      {
-        "name": "Alexis Rocha",
-        "queries": 3,
-        "candidate_files": 0,
-        "accepted": 0,
-        "rejections": {}
-      }
-    ],
-    "rejection_reasons": {
-      "exact_name_pair_not_matched": 2
-    },
-    "checked_at": "2026-11-22T08:37:38Z",
-    "library_entries": 108,
-    "newly_found": 3,
-    "cumulative_attempted": 378,
-    "cumulative_found": 108,
-    "cumulative_missing": 270,
-    "cumulative_rejected": 337,
-    "batch_number": 64,
-    "last_batch_at": "2026-11-22T08:37:38Z",
-    "last_successful_batch_at": "2026-11-22T08:37:38Z",
-    "last_rate_limited_at": "2026-11-22T01:02:28Z",
+    "attempted": 378,
+    "found": 136,
+    "missing": 416,
+    "rejected": 337,
+    "by_sport": {},
+    "newly_found": 0,
     "coverage": {
-      "boxing fight card fighters": {
-        "total": 207,
-        "with_image": 4,
-        "missing": 203
-      },
       "f1 drivers": {
         "total": 25,
-        "with_image": 25,
-        "missing": 0
+        "with_image": 23,
+        "missing": 2
       },
       "f1 constructors": {
         "total": 11,
         "with_image": 11,
         "missing": 0
       },
-      "darts top 50": {
-        "total": 50,
-        "with_image": 47,
-        "missing": 3
+      "darts": {
+        "total": 229,
+        "with_image": 50,
+        "missing": 179
       },
       "ufc": {
         "total": 206,
         "with_image": 52,
         "missing": 154
-      },
-      "speedway GP riders": {
-        "total": 21,
-        "with_image": 11,
-        "missing": 10
       },
       "boxing": {
         "total": 81,
@@ -5729,7 +5634,17 @@
         "missing": 81
       }
     },
+    "checked_at": "2026-11-22T16:17:14Z",
+    "library_entries": 108,
+    "cumulative_found": 108,
+    "cumulative_missing": 270,
+    "cumulative_rejected": 337,
+    "batch_number": 64,
+    "last_batch_at": "2026-11-22T08:37:38Z",
+    "last_successful_batch_at": "2026-11-22T08:37:38Z",
+    "last_rate_limited_at": "2026-11-22T01:02:28Z",
+    "enrichment_status": "awaiting next scheduled batch",
     "rate_limited": false
   },
-  "last_updated": "2026-11-22T06:51:48Z"
+  "last_updated": "2026-11-22T16:17:14Z"
 }
