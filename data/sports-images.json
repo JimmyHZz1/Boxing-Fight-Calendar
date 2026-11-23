@@ -1529,7 +1529,7 @@
       "image_local_path": "assets/images/boxing-fighters/agit-kabayel.jpg"
     }
   },
-  "updated_at": "2026-11-23T00:54:59Z",
+  "updated_at": "2026-11-23T02:59:20Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1616,10 +1616,10 @@
     "raul rosas jr": "2026-11-09T00:10:34Z",
     "marlon vera": "2026-11-09T00:10:34Z",
     "deiveson figueiredo": "2026-11-09T00:10:34Z",
-    "marcus mcghee": "2026-11-09T00:11:07Z",
-    "raoni barcelos": "2026-11-09T00:11:07Z",
+    "marcus mcghee": "2026-11-23T02:59:20Z",
+    "raoni barcelos": "2026-11-23T02:59:20Z",
     "alexander volkanovski": "2026-11-09T00:11:07Z",
-    "movsar evloev": "2026-11-09T00:11:07Z",
+    "movsar evloev": "2026-11-23T02:59:20Z",
     "lerone murphy": "2026-11-09T06:14:52Z",
     "aljamain sterling": "2026-11-09T06:14:52Z",
     "yair rodriguez": "2026-11-09T06:14:52Z",
@@ -1918,24 +1918,16 @@
     }
   },
   "enrichment": {
-    "batch_number": 66,
+    "batch_number": 67,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 388,
+    "cumulative_attempted": 392,
     "cumulative_found": 108,
-    "cumulative_missing": 280,
+    "cumulative_missing": 284,
     "cumulative_rejected": 339,
-    "last_batch_at": "2026-11-22T22:23:37Z",
-    "last_successful_batch_at": "2026-11-22T22:23:37Z",
-    "last_rate_limited_at": "2026-11-22T16:57:49Z",
+    "last_batch_at": "2026-11-23T02:59:20Z",
+    "last_successful_batch_at": "2026-11-23T02:59:20Z",
+    "last_rate_limited_at": "2026-11-23T02:59:20Z",
     "history": [
-      {
-        "batch": 37,
-        "at": "2026-11-14T20:52:50Z",
-        "attempted": 5,
-        "found": 1,
-        "missing": 4,
-        "rate_limited": true
-      },
       {
         "batch": 38,
         "at": "2026-11-15T00:53:17Z",
@@ -2167,8 +2159,16 @@
         "found": 0,
         "missing": 5,
         "rate_limited": false
+      },
+      {
+        "batch": 67,
+        "at": "2026-11-23T02:59:20Z",
+        "attempted": 4,
+        "found": 0,
+        "missing": 4,
+        "rate_limited": true
       }
     ],
-    "last_batch_rate_limited": false
+    "last_batch_rate_limited": true
   }
 }
