@@ -1527,9 +1527,39 @@
       "image_match_method": "category:Category:Agit Kabayel",
       "image_verified_at": "2026-11-22T08:37:38Z",
       "image_local_path": "assets/images/boxing-fighters/agit-kabayel.jpg"
+    },
+    "jean silva": {
+      "name": "Jean Silva",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/jean-silva.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Jean_Silva_(54451587575).jpg",
+      "image_credit": "Wikimedia Commons · The White House · Public domain",
+      "image_license": "Public domain",
+      "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Jean Silva",
+      "image_verified_at": "2026-11-23T12:14:35Z",
+      "image_local_path": "assets/images/ufc/jean-silva.jpg"
+    },
+    "arnold allen": {
+      "name": "Arnold Allen",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/arnold-allen.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Arnold_Allen_at_UFC_Fight_Night_147_in_London.jpg",
+      "image_credit": "Wikimedia Commons · MMAnytt · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Arnold Allen",
+      "image_verified_at": "2026-11-23T12:14:35Z",
+      "image_local_path": "assets/images/ufc/arnold-allen.jpg"
     }
   },
-  "updated_at": "2026-11-23T02:59:20Z",
+  "updated_at": "2026-11-23T12:14:35Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1620,14 +1650,14 @@
     "raoni barcelos": "2026-11-23T02:59:20Z",
     "alexander volkanovski": "2026-11-09T00:11:07Z",
     "movsar evloev": "2026-11-23T02:59:20Z",
-    "lerone murphy": "2026-11-09T06:14:52Z",
-    "aljamain sterling": "2026-11-09T06:14:52Z",
+    "lerone murphy": "2026-11-23T12:14:35Z",
+    "aljamain sterling": "2026-11-23T12:14:35Z",
     "yair rodriguez": "2026-11-09T06:14:52Z",
-    "youssef zalal": "2026-11-09T06:15:25Z",
+    "youssef zalal": "2026-11-23T12:14:35Z",
     "david martinez": "2026-11-09T12:52:30Z",
     "diego lopes": "2026-11-09T12:52:30Z",
-    "jean silva": "2026-11-09T12:52:30Z",
-    "arnold allen": "2026-11-09T12:52:30Z",
+    "jean silva": "2026-11-23T12:14:35Z",
+    "arnold allen": "2026-11-23T12:14:35Z",
     "kevin vallejos": "2026-11-09T12:52:30Z",
     "steve garcia": "2026-11-09T12:52:42Z",
     "aaron pico": "2026-11-09T12:52:42Z",
@@ -1918,24 +1948,16 @@
     }
   },
   "enrichment": {
-    "batch_number": 67,
+    "batch_number": 68,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 392,
-    "cumulative_found": 108,
-    "cumulative_missing": 284,
-    "cumulative_rejected": 339,
-    "last_batch_at": "2026-11-23T02:59:20Z",
-    "last_successful_batch_at": "2026-11-23T02:59:20Z",
+    "cumulative_attempted": 397,
+    "cumulative_found": 110,
+    "cumulative_missing": 287,
+    "cumulative_rejected": 343,
+    "last_batch_at": "2026-11-23T12:14:35Z",
+    "last_successful_batch_at": "2026-11-23T12:14:35Z",
     "last_rate_limited_at": "2026-11-23T02:59:20Z",
     "history": [
-      {
-        "batch": 38,
-        "at": "2026-11-15T00:53:17Z",
-        "attempted": 4,
-        "found": 2,
-        "missing": 2,
-        "rate_limited": true
-      },
       {
         "batch": 39,
         "at": "2026-11-15T07:40:38Z",
@@ -2167,8 +2189,16 @@
         "found": 0,
         "missing": 4,
         "rate_limited": true
+      },
+      {
+        "batch": 68,
+        "at": "2026-11-23T12:14:35Z",
+        "attempted": 5,
+        "found": 2,
+        "missing": 3,
+        "rate_limited": false
       }
     ],
-    "last_batch_rate_limited": true
+    "last_batch_rate_limited": false
   }
 }

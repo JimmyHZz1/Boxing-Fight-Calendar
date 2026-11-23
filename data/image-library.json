@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-22T08:37:38Z",
+  "updated_at": "2026-11-23T12:14:35Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -1136,6 +1136,28 @@
       "attribution": "Wikimedia Commons · Kortum-Gesellschaft Bochum · CC BY-SA 2.0",
       "verified_at": "2026-11-22T08:37:38Z",
       "sport": "boxing fighters"
+    },
+    "jean silva": {
+      "name": "Jean Silva",
+      "path": "assets/images/ufc/jean-silva.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Jean_Silva_(54451587575).jpg",
+      "licence": "Public domain",
+      "licence_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "creator": "Wikimedia Commons · The White House · Public domain",
+      "attribution": "Wikimedia Commons · The White House · Public domain",
+      "verified_at": "2026-11-23T12:14:35Z",
+      "sport": "ufc"
+    },
+    "arnold allen": {
+      "name": "Arnold Allen",
+      "path": "assets/images/ufc/arnold-allen.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Arnold_Allen_at_UFC_Fight_Night_147_in_London.jpg",
+      "licence": "CC BY 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by/3.0",
+      "creator": "Wikimedia Commons · MMAnytt · CC BY 3.0",
+      "attribution": "Wikimedia Commons · MMAnytt · CC BY 3.0",
+      "verified_at": "2026-11-23T12:14:35Z",
+      "sport": "ufc"
     }
   },
   "collections": {

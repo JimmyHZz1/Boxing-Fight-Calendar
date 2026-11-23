@@ -3561,17 +3561,47 @@
             {
               "rank": 5,
               "name": "Jean Silva",
-              "image_url": null
+              "image_url": "./assets/images/ufc/jean-silva.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Jean_Silva_(54451587575).jpg",
+              "image_credit": "Wikimedia Commons · The White House · Public domain",
+              "image_license": "Public domain",
+              "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Jean Silva",
+              "image_verified_at": "2026-11-23T12:14:35Z",
+              "image_local_path": "assets/images/ufc/jean-silva.jpg"
             },
             {
               "rank": 6,
               "name": "Arnold Allen",
-              "image_url": null
+              "image_url": "./assets/images/ufc/arnold-allen.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Arnold_Allen_at_UFC_Fight_Night_147_in_London.jpg",
+              "image_credit": "Wikimedia Commons · MMAnytt · CC BY 3.0",
+              "image_license": "CC BY 3.0",
+              "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Arnold Allen",
+              "image_verified_at": "2026-11-23T12:14:35Z",
+              "image_local_path": "assets/images/ufc/arnold-allen.jpg"
             },
             {
               "rank": 7,
               "name": "Yair Rodriguez",
-              "image_url": null
+              "image_url": "./assets/images/ufc/yair-rodriguez.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Carrera_con_Yair_%22Pantera%22_Rodr%C3%ADguez_-i---i-_(30139082833).jpg",
+              "image_credit": "Wikimedia Commons · Gobierno CDMX · CC0",
+              "image_license": "CC0",
+              "image_license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+              "image_source": "Wikimedia Commons",
+              "image_match_score": 1,
+              "image_match_method": "category:Category:Yair Rodríguez",
+              "image_verified_at": "2026-11-09T06:14:52Z",
+              "image_local_path": "assets/images/ufc/yair-rodriguez.jpg",
+              "image_source_class": "licensed-third-party"
             },
             {
               "rank": 8,
@@ -5591,58 +5621,72 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 4,
-    "found": 146,
-    "missing": 492,
-    "rejected": 0,
+    "attempted": 5,
+    "found": 149,
+    "missing": 489,
+    "rejected": 4,
     "by_sport": {
       "ufc": {
-        "attempted": 4,
-        "found": 0,
-        "missing": 4,
+        "attempted": 5,
+        "found": 2,
+        "missing": 3,
         "rejected": 0
       }
     },
     "search_details": [
       {
-        "name": "Marcus McGhee",
-        "queries": 3,
-        "candidate_files": 0,
-        "accepted": 0,
-        "rejections": {}
-      },
-      {
-        "name": "Raoni Barcelos",
-        "queries": 3,
-        "candidate_files": 0,
-        "accepted": 0,
-        "rejections": {}
-      },
-      {
-        "name": "Movsar Evloev",
-        "queries": 3,
-        "candidate_files": 0,
-        "accepted": 0,
-        "rejections": {}
-      },
-      {
         "name": "Lerone Murphy",
-        "queries": 1,
+        "queries": 3,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Aljamain Sterling",
+        "queries": 4,
+        "candidate_files": 1,
+        "accepted": 0,
+        "rejections": {
+          "exact_name_pair_not_matched": 1
+        }
+      },
+      {
+        "name": "Jean Silva",
+        "queries": 3,
+        "candidate_files": 4,
+        "accepted": 1,
+        "rejections": {
+          "exact_name_pair_not_matched": 3
+        }
+      },
+      {
+        "name": "Arnold Allen",
+        "queries": 3,
+        "candidate_files": 1,
+        "accepted": 1,
+        "rejections": {}
+      },
+      {
+        "name": "Youssef Zalal",
+        "queries": 3,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       }
     ],
-    "checked_at": "2026-11-23T02:59:20Z",
-    "library_entries": 108,
-    "newly_found": 0,
-    "cumulative_attempted": 392,
-    "cumulative_found": 108,
-    "cumulative_missing": 284,
-    "cumulative_rejected": 339,
-    "batch_number": 67,
-    "last_batch_at": "2026-11-23T02:59:20Z",
-    "last_successful_batch_at": "2026-11-23T02:59:20Z",
+    "rejection_reasons": {
+      "exact_name_pair_not_matched": 4
+    },
+    "checked_at": "2026-11-23T12:14:35Z",
+    "library_entries": 110,
+    "newly_found": 2,
+    "cumulative_attempted": 397,
+    "cumulative_found": 110,
+    "cumulative_missing": 287,
+    "cumulative_rejected": 343,
+    "batch_number": 68,
+    "last_batch_at": "2026-11-23T12:14:35Z",
+    "last_successful_batch_at": "2026-11-23T12:14:35Z",
     "last_rate_limited_at": "2026-11-23T02:59:20Z",
     "coverage": {
       "boxing fight card fighters": {
@@ -5667,8 +5711,8 @@
       },
       "ufc": {
         "total": 206,
-        "with_image": 49,
-        "missing": 157
+        "with_image": 52,
+        "missing": 154
       },
       "speedway GP riders": {
         "total": 21,
@@ -5681,7 +5725,7 @@
         "missing": 81
       }
     },
-    "rate_limited": true
+    "rate_limited": false
   },
   "last_updated": "2026-11-23T00:54:59Z"
 }
