@@ -66,5 +66,6 @@
   $("esports-search-input")?.addEventListener("input",render);$("esports-refresh")?.addEventListener("click",load);$("esports-detail-close")?.addEventListener("click",()=>$("esports-detail-dialog").close());
   document.addEventListener("click",event=>{const card=event.target.closest("[data-esports-event]");if(card)openEvent(card.dataset.esportsEvent);});
   document.addEventListener("keydown",event=>{const card=event.target.closest("[data-esports-event]");if(card&&(event.key==="Enter"||event.key===" ")){event.preventDefault();openEvent(card.dataset.esportsEvent);}});
+  document.querySelectorAll('[data-screen="esports-hub-screen"]').forEach(button=>button.addEventListener("click",()=>window.showScreen?.("esports-hub-screen",{userInitiated:true})));
   if($("esports-hub-screen"))render();
 })();
