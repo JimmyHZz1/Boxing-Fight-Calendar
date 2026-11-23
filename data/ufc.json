@@ -1091,7 +1091,7 @@
           "is_title": false,
           "is_main": false,
           "scheduled_rounds": 3,
-          "status": "announced",
+          "status": "cancelled",
           "fighter_a": {
             "id": 356,
             "slug": "maycee-barber",
@@ -1277,5 +1277,5 @@
     }
   ],
   "notice": "All upcoming UFC events returned by UFCalendar, with detailed fight cards for the next two events and the latest completed card. Free API allowance: 1,000 requests per month.",
-  "last_updated": "2026-11-23T00:54:59Z"
+  "last_updated": "2026-11-23T14:41:09Z"
 }
