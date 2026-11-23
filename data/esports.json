@@ -1,0 +1,34 @@
+{
+  "sport": "counter-strike-2",
+  "provider": "Tournament data source integration pending",
+  "updated_at": null,
+  "coverage": {
+    "scope": "all-major-and-premier-events",
+    "organisers": [
+      "Valve Majors",
+      "ESL / Intel Extreme Masters",
+      "BLAST Premier",
+      "PGL",
+      "Esports World Cup",
+      "CS Asia Championships",
+      "StarLadder StarSeries",
+      "Thunderpick World Championship",
+      "FISSURE Playground"
+    ],
+    "qualifiers": "Shown within parent tournament where available",
+    "excluded": [
+      "Regional leagues",
+      "Academy events",
+      "Minor online cups",
+      "Standalone open qualifiers"
+    ]
+  },
+  "events": [],
+  "matches": [],
+  "teams": [],
+  "notes": [
+    "This is the feed contract for the Esports Hub.",
+    "No tournament fixtures, match scores or rosters have been fabricated.",
+    "Connect a verified Counter-Strike tournament data provider before publishing live schedules."
+  ]
+}
