@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "provider": "IGDB PopScore",
-  "updated_at": "2026-11-22T14:30:00.967Z",
+  "updated_at": "2026-11-23T17:59:09.808Z",
   "status": "ok",
   "methodology": "Daily relative ranking across the upcoming PC and console release list. Weighted IGDB Visits (30%), Want to Play (40%), Playing (15%), Played (5%) and Twitch Hours Watched (10%). Steam-only player, review and sales signals are deliberately excluded so console-only games are not penalised. Missing metrics are omitted and remaining weights are renormalised.",
   "games": [
@@ -96,6 +96,27 @@
       "popularity_rank": 4
     },
     {
+      "slug": "warhammer-40000-dawn-of-war-iv",
+      "title": "Warhammer 40,000: Dawn of War IV",
+      "release_date": "2026-12-03",
+      "platforms": [
+        "PC"
+      ],
+      "verification_status": "verified",
+      "igdb_game_id": 361859,
+      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6ox1.jpg",
+      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar41cc.jpg",
+      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar41cc.jpg",
+      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6ox1.jpg",
+      "popularity_score": 64,
+      "popularity_signals": [
+        "want to play",
+        "visits"
+      ],
+      "popularity_coverage": 2,
+      "popularity_rank": 5
+    },
+    {
       "slug": "final-fantasy-vii-revelation",
       "title": "FINAL FANTASY VII REVELATION",
       "release_date": "2027-04-08",
@@ -111,28 +132,7 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar62ze.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar62ze.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar62e8.jpg",
-      "popularity_score": 68,
-      "popularity_signals": [
-        "want to play",
-        "visits"
-      ],
-      "popularity_coverage": 2,
-      "popularity_rank": 5
-    },
-    {
-      "slug": "warhammer-40000-dawn-of-war-iv",
-      "title": "Warhammer 40,000: Dawn of War IV",
-      "release_date": "2026-12-03",
-      "platforms": [
-        "PC"
-      ],
-      "verification_status": "verified",
-      "igdb_game_id": 361859,
-      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6ox1.jpg",
-      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar41cc.jpg",
-      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar41cc.jpg",
-      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6ox1.jpg",
-      "popularity_score": 64,
+      "popularity_score": 62,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -199,37 +199,13 @@
       "igdb_logo_url": null,
       "logo_url": null,
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar3oxp.jpg",
-      "popularity_score": 35,
+      "popularity_score": 38,
       "popularity_signals": [
         "want to play",
         "visits"
       ],
       "popularity_coverage": 2,
       "popularity_rank": 9
-    },
-    {
-      "slug": "stage-tour",
-      "title": "Stage Tour",
-      "release_date": "2026-12-10",
-      "platforms": [
-        "PC",
-        "PlayStation 5",
-        "Xbox Series X|S",
-        "Nintendo Switch 2"
-      ],
-      "verification_status": "verified",
-      "igdb_game_id": 393269,
-      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6lhk.jpg",
-      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5n09.jpg",
-      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5n09.jpg",
-      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6lhk.jpg",
-      "popularity_score": 32,
-      "popularity_signals": [
-        "want to play",
-        "visits"
-      ],
-      "popularity_coverage": 2,
-      "popularity_rank": 10
     },
     {
       "slug": "dragon-quest-monsters-the-withered-world",
@@ -248,7 +224,31 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5xzb.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5xzb.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5xzb.jpg",
-      "popularity_score": 26,
+      "popularity_score": 33,
+      "popularity_signals": [
+        "want to play",
+        "visits"
+      ],
+      "popularity_coverage": 2,
+      "popularity_rank": 10
+    },
+    {
+      "slug": "stage-tour",
+      "title": "Stage Tour",
+      "release_date": "2026-12-10",
+      "platforms": [
+        "PC",
+        "PlayStation 5",
+        "Xbox Series X|S",
+        "Nintendo Switch 2"
+      ],
+      "verification_status": "verified",
+      "igdb_game_id": 393269,
+      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6lhk.jpg",
+      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5n09.jpg",
+      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5n09.jpg",
+      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6lhk.jpg",
+      "popularity_score": 32,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -318,7 +318,7 @@
       "igdb_logo_url": null,
       "logo_url": null,
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6keu.jpg",
-      "popularity_score": 8,
+      "popularity_score": 4,
       "popularity_signals": [
         "want to play",
         "visits"
