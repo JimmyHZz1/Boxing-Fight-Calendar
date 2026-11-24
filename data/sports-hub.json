@@ -234,13 +234,33 @@
           "rank": 20,
           "name": "Yuki Tsunoda",
           "team": "RB F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/yuki-tsunoda.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Yuki_Tsunoda_Macau_2019.jpg",
+          "image_credit": "Wikimedia Commons · Smith007 · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "category:Category:Yuki Tsunoda in 2019",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/yuki-tsunoda.jpg"
         },
         {
           "rank": 21,
           "name": "Ryo Hirakawa",
           "team": "Haas F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/ryo-hirakawa.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Ryo_Hirakawa_2024_WEC_Fuji_1.jpg",
+          "image_credit": "Wikimedia Commons · Morio · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "search:Ryo Hirakawa",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/ryo-hirakawa.jpg"
         },
         {
           "rank": 22,
@@ -3611,7 +3631,16 @@
             {
               "rank": 11,
               "name": "Aaron Pico",
-              "image_url": null
+              "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Wrestler_Aaron_Pico_2014.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Wrestler_Aaron_Pico_2014.png",
+              "image_credit": "Wikimedia Commons · WrestlingSavesLives · CC BY-SA 4.0",
+              "image_license": "CC BY-SA 4.0",
+              "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Aaron Pico",
+              "image_verified_at": "2026-11-24T00:13:22Z"
             },
             {
               "rank": 12,
@@ -5621,32 +5650,89 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 397,
-    "found": 138,
-    "missing": 414,
-    "rejected": 343,
-    "by_sport": {},
-    "newly_found": 0,
+    "attempted": 4,
+    "found": 152,
+    "missing": 491,
+    "rejected": 0,
+    "by_sport": {
+      "ufc": {
+        "attempted": 4,
+        "found": 1,
+        "missing": 3,
+        "rejected": 0
+      }
+    },
+    "search_details": [
+      {
+        "name": "Kevin Vallejos",
+        "queries": 3,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Aaron Pico",
+        "queries": 3,
+        "candidate_files": 1,
+        "accepted": 1,
+        "rejections": {}
+      },
+      {
+        "name": "Patricio Pitbull",
+        "queries": 3,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Joshua Van",
+        "queries": 1,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      }
+    ],
+    "checked_at": "2026-11-24T00:13:22Z",
+    "library_entries": 111,
+    "newly_found": 1,
+    "cumulative_attempted": 401,
+    "cumulative_found": 111,
+    "cumulative_missing": 290,
+    "cumulative_rejected": 343,
+    "batch_number": 69,
+    "last_batch_at": "2026-11-24T00:13:22Z",
+    "last_successful_batch_at": "2026-11-24T00:13:22Z",
+    "last_rate_limited_at": "2026-11-24T00:13:22Z",
     "coverage": {
+      "boxing fight card fighters": {
+        "total": 249,
+        "with_image": 3,
+        "missing": 246
+      },
       "f1 drivers": {
         "total": 25,
-        "with_image": 23,
-        "missing": 2
+        "with_image": 25,
+        "missing": 0
       },
       "f1 constructors": {
         "total": 11,
         "with_image": 11,
         "missing": 0
       },
-      "darts": {
-        "total": 229,
-        "with_image": 50,
-        "missing": 179
+      "darts top 50": {
+        "total": 50,
+        "with_image": 47,
+        "missing": 3
       },
       "ufc": {
         "total": 206,
-        "with_image": 54,
-        "missing": 152
+        "with_image": 55,
+        "missing": 151
+      },
+      "speedway GP riders": {
+        "total": 21,
+        "with_image": 11,
+        "missing": 10
       },
       "boxing": {
         "total": 81,
@@ -5654,17 +5740,7 @@
         "missing": 81
       }
     },
-    "checked_at": "2026-11-23T14:41:09Z",
-    "library_entries": 110,
-    "cumulative_found": 110,
-    "cumulative_missing": 287,
-    "cumulative_rejected": 343,
-    "batch_number": 68,
-    "last_batch_at": "2026-11-23T12:14:35Z",
-    "last_successful_batch_at": "2026-11-23T12:14:35Z",
-    "last_rate_limited_at": "2026-11-23T02:59:20Z",
-    "enrichment_status": "awaiting next scheduled batch",
-    "rate_limited": false
+    "rate_limited": true
   },
   "last_updated": "2026-11-23T14:41:09Z"
 }

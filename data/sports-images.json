@@ -1557,9 +1557,23 @@
       "image_match_method": "category:Category:Arnold Allen",
       "image_verified_at": "2026-11-23T12:14:35Z",
       "image_local_path": "assets/images/ufc/arnold-allen.jpg"
+    },
+    "aaron pico": {
+      "name": "Aaron Pico",
+      "sport": "ufc",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Wrestler_Aaron_Pico_2014.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Wrestler_Aaron_Pico_2014.png",
+      "image_credit": "Wikimedia Commons · WrestlingSavesLives · CC BY-SA 4.0",
+      "image_license": "CC BY-SA 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Aaron Pico",
+      "image_verified_at": "2026-11-24T00:13:22Z"
     }
   },
-  "updated_at": "2026-11-23T14:41:09Z",
+  "updated_at": "2026-11-24T00:13:22Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1658,12 +1672,12 @@
     "diego lopes": "2026-11-09T12:52:30Z",
     "jean silva": "2026-11-23T12:14:35Z",
     "arnold allen": "2026-11-23T12:14:35Z",
-    "kevin vallejos": "2026-11-09T12:52:30Z",
+    "kevin vallejos": "2026-11-24T00:13:22Z",
     "steve garcia": "2026-11-09T12:52:42Z",
-    "aaron pico": "2026-11-09T12:52:42Z",
+    "aaron pico": "2026-11-24T00:13:22Z",
     "melquizael costa": "2026-11-09T12:52:42Z",
     "brian ortega": "2026-11-09T12:52:42Z",
-    "patricio pitbull": "2026-11-09T12:52:42Z",
+    "patricio pitbull": "2026-11-24T00:13:22Z",
     "joshua van": "2026-11-09T13:10:18Z",
     "alexandre pantoja": "2026-11-09T13:10:18Z",
     "manel kape": "2026-11-09T13:10:18Z",
@@ -1948,24 +1962,16 @@
     }
   },
   "enrichment": {
-    "batch_number": 68,
+    "batch_number": 69,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 397,
-    "cumulative_found": 110,
-    "cumulative_missing": 287,
+    "cumulative_attempted": 401,
+    "cumulative_found": 111,
+    "cumulative_missing": 290,
     "cumulative_rejected": 343,
-    "last_batch_at": "2026-11-23T12:14:35Z",
-    "last_successful_batch_at": "2026-11-23T12:14:35Z",
-    "last_rate_limited_at": "2026-11-23T02:59:20Z",
+    "last_batch_at": "2026-11-24T00:13:22Z",
+    "last_successful_batch_at": "2026-11-24T00:13:22Z",
+    "last_rate_limited_at": "2026-11-24T00:13:22Z",
     "history": [
-      {
-        "batch": 39,
-        "at": "2026-11-15T07:40:38Z",
-        "attempted": 5,
-        "found": 2,
-        "missing": 3,
-        "rate_limited": false
-      },
       {
         "batch": 40,
         "at": "2026-11-15T14:51:27Z",
@@ -2197,8 +2203,16 @@
         "found": 2,
         "missing": 3,
         "rate_limited": false
+      },
+      {
+        "batch": 69,
+        "at": "2026-11-24T00:13:22Z",
+        "attempted": 4,
+        "found": 1,
+        "missing": 3,
+        "rate_limited": true
       }
     ],
-    "last_batch_rate_limited": false
+    "last_batch_rate_limited": true
   }
 }
