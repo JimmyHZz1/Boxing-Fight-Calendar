@@ -751,6 +751,37 @@
           "bonus": null
         },
         {
+          "id": 94124,
+          "ordering": 7,
+          "card_section": "prelims",
+          "sport": "mma",
+          "weight_class": "Featherweight",
+          "division_slug": "featherweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "announced",
+          "fighter_a": {
+            "id": 377,
+            "slug": "luke-riley",
+            "name": "Luke Riley",
+            "nickname": null,
+            "nationality": "England",
+            "country_code": null
+          },
+          "fighter_b": {
+            "id": 2768,
+            "slug": "gabriel-santos",
+            "name": "Gabriel Santos",
+            "nickname": "Mosquitinho",
+            "nationality": "Brazil",
+            "country_code": "BR"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
           "id": 93768,
           "ordering": 8,
           "card_section": "prelims",
@@ -900,6 +931,37 @@
             "nickname": "Guanche Warrior",
             "nationality": "Spain",
             "country_code": "ES"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 94125,
+          "ordering": 13,
+          "card_section": "prelims",
+          "sport": "mma",
+          "weight_class": "Lightweight",
+          "division_slug": "lightweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "announced",
+          "fighter_a": {
+            "id": 16,
+            "slug": "mateusz-rebecki",
+            "name": "Mateusz Rębecki",
+            "nickname": null,
+            "nationality": "Poland",
+            "country_code": "PL"
+          },
+          "fighter_b": {
+            "id": 2765,
+            "slug": "elves-brener",
+            "name": "Elves Brener",
+            "nickname": null,
+            "nationality": "Brazil",
+            "country_code": "BR"
           },
           "result": null,
           "referee": null,
@@ -1220,7 +1282,7 @@
       "status": "announced",
       "number": null,
       "is_ppv": true,
-      "is_title_card": false,
+      "is_title_card": true,
       "main_card_at": "2027-01-31T02:00:00.000Z",
       "prelims_at": "2027-01-31T00:00:00.000Z",
       "early_prelims_at": "2027-01-30T22:00:00.000Z",
@@ -1277,5 +1339,5 @@
     }
   ],
   "notice": "All upcoming UFC events returned by UFCalendar, with detailed fight cards for the next two events and the latest completed card. Free API allowance: 1,000 requests per month.",
-  "last_updated": "2026-11-23T14:41:09Z"
+  "last_updated": "2026-11-24T02:54:57Z"
 }
