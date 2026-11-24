@@ -596,39 +596,8 @@
           "bonus": null
         },
         {
-          "id": 93763,
-          "ordering": 3,
-          "card_section": "main",
-          "sport": "mma",
-          "weight_class": "Heavyweight",
-          "division_slug": "heavyweight",
-          "is_title": false,
-          "is_main": false,
-          "scheduled_rounds": 3,
-          "status": "announced",
-          "fighter_a": {
-            "id": 487,
-            "slug": "serghei-spivac",
-            "name": "Serghei Spivac",
-            "nickname": "Polar Bear",
-            "nationality": "Moldova",
-            "country_code": "MD"
-          },
-          "fighter_b": {
-            "id": 183,
-            "slug": "mario-pinto",
-            "name": "Mario Pinto",
-            "nickname": null,
-            "nationality": "Portugal",
-            "country_code": "PT"
-          },
-          "result": null,
-          "referee": null,
-          "bonus": null
-        },
-        {
           "id": 93764,
-          "ordering": 4,
+          "ordering": 3,
           "card_section": "main",
           "sport": "mma",
           "weight_class": "Welterweight",
@@ -652,6 +621,37 @@
             "nickname": "The Ripper",
             "nationality": "Germany",
             "country_code": "DE"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 93763,
+          "ordering": 4,
+          "card_section": "main",
+          "sport": "mma",
+          "weight_class": "Heavyweight",
+          "division_slug": "heavyweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "announced",
+          "fighter_a": {
+            "id": 487,
+            "slug": "serghei-spivac",
+            "name": "Serghei Spivac",
+            "nickname": "Polar Bear",
+            "nationality": "Moldova",
+            "country_code": "MD"
+          },
+          "fighter_b": {
+            "id": 183,
+            "slug": "mario-pinto",
+            "name": "Mario Pinto",
+            "nickname": null,
+            "nationality": "Portugal",
+            "country_code": "PT"
           },
           "result": null,
           "referee": null,
@@ -720,37 +720,6 @@
           "bonus": null
         },
         {
-          "id": 93767,
-          "ordering": 7,
-          "card_section": "prelims",
-          "sport": "mma",
-          "weight_class": "Flyweight",
-          "division_slug": "flyweight",
-          "is_title": false,
-          "is_main": false,
-          "scheduled_rounds": 3,
-          "status": "announced",
-          "fighter_a": {
-            "id": 158,
-            "slug": "bruno-silva",
-            "name": "Bruno Silva",
-            "nickname": "Bulldog",
-            "nationality": "Brazil",
-            "country_code": "BR"
-          },
-          "fighter_b": {
-            "id": 170,
-            "slug": "jafel-filho",
-            "name": "Jafel Filho",
-            "nickname": "Pastor",
-            "nationality": "Brazil",
-            "country_code": "BR"
-          },
-          "result": null,
-          "referee": null,
-          "bonus": null
-        },
-        {
           "id": 94124,
           "ordering": 7,
           "card_section": "prelims",
@@ -782,8 +751,39 @@
           "bonus": null
         },
         {
-          "id": 93768,
+          "id": 93767,
           "ordering": 8,
+          "card_section": "prelims",
+          "sport": "mma",
+          "weight_class": "Flyweight",
+          "division_slug": "flyweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "announced",
+          "fighter_a": {
+            "id": 158,
+            "slug": "bruno-silva",
+            "name": "Bruno Silva",
+            "nickname": "Bulldog",
+            "nationality": "Brazil",
+            "country_code": "BR"
+          },
+          "fighter_b": {
+            "id": 170,
+            "slug": "jafel-filho",
+            "name": "Jafel Filho",
+            "nickname": "Pastor",
+            "nationality": "Brazil",
+            "country_code": "BR"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 93768,
+          "ordering": 9,
           "card_section": "prelims",
           "sport": "mma",
           "weight_class": "Light Heavyweight",
@@ -814,7 +814,7 @@
         },
         {
           "id": 93769,
-          "ordering": 9,
+          "ordering": 10,
           "card_section": "prelims",
           "sport": "mma",
           "weight_class": "Middleweight",
@@ -845,7 +845,7 @@
         },
         {
           "id": 93770,
-          "ordering": 10,
+          "ordering": 11,
           "card_section": "prelims",
           "sport": "mma",
           "weight_class": "Bantamweight",
@@ -876,7 +876,7 @@
         },
         {
           "id": 93771,
-          "ordering": 11,
+          "ordering": 12,
           "card_section": "prelims",
           "sport": "mma",
           "weight_class": "Middleweight",
@@ -907,7 +907,7 @@
         },
         {
           "id": 93772,
-          "ordering": 12,
+          "ordering": 13,
           "card_section": "prelims",
           "sport": "mma",
           "weight_class": "Bantamweight",
@@ -938,7 +938,7 @@
         },
         {
           "id": 94125,
-          "ordering": 13,
+          "ordering": 14,
           "card_section": "prelims",
           "sport": "mma",
           "weight_class": "Lightweight",
@@ -1339,5 +1339,5 @@
     }
   ],
   "notice": "All upcoming UFC events returned by UFCalendar, with detailed fight cards for the next two events and the latest completed card. Free API allowance: 1,000 requests per month.",
-  "last_updated": "2026-11-24T02:54:57Z"
+  "last_updated": "2026-11-24T14:53:48Z"
 }
