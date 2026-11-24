@@ -234,13 +234,33 @@
           "rank": 20,
           "name": "Yuki Tsunoda",
           "team": "RB F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/yuki-tsunoda.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Yuki_Tsunoda_Macau_2019.jpg",
+          "image_credit": "Wikimedia Commons · Smith007 · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "category:Category:Yuki Tsunoda in 2019",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/yuki-tsunoda.jpg"
         },
         {
           "rank": 21,
           "name": "Ryo Hirakawa",
           "team": "Haas F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/ryo-hirakawa.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Ryo_Hirakawa_2024_WEC_Fuji_1.jpg",
+          "image_credit": "Wikimedia Commons · Morio · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "search:Ryo Hirakawa",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/ryo-hirakawa.jpg"
         },
         {
           "rank": 22,
@@ -3696,7 +3716,17 @@
             {
               "rank": 5,
               "name": "Kyoji Horiguchi",
-              "image_url": null
+              "image_url": "./assets/images/ufc/kyoji-horiguchi.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Kyoji_Horiguchi_2017.jpg",
+              "image_credit": "Wikimedia Commons · Bruno Massami · CC BY 3.0",
+              "image_license": "CC BY 3.0",
+              "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Kyoji Horiguchi",
+              "image_verified_at": "2026-11-24T20:46:41Z",
+              "image_local_path": "assets/images/ufc/kyoji-horiguchi.jpg"
             },
             {
               "rank": 6,
@@ -5650,32 +5680,105 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 405,
-    "found": 141,
-    "missing": 411,
-    "rejected": 344,
-    "by_sport": {},
-    "newly_found": 0,
+    "attempted": 5,
+    "found": 154,
+    "missing": 502,
+    "rejected": 3,
+    "by_sport": {
+      "ufc": {
+        "attempted": 5,
+        "found": 1,
+        "missing": 4,
+        "rejected": 0
+      }
+    },
+    "search_details": [
+      {
+        "name": "Brandon Royval",
+        "queries": 3,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Tatsuro Taira",
+        "queries": 3,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Kyoji Horiguchi",
+        "queries": 3,
+        "candidate_files": 4,
+        "accepted": 2,
+        "rejections": {
+          "not_an_image": 1,
+          "exact_name_pair_not_matched": 1
+        }
+      },
+      {
+        "name": "Lone’er Kavanagh",
+        "queries": 3,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Asu Almabayev",
+        "queries": 4,
+        "candidate_files": 1,
+        "accepted": 0,
+        "rejections": {
+          "exact_name_pair_not_matched": 1
+        }
+      }
+    ],
+    "rejection_reasons": {
+      "not_an_image": 1,
+      "exact_name_pair_not_matched": 2
+    },
+    "checked_at": "2026-11-24T20:46:41Z",
+    "library_entries": 113,
+    "newly_found": 1,
+    "cumulative_attempted": 410,
+    "cumulative_found": 113,
+    "cumulative_missing": 297,
+    "cumulative_rejected": 347,
+    "batch_number": 71,
+    "last_batch_at": "2026-11-24T20:46:41Z",
+    "last_successful_batch_at": "2026-11-24T20:46:41Z",
+    "last_rate_limited_at": "2026-11-24T10:17:56Z",
     "coverage": {
+      "boxing fight card fighters": {
+        "total": 262,
+        "with_image": 2,
+        "missing": 260
+      },
       "f1 drivers": {
         "total": 25,
-        "with_image": 23,
-        "missing": 2
+        "with_image": 25,
+        "missing": 0
       },
       "f1 constructors": {
         "total": 11,
         "with_image": 11,
         "missing": 0
       },
-      "darts": {
-        "total": 229,
-        "with_image": 50,
-        "missing": 179
+      "darts top 50": {
+        "total": 50,
+        "with_image": 47,
+        "missing": 3
       },
       "ufc": {
         "total": 206,
-        "with_image": 57,
-        "missing": 149
+        "with_image": 58,
+        "missing": 148
+      },
+      "speedway GP riders": {
+        "total": 21,
+        "with_image": 11,
+        "missing": 10
       },
       "boxing": {
         "total": 81,
@@ -5683,17 +5786,7 @@
         "missing": 81
       }
     },
-    "checked_at": "2026-11-24T14:53:48Z",
-    "library_entries": 112,
-    "cumulative_found": 112,
-    "cumulative_missing": 293,
-    "cumulative_rejected": 344,
-    "batch_number": 70,
-    "last_batch_at": "2026-11-24T10:17:56Z",
-    "last_successful_batch_at": "2026-11-24T10:17:56Z",
-    "last_rate_limited_at": "2026-11-24T10:17:56Z",
-    "enrichment_status": "paused after rate limit",
-    "rate_limited": true
+    "rate_limited": false
   },
   "last_updated": "2026-11-24T14:53:48Z"
 }

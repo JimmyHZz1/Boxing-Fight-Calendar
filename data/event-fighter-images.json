@@ -178,8 +178,23 @@
       "image_match_method": "category:Category:Maycee Barber",
       "image_verified_at": "2026-11-14T02:03:57Z",
       "image_local_path": "assets/images/ufc/maycee-barber.png"
+    },
+    "kyoji horiguchi": {
+      "name": "Kyoji Horiguchi",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/kyoji-horiguchi.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Kyoji_Horiguchi_2017.jpg",
+      "image_credit": "Wikimedia Commons · Bruno Massami · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Kyoji Horiguchi",
+      "image_verified_at": "2026-11-24T20:46:41Z",
+      "image_local_path": "assets/images/ufc/kyoji-horiguchi.jpg"
     }
   },
   "attempted": {},
-  "updated_at": "2026-11-24T14:54:14Z"
+  "updated_at": "2026-11-24T20:47:21Z"
 }
