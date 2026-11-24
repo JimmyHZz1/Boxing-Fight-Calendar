@@ -1,33 +1,10 @@
 {
   "schema_version": 1,
   "provider": "IGDB PopScore",
-  "updated_at": "2026-11-23T17:59:09.808Z",
+  "updated_at": "2026-11-24T17:37:32.776Z",
   "status": "ok",
   "methodology": "Daily relative ranking across the upcoming PC and console release list. Weighted IGDB Visits (30%), Want to Play (40%), Playing (15%), Played (5%) and Twitch Hours Watched (10%). Steam-only player, review and sales signals are deliberately excluded so console-only games are not penalised. Missing metrics are omitted and remaining weights are renormalised.",
   "games": [
-    {
-      "slug": "monster-hunter-wilds-switch-2",
-      "title": "Monster Hunter Wilds",
-      "release_date": "2026-12-04",
-      "platforms": [
-        "Nintendo Switch 2"
-      ],
-      "verification_status": "estimated",
-      "igdb_game_id": 279661,
-      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar2q59.jpg",
-      "igdb_logo_url": null,
-      "logo_url": null,
-      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar2q59.jpg",
-      "popularity_score": 97,
-      "popularity_signals": [
-        "want to play",
-        "visits",
-        "playing",
-        "played"
-      ],
-      "popularity_coverage": 4,
-      "popularity_rank": 1
-    },
     {
       "slug": "silver-palace",
       "title": "Silver Palace",
@@ -48,6 +25,29 @@
         "visits"
       ],
       "popularity_coverage": 2,
+      "popularity_rank": 1
+    },
+    {
+      "slug": "monster-hunter-wilds-switch-2",
+      "title": "Monster Hunter Wilds",
+      "release_date": "2026-12-04",
+      "platforms": [
+        "Nintendo Switch 2"
+      ],
+      "verification_status": "estimated",
+      "igdb_game_id": 279661,
+      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar2q59.jpg",
+      "igdb_logo_url": null,
+      "logo_url": null,
+      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar2q59.jpg",
+      "popularity_score": 95,
+      "popularity_signals": [
+        "want to play",
+        "visits",
+        "playing",
+        "played"
+      ],
+      "popularity_coverage": 4,
       "popularity_rank": 2
     },
     {
@@ -66,7 +66,7 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo11ng.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo11ng.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6r3h.jpg",
-      "popularity_score": 76,
+      "popularity_score": 84,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -87,34 +87,13 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5zbq.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5zbq.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5zbq.jpg",
-      "popularity_score": 74,
+      "popularity_score": 73,
       "popularity_signals": [
         "want to play",
         "visits"
       ],
       "popularity_coverage": 2,
       "popularity_rank": 4
-    },
-    {
-      "slug": "warhammer-40000-dawn-of-war-iv",
-      "title": "Warhammer 40,000: Dawn of War IV",
-      "release_date": "2026-12-03",
-      "platforms": [
-        "PC"
-      ],
-      "verification_status": "verified",
-      "igdb_game_id": 361859,
-      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6ox1.jpg",
-      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar41cc.jpg",
-      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar41cc.jpg",
-      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6ox1.jpg",
-      "popularity_score": 64,
-      "popularity_signals": [
-        "want to play",
-        "visits"
-      ],
-      "popularity_coverage": 2,
-      "popularity_rank": 5
     },
     {
       "slug": "final-fantasy-vii-revelation",
@@ -132,7 +111,28 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar62ze.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar62ze.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar62e8.jpg",
-      "popularity_score": 62,
+      "popularity_score": 65,
+      "popularity_signals": [
+        "want to play",
+        "visits"
+      ],
+      "popularity_coverage": 2,
+      "popularity_rank": 5
+    },
+    {
+      "slug": "warhammer-40000-dawn-of-war-iv",
+      "title": "Warhammer 40,000: Dawn of War IV",
+      "release_date": "2026-12-03",
+      "platforms": [
+        "PC"
+      ],
+      "verification_status": "verified",
+      "igdb_game_id": 361859,
+      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6ox1.jpg",
+      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar41cc.jpg",
+      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar41cc.jpg",
+      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6ox1.jpg",
+      "popularity_score": 60,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -156,7 +156,7 @@
       "igdb_logo_url": null,
       "logo_url": null,
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar260r.jpg",
-      "popularity_score": 49,
+      "popularity_score": 46,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -224,7 +224,7 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5xzb.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5xzb.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5xzb.jpg",
-      "popularity_score": 33,
+      "popularity_score": 36,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -257,27 +257,6 @@
       "popularity_rank": 11
     },
     {
-      "slug": "xenoblade-chronicles-3-switch-2",
-      "title": "Xenoblade Chronicles 3: Switch 2 Edition",
-      "release_date": "2026-12-03",
-      "platforms": [
-        "Nintendo Switch 2"
-      ],
-      "verification_status": "estimated",
-      "igdb_game_id": 405448,
-      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6b87.jpg",
-      "igdb_logo_url": null,
-      "logo_url": null,
-      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6b87.jpg",
-      "popularity_score": 16,
-      "popularity_signals": [
-        "want to play",
-        "visits"
-      ],
-      "popularity_coverage": 2,
-      "popularity_rank": 12
-    },
-    {
       "slug": "aeterna-lucis",
       "title": "Aeterna Lucis",
       "release_date": "2026-12-03",
@@ -294,6 +273,27 @@
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo10cy.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar2ong.jpg",
       "popularity_score": 15,
+      "popularity_signals": [
+        "want to play",
+        "visits"
+      ],
+      "popularity_coverage": 2,
+      "popularity_rank": 12
+    },
+    {
+      "slug": "xenoblade-chronicles-3-switch-2",
+      "title": "Xenoblade Chronicles 3: Switch 2 Edition",
+      "release_date": "2026-12-03",
+      "platforms": [
+        "Nintendo Switch 2"
+      ],
+      "verification_status": "estimated",
+      "igdb_game_id": 405448,
+      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6b87.jpg",
+      "igdb_logo_url": null,
+      "logo_url": null,
+      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6b87.jpg",
+      "popularity_score": 13,
       "popularity_signals": [
         "want to play",
         "visits"
