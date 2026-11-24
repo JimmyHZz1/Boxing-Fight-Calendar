@@ -1571,9 +1571,24 @@
       "image_match_score": 1.0,
       "image_match_method": "category:Category:Aaron Pico",
       "image_verified_at": "2026-11-24T00:13:22Z"
+    },
+    "alexandre pantoja": {
+      "name": "Alexandre Pantoja",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/alexandre-pantoja.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Alexandre_Pantoja.png",
+      "image_credit": "Wikimedia Commons · Sexto Round · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Alexandre Pantoja",
+      "image_verified_at": "2026-11-24T10:17:56Z",
+      "image_local_path": "assets/images/ufc/alexandre-pantoja.png"
     }
   },
-  "updated_at": "2026-11-24T02:54:57Z",
+  "updated_at": "2026-11-24T10:17:56Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1678,9 +1693,9 @@
     "melquizael costa": "2026-11-09T12:52:42Z",
     "brian ortega": "2026-11-09T12:52:42Z",
     "patricio pitbull": "2026-11-24T00:13:22Z",
-    "joshua van": "2026-11-09T13:10:18Z",
-    "alexandre pantoja": "2026-11-09T13:10:18Z",
-    "manel kape": "2026-11-09T13:10:18Z",
+    "joshua van": "2026-11-24T10:17:56Z",
+    "alexandre pantoja": "2026-11-24T10:17:56Z",
+    "manel kape": "2026-11-24T10:17:56Z",
     "brandon royval": "2026-11-09T13:10:18Z",
     "tatsuro taira": "2026-11-09T13:10:18Z",
     "kyoji horiguchi": "2026-11-09T13:33:36Z",
@@ -1962,24 +1977,16 @@
     }
   },
   "enrichment": {
-    "batch_number": 69,
+    "batch_number": 70,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 401,
-    "cumulative_found": 111,
-    "cumulative_missing": 290,
-    "cumulative_rejected": 343,
-    "last_batch_at": "2026-11-24T00:13:22Z",
-    "last_successful_batch_at": "2026-11-24T00:13:22Z",
-    "last_rate_limited_at": "2026-11-24T00:13:22Z",
+    "cumulative_attempted": 405,
+    "cumulative_found": 112,
+    "cumulative_missing": 293,
+    "cumulative_rejected": 344,
+    "last_batch_at": "2026-11-24T10:17:56Z",
+    "last_successful_batch_at": "2026-11-24T10:17:56Z",
+    "last_rate_limited_at": "2026-11-24T10:17:56Z",
     "history": [
-      {
-        "batch": 40,
-        "at": "2026-11-15T14:51:27Z",
-        "attempted": 1,
-        "found": 0,
-        "missing": 1,
-        "rate_limited": true
-      },
       {
         "batch": 41,
         "at": "2026-11-15T15:28:41Z",
@@ -2207,6 +2214,14 @@
       {
         "batch": 69,
         "at": "2026-11-24T00:13:22Z",
+        "attempted": 4,
+        "found": 1,
+        "missing": 3,
+        "rate_limited": true
+      },
+      {
+        "batch": 70,
+        "at": "2026-11-24T10:17:56Z",
         "attempted": 4,
         "found": 1,
         "missing": 3,

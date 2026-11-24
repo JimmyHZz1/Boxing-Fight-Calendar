@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-23T12:14:35Z",
+  "updated_at": "2026-11-24T10:17:56Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -1157,6 +1157,17 @@
       "creator": "Wikimedia Commons · MMAnytt · CC BY 3.0",
       "attribution": "Wikimedia Commons · MMAnytt · CC BY 3.0",
       "verified_at": "2026-11-23T12:14:35Z",
+      "sport": "ufc"
+    },
+    "alexandre pantoja": {
+      "name": "Alexandre Pantoja",
+      "path": "assets/images/ufc/alexandre-pantoja.png",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Alexandre_Pantoja.png",
+      "licence": "CC BY 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by/3.0",
+      "creator": "Wikimedia Commons · Sexto Round · CC BY 3.0",
+      "attribution": "Wikimedia Commons · Sexto Round · CC BY 3.0",
+      "verified_at": "2026-11-24T10:17:56Z",
       "sport": "ufc"
     }
   },
