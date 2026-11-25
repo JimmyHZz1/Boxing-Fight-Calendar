@@ -5530,59 +5530,66 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 4,
+    "attempted": 5,
     "found": 139,
     "missing": 531,
     "rejected": 0,
     "by_sport": {
       "ufc": {
-        "attempted": 4,
-        "found": 1,
-        "missing": 3,
+        "attempted": 5,
+        "found": 0,
+        "missing": 5,
         "rejected": 0
       }
     },
     "search_details": [
       {
-        "name": "Pat Sabatini",
-        "queries": 3,
-        "candidate_files": 0,
-        "accepted": 0,
-        "rejections": {}
-      },
-      {
-        "name": "Brandon Moreno",
-        "queries": 3,
-        "candidate_files": 3,
-        "accepted": 3,
-        "rejections": {}
-      },
-      {
-        "name": "Amir Albazi",
-        "queries": 3,
-        "candidate_files": 0,
-        "accepted": 0,
-        "rejections": {}
-      },
-      {
         "name": "Ramazan Temirov",
-        "queries": 1,
+        "queries": 3,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Tim Elliott",
+        "queries": 3,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Sumudaerji",
+        "queries": 2,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Steve Erceg",
+        "queries": 3,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Charles Johnson",
+        "queries": 0,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       }
     ],
-    "checked_at": "2026-11-25T04:00:08Z",
+    "checked_at": "2026-11-25T14:10:54Z",
     "library_entries": 114,
-    "newly_found": 1,
-    "cumulative_attempted": 414,
+    "newly_found": 0,
+    "cumulative_attempted": 419,
     "cumulative_found": 114,
-    "cumulative_missing": 300,
+    "cumulative_missing": 305,
     "cumulative_rejected": 347,
-    "batch_number": 72,
-    "last_batch_at": "2026-11-25T04:00:08Z",
-    "last_successful_batch_at": "2026-11-25T04:00:08Z",
-    "last_rate_limited_at": "2026-11-25T04:00:08Z",
+    "batch_number": 73,
+    "last_batch_at": "2026-11-25T14:10:54Z",
+    "last_successful_batch_at": "2026-11-25T14:10:54Z",
+    "last_rate_limited_at": "2026-11-25T14:10:54Z",
     "coverage": {
       "boxing fight card fighters": {
         "total": 276,

@@ -1618,7 +1618,7 @@
       "image_local_path": "assets/images/ufc/brandon-moreno.jpg"
     }
   },
-  "updated_at": "2026-11-25T04:00:08Z",
+  "updated_at": "2026-11-25T14:10:54Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1733,10 +1733,10 @@
     "asu almabayev": "2026-11-24T20:46:41Z",
     "brandon moreno": "2026-11-25T04:00:08Z",
     "amir albazi": "2026-11-25T04:00:08Z",
-    "ramazan temirov": "2026-11-09T13:35:58Z",
-    "tim elliott": "2026-11-09T13:35:58Z",
-    "steve erceg": "2026-11-09T13:37:46Z",
-    "sumudaerji": "2026-11-09T13:37:46Z",
+    "ramazan temirov": "2026-11-25T14:10:54Z",
+    "tim elliott": "2026-11-25T14:10:54Z",
+    "steve erceg": "2026-11-25T14:10:54Z",
+    "sumudaerji": "2026-11-25T14:10:54Z",
     "tagir ulanbekov": "2026-11-09T13:37:46Z",
     "ciryl gane": "2026-11-09T13:37:46Z",
     "tom aspinall": "2026-11-09T13:37:46Z",
@@ -2008,24 +2008,16 @@
     }
   },
   "enrichment": {
-    "batch_number": 72,
+    "batch_number": 73,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 414,
+    "cumulative_attempted": 419,
     "cumulative_found": 114,
-    "cumulative_missing": 300,
+    "cumulative_missing": 305,
     "cumulative_rejected": 347,
-    "last_batch_at": "2026-11-25T04:00:08Z",
-    "last_successful_batch_at": "2026-11-25T04:00:08Z",
-    "last_rate_limited_at": "2026-11-25T04:00:08Z",
+    "last_batch_at": "2026-11-25T14:10:54Z",
+    "last_successful_batch_at": "2026-11-25T14:10:54Z",
+    "last_rate_limited_at": "2026-11-25T14:10:54Z",
     "history": [
-      {
-        "batch": 43,
-        "at": "2026-11-15T20:31:19Z",
-        "attempted": 4,
-        "found": 2,
-        "missing": 2,
-        "rate_limited": true
-      },
       {
         "batch": 44,
         "at": "2026-11-16T00:51:57Z",
@@ -2256,6 +2248,14 @@
         "attempted": 4,
         "found": 1,
         "missing": 3,
+        "rate_limited": true
+      },
+      {
+        "batch": 73,
+        "at": "2026-11-25T14:10:54Z",
+        "attempted": 5,
+        "found": 0,
+        "missing": 5,
         "rate_limited": true
       }
     ],
