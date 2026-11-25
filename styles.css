@@ -3902,3 +3902,23 @@ body.hub-selection-mode .version-history-link,body.hub-selection-mode .games-ver
 .hub-image-history-row>b{font-size:9px;color:var(--muted)}
 .hub-image-report-alert{padding:11px;border:1px solid rgba(231,189,112,.45);background:rgba(231,189,112,.07);color:#e7bd70;font-size:9px;font-weight:800;letter-spacing:.5px;line-height:1.6}
 @media(max-width:600px){.hub-image-report-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.hub-image-report-coverage-grid{grid-template-columns:1fr}.hub-image-report-asset{grid-template-columns:minmax(0,1fr) auto}.hub-image-report-asset span{grid-column:1/-1;grid-row:2}.hub-image-history-row{grid-template-columns:minmax(0,1fr) auto}.hub-image-history-row>small{grid-column:1/-1}}
+
+
+/* The Hub selector: centre the three-tile second row beneath the four-tile first row. */
+@media (min-width: 901px) {
+  .hub-selection-grid {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+  .hub-selection-grid > .hub-selection-tile {
+    grid-column: span 2;
+  }
+  .hub-selection-grid > .entertainment-hub-tile {
+    grid-column: 2 / span 2;
+  }
+  .hub-selection-grid > .technology-hub-tile {
+    grid-column: 4 / span 2;
+  }
+  .hub-selection-grid > .esports-hub-tile {
+    grid-column: 6 / span 2;
+  }
+}
