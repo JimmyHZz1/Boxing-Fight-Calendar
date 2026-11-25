@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="./styles.css?v=20261112-14">
   <title>The Hub</title>
   <link rel="stylesheet" href="./swgoh.css?v=20261112-06">
+  <link rel="stylesheet" href="./esports-hub.css?v=20261123-01">
 </head>
 <body>
   <div class="app-shell">
@@ -19,7 +20,7 @@
           <span class="brand-wordmark"><strong id="brand-title">SPORTS</strong><small id="brand-subtitle">HUB</small></span>
           <span class="brand-switcher-caret" aria-hidden="true">⌄</span>
         </button>
-        <div id="mobile-calendar-menu" class="mobile-calendar-menu" hidden aria-label="Choose hub"><button type="button" data-screen="hub-selection-screen"><span class="brand-menu-mark hub-home-mark" aria-hidden="true">H</span><span class="calendar-menu-wordmark"><strong>THE HUB</strong></span></button><button type="button" data-screen="home-screen"><span class="brand-menu-mark sports-mark" aria-hidden="true">S</span><span class="calendar-menu-wordmark"><strong>SPORTS</strong><small>HUB</small></span></button><button type="button" data-screen="games-calendar-screen"><span class="brand-menu-mark games-mark" aria-hidden="true">G</span><span class="calendar-menu-wordmark"><strong>GAMES</strong><small>HUB</small></span></button><button type="button" data-screen="entertainment-hub-screen"><span class="brand-menu-mark entertainment-mark" aria-hidden="true">▶</span><span class="calendar-menu-wordmark"><strong>ENTERTAINMENT</strong><small>HUB</small></span></button><button type="button" data-screen="swgoh-hub-screen"><img class="brand-menu-logo swgoh-menu-logo" src="https://play-lh.googleusercontent.com/A6eqLfsKSxaqGXhweuxc57kkkL4RkCNPL3sWHwXJ52Li1Fuiu327nGz4NnWhVRa73HYWrLvtTcNi_VzxZzJ_1Ck%3Dw240-h480" alt="" loading="lazy"><span class="calendar-menu-wordmark"><strong>SWGOH</strong><small>HUB</small></span></button></div>
+        <div id="mobile-calendar-menu" class="mobile-calendar-menu" hidden aria-label="Choose hub"><button type="button" data-screen="hub-selection-screen"><span class="brand-menu-mark hub-home-mark" aria-hidden="true">H</span><span class="calendar-menu-wordmark"><strong>THE HUB</strong></span></button><button type="button" data-screen="home-screen"><span class="brand-menu-mark sports-mark" aria-hidden="true">S</span><span class="calendar-menu-wordmark"><strong>SPORTS</strong><small>HUB</small></span></button><button type="button" data-screen="games-calendar-screen"><span class="brand-menu-mark games-mark" aria-hidden="true">G</span><span class="calendar-menu-wordmark"><strong>GAMES</strong><small>HUB</small></span></button><button type="button" data-screen="entertainment-hub-screen"><span class="brand-menu-mark entertainment-mark" aria-hidden="true">▶</span><span class="calendar-menu-wordmark"><strong>ENTERTAINMENT</strong><small>HUB</small></span></button><button type="button" data-screen="esports-hub-screen"><span class="brand-menu-mark esports-menu-mark" aria-hidden="true">E</span><span class="calendar-menu-wordmark"><strong>ESPORTS</strong><small>HUB</small></span></button><button type="button" data-screen="swgoh-hub-screen"><img class="brand-menu-logo swgoh-menu-logo" src="https://play-lh.googleusercontent.com/A6eqLfsKSxaqGXhweuxc57kkkL4RkCNPL3sWHwXJ52Li1Fuiu327nGz4NnWhVRa73HYWrLvtTcNi_VzxZzJ_1Ck%3Dw240-h480" alt="" loading="lazy"><span class="calendar-menu-wordmark"><strong>SWGOH</strong><small>HUB</small></span></button></div>
       </div>
       <nav class="topbar-nav" aria-label="Main navigation">
         <button type="button" class="topbar-nav-item active" data-screen="home-screen"><span aria-hidden="true">⌂</span> HOME</button>
@@ -77,9 +78,54 @@
           <article class="hub-selection-tile technology-hub-tile is-coming" aria-label="Technology Hub coming soon">
             <span class="hub-tile-mark technology-tile-mark" aria-hidden="true">⌘</span><span class="hub-tile-name"><strong>TECHNOLOGY</strong><small>HUB</small></span><span class="hub-tile-description">Technology, devices and industry updates</span><span class="hub-tile-open">COMING SOON</span>
           </article>
+          <button type="button" class="hub-selection-tile esports-hub-tile" data-hub-screen="esports-hub-screen">
+            <span class="hub-tile-mark esports-tile-mark" aria-hidden="true">E</span><span class="hub-tile-name"><strong>ESPORTS</strong><small>HUB</small></span><span class="hub-tile-description">Counter-Strike tournaments, live matches and results</span><span class="hub-tile-open">OPEN ESPORTS HUB →</span>
+          </button>
         </div>
         <section class="hub-selection-coming"><span class="hub-selection-coming-mark">＋</span><div><strong>More Hubs Coming Soon</strong><p>New hubs will join as they are ready.</p></div></section>
       </section>
+<section id="esports-hub-screen" class="screen esports-hub-screen" aria-labelledby="esports-hub-title">
+  <div class="esports-hero">
+    <div class="esports-hero-copy">
+      <span class="eyebrow esports-eyebrow">THE ESPORTS HUB · COUNTER-STRIKE 2</span>
+      <h1 id="esports-hub-title">Counter-Strike.<br><em>Every major stage.</em></h1>
+      <p>Follow the premier CS2 circuit — tournaments, live matches, fixtures, results and the teams competing for the biggest titles.</p>
+      <div class="esports-hero-meta"><span>MAJORS & PREMIER EVENTS</span><span>UK LOCAL TIME</span><span id="esports-feed-status">CONNECTING TO TOURNAMENT DATA…</span></div>
+    </div><div class="esports-hero-mark" aria-hidden="true">CS2</div>
+  </div>
+  <div class="esports-toolbar">
+    <label class="esports-search"><span aria-hidden="true">⌕</span><input id="esports-search-input" type="search" placeholder="Search tournaments, teams or matches…" autocomplete="off"></label>
+    <button type="button" id="esports-refresh" class="esports-refresh">↻ REFRESH</button>
+  </div>
+  <nav class="esports-section-nav" aria-label="Counter-Strike sections">
+    <button type="button" data-esports-view="overview" aria-pressed="true">OVERVIEW</button>
+    <button type="button" data-esports-view="tournaments" aria-pressed="false">TOURNAMENTS</button>
+    <button type="button" data-esports-view="teams" aria-pressed="false">TEAMS</button>
+  </nav>
+  <section class="esports-content-section" id="esports-live-section">
+    <div class="esports-section-heading"><div><span class="eyebrow esports-eyebrow">ON NOW</span><h2>Live <em>matches.</em></h2></div><span class="esports-section-tag" id="esports-live-count">0 LIVE</span></div>
+    <div id="esports-live-matches" class="esports-match-grid"><p class="esports-empty">Loading live match data…</p></div>
+  </section>
+  <section class="esports-content-section" id="esports-upcoming-section">
+    <div class="esports-section-heading"><div><span class="eyebrow esports-eyebrow">NEXT UP</span><h2>Upcoming <em>tournaments.</em></h2></div><span class="esports-section-tag" id="esports-upcoming-count">0 EVENTS</span></div>
+    <div id="esports-upcoming-events" class="esports-tournament-grid"><p class="esports-empty">Loading the tournament calendar…</p></div>
+  </section>
+  <section class="esports-content-section" id="esports-results-section">
+    <div class="esports-section-heading"><div><span class="eyebrow esports-eyebrow">FINAL SCORES</span><h2>Recent <em>results.</em></h2></div><span class="esports-section-tag" id="esports-results-count">0 RESULTS</span></div>
+    <div id="esports-recent-results" class="esports-match-grid"><p class="esports-empty">No completed matches in the current data feed.</p></div>
+  </section>
+  <section class="esports-content-section" id="esports-tournaments-section" hidden>
+    <div class="esports-section-heading"><div><span class="eyebrow esports-eyebrow">THE CIRCUIT</span><h2>Tournament <em>centre.</em></h2></div><span class="esports-section-tag">MAJORS & PREMIER</span></div>
+    <div class="esports-filter-row" id="esports-organiser-filters"><button type="button" data-esports-organiser="all" aria-pressed="true">ALL ORGANISERS</button><button type="button" data-esports-organiser="valve">VALVE</button><button type="button" data-esports-organiser="esl">ESL / IEM</button><button type="button" data-esports-organiser="blast">BLAST</button><button type="button" data-esports-organiser="pgl">PGL</button><button type="button" data-esports-organiser="other">OTHER PREMIER</button></div>
+    <div id="esports-all-tournaments" class="esports-tournament-grid"></div>
+  </section>
+  <section class="esports-content-section" id="esports-teams-section" hidden>
+    <div class="esports-section-heading"><div><span class="eyebrow esports-eyebrow">COMPETITORS</span><h2>Team <em>profiles.</em></h2></div><span class="esports-section-tag">ROSTERS & FORM</span></div>
+    <div id="esports-team-grid" class="esports-team-grid"><p class="esports-empty">Team profiles will appear when verified roster data is available.</p></div>
+  </section>
+  <dialog id="esports-detail-dialog" class="esports-detail-dialog"><div class="esports-detail-heading"><div><span class="eyebrow esports-eyebrow">TOURNAMENT PROFILE</span><h2 id="esports-detail-title">Tournament</h2></div><button type="button" id="esports-detail-close" aria-label="Close tournament details">×</button></div><div id="esports-detail-content"></div></dialog>
+  <div class="esports-data-note"><strong>DATA INTEGRITY</strong><span>Only published fixtures, scores and roster information will be shown. Missing live data will be labelled rather than estimated.</span></div>
+</section>
 <section id="entertainment-hub-screen" class="screen entertainment-hub-screen" aria-labelledby="entertainment-hub-title">
   <div class="entertainment-hero">
     <div class="entertainment-hero-copy">
@@ -628,5 +674,6 @@
   <script src="./notifications.js?v=20261111-02"></script>
   <script src="./data-health.js?v=20261111-02"></script>
   <script src="./admin-updates.js?v=20261111-02"></script>
+  <script src="./esports-hub.js?v=20261123-01"></script>
 </body>
 </html>
