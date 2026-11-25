@@ -1,0 +1,331 @@
+{
+  "mode": "DEMO DATA — NOT LIVE",
+  "updated_at": "2026-11-25T14:00:00Z",
+  "indices": [
+    {
+      "symbol": "FTSE 100",
+      "name": "UK large-cap",
+      "price": "9,642.18",
+      "change": "+42.36",
+      "change_pct": "+0.44%",
+      "currency": "GBP",
+      "market": "UK"
+    },
+    {
+      "symbol": "FTSE 250",
+      "name": "UK mid-cap",
+      "price": "22,184.60",
+      "change": "-38.20",
+      "change_pct": "-0.17%",
+      "currency": "GBP",
+      "market": "UK"
+    },
+    {
+      "symbol": "FTSE All-Share",
+      "name": "Broad UK market",
+      "price": "5,218.42",
+      "change": "+18.70",
+      "change_pct": "+0.36%",
+      "currency": "GBP",
+      "market": "UK"
+    },
+    {
+      "symbol": "S&P 500",
+      "name": "US large-cap",
+      "price": "6,812.45",
+      "change": "+31.72",
+      "change_pct": "+0.47%",
+      "currency": "USD",
+      "market": "US"
+    },
+    {
+      "symbol": "NASDAQ",
+      "name": "US technology",
+      "price": "23,104.80",
+      "change": "+126.40",
+      "change_pct": "+0.55%",
+      "currency": "USD",
+      "market": "US"
+    },
+    {
+      "symbol": "DOW JONES",
+      "name": "US blue chips",
+      "price": "47,820.15",
+      "change": "-64.30",
+      "change_pct": "-0.13%",
+      "currency": "USD",
+      "market": "US"
+    }
+  ],
+  "assets": [
+    {
+      "id": "azn",
+      "name": "AstraZeneca",
+      "symbol": "AZN",
+      "exchange": "LSE",
+      "market": "UK",
+      "type": "share",
+      "price": 126.45,
+      "change_pct": 0.82,
+      "currency": "GBP",
+      "sector": "Healthcare",
+      "description": "Illustrative UK-listed pharmaceutical company profile."
+    },
+    {
+      "id": "rr",
+      "name": "Rolls-Royce Holdings",
+      "symbol": "RR.",
+      "exchange": "LSE",
+      "market": "UK",
+      "type": "share",
+      "price": 10.84,
+      "change_pct": 1.64,
+      "currency": "GBP",
+      "sector": "Aerospace & Defence",
+      "description": "Illustrative UK-listed aerospace and engineering company profile."
+    },
+    {
+      "id": "shel",
+      "name": "Shell",
+      "symbol": "SHEL",
+      "exchange": "LSE",
+      "market": "UK",
+      "type": "share",
+      "price": 27.18,
+      "change_pct": -0.38,
+      "currency": "GBP",
+      "sector": "Energy",
+      "description": "Illustrative UK-listed energy company profile."
+    },
+    {
+      "id": "hsba",
+      "name": "HSBC Holdings",
+      "symbol": "HSBA",
+      "exchange": "LSE",
+      "market": "UK",
+      "type": "share",
+      "price": 9.72,
+      "change_pct": 0.26,
+      "currency": "GBP",
+      "sector": "Banking",
+      "description": "Illustrative UK-listed banking company profile."
+    },
+    {
+      "id": "vusa",
+      "name": "Vanguard S&P 500 UCITS ETF",
+      "symbol": "VUSA",
+      "exchange": "LSE",
+      "market": "UK",
+      "type": "etf",
+      "price": 98.62,
+      "change_pct": 0.41,
+      "currency": "GBP",
+      "sector": "Equity ETF",
+      "description": "Illustrative ETF listing and price."
+    },
+    {
+      "id": "msft",
+      "name": "Microsoft",
+      "symbol": "MSFT",
+      "exchange": "NASDAQ",
+      "market": "US",
+      "type": "share",
+      "price": 512.34,
+      "change_pct": 1.12,
+      "currency": "USD",
+      "sector": "Technology",
+      "description": "Illustrative US-listed software and cloud company profile."
+    },
+    {
+      "id": "nvda",
+      "name": "NVIDIA",
+      "symbol": "NVDA",
+      "exchange": "NASDAQ",
+      "market": "US",
+      "type": "share",
+      "price": 188.72,
+      "change_pct": 2.35,
+      "currency": "USD",
+      "sector": "Semiconductors",
+      "description": "Illustrative US-listed semiconductor company profile."
+    },
+    {
+      "id": "aapl",
+      "name": "Apple",
+      "symbol": "AAPL",
+      "exchange": "NASDAQ",
+      "market": "US",
+      "type": "share",
+      "price": 276.18,
+      "change_pct": -0.54,
+      "currency": "USD",
+      "sector": "Technology",
+      "description": "Illustrative US-listed consumer technology company profile."
+    },
+    {
+      "id": "spy",
+      "name": "SPDR S&P 500 ETF",
+      "symbol": "SPY",
+      "exchange": "NYSE Arca",
+      "market": "US",
+      "type": "etf",
+      "price": 681.22,
+      "change_pct": 0.48,
+      "currency": "USD",
+      "sector": "Equity ETF",
+      "description": "Illustrative US-listed index ETF."
+    },
+    {
+      "id": "gld",
+      "name": "SPDR Gold Shares",
+      "symbol": "GLD",
+      "exchange": "NYSE Arca",
+      "market": "US",
+      "type": "etf",
+      "price": 382.15,
+      "change_pct": 0.72,
+      "currency": "USD",
+      "sector": "Commodity ETF",
+      "description": "Illustrative gold-backed ETF."
+    },
+    {
+      "id": "ukx",
+      "name": "FTSE 100",
+      "symbol": "UKX",
+      "exchange": "INDEX",
+      "market": "UK",
+      "type": "index",
+      "price": 9642.18,
+      "change_pct": 0.44,
+      "currency": "GBP",
+      "sector": "UK Index",
+      "description": "Illustrative FTSE 100 index profile."
+    },
+    {
+      "id": "spx",
+      "name": "S&P 500",
+      "symbol": "SPX",
+      "exchange": "INDEX",
+      "market": "US",
+      "type": "index",
+      "price": 6812.45,
+      "change_pct": 0.47,
+      "currency": "USD",
+      "sector": "US Index",
+      "description": "Illustrative S&P 500 index profile."
+    },
+    {
+      "id": "gold",
+      "name": "Gold Spot",
+      "symbol": "XAU/USD",
+      "exchange": "COMMODITY",
+      "market": "GLOBAL",
+      "type": "commodity",
+      "price": 4138.6,
+      "change_pct": 0.91,
+      "currency": "USD",
+      "sector": "Precious metal",
+      "description": "Illustrative spot gold price per troy ounce."
+    },
+    {
+      "id": "brent",
+      "name": "Brent Crude",
+      "symbol": "BRENT",
+      "exchange": "COMMODITY",
+      "market": "GLOBAL",
+      "type": "commodity",
+      "price": 64.82,
+      "change_pct": -1.18,
+      "currency": "USD",
+      "sector": "Energy commodity",
+      "description": "Illustrative Brent crude price per barrel."
+    },
+    {
+      "id": "gbpusd",
+      "name": "British Pound / US Dollar",
+      "symbol": "GBP/USD",
+      "exchange": "FX",
+      "market": "GLOBAL",
+      "type": "currency",
+      "price": 1.3184,
+      "change_pct": 0.16,
+      "currency": "USD",
+      "sector": "Foreign exchange",
+      "description": "Illustrative GBP/USD exchange rate."
+    },
+    {
+      "id": "eurusd",
+      "name": "Euro / US Dollar",
+      "symbol": "EUR/USD",
+      "exchange": "FX",
+      "market": "GLOBAL",
+      "type": "currency",
+      "price": 1.1542,
+      "change_pct": -0.08,
+      "currency": "USD",
+      "sector": "Foreign exchange",
+      "description": "Illustrative EUR/USD exchange rate."
+    }
+  ],
+  "watchlists": {
+    "uk": [
+      "azn",
+      "rr",
+      "shel",
+      "vusa"
+    ],
+    "us": [
+      "msft",
+      "nvda",
+      "aapl",
+      "spy",
+      "gold"
+    ]
+  },
+  "news": [
+    {
+      "market": "UK",
+      "time": "08:30",
+      "title": "UK market opens higher in illustrative trading session",
+      "summary": "Sample headline for layout testing. Not a real news report."
+    },
+    {
+      "market": "US",
+      "time": "13:45",
+      "title": "Technology shares lead sample US market movers",
+      "summary": "Demonstration copy only; no live publisher feed is connected."
+    },
+    {
+      "market": "GLOBAL",
+      "time": "14:05",
+      "title": "Gold and energy commodities feature in demo market wrap",
+      "summary": "Illustrative market commentary, not investment research."
+    }
+  ],
+  "events": [
+    {
+      "date": "26 NOV",
+      "market": "UK",
+      "title": "Example UK company results",
+      "type": "EARNINGS"
+    },
+    {
+      "date": "27 NOV",
+      "market": "US",
+      "title": "Example US economic release",
+      "type": "ECONOMIC"
+    },
+    {
+      "date": "02 DEC",
+      "market": "UK",
+      "title": "Example dividend date",
+      "type": "DIVIDEND"
+    },
+    {
+      "date": "04 DEC",
+      "market": "US",
+      "title": "Example quarterly earnings",
+      "type": "EARNINGS"
+    }
+  ]
+}

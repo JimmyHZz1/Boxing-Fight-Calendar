@@ -1,7 +1,7 @@
 {
   "sport": "counter-strike-2",
-  "provider": "Tournament data source integration pending",
-  "updated_at": null,
+  "provider": "DEMO DATA — NOT A LIVE TOURNAMENT FEED",
+  "updated_at": "2026-11-25T14:00:00Z",
   "coverage": {
     "scope": "all-major-and-premier-events",
     "organisers": [
@@ -23,12 +23,113 @@
       "Standalone open qualifiers"
     ]
   },
-  "events": [],
-  "matches": [],
-  "teams": [],
+  "events": [
+    {
+      "id": "demo-major",
+      "name": "Counter-Strike Major — Demo Championship",
+      "organiser": "Valve Majors",
+      "organiser_id": "valve",
+      "tier": "MAJOR",
+      "status": "upcoming",
+      "start_at": "2026-12-03T10:00:00Z",
+      "end_at": "2026-12-15T22:00:00Z",
+      "location": "Demo venue · Europe",
+      "team_count": 24,
+      "format": "Illustrative 24-team major format",
+      "teams": [
+        "Demo Team Alpha",
+        "Demo Team Bravo",
+        "Demo Team Charlie"
+      ],
+      "event_url": ""
+    },
+    {
+      "id": "demo-fissure",
+      "name": "FISSURE Playground — Demo Edition",
+      "organiser": "FISSURE Playground",
+      "organiser_id": "fissure",
+      "tier": "PREMIER",
+      "status": "upcoming",
+      "start_at": "2026-12-08T12:00:00Z",
+      "end_at": "2026-12-13T20:00:00Z",
+      "location": "Demo venue · Online",
+      "team_count": 16,
+      "format": "Illustrative tournament entry"
+    },
+    {
+      "id": "demo-thunderpick",
+      "name": "Thunderpick World Championship — Demo",
+      "organiser": "Thunderpick World Championship",
+      "organiser_id": "thunderpick",
+      "tier": "PREMIER",
+      "status": "upcoming",
+      "start_at": "2026-12-18T13:00:00Z",
+      "end_at": "2026-12-22T21:00:00Z",
+      "location": "Demo venue · Europe",
+      "team_count": 12,
+      "format": "Illustrative tournament entry"
+    }
+  ],
+  "matches": [
+    {
+      "id": "demo-match-1",
+      "event_id": "demo-major",
+      "team_a": "Demo Team Alpha",
+      "team_b": "Demo Team Bravo",
+      "score_a": null,
+      "score_b": null,
+      "status": "scheduled",
+      "stage": "Opening round",
+      "start_at": "2026-12-03T14:00:00Z"
+    },
+    {
+      "id": "demo-match-2",
+      "event_id": "demo-fissure",
+      "team_a": "Demo Team Charlie",
+      "team_b": "Demo Team Delta",
+      "score_a": 2,
+      "score_b": 1,
+      "status": "completed",
+      "stage": "Sample semi-final",
+      "start_at": "2026-11-24T17:00:00Z"
+    },
+    {
+      "id": "demo-match-3",
+      "event_id": "demo-thunderpick",
+      "team_a": "Demo Team Echo",
+      "team_b": "Demo Team Foxtrot",
+      "score_a": null,
+      "score_b": null,
+      "status": "scheduled",
+      "stage": "Group stage",
+      "start_at": "2026-12-18T16:00:00Z"
+    }
+  ],
+  "teams": [
+    {
+      "name": "Demo Team Alpha",
+      "short_name": "DTA",
+      "region": "Europe",
+      "ranking": "Demo #1",
+      "org": "Sample organisation"
+    },
+    {
+      "name": "Demo Team Bravo",
+      "short_name": "DTB",
+      "region": "North America",
+      "ranking": "Demo #2",
+      "org": "Sample organisation"
+    },
+    {
+      "name": "Demo Team Charlie",
+      "short_name": "DTC",
+      "region": "Europe",
+      "ranking": "Demo #3",
+      "org": "Sample organisation"
+    }
+  ],
   "notes": [
-    "This is the feed contract for the Esports Hub.",
-    "No tournament fixtures, match scores or rosters have been fabricated.",
-    "Connect a verified Counter-Strike tournament data provider before publishing live schedules."
+    "All event names, teams, dates and scores are fictional test content.",
+    "No real live tournament schedule, match score or roster is represented."
   ]
 }
