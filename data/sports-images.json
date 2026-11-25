@@ -1616,9 +1616,24 @@
       "image_match_method": "category:Category:Brandon Moreno",
       "image_verified_at": "2026-11-25T04:00:08Z",
       "image_local_path": "assets/images/ufc/brandon-moreno.jpg"
+    },
+    "ciryl gane": {
+      "name": "Ciryl Gane",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/ciryl-gane.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Ciryl_Gane_en_visite_au_centre_d%27entra%C3%AEnement_du_MHSC_(cropped).jpg",
+      "image_credit": "Wikimedia Commons · MHSC TV - Montpellier Hérault Sport Club · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Ciryl Gane",
+      "image_verified_at": "2026-11-25T23:14:05Z",
+      "image_local_path": "assets/images/ufc/ciryl-gane.jpg"
     }
   },
-  "updated_at": "2026-11-25T14:24:59Z",
+  "updated_at": "2026-11-25T23:14:05Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1738,8 +1753,8 @@
     "steve erceg": "2026-11-25T14:10:54Z",
     "sumudaerji": "2026-11-25T14:10:54Z",
     "tagir ulanbekov": "2026-11-09T13:37:46Z",
-    "ciryl gane": "2026-11-09T13:37:46Z",
-    "tom aspinall": "2026-11-09T13:37:46Z",
+    "ciryl gane": "2026-11-25T23:14:05Z",
+    "tom aspinall": "2026-11-25T23:14:05Z",
     "alexander volkov": "2026-11-09T23:04:13Z",
     "sergei pavlovich": "2026-11-09T23:04:13Z",
     "josh hokit": "2026-11-09T23:04:13Z",
@@ -1765,7 +1780,7 @@
     "jan bachowicz": "2026-11-11T00:57:41Z",
     "azamat murzakanov": "2026-11-11T00:57:41Z",
     "robert whittaker": "2026-11-11T00:57:41Z",
-    "charles johnson": "2026-11-11T07:30:35Z",
+    "charles johnson": "2026-11-25T23:14:05Z",
     "johnny walker": "2026-11-11T07:30:35Z",
     "abdul rakhman yakhyaev": "2026-11-11T07:30:35Z",
     "alonzo menifield": "2026-11-11T07:30:35Z",
@@ -2008,24 +2023,16 @@
     }
   },
   "enrichment": {
-    "batch_number": 73,
+    "batch_number": 74,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 419,
-    "cumulative_found": 114,
-    "cumulative_missing": 305,
-    "cumulative_rejected": 347,
-    "last_batch_at": "2026-11-25T14:10:54Z",
-    "last_successful_batch_at": "2026-11-25T14:10:54Z",
-    "last_rate_limited_at": "2026-11-25T14:10:54Z",
+    "cumulative_attempted": 423,
+    "cumulative_found": 115,
+    "cumulative_missing": 308,
+    "cumulative_rejected": 349,
+    "last_batch_at": "2026-11-25T23:14:05Z",
+    "last_successful_batch_at": "2026-11-25T23:14:05Z",
+    "last_rate_limited_at": "2026-11-25T23:14:05Z",
     "history": [
-      {
-        "batch": 44,
-        "at": "2026-11-16T00:51:57Z",
-        "attempted": 5,
-        "found": 0,
-        "missing": 5,
-        "rate_limited": false
-      },
       {
         "batch": 45,
         "at": "2026-11-16T07:45:25Z",
@@ -2256,6 +2263,14 @@
         "attempted": 5,
         "found": 0,
         "missing": 5,
+        "rate_limited": true
+      },
+      {
+        "batch": 74,
+        "at": "2026-11-25T23:14:05Z",
+        "attempted": 4,
+        "found": 1,
+        "missing": 3,
         "rate_limited": true
       }
     ],
