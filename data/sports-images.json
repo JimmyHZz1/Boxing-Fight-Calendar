@@ -1601,9 +1601,24 @@
       "image_match_method": "category:Category:Kyoji Horiguchi",
       "image_verified_at": "2026-11-24T20:46:41Z",
       "image_local_path": "assets/images/ufc/kyoji-horiguchi.jpg"
+    },
+    "brandon moreno": {
+      "name": "Brandon Moreno",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/brandon-moreno.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Brandon_Moreno_February_2021_(cropped).jpg",
+      "image_credit": "Wikimedia Commons · DiarioMMA · CC BY-SA 4.0",
+      "image_license": "CC BY-SA 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Brandon Moreno",
+      "image_verified_at": "2026-11-25T04:00:08Z",
+      "image_local_path": "assets/images/ufc/brandon-moreno.jpg"
     }
   },
-  "updated_at": "2026-11-25T00:46:06Z",
+  "updated_at": "2026-11-25T04:00:08Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1716,8 +1731,8 @@
     "kyoji horiguchi": "2026-11-24T20:46:41Z",
     "loneer kavanagh": "2026-11-24T20:46:41Z",
     "asu almabayev": "2026-11-24T20:46:41Z",
-    "brandon moreno": "2026-11-09T13:35:58Z",
-    "amir albazi": "2026-11-09T13:35:58Z",
+    "brandon moreno": "2026-11-25T04:00:08Z",
+    "amir albazi": "2026-11-25T04:00:08Z",
     "ramazan temirov": "2026-11-09T13:35:58Z",
     "tim elliott": "2026-11-09T13:35:58Z",
     "steve erceg": "2026-11-09T13:37:46Z",
@@ -1955,7 +1970,8 @@
     "ashleyann lozada": "2026-11-22T22:23:37Z",
     "azalia amineva": "2026-11-22T22:23:37Z",
     "aznaur kalsynov": "2026-11-22T22:23:37Z",
-    "bernard joseph": "2026-11-22T22:23:37Z"
+    "bernard joseph": "2026-11-22T22:23:37Z",
+    "pat sabatini": "2026-11-25T04:00:08Z"
   },
   "audit": {
     "last_reviewed_at": "2026-11-09T12:15:00Z",
@@ -1992,24 +2008,16 @@
     }
   },
   "enrichment": {
-    "batch_number": 71,
+    "batch_number": 72,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 410,
-    "cumulative_found": 113,
-    "cumulative_missing": 297,
+    "cumulative_attempted": 414,
+    "cumulative_found": 114,
+    "cumulative_missing": 300,
     "cumulative_rejected": 347,
-    "last_batch_at": "2026-11-24T20:46:41Z",
-    "last_successful_batch_at": "2026-11-24T20:46:41Z",
-    "last_rate_limited_at": "2026-11-24T10:17:56Z",
+    "last_batch_at": "2026-11-25T04:00:08Z",
+    "last_successful_batch_at": "2026-11-25T04:00:08Z",
+    "last_rate_limited_at": "2026-11-25T04:00:08Z",
     "history": [
-      {
-        "batch": 42,
-        "at": "2026-11-15T16:10:46Z",
-        "attempted": 5,
-        "found": 3,
-        "missing": 2,
-        "rate_limited": false
-      },
       {
         "batch": 43,
         "at": "2026-11-15T20:31:19Z",
@@ -2241,8 +2249,16 @@
         "found": 1,
         "missing": 4,
         "rate_limited": false
+      },
+      {
+        "batch": 72,
+        "at": "2026-11-25T04:00:08Z",
+        "attempted": 4,
+        "found": 1,
+        "missing": 3,
+        "rate_limited": true
       }
     ],
-    "last_batch_rate_limited": false
+    "last_batch_rate_limited": true
   }
 }

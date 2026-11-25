@@ -234,13 +234,33 @@
           "rank": 20,
           "name": "Yuki Tsunoda",
           "team": "RB F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/yuki-tsunoda.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Yuki_Tsunoda_Macau_2019.jpg",
+          "image_credit": "Wikimedia Commons · Smith007 · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "category:Category:Yuki Tsunoda in 2019",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/yuki-tsunoda.jpg"
         },
         {
           "rank": 21,
           "name": "Ryo Hirakawa",
           "team": "Haas F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/ryo-hirakawa.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Ryo_Hirakawa_2024_WEC_Fuji_1.jpg",
+          "image_credit": "Wikimedia Commons · Morio · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "search:Ryo Hirakawa",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/ryo-hirakawa.jpg"
         },
         {
           "rank": 22,
@@ -3711,7 +3731,17 @@
             {
               "rank": 8,
               "name": "Brandon Moreno",
-              "image_url": null
+              "image_url": "./assets/images/ufc/brandon-moreno.jpg",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Brandon_Moreno_February_2021_(cropped).jpg",
+              "image_credit": "Wikimedia Commons · DiarioMMA · CC BY-SA 4.0",
+              "image_license": "CC BY-SA 4.0",
+              "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Brandon Moreno",
+              "image_verified_at": "2026-11-25T04:00:08Z",
+              "image_local_path": "assets/images/ufc/brandon-moreno.jpg"
             },
             {
               "rank": 9,
@@ -5500,32 +5530,89 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 410,
-    "found": 126,
-    "missing": 426,
-    "rejected": 347,
-    "by_sport": {},
-    "newly_found": 0,
+    "attempted": 4,
+    "found": 139,
+    "missing": 531,
+    "rejected": 0,
+    "by_sport": {
+      "ufc": {
+        "attempted": 4,
+        "found": 1,
+        "missing": 3,
+        "rejected": 0
+      }
+    },
+    "search_details": [
+      {
+        "name": "Pat Sabatini",
+        "queries": 3,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Brandon Moreno",
+        "queries": 3,
+        "candidate_files": 3,
+        "accepted": 3,
+        "rejections": {}
+      },
+      {
+        "name": "Amir Albazi",
+        "queries": 3,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Ramazan Temirov",
+        "queries": 1,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      }
+    ],
+    "checked_at": "2026-11-25T04:00:08Z",
+    "library_entries": 114,
+    "newly_found": 1,
+    "cumulative_attempted": 414,
+    "cumulative_found": 114,
+    "cumulative_missing": 300,
+    "cumulative_rejected": 347,
+    "batch_number": 72,
+    "last_batch_at": "2026-11-25T04:00:08Z",
+    "last_successful_batch_at": "2026-11-25T04:00:08Z",
+    "last_rate_limited_at": "2026-11-25T04:00:08Z",
     "coverage": {
+      "boxing fight card fighters": {
+        "total": 276,
+        "with_image": 2,
+        "missing": 274
+      },
       "f1 drivers": {
         "total": 25,
-        "with_image": 23,
-        "missing": 2
+        "with_image": 25,
+        "missing": 0
       },
       "f1 constructors": {
         "total": 11,
         "with_image": 11,
         "missing": 0
       },
-      "darts": {
-        "total": 229,
-        "with_image": 50,
-        "missing": 179
+      "darts top 50": {
+        "total": 50,
+        "with_image": 47,
+        "missing": 3
       },
       "ufc": {
         "total": 206,
-        "with_image": 42,
-        "missing": 164
+        "with_image": 43,
+        "missing": 163
+      },
+      "speedway GP riders": {
+        "total": 21,
+        "with_image": 11,
+        "missing": 10
       },
       "boxing": {
         "total": 81,
@@ -5533,17 +5620,7 @@
         "missing": 81
       }
     },
-    "checked_at": "2026-11-25T00:46:06Z",
-    "library_entries": 113,
-    "cumulative_found": 113,
-    "cumulative_missing": 297,
-    "cumulative_rejected": 347,
-    "batch_number": 71,
-    "last_batch_at": "2026-11-24T20:46:41Z",
-    "last_successful_batch_at": "2026-11-24T20:46:41Z",
-    "last_rate_limited_at": "2026-11-24T10:17:56Z",
-    "enrichment_status": "awaiting next scheduled batch",
-    "rate_limited": false
+    "rate_limited": true
   },
   "last_updated": "2026-11-25T00:46:06Z"
 }

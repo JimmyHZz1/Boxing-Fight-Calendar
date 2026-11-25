@@ -193,8 +193,23 @@
       "image_match_method": "category:Category:Kyoji Horiguchi",
       "image_verified_at": "2026-11-24T20:46:41Z",
       "image_local_path": "assets/images/ufc/kyoji-horiguchi.jpg"
+    },
+    "brandon moreno": {
+      "name": "Brandon Moreno",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/brandon-moreno.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Brandon_Moreno_February_2021_(cropped).jpg",
+      "image_credit": "Wikimedia Commons · DiarioMMA · CC BY-SA 4.0",
+      "image_license": "CC BY-SA 4.0",
+      "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Brandon Moreno",
+      "image_verified_at": "2026-11-25T04:00:08Z",
+      "image_local_path": "assets/images/ufc/brandon-moreno.jpg"
     }
   },
   "attempted": {},
-  "updated_at": "2026-11-25T00:46:31Z"
+  "updated_at": "2026-11-25T04:00:35Z"
 }

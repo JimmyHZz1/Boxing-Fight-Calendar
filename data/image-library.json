@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-24T20:46:41Z",
+  "updated_at": "2026-11-25T04:00:08Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -1179,6 +1179,17 @@
       "creator": "Wikimedia Commons · Bruno Massami · CC BY 3.0",
       "attribution": "Wikimedia Commons · Bruno Massami · CC BY 3.0",
       "verified_at": "2026-11-24T20:46:41Z",
+      "sport": "ufc"
+    },
+    "brandon moreno": {
+      "name": "Brandon Moreno",
+      "path": "assets/images/ufc/brandon-moreno.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Brandon_Moreno_February_2021_(cropped).jpg",
+      "licence": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "creator": "Wikimedia Commons · DiarioMMA · CC BY-SA 4.0",
+      "attribution": "Wikimedia Commons · DiarioMMA · CC BY-SA 4.0",
+      "verified_at": "2026-11-25T04:00:08Z",
       "sport": "ufc"
     }
   },
