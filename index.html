@@ -10,7 +10,7 @@
   <title>The Hub</title>
   <link rel="stylesheet" href="./swgoh.css?v=20261112-06">
   <link rel="stylesheet" href="./esports-hub.css?v=20261123-01">
-</head>
+  <link rel="stylesheet" href="./stocks-hub.css?v=20261125-01">\n</head>
 <body>
   <div class="app-shell">
     <header class="topbar">
@@ -20,7 +20,7 @@
           <span class="brand-wordmark"><strong id="brand-title">SPORTS</strong><small id="brand-subtitle">HUB</small></span>
           <span class="brand-switcher-caret" aria-hidden="true">⌄</span>
         </button>
-        <div id="mobile-calendar-menu" class="mobile-calendar-menu" hidden aria-label="Choose hub"><button type="button" data-screen="hub-selection-screen"><span class="brand-menu-mark hub-home-mark" aria-hidden="true">H</span><span class="calendar-menu-wordmark"><strong>THE HUB</strong></span></button><button type="button" data-screen="home-screen"><span class="brand-menu-mark sports-mark" aria-hidden="true">S</span><span class="calendar-menu-wordmark"><strong>SPORTS</strong><small>HUB</small></span></button><button type="button" data-screen="games-calendar-screen"><span class="brand-menu-mark games-mark" aria-hidden="true">G</span><span class="calendar-menu-wordmark"><strong>GAMES</strong><small>HUB</small></span></button><button type="button" data-screen="entertainment-hub-screen"><span class="brand-menu-mark entertainment-mark" aria-hidden="true">▶</span><span class="calendar-menu-wordmark"><strong>ENTERTAINMENT</strong><small>HUB</small></span></button><button type="button" data-screen="esports-hub-screen"><span class="brand-menu-mark esports-menu-mark" aria-hidden="true">E</span><span class="calendar-menu-wordmark"><strong>ESPORTS</strong><small>HUB</small></span></button><button type="button" data-screen="swgoh-hub-screen"><img class="brand-menu-logo swgoh-menu-logo" src="https://play-lh.googleusercontent.com/A6eqLfsKSxaqGXhweuxc57kkkL4RkCNPL3sWHwXJ52Li1Fuiu327nGz4NnWhVRa73HYWrLvtTcNi_VzxZzJ_1Ck%3Dw240-h480" alt="" loading="lazy"><span class="calendar-menu-wordmark"><strong>SWGOH</strong><small>HUB</small></span></button></div>
+        <div id="mobile-calendar-menu" class="mobile-calendar-menu" hidden aria-label="Choose hub"><button type="button" data-screen="hub-selection-screen"><span class="brand-menu-mark hub-home-mark" aria-hidden="true">H</span><span class="calendar-menu-wordmark"><strong>THE HUB</strong></span></button><button type="button" data-screen="home-screen"><span class="brand-menu-mark sports-mark" aria-hidden="true">S</span><span class="calendar-menu-wordmark"><strong>SPORTS</strong><small>HUB</small></span></button><button type="button" data-screen="games-calendar-screen"><span class="brand-menu-mark games-mark" aria-hidden="true">G</span><span class="calendar-menu-wordmark"><strong>GAMES</strong><small>HUB</small></span></button><button type="button" data-screen="entertainment-hub-screen"><span class="brand-menu-mark entertainment-mark" aria-hidden="true">▶</span><span class="calendar-menu-wordmark"><strong>ENTERTAINMENT</strong><small>HUB</small></span></button><button type="button" data-screen="esports-hub-screen"><span class="brand-menu-mark esports-menu-mark" aria-hidden="true">E</span><span class="calendar-menu-wordmark"><strong>ESPORTS</strong><small>HUB</small></span></button><button type="button" data-screen="stocks-hub-screen"><span class="brand-menu-mark stocks-menu-mark">£</span><span class="calendar-menu-wordmark"><strong>STOCKS</strong><small>HUB</small></span></button><button type="button" data-screen="swgoh-hub-screen"><img class="brand-menu-logo swgoh-menu-logo" src="https://play-lh.googleusercontent.com/A6eqLfsKSxaqGXhweuxc57kkkL4RkCNPL3sWHwXJ52Li1Fuiu327nGz4NnWhVRa73HYWrLvtTcNi_VzxZzJ_1Ck%3Dw240-h480" alt="" loading="lazy"><span class="calendar-menu-wordmark"><strong>SWGOH</strong><small>HUB</small></span></button></div>
       </div>
       <nav class="topbar-nav" aria-label="Main navigation">
         <button type="button" class="topbar-nav-item active" data-screen="home-screen"><span aria-hidden="true">⌂</span> HOME</button>
@@ -69,9 +69,9 @@
           <button type="button" class="hub-selection-tile swgoh-hub-tile" data-hub-screen="swgoh-hub-screen">
             <span class="hub-tile-mark swgoh-tile-mark" aria-hidden="true">✦</span><span class="hub-tile-name"><strong>SWGOH</strong><small>HUB</small></span><span class="hub-tile-description">Roster, journeys and progression</span><span class="hub-tile-open">OPEN SWGOH HUB →</span>
           </button>
-          <article class="hub-selection-tile stock-hub-tile is-coming" aria-label="Stocks Hub coming soon">
-            <span class="hub-tile-mark stock-tile-mark" aria-hidden="true">£</span><span class="hub-tile-name"><strong>STOCKS</strong><small>HUB</small></span><span class="hub-tile-description">Watchlists, markets and alerts</span><span class="hub-tile-open">COMING SOON</span>
-          </article>
+          <button type="button" class="hub-selection-tile stock-hub-tile" data-hub-screen="stocks-hub-screen" data-screen="stocks-hub-screen" aria-label="Open Stocks Hub">
+            <span class="hub-tile-mark stock-tile-mark" aria-hidden="true">£</span><span class="hub-tile-name"><strong>STOCKS</strong><small>HUB</small></span><span class="hub-tile-description">Watchlists, markets and alerts</span><span class="hub-tile-open">OPEN STOCKS HUB →</span>
+          </button>
           <button type="button" class="hub-selection-tile entertainment-hub-tile" data-hub-screen="entertainment-hub-screen">
             <span class="hub-tile-mark entertainment-tile-mark" aria-hidden="true">▶</span><span class="hub-tile-name"><strong>ENTERTAINMENT</strong><small>HUB</small></span><span class="hub-tile-description">Film and television releases, watchlists and ratings</span><span class="hub-tile-open">OPEN ENTERTAINMENT HUB →</span>
           </button>
@@ -616,7 +616,53 @@
         <div class="swgoh-news" id="news" aria-label="Tracker updates"></div>
         <nav class="nav swgoh-section-nav" id="nav" aria-label="SWGOH tracker sections"></nav>
       <div class="swgoh-workspace">
-          <main class="main swgoh-main" id="app"></main>
+          <main class="main swgoh-main" id="app">
+<section id="stocks-hub-screen" class="screen stocks-hub-screen" aria-labelledby="stocks-hub-title">
+  <div class="stocks-hero">
+    <div class="stocks-hero-copy">
+      <span class="eyebrow stocks-eyebrow">THE STOCKS HUB · UK & US MARKETS</span>
+      <h1 id="stocks-hub-title">Markets.<br><em>In focus.</em></h1>
+      <p>Follow shares, funds, indices, commodities and currencies across the UK and US markets.</p>
+      <div class="stocks-hero-meta"><span>UK · US</span><span>DELAYED DATA MODEL</span><span id="stocks-data-updated">DEMO DATA · NOT LIVE</span></div>
+    </div><div class="stocks-hero-mark" aria-hidden="true">£$</div>
+  </div>
+  <div class="stocks-demo-banner" role="note"><strong>DEMO DATA</strong><span>All prices, movements, charts, news and events on this test release are illustrative examples, not real market quotes or investment information.</span></div>
+  <div class="stocks-toolbar">
+    <label class="stocks-search"><span aria-hidden="true">⌕</span><input id="stocks-search-input" type="search" placeholder="Search shares, ETFs, indices, commodities or currencies…" autocomplete="off"></label>
+    <button type="button" id="stocks-refresh" class="stocks-refresh">↻ RESET DEMO</button>
+  </div>
+  <nav class="stocks-section-nav" aria-label="Stocks Hub sections">
+    <button type="button" data-stocks-view="overview" aria-pressed="true">OVERVIEW</button>
+    <button type="button" data-stocks-view="watchlists" aria-pressed="false">WATCHLISTS</button>
+    <button type="button" data-stocks-view="discover" aria-pressed="false">DISCOVER</button>
+    <button type="button" data-stocks-view="news" aria-pressed="false">NEWS & CALENDAR</button>
+  </nav>
+  <section id="stocks-overview-view" class="stocks-view">
+    <div class="stocks-section-heading"><div><span class="eyebrow stocks-eyebrow">MARKET PULSE</span><h2>Market <em>overview.</em></h2></div><span class="stocks-section-tag">ILLUSTRATIVE SNAPSHOT</span></div>
+    <div id="stocks-index-grid" class="stocks-index-grid"></div>
+    <div class="stocks-market-status-grid"><article class="stocks-status-card"><span>🇬🇧 LONDON</span><strong>MARKET CLOSED</strong><small>Example status · LSE session</small></article><article class="stocks-status-card"><span>🇺🇸 NEW YORK</span><strong>MARKET CLOSED</strong><small>Example status · NYSE / NASDAQ</small></article></div>
+    <div class="stocks-dashboard-columns">
+      <section class="stocks-panel"><div class="stocks-section-heading compact"><div><span class="eyebrow stocks-eyebrow">YOUR ASSETS</span><h2>My <em>watchlists.</em></h2></div><button type="button" class="stocks-text-button" data-stocks-view="watchlists">VIEW ALL →</button></div><div id="stocks-watchlist-preview" class="stocks-asset-list"></div></section>
+      <section class="stocks-panel"><div class="stocks-section-heading compact"><div><span class="eyebrow stocks-eyebrow">TODAY'S MOVEMENT</span><h2>Market <em>movers.</em></h2></div><span class="stocks-section-tag">DEMO</span></div><div id="stocks-movers" class="stocks-movers-list"></div></section>
+    </div>
+  </section>
+  <section id="stocks-watchlists-view" class="stocks-view" hidden>
+    <div class="stocks-section-heading"><div><span class="eyebrow stocks-eyebrow">YOUR TRACKED ASSETS</span><h2>My <em>watchlists.</em></h2></div></div>
+    <div class="stocks-watchlist-tabs"><button type="button" data-watchlist="combined" aria-pressed="true">ALL ASSETS</button><button type="button" data-watchlist="uk" aria-pressed="false">🇬🇧 UK WATCHLIST</button><button type="button" data-watchlist="us" aria-pressed="false">🇺🇸 US WATCHLIST</button></div>
+    <div id="stocks-watchlist-full" class="stocks-asset-list stocks-asset-list-full"></div>
+  </section>
+  <section id="stocks-discover-view" class="stocks-view" hidden>
+    <div class="stocks-section-heading"><div><span class="eyebrow stocks-eyebrow">EXPLORE THE MARKETS</span><h2>Discover <em>assets.</em></h2></div></div>
+    <div class="stocks-category-filters"><button type="button" data-asset-filter="all" aria-pressed="true">ALL</button><button type="button" data-asset-filter="share">SHARES</button><button type="button" data-asset-filter="etf">ETFs</button><button type="button" data-asset-filter="index">INDICES</button><button type="button" data-asset-filter="commodity">COMMODITIES</button><button type="button" data-asset-filter="currency">CURRENCIES</button></div>
+    <div id="stocks-discover-results" class="stocks-discover-grid"></div>
+  </section>
+  <section id="stocks-news-view" class="stocks-view" hidden>
+    <div class="stocks-section-heading"><div><span class="eyebrow stocks-eyebrow">WHAT'S HAPPENING</span><h2>News & <em>calendar.</em></h2></div></div>
+    <div class="stocks-dashboard-columns"><section class="stocks-panel"><h3>MARKET NEWS <span class="stocks-demo-chip">DEMO</span></h3><div id="stocks-news-list" class="stocks-news-list"></div></section><section class="stocks-panel"><h3>UPCOMING EVENTS <span class="stocks-demo-chip">DEMO</span></h3><div id="stocks-calendar-list" class="stocks-news-list"></div></section></div>
+  </section>
+  <dialog id="stocks-asset-dialog" class="stocks-detail-dialog"><div class="stocks-detail-heading"><div><span class="eyebrow stocks-eyebrow">ASSET PROFILE · DEMO</span><h2 id="stocks-detail-title">Asset</h2></div><button type="button" id="stocks-detail-close" aria-label="Close asset profile">×</button></div><div id="stocks-detail-content"></div></dialog>
+</section>
+</main>
         </div>
 
       </div>
@@ -674,6 +720,6 @@
   <script src="./notifications.js?v=20261111-02"></script>
   <script src="./data-health.js?v=20261111-02"></script>
   <script src="./admin-updates.js?v=20261111-02"></script>
-  <script src="./esports-hub.js?v=20261123-01"></script>
+  <script src="./esports-hub.js?v=20261123-01"></script>\n  <script src="./stocks-hub.js?v=20261125-01"></script>
 </body>
 </html>
