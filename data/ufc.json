@@ -1082,31 +1082,31 @@
           "bonus": null
         },
         {
-          "id": 93848,
+          "id": 93849,
           "ordering": 4,
           "card_section": "main",
           "sport": "mma",
-          "weight_class": "Bantamweight",
-          "division_slug": "bantamweight",
+          "weight_class": "Middleweight",
+          "division_slug": "middleweight",
           "is_title": false,
           "is_main": false,
           "scheduled_rounds": 3,
           "status": "announced",
           "fighter_a": {
-            "id": 570,
-            "slug": "kyler-phillips",
-            "name": "Kyler Phillips",
-            "nickname": "The Matrix",
-            "nationality": "United States",
-            "country_code": "US"
+            "id": 458,
+            "slug": "damian-pinas",
+            "name": "Damian Pinas",
+            "nickname": "The Baba Yaga",
+            "nationality": "Aruba",
+            "country_code": null
           },
           "fighter_b": {
-            "id": 392,
-            "slug": "ethyn-ewing",
-            "name": "Ethyn Ewing",
-            "nickname": "The Professor Finesser",
-            "nationality": "United States",
-            "country_code": "US"
+            "id": 23,
+            "slug": "baisangur-susurkaev",
+            "name": "Baisangur Susurkaev",
+            "nickname": "The Real Hunter",
+            "nationality": "Russia",
+            "country_code": "RU"
           },
           "result": null,
           "referee": null,
@@ -1179,31 +1179,62 @@
           "fighter1_image_credit": "Wikimedia Commons · Maritza Sanchez · CC BY 4.0"
         },
         {
-          "id": 93849,
+          "id": 93848,
           "ordering": 5,
           "card_section": "main",
           "sport": "mma",
-          "weight_class": "Middleweight",
-          "division_slug": "middleweight",
+          "weight_class": "Bantamweight",
+          "division_slug": "bantamweight",
           "is_title": false,
           "is_main": false,
           "scheduled_rounds": 3,
           "status": "announced",
           "fighter_a": {
-            "id": 458,
-            "slug": "damian-pinas",
-            "name": "Damian Pinas",
-            "nickname": "The Baba Yaga",
-            "nationality": "Aruba",
-            "country_code": null
+            "id": 570,
+            "slug": "kyler-phillips",
+            "name": "Kyler Phillips",
+            "nickname": "The Matrix",
+            "nationality": "United States",
+            "country_code": "US"
           },
           "fighter_b": {
-            "id": 23,
-            "slug": "baisangur-susurkaev",
-            "name": "Baisangur Susurkaev",
-            "nickname": "The Real Hunter",
-            "nationality": "Russia",
-            "country_code": "RU"
+            "id": 392,
+            "slug": "ethyn-ewing",
+            "name": "Ethyn Ewing",
+            "nickname": "The Professor Finesser",
+            "nationality": "United States",
+            "country_code": "US"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 94146,
+          "ordering": 6,
+          "card_section": "early_prelims",
+          "sport": "mma",
+          "weight_class": "Women's Bantamweight",
+          "division_slug": "womens-bantamweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "announced",
+          "fighter_a": {
+            "id": 42,
+            "slug": "jacqueline-cavalcanti",
+            "name": "Jacqueline Cavalcanti",
+            "nickname": "The Nightmare",
+            "nationality": "Portugal",
+            "country_code": "PT"
+          },
+          "fighter_b": {
+            "id": 218,
+            "slug": "michelle-montague",
+            "name": "Michelle Montague",
+            "nickname": "The Wild One",
+            "nationality": "New Zealand",
+            "country_code": "NZ"
           },
           "result": null,
           "referee": null,
@@ -1211,7 +1242,7 @@
         },
         {
           "id": 93487,
-          "ordering": 6,
+          "ordering": 7,
           "card_section": "early_prelims",
           "sport": "mma",
           "weight_class": "Light Heavyweight",
@@ -1235,6 +1266,37 @@
             "nickname": "The Juggernaut",
             "nationality": "New Zealand",
             "country_code": "NZ"
+          },
+          "result": null,
+          "referee": null,
+          "bonus": null
+        },
+        {
+          "id": 94147,
+          "ordering": 8,
+          "card_section": "early_prelims",
+          "sport": "mma",
+          "weight_class": "Flyweight",
+          "division_slug": "flyweight",
+          "is_title": false,
+          "is_main": false,
+          "scheduled_rounds": 3,
+          "status": "announced",
+          "fighter_a": {
+            "id": 31848,
+            "slug": "roque-conceicao",
+            "name": "Roque Conceição",
+            "nickname": "Moreira Junior",
+            "nationality": "Brazil",
+            "country_code": "BR"
+          },
+          "fighter_b": {
+            "id": 11849,
+            "slug": "nilson-rojas",
+            "name": "Nilson Rojas",
+            "nickname": "El Rayo",
+            "nationality": "Peru",
+            "country_code": "PE"
           },
           "result": null,
           "referee": null,
@@ -1296,13 +1358,13 @@
       "slug": "ufc-fight-night-2027-02-06",
       "name": "UFC Fight Night: Salkilld vs Saint Denis",
       "date": "2027-02-06",
-      "start_at": "2027-02-06T20:00:00.000Z",
+      "start_at": "2027-02-06T22:00:00.000Z",
       "status": "announced",
       "number": null,
       "is_ppv": false,
       "is_title_card": false,
-      "main_card_at": "2027-02-06T22:00:00.000Z",
-      "prelims_at": "2027-02-06T20:00:00.000Z",
+      "main_card_at": "2027-02-07T01:00:00.000Z",
+      "prelims_at": "2027-02-06T22:00:00.000Z",
       "early_prelims_at": null,
       "fights": [],
       "source": "UFCalendar"
@@ -1341,5 +1403,5 @@
     }
   ],
   "notice": "All upcoming UFC events returned by UFCalendar, with detailed fight cards for the next two events and the latest completed card. Free API allowance: 1,000 requests per month.",
-  "last_updated": "2026-11-24T14:53:48Z"
+  "last_updated": "2026-11-25T00:46:06Z"
 }
