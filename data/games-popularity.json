@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "provider": "IGDB PopScore",
-  "updated_at": "2026-11-25T17:08:24.737Z",
+  "updated_at": "2026-11-26T16:49:30.943Z",
   "status": "ok",
   "methodology": "Daily relative ranking across the upcoming PC and console release list. Weighted IGDB Visits (30%), Want to Play (40%), Playing (15%), Played (5%) and Twitch Hours Watched (10%). Steam-only player, review and sales signals are deliberately excluded so console-only games are not penalised. Missing metrics are omitted and remaining weights are renormalised.",
   "games": [
@@ -66,7 +66,7 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo11ng.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo11ng.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6r3h.jpg",
-      "popularity_score": 80,
+      "popularity_score": 77,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -108,7 +108,7 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar41cc.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar41cc.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6ox1.jpg",
-      "popularity_score": 64,
+      "popularity_score": 67,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -132,7 +132,7 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar62ze.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar62ze.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar62e8.jpg",
-      "popularity_score": 62,
+      "popularity_score": 65,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -156,7 +156,7 @@
       "igdb_logo_url": null,
       "logo_url": null,
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar260r.jpg",
-      "popularity_score": 53,
+      "popularity_score": 49,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -165,20 +165,23 @@
       "popularity_rank": 7
     },
     {
-      "slug": "arkheron",
-      "title": "Arkheron",
-      "release_date": "2026-11-27",
+      "slug": "dragon-quest-monsters-the-withered-world",
+      "title": "DRAGON QUEST MONSTERS: The Withered World",
+      "release_date": "2026-12-03",
       "platforms": [
         "PC",
-        "Xbox Series X|S"
+        "PlayStation 5",
+        "Xbox Series X|S",
+        "Nintendo Switch 2",
+        "Nintendo Switch"
       ],
-      "verification_status": "estimated",
-      "igdb_game_id": 368311,
-      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6xi8.jpg",
-      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar48ki.jpg",
-      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar48ki.jpg",
-      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6xi8.jpg",
-      "popularity_score": 41,
+      "verification_status": "verified",
+      "igdb_game_id": 403174,
+      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5xzb.jpg",
+      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5xzb.jpg",
+      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5xzb.jpg",
+      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5xzb.jpg",
+      "popularity_score": 40,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -208,23 +211,20 @@
       "popularity_rank": 9
     },
     {
-      "slug": "dragon-quest-monsters-the-withered-world",
-      "title": "DRAGON QUEST MONSTERS: The Withered World",
-      "release_date": "2026-12-03",
+      "slug": "arkheron",
+      "title": "Arkheron",
+      "release_date": "2026-11-27",
       "platforms": [
         "PC",
-        "PlayStation 5",
-        "Xbox Series X|S",
-        "Nintendo Switch 2",
-        "Nintendo Switch"
+        "Xbox Series X|S"
       ],
-      "verification_status": "verified",
-      "igdb_game_id": 403174,
-      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5xzb.jpg",
-      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5xzb.jpg",
-      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5xzb.jpg",
-      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5xzb.jpg",
-      "popularity_score": 33,
+      "verification_status": "estimated",
+      "igdb_game_id": 368311,
+      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6xi8.jpg",
+      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar48ki.jpg",
+      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar48ki.jpg",
+      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6xi8.jpg",
+      "popularity_score": 37,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -272,7 +272,7 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo10cy.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo10cy.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar72ui.jpg",
-      "popularity_score": 19,
+      "popularity_score": 22,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -293,7 +293,7 @@
       "igdb_logo_url": null,
       "logo_url": null,
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6b87.jpg",
-      "popularity_score": 16,
+      "popularity_score": 10,
       "popularity_signals": [
         "want to play",
         "visits"
