@@ -1,13 +1,13 @@
 {
   "provider": "Boxerbook confirmed cards + Boxing Data additional bouts",
-  "last_updated": "2026-11-26T00:22:50Z",
-  "provider_as_of": "2026-11-26T00:22:50Z",
+  "last_updated": "2026-11-26T13:55:46Z",
+  "provider_as_of": "2026-11-26T13:55:46Z",
   "attribution": "Confirmed cards from Boxerbook; additional scheduled bouts from Boxing Data API.",
-  "count_events": 53,
-  "count_bouts": 180,
-  "count_confirmed_events": 45,
-  "count_confirmed_bouts": 151,
-  "count_additional_bouts": 29,
+  "count_events": 55,
+  "count_bouts": 189,
+  "count_confirmed_events": 47,
+  "count_confirmed_bouts": 161,
+  "count_additional_bouts": 28,
   "count_fighter_photos": 17,
   "events": [
     {
@@ -177,7 +177,7 @@
           "fighter2_image": null,
           "fighter1_nationality": null,
           "fighter2_nationality": "JP",
-          "record1": "0-1-0",
+          "record1": "9-5-1",
           "record2": "12-1-0",
           "date": "2026-11-26",
           "start_time_utc": null,
@@ -345,7 +345,7 @@
           "fighter2_image": null,
           "fighter1_nationality": null,
           "fighter2_nationality": "JP",
-          "record1": null,
+          "record1": "9-0-0",
           "record2": "12-1-0",
           "date": "2026-11-26",
           "start_time_utc": null,
@@ -430,7 +430,7 @@
       "date": "2026-11-27T12:00:00Z",
       "bouts": [
         {
-          "id": "fx_qr9hxrvw",
+          "id": "fx_jpr0k2sg",
           "fighter1": "Karen Chukhadzhian",
           "fighter2": "Lucas Ramon Arganaraz",
           "date": "2026-11-27",
@@ -442,7 +442,7 @@
           "data_source": "Boxing Data API"
         },
         {
-          "id": "fx_g93cpvav",
+          "id": "fx_6wjqpzqf",
           "fighter1": "Eduardo Giustini",
           "fighter2": "Labinot Xhoxhaj",
           "date": "2026-11-27",
@@ -611,7 +611,7 @@
       "city": null,
       "country": null,
       "country_code": null,
-      "start_time_utc": "2026-11-27T18:00Z",
+      "start_time_utc": "2026-11-27T17:00Z",
       "broadcasters": [],
       "bouts": [
         {
@@ -632,6 +632,27 @@
           "title_text": null,
           "status": "scheduled",
           "url": "https://boxerbook.com/bouts/209448/slawa-spomer-vs-eddy-colmenares",
+          "broadcaster": null,
+          "data_source": "Boxerbook"
+        },
+        {
+          "id": 209484,
+          "fighter1": "Emanuel Odiase",
+          "fighter2": "Mike Perez",
+          "fighter1_image": null,
+          "fighter2_image": null,
+          "fighter1_nationality": null,
+          "fighter2_nationality": "CU",
+          "record1": "4-0-0",
+          "record2": "34-3-1",
+          "date": "2026-11-27",
+          "start_time_utc": null,
+          "start_datetime_utc": null,
+          "weight_class": "hea",
+          "rounds": null,
+          "title_text": null,
+          "status": "scheduled",
+          "url": "https://boxerbook.com/bouts/209484/emanuel-odiase-vs-mike-perez",
           "broadcaster": null,
           "data_source": "Boxerbook"
         }
@@ -670,6 +691,86 @@
           "title_text": "WBF Super Featherweight Title",
           "status": "scheduled",
           "url": "https://boxerbook.com/bouts/204404/gracious-simwalizi-vs-yamikani-mtambo",
+          "broadcaster": null,
+          "data_source": "Boxerbook"
+        }
+      ],
+      "data_source": "Boxerbook"
+    },
+    {
+      "id": "boxerbook-23499",
+      "source_id": 23499,
+      "name": "Lancaster Terrace boxing event",
+      "date": "2026-11-27T12:00:00Z",
+      "event_url": "https://boxerbook.com/events/23499/2026-11-27-lancaster-terrace",
+      "promoter": null,
+      "location": "Royal Lancaster Hotel",
+      "city": "Lancaster Terrace",
+      "country": "GB",
+      "country_code": null,
+      "start_time_utc": null,
+      "broadcasters": [],
+      "bouts": [
+        {
+          "id": 209454,
+          "fighter1": "Daryion Davids-Bennett",
+          "fighter2": "Luke Turner",
+          "fighter1_image": null,
+          "fighter2_image": null,
+          "fighter1_nationality": null,
+          "fighter2_nationality": null,
+          "record1": null,
+          "record2": "3-0-0",
+          "date": "2026-11-27",
+          "start_time_utc": null,
+          "start_datetime_utc": null,
+          "weight_class": null,
+          "rounds": null,
+          "title_text": null,
+          "status": "scheduled",
+          "url": "https://boxerbook.com/bouts/209454/daryion-davids-bennett-vs-luke-turner",
+          "broadcaster": null,
+          "data_source": "Boxerbook"
+        },
+        {
+          "id": 209455,
+          "fighter1": "Fernando Valencia Moreno",
+          "fighter2": "Mason Payne",
+          "fighter1_image": null,
+          "fighter2_image": null,
+          "fighter1_nationality": null,
+          "fighter2_nationality": null,
+          "record1": null,
+          "record2": "4-0-0",
+          "date": "2026-11-27",
+          "start_time_utc": null,
+          "start_datetime_utc": null,
+          "weight_class": null,
+          "rounds": null,
+          "title_text": null,
+          "status": "scheduled",
+          "url": "https://boxerbook.com/bouts/209455/fernando-valencia-moreno-vs-mason-payne",
+          "broadcaster": null,
+          "data_source": "Boxerbook"
+        },
+        {
+          "id": 209456,
+          "fighter1": "Isaac Odunayo",
+          "fighter2": "Robbie Chapman",
+          "fighter1_image": null,
+          "fighter2_image": null,
+          "fighter1_nationality": null,
+          "fighter2_nationality": null,
+          "record1": null,
+          "record2": null,
+          "date": "2026-11-27",
+          "start_time_utc": null,
+          "start_datetime_utc": null,
+          "weight_class": null,
+          "rounds": null,
+          "title_text": null,
+          "status": "scheduled",
+          "url": "https://boxerbook.com/bouts/209456/isaac-odunayo-vs-robbie-chapman",
           "broadcaster": null,
           "data_source": "Boxerbook"
         }
@@ -878,27 +979,6 @@
           "title_text": null,
           "status": "scheduled",
           "url": "https://boxerbook.com/bouts/204575/jimmy-laing-vs-josue-bendana",
-          "broadcaster": null,
-          "data_source": "Boxerbook"
-        },
-        {
-          "id": 204576,
-          "fighter1": "James Paterson",
-          "fighter2": "Nazeer Khan",
-          "fighter1_image": null,
-          "fighter2_image": null,
-          "fighter1_nationality": null,
-          "fighter2_nationality": null,
-          "record1": null,
-          "record2": "0-1-0",
-          "date": "2026-11-28",
-          "start_time_utc": null,
-          "start_datetime_utc": null,
-          "weight_class": null,
-          "rounds": null,
-          "title_text": null,
-          "status": "scheduled",
-          "url": "https://boxerbook.com/bouts/204576/james-paterson-vs-nazeer-khan",
           "broadcaster": null,
           "data_source": "Boxerbook"
         }
@@ -1204,6 +1284,27 @@
           "title_text": null,
           "status": "scheduled",
           "url": "https://boxerbook.com/bouts/204660/sultan-babakhanov-vs-mark-urvanov",
+          "broadcaster": null,
+          "data_source": "Boxerbook"
+        },
+        {
+          "id": 209464,
+          "fighter1": "Geoffrey Muwonge",
+          "fighter2": "Ziad Wael Hamza",
+          "fighter1_image": null,
+          "fighter2_image": null,
+          "fighter1_nationality": null,
+          "fighter2_nationality": "AE",
+          "record1": null,
+          "record2": null,
+          "date": "2026-11-28",
+          "start_time_utc": null,
+          "start_datetime_utc": null,
+          "weight_class": null,
+          "rounds": null,
+          "title_text": null,
+          "status": "scheduled",
+          "url": "https://boxerbook.com/bouts/209464/geoffrey-muwonge-vs-ziad-wael-hamza",
           "broadcaster": null,
           "data_source": "Boxerbook"
         }
@@ -1665,11 +1766,6 @@
           "name": "DAZN",
           "region": "FR",
           "url": "https://www.dazn.com/fr-FR/schedule"
-        },
-        {
-          "name": "DAZN",
-          "region": "JP",
-          "url": "https://www.dazn.com/ja-JP/schedule"
         },
         {
           "name": "DAZN",
@@ -2508,6 +2604,155 @@
       "data_source": "Boxerbook"
     },
     {
+      "id": "boxerbook-21034",
+      "source_id": 21034,
+      "name": "大橋プロモーション event",
+      "date": "2026-12-03T12:00:00Z",
+      "event_url": "https://boxerbook.com/events/21034/2026-12-03",
+      "promoter": "大橋プロモーション",
+      "location": "Korakuen Hall",
+      "city": null,
+      "country": "JP",
+      "country_code": null,
+      "start_time_utc": null,
+      "broadcasters": [
+        {
+          "name": "Lemino",
+          "region": "JP",
+          "url": null
+        }
+      ],
+      "bouts": [
+        {
+          "id": 209457,
+          "fighter1": "Takata Narioka",
+          "fighter2": "Takaaki Kawaminami",
+          "fighter1_image": null,
+          "fighter2_image": null,
+          "fighter1_nationality": null,
+          "fighter2_nationality": null,
+          "record1": null,
+          "record2": null,
+          "date": "2026-12-03",
+          "start_time_utc": null,
+          "start_datetime_utc": null,
+          "weight_class": null,
+          "rounds": 4,
+          "title_text": null,
+          "status": "scheduled",
+          "url": "https://boxerbook.com/bouts/209457/takata-narioka-vs-takaaki-kawaminami",
+          "broadcaster": null,
+          "data_source": "Boxerbook"
+        },
+        {
+          "id": 209458,
+          "fighter1": "Shota Tashita",
+          "fighter2": "Kotaro Sekine",
+          "fighter1_image": null,
+          "fighter2_image": null,
+          "fighter1_nationality": null,
+          "fighter2_nationality": "JP",
+          "record1": null,
+          "record2": "9-2-1",
+          "date": "2026-12-03",
+          "start_time_utc": null,
+          "start_datetime_utc": null,
+          "weight_class": "slig",
+          "rounds": 8,
+          "title_text": null,
+          "status": "scheduled",
+          "url": "https://boxerbook.com/bouts/209458/shota-tashita-vs-kotaro-sekine",
+          "broadcaster": null,
+          "data_source": "Boxerbook"
+        },
+        {
+          "id": 209459,
+          "fighter1": "Joseph Sumabon",
+          "fighter2": "Takerō Kitano",
+          "fighter1_image": null,
+          "fighter2_image": null,
+          "fighter1_nationality": null,
+          "fighter2_nationality": "JP",
+          "record1": null,
+          "record2": "11-1-1",
+          "date": "2026-12-03",
+          "start_time_utc": null,
+          "start_datetime_utc": null,
+          "weight_class": "min",
+          "rounds": 10,
+          "title_text": null,
+          "status": "scheduled",
+          "url": "https://boxerbook.com/bouts/209459/joseph-sumabon-vs-takero-kitano",
+          "broadcaster": null,
+          "data_source": "Boxerbook"
+        },
+        {
+          "id": 209460,
+          "fighter1": "Bek Haso",
+          "fighter2": "Mikio Sakai",
+          "fighter1_image": null,
+          "fighter2_image": null,
+          "fighter1_nationality": null,
+          "fighter2_nationality": null,
+          "record1": null,
+          "record2": null,
+          "date": "2026-12-03",
+          "start_time_utc": null,
+          "start_datetime_utc": null,
+          "weight_class": null,
+          "rounds": 10,
+          "title_text": null,
+          "status": "scheduled",
+          "url": "https://boxerbook.com/bouts/209460/bek-haso-vs-mikio-sakai",
+          "broadcaster": null,
+          "data_source": "Boxerbook"
+        },
+        {
+          "id": 209461,
+          "fighter1": "Kazuki Nakajima",
+          "fighter2": "Ōwan ryūto",
+          "fighter1_image": null,
+          "fighter2_image": null,
+          "fighter1_nationality": "JP",
+          "fighter2_nationality": "JP",
+          "record1": "19-2-1",
+          "record2": "14-3-0",
+          "date": "2026-12-03",
+          "start_time_utc": null,
+          "start_datetime_utc": null,
+          "weight_class": "fea",
+          "rounds": 10,
+          "title_text": null,
+          "status": "scheduled",
+          "url": "https://boxerbook.com/bouts/209461/kazuki-nakajima-vs-owan-ryuto",
+          "broadcaster": null,
+          "data_source": "Boxerbook"
+        },
+        {
+          "id": 209462,
+          "fighter1": "Riku Kiya",
+          "fighter2": "Kai Watanabe",
+          "fighter1_image": null,
+          "fighter2_image": null,
+          "fighter1_nationality": null,
+          "fighter2_nationality": "JP",
+          "record1": null,
+          "record2": "18-3-1",
+          "date": "2026-12-03",
+          "start_time_utc": null,
+          "start_datetime_utc": null,
+          "weight_class": "sfea",
+          "rounds": 8,
+          "title_text": null,
+          "status": "scheduled",
+          "url": "https://boxerbook.com/bouts/209462/riku-kiya-vs-kai-watanabe",
+          "broadcaster": null,
+          "data_source": "Boxerbook"
+        }
+      ],
+      "data_source": "Boxerbook"
+    },
+    {
       "id": "boxingdata-2026-12-04",
       "name": "Additional scheduled bouts — Fri 4 Dec",
       "date": "2026-12-04T12:00:00Z",
@@ -2595,6 +2840,66 @@
           "name": "DAZN",
           "region": "US",
           "url": null
+        },
+        {
+          "name": "DAZN",
+          "region": "ES",
+          "url": "https://www.dazn.com/es-ES/schedule"
+        },
+        {
+          "name": "DAZN",
+          "region": "MX",
+          "url": "https://www.dazn.com/es-MX/schedule"
+        },
+        {
+          "name": "DAZN",
+          "region": "US-es",
+          "url": "https://www.dazn.com/es-US/schedule"
+        },
+        {
+          "name": "DAZN",
+          "region": "UK",
+          "url": "https://www.dazn.com/en-GB/schedule"
+        },
+        {
+          "name": "DAZN",
+          "region": "IE",
+          "url": "https://www.dazn.com/en-IE/schedule"
+        },
+        {
+          "name": "DAZN",
+          "region": "CA",
+          "url": "https://www.dazn.com/en-CA/schedule"
+        },
+        {
+          "name": "DAZN",
+          "region": "AU",
+          "url": "https://www.dazn.com/en-AU/schedule"
+        },
+        {
+          "name": "DAZN",
+          "region": "NZ",
+          "url": "https://www.dazn.com/en-NZ/schedule"
+        },
+        {
+          "name": "DAZN",
+          "region": "DE",
+          "url": "https://www.dazn.com/de-DE/schedule"
+        },
+        {
+          "name": "DAZN",
+          "region": "IT",
+          "url": "https://www.dazn.com/it-IT/schedule"
+        },
+        {
+          "name": "DAZN",
+          "region": "FR",
+          "url": "https://www.dazn.com/fr-FR/schedule"
+        },
+        {
+          "name": "DAZN",
+          "region": "BR",
+          "url": "https://www.dazn.com/pt-BR/schedule"
         }
       ],
       "bouts": [
@@ -2798,7 +3103,7 @@
           "fighter1_nationality": "UA",
           "fighter2_nationality": "US",
           "record1": "23-1-0",
-          "record2": "30-6-1",
+          "record2": "30-5-1",
           "date": "2026-12-04",
           "start_time_utc": null,
           "start_datetime_utc": null,
@@ -2967,7 +3272,7 @@
           "fighter2_image": null,
           "fighter1_nationality": null,
           "fighter2_nationality": null,
-          "record1": null,
+          "record1": "1-0-0",
           "record2": "0-1-0",
           "date": "2026-12-05",
           "start_time_utc": null,
@@ -3003,8 +3308,58 @@
         },
         {
           "name": "DAZN",
-          "region": "JP",
-          "url": null
+          "region": "ES",
+          "url": "https://www.dazn.com/es-ES/schedule"
+        },
+        {
+          "name": "DAZN",
+          "region": "MX",
+          "url": "https://www.dazn.com/es-MX/schedule"
+        },
+        {
+          "name": "DAZN",
+          "region": "US-es",
+          "url": "https://www.dazn.com/es-US/schedule"
+        },
+        {
+          "name": "DAZN",
+          "region": "US",
+          "url": "https://www.dazn.com/en-US/schedule"
+        },
+        {
+          "name": "DAZN",
+          "region": "UK",
+          "url": "https://www.dazn.com/en-GB/schedule"
+        },
+        {
+          "name": "DAZN",
+          "region": "IE",
+          "url": "https://www.dazn.com/en-IE/schedule"
+        },
+        {
+          "name": "DAZN",
+          "region": "CA",
+          "url": "https://www.dazn.com/en-CA/schedule"
+        },
+        {
+          "name": "DAZN",
+          "region": "DE",
+          "url": "https://www.dazn.com/de-DE/schedule"
+        },
+        {
+          "name": "DAZN",
+          "region": "IT",
+          "url": "https://www.dazn.com/it-IT/schedule"
+        },
+        {
+          "name": "DAZN",
+          "region": "FR",
+          "url": "https://www.dazn.com/fr-FR/schedule"
+        },
+        {
+          "name": "DAZN",
+          "region": "BR",
+          "url": "https://www.dazn.com/pt-BR/schedule"
         }
       ],
       "bouts": [
@@ -3059,6 +3414,26 @@
           "name": "DAZN",
           "region": "US",
           "url": null
+        },
+        {
+          "name": "DAZN",
+          "region": "MX",
+          "url": "https://www.dazn.com/es-MX/schedule"
+        },
+        {
+          "name": "DAZN",
+          "region": "US-es",
+          "url": "https://www.dazn.com/es-US/schedule"
+        },
+        {
+          "name": "DAZN",
+          "region": "CA",
+          "url": "https://www.dazn.com/en-CA/schedule"
+        },
+        {
+          "name": "DAZN",
+          "region": "BR",
+          "url": "https://www.dazn.com/pt-BR/schedule"
         }
       ],
       "bouts": [
@@ -3134,7 +3509,7 @@
           "fighter1_nationality": null,
           "fighter2_nationality": "US",
           "record1": "0-2-0",
-          "record2": "18-0-0",
+          "record2": "19-0-0",
           "date": "2026-12-05",
           "start_time_utc": null,
           "start_datetime_utc": null,
@@ -3175,7 +3550,7 @@
           "fighter2_image": null,
           "fighter1_nationality": "JP",
           "fighter2_nationality": null,
-          "record1": "23-1-3",
+          "record1": "24-1-3",
           "record2": "1-0-0",
           "date": "2026-12-05",
           "start_time_utc": null,
@@ -3446,7 +3821,7 @@
           "fighter1_nationality": "GB",
           "fighter2_nationality": "GB",
           "record1": "36-2-1",
-          "record2": "31-4-0",
+          "record2": "30-4-0",
           "date": "2026-12-11",
           "start_time_utc": null,
           "start_datetime_utc": null,
@@ -4098,18 +4473,6 @@
           "rounds": null,
           "status": "scheduled",
           "data_source": "Boxing Data API"
-        },
-        {
-          "id": "fx_8kpp2hnf",
-          "fighter1": "Angel Daniel Garcia",
-          "fighter2": "Luis Alberto Lopez",
-          "date": "2026-12-13",
-          "start_time_utc": "02:45",
-          "start_datetime_utc": "2026-12-13T02:45:00Z",
-          "weight_class": null,
-          "rounds": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API"
         }
       ],
       "data_source": "Boxing Data API",
@@ -4168,9 +4531,9 @@
       "broadcasters": [],
       "bouts": [
         {
-          "id": 209442,
-          "fighter1": "Maria Soledad Vargas",
-          "fighter2": "Marylin Badillo",
+          "id": 209463,
+          "fighter1": "Marylin Badillo",
+          "fighter2": "Soledad Vargas",
           "fighter1_image": null,
           "fighter2_image": null,
           "fighter1_nationality": null,
@@ -4184,7 +4547,7 @@
           "rounds": null,
           "title_text": null,
           "status": "scheduled",
-          "url": "https://boxerbook.com/bouts/209442/maria-soledad-vargas-vs-marylin-badillo",
+          "url": "https://boxerbook.com/bouts/209463/marylin-badillo-vs-soledad-vargas",
           "broadcaster": null,
           "data_source": "Boxerbook"
         }
@@ -4451,11 +4814,11 @@
           "fighter1_nationality": null,
           "fighter2_nationality": null,
           "record1": null,
-          "record2": null,
+          "record2": "0-1-0",
           "date": "2026-12-23",
           "start_time_utc": null,
           "start_datetime_utc": null,
-          "weight_class": null,
+          "weight_class": "w_atom",
           "rounds": null,
           "title_text": null,
           "status": "scheduled",
