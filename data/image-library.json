@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-26T05:19:56Z",
+  "updated_at": "2026-11-26T15:38:07Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -1212,6 +1212,17 @@
       "creator": "Wikimedia Commons · Sexto Round · CC BY 3.0",
       "attribution": "Wikimedia Commons · Sexto Round · CC BY 3.0",
       "verified_at": "2026-11-26T05:19:56Z",
+      "sport": "ufc"
+    },
+    "curtis blaydes": {
+      "name": "Curtis Blaydes",
+      "path": "assets/images/ufc/curtis-blaydes.png",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Curtis_Blaydes_at_UFC_221.png",
+      "licence": "CC BY 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by/3.0",
+      "creator": "Wikimedia Commons · MMA Zone · CC BY 3.0",
+      "attribution": "Wikimedia Commons · MMA Zone · CC BY 3.0",
+      "verified_at": "2026-11-26T15:38:07Z",
       "sport": "ufc"
     }
   },

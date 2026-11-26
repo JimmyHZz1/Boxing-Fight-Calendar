@@ -1646,9 +1646,24 @@
       "image_match_method": "category:Category:Sergei Pavlovich",
       "image_verified_at": "2026-11-26T05:19:56Z",
       "image_local_path": "assets/images/ufc/sergei-pavlovich.png"
+    },
+    "curtis blaydes": {
+      "name": "Curtis Blaydes",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/curtis-blaydes.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Curtis_Blaydes_at_UFC_221.png",
+      "image_credit": "Wikimedia Commons · MMA Zone · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Curtis Blaydes",
+      "image_verified_at": "2026-11-26T15:38:07Z",
+      "image_local_path": "assets/images/ufc/curtis-blaydes.png"
     }
   },
-  "updated_at": "2026-11-26T13:55:47Z",
+  "updated_at": "2026-11-26T15:38:07Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1773,9 +1788,9 @@
     "alexander volkov": "2026-11-26T05:19:56Z",
     "sergei pavlovich": "2026-11-26T05:19:56Z",
     "josh hokit": "2026-11-26T05:19:56Z",
-    "curtis blaydes": "2026-11-09T23:04:13Z",
+    "curtis blaydes": "2026-11-26T15:38:07Z",
     "waldo cortes acosta": "2026-11-09T23:04:13Z",
-    "rizvan kuniev": "2026-11-10T04:42:54Z",
+    "rizvan kuniev": "2026-11-26T15:38:07Z",
     "vitor petrino": "2026-11-10T04:42:54Z",
     "serghei spivac": "2026-11-10T04:42:54Z",
     "ante delija": "2026-11-10T04:42:54Z",
@@ -1796,7 +1811,7 @@
     "azamat murzakanov": "2026-11-11T00:57:41Z",
     "robert whittaker": "2026-11-11T00:57:41Z",
     "charles johnson": "2026-11-25T23:14:05Z",
-    "johnny walker": "2026-11-11T07:30:35Z",
+    "johnny walker": "2026-11-26T15:38:07Z",
     "abdul rakhman yakhyaev": "2026-11-11T07:30:35Z",
     "alonzo menifield": "2026-11-11T07:30:35Z",
     "reinier de ridder": "2026-11-11T07:30:35Z",
@@ -2038,24 +2053,16 @@
     }
   },
   "enrichment": {
-    "batch_number": 75,
+    "batch_number": 76,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 427,
-    "cumulative_found": 116,
-    "cumulative_missing": 311,
+    "cumulative_attempted": 431,
+    "cumulative_found": 117,
+    "cumulative_missing": 314,
     "cumulative_rejected": 354,
-    "last_batch_at": "2026-11-26T05:19:56Z",
-    "last_successful_batch_at": "2026-11-26T05:19:56Z",
-    "last_rate_limited_at": "2026-11-26T05:19:56Z",
+    "last_batch_at": "2026-11-26T15:38:07Z",
+    "last_successful_batch_at": "2026-11-26T15:38:07Z",
+    "last_rate_limited_at": "2026-11-26T15:38:07Z",
     "history": [
-      {
-        "batch": 46,
-        "at": "2026-11-16T18:07:49Z",
-        "attempted": 5,
-        "found": 0,
-        "missing": 5,
-        "rate_limited": false
-      },
       {
         "batch": 47,
         "at": "2026-11-17T01:58:13Z",
@@ -2283,6 +2290,14 @@
       {
         "batch": 75,
         "at": "2026-11-26T05:19:56Z",
+        "attempted": 4,
+        "found": 1,
+        "missing": 3,
+        "rate_limited": true
+      },
+      {
+        "batch": 76,
+        "at": "2026-11-26T15:38:07Z",
         "attempted": 4,
         "found": 1,
         "missing": 3,
