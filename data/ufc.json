@@ -1048,7 +1048,9 @@
           },
           "result": null,
           "referee": null,
-          "bonus": null
+          "bonus": null,
+          "fighter2_image": "./assets/images/ufc/sergei-pavlovich.png",
+          "fighter2_image_credit": "Wikimedia Commons · Sexto Round · CC BY 3.0"
         },
         {
           "id": 93444,

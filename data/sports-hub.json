@@ -234,13 +234,33 @@
           "rank": 20,
           "name": "Yuki Tsunoda",
           "team": "RB F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/yuki-tsunoda.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Yuki_Tsunoda_Macau_2019.jpg",
+          "image_credit": "Wikimedia Commons · Smith007 · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "category:Category:Yuki Tsunoda in 2019",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/yuki-tsunoda.jpg"
         },
         {
           "rank": 21,
           "name": "Ryo Hirakawa",
           "team": "Haas F1 Team",
-          "points": "1"
+          "points": "1",
+          "image_url": "./assets/images/f1-drivers/ryo-hirakawa.jpg",
+          "image_page_url": "https://commons.wikimedia.org/wiki/File:Ryo_Hirakawa_2024_WEC_Fuji_1.jpg",
+          "image_credit": "Wikimedia Commons · Morio · CC BY-SA 4.0",
+          "image_license": "CC BY-SA 4.0",
+          "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "image_source": "Wikimedia Commons",
+          "image_match_score": 1,
+          "image_match_method": "search:Ryo Hirakawa",
+          "image_verified_at": "2026-11-08T13:28:36Z",
+          "image_local_path": "assets/images/f1-drivers/ryo-hirakawa.jpg"
         },
         {
           "rank": 22,
@@ -3792,7 +3812,17 @@
             {
               "rank": 3,
               "name": "Sergei Pavlovich",
-              "image_url": null
+              "image_url": "./assets/images/ufc/sergei-pavlovich.png",
+              "image_page_url": "https://commons.wikimedia.org/wiki/File:Sergei_Pavlovich_vs_Alexander_Volkov_face_off_(cropped).png",
+              "image_credit": "Wikimedia Commons · Sexto Round · CC BY 3.0",
+              "image_license": "CC BY 3.0",
+              "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+              "image_source": "Wikimedia Commons",
+              "image_source_class": "licensed-third-party",
+              "image_match_score": 1.0,
+              "image_match_method": "category:Category:Sergei Pavlovich",
+              "image_verified_at": "2026-11-26T05:19:56Z",
+              "image_local_path": "assets/images/ufc/sergei-pavlovich.png"
             },
             {
               "rank": 4,
@@ -5500,32 +5530,96 @@
   },
   "provider": "Jolpica F1, Darts API, UFCalendar and Open Boxing",
   "image_diagnostics": {
-    "attempted": 423,
-    "found": 126,
-    "missing": 426,
-    "rejected": 349,
-    "by_sport": {},
-    "newly_found": 0,
+    "attempted": 4,
+    "found": 138,
+    "missing": 585,
+    "rejected": 5,
+    "by_sport": {
+      "ufc": {
+        "attempted": 4,
+        "found": 1,
+        "missing": 3,
+        "rejected": 0
+      }
+    },
+    "search_details": [
+      {
+        "name": "Alexander Volkov",
+        "queries": 3,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Sergei Pavlovich",
+        "queries": 3,
+        "candidate_files": 3,
+        "accepted": 2,
+        "rejections": {
+          "exact_name_pair_not_matched": 1
+        }
+      },
+      {
+        "name": "Josh Hokit",
+        "queries": 4,
+        "candidate_files": 4,
+        "accepted": 0,
+        "rejections": {
+          "exact_name_pair_not_matched": 4
+        }
+      },
+      {
+        "name": "Curtis Blaydes",
+        "queries": 1,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      }
+    ],
+    "rejection_reasons": {
+      "exact_name_pair_not_matched": 5
+    },
+    "checked_at": "2026-11-26T05:19:56Z",
+    "library_entries": 116,
+    "newly_found": 1,
+    "cumulative_attempted": 427,
+    "cumulative_found": 116,
+    "cumulative_missing": 311,
+    "cumulative_rejected": 354,
+    "batch_number": 75,
+    "last_batch_at": "2026-11-26T05:19:56Z",
+    "last_successful_batch_at": "2026-11-26T05:19:56Z",
+    "last_rate_limited_at": "2026-11-26T05:19:56Z",
     "coverage": {
+      "boxing fight card fighters": {
+        "total": 329,
+        "with_image": 1,
+        "missing": 328
+      },
       "f1 drivers": {
         "total": 25,
-        "with_image": 23,
-        "missing": 2
+        "with_image": 25,
+        "missing": 0
       },
       "f1 constructors": {
         "total": 11,
         "with_image": 11,
         "missing": 0
       },
-      "darts": {
-        "total": 229,
-        "with_image": 50,
-        "missing": 179
+      "darts top 50": {
+        "total": 50,
+        "with_image": 47,
+        "missing": 3
       },
       "ufc": {
         "total": 206,
-        "with_image": 42,
-        "missing": 164
+        "with_image": 43,
+        "missing": 163
+      },
+      "speedway GP riders": {
+        "total": 21,
+        "with_image": 11,
+        "missing": 10
       },
       "boxing": {
         "total": 81,
@@ -5533,16 +5627,6 @@
         "missing": 81
       }
     },
-    "checked_at": "2026-11-26T00:22:50Z",
-    "library_entries": 115,
-    "cumulative_found": 115,
-    "cumulative_missing": 308,
-    "cumulative_rejected": 349,
-    "batch_number": 74,
-    "last_batch_at": "2026-11-25T23:14:05Z",
-    "last_successful_batch_at": "2026-11-25T23:14:05Z",
-    "last_rate_limited_at": "2026-11-25T23:14:05Z",
-    "enrichment_status": "paused after rate limit",
     "rate_limited": true
   },
   "last_updated": "2026-11-26T00:22:50Z"

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-25T23:14:05Z",
+  "updated_at": "2026-11-26T05:19:56Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -1201,6 +1201,17 @@
       "creator": "Wikimedia Commons · MHSC TV - Montpellier Hérault Sport Club · CC BY 3.0",
       "attribution": "Wikimedia Commons · MHSC TV - Montpellier Hérault Sport Club · CC BY 3.0",
       "verified_at": "2026-11-25T23:14:05Z",
+      "sport": "ufc"
+    },
+    "sergei pavlovich": {
+      "name": "Sergei Pavlovich",
+      "path": "assets/images/ufc/sergei-pavlovich.png",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sergei_Pavlovich_vs_Alexander_Volkov_face_off_(cropped).png",
+      "licence": "CC BY 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by/3.0",
+      "creator": "Wikimedia Commons · Sexto Round · CC BY 3.0",
+      "attribution": "Wikimedia Commons · Sexto Round · CC BY 3.0",
+      "verified_at": "2026-11-26T05:19:56Z",
       "sport": "ufc"
     }
   },

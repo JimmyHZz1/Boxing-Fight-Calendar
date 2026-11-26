@@ -208,8 +208,23 @@
       "image_match_method": "category:Category:Brandon Moreno",
       "image_verified_at": "2026-11-25T04:00:08Z",
       "image_local_path": "assets/images/ufc/brandon-moreno.jpg"
+    },
+    "sergei pavlovich": {
+      "name": "Sergei Pavlovich",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/sergei-pavlovich.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Sergei_Pavlovich_vs_Alexander_Volkov_face_off_(cropped).png",
+      "image_credit": "Wikimedia Commons · Sexto Round · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Sergei Pavlovich",
+      "image_verified_at": "2026-11-26T05:19:56Z",
+      "image_local_path": "assets/images/ufc/sergei-pavlovich.png"
     }
   },
   "attempted": {},
-  "updated_at": "2026-11-26T00:23:08Z"
+  "updated_at": "2026-11-26T05:20:26Z"
 }

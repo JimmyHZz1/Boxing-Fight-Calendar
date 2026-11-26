@@ -1631,9 +1631,24 @@
       "image_match_method": "category:Category:Ciryl Gane",
       "image_verified_at": "2026-11-25T23:14:05Z",
       "image_local_path": "assets/images/ufc/ciryl-gane.jpg"
+    },
+    "sergei pavlovich": {
+      "name": "Sergei Pavlovich",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/sergei-pavlovich.png",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Sergei_Pavlovich_vs_Alexander_Volkov_face_off_(cropped).png",
+      "image_credit": "Wikimedia Commons · Sexto Round · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Sergei Pavlovich",
+      "image_verified_at": "2026-11-26T05:19:56Z",
+      "image_local_path": "assets/images/ufc/sergei-pavlovich.png"
     }
   },
-  "updated_at": "2026-11-26T00:22:50Z",
+  "updated_at": "2026-11-26T05:19:56Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1755,9 +1770,9 @@
     "tagir ulanbekov": "2026-11-09T13:37:46Z",
     "ciryl gane": "2026-11-25T23:14:05Z",
     "tom aspinall": "2026-11-25T23:14:05Z",
-    "alexander volkov": "2026-11-09T23:04:13Z",
-    "sergei pavlovich": "2026-11-09T23:04:13Z",
-    "josh hokit": "2026-11-09T23:04:13Z",
+    "alexander volkov": "2026-11-26T05:19:56Z",
+    "sergei pavlovich": "2026-11-26T05:19:56Z",
+    "josh hokit": "2026-11-26T05:19:56Z",
     "curtis blaydes": "2026-11-09T23:04:13Z",
     "waldo cortes acosta": "2026-11-09T23:04:13Z",
     "rizvan kuniev": "2026-11-10T04:42:54Z",
@@ -2023,24 +2038,16 @@
     }
   },
   "enrichment": {
-    "batch_number": 74,
+    "batch_number": 75,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 423,
-    "cumulative_found": 115,
-    "cumulative_missing": 308,
-    "cumulative_rejected": 349,
-    "last_batch_at": "2026-11-25T23:14:05Z",
-    "last_successful_batch_at": "2026-11-25T23:14:05Z",
-    "last_rate_limited_at": "2026-11-25T23:14:05Z",
+    "cumulative_attempted": 427,
+    "cumulative_found": 116,
+    "cumulative_missing": 311,
+    "cumulative_rejected": 354,
+    "last_batch_at": "2026-11-26T05:19:56Z",
+    "last_successful_batch_at": "2026-11-26T05:19:56Z",
+    "last_rate_limited_at": "2026-11-26T05:19:56Z",
     "history": [
-      {
-        "batch": 45,
-        "at": "2026-11-16T07:45:25Z",
-        "attempted": 5,
-        "found": 0,
-        "missing": 5,
-        "rate_limited": true
-      },
       {
         "batch": 46,
         "at": "2026-11-16T18:07:49Z",
@@ -2268,6 +2275,14 @@
       {
         "batch": 74,
         "at": "2026-11-25T23:14:05Z",
+        "attempted": 4,
+        "found": 1,
+        "missing": 3,
+        "rate_limited": true
+      },
+      {
+        "batch": 75,
+        "at": "2026-11-26T05:19:56Z",
         "attempted": 4,
         "found": 1,
         "missing": 3,
