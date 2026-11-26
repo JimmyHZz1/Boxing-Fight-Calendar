@@ -1,12 +1,12 @@
 {
   "provider": "Boxerbook confirmed cards + Boxing Data additional bouts",
-  "last_updated": "2026-11-25T14:24:59Z",
-  "provider_as_of": "2026-11-25T14:24:58Z",
+  "last_updated": "2026-11-26T00:22:50Z",
+  "provider_as_of": "2026-11-26T00:22:50Z",
   "attribution": "Confirmed cards from Boxerbook; additional scheduled bouts from Boxing Data API.",
   "count_events": 53,
-  "count_bouts": 179,
+  "count_bouts": 180,
   "count_confirmed_events": 45,
-  "count_confirmed_bouts": 150,
+  "count_confirmed_bouts": 151,
   "count_additional_bouts": 29,
   "count_fighter_photos": 17,
   "events": [
@@ -139,7 +139,7 @@
       "city": "Tokyo",
       "country": "JP",
       "country_code": null,
-      "start_time_utc": "2026-11-26T07:30Z",
+      "start_time_utc": "2026-11-26T08:00Z",
       "broadcasters": [
         {
           "name": "Lemino",
@@ -972,6 +972,18 @@
         },
         {
           "id": "fx_e4qnp5p5",
+          "fighter1": "Aloys Junior",
+          "fighter2": "Artur Mann",
+          "date": "2026-11-28",
+          "start_time_utc": "17:00",
+          "start_datetime_utc": "2026-11-28T17:00:00Z",
+          "weight_class": null,
+          "rounds": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_dfesjv74",
           "fighter1": "Serkay Comert",
           "fighter2": "Willi Knorpp",
           "date": "2026-11-28",
@@ -983,7 +995,7 @@
           "data_source": "Boxing Data API"
         },
         {
-          "id": "fx_dfesjv74",
+          "id": "fx_0x6m75wt",
           "fighter1": "Alexander Rigas",
           "fighter2": "Simon Zachenhuber",
           "date": "2026-11-28",
@@ -995,7 +1007,7 @@
           "data_source": "Boxing Data API"
         },
         {
-          "id": "fx_0x6m75wt",
+          "id": "fx_cftvfzgc",
           "fighter1": "Granit Shala",
           "fighter2": "Kolbeinn Kritinsson",
           "date": "2026-11-28",
@@ -1007,7 +1019,7 @@
           "data_source": "Boxing Data API"
         },
         {
-          "id": "fx_ry0wh6p8",
+          "id": "fx_kbj5y3kj",
           "fighter1": "Gleb Bakshi",
           "fighter2": "Serhat Parlak",
           "date": "2026-11-28",
@@ -1019,7 +1031,7 @@
           "data_source": "Boxing Data API"
         },
         {
-          "id": "fx_9e9648cv",
+          "id": "fx_gjwnw9w8",
           "fighter1": "Aloys Youmbi",
           "fighter2": "Artur Mann",
           "date": "2026-11-28",
@@ -2972,12 +2984,61 @@
       "data_source": "Boxerbook"
     },
     {
+      "id": "boxerbook-11872",
+      "source_id": 11872,
+      "name": "Matchroom Boxing event",
+      "date": "2026-12-05T12:00:00Z",
+      "event_url": "https://boxerbook.com/events/11872/2026-12-05-wolverhampton",
+      "promoter": "Matchroom Boxing",
+      "location": "Civic Hall",
+      "city": "Wolverhampton",
+      "country": "GB",
+      "country_code": null,
+      "start_time_utc": "2026-12-05T22:00Z",
+      "broadcasters": [
+        {
+          "name": "DAZN",
+          "region": "worldwide",
+          "url": null
+        },
+        {
+          "name": "DAZN",
+          "region": "JP",
+          "url": null
+        }
+      ],
+      "bouts": [
+        {
+          "id": 192175,
+          "fighter1": "Alexis Rocha",
+          "fighter2": "Conah Walker",
+          "fighter1_image": null,
+          "fighter2_image": null,
+          "fighter1_nationality": null,
+          "fighter2_nationality": null,
+          "record1": "21-2-1",
+          "record2": "18-3-1",
+          "date": "2026-12-05",
+          "start_time_utc": null,
+          "start_datetime_utc": null,
+          "weight_class": "wel",
+          "rounds": 10,
+          "title_text": null,
+          "status": "scheduled",
+          "url": "https://boxerbook.com/bouts/192175/alexis-rocha-vs-conah-walker",
+          "broadcaster": null,
+          "data_source": "Boxerbook"
+        }
+      ],
+      "data_source": "Boxerbook"
+    },
+    {
       "id": "boxerbook-11923",
       "source_id": 11923,
-      "name": "Glendale boxing event",
+      "name": "Premier Boxing Champions (PBC) event",
       "date": "2026-12-05T12:00:00Z",
       "event_url": "https://boxerbook.com/events/11923/2026-12-05-glendale",
-      "promoter": null,
+      "promoter": "Premier Boxing Champions (PBC)",
       "location": "Desert Diamond Arena",
       "city": "Glendale",
       "country": "US",
@@ -3036,7 +3097,7 @@
           "start_time_utc": null,
           "start_datetime_utc": null,
           "weight_class": "swel",
-          "rounds": 8,
+          "rounds": 10,
           "title_text": null,
           "status": "scheduled",
           "url": "https://boxerbook.com/bouts/204289/roberto-valenzuela-vs-nik-tszyu",
@@ -3126,53 +3187,25 @@
           "url": "https://boxerbook.com/bouts/204497/toshiki-shimomachi-vs-luis-nunez",
           "broadcaster": null,
           "data_source": "Boxerbook"
-        }
-      ],
-      "data_source": "Boxerbook"
-    },
-    {
-      "id": "boxerbook-11872",
-      "source_id": 11872,
-      "name": "Matchroom Boxing event",
-      "date": "2026-12-05T12:00:00Z",
-      "event_url": "https://boxerbook.com/events/11872/2026-12-05-wolverhampton",
-      "promoter": "Matchroom Boxing",
-      "location": "Civic Hall",
-      "city": "Wolverhampton",
-      "country": "GB",
-      "country_code": null,
-      "start_time_utc": "2026-12-05T22:00Z",
-      "broadcasters": [
-        {
-          "name": "DAZN",
-          "region": "worldwide",
-          "url": null
         },
         {
-          "name": "DAZN",
-          "region": "JP",
-          "url": null
-        }
-      ],
-      "bouts": [
-        {
-          "id": 192175,
-          "fighter1": "Alexis Rocha",
-          "fighter2": "Conah Walker",
+          "id": 209451,
+          "fighter1": "Vergil Ortiz Jr.",
+          "fighter2": "Brian Mendoza",
           "fighter1_image": null,
           "fighter2_image": null,
-          "fighter1_nationality": null,
+          "fighter1_nationality": "US",
           "fighter2_nationality": null,
-          "record1": "20-2-1",
-          "record2": "18-3-1",
+          "record1": "24-0-0",
+          "record2": "23-5-0",
           "date": "2026-12-05",
           "start_time_utc": null,
           "start_datetime_utc": null,
-          "weight_class": "wel",
+          "weight_class": "mid",
           "rounds": 10,
           "title_text": null,
           "status": "scheduled",
-          "url": "https://boxerbook.com/bouts/192175/alexis-rocha-vs-conah-walker",
+          "url": "https://boxerbook.com/bouts/209451/vergil-ortiz-jr-vs-brian-mendoza",
           "broadcaster": null,
           "data_source": "Boxerbook"
         }
@@ -3224,18 +3257,6 @@
       "bouts": [
         {
           "id": "fx_f31r4026",
-          "fighter1": "Luis Reynaldo Nunez",
-          "fighter2": "Toshiki Shimomachi",
-          "date": "2026-12-06",
-          "start_time_utc": "00:00",
-          "start_datetime_utc": "2026-12-06T00:00:00Z",
-          "weight_class": null,
-          "rounds": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API"
-        },
-        {
-          "id": "fx_p1v41905",
           "fighter1": "Nikita Tszyu",
           "fighter2": "Roberto Valenzuela Jr",
           "date": "2026-12-06",
@@ -3247,12 +3268,24 @@
           "data_source": "Boxing Data API"
         },
         {
-          "id": "fx_pw6cjm2f",
+          "id": "fx_p1v41905",
           "fighter1": "Emiliano Vargas",
           "fighter2": "Omar Juarez",
           "date": "2026-12-06",
           "start_time_utc": "02:25",
           "start_datetime_utc": "2026-12-06T02:25:00Z",
+          "weight_class": null,
+          "rounds": null,
+          "status": "scheduled",
+          "data_source": "Boxing Data API"
+        },
+        {
+          "id": "fx_pw6cjm2f",
+          "fighter1": "Brian Mendoza",
+          "fighter2": "Vergil Ortiz Jr",
+          "date": "2026-12-06",
+          "start_time_utc": "03:00",
+          "start_datetime_utc": "2026-12-06T03:00:00Z",
           "weight_class": null,
           "rounds": null,
           "status": "scheduled",
@@ -3633,18 +3666,6 @@
       "bouts": [
         {
           "id": "fx_t7139e2c",
-          "fighter1": "Igor Adiel Macedo",
-          "fighter2": "Moses Jolly",
-          "date": "2026-12-12",
-          "start_time_utc": "00:00",
-          "start_datetime_utc": "2026-12-12T00:00:00Z",
-          "weight_class": null,
-          "rounds": null,
-          "status": "scheduled",
-          "data_source": "Boxing Data API"
-        },
-        {
-          "id": "fx_hvywymsq",
           "fighter1": "Callum Smith",
           "fighter2": "Dmitrii Bivol",
           "date": "2026-12-12",
@@ -3656,7 +3677,7 @@
           "data_source": "Boxing Data API"
         },
         {
-          "id": "fx_960yp2na",
+          "id": "fx_hvywymsq",
           "fighter1": "Ishmael Davis",
           "fighter2": "Junaid Bostan",
           "date": "2026-12-12",
@@ -4448,10 +4469,10 @@
     {
       "id": "boxerbook-12895",
       "source_id": 12895,
-      "name": "Dubai boxing event",
+      "name": "Most Valuable Promotions (MVP) event",
       "date": "2026-12-24T12:00:00Z",
       "event_url": "https://boxerbook.com/events/12895/2026-12-24-dubai",
-      "promoter": null,
+      "promoter": "Most Valuable Promotions (MVP)",
       "location": "Coca-Cola Arena",
       "city": "Dubai",
       "country": "AE",
