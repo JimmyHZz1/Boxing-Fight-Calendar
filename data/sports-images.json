@@ -1661,9 +1661,24 @@
       "image_match_method": "category:Category:Curtis Blaydes",
       "image_verified_at": "2026-11-26T15:38:07Z",
       "image_local_path": "assets/images/ufc/curtis-blaydes.png"
+    },
+    "magomed ankalaev": {
+      "name": "Magomed Ankalaev",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/magomed-ankalaev.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Magomed_Ankalaev_at_UFC_Fight_Night_136_in_Moscow,_Russia.jpg",
+      "image_credit": "Wikimedia Commons · MMAnytt · CC BY 3.0",
+      "image_license": "CC BY 3.0",
+      "image_license_url": "https://creativecommons.org/licenses/by/3.0",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Magomed Ankalaev",
+      "image_verified_at": "2026-11-27T18:50:04Z",
+      "image_local_path": "assets/images/ufc/magomed-ankalaev.jpg"
     }
   },
-  "updated_at": "2026-11-27T13:53:35Z",
+  "updated_at": "2026-11-27T18:50:04Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1796,10 +1811,10 @@
     "ante delija": "2026-11-27T08:57:16Z",
     "valter walker": "2026-11-27T08:57:16Z",
     "tyrell fortune": "2026-11-27T08:57:16Z",
-    "derrick lewis": "2026-11-10T13:10:28Z",
+    "derrick lewis": "2026-11-27T18:50:04Z",
     "aleksandar rakic": "2026-11-10T13:10:28Z",
-    "carlos ulberg": "2026-11-10T13:10:28Z",
-    "magomed ankalaev": "2026-11-10T13:10:28Z",
+    "carlos ulberg": "2026-11-27T18:50:04Z",
+    "magomed ankalaev": "2026-11-27T18:50:04Z",
     "jiri prochazka": "2026-11-10T20:31:18Z",
     "alex pereira": "2026-11-10T20:31:18Z",
     "khalil rountree jr": "2026-11-10T20:31:18Z",
@@ -2053,24 +2068,16 @@
     }
   },
   "enrichment": {
-    "batch_number": 78,
+    "batch_number": 79,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 439,
-    "cumulative_found": 117,
-    "cumulative_missing": 322,
-    "cumulative_rejected": 357,
-    "last_batch_at": "2026-11-27T08:57:16Z",
-    "last_successful_batch_at": "2026-11-27T08:57:16Z",
-    "last_rate_limited_at": "2026-11-27T08:57:16Z",
+    "cumulative_attempted": 443,
+    "cumulative_found": 118,
+    "cumulative_missing": 325,
+    "cumulative_rejected": 359,
+    "last_batch_at": "2026-11-27T18:50:04Z",
+    "last_successful_batch_at": "2026-11-27T18:50:04Z",
+    "last_rate_limited_at": "2026-11-27T18:50:04Z",
     "history": [
-      {
-        "batch": 49,
-        "at": "2026-11-17T19:40:30Z",
-        "attempted": 5,
-        "found": 0,
-        "missing": 5,
-        "rate_limited": false
-      },
       {
         "batch": 50,
         "at": "2026-11-18T02:14:27Z",
@@ -2301,6 +2308,14 @@
         "attempted": 4,
         "found": 0,
         "missing": 4,
+        "rate_limited": true
+      },
+      {
+        "batch": 79,
+        "at": "2026-11-27T18:50:04Z",
+        "attempted": 4,
+        "found": 1,
+        "missing": 3,
         "rate_limited": true
       }
     ],
