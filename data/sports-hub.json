@@ -5547,52 +5547,52 @@
     "by_sport": {
       "ufc": {
         "attempted": 4,
-        "found": 1,
-        "missing": 3,
+        "found": 0,
+        "missing": 4,
         "rejected": 0
       }
     },
     "search_details": [
       {
-        "name": "Curtis Blaydes",
-        "queries": 3,
-        "candidate_files": 2,
-        "accepted": 2,
-        "rejections": {}
-      },
-      {
-        "name": "Johnny Walker",
-        "queries": 3,
-        "candidate_files": 0,
-        "accepted": 0,
-        "rejections": {}
-      },
-      {
-        "name": "Rizvan Kuniev",
-        "queries": 3,
-        "candidate_files": 0,
-        "accepted": 0,
-        "rejections": {}
-      },
-      {
         "name": "Waldo Cortes Acosta",
-        "queries": 1,
+        "queries": 2,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Vitor Petrino",
+        "queries": 3,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Serghei Spivac",
+        "queries": 3,
+        "candidate_files": 0,
+        "accepted": 0,
+        "rejections": {}
+      },
+      {
+        "name": "Ante Delija",
+        "queries": 2,
         "candidate_files": 0,
         "accepted": 0,
         "rejections": {}
       }
     ],
-    "checked_at": "2026-11-26T15:38:07Z",
+    "checked_at": "2026-11-27T00:24:24Z",
     "library_entries": 117,
-    "newly_found": 1,
-    "cumulative_attempted": 431,
+    "newly_found": 0,
+    "cumulative_attempted": 435,
     "cumulative_found": 117,
-    "cumulative_missing": 314,
+    "cumulative_missing": 318,
     "cumulative_rejected": 354,
-    "batch_number": 76,
-    "last_batch_at": "2026-11-26T15:38:07Z",
-    "last_successful_batch_at": "2026-11-26T15:38:07Z",
-    "last_rate_limited_at": "2026-11-26T15:38:07Z",
+    "batch_number": 77,
+    "last_batch_at": "2026-11-27T00:24:24Z",
+    "last_successful_batch_at": "2026-11-27T00:24:24Z",
+    "last_rate_limited_at": "2026-11-27T00:24:24Z",
     "coverage": {
       "boxing fight card fighters": {
         "total": 348,
