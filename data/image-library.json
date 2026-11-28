@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-28T01:49:11Z",
+  "updated_at": "2026-11-28T09:57:03Z",
   "storage": "repository",
   "policy": "Only use images with documented permission or a licence that allows redistribution. Each record must include source_url, licence, licence_url, creator, attribution and verified_at.",
   "images": {
@@ -1256,6 +1256,28 @@
       "creator": "Wikimedia Commons · Alexanderps · Public domain",
       "attribution": "Wikimedia Commons · Alexanderps · Public domain",
       "verified_at": "2026-11-28T01:49:11Z",
+      "sport": "ufc"
+    },
+    "khalil rountree jr": {
+      "name": "Khalil Rountree Jr.",
+      "path": "assets/images/ufc/khalil-rountree-jr.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Khalil_Rountree,_Jr.._(cropped).jpg",
+      "licence": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "creator": "Wikimedia Commons · Slsinc · CC BY-SA 4.0",
+      "attribution": "Wikimedia Commons · Slsinc · CC BY-SA 4.0",
+      "verified_at": "2026-11-28T09:57:03Z",
+      "sport": "ufc"
+    },
+    "dominick reyes": {
+      "name": "Dominick Reyes",
+      "path": "assets/images/ufc/dominick-reyes.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Dominick_Reyes_(54451224096).jpg",
+      "licence": "Public domain",
+      "licence_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "creator": "Wikimedia Commons · The White House · Public domain",
+      "attribution": "Wikimedia Commons · The White House · Public domain",
+      "verified_at": "2026-11-28T09:57:03Z",
       "sport": "ufc"
     }
   },
