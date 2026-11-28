@@ -1676,9 +1676,39 @@
       "image_match_method": "category:Category:Magomed Ankalaev",
       "image_verified_at": "2026-11-27T18:50:04Z",
       "image_local_path": "assets/images/ufc/magomed-ankalaev.jpg"
+    },
+    "jiri prochazka": {
+      "name": "Jiří Procházka",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/jiri-prochazka.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Ji%C5%99%C3%AD_%22Denisa%22_Proch%C3%A1zka_2020_07_Strahov_Praha.jpg",
+      "image_credit": "Wikimedia Commons · JP#BJP · CC0",
+      "image_license": "CC0",
+      "image_license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Jiří Procházka",
+      "image_verified_at": "2026-11-28T01:49:11Z",
+      "image_local_path": "assets/images/ufc/jiri-prochazka.jpg"
+    },
+    "alex pereira": {
+      "name": "Alex Pereira",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/alex-pereira.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Alex_Pereira_in_Natal.JPG",
+      "image_credit": "Wikimedia Commons · Alexanderps · Public domain",
+      "image_license": "Public domain",
+      "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Alex Pereira",
+      "image_verified_at": "2026-11-28T01:49:11Z",
+      "image_local_path": "assets/images/ufc/alex-pereira.jpg"
     }
   },
-  "updated_at": "2026-11-28T00:04:02Z",
+  "updated_at": "2026-11-28T01:49:11Z",
   "attempted": {
     "abisai torres diaz": "2026-11-08T12:34:52Z",
     "adam azim": "2026-11-08T12:34:52Z",
@@ -1815,10 +1845,10 @@
     "aleksandar rakic": "2026-11-10T13:10:28Z",
     "carlos ulberg": "2026-11-27T18:50:04Z",
     "magomed ankalaev": "2026-11-27T18:50:04Z",
-    "jiri prochazka": "2026-11-10T20:31:18Z",
-    "alex pereira": "2026-11-10T20:31:18Z",
+    "jiri prochazka": "2026-11-28T01:49:11Z",
+    "alex pereira": "2026-11-28T01:49:11Z",
     "khalil rountree jr": "2026-11-10T20:31:18Z",
-    "navajo stirling": "2026-11-10T20:31:18Z",
+    "navajo stirling": "2026-11-28T01:49:11Z",
     "paulo costa": "2026-11-10T20:31:18Z",
     "dominick reyes": "2026-11-11T00:57:41Z",
     "bogdan guskov": "2026-11-11T00:57:41Z",
@@ -2068,24 +2098,16 @@
     }
   },
   "enrichment": {
-    "batch_number": 79,
+    "batch_number": 80,
     "baseline_at": "2026-11-09T12:15:00Z",
-    "cumulative_attempted": 443,
-    "cumulative_found": 118,
-    "cumulative_missing": 325,
-    "cumulative_rejected": 359,
-    "last_batch_at": "2026-11-27T18:50:04Z",
-    "last_successful_batch_at": "2026-11-27T18:50:04Z",
-    "last_rate_limited_at": "2026-11-27T18:50:04Z",
+    "cumulative_attempted": 447,
+    "cumulative_found": 120,
+    "cumulative_missing": 327,
+    "cumulative_rejected": 368,
+    "last_batch_at": "2026-11-28T01:49:11Z",
+    "last_successful_batch_at": "2026-11-28T01:49:11Z",
+    "last_rate_limited_at": "2026-11-28T01:49:11Z",
     "history": [
-      {
-        "batch": 50,
-        "at": "2026-11-18T02:14:27Z",
-        "attempted": 4,
-        "found": 2,
-        "missing": 2,
-        "rate_limited": true
-      },
       {
         "batch": 51,
         "at": "2026-11-18T10:32:47Z",
@@ -2316,6 +2338,14 @@
         "attempted": 4,
         "found": 1,
         "missing": 3,
+        "rate_limited": true
+      },
+      {
+        "batch": 80,
+        "at": "2026-11-28T01:49:11Z",
+        "attempted": 4,
+        "found": 2,
+        "missing": 2,
         "rate_limited": true
       }
     ],

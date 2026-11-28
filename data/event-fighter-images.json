@@ -223,8 +223,38 @@
       "image_match_method": "category:Category:Sergei Pavlovich",
       "image_verified_at": "2026-11-26T05:19:56Z",
       "image_local_path": "assets/images/ufc/sergei-pavlovich.png"
+    },
+    "jiri prochazka": {
+      "name": "Jiří Procházka",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/jiri-prochazka.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Ji%C5%99%C3%AD_%22Denisa%22_Proch%C3%A1zka_2020_07_Strahov_Praha.jpg",
+      "image_credit": "Wikimedia Commons · JP#BJP · CC0",
+      "image_license": "CC0",
+      "image_license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Jiří Procházka",
+      "image_verified_at": "2026-11-28T01:49:11Z",
+      "image_local_path": "assets/images/ufc/jiri-prochazka.jpg"
+    },
+    "alex pereira": {
+      "name": "Alex Pereira",
+      "sport": "ufc",
+      "image_url": "./assets/images/ufc/alex-pereira.jpg",
+      "image_page_url": "https://commons.wikimedia.org/wiki/File:Alex_Pereira_in_Natal.JPG",
+      "image_credit": "Wikimedia Commons · Alexanderps · Public domain",
+      "image_license": "Public domain",
+      "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "image_source": "Wikimedia Commons",
+      "image_source_class": "licensed-third-party",
+      "image_match_score": 1.0,
+      "image_match_method": "category:Category:Alex Pereira",
+      "image_verified_at": "2026-11-28T01:49:11Z",
+      "image_local_path": "assets/images/ufc/alex-pereira.jpg"
     }
   },
   "attempted": {},
-  "updated_at": "2026-11-28T00:04:23Z"
+  "updated_at": "2026-11-28T01:49:38Z"
 }

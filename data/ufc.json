@@ -55,7 +55,9 @@
             "details": "Punch to Head At Distance"
           },
           "referee": "Marc Goddard",
-          "bonus": "Performance of the Night"
+          "bonus": "Performance of the Night",
+          "fighter1_image": "./assets/images/ufc/jiri-prochazka.jpg",
+          "fighter1_image_credit": "Wikimedia Commons · JP#BJP · CC0"
         },
         {
           "id": 93291,
@@ -1050,7 +1052,9 @@
           "referee": null,
           "bonus": null,
           "fighter2_image": "./assets/images/ufc/sergei-pavlovich.png",
-          "fighter2_image_credit": "Wikimedia Commons · Sexto Round · CC BY 3.0"
+          "fighter2_image_credit": "Wikimedia Commons · Sexto Round · CC BY 3.0",
+          "fighter1_image": "./assets/images/ufc/alex-pereira.jpg",
+          "fighter1_image_credit": "Wikimedia Commons · Alexanderps · Public domain"
         },
         {
           "id": 93444,
