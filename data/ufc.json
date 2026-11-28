@@ -1051,10 +1051,10 @@
           "result": null,
           "referee": null,
           "bonus": null,
-          "fighter2_image": "./assets/images/ufc/sergei-pavlovich.png",
-          "fighter2_image_credit": "Wikimedia Commons · Sexto Round · CC BY 3.0",
           "fighter1_image": "./assets/images/ufc/alex-pereira.jpg",
-          "fighter1_image_credit": "Wikimedia Commons · Alexanderps · Public domain"
+          "fighter1_image_credit": "Wikimedia Commons · Alexanderps · Public domain",
+          "fighter2_image": "./assets/images/ufc/sergei-pavlovich.png",
+          "fighter2_image_credit": "Wikimedia Commons · Sexto Round · CC BY 3.0"
         },
         {
           "id": 93444,
@@ -1411,5 +1411,5 @@
     }
   ],
   "notice": "All upcoming UFC events returned by UFCalendar, with detailed fight cards for the next two events and the latest completed card. Free API allowance: 1,000 requests per month.",
-  "last_updated": "2026-11-28T00:04:02Z"
+  "last_updated": "2026-11-28T07:51:23Z"
 }
