@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "provider": "IGDB PopScore",
-  "updated_at": "2026-11-27T16:34:28.430Z",
+  "updated_at": "2026-11-28T15:26:50.791Z",
   "status": "ok",
   "methodology": "Daily relative ranking across the upcoming PC and console release list. Weighted IGDB Visits (30%), Want to Play (40%), Playing (15%), Played (5%) and Twitch Hours Watched (10%). Steam-only player, review and sales signals are deliberately excluded so console-only games are not penalised. Missing metrics are omitted and remaining weights are renormalised.",
   "games": [
@@ -42,7 +42,7 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lowts.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lowts.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6pcw.jpg",
-      "popularity_score": 96,
+      "popularity_score": 95,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -66,7 +66,7 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo11ng.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo11ng.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6r3h.jpg",
-      "popularity_score": 80,
+      "popularity_score": 79,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -87,7 +87,7 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5zbq.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5zbq.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5zbq.jpg",
-      "popularity_score": 73,
+      "popularity_score": 67,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -132,7 +132,7 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar41cc.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar41cc.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6ox1.jpg",
-      "popularity_score": 60,
+      "popularity_score": 61,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -156,7 +156,7 @@
       "igdb_logo_url": null,
       "logo_url": null,
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar260r.jpg",
-      "popularity_score": 49,
+      "popularity_score": 45,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -165,22 +165,19 @@
       "popularity_rank": 7
     },
     {
-      "slug": "stage-tour",
-      "title": "Stage Tour",
-      "release_date": "2026-12-10",
+      "slug": "there-are-no-ghosts",
+      "title": "There Are No Ghosts at the Grand",
+      "release_date": "2026-12-16",
       "platforms": [
-        "PC",
-        "PlayStation 5",
-        "Xbox Series X|S",
-        "Nintendo Switch 2"
+        "PC"
       ],
-      "verification_status": "verified",
-      "igdb_game_id": 393269,
-      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6lhk.jpg",
-      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5n09.jpg",
-      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5n09.jpg",
-      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6lhk.jpg",
-      "popularity_score": 42,
+      "verification_status": "estimated",
+      "igdb_game_id": 347841,
+      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar3oxp.jpg",
+      "igdb_logo_url": null,
+      "logo_url": null,
+      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar3oxp.jpg",
+      "popularity_score": 40,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -205,7 +202,7 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5xzb.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5xzb.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5xzb.jpg",
-      "popularity_score": 40,
+      "popularity_score": 39,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -214,47 +211,28 @@
       "popularity_rank": 9
     },
     {
-      "slug": "there-are-no-ghosts",
-      "title": "There Are No Ghosts at the Grand",
-      "release_date": "2026-12-16",
+      "slug": "stage-tour",
+      "title": "Stage Tour",
+      "release_date": "2026-12-10",
       "platforms": [
-        "PC"
+        "PC",
+        "PlayStation 5",
+        "Xbox Series X|S",
+        "Nintendo Switch 2"
       ],
-      "verification_status": "estimated",
-      "igdb_game_id": 347841,
-      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar3oxp.jpg",
-      "igdb_logo_url": null,
-      "logo_url": null,
-      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar3oxp.jpg",
-      "popularity_score": 38,
+      "verification_status": "verified",
+      "igdb_game_id": 393269,
+      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6lhk.jpg",
+      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5n09.jpg",
+      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar5n09.jpg",
+      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6lhk.jpg",
+      "popularity_score": 37,
       "popularity_signals": [
         "want to play",
         "visits"
       ],
       "popularity_coverage": 2,
       "popularity_rank": 10
-    },
-    {
-      "slug": "arkheron",
-      "title": "Arkheron",
-      "release_date": "2026-11-27",
-      "platforms": [
-        "PC",
-        "Xbox Series X|S"
-      ],
-      "verification_status": "estimated",
-      "igdb_game_id": 368311,
-      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6xi8.jpg",
-      "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar48ki.jpg",
-      "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar48ki.jpg",
-      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6xi8.jpg",
-      "popularity_score": 34,
-      "popularity_signals": [
-        "want to play",
-        "visits"
-      ],
-      "popularity_coverage": 2,
-      "popularity_rank": 11
     },
     {
       "slug": "aeterna-lucis",
@@ -272,7 +250,32 @@
       "igdb_logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo10cy.jpg",
       "logo_url": "https://images.igdb.com/igdb/image/upload/t_720p/lo10cy.jpg",
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar72ui.jpg",
-      "popularity_score": 19,
+      "popularity_score": 20,
+      "popularity_signals": [
+        "want to play",
+        "visits"
+      ],
+      "popularity_coverage": 2,
+      "popularity_rank": 11
+    },
+    {
+      "slug": "romancing-saga-3-destinies-united",
+      "title": "Romancing SaGa 3: Destinies United",
+      "release_date": "2027-02-16",
+      "platforms": [
+        "PC",
+        "PlayStation 5",
+        "Xbox Series X|S",
+        "Nintendo Switch 2",
+        "Nintendo Switch"
+      ],
+      "verification_status": "verified",
+      "igdb_game_id": 415836,
+      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6keu.jpg",
+      "igdb_logo_url": null,
+      "logo_url": null,
+      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6keu.jpg",
+      "popularity_score": 8,
       "popularity_signals": [
         "want to play",
         "visits"
@@ -293,38 +296,13 @@
       "igdb_logo_url": null,
       "logo_url": null,
       "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6b87.jpg",
-      "popularity_score": 7,
+      "popularity_score": 0,
       "popularity_signals": [
         "want to play",
         "visits"
       ],
       "popularity_coverage": 2,
       "popularity_rank": 13
-    },
-    {
-      "slug": "romancing-saga-3-destinies-united",
-      "title": "Romancing SaGa 3: Destinies United",
-      "release_date": "2027-02-16",
-      "platforms": [
-        "PC",
-        "PlayStation 5",
-        "Xbox Series X|S",
-        "Nintendo Switch 2",
-        "Nintendo Switch"
-      ],
-      "verification_status": "verified",
-      "igdb_game_id": 415836,
-      "igdb_artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6keu.jpg",
-      "igdb_logo_url": null,
-      "logo_url": null,
-      "artwork_url": "https://images.igdb.com/igdb/image/upload/t_720p/ar6keu.jpg",
-      "popularity_score": 4,
-      "popularity_signals": [
-        "want to play",
-        "visits"
-      ],
-      "popularity_coverage": 2,
-      "popularity_rank": 14
     },
     {
       "slug": "attack-on-titan-3",
